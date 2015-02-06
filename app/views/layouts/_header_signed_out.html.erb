@@ -1,24 +1,67 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-<!--logo-->
+
+      <!-- BRAND -->
       <div class="brand">
-        <%= link_to(image_tag('logo/brand.png', :alt => t('site.name')), '/', :class => "logo"); %>
+        <%#= link_to "EducaInternet",'/', class: "logo"  %>
+        <a href="/" class="logo">Educa<strong>Internet</strong></a>
+        <%#= link_to(image_tag('logo/brand.png', :alt => t('site.name')), '/', :class => "logo"); %>
       </div>
-<!--BROWSE-->
-      <div class="toggler browse">
+
+      <!-- BROWSE -->
+      <!--<div class="toggler browse">
         <%= render partial: 'layouts/browse_header'%>
-      </div>
-<!--______________________________desktop-->
+      </div>-->
+
+      <!--______________________________desktop-->
       <div class=" hidden-phone hidden-tablet">
-<!--login-->
-        <li class=" dropdown log">
+
+        <!-- NEW ORANGE MENU -->
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/">Inicio</a></li>
+          <li><a href="#">Tema<strong>teca</strong></a></li>
+          <li><a href="#">Recurso<strong>teca</strong></a></li>
+          <li><a href="#">Comunidad</a></li>
+          <li><a href="#">Registro</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acceso<span class="caret"></span></a>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <%= form_for User.new, :as => :user, :url => user_session_path do |f| %>
+                <%= f.email_field :email, :id => "username" %>
+                <%= f.password_field :password, :id => "password"  %>
+
+                <label class="checkbox">
+                  <input type="checkbox"> <%=t("activerecord.attributes.user.remember_me")%>
+                </label>
+                <%= link_to t('devise.links.forgot_password'), new_password_path(:user) %>
+                <%= f.submit t(:sign_in), :class => ' btn btn-primary'%>
+              <% end %>
+
+              <%content_for :javascript do%>
+                if ("placeholder" in document.createElement("input")) {
+                  $("#username").attr('placeholder', I18n.t('activerecord.attributes.user.email'));
+                  $("#password").attr('placeholder', I18n.t('activerecord.attributes.user.password'));
+                } else {
+                  $("#username").watermark(I18n.t('activerecord.attributes.user.email'),"#666");
+                  $("#password").watermark(I18n.t('activerecord.attributes.user.password'),"#666");
+                }
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+
+
+        <!-- LOGIN -->
+
+        <!--<li class=" dropdown log">
           <a class="login dropdown-toggle" data-toggle="dropdown" href="#">
             <%=t("sign_in")%>
             <b class="caret"></b>
@@ -45,18 +88,19 @@
           <% end %>
           </ul>
         </li>
+        -->
+        <%#if Vish::Application.config.APP_CONFIG["register_policy"] == "REGISTER_ONLY" || Vish::Application.config.APP_CONFIG["register_policy"] == "HYBRID"%>
 
-        <%if Vish::Application.config.APP_CONFIG["register_policy"] == "REGISTER_ONLY" || Vish::Application.config.APP_CONFIG["register_policy"] == "HYBRID"%>
-        <!--sign_up-->
-        <a class=" sign_up btn" href="<%=new_user_registration_path%>">
-        <%=t("sign_up")%>
-        </a>
-        <%end%>
-        
-<!--search-->
+        <!-- SIGN UP -->
+          <!--<a class=" sign_up btn" href="<%=new_user_registration_path%>"><%=t("sign_up")%></a>-->
+
+        <%#end%>
+
+        <!--search-->
+        <!--
         <li class="search-ui ">
           <%= render partial: 'layouts/uisearch_header' %>
-        </li>
+        </li>-->
       </div>
 
 
@@ -65,10 +109,10 @@
         <%= render partial: 'layouts/header_signed_out_mobile' %>
       </div>
 
-      
+
     </div>
   </div>
-  
+
 </header>
 
 <!-- SCRIPT FOR AUTOMATIC BOOTSTRAP-DROPDOWN HOVER -->
@@ -90,14 +134,14 @@
       }, delay);
     })
       .on('mousemove', function (inEvent) {
-          if(Math.abs(theLastPosition.x - inEvent.ScreenX) > 4 || 
+          if(Math.abs(theLastPosition.x - inEvent.ScreenX) > 4 ||
              Math.abs(theLastPosition.y - inEvent.ScreenY) > 4)
           {
               theLastPosition.x = inEvent.ScreenX;
               theLastPosition.y = inEvent.ScreenY;
               return;
           }
-          
+
       if (theElement.hasClass('open')) return;
       window.clearTimeout(theTimer);
       theTimer = window.setTimeout(function () {

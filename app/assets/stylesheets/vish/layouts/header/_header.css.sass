@@ -1,10 +1,7 @@
 header.navbar,
 .navbar-fixed-top
-  //z-index: 20 //maximum zindex
   .navbar-inner
-    padding-left: 5%
-    padding-right: 5%
-    height: 50px !important
+    padding: 1% 5%
     background-color: none
     background: rgba( 255, 255, 255, 0.98)
     .container
@@ -13,36 +10,44 @@ header.navbar,
       margin-right: auto
       display: block
       width: auto
-      height: 30px
       .btn-navbar
         margin-top: 11px
 
       .brand
         height: auto
-        @include border-bottom-radius($radius)
-        width: 100px
-        max-width: 136px
-        float: left
-        margin-top: 5px
-        display: block
-        padding: 5px
-        img
-          float: left
-          display: block
-          max-width: 135px
-          clear: both
-          width: 100%
-          opacity: 0.7
-          &:hover
-            opacity: 1
-        .vish-name
-          display: block
-          margin-left: auto
-          margin-right: auto
-          font-family: $firstFontFamily
-          width: 100%
-          clear: both
-          text-align: center
+        font-size: 2.2em
+        font-family: Helvetica Neue, Helvetica, sans-serif
+        .logo
+          color: $orange-gray-75
+          strong
+            color: $orange-primary
+
+      .navbar-right
+        float: right
+        li
+          padding: 5px 15px
+        a
+          padding: 5px 0
+
+        .active > a
+          background-color: transparent
+          box-shadow: none
+          border-top: 3px solid $orange-primary
+          margin-top: -3px
+        .dropdown
+          .caret
+            margin-left: 5px
+          .dropdown-menu
+            padding: 10px !important
+          .dropdown-menu:before, .dropdown-menu:after
+            display: none
+          form
+            margin: 0
+
+        .dropdown.open > .dropdown-toggle,.dropdown.active > .dropdown-toggle,.dropdown.open.active > .dropdown-toggle
+          background: transparent
+
+
       .sign_up
         float: right
 
@@ -66,8 +71,8 @@ header.navbar,
             padding: 11px
 
       .search-ui
-        float: right  
-        
+        float: right
+
       .user-tool
         float: right
         .add_nav
@@ -85,7 +90,7 @@ header.navbar,
             background-image: none
             box-shadow: none
             border: 1px solid #EEEEEE
-            border-radius: 3px 
+            border-radius: 3px
 
             i
               display: block
@@ -105,7 +110,7 @@ header.navbar,
           padding: 0px
           height: 39px
           width: 39px
-          outline: none  
+          outline: none
           float: left
           margin-left: 5px
           margin-top: 5px
@@ -146,7 +151,7 @@ header.navbar,
             color: $gray
             &:hover
               color: $black
-              text-decoration: none 
+              text-decoration: none
               font-family: $thirdFontFamily
 
           .icon-angle-down
@@ -170,7 +175,7 @@ header.navbar,
           border: solid 1px #EEE
           border-radius: 3px
           padding: 1px
-          margin-top: 5px  
+          margin-top: 5px
           a
             padding: 8px
             i
@@ -188,18 +193,18 @@ header.navbar,
               border-color: $firstColor
             .notification
               color: $secondColor
-            .btnhomefix    
+            .btnhomefix
               margin-left: 4px
           &:hover
             border-color: $firstColor
-            a i 
+            a i
               color: $firstColor
         .search-ui
           float: left
 
       .log
         float: right
-        
+
 
         .caret
           color: $white
@@ -215,8 +220,8 @@ header.navbar,
           color: $white
         a
           &:hover,&:active,&:focus
-            text-decoration: none 
-            outline: none     
+            text-decoration: none
+            outline: none
         ul.dropdown-menu
           margin: 7px 40px 0 -148px
           padding: 6px 7px
@@ -230,17 +235,17 @@ header.navbar,
             float: left
             display: inline-block
             margin-top: 10px
-          a 
+          a
             padding-top: 10px
             padding-left: 0px
             float: left
             display: block
-            color: lighten($secondColor, 60%) 
+            color: lighten($secondColor, 60%)
             &:hover
               text-decoration: none
-      a 
+      a
         &:hover,&:active,&:focus
-          text-decoration: none  
+          text-decoration: none
       .sign_up
         float: right
         margin-top: 10px
@@ -252,24 +257,24 @@ header.navbar,
         margin-right: 10px
         background-image: none
         margin-left: 10px
-        a 
+        a
           color: $white
           &:hover,&:active,&:focus
-            text-decoration: none 
-            outline: none    
+            text-decoration: none
+            outline: none
         &:hover
-          background-color: lighten($secondColor, 10%) 
-          
-          
-.clearfix:after 
+          background-color: lighten($secondColor, 10%)
+
+
+.clearfix:after
   content: "."
   display: block
   clear: both
   visibility: hidden
   line-height: 0
   height: 0
- 
-.clearfix 
+
+.clearfix
   display: inline-block
 
 #warning_cookie_bar
