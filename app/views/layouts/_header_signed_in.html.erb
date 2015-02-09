@@ -11,33 +11,37 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <!--logo-->
+      <!-- BRAND -->
       <div class="brand">
-        <%= link_to(image_tag('logo/brand.png', :alt => t('site.name')), '/', :class => "logo"); %>
+        <%#= link_to "EducaInternet",'/', class: "logo"  %>
+        <a href="/" class="logo">Educa<strong>Internet</strong></a>
+        <%#= link_to(image_tag('logo/brand.png', :alt => t('site.name')), '/', :class => "logo"); %>
       </div>
-      <!--BROWSE-->
+
+      <!--BROWSE
       <div class="toggler browse">
         <%= render partial: 'layouts/browse_header'%>
-      </div>
+      </div>-->
 
       <div class="hidden-phone hidden-tablet">
-        <ul class="nav user-tool">
+        <!-- NEW ORANGE MENU -->
 
-          <!--search-->
-          <li class="search-ui ">
-            <%= render partial: 'layouts/uisearch_header' %>
-          </li>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/">Inicio</a></li>
+          <li><a href="/catalogue?temateca=true">Tema<strong>teca</strong></a></li>
+          <li><a href="/catalogue">Recurso<strong>teca</strong></a></li>
+          <li><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>">Comunidad</a></li>
 
-          <!--navegation-->
+          <!-- NAVEGATION -->
           <%= render partial: 'layouts/basic_navegation' %>
           <!-- modal with partial for invitation after header in this same file -->
 
-          <!--add-->
+          <!-- ADD -->
           <li class="add_nav toggler dropdown">
             <div class="btn without-data-toggle " data-toggle="dropdown" href="#" >
               <i class="icon-plus"></i>
             </div>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu add-menu">
               <!-- dropdown menu links -->
               <% availableModels.each do |modelName| %>
                 <% if modelName == "Excursion" %>
@@ -58,81 +62,78 @@
             </ul>
           </li>
 
-          <!--user-->
+          <!-- USER -->
           <li class="photo_user tooltip-header" data-original-title="<%=t('profile.profile')%>">
-            <%= link_to current_subject do %>              
+            <%= link_to current_subject do %>
             <%= image_tag current_subject.logo.url(:small) %>
             <% end %>
           </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle user_name" data-toggle="dropdown" role="button" aria-expanded="false"><%= truncate_name(current_subject.name, length: 15) %><span class="caret"></span></a>
+            <ul class="dropdown-menu user-menu pull-right" role="menu">
 
-          <li class ="toggler user-settings dropdown">
-
-            <div class="without-data-toggle">
-              <div class="name_user"><%= truncate_name(current_subject.name, length: 15) %></div><i class="icon-angle-down"></i>
-            </div>
-
-            <ul class="dropdown-menu">
-              <li class="settings-menu">
-                 <%= link_to home_path do %>
-                 <i class="icon-home"></i>
-                 <%= t('navigation.home') %>
-                 <% end %>
-              </li>
-
-              <%if isAdmin? %>
                 <li class="settings-menu">
-                  <%= link_to admin_path do %>
-                    <i class="icon-wrench"></i>
-                    <span><%= t("admin.menu_entry") %></span>
+                   <%= link_to home_path do %>
+                   <i class="icon-home"></i>
+                   <%= t('navigation.home') %>
+                   <% end %>
+                </li>
+
+                <%if isAdmin? %>
+                  <li class="settings-menu">
+                    <%= link_to admin_path do %>
+                      <i class="icon-wrench"></i>
+                      <span><%= t("admin.menu_entry") %></span>
+                    <% end %>
+                  </li>
+                <%end%>
+
+                <li class="settings-menu">
+                  <%= link_to current_subject do %>
+                    <i class="icon-user"></i>
+                    <%= t('profile.one') %>
                   <% end %>
                 </li>
-              <%end%>
 
-              <li class="settings-menu">
-                <%= link_to current_subject do %>
-                  <i class="icon-user"></i>
-                  <%= t('profile.one') %>
-                <% end %>
-              </li>
-
-              <li class="settings-menu">
-                <%= link_to settings_path do %>
-                  <i class="icon-cog"></i>
-                  <%= t('dropdown.settings') %>
-                <% end %>
-              </li>
-
-              <% if availableModels.include? "Excursion" and availableServices.include? "ARS" %>
                 <li class="settings-menu">
-                  <%= link_to quiz_sessions_path do %>
-                    <i class="icon-check"></i>
-                    <%= t('quiz.live') %>
+                  <%= link_to settings_path do %>
+                    <i class="icon-cog"></i>
+                    <%= t('dropdown.settings') %>
                   <% end %>
                 </li>
-              <%end%>
 
-              <li class="divider"></li>
+                <% if availableModels.include? "Excursion" and availableServices.include? "ARS" %>
+                  <li class="settings-menu">
+                    <%= link_to quiz_sessions_path do %>
+                      <i class="icon-check"></i>
+                      <%= t('quiz.live') %>
+                    <% end %>
+                  </li>
+                <%end%>
 
-              <li>
-                <%= link_to destroy_user_session_path, :method => :delete do %>
-                <i class="icon-signout"></i>
-                <%= t('sign_out') %>
-                <% end %>
-              </li>
+                <li class="divider"></li>
+
+                <li>
+                  <%= link_to destroy_user_session_path, :method => :delete do %>
+                  <i class="icon-signout"></i>
+                  <%= t('sign_out') %>
+                  <% end %>
+                </li>
+
             </ul>
           </li>
-
-          <!-- load modals -->
-          <% if availableModels.include? "Event" %>
-            <%= render partial: 'events/form' %>
-          <%end%>
-          <% if availableModels.include? "Resource" %>
-            <%= render partial: 'repositories/form' %>
-          <%end%>
-          <% if availableModels.include? "Category" %>
-            <%= render partial: 'categories/form', :locals => { :div_id => "AddCategoryHeader", :remote => true} %>
-          <%end%>
         </ul>
+
+        <!-- load modals -->
+        <% if availableModels.include? "Event" %>
+          <%= render partial: 'events/form' %>
+        <%end%>
+        <% if availableModels.include? "Resource" %>
+          <%= render partial: 'repositories/form' %>
+        <%end%>
+        <% if availableModels.include? "Category" %>
+          <%= render partial: 'categories/form', :locals => { :div_id => "AddCategoryHeader", :remote => true} %>
+        <%end%>
       </div>
 
       <div class="nav-collapse navbar-responsive-collapse collapse hidden-desktop MOBILE">
@@ -149,13 +150,13 @@
 <%end%>
 
 
-  
-  
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    
+
     $('.tooltip-header').tooltip({ placement: 'bottom'});
-    
+
     <!-- SCRIPT FOR AUTOMATIC BOOTSTRAP-DROPDOWN HOVER -->
     (function ($, window, delay) {
         var theTimer = 0;
@@ -173,7 +174,7 @@
           }, delay);
         })
         .on('mousemove', function (inEvent) {
-          if(Math.abs(theLastPosition.x - inEvent.ScreenX) > 4 || 
+          if(Math.abs(theLastPosition.x - inEvent.ScreenX) > 4 ||
            Math.abs(theLastPosition.y - inEvent.ScreenY) > 4)
           {
             theLastPosition.x = inEvent.ScreenX;

@@ -27,10 +27,10 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/">Inicio</a></li>
-          <li><a href="#">Tema<strong>teca</strong></a></li>
-          <li><a href="#">Recurso<strong>teca</strong></a></li>
-          <li><a href="#">Comunidad</a></li>
-          <li><a href="#">Registro</a></li>
+          <li><a href="/catalogue?temateca=true">Tema<strong>teca</strong></a></li>
+          <li><a href="/catalogue">Recurso<strong>teca</strong></a></li>
+          <li><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>">Comunidad</a></li>
+          <li><a href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acceso<span class="caret"></span></a>
             <ul class="dropdown-menu pull-right" role="menu">
@@ -42,7 +42,7 @@
                   <input type="checkbox"> <%=t("activerecord.attributes.user.remember_me")%>
                 </label>
                 <%= link_to t('devise.links.forgot_password'), new_password_path(:user) %>
-                <%= f.submit t(:sign_in), :class => ' btn btn-primary'%>
+                <%= f.submit t(:sign_in), :class => ' btn btn-primary pull-right'%>
               <% end %>
 
               <%content_for :javascript do%>

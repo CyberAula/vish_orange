@@ -4,6 +4,7 @@ en:
       user:
         email: "Email"
         tag: "Areas of interest"
+        remember_me: "Remember me"
   activity:
     empty: "Your timeline is empty"
     more: "See more..."
