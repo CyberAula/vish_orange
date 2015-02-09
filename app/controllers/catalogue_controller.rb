@@ -1,26 +1,17 @@
 class CatalogueController < ApplicationController
 
   def index
-    @default_categories = view_context.getDefaultCategories
+    @default_categories = view_context.getDefaultCategories(params[:temateca])
     respond_to do |format|
       format.html {
-        if request.xhr?
-          if params[:category]
-            @resources = view_context.getCategoryResources(params[:category])
-            render :partial => 'catalogue/show'
-          else
-            render :partial => "catalogue/index", :locals => {:is_home=> params[:is_home]}
-          end
-        else
-          render :layout => 'catalogue'
-        end
+         render :layout => 'catalogue'
       }
     end
   end
 
   def show
     @category = params[:category]
-    @resources = view_context.getCategoryResources(@category)
+    @resources = view_context.getCategoryResources(@category,200,params[:temateca])
     respond_to do |format|
       format.all { render :layout => 'catalogue' }
     end

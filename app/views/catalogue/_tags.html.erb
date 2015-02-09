@@ -12,11 +12,18 @@
         event.preventDefault();
 
         var categoryId = $(this).attr("categoryId");
+        var location = "/catalogue/" + categoryId;
         <%if is_home%>
-          window.location = "/catalogue/" + categoryId + "?back_home=true";      
+          location += "?back_home=true";
+          <% if is_temateca %>
+            location += "&temateca=true";
+          <% end %>
         <%else%>
-          window.location = "/catalogue/" + categoryId;      
+          <% if is_temateca %>
+            location += "?temateca=true";
+          <% end %>
         <%end%>
+        window.location = location;
       });
 
       $("#showMore_tags").click(function(){

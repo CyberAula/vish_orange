@@ -2,10 +2,10 @@ Vish::Application.configure do
   
   #Init Catalogue
   config.after_initialize do
-    config.catalogue_categories = ["art","biology","chemistry","citizenship","computerScience","economics","education","engineering","foreignLanguages","generalCulture","geography","geology","history","humanities","literature","maths","music","naturalScience","physics","technology"]
-    config.default_categories = ["maths","physics","biology","technology"]
-    combinedCategories = {"biology" => ["naturalScience","EnvironmentalStudies"], "engineering"=>["computerScience"], "generalCulture" => ["humanities","history","literature"], "humanities"=>["history","literature"], "naturalScience" => ["EnvironmentalStudies"], "technology"=>["engineering","computerScience"]}
-    extraTerms = {"education"=>["eLearning","learning","teaching"],"foreignLanguages"=>["listening"],"maths"=>["math"]}
+    config.catalogue_categories = ["security","education","orange"]
+    config.default_categories = config.catalogue_categories
+    combinedCategories = { "orange" => ["security","education"] }
+    extraTerms = { "education"=>["eLearning","learning","teaching"] }
 
     #Build catalogue search terms
     config.catalogue = Hash.new

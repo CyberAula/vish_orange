@@ -25,11 +25,18 @@
 		//Show More buttons
 		$(".show_more_catalogue").click(function(event) {
 			var name = $(this).attr("name");
-			<%if is_home%>
-				window.location = "/catalogue/" + name + "?back_home=true";      
+			var location = "/catalogue/" + name;
+			<%if is_home %>
+				location += "?back_home=true";
+				<% if is_temateca %>
+					location += "&temateca=true";
+				<% end %>
 			<%else%>
-				window.location = "/catalogue/" + name;	  
+				<% if is_temateca %>
+					location += "?temateca=true";
+				<% end %>
 			<%end%>
+			window.location = location;
 		});
 	}
 

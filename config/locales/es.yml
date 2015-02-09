@@ -185,6 +185,10 @@ es:
         physics: "Física"
         science: "Ciencia"
         technology: "Tecnología"
+
+        #Orange categories
+        security: "Seguridad"
+        orange: "Orange"
     extras:
         learning: "aprendizaje"
         teaching: "enseñanza"
