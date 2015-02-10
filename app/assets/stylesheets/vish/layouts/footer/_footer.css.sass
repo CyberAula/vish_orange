@@ -1,27 +1,26 @@
 footer.container-fluid
   display: block
+  position: fixed
   float: left
   padding: 0
   width: 100%
-  //@include grid-core-span(12, $fluidGridColumnWidth, $fluidGridGutterWidth)
-  height: 38px  
-  background-color: #D5D5D5
+  height: 80px
+  background-color: white
   z-index: 100 //maximum zindex
-  opacity: 0.95
+  //@include box-shadow(0 -1px 10px rgba(50,51,51,0.10))
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.2))
+  opacity: 0.98
   nav.footercontent
-    @include page_footer
-    
+
     ul.ul-content
-      margin-top: 5px
-      margin-right: 0px
-      margin-left: 0px
-      margin-bottom: 0px
-      padding: 0
-      text-align: center
+      margin: 0
+      padding: 10px 5%
+      //text-align: center
       li
         display: inline
-        padding-left: 2%
-        padding-right: 2%
+
+        //padding-left: 2%
+        //padding-right: 2%
         color: $gray
         outline: none
         a.style_link_footer
@@ -29,7 +28,7 @@ footer.container-fluid
         .btn
           background-color: transparent
           background-image: none
-          border: 0px solid 
+          border: 0px solid
           box-shadow: none
           color: $gray
           a
@@ -39,10 +38,34 @@ footer.container-fluid
               margin-right: 11px
               width: 20%
               margin-top: -1px
-      li.social-img     
+      li.social-img
         img
           width: 30px
-          
+      li.item_footer
+        float: left
+        img
+          height: 40px
+          margin-right: 10px
+          float: left
+        .links
+          float: left
+        .copyright
+          font-size: 0.8em
+      li.dropup
+        float: right
+        padding: 5px 0px
+        .btn
+          padding: 13px 10px
+        .logo_cm
+          height: 35px
+          margin-left: 20px
+
+
+
+.clear
+  clear: both
+
+
 footer.fixed-bottom
   position: fixed
   left: 0
@@ -52,4 +75,3 @@ footer.fixed-bottom
 
 div#wrap.wrap-when-fixed-bottom
   padding-bottom: 38px  /* must be same height as the footer */
-

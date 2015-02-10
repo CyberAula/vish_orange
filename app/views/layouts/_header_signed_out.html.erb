@@ -32,7 +32,7 @@
           <li><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>">Comunidad</a></li>
           <li><a href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acceso<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Acceso<i class="icon-angle-down"></i></strong></a>
             <ul class="dropdown-menu pull-right" role="menu">
               <%= form_for User.new, :as => :user, :url => user_session_path do |f| %>
                 <%= f.email_field :email, :id => "username" %>

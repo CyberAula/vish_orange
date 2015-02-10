@@ -4,6 +4,7 @@ header.navbar,
     padding: 1% 5%
     background-color: none
     background: rgba( 255, 255, 255, 0.98)
+    border: 0
     .container
       max-width: 2000px
       margin-left: auto
@@ -36,7 +37,9 @@ header.navbar,
           border-top: 3px solid $orange-primary
           margin-top: -3px
         .dropdown
-          .caret
+          i
+            margin-left: 5px
+          //.caret
             margin-left: 5px
           .dropdown-menu
             padding: 10px !important
@@ -96,11 +99,13 @@ header.navbar,
             box-shadow: none
             border: 1px solid $orange-gray-45
             border-radius: 5px
+
             i
               display: block
               padding: 8px
               color: $orange-gray-45
               text-decoration: none
+              margin: 0
             &:hover
               text-decoration: none
               border-color: $orange-primary
