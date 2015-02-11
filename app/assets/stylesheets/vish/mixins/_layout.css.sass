@@ -1,4 +1,4 @@
-@mixin menuHorizontal 
+@mixin menuHorizontal
   padding: 0
   text-align: center
   ul
@@ -8,7 +8,7 @@
       display: inline
       padding: 0 2%
 
-@mixin makeColumnoMargin($columns:1, $offset: 0) 
+@mixin makeColumnoMargin($columns:1, $offset: 0)
   float: left
   margin-left: 0px
   width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1))
@@ -25,7 +25,7 @@
   width: 97%
 
 @mixin hidden-phone
-  @extend .hidden-phone  
+  @extend .hidden-phone
 
 @mixin hidden-tablet
   @extend .hidden-tablet
@@ -64,37 +64,31 @@
     legend
       margin-bottom: 0px
 
-
-
-
-
-
-
 @mixin header-tabbable-new
   clear: both
   margin-top: 10px
   .tab-content
     overflow: visible
   ul.nav,
-  ul.nav-tabs 
-    border-bottom: 1px solid $grayLight
+  ul.nav-tabs
+    //border-bottom: 1px solid $grayLight
     height: 38px
     @include tab_title
-    li     
+    li
       a
         border-left: none
         border-right: none
         border-top: none
         border-bottom: none
-        padding: 6px 10px 2px
-        margin-top: 8px
+        padding: 6px 10px 10px
+        //margin-top: 8px
         &:hover,
         &:focus
           background-color: none !important
           border: none
-          border-bottom: 3px solid $secondColor 
+          border-bottom: 3px solid $orange-gray-75
         i
-          margin-right: 5px
+          margin-right: 10px
         span
           color: $gray
           text-transform: capitalize
@@ -112,33 +106,35 @@
     li.active
       background-color: none !important
       border: none
-      border-bottom: 3px solid $firstColor
+      border-bottom: 3px solid $orange-primary
       a
         border-left: none
         border-right: none
         border-top: none
-        padding: 6px 10px 1px
-        margin-top: 8px
+        padding: 6px 10px 9px
+        //margin-top: 8px
         border-bottom: none !important
         span
-          color: $gray
+          color: $orange-primary
           font-size: 1.2em
+        i
+          color: $orange-primary
     li.disabled
       border-bottom: none !important
       a:focus, a:hover
         border-bottom: none !important
-      
+
 
     li.helpheader
       float: right
-      right: 0%  
+      right: 0%
       margin-top: 15px
       display: block
 
   @media (max-width: 500px)
     ul.nav,
     ul.nav-tabs
-      li 
+      li
         h1
           font-size: 25px
   @media (max-width: 410px)
@@ -147,7 +143,7 @@
       li.active
         a
           padding: 6px 5px 2px
-      li 
+      li
         a
           padding: 6px 5px 2px
         h1
@@ -164,10 +160,10 @@
 
 
   ul.nav,
-  ul.nav-tabs 
+  ul.nav-tabs
     border-bottom: 1px solid $grayLight
     @include tab_title
-    li     
+    li
       a
         border-left: none
         border-right: none
@@ -179,9 +175,9 @@
         &:focus
           background-color: none !important
           border: none
-          border-bottom: 3px solid $secondColor 
+          border-bottom: 3px solid $secondColor
         i
-          margin-right: 2px         
+          margin-right: 2px
           font-size: 12px
 
         span
@@ -209,7 +205,7 @@
     .spam-name
       display: none
 
-      
+
 
 
 @mixin contact-layout
@@ -260,14 +256,14 @@
     background-color: rgba(85,85,85,0.97)
     border-radius: $baseBorderRadius
     li
-      padding: 0px !important  
-      a 
-        color: #F0F0F0   
-        padding: 3px !important           
+      padding: 0px !important
+      a
+        color: #F0F0F0
+        padding: 3px !important
         &:hover
           color: $white
         span
-          color: #F0F0F0 
+          color: #F0F0F0
       a:first-letter
         text-transform: uppercase
       i

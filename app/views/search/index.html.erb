@@ -1,7 +1,7 @@
 <% availableModels = available_models %>
 <% browse = params[:browse] || (!params[:q].nil? and params[:q].blank?) %>
 
-<section id="search" class="">
+  <section id="search" class="">
   <div class="search">
     <div class="tabbable">
       <ul class="nav nav-tabs">
@@ -9,12 +9,12 @@
           <%content_for :title do%>
             <%= t("site.current.browse")%>
           <%end%>
-          <li><h1><i class="icon-folder-open"></i><%= t("browse.title")%></h1></li>          
+          <!--<li><h1><i class="icon-folder-open"></i><%#= t("browse.title")%></h1></li>-->
         <%else%>
           <%content_for :title do%>
             <%= t("site.current.search")%>
           <%end%>
-          <li><h1><i class="icon-search"></i><%= t("search.title")%></h1></li>
+          <!--<li><h1><i class="icon-search"></i><%#= t("search.title")%></h1></li>-->
         <%end%>
           <li class="all_results <%= 'active' if params[:type].blank? %>">
             <% unless browse%>
@@ -68,7 +68,7 @@
 
           <%= render partial: 'help/help_search' %>
       </ul>
-      <%= render partial: 'search/order_by_dropdown' %> 
+      <%= render partial: 'search/order_by_dropdown' %>
       <!--form style="display:none" action="<%=search_path%>" method="get" id="main_search_form" class="search_box">
         <%= text_field_tag :q, params[:q],:autocomplete => :off, :id => :main_search_input, :class => "" %>
       </form-->
@@ -76,13 +76,13 @@
         <%#= render partial: 'layouts/loading' %>
         <div class="tab-pane active" id="tab1 ">
           <div id="search-all">
-            <ul>  
+            <ul>
               <% @search_result.each do |r| %>
-                  <% unless r.nil? %>              
+                  <% unless r.nil? %>
                     <%= render partial: "#{ r.class.to_s.tableize }/search_result",
                                locals:  { r.class.to_s.underscore.to_sym => r, :prefix_id => "search" }  %>
                   <% end %>
-              <% end %>              
+              <% end %>
             </ul>
           </div>
           <div class="loader_pagination">
@@ -95,14 +95,14 @@
           </div>
           <div id="last_content_shown" style="display:none"> <%=t('search.end')%></div>
         </div>
-        
+
       </div>
     </div>
 
    <%= content_for :javascript do %>
     SocialStream.Repository.show();
-    
-    $('#search-all ul').pageless({ 
+
+    $('#search-all ul').pageless({
                         totalPages: <%=@search_result.num_pages%>,
                         url: window.location.href,
                         currentPage: <%=@search_result.current_page%>,
@@ -113,7 +113,7 @@
                         },
                         finishedAddingHiddenElem: function(hidden_elem){
                             var active_tab = $("#search ul.nav li.active");
-                        
+
                             //we check this each time because it can change. We show the elem if the tab is active or if it is "all" tab
                             if(active_tab.hasClass("all_results")){
                               hidden_elem.fadeIn();
@@ -129,7 +129,7 @@
                             }
                             else if (active_tab.hasClass("user") && hidden_elem.hasClass("contact")){
                               hidden_elem.fadeIn();
-                            }                            
+                            }
                         },
                         complete: function(){
                           //when we complete one page and there is no scroll, there cannot be another call
@@ -188,11 +188,11 @@
           $('#search-all ul').trigger("scroll.pageless");
         });
 
-      <%end%>      
+      <%end%>
 
     <% end %>
   </div>
-    
+
   <%content_for :javascript do%>
     $('.scroll-pane').jScrollPane();
   <%end%>

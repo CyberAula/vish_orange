@@ -1,4 +1,4 @@
-.alert 
+.alert
   border-radius: 0 0 5px 5px
   position: absolute
   right: 5%
@@ -15,7 +15,7 @@ i
   &:active,
   &:focus
     text-decoration: none
-    
+
 textarea,input
   resize: none
 .dropdown, .dropup
@@ -38,19 +38,12 @@ textarea,input
 
 //toolbar_tabs
 .toolbar_nav-tab
-  background-color: #d7d7d7
-  @include border-bottom-radius($borderRadiusSmall)
-  width: 98%
   height: 42px
-  margin: 0 auto
+  margin: -15px 0 20px
   display: block
-  margin-top: -20px
-  margin-bottom: 20px
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22)
-  //border-bottom: 1px solid $grayLighter
-  //border-left: 1px solid $grayLighter
-  //border-right: 1px solid $grayLighter
-  .btn, input[type="submit"] 
+  outline: none
+
+  .btn, input[type="submit"]
     padding: 3px 12px
     margin-top: 9px
     margin-left: 6px
@@ -58,7 +51,7 @@ textarea,input
     float: left
     background-color: $white
     background-image: none
-    border: none
+    border: 1px solid $orange-gray-45
     color: $gray
     text-shadow: none
     box-shadow: none
@@ -81,8 +74,7 @@ textarea,input
   span.order_by
     float: left
     display: block
-    padding-left: 10px
-    padding-top: 12px
+    padding: 12px
     font-family: $firstFontFamily
   .dropdown-menu
     left: 84px
@@ -93,7 +85,3 @@ textarea,input
       padding-top: 3px
       padding-left: 0px !important
       padding-right: 10px
-
-
-
-
