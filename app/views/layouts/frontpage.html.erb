@@ -15,20 +15,20 @@
     <meta property="og:image" content="<%= yield(:og_image) %>">
     <meta property="og:description" content="<%= yield(:description) %>">
     <meta property="fb:admins" content="824343515" />
-    <meta property="fb:app_id" content="629612437058744" /> 
-    
+    <meta property="fb:app_id" content="629612437058744" />
+
     <%= favicon_link_tag "icons/favicon.ico" %>
-    <%= stylesheet_link_tag "application" %>    
+    <%= stylesheet_link_tag "application" %>
 
     <% if protect_against_forgery? %>
       <%= csrf_meta_tag %>
     <% end %>
-    
-    <%= yield :headers %>    
-      
+
+    <%= yield :headers %>
+
   </head>
   <body>
-  
+
     <div id="warning_cookie_bar">
       <h3>Uso de cookies</h3>
       <p>
@@ -41,13 +41,14 @@
       <%= flashy %>
 
       <div class="ilustration">
-          <%= render :partial => "frontpage/explanation" %>
+          <%#= render :partial => "frontpage/explanation" %>
+          <%= render :partial => "frontpage/carousel" %>
       </div>
-          
-      <div class="wrapper container-fluid">
+
+      <div class="wrapper wrapper-index container-fluid">
         <%= yield %>
-  
-      </div>  
+
+      </div>
     </div>
     <div id="vish_footer">
       <%= render :partial => "layouts/footer" %>
@@ -59,10 +60,10 @@
       I18n.defaultLocale = "<%= I18n.default_locale %>";
       I18n.locale = "<%= I18n.locale %>";
     </script>
-    
+
     <script type="text/javascript">
-      $(document).ready(function() {  
-        
+      $(document).ready(function() {
+
         setTimeout(function(){ $("#flash .alert").hide("slow") }, 5000);
         //code to hide the help popovers when clicking outside
         $('body').on('click', function (e) {
@@ -70,7 +71,7 @@
                   $(".helppopover").popover('hide');
               }
       });
-        
+
         <%= yield :javascript%>
       });
     </script>
