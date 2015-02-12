@@ -17,17 +17,17 @@
               <span class=" hidden-phone hidden-tablet"><%=t("navigation.mynetwork") %></span>
             </a>
           </li>
-          <li class="<%= params[:tab]=='catalogue' ? 'active':''%>">
+          <!--<li class="<%#= params[:tab]=='catalogue' ? 'active':''%>">
             <a id="catalogue_tab" href="#catalogue_tabpane" data-toggle="tab" >
               <i class="icon-tags"></i>
-              <span class=" hidden-phone hidden-tablet"><%=t("navigation.catalogue") %></span>
+              <span class=" hidden-phone hidden-tablet"><%#=t("navigation.catalogue") %></span>
             </a>
-          </li>
+          </li>-->
           <%= render partial: 'help/help_home' %>
         </ul>
       </div>
     </div>
-     
+
     <div class="tab-content">
       <div class="tab-pane <%=params[:tab]=='home' ? 'active':''%>" id="home">
         <div id="first_page_home_tab_ready">
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <div class="tab-pane <%= params[:tab]=='net' ? 'active':''%>" id="net"> 
+      <div class="tab-pane <%= params[:tab]=='net' ? 'active':''%>" id="net">
         <%= render partial: 'excursions/order_by_net' %>
         <div id="net_tab_ready">
           <%if params[:tab]=="net"%>
@@ -60,9 +60,9 @@
             <img src="/assets/load.gif" alt="loading more results" style="margin:10px auto" />
           </div>
         </div>
-      </div>   
+      </div>
 
-      <div class="tab-pane <%= params[:tab]=='catalogue' ? 'active':''%>" id="catalogue_tabpane"> 
+      <div class="tab-pane <%= params[:tab]=='catalogue' ? 'active':''%>" id="catalogue_tabpane">
         <div id="catalogue_tab_ready">
           <% if params[:tab] == 'catalogue'%>
             <%= render :partial => "catalogue/index"%>
@@ -106,13 +106,13 @@
   ///////////////
   function update_pageless_state(tab, num_pages, current_page){
       pageless_state[tab].num_pages = num_pages;
-      pageless_state[tab].current_page = current_page;  
+      pageless_state[tab].current_page = current_page;
   };
 
   function re_apply_pageless(tab){
     //first remove old pageless
-    $.pagelessStop();      
-     
+    $.pagelessStop();
+
     $("#" + tab + "_tab_ready ul").pageless({
       totalPages: pageless_state[tab].num_pages,
       url: get_url_with_sort_by(tab),
@@ -134,7 +134,7 @@
     return the_url;
   };
 
-  
+
   ///////////////
   // Catalogue Ajax Handlers
   ///////////////
@@ -146,7 +146,7 @@
         type : "GET",
         url : next_state,
         success : function(html){
-          $('.loader_pagination').hide(); 
+          $('.loader_pagination').hide();
           $("#catalogue_tab_ready").append(html);
           //We add charged states to variable
           //We change actual state
@@ -178,7 +178,7 @@
           type : "GET",
           url : "<%= home_path(:tab=>'net', :page =>1) %>",
           success : function(html){
-            $('#loader_pagination_net').hide();      
+            $('#loader_pagination_net').hide();
             $("#net_tab_ready").append(html);
           },
           error: function(){
@@ -189,7 +189,7 @@
         re_apply_pageless("net");
       }
     });
-      
+
     ///////////////
     // Catalogue
     ///////////////
@@ -201,10 +201,10 @@
         var next = "<%= catalogue_path(:is_home=> true) %>";
         catalogue_state(next);
       } else {
-        $('.loader_pagination').hide();        
+        $('.loader_pagination').hide();
       }
     });
-    
+
     ///////////////
     // Home
     ///////////////
@@ -216,7 +216,7 @@
             type : "GET",
             url : "<%= home_path(:tab=>'home', :page =>1) %>",
             success : function(html) {
-              $('#loader_pagination_home').hide();      
+              $('#loader_pagination_home').hide();
               $("#first_page_home_tab_ready").append(html);
             },
             error: function(){
@@ -225,7 +225,7 @@
           });
       } else {
         re_apply_pageless("home");
-      }   
+      }
     });
 
     //Reapply backstrech depending on the tab loaded
@@ -238,5 +238,3 @@
       catalogue_tab_loaded = true;
     <%end%>
 <%end%>
-
-
