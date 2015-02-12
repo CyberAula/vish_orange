@@ -2,6 +2,7 @@
 <% availableServices = available_services %>
 <% availableResources = available_resource_types %>
 
+
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -27,10 +28,10 @@
         <!-- NEW ORANGE MENU -->
 
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/">Inicio</a></li>
-          <li><a href="/catalogue?temateca=true">Tema<strong>teca</strong></a></li>
-          <li><a href="/catalogue">Recurso<strong>teca</strong></a></li>
-          <li><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>">Comunidad</a></li>
+          <li class="active"><a href="/"><%=t('orange_front.header.index')%></a></li>
+          <li><a href="/catalogue?temateca=true"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+          <li><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+          <li><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
 
           <!-- NAVEGATION -->
           <%= render partial: 'layouts/basic_navegation' %>

@@ -1,4 +1,18 @@
 en:
+  orange_front:
+    header:
+      index: "Index"
+      comunity: "Comunity"
+      recursoteca: "Recurso"
+      temateca: "Tema"
+      bold: "teca"
+    footer:
+      cookies: "Cookies"
+      rights: "All rights reserved"
+      faq: "FAQ"
+      legal: "Legal notice"
+      privacity: "Privacy policy"
+
   activerecord:
     attributes:
       user:
