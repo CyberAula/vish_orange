@@ -27,11 +27,11 @@
       <div class="hidden-phone hidden-tablet">
         <!-- NEW ORANGE MENU -->
 
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/"><%=t('orange_front.header.index')%></a></li>
-          <li><a href="/catalogue?temateca=true"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
-          <li><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
-          <li><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
+        <ul class="nav navbar-nav navbar-right" id="main_menu">
+          <li class="<%= 'active' if params[:controller] == 'home'%>"><a href="/"><%=t('orange_front.header.index')%></a></li>
+          <li class="<%= 'active' if params[:temateca] == 'true' && params[:controller] == 'catalogue'%>"><a href="/catalogue?temateca=true"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+          <li class="<%= 'active' if params[:temateca].blank? && params[:controller] == 'catalogue'%>"><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+          <li class="<%= 'active' if params[:controller] == 'search' %>"><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
 
           <!-- NAVEGATION -->
           <%= render partial: 'layouts/basic_navegation' %>
@@ -151,14 +151,20 @@
 <%end%>
 
 
+<script>
 
+
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
 
+    <!-- TOOLTIP -->
+
     $('.tooltip-header').tooltip({ placement: 'bottom'});
 
     <!-- SCRIPT FOR AUTOMATIC BOOTSTRAP-DROPDOWN HOVER -->
+
     (function ($, window, delay) {
         var theTimer = 0;
         var theElement = null;
