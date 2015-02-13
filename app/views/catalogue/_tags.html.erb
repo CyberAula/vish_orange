@@ -21,7 +21,7 @@
         <%else%>
           <% if is_temateca %>
             location += "?temateca=true";
-          <% end %>catalogue_category_link
+          <% end %> //catalogue_category_link
         <%end%>
         window.location = location;
       });
@@ -51,7 +51,7 @@
       <% Vish::Application.config.catalogue_categories.each do |categoryId| %>
         <li class="catalogue_category_link" categoryId="<%=categoryId%>" href="#">
           <label><%=t('catalogue.categories.' + categoryId)%></label>
-        </li>        
+        </li>
       <% end %>
     </div>
   </ul>
