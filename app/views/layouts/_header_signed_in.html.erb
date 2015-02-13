@@ -33,6 +33,7 @@
           <li class="<%= 'active' if params[:temateca].blank? && params[:controller] == 'catalogue'%>"><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
           <li class="<%= 'active' if params[:controller] == 'search' %>"><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
 
+
           <!-- NAVEGATION -->
           <%= render partial: 'layouts/basic_navegation' %>
           <!-- modal with partial for invitation after header in this same file -->
@@ -102,6 +103,7 @@
                     <%= t('dropdown.settings') %>
                   <% end %>
                 </li>
+              
 
                 <% if availableModels.include? "Excursion" and availableServices.include? "ARS" %>
                   <li class="settings-menu">
@@ -123,7 +125,12 @@
 
             </ul>
           </li>
+
         </ul>
+        <!--search-->
+        <li class="search-ui ">
+        <%= render partial: 'layouts/uisearch_header' %>
+        </li>
 
         <!-- load modals -->
         <% if availableModels.include? "Event" %>
