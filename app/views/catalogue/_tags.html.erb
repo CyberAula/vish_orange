@@ -1,8 +1,8 @@
-<script>  
-  <%if is_home%>     
-    add_catalogue_clicks(); 
+<script>
+  <%if is_home%>
+    add_catalogue_clicks();
   <%else%>
-    document.addEventListener("DOMContentLoaded", function(){  
+    document.addEventListener("DOMContentLoaded", function(){
       add_catalogue_clicks();
     });
   <%end%>
@@ -21,7 +21,7 @@
         <%else%>
           <% if is_temateca %>
             location += "?temateca=true";
-          <% end %>
+          <% end %>catalogue_category_link
         <%end%>
         window.location = location;
       });
@@ -51,7 +51,7 @@
       <% Vish::Application.config.catalogue_categories.each do |categoryId| %>
         <li class="catalogue_category_link" categoryId="<%=categoryId%>" href="#">
           <label><%=t('catalogue.categories.' + categoryId)%></label>
-        </li>
+        </li>        
       <% end %>
     </div>
   </ul>

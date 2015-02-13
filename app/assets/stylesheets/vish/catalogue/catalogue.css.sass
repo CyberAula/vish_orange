@@ -6,23 +6,28 @@
   float: left
   height: auto
   width: 100%
-  padding-bottom: 65px
+  margin-bottom: 100px
   .back_catalogue
     display: inline-block
     float: left
     font-size: 20px
     margin-right: 10px
-    margin-top: 11px
-    &:hover
+    margin-top: 15px
+    outline: none
+    &:hover, &:focus, &:active
       text-decoration: none
     i
-      color: $secondColor
+      color: $firstColor
       cursor: pointer
-      font-size: 40px
-  h2
+      font-size: 30px
+
+  h3
     width: auto
     float: left
     display: inline-block
+    color: $orange-gray-75
+    font-weight: bold
+    margin-left: 15px
   ul
     clear: both
     width: 100%
@@ -30,101 +35,100 @@
     display: block
     float: right
     clear: left
-#showMore_tags
-  display: block
-  clear: both
-  color: $gray
-  background-color: $white
-  cursor: pointer
-  font-size: 11px
-  line-height: 24px
-  text-align: center
-  width: 150px
-  margin: 0 auto
-  border: 1px solid #999999
-  a
-    color: $gray
+    outline: none
+    //margin-left: 30px
+
 .header_catalogue
-  margin-top: 20px
-  h1
+  margin-top: 15px
+  h3
+    color: $orange-gray-75
+    margin: 0 0 10px
+    background-color: $orange-gray-25
+    padding: 10px 20px
+    border-radius: 5px
+
+  #showMore_tags
+    display: block
+    clear: both
+    color: $gray
+    background-color: $white
+    cursor: pointer
+    font-size: 11px
+    line-height: 24px
+    text-align: center
+    margin: 0 auto
+    border: 1px solid #999999
+    border-radius: 5px
+
+    a
+      color: $gray
+      outline: none
+  #catalogue
     width: 100%
-    text-align: left
-    margin-top: 2px !important
-    margin-bottom: 2px !important
-    i
-      color: #BEBEBE
-      font-size: 26px
-      margin-right: 5px
-  hr
-    border-bottom-color: $gray
-
-
-
-#catalogue
-  width: 100%
-  float: left
-  background: none
-  margin-top: -25px
-  display: block
-  ul.Tags_list_as
-    width: 100%
-    height: auto
     float: left
     display: block
-    margin: 0
-    position: relative
-    border-left: none
-    .info_catalogue
-      width: 10%
-      height: 100%
+    margin-bottom: 5px
+
+    ul.Tags_list_as
+      width: 99.9%
+      height: auto
       float: left
       display: block
-      font-weight: lighter
-      background: darken($secondColor, 10%)
       margin: 0
-      position: absolute
-      i
+      position: relative
+      border: 1px solid $orange-gray-25
+      border-radius: 5px
+      .info_catalogue
+        width: 10%
+        height: 100%
+        float: left
+        display: block
+        font-weight: lighter
+        background: darken($secondColor, 10%)
         margin: 0
-    #effect
-      display: block
-      float: left
-      border-bottom: 1px solid #999999
-      padding: 5px 0
-      width: 100%
-      li
-        text-align: center
-        label
-          color: $gray
-          font-weight: 500
-          text-shadow: none
-          position: relative
-          width: 100%
-          height: auto
-        label:hover
-          color: darken($gray, 20%)
-          font-weight: 600
-    .newClass
-      li
-        display: none
-      li:nth-of-type(-n+10)
-        display: block
-        margin-top: 5px
-        width: 20%
+        position: absolute
+        i
+          margin: 0
+      #effect
         display: block
         float: left
-        padding-left: 0
-        word-wrap: ellipsis
-    .anotherNewClass
-      li
-        display: none
-      li:nth-of-type(-n+50)
-        display: block
-        margin-top: 5px
-        width: 20%
-        display: block
-        padding-left: 0
-        float: left
-        word-wrap: ellipsis
+        padding: 10px 0 15px
+        width: 100%
+
+        li
+          text-align: center
+          label
+            color: $gray
+            font-weight: 500
+            text-shadow: none
+            position: relative
+            width: 100%
+            height: auto
+          label:hover
+            color: darken($gray, 20%)
+            font-weight: 600
+      .newClass
+        li
+          display: none
+        li:nth-of-type(-n+10)
+          display: block
+          margin-top: 5px
+          width: 20%
+          display: block
+          float: left
+          padding-left: 0
+          word-wrap: ellipsis
+      .anotherNewClass
+        li
+          display: none
+        li:nth-of-type(-n+50)
+          display: block
+          margin-top: 5px
+          width: 20%
+          display: block
+          padding-left: 0
+          float: left
+          word-wrap: ellipsis
 
 @media (min-width: 900px) and (max-width: 1060px)
   #catalogue

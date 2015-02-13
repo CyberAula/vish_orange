@@ -58,11 +58,13 @@ $gray-search:           #A1A1A1 ;
 
 // ViSH color
 // -------------------------
-//$firstColor:      #e82365;
-//Nestor//$secondColor:    #3366ff;
 
-$firstColor:            #e90055;
+//$firstColor:            #e90055;
 $secondColor:           #007cc8;
+//changing first & second colors because of orange front
+$firstColor:            $orange-primary;
+//$secondColor:           $orange-gray-75;
+
 $thirdColor :           #40CC7F; //verde
 
 $firstColorDark:        #C60348;

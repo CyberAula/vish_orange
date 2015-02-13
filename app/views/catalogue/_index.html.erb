@@ -4,14 +4,14 @@
 
 <div class="header_catalogue">
 	<%if show_title%>
-		<h1>
+		<h3>
 			<% if params[:controller] == 'catalogue' && params[:temateca] == 'true' %>
 				<%= t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong>
 			<% else %>
-			<%= t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong>
+				<%= t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong>
 			<% end %>
-		</h1>
-		<hr>
+		</h3>
+		<!--<hr>-->
 	<%end%>
 	<%= render :partial => "catalogue/tags", :locals =>{ :is_home => is_home, :is_temateca => is_temateca } %>
 </div>
