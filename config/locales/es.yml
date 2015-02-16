@@ -209,6 +209,7 @@ es:
         teaching: "enseñanza"
     title: "Catálogo"
   category:
+    belongs_to: "Pertenece a"
     cat_add_select: "Selecciona entre tus categorías"
     cat_add_title: "Mis categorías"
     cat_create: "Crear nuevas categorías"
@@ -230,6 +231,7 @@ es:
         back: "Volver"
         complete: "Completar"
         confirm: "¿Estás seguro de que quieres hacer esto?"
+        default_view: "¿Cuál desea que sea su vista or defecto?"
         discard_changes: "Descartar cambios"
         drag1: "dentro de categorías, también puedes borrar en la esquina superior derecha."
         drag2: "El orden se mantendrá a partir de ahora en las categorías."
@@ -237,6 +239,7 @@ es:
         dragt1: "Arrastra y suelta"
         dragt2: "Ordena tus categorías"
         dragt3: "Agrupa tu conocimiento"
+        edit: "Editar"
         erase: "Arrastra aquí para eliminar"
         place: "Ordenar"
         gallery: "Galeria"

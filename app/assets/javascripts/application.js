@@ -28,5 +28,11 @@
 //= require social_stream-events
 //= require bootstrap-dropdown
 //= require bootstrap-datetimepicker.min
+//= require jqxcore
+//= require jqxdropdownbutton
+//= require jqxscrollbar
+//= require jqxbuttons
+//= require jqxtree
+//= require jqxpanel
 //= require_tree .
 
