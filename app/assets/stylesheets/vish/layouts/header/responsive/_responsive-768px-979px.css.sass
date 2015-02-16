@@ -31,9 +31,26 @@
       @include border-radius($baseBorderRadius)
       background-color: $white
       z-index: 99
+      .nav > .active > a, .nav > .active > a:hover, .nav > .active > a:focus
+        background-color: transparent
+        box-shadow: none
+        color: $orange-primary
       .nav
         float: none
         margin: 0
+        li
+          width: 90%
+          display: block
+          clear: both
+          height: auto
+          a
+            width: 98%
+            border-radius: 5px
+            i
+              margin-right: 10px
+            img
+              width: 30px
+              @include border-radius($baseBorderRadius)
         .search-mobile
           .navbar-search
             border: none
@@ -49,22 +66,9 @@
               .icon-border
                 border: 1px solid $orange-primary
                 border-radius: 5px
-
-        li
-          width: 95%
-          display: block
-          clear: both
-          height: auto
-          a
-            width: 100%
-            border-radius: 5px
-            i
-              margin-right: 10px
-            img
-              width: 30px
-              @include border-radius($baseBorderRadius)
-
+        .sign_in_mobile
           ul.dropdown-menu
+            padding: 0
             height: auto
             width: 100%
             margin: 0
@@ -80,15 +84,24 @@
               input[type="password"]
                 width: 100%
                 display: block
-                padding: 4px 0
+                padding: 5px
                 height: auto
               input[type="submit"]
                 float: right
               a.forgot
                 color: $secondColor
                 clear: both
-                text-align: center
                 width: 100%
                 display: block
                 padding: 2px 0
-                font-size: 10px
+                font-size: 0.9em
+                &:hover
+                  background: transparent
+        .language
+          .dropdown-menu
+            background-color: transparent
+            li
+              a
+                color: $orange-gray-75
+                &:hover
+                  background: transparent
