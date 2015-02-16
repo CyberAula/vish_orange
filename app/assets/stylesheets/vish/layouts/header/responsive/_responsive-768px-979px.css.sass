@@ -51,7 +51,36 @@
             img
               width: 30px
               @include border-radius($baseBorderRadius)
+
+        li.user
+          margin-bottom: 0 !important
+        //cuando está logueado
+        .search-ui
+          float: left
+          .navbar-search
+            border: none
+            box-shadow: none
+            margin: 10px 0 0
+            padding: 10px 0
+            .search-query
+              width: auto
+              border-radius: 5px
+              height: 25px !important
+              margin-top: 0
+              padding: 6px 2% !important
+              width: 75% !important
+            .search_button_class
+              padding: 9px
+              width: auto
+              margin-left: 5px
+              border-color: $orange-primary
+              .icon-search
+                color: $orange-primary
+                font-size: 18px
+
+        //cuando no está logueado
         .search-mobile
+          float: left
           .navbar-search
             border: none
             box-shadow: none
