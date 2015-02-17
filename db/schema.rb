@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(:version => 20150216105625) do
 
   create_table "actors", :force => true do |t|
     t.string   "name"
-    t.string   "email",                 :default => "",    :null => false
+    t.string   "email",                 :default => "",        :null => false
     t.string   "slug"
     t.string   "subject_type"
     t.boolean  "notify_by_email",       :default => true
@@ -132,9 +132,10 @@ ActiveRecord::Schema.define(:version => 20150216105625) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "notification_settings"
+    t.integer  "rank_mve",              :default => 0
     t.boolean  "is_admin",              :default => false
     t.text     "category_order"
-    t.string   "categories_view"
+    t.string   "categories_view",       :default => "gallery"
   end
 
   add_index "actors", ["activity_object_id"], :name => "index_actors_on_activity_object_id"
@@ -269,6 +270,7 @@ ActiveRecord::Schema.define(:version => 20150216105625) do
     t.text     "offline_manifest",   :default => ""
     t.datetime "scorm_timestamp"
     t.datetime "pdf_timestamp"
+    t.integer  "rank_mve",           :default => 0
   end
 
   create_table "groups", :force => true do |t|
