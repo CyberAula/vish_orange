@@ -2,19 +2,19 @@ en:
   orange_front:
     carousel:
       title1: "Educate"
-      desc1: ""
+      desc1: "Educa<strong>Internet</strong> is a platform that provides content for adequate training of teachers and students on the topic of Internet security. Join the community and collaborates with other members in the creation of content."
       title2: "Browse"
-      desc2: "" 
+      desc2: "You can include the resources provided in the <a href='/catalogue'>Recurso<strong>teca</strong></a> to create your own presentations, and bring your own resources or use the presentations created by community members that are available for your classes in the <a href='/catalogue?temateca=true'>Tema<strong>teca</strong></a>"
       title3: "Protect"
-      desc3: ""
+      desc3: "Learn from the content and teach your students about important issues such as cyberbullying, sexting, techno-addictions, etc... Remember that your students can also create content related topics here present and so 'learning by doing'"
     header:
       index: "Index"
       comunity: "Comunity"
-      recursoteca: "Resources"
+      recursoteca: "Recurso"
       recurso_desc: "Here you can see the catalogue of resources you can use to create your own excursions"
-      temateca: "Topics"
+      temateca: "Tema"
       tema_desc: "Here you can see the catalogue of excursions for their use in classroom and outside it"
-      bold: ""
+      bold: "teca"
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
