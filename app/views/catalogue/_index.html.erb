@@ -6,9 +6,19 @@
 	<%if show_title%>
 		<h3>
 			<% if params[:controller] == 'catalogue' && params[:temateca] == 'true' %>
-				<%= t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong>
+				<div class="catalogue_title">
+					<%= t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong>
+				</div>
+				<div class="catalogue_description">
+					<%= t('orange_front.header.tema_desc')%>
+				</div>
 			<% else %>
-				<%= t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong>
+				<div class="catalogue_title">
+					<%= t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong>
+				</div>
+				<div class="catalogue_description">
+					<%= t('orange_front.header.recurso_desc')%>
+				</div>
 			<% end %>
 		</h3>
 		<!--<hr>-->

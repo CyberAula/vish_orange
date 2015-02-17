@@ -1,11 +1,20 @@
 en:
   orange_front:
+    carousel:
+      title1: "Educate"
+      desc1: ""
+      title2: "Browse"
+      desc2: "" 
+      title3: "Protect"
+      desc3: ""
     header:
       index: "Index"
       comunity: "Comunity"
-      recursoteca: "Recurso"
-      temateca: "Tema"
-      bold: "teca"
+      recursoteca: "Resources"
+      recurso_desc: "Here you can see the catalogue of resources you can use to create your own excursions"
+      temateca: "Topics"
+      tema_desc: "Here you can see the catalogue of excursions for their use in classroom and outside it"
+      bold: ""
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
@@ -206,6 +215,17 @@ en:
         #Orange categories
         security: "Seguridad"
         orange: "Orange"
+        info_management: "Information management"
+        inap_content_access: "Access to inappropriate content"
+        privacy: "Privacy Management and digital identity"
+        netiquette: "Netiquette: online behaviour"
+        grooming: "Grooming"
+        cyberbullying: "Cyberbullying"
+        sexting: "Sexting"
+        identity_theft: "Identity theft"
+        tecnoaddictions: "Tecnoaddictions"
+        dangerous_communities: "Online dangerous communities"
+        virus_protection: "Virus and fraud protection"
     extras:
         eLearning: "e-Learning"
         learning: "learning"
@@ -337,7 +357,7 @@ en:
     NaturalScience: "NaturalScience"
     ComputerScience: "ComputerScience"
   thevish: "The Vish"
-  youtube: "ViSH Youtube Channel"
+  youtube: "Video tutorials"
   overview_title: "ViSH overview"
   overview:
     list: "Index"

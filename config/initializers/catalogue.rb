@@ -2,10 +2,10 @@ Vish::Application.configure do
   
   #Init Catalogue
   config.after_initialize do
-    config.catalogue_categories = ["security","education","orange"]
+    config.catalogue_categories = ["info_management","inap_content_access","privacy","netiquette","grooming","cyberbullying","sexting","identity_theft","tecnoaddictions","dangerous_communities","virus_protection"]
     config.default_categories = config.catalogue_categories
-    combinedCategories = { "orange" => ["security","education"] }
-    extraTerms = { "education"=>["eLearning","learning","teaching"] }
+    combinedCategories = { }
+    extraTerms = { }
 
     #Build catalogue search terms
     config.catalogue = Hash.new
