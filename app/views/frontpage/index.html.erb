@@ -9,3 +9,13 @@
     <%= render partial: 'frontpage/entities' %>
   </div>
 </section>
+
+
+<%= content_for :javascript do %>
+
+  $(function(){
+      $('.carousel').carousel({
+        interval: 5000
+      });
+  }); 
+<%end%>
