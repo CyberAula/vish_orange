@@ -5,6 +5,9 @@
     <%= render partial: 'layouts/search_mobile' %>
   </li>
 
+  <li class="<%= 'active' if params[:temateca] == 'true' && params[:controller] == 'catalogue'%>"><a href="/catalogue?temateca=true"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+  <li class="<%= 'active' if params[:temateca].blank? && params[:controller] == 'catalogue'%>"><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+  <li class="<%= 'active' if params[:controller] == 'search' %>"><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
 
 <!--user-->
   <li class="user">
@@ -55,7 +58,7 @@
 
 
   <!--lang-->
-  <li class="dropdown">
+  <li class="dropdown language">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       <i class="icon-flag-checkered"></i>
       <%= t('lang.title') %>
