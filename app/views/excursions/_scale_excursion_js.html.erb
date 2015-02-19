@@ -35,6 +35,8 @@ function scale_editor(){
         $("#editor_wrapper").width(DEFAULT_EDITOR_WIDTH*scale + "px");
         $("#editor_wrapper").height(DEFAULT_EDITOR_HEIGHT*scale + "px");
         $(".wrapper").css("padding-top", (HEADER_HEIGHT + DISTANCE_TO_HEADER*scale) + "px");
+        $(".wrapper").css("padding-right", "0");
+        $(".wrapper").css("padding-left", "0");
         $(".wrapper").css("padding-bottom", DISTANCE_TO_FOOTER*scale + "px");
         <%if is_edit%>
             var margin_top = DEFAULT_EDITOR_HEIGHT - DEFAULT_EDITOR_HEIGHT*scale;
