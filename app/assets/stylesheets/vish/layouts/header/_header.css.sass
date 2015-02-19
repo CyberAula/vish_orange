@@ -73,8 +73,10 @@ header.navbar,
             padding: 10px !important
           .user-menu, .add-menu
             padding: 0 !important
-            li > a:hover
-              background-color: $black
+            li
+              a
+                &:hover, &:active,&:focus
+                  background-color: $black !important
 
           .dropdown-menu:before, .dropdown-menu:after
             display: none

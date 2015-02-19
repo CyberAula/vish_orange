@@ -1,14 +1,14 @@
 <div id="resources_catalogue">
 	<%@default_categories.each do |name, resources| %>
 		<%unless resources.nil?%>
-			<h3><%=t("catalogue.categories." + name, :default => "Category")%></h3>			
+			<h3><%=t("catalogue.categories." + name, :default => "Category")%></h3>
 			<ul id="container_<%=name%>" class="items">
 				<%for resource in resources%>
 					<%=render :partial=> "entities/entity", :locals => { :entity => resource, :prefix_id =>"catalogue_"+name+"_" } %>
 				<%end%>
-			</ul>			
+			</ul>
 			<button class="btn-primary show_more_catalogue" name="<%=name%>"><%=t('view_all')%></button>
-			<button class="add_resource_with_default_tag btn-primary" default_tag="<%=t("catalogue.categories." + name)%>"><%=is_temateca ? "Add Excursion" : "Add Resource"%></button>
+			<button class="add_resource_with_default_tag btn-primary" default_tag="<%=t("catalogue.categories." + name)%>"><%=is_temateca ? t("orange_front.temateca_recursoteca.actions.add_excursion") : t("orange_front.temateca_recursoteca.actions.add_resource")%></button>
 		<%end%>
 	<%end%>
 </div>
