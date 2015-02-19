@@ -21,6 +21,10 @@ en:
       faq: "FAQ"
       legal: "Legal notice"
       privacity: "Privacy policy"
+    temateca_recursoteca:
+      actions:
+        add_excursion:  "Add excursion"
+        add_resource: "Add resource"
 
   activerecord:
     attributes:
