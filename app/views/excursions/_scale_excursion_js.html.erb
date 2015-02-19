@@ -24,6 +24,10 @@ function scale_editor(){
         scale = 1;
     }
 
+    if(scale > 0.90){
+        scale=1;
+    }
+
     
     add_scale_prop_to_elem($("#presentation_editor_iframe"),scale);
     if(scale!=1){
