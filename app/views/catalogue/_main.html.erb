@@ -1,13 +1,14 @@
 <div id="resources_catalogue">
 	<%@default_categories.each do |name, resources| %>
 		<%unless resources.nil?%>
-			<h3><%=t("catalogue.categories." + name, :default => "Category")%></h3>
+			<h3><%=t("catalogue.categories." + name, :default => "Category")%></h3>			
 			<ul id="container_<%=name%>" class="items">
 				<%for resource in resources%>
 					<%=render :partial=> "entities/entity", :locals => { :entity => resource, :prefix_id =>"catalogue_"+name+"_" } %>
 				<%end%>
-			</ul>
+			</ul>			
 			<button class="btn-primary show_more_catalogue" name="<%=name%>"><%=t('view_all')%></button>
+			<button class="add_resource_with_default_tag btn-primary" default_tag="<%=t("catalogue.categories." + name)%>"><%=is_temateca ? "Add Excursion" : "Add Resource"%></button>
 		<%end%>
 	<%end%>
 </div>
@@ -15,9 +16,11 @@
 <script>
   <%if is_home%>
   	add_show_more_click();
+  	add_resource_with_default_tag_click();
   <%else%>
     document.addEventListener("DOMContentLoaded", function(){
     	add_show_more_click();
+    	add_resource_with_default_tag_click();
     });
   <%end%>
 
@@ -38,6 +41,19 @@
 			<%end%>
 			window.location = location;
 		});
-	}
+	};
+
+	function add_resource_with_default_tag_click(){
+		$(".add_resource_with_default_tag").click(function(event){
+			var default_tag = $(this).attr("default_tag");
+			<% if is_temateca %>
+				window.location = "<%=new_excursion_path%>?default_tag=" + default_tag;
+			<%else%>
+				$("ul.resourceTagList").tagit("reset");
+				$("ul.resourceTagList").tagit("add", default_tag);
+				$("#AddResource").modal('show');
+			<%end%>
+		});
+	};
 
 </script>

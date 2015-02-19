@@ -545,7 +545,7 @@ en:
   downloadxlsx: "Download as XLSX"
   email:
     regards: "Kind regards,<br/>"
-    welcome: "Welcome and thank you for registering in Virtual Science Hub.<br/>We would encourage you <a href=\"%{profile}\"> to set up your profile</a> in order to enjoy a better service.<br/>"
+    welcome: "Welcome and thank you for registering in EducaInternet.<br/>We would encourage you <a href=\"%{profile}\"> to set up your profile</a> in order to enjoy a better service.<br/>"
   embed:
     confirm_delete: "Delete embed?"
     content: "Live content"
@@ -938,12 +938,12 @@ en:
     current:
       description: "A meeting point for scientists and teachers based around the idea of virtual excursions"
       keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-      search: "Virtual Science Hub - Search"
-      browse: "Virtual Science Hub - Explore"
-      msg: "Virtual Science Hub - Messages"
-      activity: "Virtual Science Hub - Activities"
-    name: "Virtual Science Hub"
+      title: "EducaInternet"
+      search: "EducaInternet - Search"
+      browse: "EducaInternet - Explore"
+      msg: "EducaInternet - Messages"
+      activity: "EducaInternet - Activities"
+    name: "EducaInternet"
   swf:
     confirm_delete: "Delete SWF?"
     name: "flash object"

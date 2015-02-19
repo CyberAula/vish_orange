@@ -31,7 +31,7 @@ es:
   activity:
     empty: "Tu timeline está vacío"
     more: "Ver más..."
-    new_user: "¡Bienvenido al Virtual Science Hub! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
+    new_user: "¡Bienvenido al EducaInternet! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
     newmessage: "Esta es tu timeline. Comparte con tus seguidores tus opiniones, sube imágenes, enlaces, vídeos..."
     timeline: "timeline"
     verb:
@@ -543,7 +543,7 @@ es:
     uploading: "Subiendo..."
   email:
     regards: "Un cordial saludo,<br/>"
-    welcome: "Bienvenido y gracias por registrarte en Virtual Science Hub.<br/>Te invitamos a <a href=\"%{profile}\"> configurar tu perfil</a> para disfrutar de un mejor servicio.<br/>"
+    welcome: "Bienvenido y gracias por registrarte en EducaInternet.<br/>Te invitamos a <a href=\"%{profile}\"> configurar tu perfil</a> para disfrutar de un mejor servicio.<br/>"
   embed:
     confirm_delete: "¿Borrar recurso?"
     content: "Contenido en directo"
@@ -937,12 +937,12 @@ es:
     current:
       description: "Un punto de encuentro para científicos y profesores basado en la idea de excursiones virtuales"
       keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-      search: "Virtual Science Hub - Busqueda"
-      browse: "Virtual Science Hub - Explorar"
-      msg: "Virtual Science Hub - Mensajes"
-      activity: "Virtual Science Hub - Actividades"
-    name: "Virtual Science Hub"
+      title: "EducaInternet"
+      search: "EducaInternet - Busqueda"
+      browse: "EducaInternet - Explorar"
+      msg: "EducaInternet - Mensajes"
+      activity: "EducaInternet - Actividades"
+    name: "EducaInternet"
   swf:
     confirm_delete: "¿Borrar SWF?"
     name: "objecto flash"
