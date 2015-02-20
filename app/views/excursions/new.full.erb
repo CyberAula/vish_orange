@@ -52,7 +52,7 @@
 	<% end %>
 
 	<%if default_tag%>
-		options["default_tag"] = "<%=default_tag %>";
+		options["extra_tags"] = ["<%=default_tag %>"];
 	<%end%>
 
 	options.addons = [];
