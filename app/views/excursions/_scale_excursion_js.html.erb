@@ -1,8 +1,8 @@
 <%content_for :javascript do%>
 
 function scale_editor(){
-    var HEADER_HEIGHT = 51;
-    var FOOTER_HEIGHT = 30;
+    var HEADER_HEIGHT = 70;
+    var FOOTER_HEIGHT = 80;
     var DISTANCE_TO_HEADER = 15;
 	var DISTANCE_TO_FOOTER = <%=is_edit ? "40":"15"%>;
     var available_height = $(window).height() - HEADER_HEIGHT - FOOTER_HEIGHT - DISTANCE_TO_HEADER - DISTANCE_TO_FOOTER;
@@ -24,6 +24,10 @@ function scale_editor(){
         scale = 1;
     }
 
+    if(scale > 0.90){
+        scale=1;
+    }
+
     
     add_scale_prop_to_elem($("#presentation_editor_iframe"),scale);
     if(scale!=1){
@@ -35,6 +39,8 @@ function scale_editor(){
         $("#editor_wrapper").width(DEFAULT_EDITOR_WIDTH*scale + "px");
         $("#editor_wrapper").height(DEFAULT_EDITOR_HEIGHT*scale + "px");
         $(".wrapper").css("padding-top", (HEADER_HEIGHT + DISTANCE_TO_HEADER*scale) + "px");
+        $(".wrapper").css("padding-right", "0");
+        $(".wrapper").css("padding-left", "0");
         $(".wrapper").css("padding-bottom", DISTANCE_TO_FOOTER*scale + "px");
         <%if is_edit%>
             var margin_top = DEFAULT_EDITOR_HEIGHT - DEFAULT_EDITOR_HEIGHT*scale;

@@ -1,21 +1,21 @@
-<section id="registration"> 
+<section id="registration">
   <section class="welcome">
   </section>
 
   <section class="registration">
-    <h3>
+    <h4>
       <%= t('sign_up').capitalize %>
-    </h3>
+    </h4>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :id=>"new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
       <div class="reg-labels">
         <%= f.label :name %>
         <%= f.text_field :name, :class =>"form_tag", :autocomplete => "off" %>
-        
+
         <%= f.label :email %>
         <%= f.text_field :email, :class =>"form_tag", :autocomplete => "off" %>
-        
+
         <%= f.label :password %>
         <%= f.password_field :password, :class =>"form_tag", :id => "devise_password", :autocomplete => "off" %>
 
@@ -59,7 +59,7 @@
 
       <hr class="soften">
       <%= render :partial => "devise/shared/links" %>
-      
+
     <% end %>
   </section>
 </section>
@@ -73,11 +73,11 @@
     $.each($("#preloadTagList li"), function(index, element) {
        tags.push($(element).html());
     });
-    
+
     $(tagList).tagit({
-      tagSource:tags, 
-      sortable:true, 
-      maxLength:15, 
+      tagSource:tags,
+      sortable:true,
+      maxLength:15,
       maxTags:8,
       watermarkAllowMessage: '<%=t('document.tags.areasOfInterestMessage')%>', watermarkDenyMessage: '<%=t('document.tags.limitMessage')%>' ,
       initialTags: <%=(params[:user] && params[:user][:tag_list]) ? raw(params[:user][:tag_list].split(",")) : "[]" %>,
@@ -90,7 +90,7 @@
             }
           });
         }
-      } 
+      }
     });
 
     //Allow suggestions

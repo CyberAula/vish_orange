@@ -1,9 +1,9 @@
-<section id="registration"> 
+<section id="registration">
   <section class="welcome">
   </section>
 
 	<section class="registration">
-	<h2><%= t 'devise.invitations.edit.header' %></h2>
+	<h4><%= t 'devise.invitations.edit.header' %></h4>
 
 	<%= form_for resource, :as => resource_name, :url => user_invitation_path(), :html => { :method => :put } do |f| %>
 	  <%= devise_error_messages! %>
@@ -11,16 +11,16 @@
 	  <div class="reg-labels">
 	  <%= f.label :name %>
 	  <%= f.text_field :name, :class =>"form_tag", :autocomplete => "off" %>
-	        
+
 	  <%= f.label :email %>
 	  <%= f.text_field :email, :class =>"form_tag", :autocomplete => "off", :value => resource.email %>
-	  
+
 	  <%= f.label :password %>
 	  <%= f.password_field :password %>
 
 	  <%= f.label :password_confirmation %>
 	  <%= f.password_field :password_confirmation %>
-		
+
 		<%= f.label t('profile.occupation.label') %>
         <%= f.select(:occupation, options_for_select([[t('profile.occupation.options.select'), 0], [t('profile.occupation.options.teacher'), 1],[t('profile.occupation.options.scientist'),2], [t('profile.occupation.options.other'),3]], params[:user] ? params[:user][:occupation]:nil)) %>
 
@@ -37,7 +37,7 @@
             </li>
           <%end%>
         </ul>
-        
+
         <hr class="soften">
         <div class="conditions">
           <%= t('conditions.check_message') %>
@@ -54,11 +54,11 @@
 
       <hr class="soften">
       <%= render :partial => "devise/shared/links" %>
-      
+
     <% end %>
   </section>
 </section>
-	  
+
 
 
 <%= content_for :javascript do %>
@@ -69,11 +69,11 @@
     $.each($("#preloadTagList li"), function(index, element) {
        tags.push($(element).html());
     });
-    
+
     $(tagList).tagit({
-      tagSource:tags, 
-      sortable:true, 
-      maxLength:15, 
+      tagSource:tags,
+      sortable:true,
+      maxLength:15,
       maxTags:8,
       watermarkAllowMessage: '<%=t('document.tags.areasOfInterestMessage')%>', watermarkDenyMessage: '<%=t('document.tags.limitMessage')%>' ,
       initialTags: <%=(params[:user] && params[:user][:tag_list]) ? raw(params[:user][:tag_list].split(",")) : "[]" %>,
@@ -86,7 +86,7 @@
             }
           });
         }
-      } 
+      }
     });
 
     //Allow suggestions

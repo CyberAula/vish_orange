@@ -14,7 +14,10 @@
   .change
     @include grid-fluid-span(11, $fluidGridColumnWidth, $fluidGridGutterWidth)
     @include center-block()
-    h3
+    h4  
+      color: $orange-gray-75
+      font-weight: bold
+      padding: 20px 0 5px 0
     label
       font-size: 12px
       font-family: $secondFontFamily
@@ -66,7 +69,7 @@
 
       .simple_captcha_label
         font-size: 12px
-      .simple_captcha_field 
+      .simple_captcha_field
         width: 50%
         display: block
         float: left

@@ -1,10 +1,13 @@
 <ul class="nav">
 
 <!--search-->
-  <li class="search-ui ">
+  <li class="search-ui">
     <%= render partial: 'layouts/search_mobile' %>
   </li>
 
+  <li class="<%= 'active' if params[:temateca] == 'true' && params[:controller] == 'catalogue'%>"><a href="/catalogue?temateca=true"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+  <li class="<%= 'active' if params[:temateca].blank? && params[:controller] == 'catalogue'%>"><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+  <li class="<%= 'active' if params[:controller] == 'search' %>"><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
 
 <!--user-->
   <li class="user">
@@ -30,7 +33,7 @@
 <!--settings-->
   <li class="">
     <%= link_to activities_path do %>
-      <i class='icon-globe'></i> 
+      <i class='icon-globe'></i>
       <%= t('activity.other') %>
     <% end %>
   </li>
@@ -45,7 +48,7 @@
 
 
 <!--profile-->
-  
+
   <li class="settings-menu">
     <%= link_to settings_path do %>
     <i class="icon-cog"></i>
@@ -55,14 +58,14 @@
 
 
   <!--lang-->
-  <li class="dropdown">
+  <li class="dropdown language">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       <i class="icon-flag-checkered"></i>
       <%= t('lang.title') %>
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <% for locale in (I18n.available_locales) -%> 
+      <% for locale in (I18n.available_locales) -%>
        <li class="">
           <%= link_to image_tag("flags/" + locale.to_s + ".png", :title=>locale.to_s, :class=> "") + " " + t(:language_name, :locale => locale.to_s), session_locale_path(:new_locale => locale.to_s), :method => :post, :remote => false %>
         </li>
@@ -74,14 +77,14 @@
     <a href="/legal_notice">
       <i class="icon-legal"></i>
       <%= t('conditions.other') %>
-    </a>     
+    </a>
   </li>
 <!--manual-->
 
 
   <li>
     <%= link_to faq_path do %>
-      <i class="icon-question-sign"> </i> <%=t('faq.title')%>
+      <i class="icon-question-sign"> </i> <%= t('help') %>
     <% end %>
   </li>
 

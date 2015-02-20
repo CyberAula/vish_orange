@@ -63,18 +63,18 @@
           .tags-profile
             @include grid-fluid-span(2, $fluidGridColumnWidth, $fluidGridGutterWidth)
             float: right
-            display: none     
+            display: none
             margin-top: 3px
           .ocupation
             @include grid-fluid-span(10, $fluidGridColumnWidth, $fluidGridGutterWidth)
             float: left
             display: inline-block
             h3
-              line-height: 15px
+              line-height: 17px
               color: $firstColor
-              font-size: 20px
+              font-size: 1.2em
               font-family: $firstFontFamily
-              //border-right: 1px solid $grayLighter
+              font-weight: bold
               padding-right: 15px
               vertical-align: top
               display: block
@@ -82,10 +82,6 @@
           .helpheader
             .popover
               top: -10px !important
-
-
-
-
 
           #effect
             position: relative
@@ -110,11 +106,11 @@
               -o-transition: all 2s ease-in
               transition: all 2s ease-in
               h3
-                line-height: 15px
+                line-height: 17px
                 color: $firstColor
-                font-size: 20px
+                font-size: 1.2em
                 font-family: $firstFontFamily
-                //border-right: 1px solid $grayLighter
+                font-weight: bold
                 padding-right: 15px
                 display: block
                 float: left
@@ -125,10 +121,6 @@
           .anotherNewClass
             height: auto
             overflow: auto
-
-
-
-
             .organization,
             .website,
             .birthday,
@@ -157,13 +149,14 @@
             position: relative
             bottom: 5px
             width: 100%
-            border-top: 1px solid $grayLight
+            //border-top: 1px solid $grayLight
             padding-top: 5px
             display: block
             float: left
             margin-top: 10px
 
             .btn-group
+
               i
                 margin-right: 5px
               .contact_Toolbar
@@ -209,7 +202,8 @@
                 width: auto
               .btn
                 a
-                  color: $gray 
+                  color: $gray
+                  text-decoration: none
 
 //new conversation profile
 #new_messages_profile
@@ -308,9 +302,9 @@
           float: right
           margin-right: 10px
           background-color: $gray
-.name-required  
-  label 
-    display: inline 
+.name-required
+  label
+    display: inline
     span
       color: #888
 
@@ -318,7 +312,7 @@
 //tabs
 .info-profile
   .follow-tab
-    
+
     float: right
     a
       span
@@ -326,7 +320,7 @@
         content: " "
       i.green
         color: $green
-  .tabbable 
+  .tabbable
     @include header-tabbable-new
 
 
@@ -338,14 +332,14 @@
   overflow: hidden
   position: relative
   background: $secondColor
-  ul 
+  ul
     display: block
     color: #fff
     float: left
-    border-left: 1px solid darken($secondColor, 10%) 
+    border-left: 1px solid darken($secondColor, 10%)
     margin: 0
     width: 100%
-    li 
+    li
       display: inline
       float: left
       color: #fff
@@ -355,9 +349,9 @@
       width: 20%
       text-align: center
       padding-top: 3px
-      padding-bottom: 3px 
+      padding-bottom: 3px
 
-      &:hover 
+      &:hover
         background: $secondColor
         text-decoration: none
       &:active
@@ -365,9 +359,9 @@
         color: #47a3da
       a
         color: $white
-        &:hover 
+        &:hover
         text-decoration: none
-  h4 
+  h4
     margin: 10px 0px 5px 10px
     color: $white
 
@@ -396,16 +390,7 @@
   overflow: hidden
 .anotherNewClass-or
   width: 100%
-  background: lighten($secondColor, 5%) 
+  background: lighten($secondColor, 5%)
   height: 26px
   overflow: hidden
   @include border-bottom-radius($borderRadiusSmall)
-
-
-
-
-
-
-
-
-

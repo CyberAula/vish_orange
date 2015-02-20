@@ -1,18 +1,33 @@
 es:
   orange_front:
-    header:
-      index: "Inicio"
-      comunity: "Comunidad"
-      recursoteca: "Recurso"
-      temateca: "Tema"
-      bold: "teca"
+    carousel:
+      title1: "Educa"
+      desc1: "Educa<strong>Internet</strong> es una plataforma que proporciona contenidos para la adecuada formación de profesores y alumnos en el tema de la <strong>seguridad en Internet</strong>. Unete a la comunidad y colabora con otros miembros en la creación de contenidos."
+      title2: "Navega"
+      desc2: "Incluye los recursos proporcionados en la <a href='/catalogue'>Recurso<strong>teca</strong></a> para crear tus propias presentaciones, aporta tus propios recursos o utiliza las presentaciones creadas por otros miembros de la comunidad y disponibles en la <a href='/catalogue?temateca=true'>Tema<strong>teca</strong></a> para tus clases"
+      title3: "Protege"
+      desc3: "Aprende de los contenidos y enseña a tus alumnos sobre temas tan importantes como ciberacoso, sexting, tecnoadicciones, etc. Recuerda que tus alumnos podrán también crear contenidos relacionados con los temas aquí presentes y así 'aprender haciendo'."
     footer:
       cookies: "Cookies"
       rights: "Todos los derechos reservados"
       faq: "FAQ"
       legal: "Aviso legal"
       privacity: "Política de privacidad"
-
+    header:
+      index: "Inicio"
+      comunity: "Comunidad"
+      recursoteca: "Recurso"
+      recurso_desc: "Aquí se muestra el catálogo de recursos para que crees tus propias excursiones"
+      temateca: "Tema"
+      tema_desc: "Aquí se muestra el catálogo de excursiones para su uso libre en el aula y fuera de ella"
+      bold: "teca"
+    temateca_recursoteca:
+      actions:
+        add_excursion:  "Añadir excursión"
+        add_resource: "Añadir recurso"
+      help:
+        add_excursion: "Aquí puedes añadir una excursión directamente a esta categoría de la temateca"
+        add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
   activerecord:
     attributes:
       user:
@@ -22,7 +37,7 @@ es:
   activity:
     empty: "Tu timeline está vacío"
     more: "Ver más..."
-    new_user: "¡Bienvenido al Virtual Science Hub! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
+    new_user: "¡Bienvenido al EducaInternet! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
     newmessage: "Esta es tu timeline. Comparte con tus seguidores tus opiniones, sube imágenes, enlaces, vídeos..."
     timeline: "timeline"
     verb:
@@ -204,6 +219,17 @@ es:
         #Orange categories
         security: "Seguridad"
         orange: "Orange"
+        info_management: "Gestión de la información"
+        inap_content_access: "Acceso a contenidos inapropiados"
+        privacy: "Gestión de la privacidad e identidad digital"
+        netiquette: "Netiqueta: comportamiento en línea"
+        grooming: "Grooming"
+        cyberbullying: "Ciberacoso"
+        sexting: "Sexting"
+        identity_theft: "Suplantación de identidad"
+        tecnoaddictions: "Tecnoadicciones"
+        dangerous_communities: "Comunidades peligrosas en línea "
+        virus_protection: "Protección ante virus y fraudes"
     extras:
         learning: "aprendizaje"
         teaching: "enseñanza"
@@ -332,7 +358,7 @@ es:
     NaturalScience: "Ciencias Naturales"
     ComputerScience: "Informática"
   thevish: "ViSH"
-  youtube: "Canal ViSH en Youtube"
+  youtube: "Videotutoriales"
   overview_title: "¿Qué es ViSH?"
   overview:
     list: "Índice"
@@ -523,7 +549,7 @@ es:
     uploading: "Subiendo..."
   email:
     regards: "Un cordial saludo,<br/>"
-    welcome: "Bienvenido y gracias por registrarte en Virtual Science Hub.<br/>Te invitamos a <a href=\"%{profile}\"> configurar tu perfil</a> para disfrutar de un mejor servicio.<br/>"
+    welcome: "Bienvenido y gracias por registrarte en EducaInternet.<br/>Te invitamos a <a href=\"%{profile}\"> configurar tu perfil</a> para disfrutar de un mejor servicio.<br/>"
   embed:
     confirm_delete: "¿Borrar recurso?"
     content: "Contenido en directo"
@@ -917,12 +943,12 @@ es:
     current:
       description: "Un punto de encuentro para científicos y profesores basado en la idea de excursiones virtuales"
       keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-      search: "Virtual Science Hub - Busqueda"
-      browse: "Virtual Science Hub - Explorar"
-      msg: "Virtual Science Hub - Mensajes"
-      activity: "Virtual Science Hub - Actividades"
-    name: "Virtual Science Hub"
+      title: "EducaInternet"
+      search: "EducaInternet - Busqueda"
+      browse: "EducaInternet - Explorar"
+      msg: "EducaInternet - Mensajes"
+      activity: "EducaInternet - Actividades"
+    name: "EducaInternet"
   swf:
     confirm_delete: "¿Borrar SWF?"
     name: "objecto flash"

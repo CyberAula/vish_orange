@@ -1,18 +1,33 @@
 en:
   orange_front:
+    carousel:
+      title1: "Educate"
+      desc1: "Educa<strong>Internet</strong> is a platform that provides content for adequate training of teachers and students on the topic of Internet security. Join the community and collaborates with other members in the creation of content."
+      title2: "Browse"
+      desc2: "You can include the resources provided in the <a href='/catalogue'>Recurso<strong>teca</strong></a> to create your own presentations, and bring your own resources or use the presentations created by community members that are available for your classes in the <a href='/catalogue?temateca=true'>Tema<strong>teca</strong></a>"
+      title3: "Protect"
+      desc3: "Learn from the content and teach your students about important issues such as cyberbullying, sexting, techno-addictions, etc... Remember that your students can also create content related topics here present and so 'learning by doing'"
     header:
       index: "Index"
       comunity: "Comunity"
-      recursoteca: "Recurso"
-      temateca: "Tema"
-      bold: "teca"
+      recursoteca: "Resources"
+      recurso_desc: "Here you can see the catalogue of resources you can use to create your own excursions"
+      temateca: "Subjects"
+      tema_desc: "Here you can see the catalogue of excursions for their use in classroom and outside it"
+      bold: ""
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
       faq: "FAQ"
       legal: "Legal notice"
       privacity: "Privacy policy"
-
+    temateca_recursoteca:
+      actions:
+        add_excursion:  "Add excursion"
+        add_resource: "Add resource"
+      help:
+        add_excursion: "Here you can add an excursion directly to this category in the subject catalogue"
+        add_resource: "Here you can add a resource directly to this category in the resources catalogue"
   activerecord:
     attributes:
       user:
@@ -206,6 +221,17 @@ en:
         #Orange categories
         security: "Seguridad"
         orange: "Orange"
+        info_management: "Information management"
+        inap_content_access: "Access to inappropriate content"
+        privacy: "Privacy Management and digital identity"
+        netiquette: "Netiquette: online behaviour"
+        grooming: "Grooming"
+        cyberbullying: "Cyberbullying"
+        sexting: "Sexting"
+        identity_theft: "Identity theft"
+        tecnoaddictions: "Tecnoaddictions"
+        dangerous_communities: "Online dangerous communities"
+        virus_protection: "Virus and fraud protection"
     extras:
         eLearning: "e-Learning"
         learning: "learning"
@@ -337,7 +363,7 @@ en:
     NaturalScience: "NaturalScience"
     ComputerScience: "ComputerScience"
   thevish: "The Vish"
-  youtube: "ViSH Youtube Channel"
+  youtube: "Video tutorials"
   overview_title: "ViSH overview"
   overview:
     list: "Index"
@@ -525,7 +551,7 @@ en:
   downloadxlsx: "Download as XLSX"
   email:
     regards: "Kind regards,<br/>"
-    welcome: "Welcome and thank you for registering in Virtual Science Hub.<br/>We would encourage you <a href=\"%{profile}\"> to set up your profile</a> in order to enjoy a better service.<br/>"
+    welcome: "Welcome and thank you for registering in EducaInternet.<br/>We would encourage you <a href=\"%{profile}\"> to set up your profile</a> in order to enjoy a better service.<br/>"
   embed:
     confirm_delete: "Delete embed?"
     content: "Live content"
@@ -918,12 +944,12 @@ en:
     current:
       description: "A meeting point for scientists and teachers based around the idea of virtual excursions"
       keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-      search: "Virtual Science Hub - Search"
-      browse: "Virtual Science Hub - Explore"
-      msg: "Virtual Science Hub - Messages"
-      activity: "Virtual Science Hub - Activities"
-    name: "Virtual Science Hub"
+      title: "EducaInternet"
+      search: "EducaInternet - Search"
+      browse: "EducaInternet - Explore"
+      msg: "EducaInternet - Messages"
+      activity: "EducaInternet - Activities"
+    name: "EducaInternet"
   swf:
     confirm_delete: "Delete SWF?"
     name: "flash object"

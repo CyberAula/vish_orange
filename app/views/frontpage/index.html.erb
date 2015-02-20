@@ -10,7 +10,12 @@
   </div>
 </section>
 
+
 <%= content_for :javascript do %>
-  $("footer#footer").addClass("fixed-bottom");
-  $("#wrap").addClass("wrap-when-fixed-bottom");
+
+  $(function(){
+      $('.carousel').carousel({
+        interval: 8000
+      });
+  });
 <%end%>

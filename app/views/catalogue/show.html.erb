@@ -14,9 +14,35 @@
 		<%=t("catalogue.categories." + @category, :default => "Category")%>
 	</h2>
 	<ul>
+		<% if params[:temateca]=="true" %>
+			<%= render partial: 'excursions/add_new', :locals => { :default_tag => t("catalogue.categories." + @category, :default => "Category")}%>
+		<%else%>
+			<%= render partial: 'repositories/add_new' %>
+		<%end%>
 		<%for resource in @resources%>
 			<%=render :partial=> "entities/entity", :locals => { :entity => resource, :prefix_id =>"catalogue" } %>
 		<%end%>
 	</ul>
 </div>
 
+<script>  
+  	document.addEventListener("DOMContentLoaded", function(){
+    	add_resource_with_default_tag_click();
+    });
+
+ 
+	function add_resource_with_default_tag_click(){
+		$(".add-item").click(function(event){
+			var default_tag = '<%=t("catalogue.categories." + @category, :default => "Category")%>';
+			<% if params[:temateca]=="true" %>
+				window.location = "<%=new_excursion_path%>?default_tag=" + default_tag;
+			<%else%>				
+				$("#AddResource").on('shown', function(){
+					$("ul.resourceTagList").tagit("reset");
+					$("ul.resourceTagList").tagit("add", default_tag);
+				});
+			<%end%>
+		});
+	};
+
+</script>
