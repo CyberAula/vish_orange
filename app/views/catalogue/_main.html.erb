@@ -8,7 +8,9 @@
 				<%end%>
 			</ul>
 			<button class="btn-primary show_more_catalogue" name="<%=name%>"><%=t('view_all')%></button>
-			<button class="add_resource_with_default_tag btn-primary" default_tag="<%=t("catalogue.categories." + name)%>"><%=is_temateca ? t("orange_front.temateca_recursoteca.actions.add_excursion") : t("orange_front.temateca_recursoteca.actions.add_resource")%></button>
+			<%if current_subject%>
+			<button class="add_resource_with_default_tag btn-primary" default_tag="<%=t("catalogue.categories." + name)%>" title="<%=is_temateca ? t("orange_front.temateca_recursoteca.help.add_excursion") : t("orange_front.temateca_recursoteca.help.add_resource")%>"><%=is_temateca ? t("orange_front.temateca_recursoteca.actions.add_excursion") : t("orange_front.temateca_recursoteca.actions.add_resource")%></button>
+			<%end%>
 		<%end%>
 	<%end%>
 </div>

@@ -25,7 +25,9 @@ es:
       actions:
         add_excursion:  "Añadir excursión"
         add_resource: "Añadir recurso"
-
+      help:
+        add_excursion: "Aquí puedes añadir una excursión directamente a esta categoría de la temateca"
+        add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
   activerecord:
     attributes:
       user:
