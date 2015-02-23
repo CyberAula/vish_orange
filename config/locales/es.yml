@@ -447,7 +447,7 @@ es:
     invitations:
       button: Invita a alguien a unirse a la comunidad
       edit:
-        header: Has sido invitado a unirte a la comunidad StoryRobin
+        header: "Has sido invitado a unirte a la comunidad %{community_name}"
       modal_title: Enviar una invitación
       submit_button: Enviar una invitación
       success: Invitación enviada exitosamente
@@ -929,6 +929,8 @@ es:
   share: "Enviar"
   sharing:
     email: "Compartir por email"
+    twitter:
+      message: "Echa un vistazo a este recurso en %{url}"
   sign_up: "Registrar"
   simple_captcha:
     placeholder: "Introduce el valor de la imagen"

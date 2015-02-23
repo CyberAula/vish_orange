@@ -3,7 +3,7 @@
   </section>
 
 	<section class="registration">
-	<h4><%= t 'devise.invitations.edit.header' %></h4>
+	<h4><%=t('devise.invitations.edit.header', {:community_name => Vish::Application.config.name})%></h4>
 
 	<%= form_for resource, :as => resource_name, :url => user_invitation_path(), :html => { :method => :put } do |f| %>
 	  <%= devise_error_messages! %>

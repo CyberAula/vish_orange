@@ -452,7 +452,7 @@ en:
     invitations:
       button: Invite anyone to join the community
       edit:
-        header: You have been invited to join StoryRobin Community
+        header: "You have been invited to join %{community_name} Community"
       modal_title: Send an invitation
       submit_button: Send an invitation
       success: Invitation sent succesfully
@@ -698,7 +698,6 @@ en:
     populars: "Populars"
   info:
     author: "Author"
-
   lang:
     changed: "Language changed to %{lang}"
     error: "Language \"%{lang}\" not available"
@@ -930,6 +929,8 @@ en:
   share: "Post"
   sharing:
     email: "Share by email"
+    twitter:
+      message: "Check out this resource at %{url}"
   sign_up: "Register"
   simple_captcha:
     placeholder: "Enter the image value"
