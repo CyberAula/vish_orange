@@ -24,7 +24,7 @@ class Workshop < ActiveRecord::Base
 
   define_index do
     activity_object_index
-    has draft
+    #has draft
   end
 
   validates_inclusion_of :draft, :in => [true, false]

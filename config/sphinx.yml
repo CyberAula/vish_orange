@@ -2,6 +2,7 @@ development:
  bin-path: '/usr/bin'
  searchd_binary_name: 'searchd'
  indexer_binary_name: 'indexer'
+ version: 2.1.0
  enable_star: 0
  min_infix_len: 1
  max_matches: 5000
