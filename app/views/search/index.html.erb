@@ -17,7 +17,7 @@
           <!--<li><h1><i class="icon-search"></i><%#= t("search.title")%></h1></li>-->
         <%end%>
           <li class="all_results <%= 'active' if params[:type].blank? %>">
-            <% unless browse%>
+            <% unless browse %>
               <%= link_to raw('<i class="icon-asterisk"></i><span class=" hidden-phone hidden-tablet">'+t('search.show_all')+'</span>'),"#all", :data => {:toggle=>"tab"}%>
             <% else %>
               <%= link_to raw('<i class="icon-asterisk"></i><span class=" hidden-phone hidden-tablet">'+t('search.show_all')+'</span>'), search_path(:browse=>"true", :sort_by => "ranking") %>
@@ -26,7 +26,7 @@
 
           <% if availableModels.include? "Excursion" %>
             <li class="excursion <%= " active" if params[:type] == "excursion" %><%= " disabled" unless search_results?("excursion") %>">
-              <% unless browse%>
+              <% unless browse %>
                 <%= link_to raw('<i class="icon-book"></i><span class=" hidden-phone hidden-tablet">'+t("excursion.other")+'</span>'), "#excursion",
                 :data => {:toggle=>"tab#{ ' disabled' unless search_results?("excursion") }"} %>
               <% else %>
@@ -36,7 +36,7 @@
           <%end%>
 
           <li class="user <%= " active" if params[:type] == "user" %><%= " disabled" unless search_results?("user") %>">
-            <% unless browse%>
+            <% unless browse %>
               <%= link_to raw('<i class="icon-group"></i><span class=" hidden-phone hidden-tablet">'+t("user.title.other")+'</span>'), "#user",
               :data => {:toggle=>"tab#{ ' disabled' unless search_results?("user") }"} %>
             <% else %>
@@ -46,7 +46,7 @@
 
           <% if availableModels.include? "Event" %>
             <li class="event <%= " active" if params[:type] == "event" %><%= " disabled" unless search_results?("event") %>">
-              <% unless browse%>
+              <% unless browse %>
                 <%= link_to raw('<i class="icon-facetime-video"></i><span class=" hidden-phone hidden-tablet">'+t("event.title.other")+'</span>'), "#event",
                 :data => {:toggle=>"tab#{ ' disabled' unless search_results?("event") }"} %>
               <% else %>
@@ -57,7 +57,7 @@
 
           <% if availableModels.include? "Resource" %>
             <li class="resource <%= " active" if params[:type] == "resource" %><%= " disabled" unless search_results?("resource") %>">
-              <% unless browse%>
+              <% unless browse %>
                 <%= link_to raw('<i class="icon-file"></i><span class=" hidden-phone hidden-tablet">'+t("resource.title.other")+'</span>'), "#resource",
                 :data => {:toggle=>"tab#{ ' disabled' unless search_results?("resource") }"} %>
               <% else %>
@@ -66,14 +66,23 @@
             </li>
           <%end%>
 
+          <% if availableModels.include? "Workshop" %>
+            <li class="workshop <%= " active" if params[:type] == "workshop" %><%= " disabled" unless search_results?("workshop") %>">
+              <% unless browse %>
+                <%= link_to raw('<i class="icon-lightbulb"></i><span class=" hidden-phone hidden-tablet">'+t("workshop.other")+'</span>'), "#workshop",
+                :data => {:toggle=>"tab#{ ' disabled' unless search_results?("workshop") }"} %>
+              <% else %>
+                <%= link_to raw('<i class="icon-lightbulb"></i><span class=" hidden-phone hidden-tablet">'+t("workshop.other")+'</span>'), search_path(:type => "workshop", :browse=>"true", :sort_by => "ranking") %>
+              <% end%>
+            </li>
+          <%end%>
+
           <%= render partial: 'help/help_search' %>
       </ul>
-      <%= render partial: 'search/order_by_dropdown' %>
-      <!--form style="display:none" action="<%=search_path%>" method="get" id="main_search_form" class="search_box">
-        <%= text_field_tag :q, params[:q],:autocomplete => :off, :id => :main_search_input, :class => "" %>
-      </form-->
+
+      <%= render partial: 'search/order_by_dropdown' %> 
+
       <div class="tab-content">
-        <%#= render partial: 'layouts/loading' %>
         <div class="tab-pane active" id="tab1 ">
           <div id="search-all">
             <ul>
@@ -95,9 +104,11 @@
           </div>
           <div id="last_content_shown" style="display:none"> <%=t('search.end')%></div>
         </div>
-
       </div>
+
     </div>
+  </div>
+</section>
 
    <%= content_for :javascript do %>
     SocialStream.Repository.show();
@@ -197,3 +208,4 @@
   <%end%>
 
 </section>
+

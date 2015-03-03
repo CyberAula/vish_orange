@@ -311,6 +311,7 @@ en:
   contribution:
     content: "Content"
     title: "Title"
+    action: "Contribute"
   pending:
     other: "Following you"
   contest:
@@ -966,6 +967,11 @@ en:
     one: "user"
     other: "users"
   username: "username"
+  validation:
+    invalid_resource: "Resource not valid"
+    invalid_contributions_gallery: "A contributions gallery should include at least one assignment"
+    invalid_available_contributions: "Invalid available contributions"
+    invalid_resources_gallery: "This resources gallery include invalid entities"
   vish:
     about: "About ViSH"
     starterguide: "Starter Guide"
@@ -988,26 +994,29 @@ en:
         cancel_&_go: "Cancel and go to Workshop"
         collapse_all: "Collapse all"
         confirm_delete: "Delete workshop?"
-        delete: "Delete workshop"
+        delete: "Delete"
         edit_activity_button: "Save"
         edit_mode_btOn: "Turn on editing mode"
         edit_mode_btOff: "Turn off editing mode"
         expand_all: "Expand all"
         publish: "Publish"
+        show_contributions: "Contributions"
         unpublish: "Unpublish"
     activities:
         actions:
-            add_new_activity: "Add new activity"
+            add_new_activity: "Add activity"
             confirm_delete: "Delete activity?"
         assignment:
-            add_image: "Upload"
-            add_writing: "Writing"
+            add_document: "Upload"
+            add_resource: "Add resource"
+            add_resource_message: "Here you can send to the assignment any of your ViSH resources. To do that, write the URL of your resource and click on the button."
             available_contributions:
-                document: "Document"
                 title: "Available contributions"
+                document: "File"
+                resource: "Resource"
                 writing: "Writing"
             content: "Content"
-            contribution_message: "Participate:"
+            contribution_message: "Upload:"
             description: "Assignments allow participants to contribute to the workshop by uploading their own resources."
             due_date: "Due date"
             modal_title: "Edit assignment"
@@ -1017,11 +1026,11 @@ en:
         resource:
             title: "Resource"
             description: "Insert any type of resource into the Workshop."
-            text: "You can add to this workshop all the resources that are available in Vish. To add them, open the resource in Vish, copy its URL from the browser toolbar and paste in the following text box."
+            text: "You can add to this workshop all the resources that are available in ViSH. To add them, open the resource in ViSH, copy its URL from the browser toolbar and paste in the following text box."
         resource_gallery:
             title: "Resources Gallery"
             description: "Add a gallery of resources."
-            text: "Resource galleries are a component of the workshop that allow you to include several resources of any type Vish and have them grouped together to facilitate viewing. Insert this component into your workshop and added resources in the most easy and intuitive way."
+            text: "Resource galleries are a component of the workshop that allow you to include several resources of any type ViSH and have them grouped together to facilitate viewing. Insert this component into your workshop and added resources in the most easy and intuitive way."
         contributions_gallery:
             title: "Contributions Gallery"
             description: The Contributions Gallery displays the contributions sent to the workshop.
@@ -1030,9 +1039,9 @@ en:
             title: "Text"
             description: "Include a paragraph of text."
             text: "In addition to the description of the workshop and the tasks defined in it, sometimes you will need the ability to insert a block of text with other purpose, such as a bibliography or other data of interest for the workshop. With this component you can add a completely personalized and editable text to your workshop."
-
     new: "New Workshop"
     other: "Workshops"
+    title: "Workshop"
     titles:
         editing_details: "Editing workshop details"
         editing_main: "Editing Workshop"
