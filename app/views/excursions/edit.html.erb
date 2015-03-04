@@ -19,6 +19,8 @@
         
     location.href = "#presentation_iframe";
     setFavicon();
+    $("#wrap").removeClass("wrap-when-fixed-bottom");
+    $("#footer").hide();
 <%end%>
 
 <%= render :partial => 'excursions/scale_excursion_js', :locals => {:is_edit => true}%>
