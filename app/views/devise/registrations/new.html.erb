@@ -3,9 +3,9 @@
   </section>
 
   <section class="registration">
-    <h4>
+    <h3>
       <%= t('sign_up').capitalize %>
-    </h4>
+    </h3>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :id=>"new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
@@ -38,6 +38,8 @@
             </li>
           <%end%>
         </ul>
+
+        <hr class="soften">
 
         <%= f.label t('simple_captcha.title') %>
         <span ><%=t('simple_captcha.subtitle')%></span>
@@ -75,14 +77,14 @@
     });
 
     $(tagList).tagit({
-      tagSource:tags, 
-      sortable:true, 
+      tagSource:tags,
+      sortable:true,
       <%if !Vish::Application.config.APP_CONFIG["tagsSettings"].nil? %>
         <%=Vish::Application.config.APP_CONFIG["tagsSettings"]["maxLength"].nil? ? "" : "maxLength: #{Vish::Application.config.APP_CONFIG["tagsSettings"]["maxLength"]}," %>
         <%=Vish::Application.config.APP_CONFIG["tagsSettings"]["maxTags"].nil? ? "" : "maxTags: #{Vish::Application.config.APP_CONFIG["tagsSettings"]["maxTags"]}," %>
         <%if !Vish::Application.config.APP_CONFIG["tagsSettings"]["triggerKeys"].nil?%>
           triggerKeys: <%=raw(Vish::Application.config.APP_CONFIG["tagsSettings"]["triggerKeys"].to_json)%>,
-        <%end%>            
+        <%end%>
       <%end%>
       watermarkAllowMessage: '<%=t('document.tags.areasOfInterestMessage')%>', watermarkDenyMessage: '<%=t('document.tags.limitMessage')%>' ,
       initialTags: <%=(params[:user] && params[:user][:tag_list]) ? raw(params[:user][:tag_list].split(",")) : "[]" %>,

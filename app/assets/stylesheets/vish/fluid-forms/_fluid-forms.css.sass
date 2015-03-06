@@ -2,9 +2,8 @@
 #new_session,
 #forgot-pass,
 #login
-  @include grid-fluid-span(9, $fluidGridColumnWidth, $fluidGridGutterWidth)
-  margin-left: auto
-  margin-right: auto
+  @include grid-fluid-span(5, $fluidGridColumnWidth, $fluidGridGutterWidth)
+  margin: 40px auto
   display: block
   @include white-box-style
   z-index: 2
@@ -12,12 +11,15 @@
   #sign_in,
   .forgot,
   .change
-    @include grid-fluid-span(11, $fluidGridColumnWidth, $fluidGridGutterWidth)
+    @include grid-fluid-span(10, $fluidGridColumnWidth, $fluidGridGutterWidth)
     @include center-block()
-    h4  
+    h4, h3
       color: $orange-gray-75
       font-weight: bold
       padding: 20px 0 5px 0
+    h3
+      font-size: 1.4em
+      //font-weight: 100
     label
       font-size: 12px
       font-family: $secondFontFamily
@@ -84,9 +86,6 @@
           height: 24px
           color: $black
 
-
-
-
     #remember
       display: block
       float: left
@@ -139,3 +138,9 @@
     width: 90%
     margin: 15px 5%
     display: inline-block
+
+//new session new style
+#new_session
+  height: 290px
+#registration
+  //height: 650px
