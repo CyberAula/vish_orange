@@ -2,10 +2,17 @@ li.events-item,
 li.categories-item,
 li.repositories-item
   @include grid
-  
+
 #help,
 #legal_notice
   @include help
+  legend
+    font-weight: bold
+    font-size: 1.3em
+  .text_content
+    a
+      text-decoration: none
+      color: $orange-primary
 
 #overview
   .whiteframe
@@ -127,24 +134,24 @@ div.openQuizAnswerLeft
     border-radius: $baseBorderRadius
     width: 90%
   .textrow
-    margin: 5px 
+    margin: 5px
     padding: 0 0 2.5em
-    float: left 
-    margin-right: 10px     
+    float: left
+    margin-right: 10px
     width: 46%
     min-height: 300px
     h4
       margin-bottom: 20px
       color: $secondColor
       font-size: 14px
-  .connectedSortable  
+  .connectedSortable
     list-style-type: none
     margin: 0 20px 10px -5px
   .connectedSortable li
     cursor: pointer
     @include box-shadow(0 -1px 10px rgba(50,51,51,0.10))
-    margin: 0 5px 5px 5px  
-    font-size: 1.1em 
+    margin: 0 5px 5px 5px
+    font-size: 1.1em
     color: $black
     font-family: $secondFontFamily
     border-width: 1px
@@ -178,8 +185,3 @@ div.openQuizAnswerLeft
       background-color: $firstColor
       .creation_date
         color: $white
-
-
- 
-    
-
