@@ -21,6 +21,7 @@ en:
       faq: "FAQ"
       legal: "Legal notice"
       privacity: "Privacy policy"
+      conditions: "Conditions of use"
     temateca_recursoteca:
       actions:
         add_excursion:  "Add excursion"
