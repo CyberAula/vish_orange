@@ -228,15 +228,12 @@ class ExcursionsController < ApplicationController
     thumbnails = Hash.new
     thumbnails["pictures"] = []
 
-    81.times do |index|
+    67.times do |index|
       index = index+1
       thumbnail = Hash.new
       thumbnail["title"] = "Thumbnail " + index.to_s
       thumbnail["description"] = "Sample Thumbnail"
-      tnumber = index.to_s
-      if index<10
-        tnumber = "0" + tnumber
-      end
+      tnumber = (100+index).to_s
       thumbnail["src"] = Vish::Application.config.full_domain + "/assets/logos/original/excursion-"+tnumber+".png"
       thumbnails["pictures"].push(thumbnail)
     end
