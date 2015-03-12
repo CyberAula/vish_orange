@@ -1,5 +1,8 @@
+
 <div id="password_form" class="accordion-group">
+  <div class="icon-header"><i class="icon-lock"></i></div>
   <header class="accordion-heading">
+
     <h5>
       <%= link_to t("settings.password_change.briefing"),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#password_form_content" %>
     </h5>
@@ -35,6 +38,7 @@
 </div>
 
 <div id="email_form" class="accordion-group">
+  <div class="icon-header"><i class="icon-envelope-alt"></i></div>
   <header class="accordion-heading">
     <h5>
       <%= link_to t("settings.email_change.briefing"),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => "collapse", "data-parent" => "#settings-accordion", 'data-target' => '#email_form_content' %>
@@ -76,4 +80,3 @@
     $(this).button('loading');
   });
 <%end%>
-
