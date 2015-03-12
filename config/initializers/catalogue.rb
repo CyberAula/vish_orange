@@ -44,9 +44,9 @@ Vish::Application.configure do
         config.catalogue[c1].uniq!
 
         #Remove whitespaces
-        config.catalogue[c1].map!{ |c5|
-            c5.delete(' ')
-        }
+        #config.catalogue[c1].map!{ |c5|
+        #    c5.delete(' ')
+        #}
     end
   end
 
