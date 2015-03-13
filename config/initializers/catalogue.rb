@@ -2,8 +2,8 @@ Vish::Application.configure do
   
   #Init Catalogue
   config.after_initialize do
-    config.catalogue_categories = ["info_management","inap_content_access","privacy","netiquette","grooming","cyberbullying","sexting","identity_theft","tecnoaddictions","dangerous_communities","virus_protection"]
-    config.default_categories = config.catalogue_categories
+    config.catalogue["categories"] = ["info_management","inap_content_access","privacy","netiquette","grooming","cyberbullying","sexting","identity_theft","tecnoaddictions","dangerous_communities","virus_protection"]
+    config.catalogue["default_categories"] = config.catalogue["categories"]
 
     #Category_keywords is a hash with the keywords of each category
     config.catalogue["category_keywords"] = Hash.new
