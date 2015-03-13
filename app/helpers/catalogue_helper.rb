@@ -2,7 +2,7 @@ module CatalogueHelper
 	def getDefaultCategories(temateca=false)
 		@default_categories = Hash.new
 		for category in Vish::Application.config.catalogue["default_categories"]
-			@default_categories[category] = getCategoryResources(category,7)
+			@default_categories[category] = getCategoryResources(category,7,temateca)
 		end
 		@default_categories
 	end
