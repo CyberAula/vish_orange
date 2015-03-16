@@ -1,7 +1,10 @@
 <footer id="footer" class="container-fluid hidden-phone hidden-tablet fixed-bottom">
   <nav class="footercontent">
     <ul class="ul-content">
+
       <!-- orange brand -->
+
+      <!-- terms of use -->
       <li class="item_footer">
         <a href="http://www.orange.es" target="_new"><img src="/assets/orange/logo_orange.png"></a>
         <div class="links"><a href="legal_notice"><%=t('orange_front.footer.legal')%></a> | <a href="privacy_policy"><%=t('orange_front.footer.privacity')%></a> | <a href="conditions_of_use"><%=t('orange_front.footer.conditions')%></a> | <a href="http://www.orange.es/static/html/cookies.html" target="_blank"><%=t('orange_front.footer.cookies')%></a></div>
@@ -18,10 +21,46 @@
       <li class="dropup">
         <a href="http://www.red.es/redes/" target="_new"><img class="logo_cm" src="/assets/orange/logo_redes.jpg"></a>
       </li>
-      <!-- language -->
+
+      <!-- about -->
       <li class="dropup">
         <div data-toggle="dropdown" class="btn dropdown-toggle">
-          <span class="idioma"><%= t('help') %></span>
+          <span class="ddfootertitle"><%= t('about.title') %></span>
+          <i class="icon-angle-up"></i>
+        </div>  
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+          <li>
+            <a href="mailto:virtual.science.hub@gmail.com">
+              <i class="icon-envelope-alt"> </i>
+              <span><%= t('about.contact') %></span>
+            </a>
+          </li>
+          <li>
+            <a href="http://vishub.wordpress.com" target="_blank">
+              <i class="icon-microphone"> </i>
+              <span><%= t('about.blog') %></span>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/ging/vish" target="_blank">
+              <i class="icon-archive"> </i>
+              <span><%= t('about.code') %></span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= (I18n.locale.to_s=="es") ? 'https://docs.google.com/forms/d/1AO5MN_r3n-hsGQuok6HKWhUSPjMnFQvYxuOB88S32yA/viewform' : 'https://docs.google.com/forms/d/1uEQI1BzPtEOyh-QuOaw9WzqHcYZtlMqkIceybrP40YQ/viewform'%>" target="_blank">
+              <i class="icon-smile"> </i>
+              <span><%= t('about.survey') %></span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Help -->
+      <li class="dropup">
+        <div data-toggle="dropdown" class="btn dropdown-toggle">
+          <span class="ddfootertitle"><%= t('help') %></span>
           <i class="icon-angle-up"></i>
         </div>
 
@@ -47,12 +86,11 @@
         </ul>
       </li>
 
-      <!-- lang-->
+      <!-- language -->
       <li class="dropup">
-
         <div data-toggle="dropdown" class="btn dropdown-toggle">
           <% the_locale = I18n.locale.to_s %>
-          <span class="idioma"><%=image_tag("flags/" + the_locale + ".png", :title=>the_locale, :class=> "")%><%=t('lang.title')%></span>
+          <span class="ddfootertitle"><%=image_tag("flags/" + the_locale + ".png", :title=>the_locale, :class=> "")%><%=t('lang.title')%></span>
           <i class="icon-angle-up"></i>
         </div>
           <ul class="dropdown-menu">
@@ -63,7 +101,6 @@
             <% end %>
           </ul>
       </li>
-
 
     </ul>
   </nav>

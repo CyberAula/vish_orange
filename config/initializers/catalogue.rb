@@ -15,8 +15,8 @@ Vish::Application.configure do
     config.catalogue["keywords"] = []
     
     #Combine categories and add extra terms
-    combinedCategories = { }
-    extraTerms = { }
+    combinedCategories = {}
+    extraTerms = {}
 
 
     #Build catalogue search terms
@@ -56,7 +56,8 @@ Vish::Application.configure do
         config.catalogue["keywords"].concat(config.catalogue["category_keywords"][c1])
 
         if config.catalogue['mode'] == "matchtag"
-            config.catalogue["category_tag_ids"][c1] = ActsAsTaggableOn::Tag.find_all_by_name(config.catalogue["category_keywords"][c1]).map{|t| t.id}
+            allActsAsTaggableOnTags = ActsAsTaggableOn::Tag.where("plain_name IN (?)", config.catalogue["category_keywords"][c1].map{|tag| ActsAsTaggableOn::Tag.getPlainName(tag)})
+            config.catalogue["category_tag_ids"][c1] = allActsAsTaggableOnTags.map{|t| t.id}
         end
     end
 

@@ -1,7 +1,7 @@
 class CatalogueController < ApplicationController
 
   def index
-    @default_categories = view_context.getDefaultCategories(params[:temateca])
+    @default_categories = Catalogue.getDefaultCategories(params[:temateca])
     respond_to do |format|
       format.html {
          render :layout => 'catalogue'
@@ -11,7 +11,7 @@ class CatalogueController < ApplicationController
 
   def show
     @category = params[:category]
-    @resources = view_context.getCategoryResources(@category,200,params[:temateca])
+    @resources = Catalogue.getCategoryResources(@category,200,params[:temateca])
     respond_to do |format|
       format.all { render :layout => 'catalogue' }
     end

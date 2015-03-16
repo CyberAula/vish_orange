@@ -1,4 +1,13 @@
 en:
+  i18n:
+    transliterate:
+      rule:
+        ª: "ª"
+        º: "º"
+        ´: "´"
+        ?: "?"
+        ¿: "¿"
+        ¡: "¡"
   orange_front:
     carousel:
       title1: "Create"
@@ -29,6 +38,12 @@ en:
       help:
         add_excursion: "Here you can add an excursion directly to this category in the subject catalogue"
         add_resource: "Here you can add a resource directly to this category in the resources catalogue"
+  about:
+    blog: "News"
+    contact: "Contact"
+    code: "Source code"
+    survey: "ViSH survey"
+    title: "about"
   activerecord:
     attributes:
       user:
@@ -187,7 +202,6 @@ en:
       quality: "Quality"
     title: "Advanced Search"
   author: "author"
-  blog_news_title: "news"
   browse:
     title: "browse"
     popular: "popular content"
@@ -235,10 +249,14 @@ en:
         dangerous_communities: "Online dangerous communities"
         virus_protection: "Virus and fraud protection"
     extras:
+        computerScience_extra1: "ComputerScience"
+        naturalScience_extra1: "NaturalScience"
+        environmentalStudies_extra1: "EnvironmentalStudies"
         eLearning: "e-Learning"
         learning: "learning"
         listening: "listening"
         math: "Math"
+        maths: "Maths"
         teaching: "teaching"
     title: "Catalogue"
   category:
@@ -306,7 +324,6 @@ en:
     check_message_1: "Terms and Conditions."
     other: "terms of use"
   contact:
-    footer: "contact"
     follow: "Follow"
     unfollow: "Unfollow"
     following: "Following"

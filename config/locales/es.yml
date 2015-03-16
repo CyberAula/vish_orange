@@ -29,6 +29,12 @@ es:
       help:
         add_excursion: "Aquí puedes añadir una excursión directamente a esta categoría de la temateca"
         add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
+  about: 
+    blog: "Novedades"
+    contact: "Contacto"
+    code: "Código fuente"
+    survey: "Encuesta del ViSH"
+    title: "about"
   activerecord:
     attributes:
       user:
@@ -186,7 +192,6 @@ es:
       quality: "Calidad"
     title: "Búsqueda Avanzada"
   author: "autor"
-  blog_news_title: "novedades"
   browse:
     title: "explorar"
     popular: "contenido popular"
@@ -300,7 +305,6 @@ es:
     check_message_1: "Condiciones de Uso"
     other: "términos de uso"
   contact:
-    footer: "contacto"
     follow: "Seguir"
     unfollow: "Dejar de seguir"
     following: "Siguiendo"
