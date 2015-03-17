@@ -26,8 +26,8 @@
       <li class="dropup">
         <div data-toggle="dropdown" class="btn dropdown-toggle">
           <span class="ddfootertitle"><%= t('about.title') %></span>
-          <i class="icon-angle-up"></i>
-        </div>  
+          <!--<i class="icon-angle-up"></i>-->
+        </div>
 
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
           <li>
@@ -38,19 +38,19 @@
           </li>
           <li>
             <a href="http://vishub.wordpress.com" target="_blank">
-              <i class="icon-microphone"> </i>
+              <i class="icon-asterisk"> </i>
               <span><%= t('about.blog') %></span>
             </a>
           </li>
           <li>
             <a href="http://github.com/ging/vish" target="_blank">
-              <i class="icon-archive"> </i>
+              <i class="icon-github-sign"> </i>
               <span><%= t('about.code') %></span>
             </a>
           </li>
           <li>
             <a href="<%= (I18n.locale.to_s=="es") ? 'https://docs.google.com/forms/d/1AO5MN_r3n-hsGQuok6HKWhUSPjMnFQvYxuOB88S32yA/viewform' : 'https://docs.google.com/forms/d/1uEQI1BzPtEOyh-QuOaw9WzqHcYZtlMqkIceybrP40YQ/viewform'%>" target="_blank">
-              <i class="icon-smile"> </i>
+              <i class="icon-check"> </i>
               <span><%= t('about.survey') %></span>
             </a>
           </li>
@@ -61,7 +61,7 @@
       <li class="dropup">
         <div data-toggle="dropdown" class="btn dropdown-toggle">
           <span class="ddfootertitle"><%= t('help') %></span>
-          <i class="icon-angle-up"></i>
+          <!--<i class="icon-angle-up"></i>-->
         </div>
 
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
@@ -91,7 +91,7 @@
         <div data-toggle="dropdown" class="btn dropdown-toggle">
           <% the_locale = I18n.locale.to_s %>
           <span class="ddfootertitle"><%=image_tag("flags/" + the_locale + ".png", :title=>the_locale, :class=> "")%><%=t('lang.title')%></span>
-          <i class="icon-angle-up"></i>
+          <!--<i class="icon-angle-up"></i>-->
         </div>
           <ul class="dropdown-menu">
             <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
