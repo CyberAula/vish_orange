@@ -75,11 +75,27 @@ Vish.Search = (function(V,undefined){
           $("#last_content_shown").show();
         },
         scrape: function(data){
-          var parsed_html_return = $('<div></div>').html(data);
-          //Recalculate the tags in the search sidebar
-          var the_tags = parsed_html_return.find(".the_tags").val();
-          _recalculateTags(the_tags, false);
-          return data;
+          var parsed_html_return = $('<div></div>').html(data);          
+          //check that the params or query that generated this request is the same that the page that is shown (except for the param[:page] that changes)
+          var params_type = parsed_html_return.find(".params_type").val();
+          var params_language = parsed_html_return.find(".params_language").val();
+          var params_tags = parsed_html_return.find(".params_tags").val();
+          var params_sort_by = parsed_html_return.find(".params_sort_by").val();
+          var showed_type = _parsed_url["type"] ? _parsed_url["type"].join(",") : "";
+          var showed_language = _parsed_url["language"] ? _parsed_url["language"].join(",") : "";
+          var showed_tags = _parsed_url["tags"] ? _parsed_url["tags"].join(",") : "";
+          var showed_sort_by = _parsed_url["sort_by"] ? _parsed_url["sort_by"].join(",") : "";
+          
+          if(showed_type==params_type && showed_tags==params_tags && showed_language==params_language && showed_sort_by==params_sort_by){
+            //Recalculate the tags in the search sidebar
+            var the_tags = parsed_html_return.find(".the_tags").val();
+            _recalculateTags(the_tags, false);
+            return data;            
+          } else {
+            console.log("DESCARTAMOS PÁGINA: " + params_type + " " + params_language + " " + params_tags + " " + params_sort_by);
+            return "";
+          }
+          
         },    
         complete: function(){
           //when we complete one page and there is no scroll, there cannot be another call
@@ -138,10 +154,11 @@ Vish.Search = (function(V,undefined){
     //remove all previous filters
     //$("#search-sidebar ul li").removeClass("search-sidebar-selected");
 
-    //first the top level filter, type (All, user or learning object)
-    if(!_parsed_url["type"] || _parsed_url["type"].indexOf("") > -1){
-      _toggleFilter("type", "All");
-    }else if(_parsed_url["type"] == "User"){
+    //first the top level filter, type (user or learning object)
+    if(!_parsed_url["type"] || _parsed_url["type"] == ""){
+      //do nothing
+    }
+    else if(_parsed_url["type"] == "User"){
       _toggleFilter("type", "User");
     } else {
       _toggleFilter("type", "Learning_object");
@@ -186,11 +203,8 @@ Vish.Search = (function(V,undefined){
     var filter_obj = $("#search-sidebar ul li[filter_key='"+filter_key+"'][filter='"+filter_name+"']");
     
     if(filter_obj.length>0){
-      if(filter_obj.hasClass("search-sidebar-selected")) {
-        if(filter_obj.attr("filter") != "All"){
-          //do not allow to deactivate the "All" filter
+      if(filter_obj.hasClass("search-sidebar-selected")) {        
           _deactivateFilter(filter_obj, update_url);          
-        }
       } else {
         _activateFilter(filter_obj, update_url);
         
@@ -223,12 +237,6 @@ Vish.Search = (function(V,undefined){
           filter_obj.remove();          
         }
 
-        //see what happens with exclusivity, 
-        //if the li has the attribute "exclusive" and we are deactivating it we have to activate the default
-        if(follow_stack && filter_obj.attr("exclusive")==""){
-          _activateFilter(filter_obj.siblings("[default]"), update_url, false);
-        }
-
         if(update_url){
           _removeUrlParameter(filter_key, filter_name, follow_stack);
         }
@@ -244,10 +252,8 @@ Vish.Search = (function(V,undefined){
         var filter_content = filter_obj.html();
 
         filter_obj.addClass("search-sidebar-selected");
-        if(filter_name!="All"){
-          var extra_class = "filter_box_" + filter_obj.closest("div.filter_set").attr("filter_type");
-          $("#applied_filters").append("<div class='filter_box'><span class='filter_ball "+extra_class+"'>"+filter_content+"</span><div class='filter_box_x' filter_key='"+filter_key+"' filter='"+filter_name+"'>x</div></div>");
-        }
+        var extra_class = "filter_box_" + filter_obj.closest("div.filter_set").attr("filter_type");
+        $("#applied_filters").append("<div class='filter_box'><span class='filter_ball "+extra_class+"'>"+filter_content+"</span><div class='filter_box_x' filter_key='"+filter_key+"' filter='"+filter_name+"'>x</div></div>");
 
         //show the related filters
         $("#search-sidebar div[opens_with='"+filter_name+"']").show();    
@@ -291,7 +297,6 @@ Vish.Search = (function(V,undefined){
       }
     }
     _parsed_url[filter_key].push(filter_name);
-
     if(call_server){
       _composeFinalUrlAndCallServer(_parsed_url["sort_by"]);
     }
@@ -328,12 +333,8 @@ Vish.Search = (function(V,undefined){
     var final_url = {};
     $.each( _parsed_url, function(key, value){ 
       //remove empty strings
-      value = value.filter(function(e) { return e; });
-      if(key==="type" && value.length==1 && value[0]==="All"){
-        final_url[key] = "";
-      } else {
-        final_url[key] = value.join();
-      }
+      value = value.filter(function(e) { return e; });      
+      final_url[key] = value.join();
     });   
     var new_url = "search?" + queryString.stringify(final_url);
     window.history.pushState("", "", new_url);
@@ -389,9 +390,9 @@ Vish.Search = (function(V,undefined){
   {
       var parsed = queryString.parse(location.search);
       $.each( parsed, function(key, value){
-        var commaIndex = value.indexOf(",");
         //if contains comma, split it in an array, if not returns an array with one value (easier to iterate)
-        parsed[key] = value.split(",");        
+        //we also remove empty strings
+        parsed[key] = value.split(",").filter(function(e) { return e; });        
       });
       //console.log(parsed);
       return parsed;
