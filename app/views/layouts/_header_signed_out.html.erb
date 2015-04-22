@@ -26,10 +26,11 @@
         <!-- NEW ORANGE MENU -->
 
         <ul class="nav navbar-nav navbar-right">
-          <li class="<%= 'active' if params[:controller] == 'frontpage' %>"><a href="/"><%=t('orange_front.header.index')%></a></li>
-          <li class="<%= 'active' if params[:temateca] == 'true' && params[:controller] == 'catalogue'%>"><a href="/catalogue?temateca=true"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
-          <li class="<%= 'active' if params[:temateca].blank? && params[:controller] == 'catalogue'%>"><a href="/catalogue"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
-          <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="user" %>"><a href="<%=search_path(:type => "user", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
+          <li class="<%= 'active' if params[:controller] == 'home'%>"><a href="/"><%=t('orange_front.header.index')%></a></li>
+          <li class="<%= 'active' if params[:temateca] == 'true' && params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true", :temateca=>"true")%>"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+          <li class="<%= 'active' if params[:recursoteca] == 'true' && params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true", :recursoteca=>"true")%>"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+          <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="User" %>"><a href="<%=search_path(:type => "User", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
+          
           <li><a href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Acceso<i class="icon-angle-down"></i></strong></a>

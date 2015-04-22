@@ -84,7 +84,9 @@ class SearchController < ApplicationController
     #remove empty params   
     params.delete_if { |k, v| v == "" }
 
-    if params[:catalogue] && !params[:type]
+    if params[:temateca]
+      params[:type] = "Excursion"
+    elsif params[:recursoteca]
       #default models for catalogue without type filter applied
       params[:type] = VishConfig.getCatalogueModels().join(",")
     end
