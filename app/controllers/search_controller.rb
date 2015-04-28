@@ -86,7 +86,7 @@ class SearchController < ApplicationController
 
     if params[:temateca]
       params[:type] = "Excursion"
-    elsif params[:recursoteca]
+    elsif params[:recursoteca] && !params[:type]
       #default models for catalogue without type filter applied
       params[:type] = VishConfig.getCatalogueModels().join(",")
     end
@@ -134,7 +134,6 @@ class SearchController < ApplicationController
 
       types = types & allAvailableModels
       types.uniq!
-
       types.each do |type|
         #Find model
         model = type.singularize.classify.constantize rescue nil

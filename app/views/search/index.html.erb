@@ -70,8 +70,10 @@
               <% end %>
             </ul>
           </div>
+          
+        <%end%>
 
-          <div filter_type="resouce_type" id="resource_type" opens_with="Resource" style="display:none" class="filter_set">
+        <div filter_type="resouce_type" id="resource_type" opens_with="Resource" style="display:none" class="filter_set">
             <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
               <a>-</a>
             </button>
@@ -82,10 +84,7 @@
                 <li class="filter_item" filter_key="type" filter="<%=res%>"><%=t("search.models.#{res.downcase}")%></li>
               <%end%>
             </ul>
-          </div>
-
-        <%end%>
-
+        </div>
 
         <div filter_type="language" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
