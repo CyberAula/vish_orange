@@ -89,6 +89,11 @@ class SearchController < ApplicationController
     elsif params[:recursoteca] && !params[:type]
       #default models for catalogue without type filter applied
       params[:type] = VishConfig.getCatalogueModels().join(",")
+    elsif params[:temateca]
+      params[:type] = "Excursion"
+    elsif params[:recursoteca] && !params[:type]
+      #default models for catalogue without type filter applied
+      params[:type] = VishConfig.getCatalogueModels().join(",")
     end
 
     models = ( mode == :quick ? SocialStream::Search.models(mode, params[:type]) : processTypeParam(params[:type]) )
