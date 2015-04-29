@@ -21,14 +21,7 @@ es:
       recurso_desc: "Aquí se muestra el catálogo de recursos para que crees tus propias excursiones"
       temateca: "Tema"
       tema_desc: "Aquí se muestra el catálogo de excursiones para su uso libre en el aula y fuera de ella"
-      bold: "teca"
-    temateca_recursoteca:
-      actions:
-        add_excursion:  "Añadir excursión"
-        add_resource: "Añadir recurso"
-      help:
-        add_excursion: "Aquí puedes añadir una excursión directamente a esta categoría de la temateca"
-        add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
+      bold: "teca"    
   about: 
     blog: "Novedades"
     contact: "Contacto"
@@ -927,6 +920,16 @@ es:
   swf:
     confirm_delete: "¿Borrar SWF?"
     name: "objecto flash"
+  temateca_recursoteca:
+    name:
+      recursoteca: "Recursoteca"
+      temateca: "Temateca"
+    actions:
+      add_excursion:  "Añadir excursión"
+      add_resource: "Añadir recurso"
+    help:
+      add_excursion: "Aquí puedes añadir una excursión directamente a esta categoría de la temateca"
+      add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
   today: "Hoy"
   top10: "Mejores 10"
   unknown: "Desconocido"
