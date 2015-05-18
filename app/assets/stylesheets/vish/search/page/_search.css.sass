@@ -235,8 +235,9 @@
         margin-top: 0
 
   .filter-results
-
-
+    .search_filters
+      .popover
+        width: 500px
     .filters-applied
       @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
       background-color: white
@@ -270,8 +271,9 @@
         .filter_box
           float: left
           margin: 0 7px 12px 0
+          cursor: default
           .filter_ball,.filter_box_super_type,.filter_box_lo_type,
-          .filter_box_resouce_type,.filter_box_language,.filter_box_tags,.filter_box_category_ids
+          .filter_box_resouce_type,.filter_box_language,.filter_box_tags,.filter_box_category_ids,.filter_box_age_type
             padding: 7px
             color: white
             font-size: 0.9em
@@ -287,9 +289,11 @@
           .filter_box_language
             background: gray
           .filter_box_tags
-            background: #555
+            background: #009cfb
           .filter_box_category_ids
             background: $firstColor
+          .filter_box_age_type
+            background: $grayDark
         .filter_box_x
           cursor: pointer
           float: right

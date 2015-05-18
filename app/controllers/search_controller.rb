@@ -55,6 +55,14 @@ class SearchController < ApplicationController
     page =  ( mode == :quick ? 1 : params[:page] )
     limit = ( mode == :quick ? 7 : RESULTS_SEARCH_PER_PAGE )
 
+    if !params[:sort_by] && (params[:catalogue] || params[:directory])
+      if (params[:catalogue] && VishConfig.getCatalogueModels() === ["Excursion"]) || (params[:directory] && VishConfig.getDirectoryModels() === ["Excursion"])
+        params[:sort_by] = "quality"
+      else
+        params[:sort_by] = "popularity"
+      end
+    end
+
     case params[:sort_by]
     when 'ranking'
       order = 'ranking DESC'
@@ -77,6 +85,19 @@ class SearchController < ApplicationController
       order = nil
     end
 
+    #age ranges. range1 is from 0 to 10. range2 10 to 14 and range 3 from 14 up
+    case params[:age]
+    when 'range1'
+      params[:age_min] = 0
+      params[:age_max] = 10
+    when 'range2'
+      params[:age_min] = 10
+      params[:age_max] = 14
+    when 'range3'
+      params[:age_min] = 14
+      params[:age_max] = 100
+    end
+
     unless params[:ids_to_avoid].nil?
       params[:ids_to_avoid] = params[:ids_to_avoid].split(",")
     end
@@ -84,8 +105,7 @@ class SearchController < ApplicationController
     #remove empty params   
     params.delete_if { |k, v| v == "" }
 
-
-    if !params[:type]
+    unless params[:type]
       if params[:catalogue]
         #default models for catalogue without "type" filter applied
         params[:type] = VishConfig.getCatalogueModels().join(",")
