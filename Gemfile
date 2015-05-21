@@ -34,7 +34,7 @@ gem 'pdf-reader', '= 1.3.3'
 gem 'avatars_for_rails', '= 1.1.4'
 gem 'axlsx', '= 2.0.1' #xlsx generation
 gem 'axlsx_rails', '= 0.1.5'
-gem 'acts_as_xlsx', :git => 'git@github.com:randym/acts_as_xlsx.git', :ref => '919817e590b1cf8e27632e630469603c78a50402'
+gem 'acts_as_xlsx', :git => 'git://github.com/randym/acts_as_xlsx.git', :ref => '919817e590b1cf8e27632e630469603c78a50402'
 gem "paperclip", '= 3.5.1'
 gem "delayed_paperclip", "= 2.7.0"
 gem 'sanitize', '= 2.1.0'
@@ -62,7 +62,7 @@ if ENV['FORCE_LOCAL_SS']
     gem 'social_stream-events'
   end
 else
-  git 'git://github.com/ging/social_stream.git', branch: "vish-b3", ref: "dec854dbcf1efe4b3cdd9a25612e2b6154d278da"  do
+  git 'git://github.com/ging/social_stream.git', branch: "vish", ref: "9912071175009fbe53f90b43b5871a4fef37d50c"  do
     gem 'social_stream-base'
     gem 'social_stream-documents'
     gem 'social_stream-linkser'
