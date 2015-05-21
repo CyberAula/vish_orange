@@ -1,33 +1,12 @@
-<% show_title ||= false %>
-<% is_home ||= false%>
-<% is_temateca ||= (params[:temateca]=="true")%>
+<div class="catalogue">
+  <div class="icontitle">
+    <%show_title ||= false %>
+    <%is_home ||= false%>
+    <%if show_title%>
+      <i class="fa fa-tags"></i><%=t('catalogue.title')%>
+    <%end%>
+  </div>
+  <%= render :partial => "catalogue/tags", :locals =>{ :is_home=> is_home}%>
 
-<div class="header_catalogue">
-	<%if show_title%>
-
-			<% if params[:controller] == 'catalogue' && params[:temateca] == 'true' %>
-
-				<div class="catalogue_title">
-					<h3><%= t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></h3>
-				</div>
-
-				<div class="catalogue_description">
-					<h5><%= t('orange_front.header.tema_desc')%></h5>
-				</div>
-
-			<% else %>
-				<div class="catalogue_title">
-					<h3><%= t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></h3>
-				</div>
-				<div class="catalogue_description">
-					<h5><%= t('orange_front.header.recurso_desc')%></h5>
-				</div>
-			<% end %>
-		</h3>
-		<!--<hr>-->
-	<%end%>
-
-	<%= render :partial => "catalogue/tags", :locals =>{ :is_home => is_home, :is_temateca => is_temateca } %>
+  <%= render :partial => "catalogue/main", :locals =>{ :is_home=> is_home}%>
 </div>
-
-<%= render :partial => "catalogue/main", :locals =>{ :is_home=> is_home, :is_temateca => is_temateca } %>

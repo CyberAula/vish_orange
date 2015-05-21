@@ -1,21 +1,17 @@
 <section id="frontpage">
-  <!--<div id="presentation">
-    <%#= render :partial => "frontpage/main" %>
-  </div>-->
-  <!--<div id="info-vish">
-    <%#= render partial: 'frontpage/info-vish' %>
-  </div>-->
+  <div id="presentation">
+    <%= render :partial => "frontpage/main" %>
+  </div>
+  <div class="decoration">
+    <hr>
+    <i class="fa fa-circle"></i>
+  </div>
   <div class="entities">
     <%= render partial: 'frontpage/entities' %>
   </div>
 </section>
 
-
 <%= content_for :javascript do %>
-
-  $(function(){
-      $('.carousel').carousel({
-        interval: 8000
-      });
-  });
+  $("footer#footer").addClass("fixed-bottom");
+  $("#wrap").addClass("wrap-when-fixed-bottom");
 <%end%>

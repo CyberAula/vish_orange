@@ -1,48 +1,13 @@
-<% 
-	go_back = "/catalogue"
-	if params[:back_home] 
-		go_back = "/home?tab=catalogue"
-	end
-	if params[:temateca]=="true"
-		go_back += (params[:back_home] ? "&" : "?") + "temateca=true"
-	end 
-%>
+<div id="open_catalogue" >
+	<%go_back = params[:back_home] ? "/home?tab=catalogue" : "/catalogue"%>
+	<a class="back_catalogue" href="<%=go_back%>"><i class="fa fa-arrow-circle-left" ></i></a>
 
-<div id="open_catalogue">
-	<a class="back_catalogue" href="<%=go_back%>"><i class="icon-circle-arrow-left" ></i></a>
-	<h2>
-		<%=t("catalogue.categories." + @category, :default => "Category")%>
-	</h2>
-	<ul>
-		<% if params[:temateca]=="true" %>
-			<%= render partial: 'excursions/add_new', :locals => { :default_tag => t("catalogue.categories." + @category, :default => "Category")}%>
-		<%else%>
-			<%= render partial: 'repositories/add_new' %>
-		<%end%>
+	<div class="icontitle">
+        <%=t("catalogue.categories." + @category, :default => "Category")%>
+    </div>
+	<ul class="items">
 		<%for resource in @resources%>
 			<%=render :partial=> "entities/entity", :locals => { :entity => resource, :prefix_id =>"catalogue" } %>
 		<%end%>
 	</ul>
 </div>
-
-<script>  
-  	document.addEventListener("DOMContentLoaded", function(){
-    	add_resource_with_default_tag_click();
-    });
-
- 
-	function add_resource_with_default_tag_click(){
-		$(".add-item").click(function(event){
-			var default_tag = '<%=t("catalogue.categories." + @category, :default => "Category")%>';
-			<% if params[:temateca]=="true" %>
-				window.location = "<%=new_excursion_path%>?default_tag=" + default_tag;
-			<%else%>				
-				$("#AddResource").on('shown', function(){
-					$("ul.resourceTagList").tagit("reset");
-					$("ul.resourceTagList").tagit("add", default_tag);
-				});
-			<%end%>
-		});
-	};
-
-</script>

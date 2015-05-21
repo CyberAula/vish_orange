@@ -6,6 +6,7 @@
     $("#wrap").attr("style","height:83%!important");
     $("div.wrapper").attr("style","height:83%!important");
     $("div.push").remove();
+    $("footer#footer").addClass("fixed-bottom");
 
     <%unless Vish::Application.config.APP_CONFIG['loep'].nil?%>
       var loepSettings = {};

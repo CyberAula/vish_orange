@@ -1,61 +1,35 @@
 <div id="resources_catalogue">
 	<%@default_categories.each do |name, resources| %>
 		<%unless resources.nil?%>
-			<h3><%=t("catalogue.categories." + name, :default => "Category")%></h3>
+		<h2><%=t("catalogue.categories." + name, :default => "Category")%></h2>
 			<ul id="container_<%=name%>" class="items">
 				<%for resource in resources%>
 					<%= render :partial => "entities/entity", :locals => { :entity => resource, :prefix_id =>"catalogue_"+name+"_" } %>
 				<%end%>
 			</ul>
-			<button class="btn-primary show_more_catalogue" name="<%=name%>"><%=t('view_all')%></button>
-			<%if current_subject%>
-			<button class="add_resource_with_default_tag btn-primary" default_tag="<%=t("catalogue.categories." + name)%>" title="<%=is_temateca ? t("temateca_recursoteca.help.add_excursion") : t("temateca_recursoteca.help.add_resource")%>"><%=is_temateca ? t("temateca_recursoteca.actions.add_excursion") : t("temateca_recursoteca.actions.add_resource")%></button>
-			<%end%>
 		<%end%>
 	<%end%>
 </div>
 
-<script>
+<script>  
   <%if is_home%>
   	add_show_more_click();
-  	add_resource_with_default_tag_click();
   <%else%>
     document.addEventListener("DOMContentLoaded", function(){
     	add_show_more_click();
-    	add_resource_with_default_tag_click();
-    });
+    });    
   <%end%>
 
   function add_show_more_click(){
 		//Show More buttons
 		$(".show_more_catalogue").click(function(event) {
 			var name = $(this).attr("name");
-			var location = "/catalogue/" + name;
-			<%if is_home %>
-				location += "?back_home=true";
-				<% if is_temateca %>
-					location += "&temateca=true";
-				<% end %>
+			<%if is_home%>
+				window.location = "/catalogue/" + name + "?back_home=true";      
 			<%else%>
-				<% if is_temateca %>
-					location += "?temateca=true";
-				<% end %>
-			<%end%>
-			window.location = location;
-		});
-	};
-
-	function add_resource_with_default_tag_click(){
-		$(".add_resource_with_default_tag").click(function(event){
-			var default_tag = $(this).attr("default_tag");
-			<% if is_temateca %>
-				window.location = "<%=new_excursion_path%>?default_tag=" + default_tag;
-			<%else%>
-				$("ul.resourceTagList").tagit("reset");
-				$("ul.resourceTagList").tagit("add", default_tag);
-				$("#AddResource").modal('show');
+				window.location = "/catalogue/" + name;	  
 			<%end%>
 		});
-	};
+	}
 
 </script>

@@ -143,7 +143,7 @@ en:
     title: "Announcement"
     body: "In the course of February, the GLOBAL excursion project is organizing two live online sessions with scientists. More information and registration under"
   are_you_sure: "¿Estás seguro?"
-  asearch:    
+  asearch:
     title: "Advanced Search"
   author: "author"
   browse:
@@ -248,8 +248,9 @@ en:
     success: "Categories saved succesfully"
   close: "Close"
   conditions:
-    check_message: "By clicking Accept, you agree to our "
+    check_message: "I Accept ViSH "
     check_message_1: "Terms and Conditions."
+    check_message_2: ""
     other: "terms of use"
   contact:
     follow: "Follow"
@@ -258,7 +259,6 @@ en:
   contribution:
     content: "Content"
     title: "Title"
-    action: "Contribute"
   pending:
     other: "Following you"
   contest:
@@ -310,8 +310,9 @@ en:
     Humanities: "Humanities"
     NaturalScience: "NaturalScience"
     ComputerScience: "ComputerScience"
+    ViSHCompetition13: "#ViSHCompetition2013"
   thevish: "The Vish"
-  youtube: "Video tutorials"
+  youtube: "ViSH Youtube Channel"
   overview_title: "ViSH overview"
   overview:
     list: "Index"
@@ -458,7 +459,7 @@ en:
       inv: "Create a new invitation"
       inv1_html: "1. Type the <b> email </b> of the person that you want to invite to join the community"
       inv2_html: "2. Then, click on <b>Send an invitation</b>"
-      overview_html: "<a href='/overview'><i class='icon-info-sign btn-mini'></i>ViSH Overview</a>"
+      overview_html: "<a href='/overview'><i class='fa fa-info-circle btn-xs'></i>ViSH Overview</a>"
     helpquiz:
       info1_html: "1. Help test 1 for the quiz<br>"
     how: "How to share a resource"
@@ -532,6 +533,7 @@ en:
       start_time: "Start time"
       title: "Title"
       type: "Type"
+      poster: "Add a poster"
     main_title: "Create a new event"
     title_input: "Name for this event"
     type:
@@ -841,7 +843,7 @@ en:
   search:
     any: "any"
     applied_filters: "APPLIED FILTERS"
-    close: "close"    
+    close: "close"
     end: "No more search results. Try another search terms"
     filters:
       age_range_1: "From 0 to 10 years"
@@ -855,7 +857,7 @@ en:
       quality_threshold: "Quality Threshold"
       age_range: "Age Range"
     loading: "Loading information"
-    models:      
+    models:
       all: "All"
       all_resources: "All Resources"
       audio: "Audios"
@@ -864,7 +866,7 @@ en:
       embed: "Embeds"
       event: "Events"
       excursion: "Excursions"
-      learning_object: "learning object"
+      learning_object: "Learning object"
       link: "Links"
       officedoc: "Office documents"
       picture: "Pictures"
@@ -907,8 +909,8 @@ en:
       filter_by: "Filter by"
       lang: "language"
       learning_object: "learning object"
-      resource: "resource type" 
-      subject: "subject"     
+      resource: "resource type"
+      subject: "subject"
       tag: "tag"
       tooltip: "Option only available for learning objects"
       tooltip2: "Option only available for excursions"
@@ -956,11 +958,6 @@ en:
     one: "user"
     other: "users"
   username: "username"
-  validation:
-    invalid_resource: "Resource not valid"
-    invalid_contributions_gallery: "A contributions gallery should include at least one assignment"
-    invalid_available_contributions: "Invalid available contributions"
-    invalid_resources_gallery: "This resources gallery include invalid entities"
   vish:
     about: "About ViSH"
     starterguide: "Starter Guide"
@@ -983,29 +980,26 @@ en:
         cancel_&_go: "Cancel and go to Workshop"
         collapse_all: "Collapse all"
         confirm_delete: "Delete workshop?"
-        delete: "Delete"
+        delete: "Delete workshop"
         edit_activity_button: "Save"
         edit_mode_btOn: "Turn on editing mode"
         edit_mode_btOff: "Turn off editing mode"
         expand_all: "Expand all"
         publish: "Publish"
-        show_contributions: "Contributions"
         unpublish: "Unpublish"
     activities:
         actions:
-            add_new_activity: "Add activity"
+            add_new_activity: "Add new activity"
             confirm_delete: "Delete activity?"
         assignment:
-            add_document: "Upload"
-            add_resource: "Add resource"
-            add_resource_message: "Here you can send to the assignment any of your ViSH resources. To do that, write the URL of your resource and click on the button."
+            add_image: "Upload"
+            add_writing: "Writing"
             available_contributions:
+                document: "Document"
                 title: "Available contributions"
-                document: "File"
-                resource: "Resource"
                 writing: "Writing"
             content: "Content"
-            contribution_message: "Upload:"
+            contribution_message: "Participate:"
             description: "Assignments allow participants to contribute to the workshop by uploading their own resources."
             due_date: "Due date"
             modal_title: "Edit assignment"
@@ -1013,24 +1007,28 @@ en:
             title: "Assignment"
             with_dates: "Specify open and due date"
         resource:
+            modal_title: "Edit resource"
             title: "Resource"
             description: "Insert any type of resource into the Workshop."
-            text: "You can add to this workshop all the resources that are available in ViSH. To add them, open the resource in ViSH, copy its URL from the browser toolbar and paste in the following text box."
+            text: "You can add to this workshop all the resources that are available in Vish. To add them, open the resource in Vish, copy its URL from the browser toolbar and paste in the following text box."
         resource_gallery:
+            add: "Add"
             title: "Resources Gallery"
             description: "Add a gallery of resources."
-            text: "Resource galleries are a component of the workshop that allow you to include several resources of any type ViSH and have them grouped together to facilitate viewing. Insert this component into your workshop and added resources in the most easy and intuitive way."
+            text: "Resource galleries are a component of the workshop that allow you to include several resources of any type Vish and have them grouped together to facilitate viewing. Insert this component into your workshop and added resources in the most easy and intuitive way."
+            new_resource: "Add"
         contributions_gallery:
             title: "Contributions Gallery"
             description: The Contributions Gallery displays the contributions sent to the workshop.
             text: "Users can contribute to the tasks defined in a workshop by adding resources or text blocks. With the component Gallery of contributions can see grouped shape resources and/or texts with which other users have contributed."
+            error: "A contributions gallery should include at least 1 assignment"
         text:
             title: "Text"
             description: "Include a paragraph of text."
             text: "In addition to the description of the workshop and the tasks defined in it, sometimes you will need the ability to insert a block of text with other purpose, such as a bibliography or other data of interest for the workshop. With this component you can add a completely personalized and editable text to your workshop."
+
     new: "New Workshop"
     other: "Workshops"
-    title: "Workshop"
     titles:
         editing_details: "Editing workshop details"
         editing_main: "Editing Workshop"
@@ -1039,6 +1037,7 @@ en:
     actions:
       add: "Add text"
     confirm_delete: "Delete writing?"
+    new: "New Writing"
     title3: "Write the text you want to add"
   yesterday: "Yesterday"
   zipfile:

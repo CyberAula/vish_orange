@@ -1,8 +1,8 @@
-<script>
-  <%if is_home%>
-    add_catalogue_clicks();
+<script>  
+  <%if is_home%>     
+    add_catalogue_clicks(); 
   <%else%>
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function(){  
       add_catalogue_clicks();
     });
   <%end%>
@@ -12,18 +12,11 @@
         event.preventDefault();
 
         var categoryId = $(this).attr("categoryId");
-        var location = "/catalogue/" + categoryId;
         <%if is_home%>
-          location += "?back_home=true";
-          <% if is_temateca %>
-            location += "&temateca=true";
-          <% end %>
+          window.location = "/catalogue/" + categoryId + "?back_home=true";      
         <%else%>
-          <% if is_temateca %>
-            location += "?temateca=true";
-          <% end %> //catalogue_category_link
+          window.location = "/catalogue/" + categoryId;      
         <%end%>
-        window.location = location;
       });
 
       $("#showMore_tags").click(function(){
@@ -43,7 +36,6 @@
 
 </script>
 
-
 <section id="catalogue">
   <ul class="Tags_list_as ">
     <div class="info_catalogue_bottom"></div>
@@ -55,5 +47,6 @@
       <% end %>
     </div>
   </ul>
+  <button class="btn btn-default" href="#" id="showMore_tags" status="showMore" class="ui-state-default ui-corner-all"><%=t('excursion.actions.show_more')%></button>
 </section>
 
