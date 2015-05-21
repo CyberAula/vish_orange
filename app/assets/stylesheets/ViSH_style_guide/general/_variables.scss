@@ -19,13 +19,25 @@ $gray-lighter:           #E7E7E7;
 $gray-lighter-extra:     #EDEDED;
 $white:                  #FFFFFF;
 
-//$gray-regular:           #B2B2B2;
-//$gray-medium:            #767676;
-//$gray-extra:           	 #DDDDDD;
+//Orange colors
+// -------------------------
+$orange-primary:        #ff6600 ;
+$orange-gray-50:        #808080 ;
 
-$brand-primary:          #E90055 !default;
-$brand-primary-2:        #008FD1 !default;
+$orange-gray-25:        #CCCCCC ;
+$orange-gray-45:        #999999 ;
+$orange-gray-75:        #666666 ;
 
+//Web colors
+//---------------------------------------
+
+//changing brand-primary & secondary colors because of orange front
+
+$brand-primary:          $orange-primary;
+//$brand-primary:          #E90055 !default;
+$brand-primary-2:        #007cc8;
+
+//$brand-secundary:        #008FD1 !default;
 $brand-secundary:        #008FD1 !default;
 
 $brand-success:          #5cb85c !default;

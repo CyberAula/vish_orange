@@ -1,201 +1,147 @@
-
 nav.navbar-fixed-top
+  padding: 5px 5%
+  background-color: none
+  background: rgba( 255, 255, 255, 0.98)
+  border: 0
   .container-fluid
-    margin-top: 3px
-    max-width: 1970px
-  .navbar-header
-    .btn-group
-      a.dropdown-toggle
-        span
-          margin-right: 2px !important
-
-.logo-header
-  display: inline
-  a
-    @include logo-img
-.quick-search
-  @media (max-width: $screen-xs-max)
-    margin-top: 9px
-.search-nav
-  margin-right: 10px
-  float: right
-  @media (max-width: $screen-xs-max)
-    float: none
-    margin-right: 0
-  .search-query
-    @media (max-width: $screen-sm-max)
-      width: 180px !important
-  form
-    .search_button_class
-      @media (max-width: $screen-xs-max)
-        width: 13%
-        margin-left: 0
-        height: 36px
-        margin-top: -1px
-
-  .input-group
-    @media (max-width: $screen-xs-max)
-      margin-left: 0px !important
-      width: 100%
-
-  .search-query
-    width: 265px
-    display: inline
-    @media (max-width: $screen-xs-max)
-      width: 85%
-      margin-right: auto !important
-      margin-left: auto
-    @media (min-width: 1132px)
-      padding-top: 4px
-.dropdown-log
-  @include dropdown-log
-
-#dropdownMenuLog
-  @include border-right-radius ($border-radius-small)
-
-.mobile-nav
-  @include hidden-sm
-  @include hidden-md
-  @include hidden-lg
-  li
-    @include border-top-radius ($border-radius-base)
-    @include border-bottom-radius ($border-radius-base)
-    &:hover
-      background-color: $gray-lighter-extra !important
-    a
-      color: $gray !important
-      text-transform: capitalize
-      &:hover,
-      &:focus
-        background-color: $gray-lighter-extra
-  li.open
-    a
-      @include border-top-radius ($border-radius-base)
-      color: $gray-light !important
-      &:hover
-        @include border-top-radius ($border-radius-base)
-        @include border-bottom-radius (0)
-    .dropdown-menu
-      @include dropdown-log
-      background-color: $dropdown-bg
-      &:hover
-        background-color: $dropdown-bg
-      form
-        padding: 0 7px 7px !important
-  li.language
-    ul li
-      padding: 0 9px
-      &:hover
-        background-color: $white !important
-        a
-          color: $text-color !important
-          background-color: $white !important
-      a
-      padding: 0 9px
-
-
-  .user
-    margin-bottom: 0
-    padding-left: 0
-    padding-right: 0
-    float: none
-    img
-      width: 18px
-      @include border-top-radius ($border-radius-small)
-      @include border-bottom-radius ($border-radius-small)
-
-  hr
-    margin-top: 6px
-    margin-bottom: 5px
-  li.sign-out
-    margin-bottom: 6px
-
-.desktop-nav
-  @include hidden-xs
-  margin-bottom: 0
-  li
-    min-width: 30px
-    a
-      color: $gray
-      border-color: $border-color
-    &:hover
-      background-color: $white
-  li.btn-group
-    a
-      min-width: 30px
-  ul li
-    &:hover
-      background-color: transparent
-  li.open
-    a
-      @include border-top-radius ($border-radius-base)
-      color: $gray-light !important
-  .user-menu .photo-user
-    background: #007CC8
-
-.user-menu
-  margin-left: 12px !important
-  .tooltip
-    left: 0 !important
-    padding: 0px !important
-    margin: 0 !important
-    position: absolute
-  a.photo-user
-    padding: 0px !important
-    img
-      @include border-left-radius ($border-radius-small)
-      @include fix-img-addon
-  a.dropdown-toggle
-    width: 120px
-    .user_text
+    max-width: 2000px
+    margin-left: auto
+    margin-right: auto
+    display: block
+    width: auto
+    .btn-navbar
+      margin-top: 11px
+    .brand
+      height: auto
+      font-size: 2em
       float: left
-    i
+      .logo
+        font-family: Helvetica Neue, Helvetica, sans-serif !important
+        font-weight: 200
+        color: $orange-gray-75
+        outline: none
+        .logo_bold
+          color: $orange-primary
+          font-family: Helvetica Neue, Helvetica, sans-serif !important
+          font-weight: 600
+    .search-ui
       float: right
-      margin: 3px 0 0 0
+      padding: 2px 10px
+      .search-query
+        width: 180px !important
+        float: left
+      .search_button_class
+        margin: 0 0 0 3px
+        float: left
+    .navbar-right
+      float: right
+      li
+        padding: 5px 7px
+      a
+        padding: 5px 0
+        outline: none
+        font-weight: 200
+        .menu_bold
+          font-weight: 800
 
-  .dropdown-toggle:hover
-    border: 1px solid $brand-primary
-  .dropdown-menu
-    li
-      &:hover
+      .active > a
+        background-color: transparent
+        box-shadow: none
+        border-top: 3px solid $orange-primary
+        margin-top: -3px
+      .dropdown
+        i
+          margin-left: 5px
+
+        .dropdown-menu
+          padding: 10px !important
+        .user-menu, .add-menu
+          padding: 0 !important
+          li
+            a
+              &:hover, &:active,&:focus
+                background-color: $black !important
+        .dropdown-menu:before, .dropdown-menu:after
+          display: none
+        form
+          margin: 0
+          .checkbox
+            display: block
+            width: 0
+            color: white
+          a
+            color: gray
+            font-size: 0.9em
+            &:hover
+              color: white
+          .btn
+            margin-top: 15px
+      .dropdown.open > .dropdown-toggle,.dropdown.active > .dropdown-toggle,.dropdown.open.active > .dropdown-toggle
         background: transparent
+      .photo_user
+        padding: 0px
+        height: 30px
+        width: 30px
+        outline: none
+        float: left
+        margin-left: 5px
+        margin-top: 5px
+        img
+          border-radius: $border-radius-base
+          height: 30px
+          width: 30px
+          float: left
+          border: 1px solid #EEEEEE
+          &:hover
+            border: 1px solid $orange-primary
+        a
+          padding: 0
+      .user_name
+        font-weight: 600
 
-.headernav
-  a
-    display: inline-block
-    &:first-child
-      margin-right: 2px
+      .add_nav
+        padding: 0
+        .btn
+          padding: 0px
+          height: 30px
+          margin-right: -1px
+          margin-left: 3px
+          background-color: $white
+          background-image: none
+          box-shadow: none
+          border: 1px solid $orange-gray-45
+          border-radius: 5px
 
-form.navbar-form-search
-  margin-right: 12px
-  @media (max-width: $screen-xs-max)
-    margin-right: 0
+          i
+            display: block
+            padding: 8px
+            color: $orange-gray-45
+            text-decoration: none
+            margin: 0
+          &:hover
+            text-decoration: none
+            border-color: $orange-primary
+            i
+              color: $orange-primary
+      .navegation
+        margin-right: 4px
+        border-radius: 5px
+        padding: 0
+        margin-top: 5px
+        .btn-header
+          padding: 8px
+          i
+            color: $orange-gray-45
+            text-decoration: none
+            padding: 0
+            margin: 0
+            display: block
+            float: left
+          i:hover
+            color: $orange-primary
+            text-decoration: none
 
-#search_button
-  @include hidden-xs
 
-.navbar-collapse
-  overflow-x: visible
-  padding-right: 0
-  padding-left: 0
-  border-top: none
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1)
-  -webkit-overflow-scrolling: touch
-
-
-#new_user
-  padding: 7px
-
-.results
-  ul
-    @include items
-    li
-      @include excursion-small
-
-#nav-collapse-out
-  .desktop-nav
-    float: right
-    padding-left: 0
 
 #warning_cookie_bar
   display: none
@@ -219,9 +165,3 @@ form.navbar-form-search
     a
       color: $white
       font-family: $corporate-font-family-sans-serif-Bold
-
-nav.navbar
-  .navbar-collapse
-    ul.nav-pills
-      li
-        text-align: center
