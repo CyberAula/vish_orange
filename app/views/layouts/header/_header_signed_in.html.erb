@@ -50,7 +50,7 @@
               <% elsif modelName == "Category" %>
                 <li><a href="#AddCategoryHeader" data-toggle="modal"><i class="fa fa-th-large"></i> <%=t('categories.actions.add')%></a></li>
               <% elsif modelName == "Event" %>
-                <li><a href="#AddEvent" data-toggle="modal"><i class="fa fa-video-camera"></i> <%=t('event.actions.add')%></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#CreateInvitationModal"><i class="fa fa-video-camera"></i> <%=t('event.actions.add')%></a></li>
               <%end%>
             <% end %>
           </ul>
@@ -123,17 +123,7 @@
       <li class="search-ui ">
       <%= render partial: 'layouts/header/uisearch_header' %>
       </li>
-
-      <!-- load modals -->
-      <% if availableModels.include? "Event" %>
-        <%= render partial: 'events/form' %>
-      <%end%>
-      <% if availableModels.include? "Resource" %>
-        <%= render partial: 'repositories/form' %>
-      <%end%>
-      <% if availableModels.include? "Category" %>
-        <%= render partial: 'categories/form', :locals => { :div_id => "AddCategoryHeader", :remote => true} %>
-      <%end%>
+      
     </div>
 
     <div class="nav-collapse navbar-responsive-collapse collapse hidden-desktop MOBILE">
