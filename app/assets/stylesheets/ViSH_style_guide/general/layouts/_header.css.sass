@@ -1,4 +1,5 @@
 nav.navbar-fixed-top
+  font-size: 0.9em
   padding: 5px 5%
   background-color: none
   background: rgba( 255, 255, 255, 0.98)
@@ -9,6 +10,7 @@ nav.navbar-fixed-top
     margin-right: auto
     display: block
     width: auto
+
     .btn-navbar
       margin-top: 11px
     .brand
@@ -30,9 +32,12 @@ nav.navbar-fixed-top
       .search-query
         width: 180px !important
         float: left
+        font-size: 1em
       .search_button_class
         margin: 0 0 0 3px
         float: left
+    .hidden-phone
+      float: right
     .navbar-right
       float: right
       li
@@ -55,20 +60,26 @@ nav.navbar-fixed-top
 
         .dropdown-menu
           padding: 10px !important
+          border-radius: $border-radius-base
         .user-menu, .add-menu
           padding: 0 !important
           li
+            padding: 0
             a
+              padding: 8px
               &:hover, &:active,&:focus
                 background-color: $black !important
         .dropdown-menu:before, .dropdown-menu:after
           display: none
         form
           margin: 0
+          width: -moz-max-content
           .checkbox
             display: block
             width: 0
             color: white
+          input[type=checkbox]
+            opacity: 1
           a
             color: gray
             font-size: 0.9em
@@ -76,8 +87,11 @@ nav.navbar-fixed-top
               color: white
           .btn
             margin-top: 15px
-      .dropdown.open > .dropdown-toggle,.dropdown.active > .dropdown-toggle,.dropdown.open.active > .dropdown-toggle
-        background: transparent
+      .dropdown.open > .dropdown-toggle,
+      .dropdown.active > .dropdown-toggle,
+      .dropdown.open.active > .dropdown-toggle
+        background: transparent !important
+
       .photo_user
         padding: 0px
         height: 30px
@@ -100,7 +114,7 @@ nav.navbar-fixed-top
         font-weight: 600
 
       .add_nav
-        padding: 0
+        padding: 5px 0px
         .btn
           padding: 0px
           height: 30px
@@ -114,7 +128,7 @@ nav.navbar-fixed-top
 
           i
             display: block
-            padding: 8px
+            padding: 7px 8px
             color: $orange-gray-45
             text-decoration: none
             margin: 0
@@ -123,24 +137,6 @@ nav.navbar-fixed-top
             border-color: $orange-primary
             i
               color: $orange-primary
-      .navegation
-        margin-right: 4px
-        border-radius: 5px
-        padding: 0
-        margin-top: 5px
-        .btn-header
-          padding: 8px
-          i
-            color: $orange-gray-45
-            text-decoration: none
-            padding: 0
-            margin: 0
-            display: block
-            float: left
-          i:hover
-            color: $orange-primary
-            text-decoration: none
-
 
 
 #warning_cookie_bar

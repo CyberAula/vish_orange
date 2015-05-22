@@ -30,8 +30,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold">Acceso<i class="icon-angle-down"></i></span></a>
             <ul class="dropdown-menu pull-right" role="menu">
               <%= form_for User.new, :as => :user, :url => user_session_path do |f| %>
-                <%= f.email_field :email, :id => "username" %>
-                <%= f.password_field :password, :id => "password"  %>
+                <%= f.email_field :email, :id => "username", :class => 'form-control' %>
+                <%= f.password_field :password, :id => "password", :class => 'form-control'  %>
 
                 <label class="checkbox">
                   <input type="checkbox"> <%=t("activerecord.attributes.user.remember_me")%>
