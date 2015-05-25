@@ -1,0 +1,53 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators  -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+
+  <!-- Wrapper for slides-->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="assets/orange/3.jpg" alt="Educa">
+      <div class="carousel-caption">
+        <div class="container-fluid carousel-text">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <a href="/users/sign_in"><div class="col-md-4 title-car"><%= t('orange_front.carousel.title1')%></div></a>
+            <div class="col-md-4 text-car"><%= raw t('orange_front.carousel.desc1')%></div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="assets/orange/2.jpg" alt="Navega">
+      <div class="carousel-caption">
+        <div class="container-fluid carousel-text">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <a href="/search"><div class="col-md-4 title-car"><%= t('orange_front.carousel.title2')%></div></a>
+            <div class="col-md-4 text-car"><%= raw t('orange_front.carousel.desc2')%></div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="assets/orange/1.jpg" alt="Protege">
+      <div class="carousel-caption">
+        <div class="container-fluid carousel-text">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <a href="/search?browse=true&sort_by=popularity&type=user"><div class="col-md-4 title-car"><%= t('orange_front.carousel.title3')%></div></a>
+            <div class="col-md-4 text-car"><%= raw t('orange_front.carousel.desc3')%></div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

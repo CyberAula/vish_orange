@@ -56,11 +56,53 @@
 .dropdown-log
   width: 242px
   form#new_user
-    @include dropdown-log 
+    @include dropdown-log
 
 
 /*FRONTPAGE*/
-#head_front
+
+.ilustration
+  .carousel-indicators
+    .active
+      background-color: $orange-primary
+  .carousel-inner
+    height: 380px
+    max-height: none
+
+    .item
+      img
+        width: 100%
+        position: absolute
+        top: -100px
+      .carousel-caption
+        height: 180px
+        top: 0
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0.25)
+        .carousel-text
+          padding: 50px 40px
+          font-family: helvetica
+          .title-car
+            color: white
+            font-size: 6em
+            opacity: 0.6
+            margin-top: -10px
+            transition: opacity .5s ease-out
+            -moz-transition: opacity .5s ease-out
+            -webkit-transition: opacity .5s ease-out
+            -o-transition: opacity .5s ease-out
+            &:hover
+              opacity: 1
+
+          .text-car
+            color: white
+            font-size: 1em
+            line-height: 1.3em
+            a
+              text-decoration: none
+              color: $orange-primary
+
+
+//#head_front
   position: relative
   .vish_logo_center
     width: 400px
@@ -77,47 +119,8 @@
       text-align: center
       font-family: $corporate-font-family-sans-serif-Regular
 
-  .ilustration
-    position: relative
-    //margin-top: 50px
-    width: 100%
-    overflow: hidden
-    margin-top: -20px
 
-    &:before
-      content: ""
-      display: block
-      padding-top: 32%
-    .vish_ilustration
-      position:  absolute
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
-      .vishphoto
-        z-index: 1
-        width: 100%
-      .vishphoto_mobile
-        display: none
-      .gradient1
-        z-index: 2
-        position:  absolute
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        background: rgba(0,124,200,0.6)
-      .tree
-        z-index: 5
-        width: 32%
-        position: absolute
-        left: 50%
-        bottom: 0
-        margin-left: -16%
-        height: auto
-        display: block
-
-#frontpage
+//#frontpage
   @include make-sm-column(12, $gutter: $grid-gutter-width)
   @include make-md-column(12, $gutter: $grid-gutter-width)
   @include make-lg-column(12, $gutter: $grid-gutter-width)
@@ -130,7 +133,7 @@
     display: block
 
     margin-bottom: 40px
-  
+
   .decoration
     margin-bottom: 25px
     @media (max-width: $screen-xs-max)
@@ -150,12 +153,12 @@
       position: relative
       color: $gray-light
 
-#presentation
+//#presentation
   margin-bottom: 10px
   float: left
   @media (max-width: $screen-xs-max)
     margin: 25px 0
-.front_info
+//.front_info
   .ch-grid
     margin: 0
     padding: 0
@@ -181,12 +184,12 @@
       @media (max-width: $screen-xs-max)
       width: 100%
 
-  .ch-grid li 
+  .ch-grid li
     width: 120px
     height: 120px
     display: inline-block
 
-  .ch-item 
+  .ch-item
     width: 100%
     height: 100%
     border-radius: 50%
@@ -227,14 +230,14 @@
     -o-transition: all 0.4s ease-in-out
     -ms-transition: all 0.4s ease-in-out
     transition: all 0.4s ease-in-out
-      
+
     -webkit-transform-style: preserve-3d
     -moz-transform-style: preserve-3d
     -o-transform-style: preserve-3d
     -ms-transform-style: preserve-3d
     transform-style: preserve-3d
 
-  .ch-info > div 
+  .ch-info > div
     display: block
     position: absolute
     width: 100%
@@ -248,24 +251,24 @@
     -ms-backface-visibility: hidden
     backface-visibility: hidden
 
-  .ch-info .ch-info-back 
+  .ch-info .ch-info-back
     -webkit-transform: rotate3d(0,1,0,180deg)
     -moz-transform: rotate3d(0,1,0,180deg)
     -o-transform: rotate3d(0,1,0,180deg)
     -ms-transform: rotate3d(0,1,0,180deg)
-    transform: rotate3d(0,1,0,180deg)     
+    transform: rotate3d(0,1,0,180deg)
     background: #F2F2F2
 
-  .ch-img-1  
+  .ch-img-1
     background-image: url("frontpage/educational.png")
 
-  .ch-img-2  
+  .ch-img-2
     background-image: url("frontpage/community.png")
 
-  .ch-img-3  
+  .ch-img-3
     background-image: url("frontpage/elearning.png")
 
-  .ch-info i 
+  .ch-info i
     color: $gray
     text-transform: uppercase
     letter-spacing: 0px
@@ -276,14 +279,14 @@
     text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3)
     display: block
 
-  .ch-info p 
+  .ch-info p
     color: $white
     padding: 10px 5px
     font-style: italic
     margin: 0 30px
     border-top: 1px solid rgba(255,255,255,0.5)
 
-  .ch-info p a 
+  .ch-info p a
     display: block
     color: $white
     color: rgba(255,255,255,0.7)
@@ -295,20 +298,20 @@
     padding-top: 4px
     font-family: 'Open Sans', Arial, sans-serif
 
-  .ch-info p a:hover 
+  .ch-info p a:hover
     color: #fff222
     color: rgba(255,242,34, 0.8)
 
-  .ch-item:hover .ch-info-wrap 
+  .ch-item:hover .ch-info-wrap
     box-shadow: 0 0 0 0 rgba(255,255,255,0.8), inset 0 0 3px rgba(115,114, 23, 0.8)
 
-  .ch-item:hover .ch-info 
+  .ch-item:hover .ch-info
     -webkit-transform: rotate3d(0,1,0,-180deg)
     -moz-transform: rotate3d(0,1,0,-180deg)
     -o-transform: rotate3d(0,1,0,-180deg)
     -ms-transform: rotate3d(0,1,0,-180deg)
     transform: rotate3d(0,1,0,-180deg)
-    
+
   .text_2_info
     margin-top: 70px
 
@@ -336,49 +339,49 @@
 
 @media (min-width: 1751px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+16) 
+    .box-item:nth-of-type(-n+16)
       display: block
 
 @media (min-width: 1501px) and (max-width: 1750px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+14) 
+    .box-item:nth-of-type(-n+14)
       display: block
 
 @media (min-width: 1200px) and (max-width: 1500px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+12) 
+    .box-item:nth-of-type(-n+12)
       display: block
 
 @media (min-width: 992px) and (max-width: 1199px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+10) 
+    .box-item:nth-of-type(-n+10)
       display: block
 
 @media (min-width: 768px) and (max-width: 991px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+8) 
+    .box-item:nth-of-type(-n+8)
       display: block
 
 @media (min-width: 481px) and (max-width: 767px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+9) 
+    .box-item:nth-of-type(-n+9)
       display: block
 
 @media (max-width: 480px)
   .entities_front
-    .box-item  
+    .box-item
       display: none
-    .box-item:nth-of-type(-n+10) 
+    .box-item:nth-of-type(-n+10)
       display: block
