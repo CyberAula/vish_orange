@@ -1,8 +1,10 @@
+
+
 footer#footer
-  height: 36px
-  padding-top: 2px
-  background-color: rgba(211, 211, 211, 0.92)
-  border-top: 1px solid $gray-lighter
+  height: 60px
+  background-color: white
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.2))
+  opacity: 0.98
   position: fixed
   width: 100%
   z-index: $zindex-footer-fixed
@@ -10,89 +12,86 @@ footer#footer
   text-align: center
   @media (max-width: $screen-xs-max)
     display: none
-  &:hover
-    bottom: 0px
-    background-color: rgba(211, 211, 211, 0.98)
-    @include transition (all 0.3s ease-out 0.3s)
-  .social
-    a
-      padding: 3px
-      i
-        font-size: 1.3rem
+
+  nav.footercontent
+
+    ul.ul-content
+      margin: 0
+      padding: 10px 3%
+      li
+        display: inline
         color: $gray
-        margin-top: 5px
-        &:hover
-          color: $gray-dark
-      .fa-facebook
-        font-size: 1.25rem
+        outline: none
+        a.style_link_footer
+          color: $gray
+        .btn
+          background-color: transparent
+          background-image: none
+          border: 0px solid
+          box-shadow: none
+          color: $gray
+          a
+            color: $gray
+          .ddfootertitle
+            img
+              margin-right: 11px
+              width: 20%
+              margin-top: -1px
+      li.social-img
+        img
+          width: 30px
+      li.item_footer
+        float: left
+        img
+          height: 40px
+          margin-right: 10px
+          float: left
+        .links
+          float: left
+          color: $orange-gray-45
+          font-size: 1em
+          a
+            color: $orange-gray-45
+            text-decoration: none
+            &:hover
+              color: black
+        .copyright
+          font-size: 0.9em
+          color: $orange-gray-45
+          text-align: left
+      li.dropup
+        float: right
+        .btn
+          padding: 9px 6px
+        .logo_cm
+          height: 32px
+          margin-left: 15px
+          margin-top: 5px
+        .ddfootertitle
+          color: $orange-gray-45
+          &:hover
+            color: $black
+          img
+            margin: 5px 10px 0 0
 
+      li.open
+        .dropdown-menu
+          left: unset
+          margin-bottom: 0
 
-  ul
-    margin: 0 auto
-    padding: 0
-    height: 63px
-    width: 640px
-    text-align: center
-    //border-bottom: 2px solid #C7C7C7
-    //padding-bottom: 21px
-
-
-  .open
-    .btn
-      &:hover
-        border: 1px solid transparent
-
-  li
-    float: left
-    padding-left: 1%
-    padding-right: 1%
-    color: $gray-dark
-    a
-      img
-        margin-right: 5px
-        vertical-align: sub
-    .btn
-      background-color: transparent
-      border: 1px solid transparent
-      color: $gray-dark
-      img
-        padding-top: 5px
-        margin-right: 5px
-        vertical-align: baseline
-        width: 15px
-
-
-      &:hover,
-      &:focus
-        border: 1px solid transparent
-        background-color: rgba(0, 0, 0, 0)
-        color: $black
-
-    .dropdown-menu
-      width: auto
-      height: auto
-    @media (max-width: 500px)
-      float: none
-      .dropdown-toggle
-        width: 100%
-
-  li.btn-group
-    @media (max-width: 500px)
-      display: block
-      min-height: 34px
-
-  li.global
-    img
-      width: 116px
-      padding-top: 8px
-      @include opacity(0.8)
-      &:hover
-        @include opacity(0.99)
-  .dropdown-menu li
-    display: block
-    width: 100%
-    padding: 0
+.clear
+  clear: both
 
 #push
   height: 100px
   clear: both
+
+footer.fixed-bottom
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  padding: 0
+
+div#wrap.wrap-when-fixed-bottom
+  padding-bottom: 80px  /* must be same height as the footer */
