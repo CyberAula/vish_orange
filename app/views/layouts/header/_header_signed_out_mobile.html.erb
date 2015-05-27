@@ -1,4 +1,12 @@
 <ul class="nav navbar-nav mobile-nav">
+  <!--SEARCH-->
+  <li class="search-mobile">
+    <%= render partial: 'layouts/search_mobile' %>
+  </li>
+  
+  <li class="<%= 'active' if params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true")%>"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+  <li class="<%= 'active' if params[:directory] == 'true'%>"><a href="<%=search_path(:directory=>"true")%>"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
+  <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="User" %>"><a href="<%=search_path(:type => "User", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
   <!--login-->
   <li class="sign_in_mobile dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -12,23 +20,24 @@
               <div class="form-group">
                 <%= f.email_field :email, :id => "username", :class => "form-control" %>
                 <%= f.password_field :password, :id => "password", :class => "form-control"  %>
-                
+
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> 
+                  <input type="checkbox">
                     <span class="lbl padding-0">
                       <%=t("activerecord.attributes.user.remember_me")%>
                     </span>
                 </label>
 
               </div>
-              <%= f.submit t(:sign_in), :class => ' btn btn-primary'%>
               <div class="remember_password"><%= link_to t('devise.links.forgot_password'), new_password_path(:user) %>
               </div>
-              
-              
-              
+              <%= f.submit t(:sign_in), :class => ' btn btn-primary'%>
+
+
+
+
             <% end %>
       <%content_for :javascript do%>
             if ("placeholder" in document.createElement("input")) {
@@ -58,22 +67,22 @@
       <i class="fa fa-angle-down"></i>
     </a>
     <ul class="dropdown-menu">
-      <% for locale in (I18n.available_locales) -%> 
+      <% for locale in (I18n.available_locales) -%>
        <li class="">
           <%= link_to image_tag("flags/" + locale.to_s + ".png", :title=>locale.to_s, :class=> "") + " " + t(:language_name, :locale => locale.to_s), session_locale_path(:new_locale => locale.to_s), :method => :post, :remote => false %>
         </li>
       <% end %>
     </ul>
   </li>
-  
+
   <!--legal_notice-->
   <li>
     <a href="/legal_notice">
       <i class="fa fa-legal"></i>
       <%= t('conditions.other') %>
-    </a>     
+    </a>
   </li>
-  
+
   <!--manual-->
   <li>
     <%= link_to help_path do %>
