@@ -31,7 +31,7 @@ en:
       faq: "FAQ"
       legal: "Legal notice"
       privacity: "Privacy policy"
-      conditions: "Conditions of use"    
+      conditions: "Conditions of use"
   about:
     blog: "News"
     contact: "Contact"
@@ -185,7 +185,7 @@ en:
         math: "Math"
         maths: "Maths"
         teaching: "teaching"
-    title: "Catalogue"
+    title: "Subjects"
     title_directory: "Resources"
   category:
     belongs_to: "Belongs to"

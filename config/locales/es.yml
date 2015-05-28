@@ -21,8 +21,8 @@ es:
       recurso_desc: "Aquí se muestra el catálogo de recursos para que crees tus propias excursiones"
       temateca: "Tema"
       tema_desc: "Aquí se muestra el catálogo de excursiones para su uso libre en el aula y fuera de ella"
-      bold: "teca"    
-  about: 
+      bold: "teca"
+  about:
     blog: "Novedades"
     contact: "Contacto"
     code: "Código fuente"
@@ -167,7 +167,7 @@ es:
     extras:
         learning: "aprendizaje"
         teaching: "enseñanza"
-    title: "Catálogo"
+    title: "Temateca"
     title_directory: "Recursoteca"
   category:
     belongs_to: "Pertenece a"

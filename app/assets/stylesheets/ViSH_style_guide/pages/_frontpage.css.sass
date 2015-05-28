@@ -59,7 +59,7 @@
     @include dropdown-log
 
 
-/*FRONTPAGE*/
+/*FRONTPAGE _ carousel*/
 
 .ilustration
   .carousel
@@ -73,7 +73,8 @@
     .carousel-inner
       height: 380px
       max-height: none
-
+      @media (max-width: $screen-xs-min)
+        height: 190px
       .item
         img
           width: 100%
@@ -87,6 +88,8 @@
           left: 0
           @media (max-width: $screen-sm-max)
             height: 280px
+          @media (max-width: $screen-xs-min)
+            background-color: transparent
           .carousel-text
             padding: 50px 40px
             font-family: helvetica
@@ -101,6 +104,10 @@
               -o-transition: opacity .5s ease-out
               &:hover
                 opacity: 1
+              @media (max-width: $screen-xs-min)
+                text-align: center
+                font-size: 4.5em
+                margin-top: 10px
 
             .text-car
               color: white
@@ -109,240 +116,14 @@
               a
                 text-decoration: none
                 color: $orange-primary
-
-
-//#head_front
-  position: relative
-  .vish_logo_center
-    width: 400px
-    @include center-block()
-    margin-top: -70px
-    position: relative
-    z-index: 666
-    @media (max-width: 500px)
-      width: 79%
-      margin-top: -14%
-    img
-      width: 100%
-    h3
-      text-align: center
-      font-family: $corporate-font-family-sans-serif-Regular
-
-
-//#frontpage
-  @include make-sm-column(12, $gutter: $grid-gutter-width)
-  @include make-md-column(12, $gutter: $grid-gutter-width)
-  @include make-lg-column(12, $gutter: $grid-gutter-width)
-  .competition
-    display: block
-    img
-      width: 100%
-
-  .excursions
-    display: block
-
-    margin-bottom: 40px
-
-  .decoration
-    margin-bottom: 25px
-    @media (max-width: $screen-xs-max)
-      margin-bottom: 36px
-    hr
-      border-bottom: 2px solid $gray-light
-      width: 100%
-      display: inline-block
-      margin: 0
-      border-top: 0
-    i
-      width: 100%
-      text-align: center
-      display: inline-block
-      margin: -12px 0 0 0
-      float: left
-      position: relative
-      color: $gray-light
-
-//#presentation
-  margin-bottom: 10px
-  float: left
-  @media (max-width: $screen-xs-max)
-    margin: 25px 0
-//.front_info
-  .ch-grid
-    margin: 0
-    padding: 0
-    list-style: none
-    display: block
-    text-align: center
-    @include make-xs-column(12, $gutter: $grid-gutter-width)
-    @include make-sm-column(4, $gutter: $grid-gutter-width)
-    @include make-md-column(4, $gutter: $grid-gutter-width)
-    @include make-lg-column(4, $gutter: $grid-gutter-width)
-    h2
-      width: 80%
-      display: block
-      font-family: $corporate-font-family-sans-serif-Regular
-      margin: 0 auto 5px
-      color: $gray-dark
-    p
-      display: block
-      padding: 0 15px
-      margin: 0 auto
-      width: 80%
-      font-family: $corporate-font-family-sans-serif-Light
-      @media (max-width: $screen-xs-max)
-      width: 100%
-
-  .ch-grid li
-    width: 120px
-    height: 120px
-    display: inline-block
-
-  .ch-item
-    width: 100%
-    height: 100%
-    border-radius: 50%
-    position: relative
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1)
-    cursor: default
-
-  .ch-info-wrap
-    position: absolute
-    width: 100px
-    height: 100px
-    border-radius: 50%
-
-    -webkit-perspective: 800px
-    -moz-perspective: 800px
-    -o-perspective: 800px
-    -ms-perspective: 800px
-    perspective: 800px
-
-    -webkit-transition: all 0.4s ease-in-out
-    -moz-transition: all 0.4s ease-in-out
-    -o-transition: all 0.4s ease-in-out
-    -ms-transition: all 0.4s ease-in-out
-    transition: all 0.4s ease-in-out
-
-    top: 10px
-    left: 10px
-    box-shadow: 0 0 0 20px rgba(255,255,255,0.2), inset 0 0 3px rgba(115,114, 23, 0.8)
-
-  .ch-info
-    position: absolute
-    width: 100px
-    height: 100px
-    border-radius: 50%
-
-    -webkit-transition: all 0.4s ease-in-out
-    -moz-transition: all 0.4s ease-in-out
-    -o-transition: all 0.4s ease-in-out
-    -ms-transition: all 0.4s ease-in-out
-    transition: all 0.4s ease-in-out
-
-    -webkit-transform-style: preserve-3d
-    -moz-transform-style: preserve-3d
-    -o-transform-style: preserve-3d
-    -ms-transform-style: preserve-3d
-    transform-style: preserve-3d
-
-  .ch-info > div
-    display: block
-    position: absolute
-    width: 100%
-    height: 100%
-    border-radius: 50%
-    background-position: center center
-
-    -webkit-backface-visibility: hidden
-    -moz-backface-visibility: hidden
-    -o-backface-visibility: hidden
-    -ms-backface-visibility: hidden
-    backface-visibility: hidden
-
-  .ch-info .ch-info-back
-    -webkit-transform: rotate3d(0,1,0,180deg)
-    -moz-transform: rotate3d(0,1,0,180deg)
-    -o-transform: rotate3d(0,1,0,180deg)
-    -ms-transform: rotate3d(0,1,0,180deg)
-    transform: rotate3d(0,1,0,180deg)
-    background: #F2F2F2
-
-  .ch-img-1
-    background-image: url("frontpage/educational.png")
-
-  .ch-img-2
-    background-image: url("frontpage/community.png")
-
-  .ch-img-3
-    background-image: url("frontpage/elearning.png")
-
-  .ch-info i
-    color: $gray
-    text-transform: uppercase
-    letter-spacing: 0px
-    font-size: 50px
-    margin: -15px 15px 0
-    padding: 40px 0 0 0
-    height: 90px
-    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3)
-    display: block
-
-  .ch-info p
-    color: $white
-    padding: 10px 5px
-    font-style: italic
-    margin: 0 30px
-    border-top: 1px solid rgba(255,255,255,0.5)
-
-  .ch-info p a
-    display: block
-    color: $white
-    color: rgba(255,255,255,0.7)
-    font-style: normal
-    font-weight: 700
-    text-transform: uppercase
-    font-size: 9px
-    letter-spacing: 1px
-    padding-top: 4px
-    font-family: 'Open Sans', Arial, sans-serif
-
-  .ch-info p a:hover
-    color: #fff222
-    color: rgba(255,242,34, 0.8)
-
-  .ch-item:hover .ch-info-wrap
-    box-shadow: 0 0 0 0 rgba(255,255,255,0.8), inset 0 0 3px rgba(115,114, 23, 0.8)
-
-  .ch-item:hover .ch-info
-    -webkit-transform: rotate3d(0,1,0,-180deg)
-    -moz-transform: rotate3d(0,1,0,-180deg)
-    -o-transform: rotate3d(0,1,0,-180deg)
-    -ms-transform: rotate3d(0,1,0,-180deg)
-    transform: rotate3d(0,1,0,-180deg)
-
-  .text_2_info
-    margin-top: 70px
-
-    p
-      float: center
-
-  .text_1_info,
-  .text_3_info
-    margin-top: -50px
-  .text_2_info,
-  .text_3_info
-    @media (max-width: $screen-xs-max)
-      margin-top: 30px
-  .text_1_info
-    @media (max-width: $screen-xs-max)
-      margin-top: 0px
+              @media (max-width: $screen-xs-min)
+                display: none
 
 
 #frontpage
   .entities_front
     display: block
-    margin-bottom: 40px
+    margin-bottom: 60px
     float: left
 
 
