@@ -8,17 +8,17 @@
 <body>
   <%= render :partial => "layouts/header/header_warning" %>
 
-  <div id="wrap">
+  <div id="wrap" class="wrap_forntpage">
     <%= render :partial => "layouts/header/header" %>
     <%= flashy %>
 
     <div class="ilustration">
         <%= render :partial => "frontpage/explanation" %>
     </div>
-        
+
     <div class="container-fluid">
       <%= yield %>
-    </div>  
+    </div>
   </div>
 
   <div id="vish_footer">
@@ -34,7 +34,7 @@
 </script>
 
 <script type="text/javascript">
-  $(document).ready(function() {  
+  $(document).ready(function() {
     <%= render partial: 'shared/hide_popovers' %>
     <%= yield :javascript%>
   });
