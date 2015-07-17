@@ -3,10 +3,18 @@ class EmbedsController < ApplicationController
   before_filter :fill_create_params, :only => [:new, :create]
   include SocialStream::Controllers::Objects
 
+  def show
+    super do |format|
+      format.full {
+        @title = resource.title
+        render :layout => 'iframe'
+      }
+    end
+  end
 
   def create
     super do |format|
-      format.json { 
+      format.json {
         render :json => resource 
       }
       format.js
@@ -36,7 +44,7 @@ class EmbedsController < ApplicationController
   private
 
   def allowed_params
-    [:fulltext, :width, :height, :live, :language, :age_min, :age_max, :scope, :avatar, :tag_list=>[]]
+    [:fulltext, :width, :height, :live, :language, :license_id, :age_min, :age_max, :scope, :avatar, :tag_list=>[]]
   end
 
   def fill_create_params

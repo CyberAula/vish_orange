@@ -1,13 +1,13 @@
 Vish::Application.routes.draw do
 
   if Vish::Application.config.APP_CONFIG["register_policy"] == "INVITATION_ONLY"
-    devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks", registrations: "registrations", :sessions => "sessions", :passwords => "passwords", :invitations => "devise_invitations" }, :skip => [:registrations] 
+    devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks", registrations: "registrations", :sessions => "sessions", :passwords => "passwords", :invitations => "devise_invitations" }, :skip => [:registrations]
       as :user do
         get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
         put 'users' => 'devise/registrations#update', :as => 'user_registration'
       end
   else
-    devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks", registrations: "registrations", :sessions => "sessions", :passwords => "passwords", :invitations => "devise_invitations" }  
+    devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks", registrations: "registrations", :sessions => "sessions", :passwords => "passwords", :invitations => "devise_invitations" }
   end
 
   match 'users/:id/excursions' => 'users#excursions'
@@ -33,14 +33,17 @@ Vish::Application.routes.draw do
   match 'help' => 'static#overview'
   match 'legal_notice' => 'static#legal_notice'
   match 'privacy_policy' => 'static#privacy_policy'
-  match 'conditions_of_use' => 'static#conditions_of_use'
+  match 'terms_of_use' => 'static#terms_of_use'
+  
   #Download the user manual and count the number of downloads
   match 'user_manual' => 'static#download_user_manual'
-  
+
   #APIs
   match '/apis/search' => 'federated_search#search'
   match '/apis/iframe_api' => 'excursions#iframe_api'
   match '/apis/recommender' => 'recommender#api_resource_suggestions'
+  match '/apis/wapp_token/:auth_token' => 'wapp_auth_tokens#show'
+  match '/apis/wapp_token' => 'wapp_auth_tokens#create'
 
   #Search
   match '/search/advanced' => 'search#advanced'
@@ -56,12 +59,12 @@ Vish::Application.routes.draw do
   match 'excursions/last_slide' => 'excursions#last_slide'
   match 'excursions/preview' => 'excursions#preview'
   match 'excursions/interactions' => 'excursions#interactions'
- 
+
   match 'excursions/:id/metadata' => 'excursions#metadata'
   match 'excursions/:id/scormMetadata' => 'excursions#scormMetadata'
   match 'excursions/:id/clone' => 'excursions#clone'
   match '/excursions/:id/evaluate' => 'excursions#evaluate'
-  
+
   match '/excursions/:id.mashme' => 'excursions#show', :defaults => { :format => "gateway", :gateway => 'mashme' }
   match '/excursions/:id.embed' => 'excursions#show', :defaults => { :format => "full" }
 
@@ -73,6 +76,7 @@ Vish::Application.routes.draw do
 
   #Workshops
   match '/workshops/:id/edit_details' => 'workshops#edit_details'
+  match '/workshops/:id/contributions' => 'workshops#contributions'
   resources :workshops
 
   #Workshops Activities
@@ -104,7 +108,6 @@ Vish::Application.routes.draw do
 
   #Catalogue
   match '/catalogue' => 'catalogue#index'
-  match '/catalogue/:category' => 'catalogue#show'
 
   #Competitions
   match 'contest' => 'static#contest'

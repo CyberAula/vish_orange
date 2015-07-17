@@ -13,7 +13,7 @@ class StaticController < ApplicationController
   def privacy_policy
   end
 
-  def conditions_of_use
+  def terms_of_use
   end
 
   def overview

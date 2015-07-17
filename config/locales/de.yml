@@ -8,6 +8,24 @@ de:
         tag: "Interessensbereiche"
   activity:
     empty: "Deine Timeline ist leer"
+    items:
+      infoaction:
+        audio: "Audio hinzugefügt"
+        category: "Kategorie hinzugefügt"
+        document: "Dokument hinzugefügt"
+        embed: "Embed hinzugefügt"
+        event: "Event hinzugefügt"
+        excursion: "Exkursion hinzugefügt"
+        file: "Datei hinzugefügt"
+        link: "Link hinzugefügt"
+        picture: "Bild hinzugefügt"
+        scormfile: "SCORM-Datei hinzugefügt"
+        swf: "SWF hinzugefügt"
+        video: "Video hinzugefügt"
+        webapp: "Web-App hinzugefügt"
+        workshop: "Workshop hinzugefügt"
+        writing: "Text hinzugefügt"
+        zipfile: "ZIP-Datei hinzugefügt"
     more: "Mehr ansehen..."
     new_user: "Willkommen beim ViSH! Poste und teile deine Ideen, Links, Videos mit deinen Followern."
     newmessage: "Das ist deine Timeline. Du kannst Bilder, Videos, Links und mehr hochladen und teilen."
@@ -345,10 +363,14 @@ de:
   sign_up: "Registrieren"
   site:
     current:
-      description: "A meeting point for scientists and teachers based around the idea of virtual excursions"
-      keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-    name: "Virtual Science Hub"
+      description: "ViSH is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
+      keywords: "e-Learning, Technology Enhanced Learning, education, Learning Objects, repository, resources, authoring tool, catalogue, search"
+      title: "ViSH"
+      search: "ViSH - Search"
+      browse: "ViSH - Explore"
+      msg: "ViSH - Messages"
+      activity: "ViSH - Activities"
+    name: "ViSH"
   swf:
     confirm_delete: "SWF löschen?"
   today: "Heute"
@@ -606,12 +628,6 @@ de:
     error: "Es ist ein Fehler aufgetreten. Bitte Code noch einmal eingeben."
     subtitle: "Den Code in die Box eingeben:"
     title: "Captcha"
-  site:
-    current:
-      description: "Ein Ort für WissenschaferInnen und LehrerInnen rund um das Konzept der virtuellen Exkursionen"
-      keywords: "VisHub,virtuell,Exkursion"
-      title: "Virtual Science Hub"
-    name: "Virtual Science Hub"
   spam:
     error_content: "In der Exkursion ist ein Fehler aufgetreten"
     placeholder: "Was ist das Problem?"
@@ -644,8 +660,6 @@ de:
             add_new_activity: "Neue Aktivität hinzufügen"
             confirm_delete: "Löschen Aktivität?"
         assignment:
-            add_image: "Upload"
-            add_writing: "Schreiben"
             available_contributions:
                 document: "Dokument"
                 title: "Verfügbare Beiträge"

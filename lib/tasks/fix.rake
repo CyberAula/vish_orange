@@ -568,6 +568,90 @@ namespace :fix do
     printTitle("Task Finished")
   end
 
+  #Usage
+  #Development:   bundle exec rake fix:roles
+  #In production: bundle exec rake fix:roles RAILS_ENV=production
+  task :roles => :environment do
+
+    printTitle("Fixing roles")
+
+    Rake::Task["db:populate:create:roles"].invoke
+
+    Actor.record_timestamps=false
+    Actor.all.select{|a| a.roles.empty?}.each do |a|
+      a.roles.push(Role.default)
+    end
+    Actor.record_timestamps=true
+
+    printTitle("Task Finished")
+  end
+
+  #Usage
+  #Development:   bundle exec rake fix:licenses
+  #In production: bundle exec rake fix:licenses RAILS_ENV=production
+  task :licenses => :environment do
+
+    printTitle("Fixing licenses")
+
+    Rake::Task["db:populate:create:licenses"].invoke
+
+    defaultPublicLicenseId = License.default.id rescue nil
+    defaultPrivateLicenseId = License.find_by_key("private").id rescue nil
+
+    #Assign licenses to AOs
+    ActivityObject.all.each do |ao|
+      if ao.should_have_license?
+        if ao.license_id.nil?
+          if ao.private_scope?
+            ao.update_column :license_id, defaultPrivateLicenseId
+          else
+            ao.update_column :license_id, defaultPublicLicenseId
+          end
+        end
+
+        #License attribution
+        if !ao.license.nil? and ao.license.public? and ao.license.requires_attribution? and ao.license_attribution.nil? and ao.original_author.nil? and !ao.owner.nil?
+          ao.update_column :license_attribution, ao.default_license_attribution
+        end
+      end
+    end
+
+    #Get all excursions
+    Excursion.all.each do |excursion|
+        eJson = JSON(excursion.json)
+        jsonChanged = false
+
+        unless excursion.draft
+          unless eJson["vishMetadata"].is_a? Hash
+            eJson["vishMetadata"] = {}
+          end
+          #Mark published excursions as released
+          unless eJson["vishMetadata"]["released"]==="true"
+            eJson["vishMetadata"]["released"] = "true"
+            jsonChanged = true
+          end
+        else
+          #Private license for first drafts
+          unless eJson["vishMetadata"].is_a? Hash and eJson["vishMetadata"]["released"]==="true"
+            unless defaultPrivateLicenseId.nil?
+              excursion.activity_object.update_column :license_id, defaultPrivateLicenseId
+            end
+          end
+        end
+
+        unless eJson["license"].is_a? Hash and eJson["license"]["key"].is_a? String and eJson["license"]["key"]==excursion.license.key
+          eJson["license"] = {name: excursion.license.name, key: excursion.license.key}
+          jsonChanged = true
+        end
+
+        excursion.update_column :json, eJson.to_json if jsonChanged
+    end
+
+    printTitle("Task Finished")
+  end
+
+
+
   ####################
   #Task Utils
   ####################

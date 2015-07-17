@@ -22,7 +22,11 @@ class UsersController < ApplicationController
   def excursions
     respond_to do |format|
       format.html{        
-        render :partial => 'excursions/profile_excursions', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        if !params[:page] || params[:tab] == "excursions" || (params[:page] && (params[:page] == 1))
+          render :partial => 'excursions/profile_excursions_list', :locals => {:scope => :me, :limit => 0, :page=> 1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        else
+          render :partial => 'excursions/profile_excursions_page', :locals => {:scope => :me, :limit => 0, :page=> params[:page], :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        end
       }
     end
   end
@@ -30,7 +34,11 @@ class UsersController < ApplicationController
   def workshops
     respond_to do |format|
       format.html{        
-        render :partial => 'workshops/profile_workshops', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        if !params[:page] || params[:tab] == "workshops" || (params[:page] && (params[:page] == 1))
+          render :partial => 'workshops/profile_workshops_list', :locals => {:scope => :me, :limit => 0, :page=> 1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        else
+          render :partial => 'workshops/profile_workshops_page', :locals => {:scope => :me, :limit => 0, :page=> params[:page], :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        end
       }
     end
   end
@@ -38,10 +46,10 @@ class UsersController < ApplicationController
   def resources
     respond_to do |format|
       format.html{        
-        if !params[:page] || params[:tab] == "resources" || (params[:page] && (params[:page] == 1 || params[:page]==0))
-          render :partial => 'repositories/profile_resources', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        if !params[:page] || params[:tab] == "resources" || (params[:page] && (params[:page] == 1))
+          render :partial => 'repositories/profile_resources_list', :locals => {:scope => :me, :limit => 0, :page=> 1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
         else
-          render :partial => 'repositories/resources', :locals => {:scope => :me, :limit => 0, :page=> params[:page], :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+          render :partial => 'repositories/profile_resources_page', :locals => {:scope => :me, :limit => 0, :page=> params[:page], :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
         end
       }
     end
@@ -50,10 +58,10 @@ class UsersController < ApplicationController
   def events
     respond_to do |format|
       format.html{       
-        if !params[:page] || params[:tab] == "events" || (params[:page] && (params[:page] == 1 || params[:page]==0)) 
-          render :partial => 'events/profile_events', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        if !params[:page] || params[:tab] == "events" || (params[:page] && (params[:page] == 1)) 
+          render :partial => 'events/profile_events_list', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
         else
-          render :partial => 'events/events', :locals => {:scope => :me, :limit => 0, :page=> params[:page], :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+          render :partial => 'events/profile_events_page', :locals => {:scope => :me, :limit => 0, :page=> params[:page], :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
         end
       }
     end
@@ -63,7 +71,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html{
         #Categories do not have pageless
-        render :partial => 'categories/profile_categories', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        render :partial => 'categories/profile_categories_list', :locals => {:scope => :me, :limit => 0, :page=> params[:page]||1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
       }
     end
   end

@@ -52,7 +52,6 @@ aside.recomended
     width: 95%
     @include center-block
   h2
-    //font-family: $corporate-font-family-sans-serif-Regular
     color: $gray-dark
     min-height: 38px
   .tab-content
@@ -96,6 +95,8 @@ aside.recomended
       padding-right: 0
       .panel
         @include box-shadow(0 0 0 transparent)
+        header .table
+          margin-bottom: 0
         .panel-body
           padding: 0
         .panel-footer
@@ -107,6 +108,14 @@ aside.recomended
         border-collapse: none
         span
           font-family: $corporate-font-family-sans-serif-Medium
+          float: right
+        tr
+          td:first-child
+            width: 145px
+          td
+            border-color: #999
+        .tagit-suggestions
+          padding-left: 0
       @media (max-width: $screen-xs-max)
         clear: both
         padding-left: 0
@@ -210,14 +219,17 @@ aside.recomended,
       @include excursion-small
 
 .box-show
-  a,
-  i,
-  img
+  a,i,img
     text-align: center
     width: auto
     display: block
+  i
     margin: 20px auto
     font-size: 44px
+  .default-icon
+    font-size: 10em
+    color: $gray
+    margin: 100px auto
   .viewerElement
     padding-top: 79%
     width: 100%
@@ -234,6 +246,7 @@ aside.recomended,
       left: 0
       width: 100%
       height: 100%
+
 
 .social_toolbar_excursion
   div.social
@@ -304,8 +317,6 @@ aside.recomended,
     button.report
       float: right
 
-
-
 .limits
   position: relative
   .limit1, .limit2
@@ -327,10 +338,8 @@ input.age-slider
   select.language
     width: 100%
 
-
 .slider-track
   background-color: lighten($brand-primary, 30%)
-
 
 
 #repository
@@ -343,17 +352,44 @@ input.age-slider
     label
       width: 100%
   section.target_age
-    margin-bottom: 15px
+    margin-top: 5px
+    margin-bottom: 30px
   .btn
     float: right
     margin-top: 15px
+  .layoutform.layoutform_editInstance
+    section.license
+      margin-top: 10px
+    section.authorship,
+    section.license
+      label
+        margin-bottom: 1px
+      span
+        margin-top: 0px
+  .layoutform.layoutform_newInstance
+    section.authorship
+      label
+        width: auto
+        margin-left: 0px
+        margin-top: 2px
+      label.resource_authorship_label
+        margin-left: 5px
+      label.authorship_author_label
+        margin-top: 5px
+      label.authorship_attribution_label
+        margin-top: 10px
+      input[type=checkbox]
+        display: block
+        opacity: 1
+        position: relative
+        float: left
 
 #new_document
   .modal-body
     padding-top: 0
     margin-top: -6px
     .target_age
-      min-height: 80px
+      margin-bottom: 20px
   .footer-form
     margin: 15px -20px 0
     padding: 0px 20px 0px
@@ -366,6 +402,9 @@ input.age-slider
 input.new_file_avatar
   margin-bottom: 10px
 
+
+textarea.form-control
+  min-height: 100px
 
 #new_document-up,
 #new_event-up,
@@ -393,3 +432,45 @@ input.new_file_avatar
     margin: 20px 0
   section.target_age
     margin-bottom: 30px
+
+//--------------------------
+//Add resource modal-form
+//--------------------------
+
+#AddResource
+  .modal-body
+    .layoutform
+      hr
+        margin: 5px 0
+      .panel-group
+        margin: 15px 0
+        .panel-default
+          border-color: $gray-light
+      .resource_info
+        border-radius: $border-radius-base
+        padding: 0 15px 30px 15px
+        section.authorship
+          input[type=checkbox]
+            display: block
+            opacity: 1
+            position: relative
+            float: left
+          label
+            margin-top: 1px
+            margin-bottom: 2px
+            width: auto
+          .resource_authorship_label
+            margin-bottom: 15px
+      .target_age_slider_label
+        margin-top: 20px
+        margin-bottom: 1px
+  .modal-footer
+    margin: 0
+  
+
+div.resource_common_fields_form
+  section.avatar
+    margin-bottom: 18px
+
+.resource_authorship_label
+  margin-left: 5px

@@ -1,5 +1,7 @@
+<% isNewInstance = resource.new_record? %>
+
 <article id="new_file">
-  <div class="layoutform">
+  <div class="layoutform <%=isNewInstance ? 'layoutform_newInstance' : 'layoutform_editInstance'%>">
 
     <%= form_for(resource) do |f| %>
       <%= f.hidden_field :owner_id %>
@@ -18,9 +20,7 @@
         </ul>
       </div>
 
-      <% isNewInstance = resource.new_record? %>
-
-      <% if [resource.class.name,resource.class.superclass.name].include? "Document" %>
+      <% if resource.document? %>
         <%=render :partial => "common_documents/common_edit", :locals => {:f => f, :isNewInstance => isNewInstance}%>
       <% end %>
 
@@ -48,7 +48,7 @@
       </section>
 
       <%
-        initialTags = resource.tags.all.map{|e| e.name} || []
+        initialTags = resource.tag_list || []
         tags = (ActivityObject.tag_counts.all.map{|e| e.name} + initialTags + Vish::Application.config.catalogue["keywords"]).uniq!
         if tags.nil?
           tags = []
@@ -118,6 +118,48 @@
         </section>
       <% end%>
 
+      <% if resource.should_have_license? %>
+        <section class="license">
+          <%= f.label :license_id, t('document.info.license') %>
+          <% if resource.license.nil? or resource.license.private? or isNewInstance %>
+            <%= f.select(:license_id, resource_license_options_for_select(resource.license_id, resource.document?), {}, {:class => "resource_license"}) %>
+          <% else %>
+            <span><%= resource.license_name %></span>
+          <% end %>
+          <% if isNewInstance %>
+              <% showLicenseCustom = (!resource.license.nil? and resource.license.custom?) %>
+              <div class="license_custom_wrapper" <%='style=display:none' unless showLicenseCustom %> >
+                <%= f.label :license_custom, t("document.info.license_custom_form") %>
+                <%= f.text_field :license_custom, :class => "form-control" %>
+              </div>
+          <% end %>
+        </section>
+      <% end %>
+
+      <% if resource.should_have_authorship? %>
+        <section class="authorship">
+          <% unless isNewInstance %>
+            <label><%=t("document.info.author")%>:</label>
+            <span><%= resource.original_author_name %></span>
+            <%unless resource.license_attribution.blank? or resource.license.nil? or !resource.license.requires_attribution? %>
+              <br/>
+              <label><%=t("document.info.license_attribution")%>:</label>
+              <span><%= resource.license_attribution %></span>
+            <% end %>
+          <% else %>
+            <br/>
+            <% currentUserIsOwner = (resource.original_author.nil? or (!current_subject.nil? and resource.original_author==current_subject.name)) %>
+            <input type="checkbox" <%='checked="checked"' if currentUserIsOwner %> class="authorship_checkbox"></input>
+            <label class="resource_authorship_label"><%=t("document.leyend.authorship_recognition")%></label>
+            <br/>
+            <%= f.label :original_author, t("document.info.author"), :class => "authorship_author_label" %>
+            <%= f.text_field :original_author, :class => "form-control authorship_author", :disabled => currentUserIsOwner, :defaultvalue => current_subject.name, :value => (resource.original_author or current_subject.name) %>
+            <%= f.label :license_attribution, t("document.info.license_attribution"), :class => "authorship_attribution_label" %>
+            <%= f.text_field :license_attribution, :class => "form-control authorship_attribution", :disabled => currentUserIsOwner, :defaultvalue => current_subject.default_license_attribution, :value => (resource.license_attribution or current_subject.default_license_attribution) %>
+          <% end %>
+        </section>
+      <% end %>
+
       <div class="footer-form clearfix">
         <%= f.submit :class => "btn btn-primary form-sender", "data-loading-text" => t('button.sending') %>
         <% if resource.class.name=="Workshop" && !isNewInstance %>
@@ -125,7 +167,6 @@
         <%end%>
       </div>
     <% end %>
-
 
     <%content_for :javascript do%>
       $("#new_file input[type='submit']").click(function(event){
@@ -193,6 +234,7 @@
         $("#new_file .tags input").hide();
         $("#new_file .tags input").val(resourceTagList);
       });
+
       // onDocumentReady
       // document.addEventListener("DOMContentLoaded", function(){});
       SocialStream.Document.edit();
@@ -200,6 +242,39 @@
         $('#new_file .age-slider').data('slider').setValue([0,0]);
       <% end %>
       newFilePositionLimits();
+
+      //Authorship
+      $("#new_file section.authorship input[type='checkbox']").change(function(){
+        var checked = $(this).prop('checked');
+        var authorDOM = $(this).parent().find("input.authorship_author");
+        var attributionDOM = $(this).parent().find("input.authorship_attribution");
+
+        if(checked){
+          $(authorDOM).attr("disabled","disabled");
+          $(authorDOM).val($(authorDOM).attr("defaultvalue"));
+          $(attributionDOM).attr("disabled","disabled");
+          $(attributionDOM).val($(attributionDOM).attr("defaultvalue"));
+        } else {
+          $(authorDOM).removeAttr("disabled");
+          $(authorDOM).val("");
+          $(attributionDOM).removeAttr("disabled");
+          $(attributionDOM).val("");
+        }
+      });
+
+      //Custom license listener
+      $("#new_file section.license select.resource_license").change(function(event){
+        if($(this).find(":selected").text()==="<%=t("licenses.other")%>"){
+          if(!$("#new_file section.license div.license_custom_wrapper").is(":visible")){
+            $("#new_file section.license div.license_custom_wrapper").show();
+          }
+        } else {
+          if($("#new_file section.license div.license_custom_wrapper").is(":visible")){
+            $("#new_file section.license div.license_custom_wrapper").hide();
+          }
+        }
+      });
+
     <% end %>
 
   </div>

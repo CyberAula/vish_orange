@@ -1,19 +1,7 @@
 <% availableModels ||= available_models %>
 
 <%= content_for :javascript do %>
-    //to close the popovers
-    $(':not(#anything_not_present)').on('click', function (e) {
-    $('.popover-link').each(function () {
-    //the 'is' for buttons that trigger popups
-    //the 'has' for icons and other elements within a button that triggers a popup
-    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-    $(this).popover('hide');
-    return;
-    }
-    });
-    });
-
-
+    
     //apply events when opening the embed popover
     $('.embed').on('shown.bs.popover', function () {
     $('button#btn_copy_embed').zclip({
@@ -60,11 +48,11 @@
     });
 
     $('.delete').popover({
-    html : true,
-    content: function() {
-    return $('.contentdelete').html();
-    },
-    container: "body"
+      html : true,
+      content: function() {
+      return $('.contentdelete').html();
+      },
+      container: ".actions_layout_show"
     });
 
 <% end %>
@@ -76,21 +64,22 @@
     });
 </script>
 
-<div class="btn-group">
+<div class="btn-group actions_layout_show">
   <!--remove-->
   <% if user_signed_in? and can?(:destroy, @event) %>
-      <button class="with_tooltip delete btn popover-link" data-container="body" title="<%= t('excursion.actions.delete') %>" aria-hidden="true">
-        <i class="fa fa-trash-o"></i></button>
+      <button class="with_tooltip delete btn" data-toggle="popover" data-container="body" title="<%= t('excursion.actions.delete') %>" aria-hidden="true">
+        <i class="fa fa-trash-o"></i>
+      </button>
   <% end %>
 
   <div class="contentdelete" style="display: none">
     <p class="delete_p"><i class="fa fa-trash-o"></i> <%= t('event.confirm_delete') %></p>
-
     <div class="actions">
-      <a class="btn btn_cancel"><%= t('cancel') %></a>
+      <a class="btn btn_cancel closepopover"><%= t('cancel') %></a>
       <%= link_to t('excursion.actions.delete'), @event, :method => :delete, :class => 'btn btn-primary' %>
     </div>
   </div>
+
   <% if @event.streaming %>
       <!-- STREAMING CODE  -->
   <% else %>
@@ -175,10 +164,8 @@
       <%= content_for :javascript do %>
           $('a[href="#document-edit"]').on('shown', function (e) {
           $('#editdate').data('datetimepicker').setLocalDate(new Date(Date.parse("<%= @event.start_at.iso8601 %>")));
-          $('#edithourinit').data('datetimepicker').setLocalDate(new Date(Date.parse("<%= @event.start_at.iso8601 %>
-          ")));
-          $('#edithourfinish').data('datetimepicker').setLocalDate(new Date(Date.parse("<%= @event.end_at.iso8601 %>
-          ")));
+          $('#edithourinit').data('datetimepicker').setLocalDate(new Date(Date.parse("<%= @event.start_at.iso8601 %>")));
+          $('#edithourfinish').data('datetimepicker').setLocalDate(new Date(Date.parse("<%= @event.end_at.iso8601 %>")));  
           });
       <% end %>
   <% end %>

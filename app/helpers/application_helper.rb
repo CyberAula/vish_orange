@@ -47,6 +47,16 @@ module ApplicationHelper
 		[[I18n.t('lang.languages.other'), "ot"]]
 	end
 
+	def resource_license_options_for_select(licenseId,allowCustom=true)
+		selectedLicenseId = licenseId || License.default.id
+		licenses = License.all.select{|l| (l.public? and (allowCustom or !l.custom?)) or (l.id===selectedLicenseId) }
+		options_for_select(licenses.map{|l| [l.name,l.id] },selectedLicenseId)
+	end
+
+	def resource_licenses
+		License.all.select{|l| l.public? }.map{|l| [l.name,l.key] }
+	end
+
 	#Configuration
 	def available_models
 		VishConfig.getAvailableMainModels

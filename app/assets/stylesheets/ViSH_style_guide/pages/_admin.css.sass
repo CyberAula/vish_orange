@@ -7,31 +7,28 @@
   @include make-lg-column(12, $gutter: $grid-gutter-width)
   padding: 0 !important
 .adminPanel-header
-  h1
+  h1, h4
     width: 100%
     text-align: left
-    margin-top: 2px !important
-    margin-bottom: 2px !important
+    color: $gray-darker
     i
-      color: #BEBEBE
-      font-size: 26px
+      color: $gray-darker
+      font-size: 24px
       margin-right: 5px
   hr
     border-bottom-color: $gray
     margin: 0 0 10px 0
   .nav-pills > li > a
     background-color: $white
-    margin-right: 10px
-    border: 1px solid $brand-primary
+    margin-right: 5px 0
+    color: $gray
     &:hover
-      background-color: lighten($brand-primary, 10%) 
+      background-color: lighten($brand-primary, 10%)
       color: $white
   .nav-pills > li.active > a
     background-color: $brand-primary
     border: 1px solid $brand-primary
-
-
-
+    color: white
 
 
 #spam_table,
@@ -54,6 +51,7 @@
       cursor: pointer
       &:hover
         background: $white
+
       td
         background: transparent
 
@@ -61,13 +59,14 @@
         span
           font-family: $corporate-font-family-sans-serif-Bold
           font-size: 14px
-          color: $gray
+          color: $gray-dark
       .admin-type
         i
           color: $brand-primary
-          font-size: 25px
-          opacity: 0.5
+          font-size: 20px
+          opacity: 0.7
           vertical-align: text-top
+          margin: 5px
 
       .admin-user,
       .admin-user-user,
@@ -75,7 +74,7 @@
         a
           span
             font-family: $corporate-font-family-sans-serif-Regular
-            color: $gray-light
+            color: $gray-dark
             &:hover
               color: $brand-secundary
           &:hover
@@ -86,7 +85,7 @@
         span
           font-family: $corporate-font-family-sans-serif-Light
           font-size: 12px
-          color: $gray
+          color: $gray-dark
           height: 20px
           overflow-y: hidden
           &:hover
@@ -101,7 +100,7 @@
         span
           font-family: $corporate-font-family-sans-serif-Light
           font-size: 14px
-          color: $gray
+          color: $gray-dark
       .admin-icontrash
         i
           &:hover
@@ -112,14 +111,12 @@
         i
           vertical-align: middle
         a
-          color: $gray
+          color: $gray-dark
 
 
 
 #spam_table,
 #user_table
-  .admin-checkbox
-    width: 0%
   .admin-resource
     width: 20%
   .admin-type
@@ -174,9 +171,10 @@ div.admin_header
     li
       display: inline
       padding: 10px
-      i,
-      span
+      i, span
         font-size: 12px
-        color: $gray-light
       i
         margin-right: 5px
+        color: $brand-primary
+      span
+        color: $gray

@@ -36,7 +36,7 @@ en:
     blog: "News"
     contact: "Contact"
     code: "Source code"
-    survey: "ViSH survey"
+    survey: "EducaInternet survey"
     title: "about"
   activerecord:
     attributes:
@@ -46,8 +46,26 @@ en:
         remember_me: "Remember me"
   activity:
     empty: "Your timeline is empty"
+    items:
+      infoaction:
+        audio: "Audio Added"
+        category: "Category Added"
+        document: "Document Added"
+        embed: "Embed Added"
+        event: "Event Added"
+        excursion: "Excursion Added"
+        file: "File Added"
+        link: "Link Added"
+        picture: "Picture Added"
+        scormfile: "SCORM file Added"
+        swf: "SWF Added"
+        video: "Video Added"
+        webapp: "Web Application Added"
+        workshop: "Workshop Added"
+        writing: "Writing Added"
+        zipfile: "ZIP file Added"
     more: "See more..."
-    new_user: "Welcome to ViSH! Post and share your thoughts, links, videos with your followers."
+    new_user: "Welcome to EducaInternet! Post and share your thoughts, links, videos with your followers."
     newmessage: "This is your timeline. You can upload and share images, videos, links and more."
     timeline: "timeline"
     verb:
@@ -64,10 +82,12 @@ en:
     follow: "+ Follow"
     unfollow: "UnFollow"
   activity_object:
+    author: "Author"
     title: "Title"
     description: "Description"
     keywords: "Keywords"
     language: "Language"
+    license: "License"
     age_range: "Age Range"
     context: "Context"
     context_choices:
@@ -136,7 +156,7 @@ en:
     reporter: "Reporter"
     reports: "Reports"
     resque: "Resque"
-    title: "ViSH Administration Panel"
+    title: "EducaInternet Administration Panel"
     users: "Users Administration"
   all: "all"
   announce:
@@ -231,7 +251,7 @@ en:
       duplicated: "You already have a category with this title. Please, give it another title."
     favorites:
       title: My favorites
-      description: This category shows your favorite things in the ViSH
+      description: This category shows your favorite things in EducaInternet
     info: "Add it to one of your categories"
     input: "Add a description"
     item_inside: "items inside"
@@ -248,15 +268,17 @@ en:
     success: "Categories saved succesfully"
   close: "Close"
   conditions:
-    check_message: "I Accept ViSH "
+    check_message: "I Accept EducaInternet "
     check_message_1: "Terms and Conditions."
     check_message_2: ""
-    other: "terms of use"
+    other: "terms and conditions"
+    terms_use: "Terms of use"
   contact:
     follow: "Follow"
     unfollow: "Unfollow"
     following: "Following"
   contribution:
+    action: "Contribute"
     content: "Content"
     title: "Title"
   pending:
@@ -267,7 +289,7 @@ en:
     moreinfo: "More Info"
     faq: "Faq"
     candidates: "Candidates"
-    intro: "We admit individuals or institutions. The competition for best eExcursions is open to any registered ViSH user. Only full eExcursions will enter the competition."
+    intro: "We admit individuals or institutions. The competition for best eExcursions is open to any registered EducaInternet user. Only full eExcursions will enter the competition."
     categories: "Categories"
     categories2: "Maths, Physics, Chemistry, Biology, Geography, EnvironmentalStudies, Engineering, Humanities, NaturalScience, ComputerScience."
     languages1: "eExcursions can be submitted in the following languages:"
@@ -285,7 +307,7 @@ en:
     timeline_date2: "16 December 2013"
     timeline_date3: "23 December 2013"
     criteria: "Selection criteria"
-    criteria2: "The eExcursions will be ranked according to the number of favourites voted by the user community on ViSH.The first 10 ranked excursions will then be judged in order to select the winners."
+    criteria2: "The eExcursions will be ranked according to the number of favourites voted by the user community on EducaInternet. The first 10 ranked excursions will then be judged in order to select the winners."
     prizes: "Check The Prizes"
     prizes2: "The winners will receive prizes in the form of Amazon vouchers * For each of the categories there is a chance to win a 1st and 2nd prize"
     prizes3: "The overall winners will receive extra prizes"
@@ -312,88 +334,7 @@ en:
     ComputerScience: "ComputerScience"
     ViSHCompetition13: "#ViSHCompetition2013"
   thevish: "The Vish"
-  youtube: "ViSH Youtube Channel"
-  overview_title: "ViSH overview"
-  overview:
-    list: "Index"
-    list1: "Introduction to the ViSH"
-    list2: "The Community of ViSH registered users"
-    list3: "Creating virtual excursions with the excursion editor"
-    list4: "Uploading resources from mobiles and tablets"
-    list5: "Cloning virtual excursions"
-    list6: "Importing and exporting excursions"
-    list7: "Virtual meetings and events with remote and mobile access"
-    downloadpdf: "Download as pdf"
-    overview1: "Introduction to the ViSH"
-    overview2: " is a social and collaborative site for creating knowledge resources for the realization of educational activities. The central element of the ViSH is the virtual excursion, a sequence of visits (enriched slides or viewgraphs), designed for projection in the classroom. Each excursion is a sequence of well-designed visual compositions (mash-up) of multimedia resources linked from the Internet, from the local ViSH repository or from other federated repositories. The name virtual excursion is a metaphor for an excursion in a virtual world of knowledge resources."
-    overview3: "Excursions are public HTML5 Web resources, accessible over the Internet by means of a URL, which can be projected in full screen format with a beamer to support classroom activities. Some examples of excursions are:"
-    overview4: "The ViSH allows also the realization of collaborative activities and projects in the classroom involving teachers and students. The use of a shared account supervised by a teacher or tutor is recommended. For example the following excursion is the result of a real geology classroom project for mineral identification performed in a highschool in Galicia (Spain):"
-    overview5: "Excursions can be projected in a physical classroom in full-screen, like a slide or viewgraph presentation, but can be also:"
-    overview6: "Viewed on browsers, smartphones, tablets or any HTML5 enabled device."
-    overview7: "Embedded in Web pages or LMSs (Moodle, ..) like YouTube videos."
-    overview8: "Projected in the ViSH virtual classroom, based on"
-    overview9: "Exported as a SCORM object to be imported elsewhere."
-    overview10: "Downloaded for off-line presentation in a classroom or meeting (under development)."
-    overview11: "Cloned and modified or enriched by any other member of the community."
-    overview12: "Etc."
-    overview13: "Excursions can be added to a "
-    overview14: "catalogue of excursions"
-    overview15: " where they appear classified by topic. The initial focus of the ViSH was on science, but it is being used now in many other areas."
-    overview16: "The Community of ViSH registered users."
-    overview17: "Excursions are public objects, which can be freely reused in the classroom, blogs or LMSs by any person having access to the ViSH with a standard Internet access. But to create or modify excursions a user must register in the ViSH and become a member of the community. "
-    overview18: "The ViSH terms of use"
-    overview19: " must be accepted to obtain an account."
-    overview20: "Each account has a profile where a set of tabs on the left hand side provide access to:"
-    overview21: "The excursions created from scratch with the editor or the excursions cloned from other ViSH users and possibly edited afterwards."
-    overview22: "The events created by the user."
-    overview23: "The resources uploaded by the user in the ViSH repository, possibly as components of excursions. Pictures, videos or animations used in excursions can be uploaded in the repository or linked from the Internet."
-    overview24: "The categories to classify excursions according to user needs. Categories are tag names, which act as folders or directories of related content. The favorites category contains excursions marked as favorite."
-    overview25: "The ViSH is a social site where users can follow other users in order to receive information about the excursions they produce. The home of a user shows the excursions created or cloned by the users followed by him. The profile of a given user has also 2 tabs on the right hand side, with the users followed by him and the users who follow him."
-    overview26: "In addition, a recommender system will highlight the most relevant content in the ViSH related with the type of content accessed, when excursions are viewed. For a registered user his profile is also taken into account in the recommendation."
-    overview27: "Each resource supports spam or content error notifications, which provide the basis for thecontrol of the adequacy of excursions with the aims of the terms of use of the ViSH: useful,correct and good quality content."
-    overview28: "Creating virtual excursions with the excursion editor"
-    overview29: "Registered users can create excursions with the online editor. The editor is easy to use and does not require technical skills. A user can edit only the excursions he has created or cloned."
-    overview30: "Each virtual excursion is organized as a sequence of slides, with a standard slide or viewgraph format, where each can be one of the following elements:"
-    overview31: "Visual mash-up."
-    overview32: " Template based visual composition of text, pictures, videos, "
-    overview33: "audio records"
-    overview34: "interactive apps"
-    overview35: "3D objects"
-    overview36: "simulations"
-    overview37: " etc. The visual components included can be hosted in the local ViSH repository or in any server on the Internet."
-    overview38: "Quiz."
-    overview39: " An interactive slide designed to present a question or exercise to be answered in real time in a classroom from desktop, smartphones or tablets. "
-    overview40: "(Quizzes examples)"
-    overview41: ". True/false and multiple-choice is supported. Self evaluation or mobile, tablet PC based audience response system (ARS) can be added to the a quiz."
-    overview42: "Flashcards."
-    overview43: "  Slide with hot zones where clicking leads to a ViSH slide, another complete excursions or to any Website or resource on the Internet. "
-    overview44: "(Flashcards examples)"
-    overview45: "Virtual tours."
-    overview46: " Smartcards where the background is a specific Google Map configuratión. "
-    overview47: "(Virtual tour examples)"
-    overview48: "Enriched video."
-    overview49: "  A video with break points, where the video is stopped and a ViSH slide (explanation, quiz, etc.) is presented. The video continues when the slide is closed. "
-    overview50: "(Enriched videos examples)"
-    overview51: "Web Apps."
-    overview52: "  Interactive HTML5 Web apps to be inserted as an active component in a ViSH slide, such as interactive calculators, animations, simulators, virtual labs, etc. "
-    overview53: "(Web Apps examples)"
-    overview54: ". HTML5 Web apps are created using standard HTML, CSS and JavaScript exactly in the same way as standard HTML5 client side applications are created."
-    overview55: "Each excursion can be complemented with pedagogical information describing appropriate teaching scenarios, teaching guidelines, specific requirements, preparation tasks or simply ideas or feedback about the use of excursions in class."
-    overview56: "Uploading resources from mobiles and tablets"
-    overview57: "The ViSH and the virtual excursions have been designed in HTML5 to allow flexible ways of uploading resources from mobile devices. Pictures or videos taken with a mobile or tablet can be uploaded to the ViSH repository very easily."
-    overview58: "Just by accesing the ViSH with the browser of the smartphone or tablet, and selecting the resource upload function to do upload a picture or video taken on the fly or stored in the repository. After the resource has been uploaded in the repository, any excursions can use it."
-    overview59: "Cloning virtual excursions"
-    overview60: "One of the main goals of the ViSH is enabling collaborative content production. The basic mechanism for enriching or adapting an excursion somebody has produced is cloning. Therefore any excursion published in the ViSH can be cloned by other registered users for enrichment, modification, translation into another language or whatever."
-    overview61: "Excursions are published in the ViSH with a creative commons non-commercial alike license, where others have the right to use and modify the excursions for non-commercial purposes. The ViSH is contribution friendly and each excursion makes the authors of the cloning chain explicit, such that all who have contributed to a given excursion receive their recognition."
-    overview62: "When a user clones a given excursion a copy is made in the excursion area of his profile. The author of the cloned excursion and previous authors contributing to it, are added to the section “with content from”, such that authorship is properly recognized. The user becomes the owner of the cloned copy and can edit it as needed with the editor."
-    overview63: "Importing and exporting excursions."
-    overview64: "PDF presentations can be imported into an excursion to create new slides, which have the PDF slide as a background and where other elements can be added. "
-    overview65: "Excursions can also be imported and exported as SCORM objects. SCORM exported excursions can be imported in LMSs and other platforms supporting the standard. Excursions can also be accessed via an URL or embedded in Web pages, blogs or LMSs (Moodle, ..) like YouTube videos. "
-    overview66: "Downloading of excursions for off-line presentation in a classroom or meeting is under development using the HTML5 offline mode. Excursions will only be enabled for off-line presentation, if all the resources the use can be cached in the client, i.e. if they are hosted in the ViSH local repository. Downloading of excursions as a set of PDF slides, but loosing all the active multimedia content of the excursion, is also under study."
-    overview67: "Virtual meetings and events with remote and mobile access."
-    overview68: "The ViSH uses "
-    overview69: "to implement a virtual classroom based on collaborative videoconferencing, where several classrooms in different schools can connect and participate in a virtual event with live demonstrations, discussions, remote lecture delivery, etc. These meetings can be based on excursions or on other social media available on the Internet."
-    overview70: "MashMe.tv supports access to the webinar rooms from desktops, smartphones and tablets. The webcam of a mobile device can be used to show the physical place being visited, the expositions of a museum, to interview people at the visited site or the result of a scientific experiment (telescope, microscope, accelerator, etc.) directly on the scientific infrastructure. Mobile devices can be used to walk freely around the visited site and show the most relevant parts of it."
+  youtube: "EducaInternet Youtube Channel"
   copy_to_clip: "Copy to clipboard"
   date_name: "date"
   description: "description"
@@ -423,14 +364,19 @@ en:
     embed_explanation: "You can use this code to insert this resource in the excursion creator tool or in other website:"
     help:
       title: "Uploading resources"
-      info1_html: "1. Click on <b>documents</b> or <b>links</b> / <b>embed</b> option.<br>"
-      info2_html: "2. If you want to upload a document, click on <b>browse</b> to choose a file from your computer. If your resource is a link or embed, you can <b>paste</b> it into the text box.<br>"
-      info3_html: "3. Type a <b>title</b> and <b>description</b>.<br>"
-      info4_html: "4. Add <b>tags</b> related to your resource.<br>"
-      info5_html: "5. Choose a required <b>language</b>, if necessary.<br>"
-      info6_html: "6. Select an <b>age </b>range. This information will be used for recommendation purposes.<br>"
-      info7_html: "7. If you want to embed a live streaming video, click on <b>Live</b> option.<br>"
-      info8_html: "8. Finally, click on <b> save </b> button to upload your resource."
+      info1_html: "Click on <b>documents</b>, <b>links</b> or <b>embed</b> option.<br>"
+      info2_html: "If you want to upload a document, click on <b>'browse...''</b> to choose a file from your computer. If your resource is a link or embed, you can <b>paste</b> it into the corresponding text box.<br>"
+      info3_html: "Type a <b>title</b> and a <b>description</b>.<br>"
+      info4_html: "Optionally: Add <b>tags</b> related to your resource.<br>"
+      info5_html: "Choose an avatar for the resource and select a <b>language</b>.<br>"
+      info6_html: "Select an <b>age </b>range. (This information will be used for recommendation purposes).<br>"
+      info7_html: "If the resource is a document, select the type of <b>License</b>. In the case of not being the author, indicate also Author and Attribution.<br>"
+      info8_html: "Finally, click on <b> 'Upload' </b> button to upload your resource."
+
+      info1A_html: "Click on <b>'browse...''</b> to choose a file from your computer."
+      info7A_html: "Select the type of <b>License</b>. In the case of not being the author, indicate also Author and Attribution.<br>"
+      info8A_html: "Finally, click on <b> 'Create File' </b> button to upload your resource."
+
       home1_html: "This zone show the excursions created by people you are <a href=\"%{profile}\">following.</a>"
       cat1_html: "1. Type a <b>title</b> and <b>description</b>.<br>"
       cat2_html: "2. Then, click on <b> save </b> button to create your new category."
@@ -459,19 +405,25 @@ en:
       inv: "Create a new invitation"
       inv1_html: "1. Type the <b> email </b> of the person that you want to invite to join the community"
       inv2_html: "2. Then, click on <b>Send an invitation</b>"
-      overview_html: "<a href='/overview'><i class='fa fa-info-circle btn-xs'></i>ViSH Overview</a>"
+      overview_html: "<a href='/overview'><i class='fa fa-info-circle btn-xs'></i>EducaInternet Overview</a>"
     helpquiz:
       info1_html: "1. Help test 1 for the quiz<br>"
     how: "How to share a resource"
     info:
       age: "Age"
+      author: "Author"
       description: "Description"
+      license: "License"
+      license_attribution: "Attribute to"
+      license_custom_form: "Specify license"
+      linked_by: "Linked by"
       size: "Size"
       tags: "Tags"
     input: "Add a description here"
     language:
       option1: "(Not depends on the language)"
     leyend:
+      authorship_recognition: "I am the author of this resource."
       avatar: "Pick up an avatar or thumbnail"
       description: "Description"
       language: "Language"
@@ -497,6 +449,10 @@ en:
     title_alert: "Write the title for this resource"
     upload: "Upload"
     uploading: "Uploading..."
+    validation:
+      author_name: "Please, type the author name"
+      license_custom: "Custom licenses must be specified"
+      license_attribution: "If an author is specified, you must provide a license attribution link"
   downloadxlsx: "Download as XLSX"
   email:
     regards: "Kind regards,<br/>"
@@ -620,27 +576,27 @@ en:
     is_favorite: "Is favorite"
     views: "views"
   frontpage:
-    main_text: "ViSH is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
+    main_text: "EducaInternet is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
     educational:
       title: "Educational"
-      description: "Find the best free and openly licensed educational resources and learning objects classified by subject. ViSH resources can be used for teaching, learning, assessment, research and other purposes."
+      description: "Find the best free and openly licensed educational resources and learning objects classified by subject. EducaInternet resources can be used for teaching, learning, assessment, research and other purposes."
     community:
         title: "Community"
-        description: "ViSH is a community for teachers and educational professionals who want to meet new educators, create, share and discover novel educational resources, and get access to tools for maximizing technology enhanced learning."
+        description: "EducaInternet is a community for teachers and educational professionals who want to meet new educators, create, share and discover novel educational resources, and get access to tools for maximizing technology enhanced learning."
     elearning:
         title: "e-Learning"
-        description: "ViSH provides a collection of tools and services for facilitating the creation of high quality courseware and maximizing technology enhanced learning both in the classroom and in Virtual Learning Environments and Learning Management Systems."
+        description: "EducaInternet provides a collection of tools and services for facilitating the creation of high quality courseware and maximizing technology enhanced learning both in the classroom and in Virtual Learning Environments and Learning Management Systems."
     community_stats:
         title: "Our community grows every day"
         subtitle: "Share your knowledge in our community and help us to grow"
-    join_us: "Join to ViSH!"
+    join_us: "Join to EducaInternet!"
   go:
     repository: "go to repository"
   header:
     tooltip:
       add_button: "Create excursions, resources, etc."
   help: "help"
-  help_page: "ViSH HELP"
+  help_page: "EducaInternet HELP"
   help_manual: "Download user manual"
   hide: "Hide"
   home:
@@ -664,6 +620,16 @@ en:
       ru: "Russian"
       hu: "Hungarian"
       nl: "Dutch"
+  licenses:
+      public: "Public Domain"
+      cc-by: "Creative Commons Attribution"
+      cc-by-sa: "Creative Commons Attribution-ShareAlike"
+      cc-by-nd: "Creative Commons Attribution-NoDerivs"
+      cc-by-nc: "Creative Commons Attribution-NonCommercial"
+      cc-by-nc-sa: "Creative Commons Attribution-NonCommercial-ShareAlike"
+      cc-by-nc-nd: "Creative Commons Attribution-NonCommercial-NoDerivs"
+      other: "Other free license"
+      private: "None (All rights reserved)"
   link:
     one: "link"
     other: "links"
@@ -737,6 +703,7 @@ en:
   organizer:
     one: "organizer"
     other: "organizers"
+  overview_title: "EducaInternet Overview"
   password: "password"
   post:
     input: "Share your thoughts, links, videos and more, here!"
@@ -831,6 +798,11 @@ en:
       other: "resources"
     top: "forMe"
     upload: "upload"
+  role:
+    admin: "Admin"
+    user: "User"
+    premium_user: "Premium User"
+    private_student: "Private Student"
   save: "Save"
   saving: "Saving"
   scope:
@@ -854,6 +826,7 @@ en:
       start_date: "Start Date"
       end_date: "End Date"
       language: "Language"
+      license: "License"
       quality_threshold: "Quality Threshold"
       age_range: "Age Range"
     loading: "Loading information"
@@ -884,7 +857,7 @@ en:
     instances:
       add_instance: "Add Instance"
       add: "Add"
-      title: "ViSH Instances"
+      title: "EducaInternet Instances"
       results: "Results per instance"
     rendering:
       title: "Visualization options"
@@ -903,6 +876,7 @@ en:
       visits: "Visits"
       favorites: "Favorites"
       quality: "Quality"
+    terms: "Search terms"
     title: "search"
     titles:
       age: "age"
@@ -918,6 +892,19 @@ en:
     type: "type"
   send:
     send: "Send"
+  settings:
+    notifications:
+      briefing: "Change your notifications behaviour and mail alerts"
+      by_email:
+        name: "Send me an email when I receive a notification"
+        always: "Always"
+        never: "Never"
+    notification_settings:
+        prefix: Send me an email
+        someone_adds_me_as_a_contact: when someone adds me as a contact
+        someone_confirms_my_contact_request: when someone confirms my contact request
+        someone_likes_my_post: when someone likes my post
+        someone_comments_on_my_post: when someone comments on my post
   share: "Post"
   sharing:
     email: "Share by email"
@@ -935,8 +922,8 @@ en:
     title: "Captcha"
   site:
     current:
-      description: "A meeting point for scientists and teachers based around the idea of virtual excursions"
-      keywords: "VisHub,virtual,excursion"
+      description: "EducaInternet is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
+      keywords: "e-Learning, Technology Enhanced Learning, education, Learning Objects, repository, resources, authoring tool, catalogue, search"
       title: "EducaInternet"
       search: "EducaInternet - Search"
       browse: "EducaInternet - Explore"
@@ -957,9 +944,10 @@ en:
     name: "name"
     one: "user"
     other: "users"
+    role: "role"
   username: "username"
   vish:
-    about: "About ViSH"
+    about: "About EducaInternet"
     starterguide: "Starter Guide"
   views:
     pagination:
@@ -973,60 +961,62 @@ en:
     view_full: "View full"
   workshop:
     actions:
-        add: "Add Workshop"
-        add_activity_title: "Add Activity to the Workshop"
-        add_activity_button: "Add"
-        adding_activity_button: "Adding..."
-        cancel_&_go: "Cancel and go to Workshop"
-        collapse_all: "Collapse all"
-        confirm_delete: "Delete workshop?"
-        delete: "Delete workshop"
-        edit_activity_button: "Save"
-        edit_mode_btOn: "Turn on editing mode"
-        edit_mode_btOff: "Turn off editing mode"
-        expand_all: "Expand all"
-        publish: "Publish"
-        unpublish: "Unpublish"
+      add: "Add Workshop"
+      add_activity_title: "Add Activity to the Workshop"
+      add_activity_button: "Add"
+      adding_activity_button: "Adding..."
+      cancel_&_go: "Cancel and go to Workshop"
+      collapse_all: "Collapse all"
+      confirm_delete: "Delete workshop?"
+      delete: "Delete workshop"
+      edit_activity_button: "Save"
+      edit_mode_btOn: "Turn on editing mode"
+      edit_mode_btOff: "Turn off editing mode"
+      expand_all: "Expand all"
+      publish: "Publish"
+      unpublish: "Unpublish"
     activities:
-        actions:
-            add_new_activity: "Add new activity"
-            confirm_delete: "Delete activity?"
-        assignment:
-            add_image: "Upload"
-            add_writing: "Writing"
-            available_contributions:
-                document: "Document"
-                title: "Available contributions"
-                writing: "Writing"
-            content: "Content"
-            contribution_message: "Participate:"
-            description: "Assignments allow participants to contribute to the workshop by uploading their own resources."
-            due_date: "Due date"
-            modal_title: "Edit assignment"
-            open_date: "Open date"
-            title: "Assignment"
-            with_dates: "Specify open and due date"
-        resource:
-            modal_title: "Edit resource"
-            title: "Resource"
-            description: "Insert any type of resource into the Workshop."
-            text: "You can add to this workshop all the resources that are available in Vish. To add them, open the resource in Vish, copy its URL from the browser toolbar and paste in the following text box."
-        resource_gallery:
-            add: "Add"
-            title: "Resources Gallery"
-            description: "Add a gallery of resources."
-            text: "Resource galleries are a component of the workshop that allow you to include several resources of any type Vish and have them grouped together to facilitate viewing. Insert this component into your workshop and added resources in the most easy and intuitive way."
-            new_resource: "Add"
-        contributions_gallery:
-            title: "Contributions Gallery"
-            description: The Contributions Gallery displays the contributions sent to the workshop.
-            text: "Users can contribute to the tasks defined in a workshop by adding resources or text blocks. With the component Gallery of contributions can see grouped shape resources and/or texts with which other users have contributed."
-            error: "A contributions gallery should include at least 1 assignment"
-        text:
-            title: "Text"
-            description: "Include a paragraph of text."
-            text: "In addition to the description of the workshop and the tasks defined in it, sometimes you will need the ability to insert a block of text with other purpose, such as a bibliography or other data of interest for the workshop. With this component you can add a completely personalized and editable text to your workshop."
+      actions:
+          add_new_activity: "Add new activity"
+          confirm_delete: "Delete activity?"
+      assignment:
+          add_resource: "Add resource"
+          add_resource_message: "Here you can send to the assignment any of your EducaInternet resources. To do that, write the URL of your resource and click on the button."
+          available_contributions:
+              document: "Document"
+              resource: "Resource"
+              title: "Available contributions"
+              writing: "Writing"
+          content: "Content"
+          contribution_message: "Participate:"
+          description: "Assignments allow participants to contribute to the workshop by uploading their own resources."
+          due_date: "Due date"
+          modal_title: "Edit assignment"
+          open_date: "Open date"
+          title: "Assignment"
+          with_dates: "Specify open and due date"
+      resource:
+          modal_title: "Edit resource"
+          title: "Resource"
+          description: "Insert any type of resource into the Workshop."
+          text: "You can add to this workshop all the resources that are available in Vish. To add them, open the resource in Vish, copy its URL from the browser toolbar and paste in the following text box."
+      resource_gallery:
+          add: "Add"
+          title: "Resources Gallery"
+          description: "Add a gallery of resources."
+          text: "Resource galleries are a component of the workshop that allow you to include several resources of any type Vish and have them grouped together to facilitate viewing. Insert this component into your workshop and added resources in the most easy and intuitive way."
+          new_resource: "Add"
+      contributions_gallery:
+          title: "Contributions Gallery"
+          description: The Contributions Gallery displays the contributions sent to the workshop.
+          text: "Users can contribute to the tasks defined in a workshop by adding resources or text blocks. With the component Gallery of contributions can see grouped shape resources and/or texts with which other users have contributed."
+          error: "A contributions gallery should include at least 1 assignment"
+      text:
+          title: "Text"
+          description: "Include a paragraph of text."
+          text: "In addition to the description of the workshop and the tasks defined in it, sometimes you will need the ability to insert a block of text with other purpose, such as a bibliography or other data of interest for the workshop. With this component you can add a completely personalized and editable text to your workshop."
 
+    confirm_delete: "Delete workshop?"
     new: "New Workshop"
     other: "Workshops"
     titles:

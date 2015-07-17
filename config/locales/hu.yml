@@ -8,6 +8,24 @@ hu:
         tag: "Érdeklődési kör"
   activity:
     empty: "Idővonalad kitöltetlen"
+    items:
+      infoaction:
+        audio: "Hozzáadott Audio"
+        category: "Hozzáadott kategória"
+        document: "Hozzáadott dokumentum"
+        embed: "Hozzáadott Embed"
+        event: "Hozzáadott Esemény"
+        excursion: "Hozzáadott Virtuális Séta"
+        file: "Hozzáadott Akta"
+        link: "Hozzáadott Link"
+        picture: "Hozzáadott Kép"
+        scormfile: "Hozzáadott SCORM akta"
+        swf: "Hozzáadott SWF"
+        video: "Hozzáadott Video"
+        webapp: "Hozzáadott Web-App"
+        workshop: "Hozzáadott Workshop"
+        writing: "Hozzáadott Szöveg"
+        zipfile: "Hozzáadott ZIP akta"
     more: "Bővebben..."
     new_user: "Üdvözlünk a ViSH-nél! Posztold és oszd meg gondolataidat, linkjeidet, videóidat ismerőseiddel."
     newmessage: "Ez a te idővonalad. Feltölthetsz ide és megoszthatod képeidet, videóidat, linkjeidet és még sok minden mást."
@@ -332,10 +350,14 @@ hu:
   sign_up: "Regisztrálás"
   site:
     current:
-      description: "A meeting point for scientists and teachers based around the idea of virtual excursions"
-      keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-    name: "Virtual Science Hub"
+      description: "ViSH is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
+      keywords: "e-Learning, Technology Enhanced Learning, education, Learning Objects, repository, resources, authoring tool, catalogue, search"
+      title: "ViSH"
+      search: "ViSH - Search"
+      browse: "ViSH - Explore"
+      msg: "ViSH - Messages"
+      activity: "ViSH - Activities"
+    name: "ViSH"
   swf:
     confirm_delete: "Törlöd az SWF-t?"
   today: "Ma"
@@ -593,8 +615,6 @@ hu:
             add_new_activity: "Új tevékenység hozzáadása"
             confirm_delete: "Törli a tevékenységet?"
         assignment:
-            add_image: "Feltöltés"
-            add_writing: "Írás"
             available_contributions:
                 document: "Dokumentumt"
                 title: "Rendelkezésre álló hozzájárulások"

@@ -100,7 +100,7 @@ class ExcursionsController < ApplicationController
       @excursion.afterPublish
     end
 
-    render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource, :recent => :true)),
+    render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
                       :uploadPath => excursion_path(@excursion, :format=> "json"),
                       :editPath => edit_excursion_path(@excursion)
                     }
@@ -142,7 +142,7 @@ class ExcursionsController < ApplicationController
       @excursion.afterPublish
     end
 
-    render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource, :recent => :true)),
+    render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
                       :uploadPath => excursion_path(@excursion, :format=> "json"),
                       :editPath => edit_excursion_path(@excursion),
                       :exitPath => (@excursion.draft ? user_path(current_subject) : excursion_path(resource))
@@ -376,11 +376,14 @@ class ExcursionsController < ApplicationController
            Excursion.createQTI(filePath,fileName,JSON(json))
            results["url"] = "#{Vish::Application.config.full_domain}/tmp/qti/#{fileName}.zip"
         elsif responseFormat == "MoodleXML"
+            #Generate Moodle XML package
            filePath = "#{Rails.root}/public/tmp/moodlequizxml/"
            FileUtils.mkdir_p filePath
            fileName = "moodlequizxml-tmp-#{count.to_s}"
            Excursion.createMoodleQUIZXML(filePath,fileName,JSON(json))
-           results["url"] = "#{Vish::Application.config.full_domain}/tmp/moodlequizxml/#{fileName}.zip"
+           results["url"] = "#{Vish::Application.config.full_domain}/tmp/moodlequizxml/#{fileName}.xml"
+           results["xml"] = File.open("#{filePath}#{fileName}.xml").read
+           results["filename"] = "#{fileName}.xml"
         end
 
         render :json => results
@@ -389,7 +392,7 @@ class ExcursionsController < ApplicationController
   end
 
   def downloadTmpJSON
-    respond_to do |format|  
+    respond_to do |format|
       format.json {
         if params["fileId"] == nil
           results = Hash.new

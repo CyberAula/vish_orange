@@ -2,42 +2,79 @@
   <div class="panel">
     <header>
       <table class="table table-hover">
-        <tr>
-            <!--contributors-->
-            <% if resource.respond_to?("contributors") and !resource.contributors.blank? %>
-              <td><span><%= t('excursion.contributors.name').capitalize %></span></td>
-              <td>
-                <% resource.contributors.uniq.each_with_index do |c,index| %>
-                  <% unless index==0 %>
-                    ,
-                  <% end %>
-                  <%= link_to c.name, c.subject %>
-                <%end%>
-              </td>
-            <%end%>
-          </tr>
+        <!--description-->
+        <% unless resource.description.blank? %>
           <tr>            
-            <!--description-->
-            <% unless resource.description.blank? %>
-              <td><span><%= t('document.info.description') %></span></td>
-              <td><%= truncate(resource.description, :length => 400) %></td>
-            <% end %>
+            <td><span><%= t('document.info.description') %></span></td>
+            <td><%= truncate(resource.description, :length => 400) %></td>
           </tr>
+        <% end %>
+        <!--tags-->
+        <% unless resource.tag_list.blank? %>
           <tr>          
-            <!--tags-->
-            <% unless resource.tag_list.blank? %>
-              <td><span><%= t('document.info.tags') %></span></td>
-              <td>
-                <ul class="tagit-suggestions">
-                  <% resource.tag_list.each do |tag| %>
-                  <li class="tagit-choice">
-                    <%= link_to tag, search_path(:q => tag) %>
-                  </li>
-                  <% end %>
-                </ul>
-              </td>
-            <% end %>
+            <td><span><%= t('document.info.tags') %></span></td>
+            <td>
+              <ul class="tagit-suggestions">
+                <% resource.tag_list.each do |tag| %>
+                <li class="tagit-choice">
+                  <%= link_to tag, search_path(:q => tag) %>
+                </li>
+                <% end %>
+              </ul>
+            </td>
           </tr>
+        <% end %>
+
+        <!--author/owner-->
+        <% unless resource.original_author_name.nil? %>
+          <tr>
+            <td><span><%= !resource.linked? ? t('document.info.author') : t('document.info.linked_by') %></span></td>
+            <td>
+              <% if resource.original_author.nil? %>
+                <%= link_to(resource.author.name, resource.author.subject) %>
+              <% else %>
+                <%= resource.original_author_name %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+
+        <% if resource.should_have_license? %>
+          <!--license-->
+          <% unless resource.license.nil? %>
+            <tr>
+              <td><span><%= t('document.info.license') %></span></td>
+              <td>
+                <%= resource.license_name %>
+              </td>
+            </tr>
+          <% end %>
+          <!--license attribution-->
+          <% unless resource.license_attribution.nil? or resource.license.nil? or !resource.license.requires_attribution? %>
+            <tr>
+              <td><span><%= t('document.info.license_attribution') %></span></td>
+              <td>
+                <%= resource.license_attribution %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        <!--contributors-->
+        <% if resource.respond_to?("contributors") and !resource.contributors.blank? %>
+          <tr>
+            <td><span><%= t('excursion.contributors.name').capitalize %></span></td>
+            <td>
+              <% resource.contributors.uniq.each_with_index do |c,index| %>
+                <% unless index==0 %>
+                  ,
+                <% end %>
+                <%= link_to c.name, c.subject %>
+              <%end%>
+            </td>
+          </tr>
+        <%end%>
+
       </table>
     </header>
     <div class="panel-body">
@@ -72,7 +109,7 @@
     <div class="panel-footer">
 
       <a class="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
-        <span id="showingMore" class="showMore accordion-toggle btn btn-default collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo" title="showFewer">Expandir</span>
+        <span id="showingMore" class="showMore accordion-toggle btn btn-default collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo" title="<%=t('excursion.actions.show_more')%>" status="collapsed"><%=t('excursion.actions.show_more')%></span>
       </a>
 
       <!--metadata-->
@@ -138,13 +175,15 @@
 
 <%content_for :javascript do%>
     $("#showingMore").click(function(e){
-    if($("#showingMore").attr("title")==="showMore"){
-      $(".showMore").html('Expandir');
-      $("#showingMore").attr("title", "showFewer");
+    if($("#showingMore").attr("status")==="expanded"){
+      $("#showingMore").html('<%=t("excursion.actions.show_more")%>');
+      $("#showingMore").attr("title", "<%=t('excursion.actions.show_fewer')%>");
+      $("#showingMore").attr("status", "collapsed");
     }
     else{
-      $(".showMore").html('Reducir');
-      $("#showingMore").attr("title", "showMore");
+      $("#showingMore").html('<%=t('excursion.actions.show_fewer')%>');
+      $("#showingMore").attr("title", "<%=t("excursion.actions.show_more")%>");
+      $("#showingMore").attr("status", "expanded");
     }
   });
 <%end%>

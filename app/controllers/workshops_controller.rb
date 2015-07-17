@@ -83,16 +83,36 @@ class WorkshopsController < ApplicationController
       params.delete "workshop_activities_order"
     end
 
+    wasDraft = resource.draft
+
     super do |format|
       format.html {
         if resource.draft
           redirect_to edit_workshop_path(resource)
         else
+          if wasDraft
+            resource.afterPublish
+          end
           redirect_to workshop_path(resource)
         end
       }
       format.json {
         render :json => resource
+      }
+    end
+  end
+
+  def contributions
+    @workshop = Workshop.find(params[:id])
+
+    unless verify_owner(@workshop)
+      return render :text => "You are not the owner of this workshop"
+    end
+
+    respond_to do |format|
+      format.html {
+        @contributions = @workshop.contributions
+        render
       }
     end
   end
@@ -107,7 +127,7 @@ class WorkshopsController < ApplicationController
   private
 
   def allowed_params
-    [:draft, :language, :age_min, :age_max, :scope, :avatar, :tag_list=>[]]
+    [:draft, :language, :license_id, :age_min, :age_max, :scope, :avatar, :tag_list=>[]]
   end
 
   def fill_create_params
@@ -138,6 +158,10 @@ class WorkshopsController < ApplicationController
       params["workshop"]["scope"] = "0" #public
       params["workshop"]["draft"] = false
     end
+  end
+
+  def verify_owner(workshop)
+    return (can? :update, workshop)
   end
 
 end

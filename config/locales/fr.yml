@@ -8,6 +8,24 @@ fr:
         tag: "Centres d'intérêt"
   activity:
     empty: "Votre ligne du temps est vide"
+    items:
+      infoaction:
+        audio: "Audio ajouté"
+        category: "Catégorie ajouté"
+        document: "document ajouté"
+        embed: "Embed ajouté"
+        event: "Événement ajouté"
+        excursion: "Excursion ajouté"
+        file: "Fichier ajouté"
+        link: "Lien ajouté"
+        picture: "Image ajouté"
+        scormfile: "SCORM fichier ajouté"
+        swf: "SWF ajouté"
+        video: "Vidéo ajouté"
+        webapp: "Application Web ajouté"
+        workshop: "Workshop ajouté"
+        writing: "Texte ajouté"
+        zipfile: "ZIP fichier ajouté"
     more: "Plus..."
     new_user: "Bienvenue sur la plateforme ViSH ! Publiez et partagez vos points de vue, vos liens et vos vidéos avec vos abonnés."
     newmessage: "Ceci est votre ligne du temps. Vous pouvez publier et partager des photos, des vidéos, des liens et bien plus encore."
@@ -286,10 +304,14 @@ fr:
   sign_up: "Inscription"
   site:
     current:
-      description: "A meeting point for scientists and teachers based around the idea of virtual excursions"
-      keywords: "VisHub,virtual,excursion"
-      title: "Virtual Science Hub"
-    name: "Plateforme des sciences virtuelles"
+      description: "ViSH is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
+      keywords: "e-Learning, Technology Enhanced Learning, education, Learning Objects, repository, resources, authoring tool, catalogue, search"
+      title: "ViSH"
+      search: "ViSH - Search"
+      browse: "ViSH - Explore"
+      msg: "ViSH - Messages"
+      activity: "ViSH - Activities"
+    name: "ViSH"
   swf:
     confirm_delete: "Supprimer SWF?"
   today: "Aujourd'hui"
@@ -560,8 +582,6 @@ fr:
             add_new_activity: "Ajouter une nouvelle activité"
             confirm_delete: "Supprimer l'activité?"
         assignment:
-            add_image: "Télécharger"
-            add_writing: "Écriture"
             available_contributions:
                 document: "Document"
                 title: "Contributions disponibles"

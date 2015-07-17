@@ -18,7 +18,7 @@
 #asearch_settings{
 	display: none;
 	margin: 0 2%;
-  height: 445px;
+  height: 540px;
   width: 91%;
   top: 126px;
 	padding: 1%;
@@ -251,7 +251,7 @@
   margin-top: 0px;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  color: $white;
+  color: white;
   border-bottom: 1px solid #ccc;
 }
 

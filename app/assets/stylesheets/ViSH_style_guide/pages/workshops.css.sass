@@ -68,6 +68,8 @@
       .description
         margin-right: 2.5%
         margin-left: 2.5%
+  ul.tagit-suggestions
+    padding: 0px
   .description-activity
     &:last-child
       @include border-top-radius ($border-radius-base)
@@ -304,7 +306,7 @@ ul.workshop_activities_list_edit
   top: 5px
   width: auto
   float: right
-  height: 30px
+  height: 35px
   ul
     margin: 0
     li
@@ -337,8 +339,6 @@ ul.workshop_activities_list_edit
 #edit_wa_text_1_button
   float: right
   margin: 15px 0 0
-.cke_skin_BootstrapCK-Skin
-  width: 100% !important
 
 
 //time asigment
@@ -347,7 +347,7 @@ ul.workshop_activities_list_edit
   height: auto
   position: relative
   width: 100%
-  margin-bottom: 10px
+  margin-bottom: 20px
   .delivery_time
     width: 100%
     display: block
@@ -456,6 +456,34 @@ ul.workshop_activities_list_edit
   .modal-footer
     clear: both
 
+
+// Assignments form
+
+.wa_assignment_form
+  input[type="checkbox"]
+    display: inline-block
+    margin-right: 10px
+    opacity: 1 !important
+    position: relative !important
+  .assignment_dates
+    width: 70%
+    margin: 0px 20px
+    display: inline-block
+    select
+      width: 30%
+      margin-right: 3%
+      display: block
+      float: left
+  .assignment_available_contributions
+    margin: 25px 0
+    display: inline-block
+    width: 100%
+  label
+    display: block
+    width: 100%
+    margin-top: 10px
+
+
 // MODAL TAB CONTENT
 // --------------------------------------------------
 #workshop_activities_column2
@@ -467,67 +495,13 @@ ul.workshop_activities_list_edit
   p
     width: 80%
     margin: 20px 0
-  //ADD ASSIGNMENTS
-  #tab_assignment
-    input[type="checkbox"]
-      float: left
-      display: block
-      margin-right: 10px
-    p.checkbox_add_time
-      display: inline-block
-      float: left
-      width: auto
-      margin: 0
-    label
-      display: block
-      float: left
-      width: 100%
-      margin-top: 10px
-    .assignment_dates
-      width: 70%
-      margin: 0px 20px
-      display: inline-block
-      select
-        width: 30%
-        margin-right: 3%
-        display: block
-        float: left
-    .available_contributions
-      margin: 21px 0
-      display: inline-block
-      width: 100%
-
+    
 // MODAL EDIT ELEMENT
 // --------------------------------------------------
 
 #WorkshopActivity .modal-body
   height: 100%
   overflow: auto
-form.edit_wa_assignment
-  input[type="checkbox"]
-    float: left
-    display: block
-    margin-right: 10px
-  p.checkbox_add_time
-    display: inline-block
-    float: left
-    width: auto
-    margin: 0
-  label
-    display: block
-    float: left
-    width: 100%
-    margin-top: 10px
-    color: $brand-primary
-  .assignment_dates
-    width: 100%
-    padding: 0px 20px
-    overflow: auto
-    select
-      width: 30%
-      margin-right: 3%
-      display: block
-      float: left
 
 // MODAL add resource gallery
 // --------------------------------------------------
@@ -545,18 +519,14 @@ form.edit_wa_assignment
   max-height: 100%
   height: 100%
   line-height: normal
-
   [dir="rtl"]
     direction: rtl
     unicode-bidi: embed
-
   [dir="ltr"]
     direction: ltr
     unicode-bidi: embed
-
   bdo[dir]
     unicode-bidi: bidi-override
-
 
 .contributions_content
   ul.contributions_WS_gallery
@@ -608,14 +578,20 @@ form.edit_wa_assignment
   span.contribution_message
     float: left
     padding-top: 5px
-
   .btn
     float: left
     margin-left: 10px
-  .new_contribution
+  .new_contribution_document
     display: none
     float: left
     margin-left: 10px
+    input[type='submit']
+      margin-top: 5px
+    input[type='submit'][disabled='disabled']
+      opacity: 0.5
+  .new_contribution_resource
+    input[name='url']
+      width: 100%
   .btn_hidden_upload
     display: none
     float: left
@@ -628,10 +604,10 @@ form.edit_wa_assignment
     border-top: 1px solid $border-color
     .actions_contributions_show_object
       margin-top: 15px
+
 .workshop_contribute_footer
   width: 100%
   height: 35px
-
 
 .header_workshop
   .container-img_WS
@@ -641,7 +617,6 @@ form.edit_wa_assignment
       background-size: 150px 150px
       width: 150px
       height: 150px
-
 
 .alert-errors
   background-color: #FCF8E3
@@ -656,7 +631,6 @@ form.edit_wa_assignment
   .btn_show_upload
     @extend .disabled
 
-
 .wa_resource_wrapper .workshop_downloadable_resource
   background-color: #DADADA
   border: 1px solid #E4E4E4
@@ -670,3 +644,10 @@ form.edit_wa_assignment
   .actions
     display: inline-block
     float: right
+
+// Contributions gallery list
+.title_workshop_items_list
+  margin-bottom: 20px
+
+.wa_activity_edit_minified
+  display: none

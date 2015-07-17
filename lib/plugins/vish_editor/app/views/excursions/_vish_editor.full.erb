@@ -176,13 +176,13 @@
 				</div>
 			</div>
 			<div id="toolbar_element" class="withLeftBorder">
-				<div id="settings_quiz_wrapper" class="toolbar_presentation_wrapper withRightBorder toolbar_quiz" style="display:none">
-					<a id="settings_quiz" class="tool_action" action="quizSettings" href="#">
+				<div id="toolbar_settings_wrapper" class="toolbar_presentation_wrapper withRightBorder toolbar_quiz toolbar_object toolbar_web" style="display:none">
+					<a id="toolbar_settings" class="tool_action" action="showSettings" href="#">
 						<button type="button" class="btn btn-primary btn-small btn-toolbarElementWrapper">
 							<img src="/assets/toolbar/quiz_settings.png"/>
 						</button>
 					</a>
-					<p class="toolbar_presentation_title" i18n-key="i.QuizSettingsToolbar">Quiz Settings</p>
+					<p class="toolbar_presentation_title" i18n-key="i.SettingsToolbar">Settings</p>
 				</div>
 				<img class="toolbar_icon toolbar_image" style="display:none" action="addLink" src="/assets/toolbar/addLink.png"/>
 				<img class="toolbar_icon toolbar_web toolbar_image toolbar_video toolbar_object toolbar_snapshot" style="display:none" action="resizeLess" src="/assets/toolbar/resizeLess.png"/>
@@ -277,6 +277,18 @@
 							<div id="presentation_details_preview_author">
 								<span i18n-key="i.by">by</span> <span id="author_span_in_preview"></span>
 							</div>
+						</div>
+						<div id="presentation_details_license">
+							<span class="presentation_details_text" title='License' i18n-key="i.License">License</span>
+							<select id="presentation_details_license_select">
+								<option value="public" i18n-key="i.License_public">Public Domain</option>
+								<option value="cc-by" i18n-key="i.License_cc-by">Creative Commons Attribution</option>
+								<option value="cc-by-sa" i18n-key="i.License_cc-by-sa">Creative Commons Attribution-ShareAlike</option>
+								<option value="cc-by-nd" i18n-key="i.License_cc-by-nd">Creative Commons Attribution-NoDerivs</option>
+								<option value="cc-by-nc" i18n-key="i.License_cc-by-nc" selected="selected">Creative Commons Attribution-NonCommercial</option>
+								<option value="cc-by-nc-sa" i18n-key="i.License_cc-by-nc-sa">Creative Commons Attribution-NonCommercial-ShareAlike</option>
+								<option value="cc-by-nc-nd" i18n-key="i.License_cc-by-nc-nd">Creative Commons Attribution-NonCommercial-NoDerivs</option>
+							</select>
 						</div>
 					</div>
 
@@ -590,7 +602,7 @@
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 
 					<form class="documentsForm" action="pdfex.json" method="post" enctype="multipart/form-data">
-						<input type="file" name="pdfex[attach]" class="upload_file_input">
+						<input type="file" name="pdfex[attach]" accept="application/pdf" class="upload_file_input">
 						<input type="hidden" name="pdfex[scope]" value="1">
 						<input type="hidden" name="pdfex[owner_id]">
 						<input type="hidden" name="authenticity_token">
@@ -637,6 +649,7 @@
 					<ul class="listInFancy">
 						<li><p class="textfancy" i18n-key="i.ImportFromEFileVEJSON">ViSH Editor Presentations and Slides from JSON files</p></li>
 						<li><p class="textfancy" i18n-key="i.ImportFromEFileIMSQTI">Quizzes from IMS QTI 2.1 compliant XML files</p></li>
+						<li><p class="textfancy" i18n-key="i.ImportFromEFileMoodleXML">Quizzes from MoodleXML compliant XML files</p></li>
 					</ul>
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<input id="efile_input" type="file" id="files" name="files[]" multiple />
@@ -1329,7 +1342,7 @@
 
 			<div class="new_elsettings_field">
 				<span i18n-key="i.QuizScore">Score</span>
-				<select id="quizSettings_quizScore" class="el_settings_select">
+				<select class="el_settings_select" name="quizScorePoints">
 					<option value="0" selected="selected">0</option>
 					<option value="10">10</option>
 					<option value="20">20</option>
@@ -1379,6 +1392,54 @@
 
 			<div class="elSettingsButtonsWrapper">
 				<button id="quizSettingsDone" type="button" class="button" i18n-key="i.Done">Done</button>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Object Settings -->
+	<div style='display:none'>
+		<div id="objectSettings_fancybox" class="elSettings_fancybox">
+			<p class="elsettings_fancybox_title" i18n-key="i.Settings">Settings</p>
+
+			<input type="hidden" name="elId">
+
+			<div class="new_elsettings_field">
+				<span i18n-key="i.OSettingsUnload">Unload the object when the slide disappears</span>
+				<input type="checkbox" defaultvalue="true" name="unloadObject">
+			</div>
+
+			<div class="wapp_settings" style="display:none">
+				<br/><br/><br/>
+				<p class="elsettings_fancybox_title">Web Application Settings</p>
+				<div class="new_elsettings_field">
+					<span>Enable Web Application API</span>
+					<input type="checkbox" name="wappAPI">
+				</div>
+				<div class="new_elsettings_field">
+					<span>This app send scores</span>
+					<input type="checkbox" name="wappScore">
+				</div>
+				<div class="new_elsettings_field">
+					<span i18n-key="i.QuizScore">Score</span>
+					<select class="el_settings_select" name="wappScorePoints">
+						<option value="0" selected="selected">0</option>
+						<option value="10">10</option>
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+						<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80">80</option>
+						<option value="90">90</option>
+						<option value="100">100</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="elSettingsButtonsWrapper">
+				<button id="objectSettingsDone" type="button" class="button" i18n-key="i.Done">Done</button>
 			</div>
 
 		</div>
