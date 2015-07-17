@@ -64,6 +64,9 @@ nav.navbar-fixed-top
             padding: 10px
             margin: 0 0 0 18px
             border-radius: $border-radius-base
+            .form-group
+              margin-left: 0 !important
+              margin-right: 0 !important
             //log in
             input[type="email"]
               margin-bottom: 3px
@@ -72,7 +75,7 @@ nav.navbar-fixed-top
               .lbl
                 color: white
             .remember_password
-              margin: 0 0 10px 5px
+              margin: 10px 0 0 0
               a
                 color: black
             //languages
@@ -130,6 +133,7 @@ nav.navbar-fixed-top
         .dropdown-menu
           padding: 10px !important
           border-radius: $border-radius-base
+          min-width: 285px
         .user-menu, .add-menu
           padding: 0 !important
           li
