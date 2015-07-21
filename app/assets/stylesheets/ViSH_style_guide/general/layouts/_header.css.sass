@@ -35,20 +35,231 @@ nav.navbar-fixed-top
           color: $orange-primary
           font-family: Helvetica Neue, Helvetica, sans-serif !important
           font-weight: 600
-    .search-ui
-      float: right
-      padding: 2px 10px
-      .search-query
-        width: 180px !important
-        float: left
-        font-size: 1em
-      .search_button_class
-        margin: 0 0 0 3px
-        float: left
     .hidden-phone
       float: right
       @media (max-width: $screen-sm-max)
         display: none
+
+      .navbar-right
+        float: none
+        li
+          padding: 5px 7px
+        a
+          padding: 5px 0
+          outline: none
+          font-weight: 200
+          .menu_bold
+            font-weight: 800
+
+        .active > a
+          background-color: transparent
+          box-shadow: none
+          border-top: 3px solid $orange-primary
+          margin-top: -3px
+        .dropdown
+          i
+            margin-left: 5px
+
+          .dropdown-menu
+            padding: 10px !important
+            border-radius: $border-radius-base
+            //min-width: 285px
+          .user-menu, .add-menu
+            padding: 0 !important
+            li
+              padding: 0
+              a
+                padding: 8px
+                &:hover, &:active,&:focus
+                  background-color: $black !important
+          .dropdown-menu:before, .dropdown-menu:after
+            display: none
+          form
+            margin: 0
+            min-width: 285px
+            .checkbox
+              display: block
+              width: 0
+              color: white
+            input[type="email"]
+              margin-bottom: 5px
+            input[type=checkbox]
+              opacity: 1
+            a
+              color: gray
+              font-size: 0.9em
+              &:hover
+                color: white
+            .btn
+              margin-top: 15px
+        .dropdown.open > .dropdown-toggle,
+        .dropdown.active > .dropdown-toggle,
+        .dropdown.open.active > .dropdown-toggle
+          background: transparent !important
+
+        .photo_user
+          padding: 0px
+          height: 30px
+          width: 30px
+          outline: none
+          float: left
+          margin-left: 5px
+          margin-top: 5px
+          img
+            border-radius: $border-radius-base
+            height: 30px
+            width: 30px
+            float: left
+            border: 1px solid #EEEEEE
+            &:hover
+              border: 1px solid $orange-primary
+          a
+            padding: 0
+        .user_name
+          font-weight: 600
+
+        .add_nav
+          padding: 5px 0px
+          .btn
+            padding: 0px
+            height: 30px
+            margin-right: -1px
+            margin-left: 3px
+            background-color: $white
+            background-image: none
+            box-shadow: none
+            border: 1px solid $orange-gray-45
+            border-radius: 5px
+
+            i
+              display: block
+              padding: 7px 8px
+              color: $orange-gray-45
+              text-decoration: none
+              margin: 0
+            &:hover
+              text-decoration: none
+              border-color: $orange-primary
+              i
+                color: $orange-primary
+      //************************
+      //input de quick search
+      //************************
+      .search-ui
+        float: right
+        padding: 2px 10px
+        .quick-search
+          .search-nav
+            margin-left: -3px
+            @media (max-width: $screen-xs-max)
+              margin-left: 0
+            .search_button_class
+              margin: 0 0 0 3px
+              float: left
+            .mat
+              z-index: 10
+              display: none
+              position: absolute
+              top: 46px
+              width: 265px
+              background-color: rgba(85,85,85,0.97)
+              @include border-bottom-radius ($border-radius-base)
+              @media (max-width: 768px)
+                width: 80.5%
+                left: 15px
+                top: 87px
+              @media (max-width: 635px)
+                width: 80%
+              @media (max-width: 560px)
+                width: 79.2%
+              @media (max-width: 485px)
+                width: 78%
+              @media (max-width: 430px)
+                width: 77%
+              .spinner
+                margin: 35px auto 0 !important
+                display: none
+              .query_too_short
+                @include border-bottom-radius ($border-radius-base)
+                color: $white
+                text-align: center
+                padding: 3px
+                margin-top: 2px
+              .no_results
+                display: block
+                @include border-bottom-radius ($border-radius-base)
+                color: $white
+                background-color: $brand-primary
+                text-align: center
+                padding: 3px
+                margin-top: 2px
+
+              .results
+                max-height: 431px
+                overflow: auto
+                height: auto
+                ul
+                  width: 95%
+                  padding-left: 0
+                  float: none
+                  @include border-bottom-radius ($border-radius-base)
+                  @include center-block
+                  @include items
+                  .add-item
+                    display: none
+                  li
+                    @include excursion-small
+                    margin: 3px 7px
+                    width: 95%
+                    border: none
+                    max-height: 43px
+                    .container-img
+                      width: 27% !important
+                      .avatar img
+                        margin-top: -7px
+                      .img-box
+                        i
+                          font-size: 35px
+                          padding-top: 4px
+                    .caption
+                      padding-top: 2px
+                      width: 73%
+                      h6
+                        height: 20px
+                      h6, .count-followers
+                        text-align: left
+                    .corner-item, .add, .info-bottom, hr
+                      display: none
+                  li, .container-img, .caption
+                    max-height: 43px
+
+                  .more
+                    display: block
+                    clear: both
+                    text-align: center
+                    height: auto
+                    margin: 7px 7px 10px
+                    padding: 5px
+                    //padding-bottom: 3px
+                    //padding-top: 2px
+                    a
+                      color: $gray-darker
+                      font-family: $corporate-font-family-sans-serif-Medium
+                      text-decoration: none
+                    &:hover
+                      background: $gray-darker-extra
+                      a
+                        color: $white
+                        &:hover
+                          background-color: $gray-darker-extra !important
+                  .img-box
+                    padding-bottom: 0
+        .search-query
+          width: 180px !important
+          float: left
+          font-size: 1em
+
+
 
     //****************************************************
     //menu for small screens (phones&tablets) up to 991px
@@ -110,108 +321,6 @@ nav.navbar-fixed-top
             padding: 7px 6px 6px
     //****************************************************
 
-    .navbar-right
-      float: none
-      li
-        padding: 5px 7px
-      a
-        padding: 5px 0
-        outline: none
-        font-weight: 200
-        .menu_bold
-          font-weight: 800
-
-      .active > a
-        background-color: transparent
-        box-shadow: none
-        border-top: 3px solid $orange-primary
-        margin-top: -3px
-      .dropdown
-        i
-          margin-left: 5px
-
-        .dropdown-menu
-          padding: 10px !important
-          border-radius: $border-radius-base
-          //min-width: 285px
-        .user-menu, .add-menu
-          padding: 0 !important
-          li
-            padding: 0
-            a
-              padding: 8px
-              &:hover, &:active,&:focus
-                background-color: $black !important
-        .dropdown-menu:before, .dropdown-menu:after
-          display: none
-        form
-          margin: 0
-          min-width: 285px
-          .checkbox
-            display: block
-            width: 0
-            color: white
-          input[type="email"]
-            margin-bottom: 5px
-          input[type=checkbox]
-            opacity: 1
-          a
-            color: gray
-            font-size: 0.9em
-            &:hover
-              color: white
-          .btn
-            margin-top: 15px
-      .dropdown.open > .dropdown-toggle,
-      .dropdown.active > .dropdown-toggle,
-      .dropdown.open.active > .dropdown-toggle
-        background: transparent !important
-
-      .photo_user
-        padding: 0px
-        height: 30px
-        width: 30px
-        outline: none
-        float: left
-        margin-left: 5px
-        margin-top: 5px
-        img
-          border-radius: $border-radius-base
-          height: 30px
-          width: 30px
-          float: left
-          border: 1px solid #EEEEEE
-          &:hover
-            border: 1px solid $orange-primary
-        a
-          padding: 0
-      .user_name
-        font-weight: 600
-
-      .add_nav
-        padding: 5px 0px
-        .btn
-          padding: 0px
-          height: 30px
-          margin-right: -1px
-          margin-left: 3px
-          background-color: $white
-          background-image: none
-          box-shadow: none
-          border: 1px solid $orange-gray-45
-          border-radius: 5px
-
-          i
-            display: block
-            padding: 7px 8px
-            color: $orange-gray-45
-            text-decoration: none
-            margin: 0
-          &:hover
-            text-decoration: none
-            border-color: $orange-primary
-            i
-              color: $orange-primary
 
 
 #warning_cookie_bar
