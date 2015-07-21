@@ -21,7 +21,7 @@
         <%= f.hidden_field :owner_id, :id => div_id+"_owner_id" %>
 
         <!--Title-->
-        <label><%= t('categories.leyend.title')%></label>
+        <label><%= t('categories.leyend.title')%> *</label>
         <%= f.text_field :title, :class => "form-control", :id => div_id+"_category_title", :placeholder => t('categories.title_input') %>
 
         <!--Description-->
@@ -82,7 +82,7 @@
 
     //Category button event
     $("#<%=div_id%> input[value=<%= t('categories.save')%>][type='button'][class='btn-primary']").click(function(event) {
-      
+
       if ($("#<%=div_id%> input[name='category[title]']").val() == "") {
         $("#<%=div_id%> .errors").remove();
         $("#<%=div_id%> .new_category").after("<div class='errors'><%= t('categories.title_input')%></div>");
