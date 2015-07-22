@@ -11,10 +11,10 @@
         <div class="clear"></div>
       </li>
 
-      <!-- logo comunidad madrid -->
+      <!-- logo comunidad madrid
       <li class="dropup">
         <a href="http://www.madrid.org/cs/Satellite?language=es&pagename=PortalEducacion%2FPage%2FEDUC_home" target="_new"><img class="logo_cm" src="/assets/orange/logo_cm_edu.jpg"></a>
-      </li>
+      </li>-->
 
       <!-- logo red.es -->
       <li class="dropup">
@@ -88,7 +88,7 @@
         <div data-toggle="dropdown" class="btn dropdown-toggle">
           <% the_locale = I18n.locale.to_s %>
           <span class="ddfootertitle"><%=image_tag("flags/" + the_locale + ".png", :title=>the_locale, :class=> "")%><%=t('lang.title')%></span>
-          
+
         </div>
           <ul class="dropdown-menu">
             <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>

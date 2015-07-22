@@ -1,11 +1,11 @@
 nav.navbar-fixed-top
   font-size: 0.9em
-  padding: 6px 5%
+  padding: 6px 1% 6px 2%
   background-color: none
   background: rgba( 255, 255, 255, 0.98)
   border: 0
   @media (max-width: $screen-sm-max)
-    padding: 9px 5%
+    padding: 9px 1%
 
   .container-fluid
     max-width: 2000px
@@ -43,19 +43,28 @@ nav.navbar-fixed-top
       .navbar-right
         float: none
         li
-          padding: 5px 7px
+          padding: 5px 8px
         a
           padding: 5px 0
           outline: none
           font-weight: 200
           .menu_bold
             font-weight: 800
-
         .active > a
           background-color: transparent
           box-shadow: none
-          border-top: 3px solid $orange-primary
+          border-top: 3px solid $brand-primary
           margin-top: -3px
+        .homeactive > a
+          color: $brand-primary
+          font-size: 1.3em
+
+        .btn-header
+          padding: 3px 7px
+          margin: 2px 0 2px 5px
+          a:hover
+            color: $brand-primary
+
         .dropdown
           i
             margin-left: 5px
@@ -63,7 +72,7 @@ nav.navbar-fixed-top
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
-            //min-width: 285px
+
           .user-menu, .add-menu
             padding: 0 !important
             li
@@ -88,6 +97,7 @@ nav.navbar-fixed-top
             a
               color: gray
               font-size: 0.9em
+              float: left
               &:hover
                 color: white
             .btn
@@ -117,13 +127,21 @@ nav.navbar-fixed-top
             padding: 0
         .user_name
           font-weight: 600
-
-        .add_nav
+      
+        .btn-header-xs
           padding: 5px 0px
+
+          .btn-help
+            border: none !important
+            margin-right: 0px !important
+            color: $brand-primary
+            i
+              padding: 8px 10px 8px 4px !important
+
           .btn
             padding: 0px
             height: 30px
-            margin-right: -1px
+            margin-right: -2px
             margin-left: 3px
             background-color: $white
             background-image: none
@@ -134,14 +152,14 @@ nav.navbar-fixed-top
             i
               display: block
               padding: 7px 8px
-              color: $orange-gray-45
+              color: $orange-gray-50
               text-decoration: none
               margin: 0
             &:hover
               text-decoration: none
               border-color: $orange-primary
               i
-                color: $orange-primary
+                color: $brand-primary
       //************************
       //input de quick search
       //************************
