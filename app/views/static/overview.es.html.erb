@@ -79,10 +79,10 @@
 
       <div class="header_text margin-top10">
         <a target="_blank" href="<%= Vish::Application.config.full_domain %>"><%= t('thevish') %></a>
-        es una Red Social Colaborativa centrada en la creación de recursos educativos para la realización de actividades educativas.
+        es una Red Social Colaborativa centrada en la creación de recursos educativos sobre <b>uso seguro y responsable de las tecnologías</b>.
         El elemento principal de EducaInternet es la excursión virtual, una presentación web interactiva (basada en diapositivas o fichas visuales enriquedas),
         diseñada para la proyección en las aulas. Cada excursión es una presentación visual basada en recursos multimedia utilizando cualquier elemento
-        de internet, del repositorio de EducaInternet o de otros repositorios de contenidos. El nombre de excursión es una metáfora de 'visita a un mundo virtual
+        de Internet, del repositorio de EducaInternet o de otros repositorios de contenidos. El nombre de excursión es una metáfora de 'visita a un mundo virtual
         de recursos de conocimiento'.
       </div>
       <br>
@@ -112,6 +112,11 @@
             <li style="list-style: initial">Una contraseña en GooglePlay</li>
           </a>
         </ul>
+      </div>
+      <br>
+      
+      <div class="header_text margin-top10">
+       EducaInternet es una evolución de la plataforma <a href="http://vishub.org">Virtual Science Hub (ViSH)</a>. Que es una red social colaborativa sobre temas más genéricos. Se puede ver su catálogo <a href="http://vishub.org/search?catalogue=true">aquí</a>, que contiene temas como química, geografía, arte, etc. Algunos de los ejemplos que pondremos acontinuación son de la plataforma ViSH por no contar aún con ejemplos realizados por los usuarios en EducaInternet sobre algunas funcionalidades.
       </div>
       <br>
 
@@ -158,7 +163,7 @@
       <div id="overview2" class="header_text margin-top10">
         La búsqueda de excursiones se puede hacer desde la
         <a target="_blank" href="<%= Vish::Application.config.full_domain %>/search?catalogue=true">Temateca</a>,
-        donde se pueden filtrar por tema, idioma, y otros filtros disponibles. Con un entorno muy similar, la búsqueda de recursos se puede hacer desde la
+        donde se pueden filtrar por tema, idioma, y otros filtros disponibles. Con un entorno muy similar, la búsqueda de recursos para poder crear tus propias excursiones o para usarlos directamente en tus actividades didácticas se puede hacer desde la
         <a target="_blank" href="<%= Vish::Application.config.full_domain %>/search?directory=true">Recursoteca</a>.
       </div>
       <br>
@@ -225,7 +230,7 @@
       </div>
       <br>
       <div class="header_text margin-top10">
-        Cada excursión virtual está organizada como una secuencia de diapositivas, y en ella se pueden insertar por los siguientes elementos:
+        Cada excursión virtual está organizada como una secuencia de diapositivas, y en ella se pueden insertar los siguientes elementos:
       </div>
       <br>
       <ul>
@@ -244,12 +249,12 @@
           Diapositiva interactiva diseñada para presentar preguntas o ejercicios para ser respondidos en tiempo real, ya sea en un aula con ordenadores de sobremesa, smartphones, tabletas...
           <a target="_blank" href="http://vishub.org/categories/61">(Ejemplos Quiz)</a>
           Se pueden insertar preguntas de Verdadero/Falso y preguntas de múltiple respuesta. Las respuestas podrán ser a modo auto-evaluación,
-          o a través de un sistema de respuesta basado en la audiencia (ARS) ya por medio de una URL o de la captura de un código QR.
+          o a través de un sistema de respuesta basado en la audiencia (ARS) ya sea por medio de una URL o de la captura de un código QR.
         </li>
         <br>
         <li style="list-style: initial">
           <span class="editor_title_bold">Flashcard.</span>
-          Diapositiva con zonas clicables que pueden enlazar con otra diapositiva, excursión o cualquier página web o recurso de internet.
+          Diapositiva con zonas clicables que pueden enlazar con otra diapositiva, excursión o cualquier página web o recurso de Internet.
           <a target="_blank" href="http://vishub.org/categories/57">(Ejemplos Flashcards)</a>
         </li>
         <br>
@@ -311,7 +316,7 @@
       </div>
       <br>
       <div class="header_text margin-top10">
-        Las excursiones se publican en EducaInternet utilizando la 'Licencia Creative Commons', de manera que cualquier usuario registrado tiene el derecho a usar y modificar
+        Las excursiones se publican en EducaInternet utilizando la 'Licencia Creative Commons' por defecto, de manera que cualquier usuario registrado tiene el derecho a usar y modificar
         las excursiones con fines no comerciales. EducaInternet podría definirse como “contribución amable” y cada excursión hace que los autores sean parte de una cadena
         de clonación explícita, de tal manera que todos los que han contribuido a una excursión formarán parte y recibirán su reconocimiento.
       </div>
@@ -341,7 +346,7 @@
       </div>
       <br>
       <div class="header_text margin-top10">
-        La descarga de excursiones para la presentación offline (sin conexión a internet) en una clase o reunión está en desarrollo mediante el modo offline HTML5.
+        La descarga de excursiones para la presentación offline (sin conexión a Internet) en una clase o reunión está en desarrollo mediante el modo offline HTML5.
         Las excursiones sólo estarán habilitadas para la presentación offline si todos los recursos de la utilización se pueden almacenar en caché en el cliente,
         es decir, si están alojados en el repositorio local de EducaInternet. La descarga de excursiones como un conjunto de diapositivas en PDF se podrá realizar,
         pero perdiendo todo el contenido multimedia activo dentro de la excursión.
