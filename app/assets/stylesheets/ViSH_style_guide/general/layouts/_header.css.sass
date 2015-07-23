@@ -60,10 +60,14 @@ nav.navbar-fixed-top
           font-size: 1.3em
 
         .btn-header
-          padding: 3px 7px
-          margin: 2px 0 2px 5px
+          padding: 0px 7px
+          margin: 4px 0 2px 5px
           a:hover
             color: $brand-primary
+        .btn-access > a
+          color: white
+          &:hover
+            color: white
 
         .dropdown
           i
@@ -127,7 +131,7 @@ nav.navbar-fixed-top
             padding: 0
         .user_name
           font-weight: 600
-      
+
         .btn-header-xs
           padding: 5px 0px
 
@@ -165,14 +169,17 @@ nav.navbar-fixed-top
       //************************
       .search-ui
         float: right
-        padding: 2px 10px
+        padding: 3px 10px
         .quick-search
           .search-nav
             margin-left: -3px
             @media (max-width: $screen-xs-max)
               margin-left: 0
+            input[type="text"]
+              height: 33px
             .search_button_class
               margin: 0 0 0 3px
+              padding: 5px 6px
               float: left
             .mat
               z-index: 10
