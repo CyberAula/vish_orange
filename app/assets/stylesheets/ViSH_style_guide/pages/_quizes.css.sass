@@ -1,3 +1,5 @@
+
+#contributors,
 #quiz,
 #help,
 #legal_notice,
@@ -15,7 +17,27 @@
     @include make-sm-column(12, $gutter: $grid-gutter-width)
     @include make-md-column(12, $gutter: $grid-gutter-width)
     @include make-lg-column(12, $gutter: $grid-gutter-width)
+    legend
+      font-weight: bold
 
+#contributors
+  margin-top: 1%
+  .logos
+    text-align: center
+    img
+      width: 70%
+      -webkit-filter: grayscale(100%)
+      filter: grayscale(100%)
+      filter: gray
+      &:hover
+        -webkit-filter: grayscale(0%)
+        filter: grayscale(0%)
+        filter: none
+    .description
+      font-size: 0.9em
+      color: $orange-gray-45
+      padding: 0 10px
+      //display: none
 
 #quiz
   ul.connectedSortable
