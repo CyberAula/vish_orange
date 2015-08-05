@@ -22,6 +22,7 @@
         <!--<li class="<%= 'homeactive' if params[:controller] == 'home'%>"><a href="/"><i class="fa fa-home"></i></a></li>-->
 
         <li class="tooltip-header <%= 'homeactive' if params[:controller] == 'home'%>" data-original-title="Inicio"><a href="/"><i class="fa fa-home"></i></a></li>
+        <li class="<%= 'active' if params[:archive] == 'true'%>"><a href="<%=search_path(:archive=>"true")%>"><%=t('orange_front.header.cursoteca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
         <li class="<%= 'active' if params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true")%>"><%=t('orange_front.header.temateca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
         <li class="<%= 'active' if params[:directory] == 'true'%>"><a href="<%=search_path(:directory=>"true")%>"><%=t('orange_front.header.recursoteca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
         <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="User" %>"><a href="<%=search_path(:type => "User", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>

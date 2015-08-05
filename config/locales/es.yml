@@ -18,6 +18,8 @@ es:
     header:
       index: "Inicio"
       comunity: "Comunidad"
+      cursoteca: "Curso"
+      curso_desc: "Aquí se muestra el catálogo de cursos para su uso libre en el aula y fuera de ella"
       recursoteca: "Recurso"
       recurso_desc: "Aquí se muestra el catálogo de recursos para que crees tus propias excursiones"
       temateca: "Tema"
@@ -52,7 +54,7 @@ es:
         swf: "SWF añadido"
         video: "Vídeo añadido"
         webapp: "Aplicación Web añadida"
-        workshop: "Workshop añadido"
+        workshop: "Curso añadido"
         writing: "Texto añadido"
         zipfile: "Archivo ZIP añadido"
     more: "Ver más..."
@@ -589,6 +591,10 @@ es:
     tooltip:
       add_button: "Crea excursiones, recursos, etc."
   help: "ayuda"
+  helpers:
+    submit:
+      workshop:
+        create: "Crear Curso"
   help_page: "AYUDA DE EducaInternet"
   help_manual: "Descargar el manual de usuario"
   hide: "Ocultar"
@@ -848,7 +854,7 @@ es:
       user: "Usuarios"
       video: "Videos"
       webapp: "Aplicaciones Web"
-      workshop: "Workshops"
+      workshop: "Cursos"
       writing: "Textos"
       zipfile: "Ficheros ZIP"
     name: "Buscar"
@@ -955,14 +961,14 @@ es:
     view_full: "Pantalla completa"
   workshop:
     actions:
-        add: "Añadir Workshop"
-        add_activity_title: "Añadir Actividad al Workshop"
+        add: "Añadir Curso"
+        add_activity_title: "Añadir Actividad al Curso"
         add_activity_button: "Añadir"
         adding_activity_button: "Añadiendo..."
-        cancel_&_go: "Cancelar e ir a workshop"
+        cancel_&_go: "Cancelar e ir a curso"
         collapse_all: "Reducir todo"
-        confirm_delete: "¿Borrar workshop?"
-        delete: "Borrar workshop"
+        confirm_delete: "¿Borrar curso?"
+        delete: "Borrar curso"
         edit_activity_button: "Guardar"
         edit_mode_btOn: "Activar modo edición"
         edit_mode_btOff: "Desactivar modo edición"
@@ -992,31 +998,31 @@ es:
         resource:
             modal_title: "Editar Recurso"
             title: "Recurso"
-            description: "Inserta cualquier tipo de recurso en el workshop"
-            text: "Podrás añadir a este workshop todos los recursos que haya disponibles en Vish. Para añadirlos, abre el recurso en Vish, copia su URL de la barra del navegador y pégala en el siguiente cuadro de texto."
+            description: "Inserta cualquier tipo de recurso en el curso"
+            text: "Podrás añadir a este curso todos los recursos que haya disponibles en Vish. Para añadirlos, abre el recurso en Vish, copia su URL de la barra del navegador y pégala en el siguiente cuadro de texto."
         resource_gallery:
             add: "Añadir"
             title: "Galería recursos"
             description: "Añade una galería de recursos"
-            text: "Las galerías de recursos son un componente del workshop que te permiten incluir varios recursos de Vish de cualquier tipo y tenerlos agrupados para facilitarte su visionado. Inserta este componente en tu workshop y añade recursos de la forma más fácil e intuitiva."
+            text: "Las galerías de recursos son un componente del curso que te permiten incluir varios recursos de Vish de cualquier tipo y tenerlos agrupados para facilitarte su visionado. Inserta este componente en tu curso y añade recursos de la forma más fácil e intuitiva."
             new_resource: "Añadir"
         contributions_gallery:
             title: "Galería contribuciones"
-            description: "La galería de contribuciones muestra las contribuciones enviadas al workshop"
-            text: "Los usuarios pueden contribuir a las tareas definidas en un workshop añadiendo recursos o bloques de texto. Con el componente Galería de contribuciones podrás ver de forma agrupada los recursos y/o los textos con los que otros usuarios han contribuido."
+            description: "La galería de contribuciones muestra las contribuciones enviadas al curso"
+            text: "Los usuarios pueden contribuir a las tareas definidas en un curso añadiendo recursos o bloques de texto. Con el componente Galería de contribuciones podrás ver de forma agrupada los recursos y/o los textos con los que otros usuarios han contribuido."
             error: "A contributions gallery should include at least 1 assignment"
         text:
             title: "Texto"
             description: "Incluye un párrafo de texto"
-            text: "Además de la descripción del workshop y las tareas definidas en él, en ocasiones necesitarás la posibilidad de insertar un bloque de texto con otra finalidad, como podría ser una bibliografía u otros datos de interés para el workshop. Con este componente puedes añadir un texto completamente personalizado y editable a tu workshop."
+            text: "Además de la descripción del curso y las tareas definidas en él, en ocasiones necesitarás la posibilidad de insertar un bloque de texto con otra finalidad, como podría ser una bibliografía u otros datos de interés para el curso. Con este componente puedes añadir un texto completamente personalizado y editable a tu curso."
 
-    confirm_delete: "¿Borrar workshop?"
-    new: "Nuevo Workshop"
-    other: "Workshops"
+    confirm_delete: "¿Borrar curso?"
+    new: "Nuevo Curso"
+    other: "Cursos"
     titles:
-        editing_details: "Editando detalles workshop"
-        editing_main: "Editando workshop"
-        show_main: "Workshop"
+        editing_details: "Editando detalles del curso"
+        editing_main: "Editando curso"
+        show_main: "Curso"
   writing:
     actions:
       add: "Añadir texto"
