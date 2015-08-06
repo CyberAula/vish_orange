@@ -97,29 +97,55 @@
           <a href="#" class="dropdown-toggle user_name" data-toggle="dropdown" role="button" aria-expanded="false"><%= truncate_name(current_subject.name, length: 15) %><span class="caret"></span></a>
           <ul class="dropdown-menu user-menu pull-right" role="menu">
 
-              <li class="settings-menu">
-                 <%= link_to home_path do %>
-                 <i class="fa fa-home"></i>
-                 <%= t('navigation.home') %>
-                 <% end %>
-              </li>
+            <!-- profile -->
 
-              <%if isAdmin? %>
-                <li class="settings-menu">
-                  <%= link_to admin_path do %>
-                    <i class="fa fa-wrench"></i>
-                    <span><%= t("admin.menu_entry") %></span>
-                  <% end %>
-                </li>
-              <%end%>
+            <li class="settings-menu">
+              <%= link_to current_subject do %>
+                <i class="fa fa-user"></i>
+                <%= t('profile.one') %>
+              <% end %>
+            </li>
 
+            <!-- if admin -->
+            <%if isAdmin? %>
               <li class="settings-menu">
-                <%= link_to current_subject do %>
-                  <i class="fa fa-user"></i>
-                  <%= t('profile.one') %>
+                <%= link_to admin_path do %>
+                  <i class="fa fa-wrench"></i>
+                  <span><%= t("admin.menu_entry") %></span>
                 <% end %>
               </li>
+            <%end%>
 
+            <% if availableModels.include? "Excursion" and availableServices.include? "ARS" %>
+              <!-- divider bar -->
+              <li class="divider"></li>
+
+              <li class="settings-menu">
+                <%= link_to quiz_sessions_path do %>
+                  <i class="fa fa-check-square"></i>
+                  <%= t('quiz.live') %>
+                <% end %>
+              </li>
+            <%end%>
+
+            <% if availableServices.include? "PrivateStudentGroups" %>
+                <li class="settings-menu">
+
+                  <%if can?(:create, PrivateStudentGroup.new)%>
+                    <%= link_to private_student_groups_path do %>
+                      <i class="fa fa-group"></i>
+                      <%= t("private_student.request") %>
+                    <% end %>
+                  <%else%>
+                    <%= link_to(raw("<i class='fa fa-group'></i> " + t("private_student.request")), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
+                  <%end%>
+
+                </li>
+            <%end%>
+
+              <li class="divider"></li>
+
+              <!-- settings -->
               <li class="settings-menu">
                 <%= link_to settings_path do %>
                   <i class="fa fa-cog"></i>
@@ -127,33 +153,7 @@
                 <% end %>
               </li>
 
-
-              <% if availableModels.include? "Excursion" and availableServices.include? "ARS" %>
-                <li class="settings-menu">
-                  <%= link_to quiz_sessions_path do %>
-                    <i class="fa fa-check-square"></i>
-                    <%= t('quiz.live') %>
-                  <% end %>
-                </li>
-              <%end%>
-
-              <% if availableServices.include? "PrivateStudentGroups" %>
-                  <li class="settings-menu">
-
-                    <%if can?(:create, PrivateStudentGroup.new)%>
-                      <%= link_to private_student_groups_path do %>
-                        <i class="fa fa-group"></i>
-                        <%= t("private_student.request") %>
-                      <% end %>
-                    <%else%>
-                      <%= link_to(raw("<i class='fa fa-group'></i> " + t("private_student.request")), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
-                    <%end%>
-
-                  </li>
-              <%end%>
-
-              <li class="divider"></li>
-
+              <!-- signout -->
               <li>
                 <%= link_to destroy_user_session_path, :method => :delete do %>
                 <i class="fa fa-sign-out"></i>

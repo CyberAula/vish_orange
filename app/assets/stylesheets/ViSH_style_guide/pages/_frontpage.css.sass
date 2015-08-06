@@ -4,6 +4,9 @@
 #sign_in
   @include devise-box
 
+.registration
+  color: $gray-dark
+
 #new_session
   .checkbox
     display: block
@@ -86,13 +89,17 @@
           height: 220px
           top: 0
           left: 0
-          background-color: rgba(0, 0, 0, 0.5)
+          background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+          background: -o-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+          background: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+          background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7))
           @media (max-width: $screen-sm-max)
             height: 280px
           @media (max-width: $screen-xs-min)
             background-color: transparent
+            height: 180px
+            width: 100%
           .carousel-text
-            //padding: 50px 40px
             padding: 60px 0
             font-family: helvetica
             @media (max-width: $screen-sm-max)

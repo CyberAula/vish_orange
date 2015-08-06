@@ -36,7 +36,7 @@
         <div class="toolbar-profile">
           <div class="btn-group js_update_profile_info">
             <!--remove-->
-						<a class="btn btn-default btn-for-categorize" href="<%=credentials_private_student_group_path(@privateStudentGroup)%>"><i class='fa fa-download'></i>Download credentials</a>
+						<a class="btn btn-default btn-for-categorize" href="<%=credentials_private_student_group_path(@privateStudentGroup)%>"><i class='fa fa-download'></i><%= t('private_student.download_credentials') %></a>
           <% if can?(:destroy, @privateStudentGroup) %>
             <%= link_to(raw("<i class='fa fa-trash'></i>") + t('excursion.actions.delete') , @privateStudentGroup, :method => :delete, :remote => false, :confirm => "Are you sure?", :class =>"action btn btn-default" )%>
           <% end %>

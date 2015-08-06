@@ -44,10 +44,12 @@ nav.navbar-fixed-top
         float: none
         li
           padding: 5px 8px
-        a
-          padding: 5px 0
-          outline: none
-          font-weight: 200
+          a
+            padding: 5px 0
+            outline: none
+            font-weight: 200
+            &:hover, &:active, &:focus
+              color: $brand-primary
           .menu_bold
             font-weight: 800
         .active > a
@@ -72,11 +74,9 @@ nav.navbar-fixed-top
         .dropdown
           i
             margin-left: 5px
-
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
-
           .user-menu, .add-menu
             padding: 0 !important
             li
@@ -84,7 +84,9 @@ nav.navbar-fixed-top
               a
                 padding: 8px
                 &:hover, &:active,&:focus
-                  background-color: $black !important
+                  background-color: $gray-darker !important
+                  color: white
+
           .dropdown-menu:before, .dropdown-menu:after
             display: none
           form
@@ -352,21 +354,27 @@ nav.navbar-fixed-top
   display: none
   text-align: center
   color: $white
-  background-color: rgba(0, 0, 0, 0.7)
+  background-color: rgba(0, 0, 0, 0.8)
   height: auto
   width: 100%
   z-index: 999
   position: fixed
-  top: 50px
-  h3
-    display: block
-    margin: 0
+  top: 52px
+  padding: 40px
+
   p
     border-radius: 0 0 10px 10px
     color: $white
     margin: 0 auto
-    font-family: $corporate-font-family-sans-serif-Bold
+    font-family: $corporate-font-family-sans-serif-Medium
     width: 80%
-    a
+  a
+    color: $gray
+    font-family: $corporate-font-family-sans-serif-Bold
+    border: 1px solid $gray
+    margin: 20px 0 0 0
+    &:hover
       color: $white
-      font-family: $corporate-font-family-sans-serif-Bold
+      border: 1px solid $white
+  h3
+    margin-top: 0

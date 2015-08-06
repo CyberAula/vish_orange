@@ -138,12 +138,12 @@ es:
   admin:
     close_report: "Cerrar reporte"
     closed_reports: "Reportes cerrados"
-    modal:      
+    modal:
       change_role: "Rol de usuario en la plataforma"
       delete_user: "Borrar usuario"
       manage_user_button: "Gestionar"
       permissions: "Permisos"
-      title: "Gestionar usuario"    
+      title: "Gestionar usuario"
     menu_entry: "Administración"
     noitems: "No hay elementos."
     noreports: "No hay reportes."
@@ -166,7 +166,7 @@ es:
       title: "Detalles petición"
       type: "Tipo petición"
     requests: "Peticiones"
-    status: "Estado"    
+    status: "Estado"
     users: "Administración de Usuarios"
   all: "todos"
   announce:
@@ -741,6 +741,7 @@ es:
     account_name: "Alumno"
     creation_success: "El grupo de alumnos se ha creado satisfactoriamente"
     creation_error: "El grupo de alumno no se ha podido crear"
+    download_credentials: "Descarga credenciales"
     errors:
       no_attach: "Por favor, descarguese el archivo del paso 1, fírmelo, escaneelo y adjúntelo en el paso 3."
       no_name: "Por favor introduce el nombre para crear el grupo"
