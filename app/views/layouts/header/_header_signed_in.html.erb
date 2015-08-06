@@ -137,6 +137,21 @@
                 </li>
               <%end%>
 
+              <% if availableServices.include? "PrivateStudentGroups" %>
+                  <li class="settings-menu">
+
+                    <%if can?(:create, PrivateStudentGroup.new)%>
+                      <%= link_to private_student_groups_path do %>
+                        <i class="fa fa-group"></i>
+                        <%= t("private_student.request") %>
+                      <% end %>
+                    <%else%>
+                      <%= link_to(raw("<i class='fa fa-group'></i> " + t("private_student.request")), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
+                    <%end%>
+
+                  </li>
+              <%end%>
+
               <li class="divider"></li>
 
               <li>
@@ -168,6 +183,9 @@
   <%= render partial: 'devise/invitations/new_modal' %>
 <%end%>
 
+<% if (availableServices.include? "PrivateStudentGroups") && !can?(:create, PrivateStudentGroup.new) %>
+  <%= render partial: 'service_request/private_student_groups/new_modal'%>
+<%end%>
 
  <script>
    document.addEventListener('DOMContentLoaded', function() {
