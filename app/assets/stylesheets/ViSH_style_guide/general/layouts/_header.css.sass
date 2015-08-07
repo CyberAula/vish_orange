@@ -68,7 +68,7 @@ nav.navbar-fixed-top
             color: $brand-primary
         .btn-access > a
           color: white
-          &:hover
+          &:hover, &:focus, &:active
             color: white
 
         .dropdown
@@ -77,6 +77,8 @@ nav.navbar-fixed-top
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
+          .access-form
+            margin-top: 5px
           .user-menu, .add-menu
             padding: 0 !important
             li
