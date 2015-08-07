@@ -116,7 +116,7 @@
               </li>
             <%end%>
 
-            <% if availableModels.include? "Excursion" and availableServices.include? "ARS" %>
+            <% if availableModels.include? "Excursion" and availableServices.include? "ARS" and !current_subject.role?("PrivateStudent") %>
               <!-- divider bar -->
               <li class="divider"></li>
 
@@ -128,7 +128,7 @@
               </li>
             <%end%>
 
-            <% if availableServices.include? "PrivateStudentGroups" %>
+            <% if availableServices.include? "PrivateStudentGroups" and !current_subject.role?("PrivateStudent") %>
                 <li class="settings-menu">
 
                   <%if can?(:create, PrivateStudentGroup.new)%>
@@ -146,12 +146,14 @@
               <li class="divider"></li>
 
               <!-- settings -->
-              <li class="settings-menu">
-                <%= link_to settings_path do %>
-                  <i class="fa fa-cog"></i>
-                  <%= t('dropdown.settings') %>
-                <% end %>
-              </li>
+              <% unless current_subject.role?("PrivateStudent") %>
+                <li class="settings-menu">
+                  <%= link_to settings_path do %>
+                    <i class="fa fa-cog"></i>
+                    <%= t('dropdown.settings') %>
+                  <% end %>
+                </li>
+              <%end%>
 
               <!-- signout -->
               <li>

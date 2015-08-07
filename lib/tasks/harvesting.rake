@@ -149,11 +149,20 @@ namespace :harvesting do
       }
 
       eJson["description"] = ils["description"] unless ils["description"].blank?
-      unless avatarURL.blank? or !e.thumbnail_url.nil?
-        newAvatarURL = downloadAndUploadAvatar(avatarURL,owner)
-        eJson["avatar"] = newAvatarURL unless newAvatarURL.blank?
+      if e.thumbnail_url.nil?
+        unless avatarURL.blank?
+          newAvatarURL = downloadAndUploadAvatar(avatarURL,owner)
+          eJson["avatar"] = newAvatarURL unless newAvatarURL.blank?
+        end
+      else
+        eJson["avatar"] = e.thumbnail_url
       end
-      eJson["tags"] = ils["ils_keywords"] unless ils["ils_keywords"].nil? or !ils["ils_keywords"].is_a? Array or !e.tag_list.blank?
+
+      if e.tag_list.blank?
+        eJson["tags"] = ils["ils_keywords"] unless ils["ils_keywords"].nil? or !ils["ils_keywords"].is_a? Array
+      else
+        eJson["tags"] = e.tag_list
+      end
       eJson["language"] = language unless language.nil?
       unless ageRanges.nil?
         eJson["age_range"] = ageRanges[0].to_s + " - " + ageRanges[1].to_s
@@ -167,6 +176,7 @@ namespace :harvesting do
       e.json = eJson.to_json
 
       e.save
+      e.afterPublish
 
       c.property_objects << e.activity_object unless e.activity_object.nil?
 
