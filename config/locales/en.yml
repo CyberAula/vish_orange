@@ -996,9 +996,9 @@ en:
     title: "Captcha"
   site:
     current:
-      description: "EducaInternet is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
-      keywords: "e-Learning, Technology Enhanced Learning, education, Learning Objects, repository, resources, authoring tool, catalogue, search"
-      title: "EducaInternet"
+      description: "EducaInternet is a platform centered in the creation educational resources about the safe and responsible use of tecnologies"
+      keywords: "cyberbullying, security, e-safety, sexting, grooming, privacy, excursions, educational contents"
+      title: "EducaInternet - safe and secure use of tecnologies"
       search: "EducaInternet - Search"
       browse: "EducaInternet - Explore"
       msg: "EducaInternet - Messages"

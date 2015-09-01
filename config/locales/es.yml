@@ -986,9 +986,9 @@ es:
     title: "Captcha"
   site:
     current:
-      description: "EducaInternet es una red social colaborativa centrada en la creación y compartición de recursos educativos para la realización de actividades didácticas."
-      keywords: "e-Learning, Technology Enhanced Learning, education, Learning Objects, repository, resources, authoring tool, catalogue, search"
-      title: "EducaInternet"
+      description: "EducaInternet es una plataforma centrada en la creación de recursos educativos sobre uso seguro y responsable de las tecnologías"
+      keywords: "ciberacoso, seguridad, e-safety, sexting, grooming, privacidad, presentaciones, contenidos educativos"
+      title: "EducaInternet - uso seguro y responsable de las tecnologías"
       search: "EducaInternet - Busqueda"
       browse: "EducaInternet - Explorar"
       msg: "EducaInternet - Mensajes"
