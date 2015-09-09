@@ -14,12 +14,14 @@ es:
       legal: "Aviso legal"
       privacity: "Política de privacidad"
       conditions: "Condicines de uso"
-      contributors: "Colaboraciones"
+      contributors: "Comité asesor"
     header:
       index: "Inicio"
       comunity: "Comunidad"
       cursoteca: "Curso"
       curso_desc: "Aquí se muestra el catálogo de cursos para su uso libre en el aula y fuera de ella"
+      ensena: "Enseña"
+      formate: "Fórmate"
       recursoteca: "Recurso"
       recurso_desc: "Aquí se muestra el catálogo de recursos para que crees tus propias excursiones"
       temateca: "Tema"
@@ -609,6 +611,7 @@ es:
         title: "Nuestra comunidad crece cada día"
         subtitle: "Comparte tu conocimiento en nuestra comunidad y ayúdanos a crecer"
     join_us: "¡Únete a EducaInternet!"
+    title_certified: "fórmate con cursos especializados"
   go:
     repository: "ir a repositorio"
   header:

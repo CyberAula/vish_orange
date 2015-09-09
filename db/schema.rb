@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150723091044) do
+ActiveRecord::Schema.define(:version => 20150804121624) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -101,6 +101,9 @@ ActiveRecord::Schema.define(:version => 20150723091044) do
     t.text     "license_attribution"
     t.text     "license_custom"
     t.decimal  "metadata_qscore",                    :precision => 12, :scale => 6, :default => 0.0
+    t.boolean  "allow_download",                                                    :default => true
+    t.boolean  "allow_comment",                                                     :default => true
+    t.boolean  "allow_clone",                                                       :default => true
   end
 
   create_table "activity_objects_wa_resources_galleries", :id => false, :force => true do |t|
@@ -260,16 +263,20 @@ ActiveRecord::Schema.define(:version => 20150723091044) do
   end
 
   create_table "excursions", :force => true do |t|
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.integer  "activity_object_id"
     t.text     "json"
-    t.integer  "slide_count",        :default => 1
+    t.integer  "slide_count",             :default => 1
     t.text     "thumbnail_url"
-    t.boolean  "draft",              :default => false
-    t.text     "offline_manifest",   :default => ""
+    t.boolean  "draft",                   :default => false
+    t.text     "offline_manifest",        :default => ""
     t.datetime "scorm_timestamp"
     t.datetime "pdf_timestamp"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "groups", :force => true do |t|

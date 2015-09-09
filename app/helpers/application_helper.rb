@@ -94,4 +94,18 @@ module ApplicationHelper
 		VishConfig.getAvailableServices
 	end
 
+	def certified_entities
+		certified = VishConfig.getCertifiedEntities
+		if !certified.blank?
+			begin
+				certified_entities = ActivityObject.find(certified)
+			rescue
+				certified_entities = []
+			end
+		else
+			certified_entities = []
+		end
+		certified_entities
+	end
+
 end

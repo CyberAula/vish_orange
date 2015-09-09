@@ -12,9 +12,9 @@
   </li>
 
 
-  <li class="<%= 'active' if params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true")%>"><%=t('orange_front.header.temateca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
-  <li class="<%= 'active' if params[:directory] == 'true'%>"><a href="<%=search_path(:directory=>"true")%>"><%=t('orange_front.header.recursoteca')%><strong><%=t('orange_front.header.bold')%></strong></a></li>
-  <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="User" %>"><a href="<%=search_path(:type => "User", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
+  <li><a href="/"><%=t('orange_front.header.formate')%></a></li>
+  <li><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+
 
   <!-- dropdown menu links -->
   <li>

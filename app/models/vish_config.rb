@@ -230,4 +230,13 @@ class VishConfig
     end
   end
 
+  def self.getCertifiedEntities
+    if !Vish::Application.config.APP_CONFIG["certified"].nil?
+      Vish::Application.config.APP_CONFIG["certified"]
+    else
+      return []
+    end
+
+  end
+
 end

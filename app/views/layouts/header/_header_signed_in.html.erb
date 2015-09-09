@@ -21,15 +21,11 @@
         <!--<li class="<%= 'active' if params[:controller] == 'home'%>"><a href="/"><%=t('orange_front.header.index')%></a></li>-->
         <!--<li class="<%= 'homeactive' if params[:controller] == 'home'%>"><a href="/"><i class="fa fa-home"></i></a></li>-->
 
-        <li class="tooltip-header <%= 'homeactive' if params[:controller] == 'home'%>" data-original-title="Inicio"><a href="/"><i class="fa fa-home"></i></a></li>
-        <li class="<%= 'active' if params[:archive] == 'true'%>"><a href="<%=search_path(:archive=>"true")%>"><%=t('orange_front.header.cursoteca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
-        <li class="<%= 'active' if params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true")%>"><%=t('orange_front.header.temateca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
-        <li class="<%= 'active' if params[:directory] == 'true'%>"><a href="<%=search_path(:directory=>"true")%>"><%=t('orange_front.header.recursoteca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
-        <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="User" %>"><a href="<%=search_path(:type => "User", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
-
+        <li><a href="/"><%=t('orange_front.header.formate')%></a></li>
+        <li><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
         <!-- NAVEGATION -->
-        <%= render partial: 'layouts/header/basic_navegation' %>
+        <%#= render partial: 'layouts/header/basic_navegation' %>
         <!-- modal with partial for invitation after header in this same file -->
 
         <!-- NEW Help button -->
@@ -44,6 +40,12 @@
               <a href="/overview">
                 <i class="fa fa-question"> </i>
                 <span><%= t('overview_title') %></span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="contributors">
+                <i class="fa fa-graduation-cap"> </i>
+                <span><%= t('orange_front.footer.contributors') %></span>
               </a>
             </li>
             <li>

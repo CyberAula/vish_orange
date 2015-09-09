@@ -22,6 +22,8 @@ en:
       comunity: "Comunity"
       cursoteca: "Courses"
       curso_desc: "Here you can see the catalogue of courses for their use in classroom and outside it"
+      ensena: "Teach"
+      formate: "Get trained"
       recursoteca: "Resources"
       recurso_desc: "Here you can see the catalogue of resources you can use to create your own excursions"
       temateca: "Subjects"
@@ -34,7 +36,7 @@ en:
       legal: "Legal notice"
       privacity: "Privacy policy"
       conditions: "Conditions of use"
-      contributors: "Contributors"
+      contributors: "Advisory Committee"
   about:
     blog: "News"
     contact: "Contact"
@@ -620,6 +622,7 @@ en:
         title: "Our community grows every day"
         subtitle: "Share your knowledge in our community and help us to grow"
     join_us: "Join to EducaInternet!"
+    title_certified: "get trained with specialized courses"
   go:
     repository: "go to repository"
   header:
