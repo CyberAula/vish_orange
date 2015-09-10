@@ -1,7 +1,7 @@
 <!--activity-->
 <div class="activity">
   <ul class="nav nav-tabs">
-
+   
     <li class="active">
       <a href="#comment1" data-toggle="tab">
         <i class="fa fa-comment-o"></i>
@@ -27,15 +27,22 @@
     </li>
 
   </ul>
-
+ 
   <div class="tab-content">
-    <div class="tab-pane active comments-show" id="comment1">
-      <div id="comments" class="comments">
-        <%= render :partial => 'activities/comments', :locals => { :activity => @excursion.post_activity } %>
-        <%= render :partial => 'comments/new', :locals => { :activity => @excursion.post_activity } %>
-      </div>
-    </div>
 
+    <% if @excursion.commentable? %>
+      <div class="tab-pane active comments-show" id="comment1">
+        <div id="comments" class="comments">
+          <%= render :partial => 'activities/comments', :locals => { :activity => @excursion.post_activity } %>
+          <%= render :partial => 'comments/new', :locals => { :activity => @excursion.post_activity } %>
+        </div>
+      </div>
+    <% else %>
+      <div class="tab-pane active comments-not-shown">
+        <p><span><%=t('excursion.disabled_comments')%></span></p>
+      </div>
+    <%end%>
+  
     <div class="tab-pane evaluate-show" id="evaluation1">
       <div class="btn-evalue">
         <p><%= t('evaluation.contribute.student.title') %></p>

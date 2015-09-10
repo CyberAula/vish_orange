@@ -650,6 +650,37 @@ namespace :fix do
     printTitle("Task Finished")
   end
 
+  #Usage
+  #Development:   bundle exec rake fix:categories_scope
+  #In production: bundle exec rake fix:categories_scope RAILS_ENV=production
+  task :categories_scope => :environment do
+    printTitle("Fixing Categories: changing scope to hidden")
+
+    Category.record_timestamps = false
+    ActivityObject.record_timestamps = false
+
+    Category.all.each do |category|
+      category.scope = 1
+      category.valid?
+
+      unless category.errors.blank?
+        if category.errors.full_messages.include?("Title is too long.")
+          category.title = category.title[0..49]
+        end
+
+        if category.errors.full_messages.include?("There is another category with the same title")
+          category.title = category.title[0..44] if category.title.length > 45
+          category.title = category.title + "-" + category.id.to_s
+        end
+      end
+
+      category.save!
+    end
+
+    Category.record_timestamps = true
+    ActivityObject.record_timestamps = true
+  end
+
 
   ####################
   #Task Utils

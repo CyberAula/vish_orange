@@ -1,9 +1,17 @@
 require 'builder'
 
 class Excursion < ActiveRecord::Base
+ 
+  attr_accessor :attachment_url
+  has_attached_file :attachment, 
+                    :url => '/:class/:id/attachment_file',
+                    :path => ':rails_root/documents/attachments/:id_partition/:filename.:extension'
+  validates_attachment_size :attachment, :less_than => 8.megabytes
+
   include SocialStream::Models::Object
   has_many :excursion_contributors, :dependent => :destroy
   has_many :contributors, :class_name => "Actor", :through => :excursion_contributors
+
 
   validates_presence_of :json
   before_validation :fill_license
@@ -11,7 +19,7 @@ class Excursion < ActiveRecord::Base
   after_save :fix_post_activity_nil
   after_destroy :remove_scorm
   after_destroy :remove_pdf
-  
+
   define_index do
     activity_object_index
     
@@ -1121,14 +1129,6 @@ class Excursion < ActiveRecord::Base
     e
   end
 
-  def clonable?
-    if self.license and (self.license.no_derivatives? or self.license.private?)
-      return false
-    end
-
-    true
-  end
-
   #method used to return json objects to the recommendation in the last slide
   def reduced_json(controller)
       rjson = {
@@ -1158,7 +1158,10 @@ class Excursion < ActiveRecord::Base
     self.activity_object.increment_download_count
   end
 
-
+  def get_attachment_name
+    name = "excursion_" + self.id.to_s + "_attachment" + File.extname(self.attachment_file_name)
+    name
+  end
 
   ####################
   ## Quality Metrics
@@ -1212,6 +1215,11 @@ class Excursion < ActiveRecord::Base
       activity_object.scope = 0 #public
     end
     
+    #Permissions
+    activity_object.allow_download = !(parsed_json["allow_download"] == "false")
+    activity_object.allow_comment = !(parsed_json["allow_comment"] == "false")
+    activity_object.allow_clone = !(parsed_json["allow_clone"] == "false")
+
     original_updated_at = self.updated_at
     activity_object.save!
 
