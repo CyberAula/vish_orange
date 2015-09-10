@@ -27,4 +27,7 @@ class StaticController < ApplicationController
   def teach
   end
 
+  def gettrained
+  end
+
 end
