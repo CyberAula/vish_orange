@@ -626,7 +626,10 @@ en:
         title: "Our community grows every day"
         subtitle: "Share your knowledge in our community and help us to grow"
     join_us: "Join to EducaInternet!"
-    title_certified: "get trained with specialized courses"
+    title_certified: "Learn with specialized courses"
+    title_not_certified: "Teach with didactical units"
+    view_more_workshops: "View more specialized courses"
+    view_more_excursions: "View more didactical units"
   go:
     repository: "go to repository"
   header:

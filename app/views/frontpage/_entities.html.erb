@@ -1,7 +1,9 @@
+<h3> <%= t("frontpage.title_not_certified")%> </h3>
 <ul class="items entities_front">
 	<% popular_entities(12,home_models).each do |resource| %>
 		<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "frontpage" } %>
 	<% end %>
+	<%= render :partial => 'entities/view_more', :locals => { :title => t("frontpage.view_more_excursions") } %>
 </ul>
 
 
