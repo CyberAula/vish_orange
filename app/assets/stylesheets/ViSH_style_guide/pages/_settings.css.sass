@@ -1,4 +1,4 @@
-#settings  
+#settings
   @include make-xs-column(12, $gutter: $grid-gutter-width)
   @include make-sm-column(12, $gutter: $grid-gutter-width)
   @include make-md-column(12, $gutter: $grid-gutter-width)
@@ -12,8 +12,8 @@
     @include make-lg-column(6, $gutter: $grid-gutter-width)
     @include make-sm-column-offset(3)
     @include make-md-column-offset(3)
-    @include make-lg-column-offset(3) 
-    form 
+    @include make-lg-column-offset(3)
+    form
       margin-top: -4px
       label
         color: $gray-dark
@@ -30,7 +30,7 @@
     margin-bottom: 20px
     background: #FFF
     padding: 0 15px
-    border-radius: 5px
+    border-radius: $border-radius-base
   .panel
     border-left-color: rgba(0, 0, 0, 0)
     border-right-color: rgba(0, 0, 0, 0)
@@ -48,8 +48,8 @@
       font-family: $corporate-font-family-sans-serif-Light
       &:hover,&:focus
         color: $brand-primary
-        text-decoration: none  
-    
+        text-decoration: none
+
   .panel-body
     padding: 0 0 15px
     .accordion-toggle
