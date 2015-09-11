@@ -49,7 +49,7 @@
   height: 40px;
   padding-left: 10px;
   margin-top: 0px;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 #asearch_header .input-group-addon{
@@ -68,9 +68,9 @@
   float: left;
   overflow: hidden;
   border: 1px solid #5E5E5E;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -299,9 +299,9 @@
 #asearch_settings .dateWrapper input{
   max-width: 90%;
   margin-right: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
   height: 34px;
   color: #666;
 }
@@ -345,7 +345,7 @@ input[type=checkbox] + .lbl{
 #asearch_settings .addInstanceButton{
   margin-left: 15px;
   font-size: 13px;
-  cursor: pointer;    
+  cursor: pointer;
 }
 
 #asearch_settings span.deleteEntity{
@@ -378,7 +378,7 @@ input[type=checkbox] + .lbl{
     border-bottom: none !important;
     border-right: 1px solid #5E5E5E;
   }
-  
+
   .resultTitle,
   .resultAuthor,
   .resultBottom{
@@ -405,7 +405,7 @@ input[type=checkbox] + .lbl{
   }
   #asearch_settings select {
     min-height: 32px;
-  } 
+  }
   #asearch_results table.asearch_results_table{
     width: 60%;
   }

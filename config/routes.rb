@@ -36,7 +36,7 @@ Vish::Application.routes.draw do
   match 'conditions_of_use' => 'static#conditions_of_use'
   match 'contributors' => 'static#contributors'
   match 'teach' => 'static#teach'
-  match 'get-trained' => 'static#get_trained'
+  match 'learn' => 'static#learn'
 
   #Download the user manual and count the number of downloads
   match 'user_manual' => 'static#download_user_manual'
