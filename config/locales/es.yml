@@ -27,6 +27,8 @@ es:
       temateca: "Tema"
       tema_desc: "Aquí se muestra el catálogo de excursiones para su uso libre en el aula y fuera de ella"
       bold: "teca"
+    how_it_works: "Cómo funciona?"
+    message: "Aprende y enseña sobre el uso seguro y responsable de las tecnologías"
   about:
     blog: "Novedades"
     contact: "Contacto"

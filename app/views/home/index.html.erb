@@ -6,17 +6,8 @@
   <div class="entities">
   	<%= render partial: 'frontpage/entities_certified' %>
   </div>
+  <div class="clear"></div>
   <div class="entities">
     <%= render partial: 'frontpage/entities' %>
   </div>
 </section>
-
-<%= content_for :javascript do %>
-
-
-  $(function(){
-      $('.carousel').carousel({
-        interval: 8000
-      });
-  });
-<%end%>
