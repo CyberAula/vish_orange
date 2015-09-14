@@ -64,22 +64,35 @@
 
 /*FRONTPAGE _ carousel*/
 
-.ilustration
-  height: 350px
-  position: relative
-  overflow: hidden
-  img
-    width: 100%
-    position: absolute
-  .main-title
+.illustration
+  min-height: 50px
+  .banner-home
+    height: 450px
     position: relative
-    text-align: center
-    padding: 50px
-    .title
-      font-size: 4em
-      color: white
-  .btn-main-title
-    position: relative
+    overflow: hidden
+
+    img
+      width: 100%
+      position: absolute
+
+    .main-title
+      @include gradientcolor
+      background-color: rgba(0,0,0,0.3)
+      position: relative
+      text-align: center
+      padding: 120px 50px
+      .title
+        font-size: 4em
+        font-family: $corporate-font-family-sans-serif-Medium
+        text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
+        color: white
+
+    .btn-main-title
+      position: relative
+      margin: 30px
+
+      a
+        color: $white
 
   //.carousel
     margin-bottom: 20px

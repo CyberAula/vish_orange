@@ -29,10 +29,10 @@ nav.navbar-fixed-top
       .logo
         font-family: Helvetica Neue, Helvetica, sans-serif !important
         font-weight: 200
-        color: $orange-gray-75
+        color: $white
         outline: none
         .logo_bold
-          color: $orange-primary
+          color: $white
           font-family: Helvetica Neue, Helvetica, sans-serif !important
           font-weight: 600
     .hidden-phone
@@ -45,9 +45,10 @@ nav.navbar-fixed-top
         li
           padding: 5px 8px
           a
-            padding: 5px 0
+            padding: 4px 0
             outline: none
             font-weight: 200
+            color: $white
             &:hover, &:active, &:focus
               color: $brand-primary
           .menu_bold
@@ -63,7 +64,7 @@ nav.navbar-fixed-top
 
         .btn-header
           padding: 0px 7px
-          margin: 4px 0 2px 5px
+          margin: 5px 0 2px 5px
           a:hover
             color: $brand-primary
         .btn-access > a
@@ -72,8 +73,6 @@ nav.navbar-fixed-top
             color: white
 
         .dropdown
-          i
-            margin-left: 5px
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
@@ -136,54 +135,27 @@ nav.navbar-fixed-top
         .user_name
           font-weight: 600
 
-        .btn-header-xs
-          padding: 5px 0px
-
-          .btn-help
-            border: none !important
-            margin-right: 0px !important
-            color: $brand-primary
-            i
-              padding: 8px 10px 8px 4px !important
-
-          .btn
-            padding: 0px
-            height: 30px
-            margin-right: -2px
-            margin-left: 3px
-            background-color: $white
-            background-image: none
-            box-shadow: none
-            border: 1px solid $orange-gray-45
-            border-radius: $border-radius-base
-
-            i
-              display: block
-              padding: 7px 8px
-              color: $orange-gray-50
-              text-decoration: none
-              margin: 0
-            &:hover
-              text-decoration: none
-              border-color: $orange-primary
-              i
-                color: $brand-primary
       //************************
       //input de quick search
       //************************
       .search-ui
         float: right
-        padding: 3px 10px
+        padding: 5px 10px
+        .search-query
+          width: 250px !important
+          float: left
+          font-size: 0.95em
         .quick-search
           .search-nav
             margin-left: -3px
             @media (max-width: $screen-xs-max)
               margin-left: 0
             input[type="text"]
-              height: 33px
+              height: 30px
+
             .search_button_class
-              margin: 0 0 0 3px
-              padding: 5px 6px
+              margin: 0 0 0 5px
+              padding: 3px 8px 4px
               float: left
             .mat
               z-index: 10
@@ -283,10 +255,7 @@ nav.navbar-fixed-top
                           background-color: $gray-darker-extra !important
                   .img-box
                     padding-bottom: 0
-        .search-query
-          width: 180px !important
-          float: left
-          font-size: 1em
+
 
 
 

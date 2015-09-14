@@ -15,22 +15,15 @@
     </div>
 
     <div class="hidden-phone hidden-tablet">
-      <!-- NEW ORANGE MENU -->
 
+      <!-- MENU -->
       <ul class="nav navbar-nav navbar-right" id="main_menu">
-        <!--<li class="<%= 'active' if params[:controller] == 'home'%>"><a href="/"><%=t('orange_front.header.index')%></a></li>-->
-        <!--<li class="<%= 'homeactive' if params[:controller] == 'home'%>"><a href="/"><i class="fa fa-home"></i></a></li>-->
+        <li class="btn btn-default btn-header btn-home"><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
+        <li class="btn btn-default btn-header btn-home"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
-        <li class="btn btn-default btn-header"><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-        <li class="btn btn-default btn-header"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
-
-        <!-- NAVEGATION -->
-        <%#= render partial: 'layouts/header/basic_navegation' %>
-        <!-- modal with partial for invitation after header in this same file -->
-
-        <!-- NEW Help button -->
-        <li class="btn-header-xs dropdown toggler <%= 'homeactive' if params[:controller] == 'home'%>">
-          <div data-toggle="dropdown" class="btn btn-help without-dropdown-toggle">
+        <!-- Help button -->
+        <li class=" dropdown toggler <%= 'homeactive' if params[:controller] == 'home'%>">
+          <div data-toggle="dropdown" class="btn btn-home-icon without-dropdown-toggle">
             <i class="fa fa-question-circle"></i>
           </div>
 
@@ -64,8 +57,8 @@
         </li>
 
         <!-- ADD -->
-        <li class="btn-header-xs toggler dropdown">
-          <div class="btn without-data-toggle " data-toggle="dropdown" href="#" >
+        <li class="btn btn-default btn-xs-home toggler dropdown">
+          <div class="without-data-toggle " data-toggle="dropdown" href="#" >
             <i class="fa fa-plus"></i>
           </div>
           <ul class="dropdown-menu add-menu">

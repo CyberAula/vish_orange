@@ -9,3 +9,9 @@
   -ms-transition: ($kind, $duration, $mode)
   -o-transition: ($kind, $duration, $mode)
   transition: ($kind, $duration, $mode)
+
+@mixin gradientcolor
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+  background: -o-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
+  background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7))

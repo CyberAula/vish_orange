@@ -27,7 +27,7 @@ es:
       temateca: "Tema"
       tema_desc: "Aquí se muestra el catálogo de excursiones para su uso libre en el aula y fuera de ella"
       bold: "teca"
-    how_it_works: "Cómo funciona?"
+    how_it_works: "¿Cómo funciona?"
     message: "Aprende y enseña sobre el uso seguro y responsable de las tecnologías"
   about:
     blog: "Novedades"
@@ -618,7 +618,7 @@ es:
         title: "Nuestra comunidad crece cada día"
         subtitle: "Comparte tu conocimiento en nuestra comunidad y ayúdanos a crecer"
     join_us: "¡Únete a EducaInternet!"
-    title_certified: "Fórmate con cursos especializados"    
+    title_certified: "Fórmate con cursos especializados"
     title_not_certified: "Enseña con unidades didácticas"
     view_more_workshops: "Ver más cursos especializados"
     view_more_excursions: "Ver más unidades didácticas"
@@ -934,7 +934,7 @@ es:
       workshop: "Cursos"
       writing: "Textos"
       zipfile: "Ficheros ZIP"
-    name: "Buscar"
+    name: "¿qué recurso educativo buscas?"
     rendering:
       title: "Opciones de visualización"
       boxes: "Ver como avatares"

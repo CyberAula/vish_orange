@@ -54,7 +54,7 @@
 
   &.disabled,
   &[disabled],
-  fieldset[disabled] & 
+  fieldset[disabled] &
     pointer-events: none // Future-proof disabling of clicks
     @include opacity(.65)
     @include box-shadow(none)
@@ -62,11 +62,11 @@
 @mixin btn-default
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
   color: $gray
-  &:hover, 
-  &:focus, 
-  &:active, 
-  &.active, 
-  &.disabled, 
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
   &[disabled]
     background-color: $white
     color: $brand-primary
@@ -78,11 +78,11 @@
 @mixin btn-secundary
   background-color: $btn-secundary-bg
   color: $btn-secundary-color
-  &:hover, 
-  &:focus, 
-  &:active, 
-  &.active, 
-  &.disabled, 
-  &[disabled] 
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
     background-color: darken($btn-secundary-bg, 10%)
     color: $btn-secundary-color

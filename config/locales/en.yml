@@ -939,7 +939,7 @@ en:
       workshop: "Courses"
       writing: "Writings"
       zipfile: "ZIP files"
-    name: "Search"
+    name: "What didactic resource are you looking for?"
     instances:
       add_instance: "Add Instance"
       add: "Add"
