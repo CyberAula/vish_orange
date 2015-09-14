@@ -8,11 +8,12 @@ class ExcursionsController < ApplicationController
   skip_load_and_authorize_resource :only => [ :excursion_thumbnails, :metadata, :scormMetadata, :iframe_api, :preview, :clone, :manifest, :evaluate, :last_slide, :downloadTmpJSON, :uploadTmpJSON, :interactions, :upload_attachment, :show_attachment]
   skip_before_filter :store_location, :if => :format_full?
   skip_after_filter :discard_flash, :only => [:clone]
+  #after_filter :notify_teacher, :only => [:create, :update]
   
   # Enable CORS
   before_filter :cors_preflight_check, :only => [:excursion_thumbnails,:last_slide,:iframe_api]
   after_filter :cors_set_access_control_headers, :only => [:excursion_thumbnails,:last_slide,:iframe_api]
-  
+
   include SocialStream::Controllers::Objects
 
 
@@ -490,4 +491,19 @@ class ExcursionsController < ApplicationController
       file_new_name = "excursion_"+ id +"_attachment" + file_ext
       file_new_name
   end
+
+  =begin
+  def notify_teacher
+    binding.pry
+      unless params[:excursion].nil?
+        author = Excursion.find(params[:id]).user
+        unless author.private_student_group_id.nil?
+          binding.pry
+          teacher = Actor.find(PrivateStudentGroup.find(author.private_student_group_id).owner_id)
+          mail(:to => teacher.email, :subject => "Uploaded file")
+        
+        end
+      end
+  end
+  =end
 end
