@@ -62,12 +62,12 @@
     @include dropdown-log
 
 
-/*FRONTPAGE _ carousel*/
+/*FRONTPAGE _ image */
 
 .illustration
   min-height: 50px
   .banner-home
-    height: 450px
+    height: 400px
     position: relative
     overflow: hidden
 
@@ -83,9 +83,11 @@
       padding: 120px 50px
       .title
         font-size: 4em
-        font-family: $corporate-font-family-sans-serif-Medium
+        font-family: $font-family-sans-serif-titles
         text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
         color: white
+        font-weight: 500
+        line-height: 1.2em
 
     .btn-main-title
       position: relative
@@ -94,84 +96,17 @@
       a
         color: $white
 
-  //.carousel
-    margin-bottom: 20px
-    .carousel-indicators
-      top: 15px
-      margin-left: -21px !important
-      width: auto !important
-      .active
-        background-color: $orange-primary
-    .carousel-inner
-      height: 380px
-      max-height: none
-      @media (max-width: $screen-xs-min)
-        height: 190px
-      .item
-        img
-          width: 100%
-          position: absolute
-          top: -100px
-          @media (max-width: $screen-xs-max)
-            top: 0px
-        .carousel-caption
-          height: 220px
-          top: 0
-          left: 0
-          background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          background: -o-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          background: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          @media (max-width: $screen-sm-max)
-            height: 280px
-          @media (max-width: $screen-xs-min)
-            background-color: transparent
-            height: 180px
-            width: 100%
-          .carousel-text
-            padding: 60px 0
-            font-family: helvetica
-            @media (max-width: $screen-sm-max)
-              padding: 50px 40px
-            .title-car
-              color: white
-              font-size: 5em
-              text-shadow: 1px 1px rgba(51, 51, 51, 0.6)
-              font-weight: 100
-              opacity: 0.6
-              margin-top: -10px
-              transition: opacity .5s ease-out
-              -moz-transition: opacity .5s ease-out
-              -webkit-transition: opacity .5s ease-out
-              -o-transition: opacity .5s ease-out
-              &:hover
-                opacity: 1
-              @media (max-width: $screen-xs-min)
-                text-align: center
-                font-size: 4.5em
-                margin-top: 10px
-
-            //.text-car
-              color: white
-              font-size: 1.1em
-              text-shadow: 1px 1px rgba(51, 51, 51, 0.6)
-              line-height: 1.3em
-              font-weight: 100
-              strong
-                font-weight: 500
-              a
-                text-decoration: none
-                color: $orange-primary
-              @media (max-width: $screen-xs-min)
-                display: none
-
-
 #frontpage
-  .entities_front
-    display: block
-    margin-bottom: 60px
-    float: left
-    width: 100%
+  .entities
+    h3
+      font-weight: 200
+      font-size: 2.5em
+      margin: 30px 8px
+    .entities_front
+      display: block
+      margin-bottom: 0
+      float: left
+      width: 100%
 
 
 @media (min-width: 1751px)
