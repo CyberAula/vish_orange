@@ -171,7 +171,7 @@ class SearchController < ApplicationController
     if models.empty?
       #Default models, all but category so we reject it
       #also users are not included in the search, by default if not param type="User", so here we also remove it
-      models = VishConfig.getAllAvailableAndFixedModels({:return_instances => true, :include_subtypes => true}).reject{|e| e==Category || e==User}
+      models = VishConfig.getAllAvailableAndFixedModels({:return_instances => true, :include_subtypes => true}).reject{|e| e==Category}
     end
 
     models.uniq!

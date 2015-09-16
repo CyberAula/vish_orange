@@ -26,7 +26,11 @@
       $(".mat").show();
       SocialStream.SearchHeader.show();
       $("#search_button_desktop").on("click", function(){
-        document.location= "/search?q=" + $("#q").val();
+        if($("#q").val()==""){
+          document.location= "/search?type=Learning_object&q=" + $("#q").val();
+        } else {
+          document.location= "/search?q=" + $("#q").val();
+        }        
       });
   <% end %>
 
