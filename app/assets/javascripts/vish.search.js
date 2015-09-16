@@ -309,6 +309,12 @@ Vish.Search = (function(V,undefined){
     */
   var _deactivateFilter = function(filter_obj, update_url, follow_stack){
       if(filter_obj.hasClass("search-sidebar-selected")){
+        if(filter_obj.attr("always_one")=="" && filter_obj.attr("default")==""){
+          if(filter_obj.siblings(".search-sidebar-selected").size()==0){
+            //can't deactivate this filter
+            return;
+          }          
+        }
         follow_stack = typeof follow_stack !== 'undefined' ? follow_stack : true;  //set default value
         var filter_name = filter_obj.attr("filter");
         var filter_key = filter_obj.attr("filter_key");
@@ -325,6 +331,13 @@ Vish.Search = (function(V,undefined){
         //if it is a tag, we remove it from the ul selected_tags_ul
         if(filter_key==="tags"){
           filter_obj.remove();
+        }
+
+        //see what happens with always_one, check if the li has the attribute "always_one"
+        if(filter_obj.attr("always_one")==""){
+          filter_obj.siblings("[default]").each(function() {
+            _activateFilter($(this), update_url, false);
+          });
         }
 
         if(update_url){

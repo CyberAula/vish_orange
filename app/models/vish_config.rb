@@ -51,6 +51,7 @@ class VishConfig
 
   def self.getSearchModels(options={})
     searchModels = getAvailableMainModels()
+    searchModels.delete("Category")
     searchModels
   end
 

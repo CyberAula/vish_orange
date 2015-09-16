@@ -150,7 +150,7 @@ class SearchController < ApplicationController
       types = type.split(",") & allAvailableTypes
 
       if types.include? "Learning_object"
-        types.concat(["Excursion", "Resource", "Event", "Workshop", "Category"])
+        types.concat(["Excursion", "Resource", "Workshop"])
       end
 
       if types.include? "Resource"
@@ -169,8 +169,9 @@ class SearchController < ApplicationController
     end
 
     if models.empty?
-      #Default models, all
-      models = VishConfig.getAllAvailableAndFixedModels({:return_instances => true, :include_subtypes => true})
+      #Default models, all but category so we reject it
+      #also users are not included in the search, by default if not param type="User", so here we also remove it
+      models = VishConfig.getAllAvailableAndFixedModels({:return_instances => true, :include_subtypes => true}).reject{|e| e==Category || e==User}
     end
 
     models.uniq!

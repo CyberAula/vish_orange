@@ -1,3 +1,5 @@
+<% front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -17,12 +19,12 @@
         <ul class="nav navbar-nav navbar-right">
 
           <!-- teach and learn buttons -->
-          <li class="btn btn-default btn-header btn-home"><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-          <li class="btn btn-default btn-header btn-home"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
           <!-- Help button -->
           <li class=" dropdown toggler <%= 'homeactive' if params[:controller] == 'frontpage'%>">
-            <div data-toggle="dropdown" class="btn btn-home-icon without-dropdown-toggle">
+            <div data-toggle="dropdown" class="btn <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
               <i class="fa fa-question-circle"></i>
             </div>
 
@@ -49,7 +51,7 @@
             </ul>
           </li>
 
-          <li class="btn btn-default btn-header btn-home"><a href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
           <li class="btn btn-primary btn-header btn-access dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold">Acceso<i class="icon-angle-down"></i></span></a>
             <ul class="dropdown-menu pull-right access-form" role="menu">

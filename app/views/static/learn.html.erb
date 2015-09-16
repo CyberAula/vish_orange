@@ -1,3 +1,6 @@
+<% content_for :banner do %>
+  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('banner.learn') }%>
+<%end%>
 <% certified = certified_entities %>
 	<% if !certified.blank? %> 
 	<h3> <%= t("frontpage.title_certified")%> </h3>
