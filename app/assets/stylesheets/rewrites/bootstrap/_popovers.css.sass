@@ -1,6 +1,7 @@
 .popover
   top: 0 !important
   width: 600px
+  border-radius: $border-radius-base
   @include box-shadow(1px 2px 2px rgba(0, 0, 0, 0.27))
   a
     color: #97B8C8
@@ -14,31 +15,31 @@
   top: 16px !important
 
 
-.popover-content 
+.popover-content
   padding: 0
   @include border-bottom-radius ($border-radius-base)
 
-.popover-title 
+.popover-title
   color: $gray-lighter
   background-color: $gray-darker
   padding-top: 8px 14px !important
   border-bottom: 1px solid $gray-lighter
   font-family: $corporate-font-family-sans-serif-Medium
   margin-right: 0 !important
-  display: block !important 
+  display: block !important
 
 
-.popover-body 
+.popover-body
   padding: 7px 14px
   color: $gray-lighter
   font-family: $corporate-font-family-sans-serif-Light
   b
-    font-family: $corporate-font-family-sans-serif-Regular 
+    font-family: $corporate-font-family-sans-serif-Regular
 
 .popover-content
   @extend .popover-body
 
-.popover-footer 
+.popover-footer
   padding: 8px 15px 2px
   margin-bottom: 0
   color: $gray-lighter
@@ -48,7 +49,7 @@
   i
     margin-right: 8px
     padding-top: 0
-  
+
 
   .popover
     top: 0px !important
@@ -62,11 +63,11 @@
       font-size: 14px
       line-height: 18px
       color: #969595
-    .arrow 
+    .arrow
       top: 8% !important
-      
-    .arrow:after 
+
+    .arrow:after
       border-left-color: $gray-darker-extra
 
-.modal .popover 
+.modal .popover
   top: -7px !important

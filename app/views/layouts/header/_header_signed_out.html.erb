@@ -1,6 +1,6 @@
 <% front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top <%='navbar-home' if front_or_home%>" role="navigation">
   <div class="container-fluid">
     <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <a class="btn-navbar btn btn-default" data-toggle="collapse" data-target=".nav-collapse">
@@ -9,7 +9,7 @@
 
       <!-- BRAND -->
       <div class="brand">
-        <a href="/" class="logo">Educa<span class="logo_bold">Internet</span></a>
+        <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
       </div>
 
       <!--______________________________desktop-->

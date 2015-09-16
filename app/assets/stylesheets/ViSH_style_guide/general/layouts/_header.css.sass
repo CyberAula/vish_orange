@@ -1,7 +1,10 @@
+nav.navbar-home
+  background-color: transparent !important
+
 nav.navbar-fixed-top
   font-size: 0.9em
-  padding: 6px 1% 6px 2%
-  background-color: transparent !important
+  padding: 6px 1% 0px 2%
+  background-color: white
   background: rgba( 255, 255, 255, 0.98)
   border: 0
   @media (max-width: $screen-sm-max)
@@ -13,6 +16,7 @@ nav.navbar-fixed-top
     margin-right: auto
     display: block
     width: auto
+    
 
     .btn-navbar
       margin-top: 3px
@@ -26,13 +30,15 @@ nav.navbar-fixed-top
       height: auto
       font-size: 2em
       float: left
+      .logo-home
+        color: $white !important
       .logo
         font-family: Helvetica Neue, Helvetica, sans-serif !important
         font-weight: 200
-        color: $white
+        color: $orange-gray-75
         outline: none
         .logo_bold
-          color: $white
+          color: $brand-primary
           font-family: Helvetica Neue, Helvetica, sans-serif !important
           font-weight: 600
     .hidden-phone
