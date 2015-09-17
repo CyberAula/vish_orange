@@ -19,12 +19,12 @@
 
       <!-- MENU -->
       <ul class="nav navbar-nav navbar-right" id="main_menu">
-        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
+        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
         <!-- Help button -->
-        <li class=" dropdown toggler <%= 'homeactive' if params[:controller] == 'home'%>">
-          <div data-toggle="dropdown" class="btn <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
+        <li class=" dropdown toggler ">
+          <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
             <i class="fa fa-question-circle"></i>
           </div>
 
@@ -58,7 +58,7 @@
         </li>
 
         <!-- ADD -->
-        <li class="btn btn-default btn-xs-home toggler dropdown">
+        <li class="btn btn-default btn-xs <%='btn-home' if front_or_home%> toggler dropdown">
           <div class="without-data-toggle " data-toggle="dropdown" href="#" >
             <i class="fa fa-plus"></i>
           </div>
@@ -89,7 +89,7 @@
           <%= image_tag current_subject.logo.url(:small) %>
           <% end %>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%='btn-home-icon' if front_or_home%>">
           <a href="#" class="dropdown-toggle user_name" data-toggle="dropdown" role="button" aria-expanded="false"><%= truncate_name(current_subject.name, length: 15) %><span class="caret"></span></a>
           <ul class="dropdown-menu user-menu pull-right" role="menu">
 
