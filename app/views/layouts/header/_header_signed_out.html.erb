@@ -23,8 +23,8 @@
           <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
           <!-- Help button -->
-          <li class=" dropdown toggler <%= 'homeactive' if params[:controller] == 'frontpage'%>">
-            <div data-toggle="dropdown" class="btn <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
+          <li class=" dropdown toggler ">
+            <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
               <i class="fa fa-question-circle"></i>
             </div>
 

@@ -1,23 +1,29 @@
-.btn-home, .btn-xs-home
-  border: 1px solid $white
-  background: transparent !important
-  
-  &:hover
-    background: transparent
-  a,i
-    &:hover
-      color: $brand-primary !important
-
-.btn-xs-home
+.btn-xs
   padding: 3px 8px 4px !important
   margin: 5px 0 0 0
 
+.btn-icon
+  padding: 3px 8px !important
+  color: $orange-gray-75
+  &:hover
+    color: $brand-primary
+
+
+//Just for home & front
+//**********************************
+.btn-home
+  border: 1px solid $white
+  background: transparent !important
+  .mini-search, .fa-plus, .linker
+    color: $white !important
+    &:hover, &:focus, &:active
+      color: $brand-primary !important
+
 .btn-home-icon
   background: transparent !important
-  padding: 3px 8px !important
-  i
+  .user_name, .fa-question-circle
     color: $white !important
-    &:hover
+    &:hover, &:focus, &:active
       color: $brand-primary !important
 
 .btn-file
