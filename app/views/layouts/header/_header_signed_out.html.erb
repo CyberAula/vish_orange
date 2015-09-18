@@ -19,8 +19,8 @@
         <ul class="nav navbar-nav navbar-right">
 
           <!-- teach and learn buttons -->
-          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
           <!-- Help button -->
           <li class=" dropdown toggler ">
@@ -48,10 +48,16 @@
                   <span><%= t('help_manual')%>   </span>
                 <% end %>
               </li>
+              <li>
+                <a href="contributors">
+                  <i class="fa fa-graduation-cap"> </i>
+                  <span><%= t('orange_front.footer.contributors') %></span>
+                </a>
+              </li>
             </ul>
           </li>
 
-          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
           <li class="btn btn-primary btn-header btn-access dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold">Acceso<i class="icon-angle-down"></i></span></a>
             <ul class="dropdown-menu pull-right access-form" role="menu">
