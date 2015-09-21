@@ -193,8 +193,8 @@ es:
   cancel: "Cancelar"
   catalogue:
     actions:
-      add_excursion:  "Añadir unidad didáctica"
-      add_resource: "Añadir recurso"
+      add_excursion:  "Crear Unidad didáctica"
+      add_resource: "Subir Documento"
     help:
       add_excursion: "Aquí puedes añadir una unidad didáctica directamente a esta categoría de la temateca"
       add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
@@ -507,7 +507,7 @@ es:
     verb: "Evaluar"
   event:
     actions:
-      add: "Añadir evento"
+      add: "Crear Evento"
     description_input: "Descripción para este evento"
     leyend:
       date: "Fecha"
@@ -525,7 +525,7 @@ es:
       videoconference: "Videoconferencia"
   excursion:
     actions:
-      add: "Añadir unidad didáctica"
+      add: "Crear Unidad didáctica"
       attachment: "Archivo Adjunto"
       bookmark: "marcardor"
       clone: "clonar"
@@ -630,7 +630,7 @@ es:
     repository: "ir a repositorio"
   header:
     tooltip:
-      add_button: "Crea unidades didácticas, recursos, etc."
+      add_button: "Crea unidades didácticas, sube documentos, etc."
   help: "ayuda"
   helpers:
     submit:
@@ -728,7 +728,7 @@ es:
       one: "Documento"
       other: "Documentos"
   options:
-    add: "añadir"
+    add: "crear"
     new: "nuevo"
   order_by:
     created_at: "Creación"
@@ -863,7 +863,7 @@ es:
     private_student: "Crear grupos privados de estudiantes"
   resource:
     actions:
-      add: "Añadir recurso"
+      add: "Subir documento"
     empty: "No"
     network: "recursos de mi red"
     newmy_html: "Aún no has creado ningún recurso. Puedes crear uno nuevo haciendo click en el botón subir o en este "
@@ -1042,7 +1042,7 @@ es:
     view_full: "Pantalla completa"
   workshop:
     actions:
-        add: "Añadir Curso"
+        add: "Crear Curso"
         add_activity_title: "Añadir Actividad al Curso"
         add_activity_button: "Añadir"
         adding_activity_button: "Añadiendo..."

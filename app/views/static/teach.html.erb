@@ -4,24 +4,51 @@
 
 <div class="row">
     <div class="col-md-4 col-block">
-      <img>
+      <div class="col-block-img">
+        <img src="assets/orange/library.jpg">
+      </div>
       <h3>Buscando en la biblioteca de recursos</h3>
-    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut magna elit. Vestibulum id velit ac tellus lobortis aliquam. Donec eget rutrum neque, eget rhoncus est. Vestibulum id volutpat lacus. Aliquam porta mi aliquet, laoreet purus sed, interdum diam. Suspendisse vitae dapibus ipsum, eu ullamcorper eros. Nunc arcu ante, ullamcorper iaculis dictum aliquet, rutrum eu purus. Nulla luctus hendrerit arcu, ac sollicitudin urna ornare at.</p>
-    	<h5><a>Ver tutorial</a></h5>
-      <h5><a>Consultar Ayuda</a></h5>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut magna elit. Vestibulum id velit ac tellus lobortis aliquam. Donec eget rutrum neque, eget rhoncus est. Vestibulum id volutpat lacus. Aliquam porta mi aliquet.</p>
+      <hr>
+      <h5><i class="fa fa-book"></i><a href="/search?type=Learning_object&q=">Ir a la Biblioteca</a></h5>
+      <hr>
+      <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank">Ver tutorial</a></h5>
+      <h5><i class="fa fa-question-circle"></i><a href="/overview" target="_blank">Consultar Ayuda</a></h5>
  	  </div>
  	  <div class="col-md-4 col-block">
-      <img>
+      <div class="col-block-img">
+        <img src="assets/orange/resources.jpg">
+      </div>
       <h3>Creando tus propios recursos</h3>
-    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut magna elit. Vestibulum id velit ac tellus lobortis aliquam. Donec eget rutrum neque, eget rhoncus est. Vestibulum id volutpat lacus. Aliquam porta mi aliquet, laoreet purus sed, interdum diam. Suspendisse vitae dapibus ipsum, eu ullamcorper eros. Nunc arcu ante, ullamcorper iaculis dictum aliquet, rutrum eu purus. Nulla luctus hendrerit arcu, ac sollicitudin urna ornare at.</p>
-    	<h5><a>Subir documento</a></h5>
-    	<h5><a>Crear Unidad didáctica</a></h5>
-    	<h5><a>Crear curso</a></h5>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut magna elit. Vestibulum id velit ac tellus lobortis aliquam. Donec eget rutrum neque, eget rhoncus est. Vestibulum id volutpat lacus. </p>
+      <hr>
+      <h5><i class="fa fa-graduation-cap"></i><%= link_to new_workshop_path do %><%= t('workshop.actions.add') %><% end %></h5>
+    	<h5><i class="fa fa-list-alt"></i><%= link_to new_excursion_path do %><%= t('excursion.actions.add') %><% end %></h5>
+      <h5><i class="fa fa-upload"></i><a href="#AddResource" data-toggle="modal"><%=t('resource.actions.add')%></a></h5>
+
+      <hr>
+      <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank">Ver tutorial</a></h5>
  	  </div>
  	  <div class="col-md-4 col-block">
-      <img>
+      <div class="col-block-img">
+        <img src="assets/orange/3.jpg">
+      </div>
     	<h3>Con proyectos de clase colaborativos</h3>
-	  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut magna elit. Vestibulum id velit ac tellus lobortis aliquam. Donec eget rutrum neque, eget rhoncus est. Vestibulum id volutpat lacus. Aliquam porta mi aliquet, laoreet purus sed, interdum diam. Suspendisse vitae dapibus ipsum, eu ullamcorper eros. Nunc arcu ante, ullamcorper iaculis dictum aliquet, rutrum eu purus. Nulla luctus hendrerit arcu, ac sollicitudin urna ornare at.</p>
-    	<h5><a>Consultar ayuda</a></h5>
+	  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut magna elit. Vestibulum id velit ac tellus lobortis aliquam. Donec eget rutrum neque, eget rhoncus est. </p>
+      <hr>
+      <h5><i class="fa fa-users"></i>
+        <%if can?(:create, PrivateStudentGroup.new)%>
+          <%= link_to private_student_groups_path do %>
+            <%#= t("private_student.request") %>
+            Crear proyecto de clase
+          <% end %>
+        <%else%>
+          <%= link_to(raw("Crear proyecto de clase"), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
+        <%end%>
+        <!--<a href="#">Crear proyecto de clase</a>-->
+      </h5>
+      <hr>
+      <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank">Ver tutorial</a></h5>
+      <h5><i class="fa fa-question-circle"></i><a href="/overview" target="_blank">Consultar ayuda</a></h5>
  	  </div>
  </div>

@@ -204,8 +204,8 @@ en:
   cancel: "Cancel"
   catalogue:
     actions:
-      add_excursion:  "Add teaching unit"
-      add_resource: "Add resource"
+      add_excursion:  "Create teaching unit"
+      add_resource: "Upload file"
     help:
       add_excursion: "Here you can add an teaching unit directly to this category in the subject catalogue"
       add_resource: "Here you can add a resource directly to this category in the resources catalogue"
@@ -519,7 +519,7 @@ en:
     verb: "Evaluate"
   event:
     actions:
-      add: "Add event"
+      add: "Create event"
     description_input: "Description for this event"
     leyend:
       date: "Date"
@@ -537,7 +537,7 @@ en:
       videoconference: "Videoconference"
   excursion:
     actions:
-      add: "Add teaching unit"
+      add: "Create teaching unit"
       attachment: "Attachment"
       bookmark: "bookmark"
       clone: "clone"
@@ -640,7 +640,7 @@ en:
     repository: "go to repository"
   header:
     tooltip:
-      add_button: "Create teaching units, resources, etc."
+      add_button: "Create teaching units, upload resources, etc."
   help: "help"
   helpers:
     submit:
@@ -762,7 +762,7 @@ en:
     search_name: "status update"
   private_student:
     actions:
-      add: "Add Classroom"
+      add: "Create Classroom"
     account_name: "Pupil"
     creation_success: "The group of user accounts was created succesfully"
     creation_error: "The group of user accounts could not be created"
@@ -873,7 +873,7 @@ en:
     private_student: "Create private students group"
   resource:
     actions:
-      add: "Add resource"
+      add: "Upload file"
     empty: "You"
     network: "my network resources"
     newmy_html: "You have not uploaded any resources yet. You can add a new one by clicking on the upload button or on this "
@@ -1051,7 +1051,7 @@ en:
     view_full: "View full"
   workshop:
     actions:
-      add: "Add Course"
+      add: "Create Course"
       add_activity_title: "Add Activity to the Course"
       add_activity_button: "Add"
       adding_activity_button: "Adding..."
