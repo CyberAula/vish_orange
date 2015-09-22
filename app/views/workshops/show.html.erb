@@ -1,21 +1,11 @@
+<!--++++++++++++++++toolbar+++++++++++++++++++++++-->
+<% content_for :gtools do %>
+  <%= render :partial => 'toolbar/gtools', :locals => { :edit_id => "workshop", :url => edit_workshop_path(@workshop), :resource => @workshop } %>
+<% end %>
+
 <section id="show_items" class="layout_show workshop_show">
 
-<!--++++++++++++++++toolbar+++++++++++++++++++++++-->
-
-  <div class="toolbar_nav-tab_workshop">
-    <div class="container-fluid">
-      <h4 class="edit-workshop-title">
-        <%=t('workshop.titles.show_main')%>
-      </h4>
-      <% if user_signed_in? and (can? :update, @workshop) %>
-        <a href="<%=edit_workshop_path(@workshop)%>" class="btn btn-default pull-right" id="edit_workshop"><i class="fa fa-edit"></i><%=t('workshop.actions.edit_mode_btOn')%></a>
-      <%end%>
-    </div>
-  </div>
-
-
-<!--++++++++++++++++header+++++++++++++++++++++++-->
-
+  <!--++++++++++++++++header+++++++++++++++++++++++-->
   <div class="wa_activity_wrapper wa_activity_wrapper_show header_workshop">
     <div class="layout_workshop">
       <!--avatar-->
@@ -38,7 +28,6 @@
   </div>
 
 <!--++++++++++++++++header/toolbar+++++++++++++++++++++++-->
-
   <div class="description-activity">
     <div class="box_description">
       <!--tool-->
@@ -49,10 +38,7 @@
     </div>
   </div>
 
-
-
 <!--++++++++++++++++item+++++++++++++++++++++++-->
-
   <% @workshop_activities.each do |workshop_activity| %>
 
     <div class="wa_activity_wrapper wa_activity_wrapper_show">
@@ -111,4 +97,3 @@
       return false;
     });
   <%end%>
-  

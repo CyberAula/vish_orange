@@ -3,7 +3,5 @@
 	<% popular_entities(12,home_models).each do |resource| %>
 		<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "frontpage" } %>
 	<% end %>
-	<%= render :partial => 'entities/view_more', :locals => { :title => t("frontpage.view_more_excursions") } %>
+	<%= render :partial => 'entities/view_more', :locals => { :title => t("frontpage.view_more_excursions"), :more_url => search_path(:type => "Excursion") } %>
 </ul>
-
-

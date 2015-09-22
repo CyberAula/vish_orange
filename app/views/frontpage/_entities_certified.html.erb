@@ -1,11 +1,10 @@
 <% certified = certified_entities %>
-	<% if !certified.blank? %> 
+	<% if !certified.blank? %>
 	<h3> <%= t("frontpage.title_certified")%> </h3>
 	<ul class="items entities_front ">
 		<% certified.sample(10).each do |resource| %>
 			<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "frontpage2" } %>
 		<% end %>
-		<%= render :partial => 'entities/view_more', :locals => { :title => t("frontpage.view_more_workshops") } %>
+		<%= render :partial => 'entities/view_more', :locals => { :title => t("frontpage.view_more_workshops"), :more_url => "learn" } %>
 	</ul>
 <% end %>
-
