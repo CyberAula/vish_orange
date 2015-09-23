@@ -102,19 +102,21 @@
       background-color: rgba(0,0,0,0.3)
       position: relative
       text-align: center
-      padding: 120px 50px
+      padding: 110px 50px
       .title
-        font-size: 4em
-        font-family: $font-family-sans-serif-titles
-        text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
-        color: white
-        font-weight: 500
-        line-height: 1.2em
+        h1
+          font-size: 4em
+          font-family: $font-family-sans-serif-titles
+          text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
+          color: white
+          font-weight: 500
+          line-height: 1.2em
+
     .btn-main-title
       position: relative
       margin: 30px
 
-      a
+      //a
         color: $white
 
 #frontpage
@@ -157,6 +159,12 @@
       display: none
     .box-item:nth-of-type(-n+4)
       display: block
+  .illustration
+    .box-title-home
+      .main-title
+        .title
+          h1
+            font-size: 3.5em
 
 @media (min-width: 768px) and (max-width: 991px)
   .entities_front
@@ -164,6 +172,12 @@
       display: none
     .box-item:nth-of-type(-n+3)
       display: block
+  .illustration
+    .box-title-home
+      .main-title
+        .title
+          h1
+            font-size: 3em
 
 @media (min-width: 481px) and (max-width: 767px)
   .entities_front
@@ -171,6 +185,17 @@
       display: none
     .box-item:nth-of-type(-n+2)
       display: block
+  .illustration
+    .box-title-home
+      height: 300px
+      .main-title
+        padding: 90px 40px 0
+        height: 100%
+        .title
+          h1
+            font-size: 2.5em
+        .btn-main-title
+          display: none
 
 @media (max-width: 480px)
   .entities_front
@@ -178,3 +203,14 @@
       display: none
     .box-item:nth-of-type(-n+4)
       display: block
+  .illustration
+    .box-title-home
+      height: 250px
+      .main-title
+        padding: 70px 50px
+        height: 100%
+        .title
+          h1
+            font-size: 2em
+        .btn-main-title
+          display: none
