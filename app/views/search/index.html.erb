@@ -30,15 +30,15 @@
       <div class="srch-panel">
 
         <% if params[:browse] %>
-          <li><h1><i class="fa fa-folder-open-o"></i><%= t("browse.title")%></h1></li>
+          <li><h2><i class="fa fa-folder-open-o"></i><%= t("browse.title")%></h2></li>
         <% elsif params[:catalogue] %>
-          <li><h1><i class="fa fa-tags"></i><%=t('catalogue.title')%></h1></li>
+          <li><h2><i class="fa fa-tags"></i><%=t('catalogue.title')%></h2></li>
         <% elsif params[:directory] %>
-          <li><h1><i class="fa fa-tags"></i><%=t('catalogue.title_directory')%></h1></li>
+          <li><h2><i class="fa fa-tags"></i><%=t('catalogue.title_directory')%></h2></li>
         <% elsif params[:archive] %>
-          <li><h1><i class="fa fa-tags"></i><%=t('catalogue.title_archive')%></h1></li>
+          <li><h2><i class="fa fa-tags"></i><%=t('catalogue.title_archive')%></h2></li>
         <% else %>
-          <li><h1><i class="fa fa-search"></i><%= t("search.title")%></h1></li>
+          <li><h2><i class="fa fa-search"></i><%= t("search.title")%></h2></li>
         <% end %>
 
 
