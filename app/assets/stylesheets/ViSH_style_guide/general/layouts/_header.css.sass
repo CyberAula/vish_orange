@@ -195,7 +195,6 @@ nav.navbar-fixed-top
 
               .results
                 max-height: 431px
-                //overflow: auto
                 height: auto
                 ul
                   width: 95%
@@ -239,8 +238,6 @@ nav.navbar-fixed-top
                     height: auto
                     margin: 7px 7px 10px
                     padding: 5px
-                    //padding-bottom: 3px
-                    //padding-top: 2px
                     a
                       color: $gray-darker
                       font-family: $corporate-font-family-sans-serif-Medium
@@ -264,9 +261,18 @@ nav.navbar-fixed-top
       .navbar-nav
         margin: 40px 0 5px 0
         float: none
-        background-color: white
+        background-color: $gray-darker
+        padding: 10px
+        //box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176)
         li
           float: none
+          a
+            color: $orange-gray-45
+            font-size: 1.2em
+            &:hover
+              color: white
+          i
+            margin-right: 10px
           .dropdown-menu
             padding: 10px
             margin: 0 0 0 18px
@@ -291,6 +297,7 @@ nav.navbar-fixed-top
               color: white
               img
                 margin-right: 5px
+
         .user
           margin: 0
           a
@@ -306,8 +313,9 @@ nav.navbar-fixed-top
         .open > a
           background-color: white !important
         .navbar-search
-          width: 55%
+          width: 85%
           margin-bottom: 5px
+          padding: 10px
           input
             float: left
             width: 80%
@@ -315,9 +323,9 @@ nav.navbar-fixed-top
             float:left
             margin-left: 3px
             padding: 7px 6px 6px
+            i
+              margin: 0
     //****************************************************
-
-
 
 #warning_cookie_bar
   display: none

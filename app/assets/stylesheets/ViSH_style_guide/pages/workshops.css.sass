@@ -131,8 +131,6 @@
   height: auto
   display: inline-block
   padding: 7px 35px
-  //position: sticky
-  //top: 0
   z-index: 1000
   background-color: rgba(85, 85, 85, 0.97)
   -webkit-box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
@@ -149,10 +147,10 @@
     display: inline-block
     line-height: 20px
     margin: 0
-    font-size: 20px
+    font-size: 1.6em
     padding-top: 2px
     color: $white
-    font-weight: normal
+    font-weight: 200
     @media (max-width: $screen-xs-max)
       float: none
       text-align: center
@@ -183,6 +181,8 @@
     margin-bottom: 15px
   section.target_age
     margin-bottom: 30px
+  .modal-header
+    padding: 20px 0
   .footer-form
     @extend .modal-footer
     background-color: $white

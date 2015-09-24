@@ -7,7 +7,7 @@
           <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
           </button>
-          <h4 class="modal-title"><%=t('message.new')%></h4>
+          <h3 class="modal-title"><%=t('message.new')%></h3>
         </div>
         <div id="new_message_profile" class="modal-body">
           <%= render :partial => 'messages/new', :locals => {:@recipient => Actor.find_by_slug(profile_subject.slug)} %>
