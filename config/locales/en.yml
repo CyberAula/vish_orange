@@ -633,9 +633,9 @@ en:
         subtitle: "Share your knowledge in our community and help us to grow"
     join_us: "Join to EducaInternet!"
     title_certified: "Learn with specialized courses"
-    title_not_certified: "Teach with didactical units"
+    title_not_certified: "Teach with teaching units"
     view_more_workshops: "View more specialized courses"
-    view_more_excursions: "View more didactical units"
+    view_more_excursions: "View more teaching units"
   go:
     repository: "go to repository"
   header:
@@ -763,6 +763,7 @@ en:
   private_student:
     actions:
       add: "Create Classroom"
+      request: "Request to activate this functionality for me"
     account_name: "Pupil"
     creation_success: "The group of user accounts was created succesfully"
     creation_error: "The group of user accounts could not be created"
@@ -945,7 +946,7 @@ en:
       workshop: "Courses"
       writing: "Writings"
       zipfile: "ZIP files"
-    name: "What didactic resource are you looking for?"
+    name: "What educational resource are you looking for?"
     instances:
       add_instance: "Add Instance"
       add: "Add"
@@ -1057,6 +1058,15 @@ en:
   swf:
     confirm_delete: "Delete SWF?"
     name: "flash object"
+  teach:
+    creating: "Creating contents"
+    creating_desc: "The platform offers free authoring tools to create courses, teaching units and to upload other resources to the library."
+    help: "Get help"
+    library: "Searching in the library"
+    library_desc: "The library gives access to all the educational resources in the platform, courses, teaching units and other resources. Use them to teach or to create your own contents."
+    projects: "With classroom projects"
+    projects_desc: "'Classroom projects' will allow your students to use the authoring tools themselves and this way 'learn by doing'"
+    view_tutorial: "View tutorial"
   today: "Today"
   top10: "Top 10"
   unknown: "Unknown"

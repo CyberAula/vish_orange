@@ -2,6 +2,7 @@ SocialStream::Documents.setup do |config|
 
   #Configure picture thumbnails
   config.picture_styles = {
+    :"1200x100#" => ["1200x100#"],
     :"170x127#" => ["170x127#"],
     :"80x113#" => ["80x113#"], # this one preserves A4 proportion: 210x297
     :"500" => ["500>"]
