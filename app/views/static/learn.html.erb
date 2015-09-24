@@ -1,3 +1,8 @@
+<%content_for :title do%><%= t('site.meta_title.learn') %><%end%>
+<%content_for :keywords do%><%= t('site.meta_keywords.learn') %><%end%>
+<%content_for :description do%><%= t('site.meta_desc.learn')%><%end%>
+
+
 <% content_for :banner do %>
   <%=render :partial => "search/main_title", :locals => { :main_title_body => t('banner.learn') }%>
 <%end%>
