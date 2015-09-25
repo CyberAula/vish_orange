@@ -81,12 +81,14 @@ class ExcursionsController < ApplicationController
 
   def new
     new! do |format|
+      format.html {render :layout => 'headerless'}
       format.full { render :layout => 'veditor', :locals => {:default_tag=> params[:default_tag]}}
     end
   end
 
   def edit
     edit! do |format|
+      format.html {render :layout => 'headerless'}
       format.full { render :layout => 'veditor' }
     end
   end
