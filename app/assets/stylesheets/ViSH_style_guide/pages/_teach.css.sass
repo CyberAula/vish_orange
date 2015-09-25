@@ -1,5 +1,5 @@
 .col-block
-  padding: 0 35px !important
+  padding: 0 2% !important
   .col-block-img
     position: relative
     height: 100px
@@ -31,3 +31,24 @@
       padding: 0px 10px
     &:hover
       color: $black
+
+@media (min-width: 768px) and (max-width: 991px)
+  .col-block
+    padding: 0 25% !important
+    margin: 2% 0 30px
+    p
+      min-height: unset
+
+@media (min-width: 481px) and (max-width: 767px)
+  .col-block
+    padding: 0 20% !important
+    margin: 3% 0 30px
+    p
+      min-height: unset
+
+@media (max-width: 480px)
+  .col-block
+    padding: 0 10% !important
+    margin: 5% 0 30px
+    p
+      min-height: unset
