@@ -1,10 +1,10 @@
 <%content_for :javascript do%>
 
 function scale_editor(){
-    var HEADER_HEIGHT = 51;
-    var FOOTER_HEIGHT = 30;
-    var DISTANCE_TO_HEADER = 15;
-    var DISTANCE_TO_FOOTER = <%=is_edit ? "40":"15"%>;  //when editing we have an extra button to delete the excursion
+    var HEADER_HEIGHT = 0;
+    var FOOTER_HEIGHT = 0;
+    var DISTANCE_TO_HEADER = 0;
+    var DISTANCE_TO_FOOTER = <%=is_edit ? "40":"10"%>;  //when editing we have an extra button to delete the excursion
     var MINIMUM_SCALE_FACTOR_TO_APPLY_SCALE = 0.90;
     var MAXIMUM_SCALE_FACTOR_TO_APPLY_SCALE = 1;
     var WRAPPER_PADDING_LEFT = 10;
