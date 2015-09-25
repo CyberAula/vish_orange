@@ -1,7 +1,12 @@
-<div class="workshop-edit">
-  
-  <!-- toolbar edit-->
+<!--++++++++++++++++toolbar+++++++++++++++++++++++-->
+<% content_for :gtools do %>
   <%= render partial: 'edit_toolbar' %>
+<% end %>
+
+<div class="workshop-edit">
+
+  <!-- toolbar edit-->
+  <%#= render partial: 'edit_toolbar' %>
 
   <!-- Header -->
   <div class="wa_activity_wrapper wa_activity_wrapper_edit header_workshop ">
@@ -37,7 +42,7 @@
 
   <ul class="workshop_activities_list workshop_activities_list_edit">
     <% @workshop_activities.each do |workshop_activity| %>
-      <% 
+      <%
         object = workshop_activity.object
         className = object.class.to_s
         classNameUnderscore = className.underscore
@@ -79,7 +84,7 @@
     $("li.toggleWorkshopActivity").click(function(e){
       var contentDiv = $(e.target).parents(".wa_activity_wrapper_edit").find(".layout_workshop");
       var minifiedDiv = $(e.target).parents(".wa_activity_wrapper_edit").find(".wa_activity_edit_minified");
-      
+
       if($(contentDiv).hasClass("wa_activity_closed")){
         $(contentDiv).removeClass("wa_activity_closed").addClass("wa_activity_open");
         $(contentDiv).show();
@@ -292,4 +297,3 @@
   <% end %>
 
 </div>
-

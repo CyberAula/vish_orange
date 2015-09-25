@@ -1,14 +1,16 @@
+
+
 <div class="toolbar_nav-tab_workshop">
   <div class="container-fluid">
 
     <h4 class="edit-workshop-title"><%=t('workshop.titles.editing_main')%></h4>
-    
+
     <a href="#WorkshopActivities" class="btn btn-sm btn-default pull-right" data-toggle="modal"><i class="fa fa-plus"></i><%=t('workshop.activities.actions.add_new_activity')%></a>
 
     <% if @workshop.hasAssignments %>
       <a class ="btn btn-sm btn-default pull-right" href="<%=workshop_contributions_path(@workshop)%>"><i class="icon-eye-open"></i><%=t('workshop.actions.show_contributions')%></a>
     <% end %>
-    
+
     <% unless @workshop.draft %>
       <a class ="btn btn-sm btn-default pull-right" href="<%=workshop_path(@workshop)%>"><i class="fa fa-check"></i><%=t('workshop.actions.edit_mode_btOff')%></a>
     <%end%>
@@ -24,6 +26,3 @@
 
   </div>
 </div>
-
-
-

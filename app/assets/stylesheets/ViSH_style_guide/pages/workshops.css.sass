@@ -1,6 +1,5 @@
 .wa_activity_wrapper_show
   @extend .description-activity
-  margin-top: 38px
 
 .workshop_element,
 .wa_resource_wrapper
@@ -49,19 +48,20 @@
 
 .workshop_show
   margin-bottom: 60px
+  .header_image
+    width: 100%
+    height: 100px
+    overflow: hidden
+    position: relative
+    img
+      width: 100%
+      bottom: -300px
+      position: absolute
+
   .header_workshop
     @include well
     padding: 0px 20px 20px
     margin-bottom: 0
-    .container-img_WS
-      display: inline-block
-      position: relative
-      float: left
-      background-color: #EEE
-      @include border-top-radius ($border-radius-base)
-      @include border-bottom-radius ($border-radius-base)
-      @media (max-width: $screen-xs-max)
-        width: 25%
     .information
       h2
         font-family: $corporate-font-family-sans-serif-Medium
@@ -85,6 +85,7 @@
           td
             border: 1px solid transparent
   .workshop-comments
+    margin-top: 0 !important
     .tab-content
       min-height: 100px
     .panel-group
@@ -93,7 +94,6 @@
 .wa_activity_wrapper_edit
   padding-bottom: 15px
   padding-top: 15px
-  margin-top: 38px
 
 .wa_activity_wrapper
   padding-bottom: 15px
@@ -128,9 +128,9 @@
 
 .toolbar_nav-tab_workshop
   width: 100%
-  height: auto
+  height: 50px
   display: inline-block
-  padding: 7px 35px
+  padding: 13px 35px
   z-index: 1000
   background-color: rgba(85, 85, 85, 0.97)
   -webkit-box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
@@ -177,6 +177,9 @@
 
 .layout_form_WS
   padding: 0 2%
+  h3
+    font-size: 2em
+    font-weight: 200
   section
     margin-bottom: 15px
   section.target_age
@@ -222,60 +225,23 @@
   float: none
 
 .wa_add_activity_wrapper
-  margin-bottom: 20px
-  height: 40px
+  margin: 10px 0
+  height: auto
   color: $gray
-  margin-top: 38px
+  padding: 15px
+
   a
     color: $gray
+    font-size: 1.3em
+    font-family: $font-family-sans-serif-titles
   p
     margin: 0
     vertical-align: baseline
-    font-size: 18px
     line-height: 37px
     text-align: center
     i
       padding: 7px
 
-.container-img_WS
-  display: inline-block
-  position: relative
-  width: 15%
-  float: left
-  margin-right: 15px
-  background-color: $gray-lighter
-  @include border-top-radius ($border-radius-base)
-  @include border-bottom-radius ($border-radius-base)
-  .dummy
-    padding-top: 100%
-  .element
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
-    overflow: hidden
-    text-align: center
-    width: 100%
-    @include border-top-radius ($border-radius-base)
-    @include border-bottom-radius ($border-radius-base)
-    .img-box
-      width: 100%
-      padding-bottom: 100%
-      float: left
-      img
-        float: left
-        width: 100%
-        height: 100%
-    i
-      font-size: 70px
-      color: $brand-secundary
-      &:hover
-        text-decoration: none
-  .resource-center
-    i
-      padding-top: 36px
-      display: block
 @media (min-width: 0) and (max-width: 399px)
   h3.main_title_WS
     font-size: 20px !important
@@ -287,12 +253,6 @@
     float: none
     clear: both
 
-  .container-img_WS
-    display: block
-    width: 60%
-    margin: 0 auto
-    float: none
-    margin-bottom: 20px
 
 ul.workshop_activities_list_edit
   padding-left: 0
@@ -511,14 +471,6 @@ ul.workshop_activities_list_edit
   width: 100%
   height: 35px
 
-.header_workshop
-  .container-img_WS
-    width: 150px
-    height: 150px
-    div.workshop_thumbnail
-      background-size: 150px 150px
-      width: 150px
-      height: 150px
 
 .alert-errors
   background-color: #FCF8E3

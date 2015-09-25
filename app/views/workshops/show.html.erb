@@ -3,24 +3,20 @@
 <%content_for :description do%><%=  t("site.meta_desc.workshop")+@workshop.title + ". " + @workshop.description %><%end%>
 <%content_for :canonical do%><%= polymorphic_url(@workshop) %><%end%>
 
-<section id="show_items" class="layout_show workshop_show">
-
 <!--++++++++++++++++toolbar+++++++++++++++++++++++-->
 <% content_for :gtools do %>
   <%= render :partial => 'toolbar/gtools', :locals => { :edit_id => "workshop", :url => edit_workshop_path(@workshop), :resource => @workshop } %>
 <% end %>
 
 <section id="show_items" class="layout_show workshop_show">
+  <div class="header_image">
+    <img src="/assets/orange/default_workshop.jpg">
+  </div>
 
   <!--++++++++++++++++header+++++++++++++++++++++++-->
   <div class="wa_activity_wrapper wa_activity_wrapper_show header_workshop">
     <div class="layout_workshop">
-      <!--avatar-->
-      <div class="container-img_WS">
 
-      <div style='background-image: url(<%=@workshop.thumbnail_url%>)' class="img-box workshop_thumbnail" ></div>
-
-      </div>
       <section class="information">
         <div class="briefing">
           <!--title-->
@@ -31,6 +27,7 @@
           <div class="description"><%=@workshop.description%></div>
         </div>
       </section>
+
     </div>
   </div>
 
