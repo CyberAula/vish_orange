@@ -111,9 +111,9 @@ body{
 	float: left;
 	overflow: hidden;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.16);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 	margin: 10px;
 }
 
@@ -322,7 +322,7 @@ body{
 #asearch_settings .addInstanceButton{
 	margin-left: 15px;
 	font-size: 13px;
-	cursor: pointer;		
+	cursor: pointer;
 }
 
 #asearch_settings span.deleteEntity{

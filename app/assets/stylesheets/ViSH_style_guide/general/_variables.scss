@@ -62,8 +62,8 @@ $link-color:            $brand-secundary !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 10%) !default;
 //** General color for borders.
-$border-color:          $text-color !default;
-
+//$border-color:          $text-color !default;
+$border-color:          $orange-gray-45 !default;
 $timeline-panel-border:  lighten($border-color, 16%) !default;
 
 
@@ -83,6 +83,7 @@ $corporate-font-family-sans-serif-BoldItalic:           "opensans-boldItalic", A
 $corporate-font-family-sans-serif-ExtraboldItalic:      "opensans-extraboldItalic", Arial, sans-serif;
 
 $font-family-sans-serif:               $corporate-font-family-sans-serif-Regular;
+$font-family-sans-serif-titles:        "Helvetica Neue",Helvetica,sans-serif;
 
 //## Font for FI-WARE style guide docs .
 $handwrite-font:         "Desyrel", sans-serif;
@@ -143,9 +144,9 @@ $line-height-large:         1.33 !default;
 $line-height-small:         1.5 !default;
 
 $border-radius-zero:        0px !default;
-$border-radius-base:        5px !default;
+$border-radius-base:        0px !default;
 $border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+$border-radius-small:       0px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    $white !default;
@@ -739,7 +740,7 @@ $thumbnail-bg:                $white !default;
 //** Thumbnail border color
 $thumbnail-border:            $border-color !default;
 //** Thumbnail border radius
-$thumbnail-border-radius:     5px !default;
+$thumbnail-border-radius:     0px !default;
 
 //** Custom text color for thumbnail captions
 $thumbnail-caption-color:     $text-color !default;

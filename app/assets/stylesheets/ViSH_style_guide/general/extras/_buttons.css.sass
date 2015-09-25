@@ -1,0 +1,50 @@
+.btn-xs
+  padding: 3px 8px 4px !important
+  margin: 5px 0 0 0
+
+.btn-icon
+  padding: 3px 8px !important
+  color: $orange-gray-75
+  &:hover
+    color: $brand-primary
+
+
+//Just for home & front
+//**********************************
+.btn-home
+  border: 1px solid $white
+  background: transparent !important
+  color: white
+  .fa-plus, .linker
+    color: $white !important
+    &:hover
+      color: $brand-primary !important
+
+.btn-home-icon
+  background: transparent !important
+  .user_name, .fa-question-circle
+    color: $white !important
+    &:hover, &:focus, &:active
+      color: $brand-primary !important
+
+.btn-file
+  position: relative
+  overflow: hidden
+  border-right: none
+  &:hover
+    border-right: none
+
+.btn-file input[type=file]
+  position: absolute
+  top: 0
+  right: 0
+  min-width: 100%
+  min-height: 100%
+  font-size: 100px
+  text-align: right
+  filter: alpha(opacity=0)
+  opacity: 0
+  outline: none
+  background: white
+  cursor: inherit
+  display: block

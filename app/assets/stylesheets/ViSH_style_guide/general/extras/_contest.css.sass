@@ -36,8 +36,8 @@
     clear: both
     .sign_up
       margin: 0 auto
-      &:hover 
-        color: $white 
+      &:hover
+        color: $white
       @media (max-width: $screen-xs)
         width: 100%
         white-space: pre-line
@@ -91,7 +91,7 @@
           z-index: 9
           top: 15px
         @media (max-width: $screen-xs)
-          width: 90% 
+          width: 90%
           @include center-block
 
         ul
@@ -106,7 +106,7 @@
             width: 100%
             @media (max-width: $screen-sm)
               @include excursion-small
-          
+
       .podiumart
         text-align: center
         z-index: 1
@@ -210,9 +210,9 @@
     background: url(competition/noisy.png) -19px top repeat, -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%)
     background: url(competition/noisy.png) -19px top repeat, linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 )
-    -webkit-border-radius: 5px
-    -moz-border-radius: 5px
-    border-radius: 5px
+    -webkit-border-radius: $border-radius-base
+    -moz-border-radius: $border-radius-base
+    border-radius: $border-radius-base
     @media (max-width: $screen-sm)
       width: 100% !important
       margin: 2.5% auto !important
@@ -221,7 +221,7 @@
     h3
       border-bottom: 1px solid #D8D8D8
       padding-bottom: 10px
-      width: 100% 
+      width: 100%
       text-align: center
       font-family: $corporate-font-family-sans-serif-Light
     section
@@ -243,7 +243,7 @@
       .box-item
         width: 100%
 
- 
+
 
 #show_items
   .recomended
@@ -253,20 +253,19 @@
       margin-top: 0px
       margin-bottom: 0px
   &:hover
-    .badimg  
+    .badimg
       @include transition(border .2s ease-in-out)
       @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
       @include transition (all 0.2s ease 0s)
       transform: scale(1.05)
       -ms-transform: scale(1.05)
-      -webkit-transform: scale(1.05) 
-  .badimg 
+      -webkit-transform: scale(1.05)
+  .badimg
     &:hover
-    .recomended 
+    .recomended
       @include transition(border .2s ease-in-out)
       @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
       @include transition (all 0.2s ease 0s)
       transform: scale(1.05)
       -ms-transform: scale(1.05)
-      -webkit-transform: scale(1.05) 
-
+      -webkit-transform: scale(1.05)

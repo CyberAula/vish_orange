@@ -1,0 +1,188 @@
+<%params[:tab] ||= 'home'%>
+
+<div id="home_wrapper">
+  <div class="home">
+
+    <ul class="nav nav-tabs">
+      <li class="<%=!params[:tab] || params[:tab]=='home' ? 'active':''%>">
+        <a id="home_tab" href="#home" data-toggle="tab">
+          <i class="fa fa-home"></i>
+          <span class="hidden-xs hidden-sm"><%= t("navigation.home")%></span>
+        </a>
+      </li>
+      <li class="<%= params[:tab]=='net' ? 'active':''%>">
+        <a id="net_tab" href="#net" data-toggle="tab" >
+          <i class="fa fa-group"></i>
+          <span class="hidden-xs hidden-sm"><%=t("navigation.mynetwork") %></span>
+        </a>
+      </li>
+
+      <%= render partial: 'help/help_home' %>
+    </ul>
+
+    <div class="tab-content">
+
+      <div class="tab-pane <%=params[:tab]=='home' ? 'active':''%>" id="home">
+        <div id="first_page_home_tab_ready">
+          <%if params[:tab]=="home"%>
+            <%= render partial: "home"%>
+          <%end%>
+        </div>
+        <div class="loader_pagination" id="loader_pagination_home" style="display:none">
+          <div class="pageless-loader" style="text-align:center;width:100%;">
+            <div class="msg" style="font-size:2em">
+              <%=t('search.loading')%>
+            </div>
+            <%= render :partial => "layouts/loading" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane <%= params[:tab]=='net' ? 'active':''%>" id="net">
+        <%= render partial: 'excursions/order_by_net' %>
+        <div id="net_tab_ready">
+          <%if params[:tab]=="net"%>
+            <%= render partial: "network", :locals =>{:scope => :net, :page=> params[:page], :sort_by=> params[:sort_by]||"popularity", :prefix_id=>"network"}%>
+          <%end%>
+        </div>
+        <div class="loader_pagination" id="loader_pagination_net" style="display:none">
+          <div class="pageless-loader" style="text-align:center;width:100%;">
+            <div class="msg" style="font-size:2em">
+              <%=t('search.loading')%>
+            </div>
+            <%= render :partial => "layouts/loading" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  var pageless_state = {
+      "home":{
+        "url": "<%= home_path(:tab=>'home', :sort_by=>'popularity') %>",
+        "num_pages":0,
+        "current_page":0
+      },
+      "net":{
+        "url": "<%= home_path(:tab=>'net') %>",
+        "num_pages":0,
+        "current_page":0
+      }
+  };
+
+  var net_tab_loaded = false;
+  var home_tab_loaded = false;
+
+  ///////////////
+  // Pageless Ajax Handlers
+  ///////////////
+  function update_pageless_state(tab, num_pages, current_page){
+    if(typeof pageless_state[tab] == "object"){
+      pageless_state[tab].num_pages = num_pages;
+      pageless_state[tab].current_page = current_page;
+    }
+  };
+
+  function re_apply_pageless(tab){
+    //first remove old pageless
+    $.pagelessStop();
+    if(typeof pageless_state[tab] != "object"){
+      return;
+    }     
+    $("#" + tab + "_tab_ready ul.items").pageless({
+      totalPages: pageless_state[tab].num_pages,
+      url: get_url_with_sort_by(tab),
+      currentPage: pageless_state[tab].current_page,
+      loader: '.loader_pagination',
+      end: function(){
+        $('.loader_pagination').hide();
+      }
+    });
+  };
+
+  function get_url_with_sort_by(tab){
+    var the_url = pageless_state[tab].url;
+    if(tab == "net"){
+      the_url = the_url + "&sort_by=" + $("#order_by_selector_" + tab).attr("li_selected");
+    }
+    return the_url;
+  };
+
+
+  function force_update_pageless(tab, num_pages, current_page){
+    update_pageless_state(tab, num_pages, current_page);
+    re_apply_pageless(tab);
+    $("footer#footer").addClass("fixed-bottom");
+    $("#wrap").addClass("wrap-when-fixed-bottom");
+  }
+
+</script>
+
+<%content_for :javascript do%>
+
+    ///////////////
+    // My Network
+    ///////////////
+    $("#net_tab").click(function(){
+      if(net_tab_loaded===false){
+        $('#loader_pagination_net').show();
+        net_tab_loaded = true;
+        $.ajax({
+          type : "GET",
+          url : "<%= home_path(:tab=>'net', :page =>1) %>",
+          success : function(html){
+            $('#loader_pagination_net').hide();
+            $("#net_tab_ready").append(html);
+            re_apply_pageless("net");
+          },
+          error: function(){
+            // console.log("error loading net tab");
+         }
+        });
+      } else {
+        re_apply_pageless("net");
+      }
+    });
+
+    ///////////////
+    // Catalogue
+    ///////////////
+    $("#catalogue_tab").click(function(){
+        document.location = "<%= search_path(:catalogue=>"true") %>";
+    });
+
+    ///////////////
+    // Home
+    ///////////////
+    $("#home_tab").click(function(){
+      if(home_tab_loaded===false){
+        $('#loader_pagination_home').show();
+        home_tab_loaded = true;
+        $.ajax({
+            type : "GET",
+            url : "<%= home_path(:tab=>'home', :page =>1) %>",
+            success : function(html) {
+              $('#loader_pagination_home').hide();
+              $("#first_page_home_tab_ready").append(html);
+              re_apply_pageless("home");
+            },
+            error: function(){
+              // console.log("error loading home tab");
+           }
+          });
+      } else {
+        re_apply_pageless("home");
+      }
+    });
+
+    <%if !params[:tab] || params[:tab]=="home"%>
+      home_tab_loaded = true;
+    <%else%>
+      net_tab_loaded = true;
+    <%end%>
+<%end%>

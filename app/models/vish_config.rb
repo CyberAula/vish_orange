@@ -22,6 +22,10 @@ class VishConfig
     processAlias(getMainModels,options)
   end
 
+  def self.getAllModelsInstances(options={})
+    getInstances(processAlias(getMainModels,options))
+  end
+
   def self.getAllPossibleModelValues
     (getMainModels + getResourceModels).uniq
   end
@@ -51,6 +55,7 @@ class VishConfig
 
   def self.getSearchModels(options={})
     searchModels = getAvailableMainModels()
+    searchModels.delete("Category")
     searchModels
   end
 
@@ -198,7 +203,8 @@ class VishConfig
     if options[:include_subtypes] and models.include? "Document"
       models += Document.subclasses.map{|s| s.name}
     end
-    models.uniq!
+    models.uniq!  
+    
     return models
   end
 
@@ -227,6 +233,15 @@ class VishConfig
     else
       (instances + Vish::Application.config.APP_CONFIG["advanced_search"]["instances"]).uniq
     end
+  end
+
+  def self.getCertifiedEntities
+    if !Vish::Application.config.APP_CONFIG["certified"].nil?
+      Vish::Application.config.APP_CONFIG["certified"]
+    else
+      return []
+    end
+
   end
 
 end

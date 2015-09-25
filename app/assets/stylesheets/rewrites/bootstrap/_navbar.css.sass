@@ -1,6 +1,7 @@
 .navbar-fixed-top
   background-color: $navbar-default-bg
   padding: 0
+  position: absolute
 
 .navbar
   margin-bottom: 0
@@ -25,7 +26,7 @@
   border-color: $border-color
 
 .navbar-default
-  @include box-shadow (0 -2px 20px rgba(0, 0, 0, 0.1))
+  //@include box-shadow (0 -2px 20px rgba(0, 0, 0, 0.1))
   padding: 3px 0 0
   .nav-pills
     float: left
@@ -63,6 +64,9 @@ ul.navbar-nav > li
   font-family: $corporate-font-family-sans-serif-Regular
   padding-top: 9px
   padding-bottom: 9px
+
+.navbar-default .navbar-nav > li > a
+  color: $orange-gray-75
 
 .navbar-nav.navbar-right:last-child
   margin-right: $zero

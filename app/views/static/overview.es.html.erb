@@ -11,8 +11,7 @@
 
 <section id="overview">
   <div class="icontitle">
-    <i class="fa fa-question-circle"></i>
-    ¿Qué es EducaInternet?
+    <h1><i class="fa fa-question-circle"></i>¿Qué es EducaInternet?</h1>
   </div>
   <div class="whiteframe">
     <div class="overviewindex visible-desktop">
@@ -28,46 +27,45 @@
         <a href="#overview2">
           <li>
             <i class="fa fa-angle-right"></i>
-            <div class="index_title">Comunidad de usuarios de EducaInternet</div>
+            <div class="index_title">Temáticas principales</div>
             <div class="clear"></div>
           </li>
         </a>
         <a href="#overview3">
           <li>
             <i class="fa fa-angle-right"></i>
-            <div class="index_title">Creando excursiones virtuales con ViSH Editor</div>
+            <div class="index_title">Cursos especializados</div>
             <div class="clear"></div>
           </li>
         </a>
         <a href="#overview4">
           <li>
             <i class="fa fa-angle-right"></i>
-            <div class="index_title">Subiendo recursos desde móviles o tablets</div>
+            <div class="index_title">Biblioteca</div>
             <div class="clear"></div>
           </li>
         </a>
         <a href="#overview5">
           <li>
             <i class="fa fa-angle-right"></i>
-            <div class="index_title">Clonando excursiones virtuales</div>
+            <div class="index_title">Herramientas de creación de contenidos</div>
             <div class="clear"></div>
           </li>
         </a>
         <a href="#overview6">
           <li>
             <i class="fa fa-angle-right"></i>
-            <div class="index_title">Importando y exportando excursiones</div>
+            <div class="index_title">Proyectos de clase</div>
             <div class="clear"></div>
           </li>
         </a>
-        <!--
         <a href="#overview7">
           <li>
             <i class="fa fa-angle-right"></i>
-            <div class="index_title">Reuniones virtuales y eventos con acceso remoto y desde móviles</div>
+            <div class="index_title">¿Cómo obtener ayuda?</div>
             <div class="clear"></div>
           </li>
-        </a>-->
+        </a>
       </ul>
       <hr>
       <a href="/user_manual">
@@ -76,310 +74,106 @@
         </button>
       </a>
     </div>
+
     <div class="overviewmiddle visible-desktop">
     </div>
+
     <div class="overviewcontent">
       <legend>Introducción a EducaInternet</legend>
 
       <div class="header_text margin-top10">
 
         <a target="_blank" href="<%= Vish::Application.config.full_domain %>"><%= t('thevish') %></a>
-        es una Red Social Colaborativa centrada en la creación de recursos educativos sobre <b>uso seguro y responsable de las tecnologías</b>.
-        El elemento principal de EducaInternet es la excursión virtual, una presentación web interactiva (basada en diapositivas o fichas visuales enriquedas),
-        diseñada para la proyección en las aulas. Cada excursión es una presentación visual basada en recursos multimedia utilizando cualquier elemento
-        de Internet, del repositorio de EducaInternet o de otros repositorios de contenidos. El nombre de excursión es una metáfora de 'visita a un mundo virtual
-        de recursos de conocimiento'.
+        es una plataforma educativa para aprender y enseñar sobre <b>uso seguro y responsable de las tecnologías</b>.
+        Para <b>aprender</b> EducaInternet ofrece cursos especializados.<br/>
+        Para <b>enseñar</b> EducaInternet ofrece tres posibilidades. 
+        <div class="header_text margin-top10">
+          <ol>
+              <li style="list-style: decimal">Contenidos de la plataforma: Los contenidos de la plataforma, cursos, unidades didácticas o recursos simples (un audio, un video, etc.) están disponibles para todos los usuarios para enseñar o crear sus contenidos. Los podrás encontrar en la <a href="/search?type=Learning_object">biblioteca</a></li>
+              <li style="list-style: decimal">Creando contenidos propios: EducaInternet ofrece herramientas de autor para poder crear cursos, unidades didácticas o subir recursos a la plataforma.</li>
+              <li style="list-style: decimal">Con proyectos de clase: en los que serán los alumnos los que creen contenidos y así aprendan haciendo.</li>
+          </ol>
+        </div>
       </div>
-      <br>
-      <div class="header_text margin-top10">
-        Las excursiones son recursos públicos en HTML5, accesibles a través de Internet por medio de una URL,
-        que se pueden proyectar a pantalla completa con un proyector para complementar las actividades de clase. Algunos ejemplos de excursiones son:
-      </div>
-      <br>
-      <div class="header_text margin-top10">
-        <ul>
-          <a target="_blank" href="http://educainternet.es/excursions/8">
-            <li style="list-style: initial">Sexting</li>
-          </a>
-          <a target="_blank" href="http://educainternet.es/excursions/41">
-            <li style="list-style: initial">Pero, ¿qué es la nomofobia?</li>
-          </a>
-          <a target="_blank" href="http://educainternet.es/excursions/115">
-            <li style="list-style: initial">El derecho a la vida privada del menor</li>
-          </a>
-          <a target="_blank" href="http://educainternet.es/excursions/285">
-            <li style="list-style: initial">Grooming</li>
-          </a>
-          <a target="_blank" href="http://educainternet.es/excursions/45">
-            <li style="list-style: initial">Seguridad en Internet: Definiciones</li>
-          </a>
-          <a target="_blank" href="http://educainternet.es/excursions/99">
-            <li style="list-style: initial">Una contraseña en GooglePlay</li>
-          </a>
-        </ul>
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-       EducaInternet es una evolución de la plataforma <a href="http://vishub.org" target="_blank">Virtual Science Hub (ViSH)</a>.
-       Que es una red social colaborativa sobre temas más genéricos. Se puede ver su catálogo <a href="http://vishub.org/search?catalogue=true" target="_blank">aquí</a>, 
-       que contiene temas como química, geografía, arte, etc. Algunos de los ejemplos que pondremos acontinuación son de la plataforma ViSH por no contar aún con ejemplos realizados por los usuarios en EducaInternet sobre algunas funcionalidades.
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-        EducaInternet permite también la realización de actividades y proyectos de colaboración en el aula con la participación de profesores y estudiantes.
-        Se recomienda el uso de una cuenta compartida bajo la supervisión de un profesor o tutor. Por ejemplo,
-        la siguiente excursión es el resultado de un verdadero proyecto de una clase de geología para la identificación mineral realizado en un curso
-        de secundaria en Galicia (España):
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-        <ul>
-          <a target="_blank" href="http://vishub.org/excursions/515">
-            <li style="list-style: initial">Proyecto de clase</li>
-          </a>
-          <a target="_blank" href="http://vishub.org/excursions/395">
-            <li style="list-style: initial">Trabajo del estudiante (La Amatista en Castellano)</li>
-          </a>
-          <a target="_blank" href="http://vishub.org/excursions/912">
-            <li style="list-style: initial">Trabajo del estudiante traducido al Inglés</li>
-          </a>
-        </ul>
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-        Las excursiones pueden ser proyectadas a pantalla completa en un aula como presentaciones, pero también pueden ser:
-      </div>
-      <br>
-      <div class="header_text margin-top10">
-        <ul>
-          <li style="list-style: initial">Vistas en ordenadores de sobremesa, portátiles, teléfonos móviles, tablets o cualquier dispositivo que cuente con un navegador web que soporte HTML5.</li>
-          <li style="list-style: initial">Incrustadas en páginas web o Learning Management Systems (Moodle, Blackboard, ...) de forma similar a los videos de youtube.</li>
-          <!--<li style="list-style: initial">Proyectadas en un aula virtual de ViSH utilizando<a target="_blank" href="http://www.mashme.tv"> MashMe.tv</a>.</li>-->
-          <li style="list-style: initial">Descargadas como paquetes SCORM para ser importadas a otras plataformas o Learning Management Systems como Moodle.</li>
-          <li style="list-style: initial">Descargadas para presentaciones off-line en una clase o reunión (en desarrollo).</li>
-          <li style="list-style: initial">Clonadas, modificadas o enriquecidas por cualquier otro miembro de la comunidad de usuarios de EducaInternet.</li>
-          <li style="list-style: initial">Etc.</li>
-        </ul>
-      </div>
-      <br>
 
       <div id="overview2" class="header_text margin-top10">
-        La búsqueda de excursiones se puede hacer desde la
-        <a target="_blank" href="<%= Vish::Application.config.full_domain %>/search?catalogue=true">Temateca</a>,
-        donde se pueden filtrar por tema, idioma, y otros filtros disponibles. Con un entorno muy similar, la búsqueda de recursos para poder crear tus propias excursiones o para usarlos directamente en tus actividades didácticas se puede hacer desde la
-        <a target="_blank" href="<%= Vish::Application.config.full_domain %>/search?directory=true">Recursoteca</a>.
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
         <br>
-        <legend>Comunidad de usuarios de EducaInternet</legend>
+        <legend>Temáticas principales</legend>
       </div>
       <div class="header_text margin-top10">
-        Las excursiones son presentaciones públicas, que pueden ser reutilizadas libremente en aulas,
-        blogs o Learning Management Systems por cualquier usuario que tenga acceso a EducaInternet con una conexión a Internet estándar.
-        Pero para crear o modificar las excursiones un usuario debe registrarse en EducaInternet y convertirse en un miembro de la comunidad.
-        <a target="_blank" href="<%= Vish::Application.config.full_domain %>/conditions_of_use">Los términos de uso de EducaInternet</a>
-        deberán ser aceptados para crear una cuenta.
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-        Cada cuenta tiene un perfil que permite al usuario:
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
+        En EducaInternet se han identificado once temáticas principales en torno a las cuales se organizan
+        y clasifican todos los recursos que ofrece la plataforma (en el futuro podrán añadirse más temas
+        según vayan apareciendo nuevas necesidades o a demanda de los usuarios).
+        Estas temáticas son:
         <ul>
-          <li style="list-style: initial">Crear excursiones con el editor y clonar excursiones de otros usuarios de EducaInternet con posibilidad de editarlas después.</li>
-          <!--<li style="list-style: initial">Crear eventos en EducaInternet.</li>-->
-          <li style="list-style: initial">
-            Subir recursos al repositorio de EducaInternet. Entre otros tipos de recursos es posible subir y compartir imágenes, videos y audios, objetos flash,
-            enlaces a páginas web, documentos (PDF, doc, ...), paquetes SCORM y aplicaciones web HTML5. Estos recursos pueden ser utilizados posteriormente
-            como contenido de las excursiones.
-          </li>
-          <li style="list-style: initial">
-            Crear categorías personales para clasificar los recursos de EducaInternet según sus necesidades.
-            Las categorías actúan como carpetas o directorios de contenido relacionado. La categoría de favoritos contiene los recursos marcados como favoritos.
-          </li>
-          <li style="list-style: initial">Crear eventos en ViSH.</li>
+          <li>Gestión de la información</li>
+          <li>Acceso a contenidos inapropiados</li>
+          <li>Gestión de la privacidad e identidad digital</li>
+          <li>Netiqueta: comportamiento en línea</li>
+          <li>Grooming</li>
+          <li>Cyberacoso</li>
+          <li>Sexting</li>
+          <li>Suplantación de identidad</li>
+          <li>Tecnoadicciones</li>
+          <li>Comunidades peligrosas en línea</li>
+          <li>Protección ante virus y fraudes</li>
+        </ul>
+      </div>  
+
+
+      <div id="overview3" class="header_text margin-top10">
+        <br>
+        <legend>Cursos especializados</legend>
+      </div>
+      <div class="header_text margin-top10">
+        En la página <a href="/learn">Fórmate</a> se encuentran cursos especializados creados por <a href="http://red.es">Red.es</a>. Uno sobre cada uno de los temas de la plataforma. 
+      </div>
+
+      <div id="overview4" class="header_text margin-top10">
+        <br>
+        <legend>Biblioteca</legend>
+      </div>
+      <div class="header_text margin-top10">
+        La plataforma ofrece una <a href="/search?type=Learning_object">biblioteca</a> donde se encuentran todos los recursos educativos creados por expertos y por la comunidad de usuarios. Estos recursos son de tres tipos:
+        <ul>          
+          <li>Recursos simples: que los usuarios de EducaInternet han subido a la plataforma, por ejemplo un audio, un video, un PDF, un documento, etc. Se pueden utilizar para aprender pero sobretodo se usarán para introducirlos en los otros recursos que creemos.</li>
+          <li>Unidades didácticas: Son presentaciones enriquecidas. En ellas el usuario combina recursos de la plataforma, con cualquier recurso de Internet, incorpora posibilidad de añadirlos por URL o con un buscador en Youtube o Flikr por ejemplo. </li>
+          <li><b>Cursos</b>: Tanto "especializados" como creados por la comunidad. Los cursos con un conjunto de recursos de cualquiera de los otros tipos combinados con tareas para que los alumnos colaboren y galerías de recursos adicionales.</li>
+        </ul>
+        Para utilizar estos recursos no hay que estar registrado. Pero para crearlos si, te invitamos a que te registres <a target="blank" href="/users/sign_up">aquí</a>.
+      </div>
+
+      <div id="overview5" class="header_text margin-top10">
+        <br>
+        <legend>Herramientas de creación de contenidos</legend>
+      </div>
+      <div class="header_text margin-top10">
+        EducaInternet tiene tres tipos de recursos y para cada uno ofrece una manera de crearlos o añadirlos a la plataforma. hay que estar registrado en la plataforma para usar estas herramientas ya que necesitas tener un perfil para que se guarde todo lo que subes.
+        <ul>
+          <li>Recursos simples: se pueden subir a la plataforma desde el menú superior o desde tu perfil. Pueden ser de cualquier tipo, un audio, un video, un PDF, etc. En el caso de audio y video se podrán subir directamente desde el móvil, al hacer click en el botón el móvil ofrece la posibilidad de abrir la cámara directamente.</li>
+          <li>Unidades didácticas: EducaInternet ofrece una herramienta para crear unidades didácticas o presentaciones enriquecidas. Puedes ver videotutoriales de cómo usar esta herramienta <a target="blank" href="https://www.youtube.com/playlist?list=PLve_ezrFIJJxjVyz2dacXNIYnqypvg2vb">aquí</a> </li>
+          <li>Cursos: se pueden crear muy fácilmente combinando unidades didácticas y recursos simples y añadiendo texto y tareas para los alumnos.</li>
         </ul>
       </div>
-      <br>
-      <div class="header_text margin-top10">
-        EducaInternet es una red social donde los usuarios pueden seguir a otros usuarios con el fin de recibir información sobre las excursiones que crean y
-        los recursos que suben. La página de perfil de usuario muestra las excursiones que este ha creado (o clonado) y los recursos que ha subido.
-        El perfil de un usuario también muestra los usuarios a los que sigue y los que le siguen.
-      </div>
-      <br>
-      <div class="header_text margin-top10">
-        Además, un sistema de recomendación destacará el contenido más relevante en EducaInternet relacionado con el tipo de contenido al que acceda.
-        Cuando las excursiones son vistas por un  usuario registrado también se toman en cuenta en para su posterior recomendación.
-      </div>
-      <br>
-      <div id="overview3" class="header_text margin-top10">
-        Cada recurso también contiene una sección de notificación de spam o errores de contenido,
-        que proporciona la base para el control de la adecuación de las excursiones y recursos con los objetivos de los términos de uso de EducaInternet:
-        contenido útil, correcto y de buena calidad.
-      </div>
-      <br>
 
-      <div class="header_text margin-top10">
-        <br>
-        <legend>Creando excursiones virtuales con ViSHEditor</legend>
-      </div>
-      <div class="header_text margin-top10">
-        Los usuarios registrados pueden crear excursiones con la herramienta de creación/edición online ViSHEditor.
-        Este editor es muy fácil de usar y no requiere conocimientos técnicos.
-      </div>
-      <br>
-      <div class="header_text margin-top10">
-        Cada excursión virtual está organizada como una secuencia de diapositivas, y en ella se pueden insertar los siguientes elementos:
-      </div>
-      <br>
-      <ul>
-        <li style="list-style: initial">
-          <span class="editor_title_bold">Mash-up.</span>
-          Plantilla visual basada en la composición de texto, imagenes, video, etc...
-          <a target="_blank" href="http://vishub.org/categories/64">Grabaciones de audio</a>,
-          <a target="_blank" href="http://vishub.org/categories/65">Aplicaciones interactivas</a>,
-          <a target="_blank" href="http://vishub.org/categories/62">Objetos 3D</a>,
-          <a target="_blank" href="http://vishub.org/categories/63">Simulaciones</a>,
-          etc. Los componentes visuales que se incluyan, se pueden guardar en el repositorio local de EducaInternet o en cualquier servidor en Internet.
-        </li>
-        <br>
-        <li style="list-style: initial">
-          <span class="editor_title_bold">Quiz.</span>
-          Diapositiva interactiva diseñada para presentar preguntas o ejercicios para ser respondidos en tiempo real, ya sea en un aula con ordenadores de sobremesa, smartphones, tabletas...
-          <a target="_blank" href="http://vishub.org/categories/61">(Ejemplos Quiz)</a>
-          Se pueden insertar preguntas de Verdadero/Falso y preguntas de múltiple respuesta. Las respuestas podrán ser a modo auto-evaluación,
-          o a través de un sistema de respuesta basado en la audiencia (ARS) ya sea por medio de una URL o de la captura de un código QR.
-        </li>
-        <br>
-        <li style="list-style: initial">
-          <span class="editor_title_bold">Flashcard.</span>
-          Diapositiva con zonas clicables que pueden enlazar con otra diapositiva, excursión o cualquier página web o recurso de Internet.
-          <a target="_blank" href="http://vishub.org/categories/57">(Ejemplos Flashcards)</a>
-        </li>
-        <br>
-        <li style="list-style: initial">
-          <span class="editor_title_bold">Virtual tour.</span>
-          Diapositiva interactiva basada en GoogleMaps. El usuario puede insertar puntos de localización en el mapa que podrá enlazar con otra diapositiva,
-          excursión o cualquier página web o recurso de internet.
-          <a target="_blank" href="http://vishub.org/categories/58">(Ejemplos Virtual tour)</a>
-        </li>
-        <br>
-        <li style="list-style: initial">
-          <span class="editor_title_bold">Video enriquecido.</span>
-          Diapositiva con un video seccionado por capítulos o puntos en los que se interactúa con el video a través de otras diapositivas,
-          apareciendo estas cuando se alcanza el momento del video seleccionado por el creador de la excursión.
-          <a target="_blank" href="http://vishub.org/categories/59">(Ejemplos de videos enriquecidos)</a>
-        </li>
-        <br>
-        <li style="list-style: initial">
-          <span class="editor_title_bold">Aplicación Web.</span>
-           Las aplicaciones web interactivas basadas en la tecnología HTML5 se insertan como un componente activo en cualquier diapositiva de una excursión,
-           por ejemplo, calculadoras interactivas, editores, simuladores, laboratorios, etc.
-          <a target="_blank" href="http://vishub.org/categories/60">(Ejemplos de aplicaciones web)</a>
-          . Las aplicaciones web basadas en HTML5 utilizan el estándar HTML,
-          CSS y javascript de la misma manera que se crean las aplicaciones en cliente de el estándar de HTML5.
-        </li>
-      </ul>
-      <br>
-      <div id="overview4" class="header_text margin-top10">
-        Cada excursión se puede acompañar con información pedagógica que describe los escenarios apropiados para la enseñanza, orientaciones didácticas,
-        requisitos específicos, tareas de preparación o simplemente ideas o comentarios acerca de la utilización de las excursiones en clase.
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-        <br>
-        <legend>Subiendo recursos desde móviles o tabletas</legend>
-      </div>
-      <div class="header_text margin-top10">
-        EducaInternet y las excursiones virtuales se han diseñado en HTML5 para permitir maneras flexibles de subir recursos desde dispositivos móviles.
-        Las imágenes o videos tomados con un dispositivo móvil se pueden cargar en el repositorio de EducaInternet con mucha facilidad.
-      </div>
-      <br>
-      <div id="overview5" class="header_text margin-top10">
-        Simplemente accediendo a EducaInternet con el navegador de un smartphone o tablet se puede utilizar la función de carga de recursos para subir una foto
-        o video tomado en ese mismo momento, quedando almacenado así el recurso en el repositorio de EducaInternet. Después de que el recurso se haya cargado en el
-        repositorio, estará accesible desde la plataforma o el editor (ViSHEditor).
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
-        <br>
-        <legend>Clonando excursiones virtuales</legend>
-      </div>
-      <div class="header_text margin-top10">
-        Uno de los principales objetivos de EducaInternet es permitir la producción de contenido colaborativo.
-        El mecanismo básico para enriquecer o adaptar una excursión que alguien ha producido es haciendo uso de la clonación de excursiones.
-        Por lo tanto cualquier excursión publicada en EducaInternet puede clonarse por otros usuarios registrados para el enriquecimiento, la modificación,
-        la traducción a otro idioma o cualquier otro motivo didáctico.
-      </div>
-      <br>
-      <div class="header_text margin-top10">
-        Las excursiones se publican en EducaInternet utilizando la 'Licencia Creative Commons' por defecto, de manera que cualquier usuario registrado tiene el derecho a usar y modificar
-        las excursiones con fines no comerciales. EducaInternet podría definirse como “contribución amable” y cada excursión hace que los autores sean parte de una cadena
-        de clonación explícita, de tal manera que todos los que han contribuido a una excursión formarán parte y recibirán su reconocimiento.
-      </div>
-      <br>
       <div id="overview6" class="header_text margin-top10">
-        Cuando un usuario clona una excursión, crea una copia de esta y se añade a su perfil.
-        El autor de la excursión que haya sido clonada y los autores anteriores que contribuyen a ella,
-        se añaden a la sección de 'con el contenido de', de modo que la autoría se reconoce correctamente.
-        El usuario se convierte en el propietario de la copia clonada y puede modificarla según sea necesario con el editor.
-      </div>
-      <br>
-
-      <div class="header_text margin-top10">
         <br>
-        <legend>Importando y exportando excursiones</legend>
+        <legend>Proyectos de clase</legend>
       </div>
       <div class="header_text margin-top10">
-        Las presentaciones en PDF se pueden importar en una excursión para crear nuevas diapositivas,
-        de esta manera podrás añadir contenido interactivo a cualquier presentación anteriormente creada en pdf.
+        La nueva funcionalidad de proyectos de clase permitirá que sean los alumnos los que usando las herramientas de creación creen contenidos educativos y así "aprender haciendo". 
+        Esta funcionalidad requiere un paso previo de activación del usuario ya que será el profesor el que se responsabilice de crear cuentas de usuario de alumnos y de la actividad de éstos en la plataforma, recordemos que son menores. Pero la plataforma facilita este proceso y al hacer click en "proyectos de clase" en el menú de usuario en la parte superior derecha se abrirá el menú de solicitud de permiso y te guiará en el proceso.
       </div>
-      <br>
-      <div class="header_text margin-top10">
-        Las excursiones también pueden ser importadas y exportadas como objetos SCORM,
-        un tipo de documento que se puede importar en un LMS (siglas de sistema de gestión del aprendizaje,
-        un buen ejemplo es Moodle) u otra plataforma que soporte este estándar.
-        Las excursiones también son accesibles a través de una URL o incrustadas en páginas web, blogs, entre otros (como ocurre con los videos de YouTube).
-      </div>
-      <br>
-      <div class="header_text margin-top10">
-        La descarga de excursiones para la presentación offline (sin conexión a Internet) en una clase o reunión está en desarrollo mediante el modo offline HTML5.
-        Las excursiones sólo estarán habilitadas para la presentación offline si todos los recursos de la utilización se pueden almacenar en caché en el cliente,
-        es decir, si están alojados en el repositorio local de EducaInternet. La descarga de excursiones como un conjunto de diapositivas en PDF se podrá realizar,
-        pero perdiendo todo el contenido multimedia activo dentro de la excursión.
-      </div>
-      <br>
 
-      <!--<div id="overview7" class="header_text margin-top10">
+      <div id="overview7" class="header_text margin-top10">
         <br>
-        <legend>Reuniones virtuales y eventos con acceso remoto y desde móviles</legend>
+        <legend>¿Cómo obtener ayuda?</legend>
       </div>
       <div class="header_text margin-top10">
-        ViSH utiliza
-        <a target="_blank" href="http://www.mashme.tv">MashMe.tv</a>
-        , un aula virtual basada en la videoconferencia colaborativa, donde varias aulas o colegios pueden conectarse y participar en un evento virtual
-        con demostraciones en directo, debates, conferencia a distancia, etc. Estas reuniones se pueden basar en excursiones o en otros medios de comunicación
-        social disponibles en Internet.
+        Si tienes dudas puedes ponerte en contacto con nosotros en contacto@educainternet.es
       </div>
-      <br>
-      <div class="header_text margin-top10">
-        MashMe.tv soporta el acceso a las salas de videoconferencia desde ordenadores (sobremesa/portátil), smartphones y tablets. De esta manera,
-        la cámara web de un dispositivo móvil se puede utilizar para mostrar el lugar físico que se visita (como pueden ser las exposiciones de un museo,
-        las entrevistas a la gente en el lugar visitado o el resultado de un experimento científico) directamente sobre la infraestructura.
-        Los dispositivos móviles pueden ser utilizados para caminar libremente por el lugar visitado y mostrar las partes más relevantes del mismo.
-      </div>-->
-      <br>
+
+
     </div>
   </div>
 </section>

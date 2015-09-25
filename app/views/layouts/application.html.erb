@@ -7,16 +7,24 @@
 
 <body>
   <%= render :partial => "layouts/header/header_warning" %>
-  
+
   <div id="wrap">
     <%= render :partial => "layouts/header/header" %>
+    <%= flashy %>
+
+    <div class="illustration">
+      <%= yield :banner %>
+    </div>
+
+    <div class="general_toolbar">
+      <%= yield :gtools %>
+    </div>
 
     <div class="container-fluid container-content">
-      <%= flashy %>
       <%= yield %>
     </div>
   </div>
-  
+
   <%= render :partial => "layouts/footer" %>
 </body>
 

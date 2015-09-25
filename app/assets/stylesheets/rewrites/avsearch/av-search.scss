@@ -51,7 +51,7 @@
   height: 40px;
   padding-left: 10px;
   margin-top: 0px;
-  border-radius: 5px;
+  border-radius: $border-radius-base;
 }
 
 #asearch_header .input-group-addon{
@@ -70,9 +70,9 @@
   float: left;
   overflow: hidden;
   border: 1px solid #5E5E5E;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: $border-radius-base;
+  -moz-border-radius: $border-radius-base;
+  border-radius: $border-radius-base;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -316,7 +316,7 @@
 #asearch_settings .addInstanceButton{
   margin-left: 15px;
   font-size: 13px;
-  cursor: pointer;    
+  cursor: pointer;
 }
 
 #asearch_settings span.deleteEntity{
@@ -370,7 +370,7 @@
   }
   #asearch_settings select {
     min-height: 32px;
-  } 
+  }
   #asearch_results table.asearch_results_table{
     width: 60%;
   }

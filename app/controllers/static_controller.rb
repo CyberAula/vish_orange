@@ -12,9 +12,6 @@ class StaticController < ApplicationController
     send_file "#{Rails.root}/public/vish_solicitud_crear_grupos_privados.pdf", :type => 'application/pdf'
   end
 
-  def legal_notice
-  end
-
   def privacy_policy
   end
 
@@ -22,6 +19,12 @@ class StaticController < ApplicationController
   end
 
   def overview
+  end
+
+  def teach
+  end
+
+  def learn
   end
 
 end

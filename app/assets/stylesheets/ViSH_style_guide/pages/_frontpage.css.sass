@@ -62,133 +62,162 @@
     @include dropdown-log
 
 
-/*FRONTPAGE _ carousel*/
+/*FRONTPAGE _ image */
 
-.ilustration
-  .carousel
-    margin-bottom: 20px
-    .carousel-indicators
-      top: 15px
-      margin-left: -21px !important
-      width: auto !important
-      .active
-        background-color: $orange-primary
-    .carousel-inner
-      height: 380px
-      max-height: none
-      @media (max-width: $screen-xs-min)
-        height: 190px
-      .item
-        img
-          width: 100%
-          position: absolute
-          top: -100px
-          @media (max-width: $screen-xs-max)
-            top: 0px
-        .carousel-caption
-          height: 220px
-          top: 0
-          left: 0
-          background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          background: -o-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          background: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7))
-          @media (max-width: $screen-sm-max)
-            height: 280px
-          @media (max-width: $screen-xs-min)
-            background-color: transparent
-            height: 180px
-            width: 100%
-          .carousel-text
-            padding: 60px 0
-            font-family: helvetica
-            @media (max-width: $screen-sm-max)
-              padding: 50px 40px
-            .title-car
-              color: white
-              font-size: 6em
-              text-shadow: 1px 1px rgba(51, 51, 51, 0.6)
-              font-weight: 100
-              opacity: 0.6
-              margin-top: -10px
-              transition: opacity .5s ease-out
-              -moz-transition: opacity .5s ease-out
-              -webkit-transition: opacity .5s ease-out
-              -o-transition: opacity .5s ease-out
-              &:hover
-                opacity: 1
-              @media (max-width: $screen-xs-min)
-                text-align: center
-                font-size: 4.5em
-                margin-top: 10px
+.illustration
+  min-height: 52px
+  .box-title-general
+    height: 100px
+    position: relative
+    overflow: hidden
+    margin-top: 52px
+    img
+      width: 100%
+      position: absolute
+    hr
+      border: 1px solid #999
+      margin: 5px 0
+      border-bottom: none
+    h1
+      margin-top: 0px
+      text-align: center
+      font-family: $corporate-font-family-sans-serif-Light
+      font-size: 20px
+      line-height: 24px
+    .main-title
+      @include gradientcolor
+      background-color: rgba(0,0,0,0.3)
+      position: relative
+      text-align: center
+      height: 100px
+      padding: 20px
+      .title
+        font-size: 3em
+        font-family: $font-family-sans-serif-titles
+        text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
+        color: white
+        font-weight: 500
+        line-height: 1.2em
 
-            .text-car
-              color: white
-              font-size: 1.1em
-              text-shadow: 1px 1px rgba(51, 51, 51, 0.6)
-              line-height: 1.3em
-              font-weight: 100
-              strong
-                font-weight: 500
-              a
-                text-decoration: none
-                color: $orange-primary
-              @media (max-width: $screen-xs-min)
-                display: none
+  .box-title-home
+    height: 400px
+    position: relative
+    overflow: hidden
+    img
+      width: 100%
+      position: absolute
+    .main-title
+      @include gradientcolor
+      background-color: rgba(0,0,0,0.3)
+      position: relative
+      text-align: center
+      padding: 110px 50px
+      .title
+        h1
+          font-size: 4em
+          font-family: $font-family-sans-serif-titles
+          text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
+          color: white
+          font-weight: 500
+          line-height: 1.2em
+
+    .btn-main-title
+      position: relative
+      margin: 30px
 
 
 #frontpage
-  .entities_front
-    display: block
-    margin-bottom: 60px
-    float: left
+  .entities
+    h3
+      font-weight: 200
+      font-size: 2.3em
+      margin: 0 8px 30px
+    .entities_front
+      display: block
+      margin-bottom: 10px
+      float: left
+      width: 100%
 
 
 @media (min-width: 1751px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+16)
+    .box-item:nth-of-type(-n+7)
       display: block
 
 @media (min-width: 1501px) and (max-width: 1750px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+14)
+    .box-item:nth-of-type(-n+6)
       display: block
 
 @media (min-width: 1200px) and (max-width: 1500px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+12)
+    .box-item:nth-of-type(-n+5)
       display: block
 
 @media (min-width: 992px) and (max-width: 1199px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+10)
+    .box-item:nth-of-type(-n+4)
       display: block
+  .illustration
+    .box-title-home
+      .main-title
+        .title
+          h1
+            font-size: 3.5em
 
 @media (min-width: 768px) and (max-width: 991px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+8)
+    .box-item:nth-of-type(-n+3)
       display: block
+  .illustration
+    .box-title-home
+      .main-title
+        .title
+          h1
+            font-size: 3em
 
 @media (min-width: 481px) and (max-width: 767px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+9)
+    .box-item:nth-of-type(-n+2)
       display: block
+  .illustration
+    .box-title-home
+      height: 300px
+      .main-title
+        padding: 90px 40px 0
+        height: 100%
+        .title
+          h1
+            font-size: 2.5em
+        .btn-main-title
+          display: none
 
 @media (max-width: 480px)
   .entities_front
     .box-item
       display: none
-    .box-item:nth-of-type(-n+10)
+    .box-item:nth-of-type(-n+4)
       display: block
+  .illustration
+    .box-title-home
+      height: 250px
+      .main-title
+        padding: 70px 50px
+        height: 100%
+        .title
+          h1
+            font-size: 2em
+        .btn-main-title
+          display: none

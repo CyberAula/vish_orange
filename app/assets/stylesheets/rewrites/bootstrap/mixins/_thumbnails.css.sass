@@ -7,7 +7,7 @@
   margin-bottom: $line-height-computed
   line-height: $line-height-base
   background-color: $thumbnail-bg
-  border: 1px solid $thumbnail-border
+  @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
   border-radius: $thumbnail-border-radius
   @include transition(border .2s ease-in-out)
   @media (max-width: 480px)
@@ -20,17 +20,14 @@
 
   .avatar
     img
-      @include border-top-radius (3px)
+      @include border-top-radius ($border-radius-base)
       @include border-bottom-radius ($border-radius-base)
       width: 100%
   a
     &:hover
       padding: 0
-
     &:focus
       padding: 0 !important
-
-  // [converter] extracted a&:hover, a&:focus, a&.active to a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active
   &:hover
     a
       color: $black
@@ -45,10 +42,8 @@
     height: 110px
     width: 75px
     pointer-events: none
+
   // IMG BOX
-
-
-
   .container-img
     position: relative
     width: 100%
@@ -67,7 +62,7 @@
       right: 0
       overflow: hidden
       text-align: center
-    
+
       @include border-top-radius($border-radius-base)
       background-repeat: no-repeat
       background-position: center center

@@ -12,7 +12,7 @@ class ExcursionsController < ApplicationController
   # Enable CORS
   before_filter :cors_preflight_check, :only => [:excursion_thumbnails,:last_slide,:iframe_api]
   after_filter :cors_set_access_control_headers, :only => [:excursion_thumbnails,:last_slide,:iframe_api]
-  
+
   include SocialStream::Controllers::Objects
 
 
@@ -490,4 +490,5 @@ class ExcursionsController < ApplicationController
       file_new_name = "excursion_"+ id +"_attachment" + file_ext
       file_new_name
   end
+
 end

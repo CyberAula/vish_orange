@@ -1,0 +1,17 @@
+<%content_for :title do%><%= t('site.meta_title.learn') %><%end%>
+<%content_for :keywords do%><%= t('site.meta_keywords.learn') %><%end%>
+<%content_for :description do%><%= t('site.meta_desc.learn')%><%end%>
+
+
+<% content_for :banner do %>
+  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('banner.learn') }%>
+<%end%>
+<% certified = certified_entities %>
+	<% if !certified.blank? %>
+	<!--<h3> <%= t("frontpage.title_certified")%> </h3>-->
+	<ul class="items entities_get_trained">
+		<% certified.each do |resource| %>
+			<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "frontpage2" } %>
+		<% end %>
+	</ul>
+<% end %>

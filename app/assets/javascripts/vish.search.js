@@ -325,7 +325,7 @@ Vish.Search = (function(V,undefined){
         //if it is a tag, we remove it from the ul selected_tags_ul
         if(filter_key==="tags"){
           filter_obj.remove();
-        }
+        }     
 
         if(update_url){
           _removeUrlParameter(filter_key, filter_name, follow_stack);

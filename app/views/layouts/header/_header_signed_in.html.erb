@@ -1,45 +1,34 @@
 <% availableModels = available_models %>
 <% availableServices = available_services %>
 <% availableResources = available_resource_types %>
+<% front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
 
-<nav class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top <%='navbar-home' if front_or_home%>" id="top" role="navigation">
   <div class="container-fluid">
     <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-    <a class="btn-navbar btn btn-default" data-toggle="collapse" data-target=".nav-collapse">
+    <a class="btn-navbar btn btn-default <%='btn-home' if front_or_home%>" data-toggle="collapse" data-target=".nav-collapse">
       <i class="fa fa-bars"></i>
     </a>
 
     <!-- BRAND -->
     <div class="brand">
-      <a href="/" class="logo">Educa<span class="logo_bold">Internet</span></a>
+      <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
     </div>
 
     <div class="hidden-phone hidden-tablet">
-      <!-- NEW ORANGE MENU -->
 
+      <!-- MENU -->
       <ul class="nav navbar-nav navbar-right" id="main_menu">
-        <!--<li class="<%= 'active' if params[:controller] == 'home'%>"><a href="/"><%=t('orange_front.header.index')%></a></li>-->
-        <!--<li class="<%= 'homeactive' if params[:controller] == 'home'%>"><a href="/"><i class="fa fa-home"></i></a></li>-->
+        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
+        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.ensena')%></a></li>
 
-        <li class="tooltip-header <%= 'homeactive' if params[:controller] == 'home'%>" data-original-title="Inicio"><a href="/"><i class="fa fa-home"></i></a></li>
-        <li class="<%= 'active' if params[:archive] == 'true'%>"><a href="<%=search_path(:archive=>"true")%>"><%=t('orange_front.header.cursoteca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
-        <li class="<%= 'active' if params[:catalogue] == 'true'%>"><a href="<%=search_path(:catalogue=>"true")%>"><%=t('orange_front.header.temateca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
-        <li class="<%= 'active' if params[:directory] == 'true'%>"><a href="<%=search_path(:directory=>"true")%>"><%=t('orange_front.header.recursoteca')%><span class="menu_bold"><%=t('orange_front.header.bold')%></span></a></li>
-        <li class="<%= 'active' if params[:controller] == 'search' && params[:browse]=="true" && params[:type]=="User" %>"><a href="<%=search_path(:type => "User", :browse=>"true", :sort_by => "popularity")%>"><%=t('orange_front.header.comunity')%></a></li>
-
-
-        <!-- NAVEGATION -->
-        <%= render partial: 'layouts/header/basic_navegation' %>
-        <!-- modal with partial for invitation after header in this same file -->
-
-        <!-- NEW Help button -->
-        <li class="btn-header-xs dropdown toggler <%= 'homeactive' if params[:controller] == 'home'%>">
-          <div data-toggle="dropdown" class="btn btn-help without-dropdown-toggle">
+        <!-- Help button -->
+        <li class=" dropdown toggler ">
+          <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
             <i class="fa fa-question-circle"></i>
           </div>
 
           <ul class="dropdown-menu add-menu" role="menu" >
-
             <li>
               <a href="/overview">
                 <i class="fa fa-question"> </i>
@@ -58,12 +47,18 @@
                 <span><%= t('help_manual')%>   </span>
               <% end %>
             </li>
+            <li>
+              <a href="contributors">
+                <i class="fa fa-graduation-cap"> </i>
+                <span><%= t('orange_front.footer.contributors') %></span>
+              </a>
+            </li>
           </ul>
         </li>
 
         <!-- ADD -->
-        <li class="btn-header-xs toggler dropdown">
-          <div class="btn without-data-toggle " data-toggle="dropdown" href="#" >
+        <li class="btn btn-default btn-xs <%='btn-home' if front_or_home%> toggler dropdown">
+          <div class="without-data-toggle " data-toggle="dropdown" href="#" >
             <i class="fa fa-plus"></i>
           </div>
           <ul class="dropdown-menu add-menu">
@@ -72,9 +67,9 @@
               <% if modelName == "Excursion" %>
                 <li><%= link_to new_excursion_path do %><i class="fa fa-list-alt"></i> <%= t('excursion.actions.add') %><% end %></li>
               <% elsif modelName == "Workshop" %>
-                <li><%= link_to new_workshop_path do %><i class="fa fa-list-alt"></i> <%= t('workshop.actions.add') %><% end %></li>
+                <li><%= link_to new_workshop_path do %><i class="fa fa-graduation-cap"></i> <%= t('workshop.actions.add') %><% end %></li>
               <% elsif modelName == "Resource" %>
-                <li><a href="#AddResource" data-toggle="modal"><i class="fa fa-file"></i> <%=t('resource.actions.add')%></a></li>
+                <li><a href="#AddResource" data-toggle="modal"><i class="fa fa-upload"></i> <%=t('resource.actions.add')%></a></li>
                 <% if availableResources.include? "Writing" %>
                   <li><%= link_to new_writing_path do %><i class="fa fa-pencil-square-o"></i> <%= t('writing.actions.add') %><% end %></li>
                 <%end%>
@@ -93,7 +88,7 @@
           <%= image_tag current_subject.logo.url(:small) %>
           <% end %>
         </li>
-        <li class="dropdown">
+        <li class="dropdown <%='btn-home-icon' if front_or_home%>">
           <a href="#" class="dropdown-toggle user_name" data-toggle="dropdown" role="button" aria-expanded="false"><%= truncate_name(current_subject.name, length: 15) %><span class="caret"></span></a>
           <ul class="dropdown-menu user-menu pull-right" role="menu">
 

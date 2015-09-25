@@ -17,6 +17,10 @@
 <%content_for :keywords do%><%= t('site.current.keywords') %><%end%>
 <%content_for :description do%><%= t('site.meta_desc.search')%><%end%>
 
+<% content_for :banner do %>
+  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('banner.search') }%>
+<%end%>
+
 <% searchTerms = !params[:q].blank? and searchMode %>
 
 <section id="search" class="">
@@ -26,29 +30,18 @@
       <div class="srch-panel">
 
         <% if params[:browse] %>
-          <li><h3><i class="fa fa-folder-open-o"></i><%= t("browse.title")%></h3></li>
+          <li><h2><i class="fa fa-folder-open-o"></i><%= t("browse.title")%></h2></li>
         <% elsif params[:catalogue] %>
-          <li><h3><i class="fa fa-tags"></i><%=t('catalogue.title')%></h3></li>
+          <li><h2><i class="fa fa-tags"></i><%=t('catalogue.title')%></h2></li>
         <% elsif params[:directory] %>
-          <li><h3><i class="fa fa-tags"></i><%=t('catalogue.title_directory')%></h3></li>
+          <li><h2><i class="fa fa-tags"></i><%=t('catalogue.title_directory')%></h2></li>
         <% elsif params[:archive] %>
-          <li><h3><i class="fa fa-tags"></i><%=t('catalogue.title_archive')%></h3></li>
+          <li><h2><i class="fa fa-tags"></i><%=t('catalogue.title_archive')%></h2></li>
         <% else %>
-          <li><h3><i class="fa fa-search"></i><%= t("search.title")%></h3></li>
+          <li><h2><i class="fa fa-search"></i><%= t("search.title")%></h2></li>
         <% end %>
 
-        <div filter_type="category_ids" archive_filter="true" directory_filter="true" catalogue_filter="true" style="display:none" class="filter_set">
-          <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
-            <a>-</a>
-          </button>
-          <span class="filter_title"><%=t("search.titles.filter_by")%> <span class="filter_title_bold"><%=t("search.titles.subject")%></span></span>
-          <hr class="separator">
-          <ul class="opened_filter">
-            <% Vish::Application.config.catalogue["categories"].each do |categoryId| %>
-              <li class="filter_item" filter_key="category_ids" categoryId="<%=categoryId%>" filter="<%=categoryId%>"><%=t('catalogue.categories.' + categoryId)%></li>
-            <% end %>
-          </ul>
-        </div>
+
 
         <div filter_type="super_type" search_filter="true" style="display:none" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
@@ -75,6 +68,32 @@
           </ul>
         </div>
 
+        <div filter_type="resouce_type" id="resource_type" directory_filter="true" opens_with="Resource" style="display:none" class="filter_set indented">
+            <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
+              <a>-</a>
+            </button>
+            <span class="filter_title"><%=t("search.titles.filter_by")%> <span class="filter_title_bold"><%=t("search.titles.resource")%></span></span>
+            <hr class="separator">
+            <ul class="opened_filter">
+              <% VishConfig.getAvailableNotMainResourceModels(:include_subtypes=>true).reject!{|e| e=="Document" }.each do |res| %>
+                <li class="filter_item" filter_key="type" filter="<%=res%>"><%=t("search.models.#{res.downcase}")%></li>
+              <%end%>
+            </ul>
+        </div>
+
+        <div filter_type="category_ids" opens_with="Learning_object" search_filter="true" style="display:none" class="filter_set">
+          <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
+            <a>-</a>
+          </button>
+          <span class="filter_title"><%=t("search.titles.filter_by")%> <span class="filter_title_bold"><%=t("search.titles.subject")%></span></span>
+          <hr class="separator">
+          <ul class="opened_filter">
+            <% Vish::Application.config.catalogue["categories"].each do |categoryId| %>
+              <li class="filter_item" filter_key="category_ids" categoryId="<%=categoryId%>" filter="<%=categoryId%>"><%=t('catalogue.categories.' + categoryId)%></li>
+            <% end %>
+          </ul>
+        </div>
+
         <div filter_type="age_type" opens_with="Learning_object" archive_filter="true" directory_filter="true" catalogue_filter="true" style="display:none" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
             <a>-</a>
@@ -88,18 +107,7 @@
           </ul>
         </div>
 
-        <div filter_type="resouce_type" id="resource_type" directory_filter="true" opens_with="Resource" style="display:none" class="filter_set">
-            <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
-              <a>-</a>
-            </button>
-            <span class="filter_title"><%=t("search.titles.filter_by")%> <span class="filter_title_bold"><%=t("search.titles.resource")%></span></span>
-            <hr class="separator">
-            <ul class="opened_filter">
-              <% VishConfig.getAvailableNotMainResourceModels(:include_subtypes=>true).reject!{|e| e=="Document" }.each do |res| %>
-                <li class="filter_item" filter_key="type" filter="<%=res%>"><%=t("search.models.#{res.downcase}")%></li>
-              <%end%>
-            </ul>
-        </div>
+
 
         <div filter_type="language" style="display:none" search_filter="true" archive_filter="true" directory_filter="true" catalogue_filter="true" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
