@@ -1,3 +1,19 @@
+.items
+  @include items
+  @media (max-width: 480px)
+    li
+      .container-img
+        .img-box
+          i
+            padding: 24px
+    .item-view-more
+      .container-img
+        .img-box
+          i
+            padding: 0
+      .caption
+        padding: 20px !important
+
 /****************************** contact */
 .contact h6
   text-align: center
@@ -34,7 +50,6 @@
       line-height: 1.2em !important
       height: auto !important
       font-weight: 300
-
 
 
 li.contact
