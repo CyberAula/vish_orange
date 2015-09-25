@@ -21,6 +21,8 @@
   <%=render :partial => "search/main_title", :locals => { :main_title_body => t('banner.search') }%>
 <%end%>
 
+<%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
+
 <% searchTerms = !params[:q].blank? and searchMode %>
 
 <section id="search" class="">
