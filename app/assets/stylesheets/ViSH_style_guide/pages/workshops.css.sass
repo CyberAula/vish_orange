@@ -1,5 +1,105 @@
-.wa_activity_wrapper_show
-  @extend .description-activity
+//+++++++++++++++ TOOLBAR
+.toolbar_nav-tab_workshop
+  width: 100%
+  height: auto
+  display: inline-block
+  padding: 13px 2%
+  z-index: 1000
+  background-color: rgba(85, 85, 85, 0.97)
+  -webkit-box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
+  -moz-box-shadow: 0 -1px 5px rgba(50,51,51,0.35)
+  box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
+  @media (max-width: $screen-xs-max)
+    top: 0
+    position: relative
+    @include border-top-radius ($border-radius-base)
+    @include border-bottom-radius ($border-radius-base)
+  .container-fluid
+    padding: 0
+  h4.edit-workshop-title
+    width: auto
+    float: left
+    display: inline-block
+    line-height: 20px
+    margin: 0
+    font-size: 1.6em
+    padding-top: 2px
+    color: $white
+    font-weight: 200
+    @media (max-width: $screen-xs-max)
+      float: none
+      text-align: center
+      width: 100%
+      margin-bottom: 10px
+  a.btn,
+  button.btn
+    padding: 1px 7px 2px
+    font-size: 13px !important
+    margin-left: 5px
+    @media (max-width: $screen-xs-max)
+      margin-left: 0
+      display: block
+      float: none !important
+      width: 100%
+      padding: 7px
+      margin-bottom: 2px
+    &:first-child
+      @media (max-width: $screen-xs-max)
+        margin-top: 31px
+    i
+      margin-right: 6px
+      margin-left: 1px
+
+
+//+++++++++++++++ GENERAL STYLES
+//+++++++++++++++ container
+.workshop-edit,
+#show_items
+  @include make-xs-column(12, $gutter: $grid-gutter-width)
+  @include make-sm-column(12, $gutter: $grid-gutter-width)
+  @include make-md-column(12, $gutter: $grid-gutter-width)
+  @include make-lg-column(12, $gutter: $grid-gutter-width)
+  margin-bottom: 50px
+  .header_workshop
+    .information
+      .description
+        margin: 10px 0
+
+.wa_activity_wrapper
+  float: none
+  .resource_mini_description
+    margin-top: 9px
+    padding-bottom: 10px
+    margin-left: 34px
+
+.wa_activity_wrapper,
+.wa_add_activity_wrapper
+  @include make-xs-column(12, $gutter: $grid-gutter-width)
+  @include make-sm-column(12, $gutter: $grid-gutter-width)
+  @include make-md-column(12, $gutter: $grid-gutter-width)
+  @include make-lg-column(12, $gutter: $grid-gutter-width)
+  @include border-top-radius ($border-radius-base)
+  @include border-bottom-radius ($border-radius-base)
+  display: inline-block
+  margin-bottom: 10px
+
+
+
+//+++++++++++++++ resources
+
+.wa_resource_wrapper .workshop_downloadable_resource
+  background-color: #DADADA
+  border: 1px solid #E4E4E4
+  margin-top: 40px
+  padding: 15px
+  h3
+    display: inline-block
+    margin: 6px
+    font-style: normal
+    font-family: $corporate-font-family-sans-serif-Medium
+  .actions
+    display: inline-block
+    float: right
 
 .workshop_element,
 .wa_resource_wrapper
@@ -45,6 +145,12 @@
       width: 100%
       min-height: 700px
 
+//+++++++++++++++ WORKSHOP SHOW
+#show_items
+  padding: 0
+
+.wa_activity_wrapper_show
+  @extend .description-activity
 
 .workshop_show
   margin-bottom: 60px
@@ -60,15 +166,23 @@
 
   .header_workshop
     @include well
-    padding: 0px 20px 20px
+    padding: 20px 30px
     margin-bottom: 0
     .information
-      h2
-        font-family: $corporate-font-family-sans-serif-Medium
-        min-height: 0
-      .description
-        margin-right: 2.5%
-        margin-left: 2.5%
+      h1
+        margin: 0
+        font-weight: 500
+        font-size: 2em
+        color: $gray-darker
+  .item_workshop
+    padding: 20px
+    margin: 1% 2%
+    width: 96%
+    h3
+      margin: 0 0 10px
+      font-weight: 400
+
+
   ul.tagit-suggestions
     padding: 0px
   .description-activity
@@ -78,46 +192,82 @@
     &:first-child
       border-bottom: 1px solid $border-color
     .box_description
-      border: 1px solid transparent
+      width: 50%
+      padding: 20px 30px
+      .nav-tabs
+        margin-bottom: 20px
+      .tab-content
+        width: 100%
+
     table
       tr
         &:first-child
           td
             border: 1px solid transparent
   .workshop-comments
-    margin-top: 0 !important
+    margin: 10px 0
+    padding: 0 30px
     .tab-content
       min-height: 100px
     .panel-group
       @include comments
 
-.wa_activity_wrapper_edit
-  padding-bottom: 15px
-  padding-top: 15px
+.css_reset
+  display: block
+  text-align: left
+  margin: 20px 10px
+  font-family: Arial, Verdana, sans-serif
+  font-size: 0.9em
+  color: $orange-gray-75
+  //line-height: normal
+  [dir="rtl"]
+    direction: rtl
+    unicode-bidi: embed
+  [dir="ltr"]
+    direction: ltr
+    unicode-bidi: embed
+  bdo[dir]
+    unicode-bidi: bidi-override
 
-.wa_activity_wrapper
-  padding-bottom: 15px
-  .resource_mini_description
-    margin-top: 9px
-    padding-bottom: 10px
-    margin-left: 34px
-.workshop-edit,
-#show_items
-  @include make-xs-column(12, $gutter: $grid-gutter-width)
-  @include make-sm-column(12, $gutter: $grid-gutter-width)
-  @include make-md-column(12, $gutter: $grid-gutter-width)
-  @include make-lg-column(12, $gutter: $grid-gutter-width)
-  padding: 0
-
+//+++++++++++++++ WORKSHOP EDIT
 .workshop-edit
+  padding: 20px 3%
   section.information
     float: left
-    h2
+    h1
+      margin: 0
+      font-weight: 500
+      font-size: 2em
+      color: $orange-gray-50
       @media (max-width: $screen-xs-max)
         margin-top: 1px
   .wa_activity_wrapper,
   .wa_add_activity_wrapper
     border: 2px dashed #999
+    padding: 20px
+
+.workshop-edit
+  .btn_show_upload
+    @extend .disabled
+
+.wa_add_activity_wrapper
+  height: auto
+  color: $gray
+  a
+    color: $gray
+    font-size: 1.3em
+    font-family: $font-family-sans-serif-titles
+  p
+    margin: 0
+    vertical-align: baseline
+    line-height: 37px
+    text-align: center
+    i
+      padding: 7px
+
+
+
+
 
 .wa_activity_actions
   float: right
@@ -126,54 +276,6 @@
   margin-top: 30px
   padding-bottom: 10px
 
-.toolbar_nav-tab_workshop
-  width: 100%
-  height: 50px
-  display: inline-block
-  padding: 13px 35px
-  z-index: 1000
-  background-color: rgba(85, 85, 85, 0.97)
-  -webkit-box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
-  -moz-box-shadow: 0 -1px 5px rgba(50,51,51,0.35)
-  box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
-  @media (max-width: $screen-xs-max)
-    top: 0
-    position: relative
-    @include border-top-radius ($border-radius-base)
-    @include border-bottom-radius ($border-radius-base)
-  h4.edit-workshop-title
-    width: auto
-    float: left
-    display: inline-block
-    line-height: 20px
-    margin: 0
-    font-size: 1.6em
-    padding-top: 2px
-    color: $white
-    font-weight: 200
-    @media (max-width: $screen-xs-max)
-      float: none
-      text-align: center
-      width: 100%
-      margin-bottom: 10px
-  a.btn,
-  button.btn
-    padding: 1px 7px 2px
-    font-size: 13px !important
-    margin-left: 5px
-    @media (max-width: $screen-xs-max)
-      margin-left: 0
-      display: block
-      float: none !important
-      width: 100%
-      padding: 7px
-      margin-bottom: 2px
-    &:first-child
-      @media (max-width: $screen-xs-max)
-        margin-top: 31px
-    i
-      margin-right: 6px
-      margin-left: 1px
 
 .layout_form_WS
   padding: 0 2%
@@ -204,15 +306,7 @@
 .workshop_contribute_footer
   margin-top: 15px
 
-.wa_activity_wrapper,
-.wa_add_activity_wrapper
-  @include make-xs-column(12, $gutter: $grid-gutter-width)
-  @include make-sm-column(12, $gutter: $grid-gutter-width)
-  @include make-md-column(12, $gutter: $grid-gutter-width)
-  @include make-lg-column(12, $gutter: $grid-gutter-width)
-  @include border-top-radius ($border-radius-base)
-  @include border-bottom-radius ($border-radius-base)
-  display: inline-block
+
 
 .ws_gallery
   .corner-item2
@@ -221,26 +315,7 @@
       left: 5px !important
       font-size: 20px
 
-.wa_activity_wrapper
-  float: none
 
-.wa_add_activity_wrapper
-  margin: 10px 0
-  height: auto
-  color: $gray
-  padding: 15px
-
-  a
-    color: $gray
-    font-size: 1.3em
-    font-family: $font-family-sans-serif-titles
-  p
-    margin: 0
-    vertical-align: baseline
-    line-height: 37px
-    text-align: center
-    i
-      padding: 7px
 
 @media (min-width: 0) and (max-width: 399px)
   h3.main_title_WS
@@ -295,10 +370,10 @@ ul.workshop_activities_list_edit
       @include border-bottom-radius (50px)
       i
         cursor: move
+
 #edit_wa_text_1_button
   float: right
   margin: 15px 0 0
-
 
 //time asigment
 .delivery
@@ -315,9 +390,7 @@ ul.workshop_activities_list_edit
     span
       padding-right: 10px
       font-family: $corporate-font-family-sans-serif-Light
-      //font-size: 11px
       display: inline
-      //color: $gray
     p
       font-size: 14px
       margin: 0
@@ -370,26 +443,6 @@ ul.workshop_activities_list_edit
     width: 100%
     margin-top: 10px
 
-
-.css_reset
-  display: block
-  text-align: left
-  margin: 8px
-  font-family: Arial, Verdana, sans-serif
-  font-size: 12px
-  color: #222
-  max-height: 100%
-  height: 100%
-  line-height: normal
-  [dir="rtl"]
-    direction: rtl
-    unicode-bidi: embed
-  [dir="ltr"]
-    direction: ltr
-    unicode-bidi: embed
-  bdo[dir]
-    unicode-bidi: bidi-override
-
 .contributions_content
   ul.contributions_WS_gallery
     margin: 0
@@ -400,6 +453,7 @@ ul.workshop_activities_list_edit
       display: block
       float: left
 
+  //++++++++++++ RESPONSIVE
   // 2---------------------
   @media (min-width: 501px) and (max-width: 650px)
     li.box-item
@@ -481,23 +535,7 @@ ul.workshop_activities_list_edit
 .cke_contents iframe
   height: auto !important
 
-.workshop-edit
-  .btn_show_upload
-    @extend .disabled
 
-.wa_resource_wrapper .workshop_downloadable_resource
-  background-color: #DADADA
-  border: 1px solid #E4E4E4
-  margin-top: 40px
-  padding: 15px
-  h3
-    display: inline-block
-    margin: 6px
-    font-style: normal
-    font-family: $corporate-font-family-sans-serif-Medium
-  .actions
-    display: inline-block
-    float: right
 
 // Contributions gallery list
 .title_workshop_items_list

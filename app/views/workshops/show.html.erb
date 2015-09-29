@@ -22,7 +22,7 @@
         <div class="briefing">
           <!--title-->
           <div class="name">
-            <h2 class="title_WS main_title_WS"><%=@workshop.title%></h2>
+            <h1 class="title_WS main_title_WS"><%=@workshop.title%></h1>
           </div>
           <!--description-->
           <div class="description"><%=@workshop.description%></div>
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-<!--++++++++++++++++header/toolbar+++++++++++++++++++++++-->
+  <!--++++++++++++++++header/toolbar+++++++++++++++++++++++-->
   <div class="description-activity">
     <div class="box_description">
       <!--tool-->
@@ -43,10 +43,10 @@
     </div>
   </div>
 
-<!--++++++++++++++++item+++++++++++++++++++++++-->
+  <!--++++++++++++++++item+++++++++++++++++++++++-->
   <% @workshop_activities.each do |workshop_activity| %>
 
-    <div class="wa_activity_wrapper wa_activity_wrapper_show">
+    <div class="wa_activity_wrapper wa_activity_wrapper_show item_workshop">
 
       <% if workshop_activity.wa_type=="WaResource"  %>
         <div id="effect<%=workshop_activity.id%>" class="resources_WS desplegado" > <!--only for resources-->
@@ -67,10 +67,7 @@
     </div>
   <%end%>
 
-
-
-<!--++++++++++++++++comments+++++++++++++++++++++++-->
-
+  <!--++++++++++++++++comments+++++++++++++++++++++++-->
   <div class="description-activity workshop-comments">
     <!--activity (comments) -->
     <div class="activity-box">
@@ -78,7 +75,6 @@
     </div>
   </div>
 </section>
-
 
   <%content_for :javascript do%>
     $(".showMore").click(function(){
