@@ -770,6 +770,7 @@ es:
     learner_number: "Número de alumnos"
     request: "Aulas"
     request_help: "Solicitar permiso para crear Aulas"
+    request_help_unsigned: "Tienes que estar logueado para poder pedir esta funcionalidad"
     request_modal:
       body_duplicated: "Ya has hecho esta solicitud. Te responderemos en la mayor brevedad."
       button: "Enviar"
@@ -1056,6 +1057,7 @@ es:
   teach:
     creating: "Creando tus propios recursos"
     creating_desc: "Te ofrecemos herramientas gratuitas para que puedas crear un curso, una unidad didáctica o subir recursos a la plataforma."
+    go_to_library: "Ir a la biblioteca"
     help: "Consultar ayuda"
     library: "Buscando en la biblioteca de recursos"
     library_desc: "La biblioteca te permite acceder a todos los recursos de la plataforma, cursos, unidades didácticas y otros recursos para que crees tus propios contenidos o los uses para enseñar a tus alumnos o hijos."

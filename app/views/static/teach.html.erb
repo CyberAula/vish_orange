@@ -29,8 +29,13 @@
       <hr>
       <h5><i class="fa fa-graduation-cap"></i><%= link_to new_workshop_path do %><%= t('workshop.actions.add') %><% end %></h5>
     	<h5><i class="fa fa-list-alt"></i><%= link_to new_excursion_path do %><%= t('excursion.actions.add') %><% end %></h5>
-      <h5><i class="fa fa-upload"></i><a href="#AddResource" data-toggle="modal"><%=t('resource.actions.add')%></a></h5>
-
+      <h5><i class="fa fa-upload"></i>
+        <%if !user_signed_in? %>
+          <%= link_to(raw(t('resource.actions.add')), user_session_path)%>
+        <%else%> 
+          <a href="#AddResource" data-toggle="modal"><%=t('resource.actions.add')%></a>
+        <%end%>
+      </h5>
       <hr>
       <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank"><%=t("teach.view_tutorial")%></a></h5>
  	  </div>
@@ -42,7 +47,9 @@
 	  	<p><%=t("teach.projects_desc")%></p>
       <hr>
       <h5><i class="fa fa-users"></i>
-        <%if can?(:create, PrivateStudentGroup.new)%>
+        <%if !user_signed_in? %>
+          <%= link_to(raw(t('private_student.actions.request')), user_session_path, :title => t("private_student.request_help_unsigned"))%>
+        <%elsif can?(:create, PrivateStudentGroup.new)%>
           <%= link_to private_student_groups_path do %>
             <%= t('private_student.actions.add') %>
           <% end %>

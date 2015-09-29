@@ -778,6 +778,7 @@ en:
     learner_number: "Number of learners"
     request: "Classroom"
     request_help: "Request permission to be able to create groups of learners"
+    request_help_unsigned: "You have to be logged in to be able to request this functionality"
     request_modal:
       body_duplicated: "You have already sent the request. We will answer you as soon as possible."
       button: "Send"
@@ -1065,6 +1066,7 @@ en:
   teach:
     creating: "Creating contents"
     creating_desc: "The platform offers free authoring tools to create courses, teaching units and to upload other resources to the library."
+    go_to_library: "Go to library"
     help: "Get help"
     library: "Searching in the library"
     library_desc: "The library gives access to all the educational resources in the platform, courses, teaching units and other resources. Use them to teach or to create your own contents."
