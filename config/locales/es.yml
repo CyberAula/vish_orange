@@ -995,7 +995,7 @@ es:
     twitter:
       message: "Echa un vistazo a este recurso en %{url}"
   sign_up: "Regístrate"
-  sign_in: "Ingresa"
+  sign_in: "Acceso"
   simple_captcha:
     placeholder: "Introduce el valor de la imagen"
     label: "Introduce el código en la caja:"
