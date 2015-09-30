@@ -64,4 +64,34 @@ class PrivateStudentGroupsController < ApplicationController
     redirect_to private_student_groups_path
   end
 
+    #teacher_notification: { all, publishing, none  }
+  def change_teacher_notifications
+    privateStudentGroup = PrivateStudentGroup.find(params[:id])
+    case params[:post][:teacher_notification]
+    when "ALL"
+      privateStudentGroup.teacher_notification = "ALL"
+    when "PUBLISHING"
+      privateStudentGroup.teacher_notification = "PUBLISHING"
+    when "NONE"
+      privateStudentGroup.teacher_notification = "NONE"
+    else
+      privateStudentGroup.teacher_notification = "ALL"
+    end
+    privateStudentGroup.save
+    redirect_to private_student_group_path(privateStudentGroup)
+  end
+
+  def notify_teacher
+    pupil = Actor.find(params[:user_data][:id])
+    excursion = Excursion.find(params[:excursion_data])
+    classroom = pupil.user.private_student_group
+    teacher = Actor.find(classroom.owner_id)
+    excursion.notified_teacher = true
+    excursion.save
+    if classroom.teacher_notification != "NONE"
+      TeacherNotificationMailer.notify_for_publish(teacher, pupil, excursion, classroom)
+    end
+    render :nothing => true, :status => 200, :content_type => 'text/html'
+  end
+
 end

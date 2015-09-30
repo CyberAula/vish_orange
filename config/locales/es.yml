@@ -591,6 +591,14 @@ es:
     one: "unidad didáctica"
     other: "unidades didácticas"
     others: "otras unidades didácticas "
+    pending: "Pendiente"
+    new: "Crear Nueva Excursión"
+    newmy_html: "Aún no has creado ninguna excursión. Puedes crear una nueva haciendo click en el botón añadir o en este "
+    newnet_html: "Aquí podrás ver las excursiones creadas por la gente a quien sigues. Encuentra otros usuarios a seguir en <a href='/search?type=user'>este enlace</a>."
+    newfav_html: "Aún no tienes ninguna excursión favorita. Para marcar una excursión como favorita, haz click en la estrella <img src='/assets/icons/star-off.png'>"
+    one: "excursión"
+    other: "excursiones"
+    others: "otras excursiones "
     suggestion:
       other: "Unidades Didácticas"
     session_start: "inicia sesión"
@@ -716,6 +724,14 @@ es:
       user: "%{sender} te está siguiendo."
     makefriend:
       user: "%{sender} te está siguiendo."
+    teacher:
+      greetings: "Hola, %{teacher_name}"
+      text_1: "Le informamos que el alumno %{pupil_name} de la clase %{classroom_name} ha subido el siguiente recurso:"
+      text_2: "Le agradecemos su atención."
+      text_publish_1: "Le informamos que el alumno %{pupil_name} de la clase %{classroom_name} ha subido el siguiente trabajo:"
+      text_publish_2: "Si cree que cumple todos los requisitos para publicarla puede hacerlo desde el siguiente link:"
+      published: "Su alumno quiere que le revise un elemento para su publicación"
+      uploaded: "Su alumno ha subido el siguiente recurso"
     unread: " sin leer"
   offline:
     title: "Modo sin conexión"
@@ -1099,6 +1115,8 @@ es:
         add_activity_title: "Añadir Actividad al Curso"
         add_activity_button: "Añadir"
         adding_activity_button: "Añadiendo..."
+        add_banner: "Escoge una imagen como banner"
+        add_banner_help: "Tamaño recomendado 1280x100px"
         cancel_&_go: "Cancelar e ir a curso"
         collapse_all: "Reducir todo"
         confirm_delete: "¿Borrar curso?"

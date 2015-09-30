@@ -70,6 +70,7 @@ Vish::Application.routes.draw do
   match '/excursions/:id/evaluate' => 'excursions#evaluate'
   match '/excursions/:id/upload_attachment' => 'excursions#upload_attachment'
   match '/excursions/:id/attachment' => 'excursions#show_attachment'
+  match '/excursions/:id/allow_publishing' => 'excursions#allow_publishing'
 
   match '/excursions/:id.mashme' => 'excursions#show', :defaults => { :format => "gateway", :gateway => 'mashme' }
   match '/excursions/:id.embed' => 'excursions#show', :defaults => { :format => "full" }
@@ -130,6 +131,9 @@ Vish::Application.routes.draw do
   resources :private_student_groups do
     get 'credentials', :on => :member
   end
+
+  match '/private_student_groups/:id/change_teacher_notifications' => 'private_student_groups#change_teacher_notifications', :via => :post
+  match '/private_student_groups/notify_teacher' => 'private_student_groups#notify_teacher', :via => :post
 
   #service_permissions
   match 'service_permissions/update_permissions' => 'service_permissions#update_permissions', :via => :post
