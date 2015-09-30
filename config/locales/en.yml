@@ -296,6 +296,8 @@ en:
     scope: "We don't recommend to tick this checkbox, do it exclusively if you don't want search engine to index it"
     success: "Categories saved succesfully"
   close: "Close"
+  comments:
+    no_comments: "No comments for this resource"
   conditions:
     check_message: "I Accept EducaInternet "
     check_message_1: "Terms and Conditions."

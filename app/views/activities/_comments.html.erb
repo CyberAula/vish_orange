@@ -1,5 +1,7 @@
         <div class="comments" id="comments_<%= dom_id(activity) %>">
           <% if activity.direct_activity_object.blank? || activity.direct_activity_object.comment_count > 0 %>
             <%= render activity.comments %>
+          <% else %>
+            <div class="no_comments"><%= t("comments.no_comments") %></div>
           <% end %>
         </div>

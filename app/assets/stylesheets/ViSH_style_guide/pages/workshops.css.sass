@@ -3,7 +3,8 @@
   width: 100%
   height: auto
   display: inline-block
-  padding: 13px 2%
+  margin-bottom: -5px
+  padding: 14px 2%
   z-index: 1000
   background-color: rgba(85, 85, 85, 0.97)
   -webkit-box-shadow: 0 -1px 5px rgba(50, 51, 51, 0.35)
@@ -157,13 +158,12 @@
   .header_image
     width: 100%
     height: 100px
-    overflow: hidden
-    position: relative
     img
-      width: 100%
-      bottom: -300px
-      position: absolute
-
+      width: auto
+      height: 100px
+      @media (min-width: 1279px)
+        width: 100%
+        height: auto
   .header_workshop
     @include well
     padding: 20px 30px
@@ -182,18 +182,18 @@
       margin: 0 0 10px
       font-weight: 400
 
-
   ul.tagit-suggestions
     padding: 0px
   .description-activity
     &:last-child
       @include border-top-radius ($border-radius-base)
-      margin-top: 38px
     &:first-child
-      border-bottom: 1px solid $border-color
+      border-bottom: 1px solid $gray-dark
     .box_description
       width: 50%
       padding: 20px 30px
+      @media (max-width: 991px)
+        width: 100%
       .nav-tabs
         margin-bottom: 20px
       .tab-content
@@ -219,7 +219,6 @@
   font-family: Arial, Verdana, sans-serif
   font-size: 0.9em
   color: $orange-gray-75
-  //line-height: normal
   [dir="rtl"]
     direction: rtl
     unicode-bidi: embed

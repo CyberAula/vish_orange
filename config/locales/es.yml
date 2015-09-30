@@ -280,6 +280,8 @@ es:
     scope: "No recomendamos marcar esta casilla, marcar exclusivamente si no quieres que el buscador pueda ver tus categorías"
     success: "Las categorías se han salvado con éxito"
   close: "Cerrar"
+  comments:
+    no_comments: "No hay comentarios para este recurso"
   conditions:
     check_message: "Acepto las "
     check_message_1: "Condiciones de Uso"
