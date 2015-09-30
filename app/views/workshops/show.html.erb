@@ -11,14 +11,12 @@
 
 <section id="show_items" class="layout_show workshop_show">
   <div class="header_image">
-    <img src="/assets/orange/default_workshop.jpg">
+    <img src="<%=@workshop.banner.url(:large)%>">
   </div>
 
 
 
 <!--++++++++++++++++header+++++++++++++++++++++++-->
-<div style='background-image: url(<%=@workshop.banner.url(:large)%>);width: 100%;height: 100px;' class="">
-</div>
 
 <div class="wa_activity_wrapper wa_activity_wrapper_show header_workshop">
   <div class="layout_workshop">
