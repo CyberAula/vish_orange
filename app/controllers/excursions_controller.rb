@@ -8,7 +8,8 @@ class ExcursionsController < ApplicationController
   skip_load_and_authorize_resource :only => [ :excursion_thumbnails, :metadata, :scormMetadata, :iframe_api, :preview, :clone, :manifest, :evaluate, :last_slide, :downloadTmpJSON, :uploadTmpJSON, :interactions, :upload_attachment, :show_attachment]
   skip_before_filter :store_location, :if => :format_full?
   skip_after_filter :discard_flash, :only => [:clone]
-  
+  after_filter :notify_teacher, :only => [:create, :update]
+
   # Enable CORS
   before_filter :cors_preflight_check, :only => [:excursion_thumbnails,:last_slide,:iframe_api]
   after_filter :cors_set_access_control_headers, :only => [:excursion_thumbnails,:last_slide,:iframe_api]
@@ -464,7 +465,6 @@ class ExcursionsController < ApplicationController
     end
   end
 
-
   private
 
   def allowed_params
@@ -491,6 +491,15 @@ class ExcursionsController < ApplicationController
       file_ext= File.extname(name)
       file_new_name = "excursion_"+ id +"_attachment" + file_ext
       file_new_name
+  end
+
+  def notify_teacher
+      pupil = @excursion.author.user
+      unless pupil.user.private_student_group_id.nil? || pupil.private_student_group.teacher_notification != "ALL"
+        teacher = Actor.find(pupil.user.private_student_group.owner_id).user
+        excursion_path = excursion_path(@excursion) #TODO get full path
+        TeacherNotificationMailer.notify_teacher(teacher, pupil, excursion_path)
+      end
   end
 
 end

@@ -599,6 +599,7 @@ en:
     one: "teaching unit"
     other: "teaching units"
     others: "others teaching units"
+    pending: "Pending"
     session_start: "start session"
     suggestion:
       other: "Teaching units"
@@ -722,6 +723,14 @@ en:
     config_html: "If you want to modify the notification service. Click <a href='%{url}'>here</a>"
     makefriend:
       user: "%{sender} is following %{who}."
+    teacher:
+      greetings: "Hello, %{teacher_name}"
+      text_1: "We inform you that %{pupil_name} of the class %{classroom_name} has uploaded the following resource:"
+      text_2: "We appreciate your attention."
+      text_publish_1: "We inform you that the pupil %{pupil_name} of the class %{classroom_name}  has uploaded the following work:"
+      text_publish_2: "If you feel it meets all requirements for publishing, you can do it from the following link:"
+      published: "Your pupil want an element to be revised for publication"
+      uploaded: "Your pupil has uploaded the following file"
     unread: " unread"
   officedoc:
     confirm_delete: "Delete document?"
@@ -1107,6 +1116,8 @@ en:
       add_activity_title: "Add Activity to the Course"
       add_activity_button: "Add"
       adding_activity_button: "Adding..."
+      add_banner: "Choose a banner image"
+      add_banner_help: "Recommended size 1280x100px"
       cancel_&_go: "Cancel and go to Course"
       collapse_all: "Collapse all"
       confirm_delete: "Delete course?"
