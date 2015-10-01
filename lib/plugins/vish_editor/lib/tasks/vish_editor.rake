@@ -31,12 +31,12 @@ CSSCOMPILER_DOWNLOAD_URI = 'http://yui.zenfs.com/releases/builder/builder_1.0.0b
 #substitution of words in html and i18n files. for example subtitute vish and excursion for repository and presentation
 TMP_FOLDER = "tmp/vish_editor"
 
-DOMAIN_URL = "" #this is what will substitute vishub.org
-TOOL_NAME = "" #this is what will substitute "vish editor"
-REPOSITORY_OR_PLATFORM_NAME = ""  #this is what ViSH will be substituted for, important the case sensitive
-EXCURSION_NAME_EN = "" #this is what excursion and virtual excursion will be substituted for in english
-EXCURSION_NAME_ES = "" #this is what excursion and virtual excursion will be substituted for in spanish
-EXCURSION_NAME_ES_PLURAL = ""
+DOMAIN_URL = "educainternet.es" #this is what will substitute vishub.org
+TOOL_NAME = "Educa Editor" #this is what will substitute "vish editor"
+REPOSITORY_OR_PLATFORM_NAME = "EducaInternet"  #this is what ViSH will be substituted for, important the case sensitive
+EXCURSION_NAME_EN = "Didactic Unit" #this is what excursion and virtual excursion will be substituted for in english
+EXCURSION_NAME_ES = "Unidad Didáctica" #this is what excursion and virtual excursion will be substituted for in spanish
+EXCURSION_NAME_ES_PLURAL = "Unidades Didácticas"
 
 
 # Rake Task
