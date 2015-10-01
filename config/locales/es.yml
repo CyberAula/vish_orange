@@ -592,13 +592,15 @@ es:
     other: "unidades didácticas"
     others: "otras unidades didácticas "
     pending: "Pendiente"
-    new: "Crear Nueva Excursión"
-    newmy_html: "Aún no has creado ninguna excursión. Puedes crear una nueva haciendo click en el botón añadir o en este "
-    newnet_html: "Aquí podrás ver las excursiones creadas por la gente a quien sigues. Encuentra otros usuarios a seguir en <a href='/search?type=user'>este enlace</a>."
-    newfav_html: "Aún no tienes ninguna excursión favorita. Para marcar una excursión como favorita, haz click en la estrella <img src='/assets/icons/star-off.png'>"
-    one: "excursión"
-    other: "excursiones"
-    others: "otras excursiones "
+
+    #new: "Crear Nueva Excursión"
+    #newmy_html: "Aún no has creado ninguna excursión. Puedes crear una nueva haciendo click en el botón añadir o en este "
+    #newnet_html: "Aquí podrás ver las excursiones creadas por la gente a quien sigues. Encuentra otros usuarios a seguir en <a href='/search?type=user'>este enlace</a>."
+    #3newfav_html: "Aún no tienes ninguna excursión favorita. Para marcar una excursión como favorita, haz click en la estrella <img src='/assets/icons/star-off.png'>"
+    #one: "excursión"
+    #other: "excursiones"
+    #others: "otras excursiones "
+
     suggestion:
       other: "Unidades Didácticas"
     session_start: "inicia sesión"
