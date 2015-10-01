@@ -62,6 +62,15 @@
   @include make-lg-column(12, $gutter: $grid-gutter-width)
   margin-bottom: 50px
   .header_workshop
+    .header_image
+      width: 100%
+      height: 100px
+      img
+        width: auto
+        height: 100px
+        @media (min-width: 1279px)
+          width: 100%
+          height: auto
     .information
       .description
         margin: 10px 0
@@ -109,20 +118,20 @@
     @include border-top-left-radius ($border-radius-base)
     top: 0
     left: 0
-    width: 50px
-    height: 50px
+    width: 60px
+    height: 60px
     .corner-item2
-      width: 50px
-      height: 50px
+      width: 60px
+      height: 60px
       i
-        top: 7px
-        left: 7px
+        top: 9px
+        left: 9px
         font-size: 15px
         height: 20px
         width: 20px
     .corner-color,
     .corner-background
-      border-width: 50px 50px 0 0 !important
+      border-width: 60px 60px 0 0 !important
   .link_address
     text-align: center
   .swf_show
@@ -180,7 +189,7 @@
             padding: 5px
             margin: 0
             float: left
-            
+
           .photo_user
             padding: 0px
             height: 30px
@@ -254,10 +263,13 @@
 //+++++++++++++++ WORKSHOP EDIT
 .workshop-edit
   padding: 20px 3%
+  .cover-icon
+    background-color: white
+    padding: 5px
   section.information
     float: left
     h1
-      margin: 0
+      margin: 10px 0 0 0
       font-weight: 500
       font-size: 2em
       color: $orange-gray-50
@@ -363,6 +375,7 @@ ul.workshop_activities_list_edit
   width: auto
   float: right
   height: 35px
+
   ul
     margin: 0
     li

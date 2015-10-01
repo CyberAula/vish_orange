@@ -11,15 +11,18 @@
   <!-- Header -->
   <div class="wa_activity_wrapper wa_activity_wrapper_edit header_workshop ">
     <div class="layout_workshop">
+      <!--actions-->
       <div class="wa_activity_actions">
         <ul>
           <li>
-            <a title="<%= t('excursion.actions.edit') %>" class="actions_tooltip" data-placement="bottom" data-toggle="tooltip" href=<%= edit_details_path(@workshop) %>><i class="fa fa-edit"></i></a>
+            <a title="<%= t('excursion.actions.change_cover') %> " class="actions_tooltip" data-placement="bottom" data-toggle="tooltip" href=<%= edit_details_path(@workshop) %>><i class="fa fa-camera cover-icon"></i></a>
           </li>
         </ul>
       </div>
-      <!--banner-->
-      <div style='background-image: url(<%=@workshop.banner.url(:large)%>);width: 100%;height: 100px;' class=""></div>
+      <!--cover-->
+      <div class="header_image" style='background-image: url(<%=@workshop.banner.url(:large)%>);'>
+
+      </div>
       <!--avatar-->
       <div class="container-img_WS">
         <div style='background-image: url(<%=@workshop.thumbnail_url%>)' class="img-box resource-center workshop_thumbnail"></div>
