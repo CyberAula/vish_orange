@@ -6,6 +6,7 @@
 <%= form_for resource, :remote => false do |f| %>
   <div class="modal-body tabbable tabs-below">
       <%= f.hidden_field :workshop_id, :value => resource.workshop.id %>
+      <p class="description"><%= t('workshop.activities.resource.modal_instructions') %></p>
       <input type="text" class="form-control" name="url"/>
       <%= f.submit t('save'), :class => "hidden"  %>
   </div>

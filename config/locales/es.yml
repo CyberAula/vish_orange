@@ -1152,6 +1152,7 @@ es:
             with_dates: "Especifica fecha de comienzo y fin"
         resource:
             modal_title: "Editar Recurso"
+            modal_instructions: "Abre el recurso que quieras añadir. Copia la URL de la barra de navegación y pégala aquí"
             title: "Recurso"
             description: "Inserta cualquier tipo de recurso en el curso"
             text: "Podrás añadir a este curso todos los recursos que haya disponibles en EducaInternet. Para añadirlos, abre el recurso en EducaInternet, copia su URL de la barra del navegador y pégala en el siguiente cuadro de texto."
@@ -1165,7 +1166,8 @@ es:
             title: "Galería contribuciones"
             description: "La galería de contribuciones muestra las contribuciones enviadas al curso"
             text: "Los usuarios pueden contribuir a las tareas definidas en un curso añadiendo recursos o bloques de texto. Con el componente Galería de contribuciones podrás ver de forma agrupada los recursos y/o los textos con los que otros usuarios han contribuido."
-            error: "A contributions gallery should include at least 1 assignment"
+            error: "Para añadir una galería de contribuciones debes incluir al menos una tarea"
+            no_content: "La galería de contribuciones muestra las contribuciones enviadas al curso. Esta galería no contiene ningún recurso todavía"
         text:
             title: "Texto"
             description: "Incluye un párrafo de texto"

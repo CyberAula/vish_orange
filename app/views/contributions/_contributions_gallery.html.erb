@@ -1,6 +1,9 @@
 <ul class="items contributions_WS_gallery">
-	<% contributions.each do |contribution| %>
-		<%= render :partial=> "entities/entity", :locals => { :entity => contribution, :prefix_id =>"contribution" } %>
+	<% if contributions.length > 0 %>
+		<% contributions.each do |contribution| %>
+			<%= render :partial=> "entities/entity", :locals => { :entity => contribution, :prefix_id =>"contribution" } %>
+		<% end %>
+	<% else %>
+		<div class="no_content"><%= t('workshop.activities.contributions_gallery.no_content') %></div>
 	<% end %>
 </ul>
-
