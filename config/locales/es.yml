@@ -777,6 +777,7 @@ es:
   private_student:
     actions:
       add: "Crear Aula"
+      ask_for_help: "Pidenos ayuda en contacto@educainternet.es"
       request: "Solicitar que me activen esta funcionalidad"
     account_name: "Alumno"
     creation_success: "El grupo de alumnos se ha creado satisfactoriamente"

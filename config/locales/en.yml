@@ -776,6 +776,7 @@ en:
   private_student:
     actions:
       add: "Create Classroom"
+      ask_for_help: "Ask for hep at contacto@educainternet.es"
       request: "Request to activate this functionality for me"
     account_name: "Pupil"
     creation_success: "The group of user accounts was created succesfully"
