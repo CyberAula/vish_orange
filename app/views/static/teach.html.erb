@@ -17,9 +17,12 @@
       <hr>
       <h5><i class="fa fa-book"></i><a href="/search?type=Learning_object&q="><%=t("teach.go_to_library")%></a></h5>
       <hr>
-      <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank">Ver tutorial</a></h5>
+      <%if false%>
+        <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank"><%=t("teach.view_tutorial")%></a></h5>
+      <%end>
       <h5><i class="fa fa-question-circle"></i><a href="/overview" target="_blank"><%=t("teach.help")%></a></h5>
  	  </div>
+
  	  <div class="col-md-4 col-block">
       <div class="col-block-img">
         <img src="assets/orange/resources.jpg">
@@ -37,28 +40,42 @@
         <%end%>
       </h5>
       <hr>
-      <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank"><%=t("teach.view_tutorial")%></a></h5>
+      <%if false%>
+        <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank"><%=t("teach.view_tutorial")%></a></h5>
+      <%end%>
  	  </div>
- 	  <div class="col-md-4 col-block">
-      <div class="col-block-img">
-        <img src="assets/orange/3.jpg">
-      </div>
-    	<h3><%=t("teach.projects")%></h3>
-	  	<p><%=t("teach.projects_desc")%></p>
-      <hr>
-      <h5><i class="fa fa-users"></i>
-        <%if !user_signed_in? %>
-          <%= link_to(raw(t('private_student.actions.request')), user_session_path, :title => t("private_student.request_help_unsigned"))%>
-        <%elsif can?(:create, PrivateStudentGroup.new)%>
-          <%= link_to private_student_groups_path do %>
-            <%= t('private_student.actions.add') %>
-          <% end %>
+
+    
+   	  <div class="col-md-4 col-block">
+        <div class="col-block-img">
+          <img src="assets/orange/3.jpg">
+        </div>
+      	<h3><%=t("teach.projects")%></h3>
+  	  	<p><%=t("teach.projects_desc")%></p>
+        <hr>
+        <h5>
+        <%if available_services.include? "PrivateStudentGroups"%>
+          <i class="fa fa-users"></i>
+          <%if !user_signed_in? %>
+            <%= link_to(raw(t('private_student.actions.request')), user_session_path, :title => t("private_student.request_help_unsigned"))%>
+          <%elsif can?(:create, PrivateStudentGroup.new)%>
+            <%= link_to private_student_groups_path do %>
+              <%= t('private_student.actions.add') %>
+            <% end %>
+          <%else%>
+            <%= link_to(raw(t('private_student.actions.request')), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
+          <%end%>
         <%else%>
-          <%= link_to(raw(t('private_student.actions.request')), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
+          <i class="fa fa-envelope"></i><a href="mailto:contacto@educainternet.es" target="_top"><%= t('private_student.actions.ask_for_help') %></a>
         <%end%>
-      </h5>
-      <hr>
-      <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank"><%=t("teach.view_tutorial")%></a></h5>
-      <h5><i class="fa fa-question-circle"></i><a href="/overview" target="_blank"><%=t("teach.help")%></a></h5>
- 	  </div>
+
+
+        </h5>
+        <hr>
+        <%if false%>
+          <h5><i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ" target="_blank"><%=t("teach.view_tutorial")%></a></h5>
+        <%end%>
+        <h5><i class="fa fa-question-circle"></i><a href="/overview" target="_blank"><%=t("teach.help")%></a></h5>
+   	  </div>
+
  </div>
