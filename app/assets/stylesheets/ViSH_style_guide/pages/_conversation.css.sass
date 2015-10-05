@@ -107,6 +107,7 @@
       padding: 15px 15px 52px
       background: $white
       @extend .form-group
+    
       label
         font-size: 15px
         display: block
@@ -199,20 +200,20 @@
     .media
       margin-left: 15px
       @include conversations
-      .media-body 
+      .media-body
         .post_time_ago
           float: none
           margin-left: 10px
         p.info_action
           clear: both
           margin-top: 14px
-              
+
       .pull-left
         img
           width: 50px
           @include border-top-radius ($border-radius-base)
           @include border-bottom-radius ($border-radius-base)
-      
+
     &:last-child
       border-bottom: none
 
