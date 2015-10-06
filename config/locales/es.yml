@@ -1175,6 +1175,7 @@ es:
             text: "Además de la descripción del curso y las tareas definidas en él, en ocasiones necesitarás la posibilidad de insertar un bloque de texto con otra finalidad, como podría ser una bibliografía u otros datos de interés para el curso. Con este componente puedes añadir un texto completamente personalizado y editable a tu curso."
 
     confirm_delete: "¿Borrar curso?"
+    name: "curso"
     new: "Nuevo Curso"
     other: "Cursos"
     titles:

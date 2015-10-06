@@ -1176,6 +1176,7 @@ en:
           text: "In addition to the description of the course and the tasks defined in it, sometimes you will need the ability to insert a block of text with other purpose, such as a bibliography or other data of interest for the course. With this component you can add a completely personalized and editable text to your course."
 
     confirm_delete: "Delete course?"
+    name: "course"
     new: "New Course"
     other: "Courses"
     titles:
