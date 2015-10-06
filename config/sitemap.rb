@@ -35,12 +35,7 @@ SitemapGenerator::Sitemap.create do
       add polymorphic_path(us, :tab=>"followers"), :lastmod => us.current_sign_in_at, :priority => 0.1
   end
 
-  add '/search?browse=true&sort_by=popularity'
-  add '/search?browse=true&sort_by=popularity&type=Excursion'
-  add '/search?browse=true&sort_by=popularity&type=User'
-  add '/search?browse=true&sort_by=popularity&type=Resource'
-  add '/search?browse=true&sort_by=popularity&type=Workshop'
-  add '/search?catalogue=true'
+  add '/search?type=Learning_object'
 
   add '/contest'
   add '/overview'
