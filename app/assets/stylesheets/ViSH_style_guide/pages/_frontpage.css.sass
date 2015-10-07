@@ -74,6 +74,7 @@
     img
       width: 100%
       position: absolute
+      bottom: -250px
     hr
       border: 1px solid #999
       margin: 5px 0
@@ -86,7 +87,6 @@
       line-height: 24px
     .main-title
       @include gradientcolor
-      background-color: rgba(0,0,0,0.3)
       position: relative
       text-align: center
       height: 100px
@@ -106,9 +106,8 @@
     img
       width: 100%
       position: absolute
+      bottom: -250px
     .main-title
-      //@include gradientcolor
-      //background-color: rgba(0,0,0,0.3)
       position: relative
       text-align: center
       padding: 110px 50px
@@ -172,6 +171,8 @@
         .title
           h1
             font-size: 3.5em
+      img
+        bottom: -100px
 
 @media (min-width: 768px) and (max-width: 991px)
   .entities_front
@@ -185,7 +186,11 @@
         .title
           h1
             font-size: 3em
-
+      img
+        bottom: -50px
+    .box-title-general
+      img
+        bottom: -120px
 @media (min-width: 481px) and (max-width: 767px)
   .entities_front
     .box-item
@@ -203,12 +208,16 @@
             font-size: 2.5em
         .btn-main-title
           display: none
+      img
+        bottom: 0
 
     .box-title-general
       .main-title
         .title
           font-size: 2.5em
           padding: 10px
+      img
+        bottom: -50px
 @media (max-width: 480px)
   .entities_front
     .box-item
@@ -219,14 +228,19 @@
     .box-title-home
       height: 250px
       .main-title
-        padding: 70px 50px
+        padding: 50px
         height: 100%
         .title
           h1
-            font-size: 2em
+            font-size: 1.8em
         .btn-main-title
           display: none
+      img
+        bottom: 35px
     .box-title-general
+      height: 60px
       .main-title
         .title
-          font-size: 2em
+          font-size: 1.35em
+      img
+        bottom: 0px
