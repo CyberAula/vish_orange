@@ -701,6 +701,7 @@ es:
     new_message_for: "Nuevo mensaje para"
     delete_confirm: "¿Quieres enviar '%{csubject}' a la papelera?"
   message:
+    title: "Mensajes"
     send: "Enviar mensaje"
     new: "Mensaje nuevo"
     unread: " sin leer"

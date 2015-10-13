@@ -702,6 +702,7 @@ en:
     new_message_for: "New message for"
     delete_confirm: "Do you want to move '%{csubject}' to trash?"
   message:
+    title: "Messages"
     send: "Send mesage"
     new: "New message"
     unread: " unread"

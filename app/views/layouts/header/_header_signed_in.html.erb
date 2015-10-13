@@ -100,6 +100,19 @@
                 <%= t('profile.one') %>
               <% end %>
             </li>
+            <%if !current_subject.role?("PrivateStudent") %>
+            	<li class="settings-menu">
+            	  <%= link_to(raw("<i class='" + (current_subject.unread_messages_count > 0 ? " fa fa-envelope notification" : " fa fa-envelope-o") + "'></i> "+t('message.title')), messages_path, :title => current_subject.unread_messages_count.to_s + t('message.unread'), :data => {:toggle=>"tooltip"}) %>
+            	</li>
+            <% end %>
+
+            <!--settings-->
+            <li class="settings-menu">
+              <%= link_to activities_path do %>
+                <i class='fa fa-globe'></i>
+                <%= t('activity.other') %>
+              <% end %>
+            </li>
 
             <!-- if admin -->
             <%if isAdmin? %>
