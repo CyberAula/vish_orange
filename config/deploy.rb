@@ -20,7 +20,7 @@ rescue Exception => e
   exit
 end
 
-set :keep_releases, 2
+set :keep_releases, 3
 
 set :default_environment, {
   'PATH' => '/home/'+username+'/.rvm/gems/ruby-2.2.0/bin:/home/'+username+'/.rvm/gems/ruby-2.2.0@global/bin:/home/'+username+'/.rvm/rubies/ruby-2.2.0/bin:/home/'+username+'/.rvm/bin:/home/'+username+'/.rbenv/plugins/ruby-build/bin:/home/'+username+'/.rbenv/shims:/home/'+username+'/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games',
