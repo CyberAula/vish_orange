@@ -53,3 +53,61 @@
   background: white
   cursor: inherit
   display: block
+
+.btn-js
+  color: #fff
+  cursor: pointer
+  display: block
+  font-size: 16px
+  font-weight: 400
+  line-height: 40px
+  margin: 1em
+  max-width: 160px
+  position: relative
+  text-decoration: none
+  vertical-align: middle
+  width: 100%
+
+  @media(min-width: 400px)
+    display: inline-block
+    //margin-right: 2.5em
+    &:nth-of-type(even)
+      margin-right: 0
+  @media(min-width: 600px)
+    &:nth-of-type(even)
+      margin-right: 2.5em
+
+    &:nth-of-type(5)
+      margin-right: 0
+
+  &:hover
+    text-decoration: none
+
+
+.btn-anim
+  background: transparent
+  font-weight: 100
+
+  svg
+    height: 40px
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+
+  rect
+    fill: none
+    stroke: #fff
+    stroke-width: 2
+    stroke-dasharray: 422, 0
+
+.btn-anim:hover, .btn-anim:focus, .btn-anim:active
+  background: rgba(black, 0.4)
+  font-weight: 900
+  letter-spacing: 1px
+  color: white
+  rect
+    stroke-width: 5
+    stroke-dasharray: 15, 310
+    stroke-dashoffset: 48
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1)
