@@ -66,6 +66,21 @@
 
 .illustration
   min-height: 52px
+  .social_ntwoks
+    position: absolute
+    top: 360px
+    right: 2%
+    z-index: 9999
+    .fa-big
+      font-size: 1.4em
+      color: white
+      opacity: 0.7
+      margin-left: 10px
+      &:hover
+        opacity: 1
+  .social_ntwoks_general
+    top: 115px
+
   .box-title-general
     height: 100px
     position: relative
@@ -108,7 +123,6 @@
       position: absolute
       bottom: -250px
     .main-title
-      //@include gradientcolor
       position: relative
       text-align: center
       padding: 110px 50px
@@ -199,6 +213,11 @@
     .box-item:nth-of-type(-n+2)
       display: block
   .illustration
+    .social_ntwoks
+      top: 270px
+      right: 3%
+    .social_ntwoks_general
+      top: 115px
     .box-title-home
       height: 300px
       .main-title
@@ -226,6 +245,8 @@
     .box-item:nth-of-type(-n+4)
       display: block
   .illustration
+    .social_ntwoks
+      display: none
     .box-title-home
       height: 250px
       .main-title
