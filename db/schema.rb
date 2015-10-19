@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150929121624) do
+ActiveRecord::Schema.define(:version => 20151001142756) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20150929121624) do
     t.boolean  "allow_download",                                                    :default => true
     t.boolean  "allow_comment",                                                     :default => true
     t.boolean  "allow_clone",                                                       :default => true
+    t.boolean  "competition",                                                       :default => false
   end
 
   create_table "activity_objects_wa_resources_galleries", :id => false, :force => true do |t|
@@ -142,6 +143,7 @@ ActiveRecord::Schema.define(:version => 20150929121624) do
     t.string   "notification_settings"
     t.text     "category_order"
     t.string   "categories_view",       :default => "gallery"
+    t.boolean  "joined_competition",    :default => false
   end
 
   add_index "actors", ["activity_object_id"], :name => "index_actors_on_activity_object_id"
@@ -270,7 +272,7 @@ ActiveRecord::Schema.define(:version => 20150929121624) do
     t.integer  "slide_count",             :default => 1
     t.text     "thumbnail_url"
     t.boolean  "draft",                   :default => false
-    t.text     "offline_manifest"
+    t.text     "offline_manifest",        :default => ""
     t.datetime "scorm_timestamp"
     t.datetime "pdf_timestamp"
     t.string   "attachment_file_name"
