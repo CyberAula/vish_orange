@@ -283,7 +283,7 @@ es:
 
   comments:
     no_comments: "No hay comentarios para este recurso"
-
+  community: "Comunidad"
   competition:
     about_title: "DESATA TU CREATIVIDAD"
     menu:
@@ -304,7 +304,7 @@ es:
     step4: "Publica tu excursión y sube tu propuesta para optar a los premios"
     thanks: "Gracias por subir tu propuesta"
     questions: "tus dudas en"
-    
+
   conditions:
     check_message: "Acepto las "
     check_message_1: "Condiciones de Uso"

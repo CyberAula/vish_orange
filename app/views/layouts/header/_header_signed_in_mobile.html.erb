@@ -39,13 +39,13 @@
       <%= t('activity.other') %>
     <% end %>
   </li>
+
   <!--comunity -->
   <li class="">
-    <%= link_to do %> <!-- añadir link a la comunidad-->
-    <i class="fa fa-users"></i>
-    Comunidad
-    <%#= t('') %>
-    <% end %>
+    <a href="/search?type=User">
+      <i class="fa fa-comments-o"></i>
+      <%= t('community') %>
+    </a>
   </li>
 
   <!--quiz-->
