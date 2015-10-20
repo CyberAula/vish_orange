@@ -6,6 +6,7 @@
 <%content_for :alternate_urls do%><%=raw alternate_urls(polymorphic_url(@workshop), @workshop)%><%end%>
 <%content_for :canonical do%><%= polymorphic_url(@workshop, :locale => params[:locale]) %><%end%>
 
+
 <!--++++++++++++++++toolbar+++++++++++++++++++++++-->
 <% content_for :gtools do %>
   <%= render :partial => 'toolbar/gtools', :locals => { :edit_id => "workshop", :url => edit_workshop_path(@workshop), :resource => @workshop } %>
