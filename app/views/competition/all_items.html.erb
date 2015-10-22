@@ -1,7 +1,9 @@
 <% competition_items = ActivityObject.where("competition = true") %>
 
+<% content_for :banner do %>
+  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('competition.menu.joined') }%>
+<%end%>
 <div id="joined_resources_all" class="row">
-	<h2><%= t('competition.menu.joined') %></h2>
 	<ul class="items">
 		<% if current_subject != nil && current_subject.actor.joined_competition != true %>
 			<%= render :partial => 'competition/item_add_proposal' %>
