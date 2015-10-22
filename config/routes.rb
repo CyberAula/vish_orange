@@ -98,6 +98,7 @@ Vish::Application.routes.draw do
   #Competitions
   match '/competition' => 'competition#index'
   match '/competition/join_competition' => 'competition#join_competition'
+  match '/competition/all' => 'competition#all_items'
 
   #Quiz Sessions
   resources :quiz_sessions do
