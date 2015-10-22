@@ -61,7 +61,8 @@ SitemapGenerator::Sitemap.create do
   end
 
 
-  add '/search?type=Learning_object'
+  add '/search?type=Learning_object', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"] +'/search?type=Learning_object', nil)
+
 
   add '/contest', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"]+ "/contest", nil)
   add '/overview', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"] + "/overview", nil)
