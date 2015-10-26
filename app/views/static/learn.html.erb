@@ -8,7 +8,6 @@
 <%end%>
 <% certified = certified_entities %>
 	<% if !certified.blank? %>
-	<!--<h3> <%= t("frontpage.title_certified")%> </h3>-->
 	<ul class="items entities_get_trained">
 		<% certified.each do |resource| %>
 			<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "frontpage2" } %>

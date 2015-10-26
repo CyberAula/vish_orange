@@ -10,35 +10,35 @@ class Lang_helper
   def self.alternates url, item
     if url.nil? || url==""
       return []
-    end    
-    locale_extension = url.include?("?") ? "&locale=" : "?locale=" 
+    end
+    locale_extension = url.include?("?") ? "&locale=" : "?locale="
     alts = []
     I18n.available_locales.each do |loc|
       alts.push({
         :href => url + locale_extension + loc.to_s,
         :lang => loc.to_s
-      }) 
+      })
     end
-    return alts    
+    return alts
   end
-  
+
 end
 
-SitemapGenerator::Sitemap.create do  
+SitemapGenerator::Sitemap.create do
   priorities = { "User" => 0.9,
                  "Excursion" => 1,
                  "Workshop" => 1,
                  "Event" => 0.1,
                  "Category" => 0.4,
-                 "Document"=> 0.4, 
-                 "Webapp"=> 0.8, 
-                 "Scormfile"=> 0.8, 
-                 "Link"=> 0.3, 
+                 "Document"=> 0.4,
+                 "Webapp"=> 0.8,
+                 "Scormfile"=> 0.8,
+                 "Link"=> 0.3,
                  "Embed"=> 0.3
                 }
 
   add('/', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"], nil))
-  
+
 
   VishConfig.getAllModelsInstances().each do |mod|
     prior = priorities[mod.model_name].nil? ? "0.5" : priorities[mod.model_name]
@@ -60,7 +60,9 @@ SitemapGenerator::Sitemap.create do
       #add polymorphic_path(us, :tab=>"followers"), :lastmod => us.current_sign_in_at, :priority => 0.1
   end
 
+
   add '/search?type=Learning_object', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"] +'/search?type=Learning_object', nil)
+
 
   add '/contest', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"]+ "/contest", nil)
   add '/overview', :alternates => Lang_helper.alternates("http://" + Vish::Application.config.APP_CONFIG["domain"] + "/overview", nil)
