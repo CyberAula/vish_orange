@@ -21,7 +21,7 @@
 		<img src="/assets/carrousel/carrousel_sprite.png" style="display:none"/>
 		<img src="/assets/vicons/fullscreen.png" style="display:none"/>
 
-
+		
 		<!-- Toolbar -->
 		<div id="toolbar_wrapper">
 			<div id="toolbar_menu">
@@ -46,13 +46,13 @@
 							</li>
 							<li>
 								<a class="menu_option menu_action publishMenuOption" action="onPublishButtonClicked">
-									<i class="icon-button icon-rotate-270 icon-download-alt"></i>
+									<i class="icon-button icon-rotate-270 icon-download-alt"></i> 
 									<span i18n-key="i.Publish">Publish</span>
 								</a>
 							</li>
 							<li>
 								<a class="menu_option menu_action" action="insertSlide">
-									<i class="icon-button icon-plus"></i>
+									<i class="icon-button icon-plus"></i> 
 									<span i18n-key="i.AddSlide">Add Slide</span>
 								</a>
 							</li>
@@ -200,7 +200,7 @@
 			</div>
 
 		</div>
-
+		
 		<div id="leftside">
 			<div id="slides_list_actions">
 				<a id="addSlideButton" href="#">
@@ -227,7 +227,7 @@
 				<div id="subslides_list_actions">
 					<a id="addSlideButtonOnSubslides" href="#">
 						<button type="button" class="btn btn-small slidesScrollbarButton">
-							<i class="icon-plus"></i>
+							<i class="icon-plus"></i>  
 							<span i18n-key="i.AddSlideMin">Add Slide</span>
 						</button>
 					</a>
@@ -259,36 +259,39 @@
 	</div>
 
 	<!-- Initial screen to input the basic exursion data (Title, Description, etc.) -->
-	<div style='display:none'>
-		<div id='presentationdetails'>
+	<div style='display:none'>    
+		<div id="presentationdetails">
 
 			<div id="presentation_details_fields">
-				<img  title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_settings' id='help_in_settings' src="/assets/vicons/helptutorial_circle_blank.png"/>
+				<div id="settings_header">
+					<img id="presentation_details_logo" src="/assets/icons/logo_educa.png">
+				</div>
+				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class="help_in_settings" id="help_in_settings" src="/assets/vicons/helptutorial_circle_blank.png">
 				<div id="presentation_details_fields_row1">
 
 					<div id="presentation_details_fields_row1_column1">
-						<img id='presentation_details_logo' src="/assets/icons/logo.png"/>
+						
 						<p id="presentation_details_preview_title" class="presentation_details_column_title" i18n-key="i.Preview">Preview</p>
 						<div id="presentation_details_preview">
 							<div id="presentation_details_preview_thumbnail">
 								<div title="Click to add an avatar. You should select an avatar to identify your didactic unit" id="presentation_details_preview_thumbnail_img_wrapper">
-									<img id='presentation_details_preview_thumbnail_img' class="addThumbnailPlus" src="/assets/icons/addThumbnail.png"/>
+									<img id="presentation_details_preview_thumbnail_img" class="" src="http://educainternet.es/assets/logos/original/didactic unit-10.png">
 								</div>
-								<p class="addthumbtitle" i18n-key="i.Addanavatar">Add an avatar *</p>
-								<div id="editthumb">
+								<p class="addthumbtitle" i18n-key="i.Addanavatar" style="display: none;">Add an avatar *</p>
+								<div id="editthumb" style="display: none;">
 									<p><i class="icon-button icon-edit"></i> <span i18n-key="i.edit">edit</span></p>
 								</div>
 							</div>
 							<div id="presentation_details_preview_addtitle">
-								<input id="presentation_details_preview_addtitle_input" type="text" maxLength="120" placeholder="add a title" i18n-key="i.addatitle"></input>
+								<input id="presentation_details_preview_addtitle_input" type="text" maxlength="120" placeholder="add a title" i18n-key="i.addatitle">
 							</div>
 							<div id="presentation_details_preview_author">
-								<span i18n-key="i.by">by</span> <span id="author_span_in_preview"></span>
+								<span i18n-key="i.by">by</span> <span id="author_span_in_preview">agordillo</span>
 							</div>
 						</div>
 						<div id="presentation_details_license">
-							<span class="presentation_details_text" title='License' i18n-key="i.License">License</span>
-							<select id="presentation_details_license_select">
+							<span class="presentation_details_text" title="License" i18n-key="i.License">License</span>
+							<select id="presentation_details_license_select" disabled="disabled" style="-webkit-appearance: none;">
 								<option value="public" i18n-key="i.License_public">Public Domain</option>
 								<option value="cc-by" i18n-key="i.License_cc-by">Creative Commons Attribution</option>
 								<option value="cc-by-sa" i18n-key="i.License_cc-by-sa">Creative Commons Attribution-ShareAlike</option>
@@ -302,72 +305,72 @@
 
 					<div id="presentation_details_fields_row1_column2">
 
-
+						
 
 						<div id="presentation_details_title">
-							<span class="presentation_details_text" title='Title is a mandatory field' i18n-key="i.TitleM">Title *</span>
-							<input id="presentation_details_input_title" class="presentation_details_input" type="text" placeholder="Excursion title" i18n-key="i.presTitle" maxLength="120"></input>
+							<span class="presentation_details_text" title="Title is a mandatory field" i18n-key="i.TitleM">Title *</span>
+							<input id="presentation_details_input_title" class="presentation_details_input" type="text" placeholder="Excursion title" i18n-key="i.presTitle" maxlength="120">
 						</div>
 
 						<div id="presentation_details_description">
 							<span class="presentation_details_text" i18n-key="i.Description">Description</span>
-							<textarea id='presentation_details_textarea' placeholder="Please describe in a few words what your didactic unit is about..." i18n-key="i.presDescriptionPlaceHolder"></textarea>
-						</div>
+							<textarea id="presentation_details_textarea" placeholder="Please describe in a few words what your didactic unit is about..." i18n-key="i.presDescriptionPlaceHolder"></textarea>
+						</div>			
 
-						<div id="tags_in_presentation_details">
-							<p class="presentation_details_text" i18n-key="i.Tags" id="tags">Tags</p><button id="catalog_button" type="button" class="button" i18n-key="i.Catalog">Catalog</button>
-							<div id="tagBoxIntro">
-								<ul id="tagindex" class="tagList"></ul>
-							</div>
-						</div>
-						    <div id="attachment_in_presentation_details"><span class="presentation_details_text" i18n-key="i.Attatchment" >Attatchment</span></div>
+						
+						    <div id="attachment_in_presentation_details"><span class="presentation_details_text" i18n-key="i.Attatchment">Attatchment</span></div>
 						    <div class="file_details_upload">
 							    <form id="attachment_file_form" method="post" action="attatchment_file.json" enctype="multipart/form-data">
-							    	<div class="attachmentFileUpload" disabled="true" i18n-key-tooltip="i.tooltip.UploadAttachment" title="If this button is deactivated, you need to save your didactic unit first." >
-    									<span i18n-key="i.ChooseFile" >Choose File</span>
-								   	 	<input type="file"  name="attachment" id="attachment_file">
+							    	<div class="attachmentFileUpload" i18n-key-tooltip="i.tooltip.UploadAttachment" title="If this button is deactivated, you need to save your didactic unit first.">
+    									<span i18n-key="i.ChooseFile">Choose File</span>
+								   	 	<input type="file" name="attachment" id="attachment_file">
 								   	</div>
-								    <input id="description_attachment" placeholder="Choose File" disabled="disabled"/>
+								    <input id="description_attachment" placeholder="Choose File" disabled="disabled">
 								    <input type="hidden" name="author_id" id="attachment_author">
 								    <input type="hidden" name="authenticity_token" id="attachment_aut_token">
-									<input id="upload_file_attachment" type="submit" class="button" i18n-key="i.Upload" value="Upload" disabled="true">
+									<input id="upload_file_attachment" type="submit" class="button" i18n-key="i.Upload" value="Upload" disabled="true" style="margin-left: 15px;">
 									<span id="upload_icon_success" class="icon-button icon-ok" aria-hidden="true"></span>
 								</form>
 							</div>
 					</div>
 
-					<div id="presentation_details_fields_row1_column3">
-						<p id="selectthemeshelp" class="presentation_details_column_title" i18n-key="i.SelectTheme"> Select Theme </p>
-						<div id="scrollbar_themes_list"></div>
+					<div id="presentation_details_fields_row1_column3">  
+ 						<div id="tags_in_presentation_details">
+							<p class="presentation_details_text" i18n-key="i.Tags" id="tags">Tags</p>
+							<div id="tagBoxIntro">
+								<ul id="tagindex" class="tagList"></ul>
+							</div>
+							<button id="catalog_button" type="button" class="button" i18n-key="i.Catalog">Catalog</button>
+						</div>  
 					</div>
 				</div>
 
 				<div id="presentation_details_fields_row2">
-					<button id='metadata_clasification_button' type='button' class='button' i18n-key="i.advancedSettings">Advanced</button>
-					<button id='fill_details_later_button' type='button' class='button' i18n-key="i.Filllater">Fill later</button>
-					<button id='save_presentation_details' disabled="true" type='button' class='button buttonDisabledOnSettings' title="Write a title and choose an avatar to continue" i18n-key="i.Continue">Continue</button>
+					<button id="metadata_clasification_button" type="button" class="button" i18n-key="i.advancedSettings">Advanced</button>
+					<button id="fill_details_later_button" type="button" class="button" i18n-key="i.Filllater">Fill later</button>
+					<button id="save_presentation_details" type="button" class="button" i18n-key="i.Continue" disabledtitle="Write a title and choose an avatar to continue">Continue</button>
 				</div>
 			</div>
 
 
 			<div id="metadata_options_fields" style="display:none">
-
-				<img class='help_in_settings' id='help_metadata_selection' src="/assets/vicons/helptutorial_circle_blank.png"/>
+				
+				<img class="help_in_settings" id="help_metadata_selection" src="/assets/vicons/helptutorial_circle_blank.png">
 				<div>
 					<p class="metadata_title" i18n-key="i.advancedSettings">Advanced</p>
 				</div>
 
 				<div class="fancy_tabs" id="advanced_tabs">
 				  <ul>
-				    <li><a class='js_tabs_asettings fancy_selected' tab="metadata-options-tab" href="#" i18n-key="i.MetadataAspects">Metadata</a></li>
-				    <li><a class='js_tabs_asettings' tab="publication-tab" href="#" i18n-key="i.Publication">Publication</a></li>
-				    <li><a class='js_tabs_asettings' tab="rte-tab" href="#">RTE</a></li>
+				    <li><a class="js_tabs_asettings fancy_selected" tab="metadata-options-tab" href="#" i18n-key="i.MetadataAspects">Metadata</a></li>
+				    <li><a class="js_tabs_asettings" tab="publication-tab" href="#" i18n-key="i.Publication">Publication</a></li>
+				    <li><a class="js_tabs_asettings" tab="rte-tab" href="#">RTE</a></li>
 				  </ul>
 				 </div>
 
 				<div id="metadata-options-tab" class="active">
 				<div id="metadata_options_fields_row1">
-
+					
 					<div id="metadata_options_fields_row1_column1">
 
 						<div id="language_tag_box">
@@ -405,45 +408,45 @@
 					</div>
 
 					<div id="metadata_options_fields_row1_column2">
-
+						
 						<div id="age_range_wrapper">
 							<div class="range_text"><span i18n-key="i.AgeRange">Age range</span>:</div>
 							<div class="slider_wrapper">
-								<input type="text" id="age_range" class="slider_range_input" readonly/>
-								<div id="slider-age" class="slider_bar"></div>
+								<input type="text" id="age_range" class="slider_range_input" readonly="">
+								<div id="slider-age" class="slider_bar ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header" style="left: 13.3333%; width: 53.3333%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 13.3333%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a></div>
 							</div>
 						</div>
 
 						<div id="difficulty_wrapper" class="margin_for_new_field_settings">
 							<div class="range_text"><span i18n-key="i.Difficulty">Difficulty</span>:</div>
 							<div class="slider_wrapper">
-								<input type="text" id="difficulty_range" class="slider_range_input" readonly/>
-								<div id="slider-difficulty" class="slider_bar"></div>
+								<input type="text" id="difficulty_range" class="slider_range_input" readonly="" difficulty="2">
+								<div id="slider-difficulty" class="slider_bar ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 40%;"></a></div>
 							</div>
 						</div>
 
 						<div id="tlt_wrapper" class="margin_for_new_field_settings">
 							<div class="range_text"><span i18n-key="i.TypicalLearningTime">Typical learning time</span>:</div>
-							<input type="text" id="tlt_current_value" class="slider_range_input" readonly/>
+							<input type="text" id="tlt_current_value" class="slider_range_input" readonly="">
 							<div class="tlt_inputs_wrapper">
 								<div class="tlt_input_wrapper">
 									<p class="tlt_input_title" i18n-key="i.Hours">Hours</p>
-									<input type="number" value="0" min="0" max="23" id="tlt_hours" class="tlt_input"/>
+									<input type="number" value="0" min="0" max="23" id="tlt_hours" class="tlt_input">
 								</div>
 								<div class="tlt_input_wrapper">
 									<p class="tlt_input_title" i18n-key="i.Minutes">Minutes</p>
-									<input type="number" value="0" min="0" max="59" id="tlt_minutes" class="tlt_input"/>
+									<input type="number" value="0" min="0" max="59" id="tlt_minutes" class="tlt_input">
 								</div>
 								<div class="tlt_input_wrapper">
 									<p class="tlt_input_title" i18n-key="i.Seconds">Seconds</p>
-									<input type="number" value="0" min="0" max="59" step="5" id="tlt_seconds" class="tlt_input"/>
+									<input type="number" value="0" min="0" max="59" step="5" id="tlt_seconds" class="tlt_input">
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<div id="metadata_options_fields_row1_column3">
-						<div id="subject_tag_box">
+						<div id="subject_tag_box">		  
 							<div id="subject_tag_box_text">
 								<span i18n-key="i.Subject">Subject</span>
 							</div>
@@ -495,31 +498,31 @@
 						<div id="educational_objectives_title">
 							<span i18n-key="i.EducationalObjectives">Educational Objectives</span>
 						</div>
-						<textarea id='educational_objectives_textarea' name="educational_objectives" placeholder="Please describe the educational objectives you aim to fulfil by using this didactic unit..." i18n-key="i.EducationalObjectivesPlaceholder"></textarea>
+						<textarea id="educational_objectives_textarea" name="educational_objectives" placeholder="Please describe the educational objectives you aim to fulfil by using this didactic unit..." i18n-key="i.EducationalObjectivesPlaceholder"></textarea>
 					</div>
 				</div>
 			 	</div>
-
+																																				
 			 	<div id="publication-tab" style="display:none">
-			 	<div id="publication_title"  >
+			 	<div id="publication_title">
 			 		<p i18n-key="i.allowUsersTo">Allow other users to:</p>
 			 	</div>
 					<div id="publication_content">
-						<p><input type="checkbox" id="allow_comment" checked> <span i18n-key="i.allowComment">Comment</span></p>
-						<p><input type="checkbox" id="allow_download" checked> <span i18n-key="i.allowDownload">Download</span></p>
-						<p><input type="checkbox" id="allow_clone" checked> <span i18n-key="i.allowClone">Clone</span></p>
+						<p><input type="checkbox" id="allow_comment" checked=""> <span i18n-key="i.allowComment">Comment</span></p>
+						<p><input type="checkbox" id="allow_download" checked=""> <span i18n-key="i.allowDownload">Download</span></p>
+						<p><input type="checkbox" id="allow_clone" checked=""> <span i18n-key="i.allowClone">Clone</span></p>
 					</div>
 				</div>
 
 				<div id="rte-tab" style="display:none">
-					<p><input type="checkbox" id="allow_following_rte" checked disabled="disabled"> <span i18n-key="i.enableRTE">Enable object tracking when it is exported to SCORM</span></p>
+					<p><input type="checkbox" id="allow_following_rte" checked="" disabled="disabled"> <span i18n-key="i.enableRTE">Enable object tracking when it is exported to SCORM</span></p>
 				</div>
 
 				<div id="metadata_options_fields_row3">
-					<button id='done_in_metadata' type='button' class='button' i18n-key="i.Done">Done</button>
+					<button id="done_in_metadata" type="button" class="button" i18n-key="i.Done">Done</button>
 				</div>
-
-
+							
+				
 			</div>
 
 		</div>
@@ -539,7 +542,7 @@
 	<!-- Import and Add slide fancybox -->
 	<div style='display:none'>
 		<div id='thumbcontent'>
-
+			
 			<div class='fancy_tabs' id='thumcontent_tabs'>
 				<ul>
 					<li>
@@ -558,9 +561,9 @@
 						<a href="#" onclick="VISH.Editor.Utils.loadTab('tab_presentations_repo'); return false;" id="tab_presentations_repo" class="fancy_tab tabbable" i18n-key="i.Presentation">Excursion</a>
 					</li>
 				</ul>
-			</div>
+			</div> 
 
-			<div id='tab_slides_content' class="fancy_tab_content" style='display:none' >
+			<div id='tab_slides_content' class="fancy_tab_content" style='display:none' > 
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_slides_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 				<div class="tab_slides_content">
 					<div class="tab_slides_templates">
@@ -657,7 +660,7 @@
 			<div id='tab_pdfex_content' class="fancy_tab_content" style='display:none'>
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_pdfex_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 				<div class="box1 box1fancy3">
-
+					
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<div class="textD">
 						<p class="textfancy" i18n-key="i.AddslideshowPDF">Add slideshow from PDF file</p></br>
@@ -721,13 +724,11 @@
 				</div>
 			</div>
 
-			<div id='tab_presentations_repo_content' class="fancy_tab_content" style='display:none'>
+			<div id='tab_presentations_repo_content' class="fancy_tab_content" style='display:none'> 
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_presentations_repo_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 				<div class="presentations_repo_content">
-
 					<p id="descSearch">Search on the repository the didactic unit you would like to add</p>
-
-					<img src="/assets/logos/repositoryimg.png" id="repoLogo" class="imagelogotab repositoryimgclass"/>
+					<img src="/assets/logos/repositoryimg.png" id="repoLogo" class="imagelogotab repositoryimgclass"/>  
 					<div class="search_container">
 						<input type="search" class="input_text_fancy input_text_presentations formsizefancy2 marginsfancy3" > </input>
 					</div>
@@ -738,8 +739,8 @@
 						<div class="content_preview_foot">
 							<button i18n-key="i.Preview" style="display:none" type="button" class="okButton2">Preview</button>
 						</div>
-					</div>
-				</div>
+					</div> 	
+				</div>	
 			</div>
 
 		</div>
@@ -757,7 +758,7 @@
 					</li>
 				</ul>
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" id='tab_quizzes_help' class='help_in_fancybox' src='/assets/vicons/helptutorial_circle_blank.png'/>
-			</div>
+			</div> 
 
 			<div id='tab_quizzes_content' class="fancy_tab_content">
 				<div class='quizFancythumb'>
@@ -799,10 +800,10 @@
 			</a>
 		</div>
 	</div>
-
+  
 	<!-- FANCYBOX ADD A LINK TO A ELEMENT (IMAGE,etc) -->
 	<div style='display:none'>
-		<div id='tools_addUrl'>
+		<div id='tools_addUrl'>	  		
 			<div class="box1 box1fancy1">
 				<div class="box1_section1">
 				<p class="textfancy">Url</p></br>
@@ -812,9 +813,9 @@
 				<input class="input_text_fancy formsizefancy1 marginsfancy1 tools_input_addUrl" type="text" size="25" value="">
 				</div>
 				<div class="addUrlButtons">
-					<button type="button" class="addUrlButton" i18n-key="i.Add"
+					<button type="button" class="addUrlButton" i18n-key="i.Add" 
 					onclick="VISH.Editor.Tools.addUrl(); return false;">Add</button>
-					<button type="button" class="removeUrlButton" style="display:none" i18n-key="i.Remove"
+					<button type="button" class="removeUrlButton" style="display:none" i18n-key="i.Remove" 
 					onclick="VISH.Editor.Tools.removeUrl(); return false;">Remove</button>
 				</div>
 
@@ -830,7 +831,7 @@
 	<!-- NOTIFY USER WHEN NOT MET MINIMUM REQUIREMENTS -->
 	<div style='display:none'>
 		<div id='requirements_form_wrapper'>
-			<div id='requirements_form'>
+			<div id='requirements_form'>      
 				<span i18n-key="i.browserrequirements" class="adverttext">Your browser does not meet the minimum requirements to init Educa Editor, please update your browser.</span>
 				<div id="recomended_browsers">
 					<div class="recomended_browser">
@@ -863,7 +864,7 @@
 
 	<div style='display:none'>
 		<div id="picture_fancybox" class="outer_box">
-			<div class="fancy_tabs" id="images_fancy_tabs_id">
+			<div class="fancy_tabs" id="images_fancy_tabs_id">	   
 				<ul>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_from_url'); return false;" id="tab_pic_from_url" class="fancy_tab tabbable" i18n-key="i.url">url</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_upload'); return false;" id="tab_pic_upload" class="fancy_tab" i18n-key="i.upload">upload</a></li>
@@ -902,11 +903,11 @@
 						<button i18n-key="i.AddContent" type="button" class="button button_addContent" onclick="VISH.Editor.Image.addContent()">Add Content</button>
 					</div>
 				</div>
-			</div>
+			</div> 
 
 			<div id='tab_pic_upload_content' class="fancy_tab_content">
 				<div id="upload_file_inputbox" class="box1 box1fancy3">
-
+					
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<div class="textD">
 						<p class="textfancy" i18n-key="i.selectPicture">Select picture to upload</p></br>
@@ -938,16 +939,16 @@
 					<button i18n-key="i.AddContent" type="button" class="button button_addContent" onclick="VISH.Editor.Image.addContent()">Add Content</button>
 					</div>
 				</div>
-			</div>
+			</div>  
 
 			<div id='tab_pic_repo_content' class="fancy_tab_content">
 				<div class="box1 box1fancy2">
-					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>
+					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>				  		  
 					<div class="search_container">
 						<input id="search_picture" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
 					<div id="tab_pic_repo_content_carrousel"></div>
-				</div>
+				</div>	
 			</div>
 
 			<div id='tab_pic_flikr_content' class="fancy_tab_content">
@@ -955,7 +956,7 @@
 					<img src="/assets/logos/flickrlogo.png" class="imagelogotab">
 					<div class="search_container">
 						<input id="search_flickr_fancy" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
-					</div>
+					</div>	
 					<div id="tab_pic_flikr_content_carrousel"></div>
 				</div>
 			</div>
@@ -965,31 +966,35 @@
 					<img id="lrelogo_in_tab" src="/assets/logos/lrelogo.gif" class="imagelogotab">
 					<div class="search_container">
 							<input id="search_lre_fancy" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
-					</div>
+					</div>	
 					<div id="tab_pic_lre_content_carrousel"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+  
 	<!-- Select theme fancybox -->
 	<a id="hidden_button_to_launch_theme_fancybox" href="#theme_fancybox" style="display:none"></a>
 	<div style='display:none'>
 		<div id="theme_fancybox" class="theme_fancybox_class">
-			<img id="help_themes_selection" src="/assets/vicons/helptutorial_circle_blank.png"/>
-			<div id='select_theme1' class="slidethumb">
-				<img src='/assets/themes/theme1/select.png' class="themethumb" theme="theme1"/>
+			<div id="header_fancybox">
+  				<i id="themeIheader" class="icon-button icon-edit"></i>
+  				<p>Themes</p>
 			</div>
-			<div id='select_theme13' class="slidethumb">
+			<img id="help_themes_selection" src="/assets/vicons/helptutorial_circle_blank.png"/>
+			<div id='select_theme1' class="slidethumb col1 row1">
+				<img src='/assets/themes/theme1/select.png' class="themethumb" theme="theme1"/>
+			</div>			
+			<div id='select_theme13' class="slidethumb row1">
 				<img src='/assets/themes/theme13/select.png' class="themethumb" theme="theme13"/>
 			</div>
-			<div id='select_theme14' class="slidethumb">
+			<div id='select_theme14' class="slidethumb row1">
 				<img src='/assets/themes/theme14/select.png' class="themethumb" theme="theme14"/>
 			</div>
-			<div id='select_theme15' class="slidethumb">
+			<div id='select_theme15' class="slidethumb row1">
 				<img src='/assets/themes/theme15/select.png' class="themethumb" theme="theme15"/>
 			</div>
-			<div id='select_theme16' class="slidethumb">
+			<div id='select_theme16' class="slidethumb col1">
 				<img src='/assets/themes/theme16/select.png' class="themethumb" theme="theme16"/>
 			</div>
 			<div id='select_theme17' class="slidethumb">
@@ -1001,7 +1006,7 @@
 			<div id='select_theme19' class="slidethumb">
 				<img src='/assets/themes/theme19/select.png' class="themethumb" theme="theme19"/>
 			</div>
-			<div id='select_theme20' class="slidethumb">
+			<div id='select_theme20' class="slidethumb col1">
 				<img src='/assets/themes/theme20/select.png' class="themethumb" theme="theme20"/>
 			</div>
 			<div id='select_theme21' class="slidethumb">
@@ -1020,8 +1025,12 @@
 	<a id="hidden_button_to_launch_animation_fancybox" href="#animation_fancybox" style="display:none"></a>
 	<div style='display:none'>
 		<div id="animation_fancybox" class="animation_fancybox_class">
+			<div id="ani_header_fancybox">
+  				<i id="aniIheader" class="icon-button icon-magic"></i>
+  				<p>Animation</p>
+			</div>
 			<img id="help_animation_selection" src="/assets/vicons/helptutorial_circle_blank.png"/>
-			<div class="filaAni">
+			<div id="aniF1" class="filaAni">	
 				<div id='select_animation1' class="slidethumb ani" animation="animation1">
 					<div class="anim_text"><h3 i18n-key="i.Horizontal">Horizontal</h3></div></div>
 				<div id='select_animation2' class="slidethumb ani" animation="animation2">
@@ -1048,7 +1057,7 @@
 					<div class="anim_text"><h3 i18n-key="i.Inside">Inside</h3></div>
 				</div>
 			</div>
-			<div class="filaAni">
+			<div class="filaAni">	
 				<div id='select_animation9' class="slidethumb ani" animation="animation9">
 					<div class="anim_text"><h3 i18n-key="i.Zoom">Zoom</h3></div>
 				</div>
@@ -1069,7 +1078,7 @@
 	<div style='display:none'>
 		<div id="object_fancybox" class="outer_box">
 
-			<div class="fancy_tabs" id="object_fancy_tabs_id">
+			<div class="fancy_tabs" id="object_fancy_tabs_id">	   
 				<ul>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_from_web'); return false;" id="tab_object_from_web" class="fancy_tab">web</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_snapshot'); return false;" id="tab_object_snapshot" class="fancy_tab">web snapshot</a></li>
@@ -1159,7 +1168,7 @@
 						<button i18n-key="i.AddContent" type="button" class="button button_addContent" onclick="VISH.Editor.Object.drawPreviewElement()">Add Content</button>
 					</div>
 				</div>
-			</div>
+			</div> 
 
 			<div id='tab_object_repo_content' class="fancy_tab_content">
 				<div class="box1 box1fancy2">
@@ -1176,7 +1185,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>	
 
 			<div id='tab_object_snapshot_content' class="fancy_tab_content">
 				<div class="box1 box1fancy1">
@@ -1198,9 +1207,9 @@
 				</div>
 			</div>
 
-			<div id='tab_object_lre_content' class="fancy_tab_content">
+			<div id='tab_object_lre_content' class="fancy_tab_content">	
 				<div class="box1 box1fancy2">
-					<img id="lrelogo_in_tab" src="/assets/logos/lrelogo.gif" class="imagelogotab">
+					<img id="lrelogo_in_tab" src="/assets/logos/lrelogo.gif" class="imagelogotab">			  
 					<div class="search_container">
 						<input id="search_object_lre" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
@@ -1213,8 +1222,8 @@
 						<div id="tab_object_lre_content_preview_foot" class="content_preview_foot">
 							<button i18n-key="i.Add" type="button" class="okButton okButtonCarrousel" onclick="VISH.Editor.Object.LRE.addSelectedObject()">Add</button>
 						</div>
-					</div>
-				</div>
+					</div>				
+				</div>			
 			</div>
 
 		</div>
@@ -1224,7 +1233,7 @@
 	<div style='display:none'>
 		<div id="video_fancybox" class="outer_box">
 
-			<div class="fancy_tabs" id="video_fancy_tabs_id">
+			<div class="fancy_tabs" id="video_fancy_tabs_id">	   
 				<ul>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_from_url'); return false;" id="tab_video_from_url" class="fancy_tab" i18n-key="i.url">url</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_repo'); return false;" id="tab_video_repo" class="fancy_tab">EducaInternet</a></li>
@@ -1258,9 +1267,9 @@
 				</div>
 			</div>
 
-			<div id='tab_video_repo_content' class="fancy_tab_content">
-				<div class="box1 box1fancy2">
-					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>
+			<div id='tab_video_repo_content' class="fancy_tab_content">		
+				<div class="box1 box1fancy2">	
+					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>	  
 					<div class="search_container">
 						<input id="search_video" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
@@ -1274,7 +1283,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>  
 
 			<div id='tab_video_youtube_content' class="fancy_tab_content">
 				<div class="box1 box1fancy2">
@@ -1339,10 +1348,10 @@
 				<ul>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_live_resource'); return false;" i18n-key="i.LiveResources" id="tab_live_resource" class="fancy_tab">Live Resources</a></li>
 				</ul>
-				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_live_resource_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
+				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_live_resource_help' src='/assets/vicons/helptutorial_circle_blank.png'/> 
 			</div>
 
-			<div id='tab_live_resource_content' class="fancy_tab_content">
+			<div id='tab_live_resource_content' class="fancy_tab_content"> 
 				<div class="box1 box1fancy2">
 					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>
 					<div class="search_container">
@@ -1534,7 +1543,7 @@
 			<p i18n-key="i.walkMenuHelp2">The following video tutorial will teach you how to getting started with Educa Editor in a few minutes.<span class="tut_tutlink" onClick="VISH.Tour.startTourWithId('getting_started_help', 'top');" i18n-key="i.walkMenuHelp3">If you prefer you can click here to see a text tutorial which will teach you quickly the basics to get started.</span></p>
 			<p i18n-key="i.vtTitle_GStarted" class="tut_video_title">Getting Started with Educa Editor</p>
 			<iframe class="tut_iframe_yt" width="625" height="380" src="//www.youtube.com/embed/fBSNZxs8m0I" frameborder="0" allowfullscreen></iframe>
-			<p class="tut_space">&nbsp;</p>
+			<p class="tut_space">&nbsp;</p>			
 			<p class="tut_space">&nbsp;</p>
 		</li>
 	</ol>
@@ -1621,14 +1630,14 @@
 				</tr>
 				<tr>
 					<td>
-						<img src="/assets/toolbar/resizeLess.png"/>
+						<img src="/assets/toolbar/resizeLess.png"/> 
 						<img src="/assets/toolbar/resizeMore.png"/>
 					</td>
 					<td><p i18n-key="i.walkWelcome11_a_2">Resize an element</p></td>
 				</tr>
 				<tr>
 					<td>
-						<img src="/assets/toolbar/zoomLess.png"/>
+						<img src="/assets/toolbar/zoomLess.png"/> 
 						<img src="/assets/toolbar/zoomMore.png"/>
 					</td>
 					<td><p i18n-key="i.walkWelcome11_a_3">Zoom</p></td>
@@ -1786,7 +1795,7 @@
 		<li data-id="toolbar_wrapper" data-text="Close" i18n-key="i.Close" class="tut_template_editorfull tut_without_arrow" data-options="tipLocation:none">
 			<h2 i18n-key="i.walkSlide1_1">Adding content to a slide</h2>
 			<p><span i18n-key="i.walkSlide1_2">To add content to a slide, first click on any of the available editable areas of the slide. These areas have a dotted border and a text that says</span> "<i i18n-key="i.ZoneTooltip">Click here to add content</i>". <span i18n-key="i.walkSlide1_3">Once you have selected one of these areas, several icons will appear inside.</span> <span i18n-key="i.walkSlide1_4">Each of these icons allows you to add a different type of content.</span></p>
-
+			
 			<table class="contentIconsWalkthrough">
 				<tr>
 					<td>
@@ -1895,7 +1904,7 @@
 			<p i18n-key="i.walkPdf2ex_2">Select a slideshow in PDF format and upload the file. Only files with PDF format are allowed. If you want to insert a slideshow in other format such as PowerPoint (.ppt), you should convert the file to PDF first.</p>
 			<p i18n-key="i.walkPdf2ex_3">Once the upload of the PDF file is complete, a new screen will pop up for you to select the slides of the uploaded slideshow that you want to insert.</p>
 			<p i18n-key="i.walkPdf2ex_4" class="tut_withoutbottomspace">This functionality will convert the PDF slideshow to a Educa Editor presentation, this means that each of the selected slides of the PDF slideshow will be inserted in the current presentation as a new slide.</p>
-
+			
 			<table class="tut_table_image">
 				<tr>
 					<td><span i18n-key="i.walkPdf2ex_5">If what you want is to insert a whole PDF document in the same slide to be readed as a book, you should upload the PDF file from the 'Objects' panel.</span></td>
@@ -2021,7 +2030,7 @@
 
 			<p><span i18n-key="i.walkRememberPreview">Remember that you can preview the object you are creating at any time by clicking on the 'Preview' button placed in the toolbar</span> <button type="button" class="btn btn-primary btn-small"><i class="icon-button icon-eye-open"></i></button> .</p>
 			<p class="tut_space">&nbsp;</p>
-
+			
 		</li>
 
 	</ol>
@@ -2473,7 +2482,7 @@
 			<p class="tut_space">&nbsp;</p>
 		</li>
 	</ol>
-
+		   
 	<!-- Help inserting live objects -->
 	<ol id="tab_live_resource_id" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Close" i18n-key="i.Close" class="tut_add_resources_fancybox tut_width600_center tut_without_arrow" data-options="tipLocation:none">
