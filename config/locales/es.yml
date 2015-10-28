@@ -81,6 +81,7 @@ es:
   activity_object:
     author: "Autor"
     title: "Título"
+    type: "Tipo"
     description: "Descripción"
     keywords: "Palabras clave"
     language: "Idioma"
@@ -475,6 +476,7 @@ es:
       linked_by: "Enlazado por"
       size: "Tamaño"
       tags: "Etiquetas"
+      type: "Tipo"
     input: "Descripción del recurso"
     language:
       option1: "(No depende del lenguaje)"
