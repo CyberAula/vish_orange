@@ -1164,7 +1164,7 @@ button.jqx-button, input[type=button].jqx-button,  input[type=submit].jqx-button
 .jqx-tree-dropdown-root
 {
     left: 100%;
-    padding: 0px 5px 0px 5px;
+    padding: 10px 5px;
     right: 0;
     display: block;
     float: none;
@@ -1176,6 +1176,9 @@ button.jqx-button, input[type=button].jqx-button,  input[type=submit].jqx-button
     outline: none;
     white-space: nowrap;
     margin: 0px;
+    ul{
+      padding: 0;
+    }
 }
 .jqx-tree-dropdown-root-rtl {
     padding: 0px 5px 0px 0px;
@@ -1189,9 +1192,9 @@ button.jqx-button, input[type=button].jqx-button,  input[type=submit].jqx-button
 {
     left: 100%;
     margin: 0px;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 10px !important;
     right: 0;
-     display: block;
+    display: block;
     float: none;
     background-color: transparent;
     border-style: solid;
