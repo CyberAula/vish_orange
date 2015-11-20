@@ -31,6 +31,7 @@
               });
             }
       });
+      $('[data-toggle="tooltip"], .with_tooltip').tooltip({ placement: 'bottom'});
   <%end%>
 <%end%>
 
@@ -129,9 +130,11 @@
         <div class="input-group">
           <textarea class="shortUrl form-control" readonly="true" rows="6" id="textarea_for_iframe" type="text"><%= render partial: "#{ document.class.to_s.tableize }/embedcode", locals: { document.class.to_s.underscore.to_sym => document } %></textarea>
           <div class="input-group-addon">
-            <button id="btn_copy_embed" href="#" data-toggle="tooltip" data-placement="right" title="<%=t('copy_to_clip')%>">
-              <i class="fa fa-copy"></i>
-            </button>
+            <div data-toggle="tooltip" data-placement="right" title="<%=t('copy_to_clip')%>">
+              <button id="btn_copy_embed" href="#">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

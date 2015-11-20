@@ -43,6 +43,7 @@
     });
 
     $(".with_tooltip").tooltip({ placement: 'bottom'});
+    $('[data-toggle="tooltip"], .with_tooltip').tooltip({ placement: 'bottom'});
 <%end%>
 
 
@@ -104,9 +105,11 @@
       <div class="input-group">
         <input class="shortUrl form-control" readonly="true" id="input_with_shorturl" type="text" value="<%=shortURL%>"/>
         <div class="input-group-addon">
-          <button class="btn copy_btn" id="btn_copy_share" href="#" data-toggle="tooltip" data-placement="right" title="<%=t('copy_to_clip')%>">
+          <div data-toggle="tooltip" data-placement="right" title="<%=t('copy_to_clip')%>">
+          <button class="btn copy_btn" id="btn_copy_share" href="#" >
               <i class="fa fa-copy "></i>
           </button>
+        </div>
         </div>
       </div>
     </div>
