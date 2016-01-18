@@ -76,14 +76,13 @@
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
 
 @mixin btn-secundary
-  background-color: $btn-secundary-bg
-  color: $btn-secundary-color
+  background-color: $gray-lighter
+  color: $gray-dark
   &:hover,
   &:focus,
   &:active,
   &.active,
   &.disabled,
   &[disabled]
-    background-color: darken($btn-secundary-bg, 10%)
-    color: $btn-secundary-color
-
+    background-color: darken($gray-lighter, 20%)
+    color: $gray-dark
