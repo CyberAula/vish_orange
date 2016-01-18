@@ -34,16 +34,8 @@ class ExcursionsController < ApplicationController
             redirect_to "/"
           end
         else
-          if Vish::Application.config.trackingSystem
-            tr = TrackingSystemEntry.trackRLOsInExcursions(params["rec"],@excursion,request,current_subject)
-            @tracking_system_entry_id = tr.id unless tr.nil?
-            rsEngine = TrackingSystemEntry.getRandomRSEngine
-          else
-            rsEngine = "ViSHRecommenderSystem"
-          end
-
-          @rec = TrackingSystemEntry.getRSCode(rsEngine)
-          @resource_suggestions = RecommenderSystem.resource_suggestions(current_subject,@excursion,{:n=>16, :models => [Excursion], :recEngine => rsEngine, :track => true, :request => request})
+          @resource_suggestions = RecommenderSystem.resource_suggestions({:user => current_subject, :lo => @excursion, :n=>10, :models => [Excursion]})
+          ActorHistorial.saveAO(current_subject,@excursion)
           render
         end
       }
@@ -113,7 +105,8 @@ class ExcursionsController < ApplicationController
 
     render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
                       :uploadPath => excursion_path(@excursion, :format=> "json"),
-                      :editPath => edit_excursion_path(@excursion)
+                      :editPath => edit_excursion_path(@excursion),
+                      :id => @excursion.id
                     }
   end
 
@@ -138,14 +131,10 @@ class ExcursionsController < ApplicationController
     isAdmin = current_subject.admin?
 
     begin
-      if isAdmin
-        Excursion.record_timestamps=false
-      end
+      Excursion.record_timestamps=false if isAdmin
       @excursion.update_attributes!(params[:excursion])
     ensure
-      if isAdmin
-        Excursion.record_timestamps=true
-      end
+      Excursion.record_timestamps=true if isAdmin
     end
    
     published = (wasDraft===true and @excursion.draft===false)
@@ -156,7 +145,8 @@ class ExcursionsController < ApplicationController
     render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
                       :uploadPath => excursion_path(@excursion, :format=> "json"),
                       :editPath => edit_excursion_path(@excursion),
-                      :exitPath => (@excursion.draft ? user_path(current_subject) : excursion_path(resource))
+                      :exitPath => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
+                      :id => @excursion.id
                     }
   end
 
@@ -330,36 +320,11 @@ class ExcursionsController < ApplicationController
   
   def last_slide
     #Prepare parameters to call the RecommenderSystem
+    current_excursion =  Excursion.find_by_id(params[:excursion_id]) if params[:excursion_id]
+    options = {:user => current_subject, :lo => current_excursion, :n => (params[:quantity] || 6).to_i, :models => [Excursion]}
+    options[:keywords] = params[:q].split(",") if params[:q]
 
-    if params[:excursion_id]
-      current_excursion =  Excursion.find_by_id(params[:excursion_id])
-    else
-      current_excursion = nil
-    end
-
-    options = {:n => (params[:quantity] || 6).to_i, :models => [Excursion]}
-    if params[:q]
-      options[:keywords] = params[:q].split(",")
-    end
-
-    # Uncomment this block to activate the A/B testing
-    # A/B Testing: some % of the requests will be attended by the full RS, the other % will be attended by other algorithms
-    rnd = rand
-    if rnd < 0.10
-      #Random
-      options[:recEngine] = "Random"
-    elsif rnd < 0.5
-      #Full RS without quality metrics
-      options[:recEngine] = "ViSHRS-Quality"
-    elsif rnd < 0.9
-      #Full RS without quality and popularity metrics
-      options[:recEngine] = "ViSHRS-Quality-Popularity"
-    else
-      #Full RS
-      options[:recEngine] = "ViSHRecommenderSystem"
-    end
-
-    excursions = RecommenderSystem.resource_suggestions(current_subject,current_excursion,options)
+    excursions = RecommenderSystem.resource_suggestions(options)
 
     respond_to do |format|
       format.json {

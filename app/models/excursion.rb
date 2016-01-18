@@ -1126,6 +1126,8 @@ class Excursion < ActiveRecord::Base
     unless contributors.blank?
       eJson["contributors"] = contributors.map{|c| {name: c.name, vishMetadata:{ id: c.id}}}
     end
+    eJson.delete("license")
+    eJson["vishMetadata"] = {draft: "true"}
     e.json = eJson.to_json
 
     e.contributors=contributors
@@ -1151,9 +1153,7 @@ class Excursion < ActiveRecord::Base
       unless self.score_tracking.nil?
         rjson[:recommender_data] = self.score_tracking
         rsEngineCode = TrackingSystemEntry.getRSCode(JSON(rjson[:recommender_data])["rec"])
-        unless rsEngineCode.nil?
-          rjson[:url] = controller.excursion_url(:id => self.id, :rec => rsEngineCode)
-        end
+        rjson[:url] = controller.excursion_url(:id => self.id, :rec => rsEngineCode) unless rsEngineCode.nil?
       end
 
       rjson

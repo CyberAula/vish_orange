@@ -2,6 +2,10 @@
 
 namespace :scheduled do
 
+  task :regenerateSitemap => :environment do
+    Rake::Task["sitemap:refresh"].invoke("-s")
+  end
+
   #Usage
   #Development:   bundle exec rake scheduled:regenerateSitemap
   #In production: bundle exec rake scheduled:regenerateSitemap RAILS_ENV=production
@@ -314,6 +318,51 @@ namespace :scheduled do
     puts "Deleting expired tokens"
     WappAuthToken.deleteExpiredTokens
     puts "Task finished"
+  end
+
+  #Usage
+  #Development: bundle exec rake scheduled:updateWordsFrequency
+  #Production: bundle exec rake scheduled:updateWordsFrequency RAILS_ENV=production
+  task :updateWordsFrequency => :environment do |t, args|
+    puts "Updating Words Frequency (for calculating TF-IDF)"
+
+    #1. Remove previous metadata records
+    Word.destroy_all
+
+    #2. Retrieve words from LO metadata
+    ActivityObject.getAllPublicResources.each do |lo|
+      processResourceText((lo.title||"")+(lo.description||""))
+    end
+
+    #3. Add stopwords
+    # For stopwords, the occurences of the word record is set to the 'Vish::Application::config.repository_total_entries' value.
+    # This way, the IDF for this word will be 0, and therefore the TF-IDF will be 0 too. This way, the word is ignored when calcuting the TF-IDF.
+    # Stop words are readed from the file stopwords.yml
+    stopwords = File.read("config/stopwords.yml").split(",").map{|s| s.gsub("\n","").gsub("\"","") } rescue []
+    stopwords.each do |stopword|
+      wordRecord = Word.find_by_value(stopword)
+      if wordRecord.nil?
+        wordRecord = Word.new
+        wordRecord.value = stopword
+      end
+      wordRecord.occurrences = Vish::Application::config.repository_total_entries
+      wordRecord.save!
+    end
+    
+    puts "Task finished"
+  end
+
+  def processResourceText(text)
+    return if text.blank? or !text.is_a? String
+    RecommenderSystem.processFreeText(text).each do |word,occurrences|
+      wordRecord = Word.find_by_value(word)
+      if wordRecord.nil?
+        wordRecord = Word.new
+        wordRecord.value = word
+      end
+      wordRecord.occurrences += 1
+      wordRecord.save! rescue nil #This can be raised for too long words (e.g. long urls)
+    end
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151001142756) do
+ActiveRecord::Schema.define(:version => 20151202091500) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20151001142756) do
     t.boolean  "allow_comment",                                                     :default => true
     t.boolean  "allow_clone",                                                       :default => true
     t.boolean  "competition",                                                       :default => false
+    t.text     "tag_array_text",                                                    :default => ""
   end
 
   create_table "activity_objects_wa_resources_galleries", :id => false, :force => true do |t|
@@ -116,6 +117,11 @@ ActiveRecord::Schema.define(:version => 20151001142756) do
     t.string   "name",       :limit => 45
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "actor_historial", :id => false, :force => true do |t|
+    t.integer "actor_id"
+    t.integer "activity_object_id"
   end
 
   create_table "actor_keys", :force => true do |t|
@@ -517,6 +523,14 @@ ActiveRecord::Schema.define(:version => 20151001142756) do
 
   add_index "rooms", ["actor_id"], :name => "index_rooms_on_actor_id"
 
+  create_table "rsevaluations", :force => true do |t|
+    t.integer  "actor_id"
+    t.text     "data"
+    t.string   "status",     :default => "0"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
   create_table "scormfiles", :force => true do |t|
     t.integer  "activity_object_id"
     t.datetime "created_at"
@@ -736,6 +750,11 @@ ActiveRecord::Schema.define(:version => 20151001142756) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+  end
+
+  create_table "words", :force => true do |t|
+    t.string  "value"
+    t.integer "occurrences", :default => 0
   end
 
   create_table "workshop_activities", :force => true do |t|

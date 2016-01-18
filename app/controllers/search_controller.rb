@@ -124,8 +124,8 @@ class SearchController < ApplicationController
     categories = nil
     if params[:category_ids].is_a? String
       if Vish::Application.config.catalogue['mode'] == "matchtag"
-          #Mode matchtag
-          categories = params[:category_ids]
+        #Mode matchtag
+        categories = params[:category_ids]
       else
         #Mode matchany
         keywords = []
@@ -136,7 +136,7 @@ class SearchController < ApplicationController
       end
     end
 
-    RecommenderSystem.search({:category_ids => categories, :keywords=>keywords, :n=>limit, :page => page, :order => order, :models => models, :ids_to_avoid=>params[:ids_to_avoid], :startDate => params[:startDate], :endDate => params[:endDate], :language => params[:language], :qualityThreshold => params[:qualityThreshold], :tags => params[:tags], :tag_ids => params[:tag_ids], :age_min => params[:age_min], :age_max => params[:age_max] })
+    Search.search({:category_ids => categories, :query => keywords, :n=>limit, :page => page, :order => order, :models => models, :ids_to_avoid=>params[:ids_to_avoid], :startDate => params[:startDate], :endDate => params[:endDate], :language => params[:language], :qualityThreshold => params[:qualityThreshold], :tags => params[:tags], :tag_ids => params[:tag_ids], :age_min => params[:age_min], :age_max => params[:age_max] })
   end
 
   def processTypeParam(type)

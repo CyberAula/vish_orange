@@ -11,6 +11,7 @@ ActivityObject.class_eval do
   before_validation :fill_license_attribution
   before_save :fill_relation_ids
   before_save :fill_indexed_lengths
+  before_save :save_tag_array_text
   after_destroy :destroy_spam_reports
   after_destroy :destroy_contribution
   after_destroy :destroy_wa_activities
@@ -96,6 +97,9 @@ ActivityObject.class_eval do
 
   attr_accessor :score
   attr_accessor :score_tracking
+  attr_accessor :filtered
+  attr_accessor :tag_array_cached
+  
   
   def public?
     !private? and self.relation_ids.include? Relation::Public.instance.id
@@ -263,7 +267,7 @@ ActivityObject.class_eval do
     #Common fields
     searchJson =  {
       :id => self.getUniversalId(),
-      :type => self.getType(),
+      :type => self.getType,
       :created_at => self.created_at.strftime("%d-%m-%Y"),
       :updated_at => self.updated_at.strftime("%d-%m-%Y"),
       :title => title,
@@ -356,6 +360,10 @@ ActivityObject.class_eval do
 
   def getType
     self.object.class.name
+  end
+
+  def tag_array
+    self.tag_array_text.split(",")
   end
 
   def getUrl
@@ -669,15 +677,23 @@ ActivityObject.class_eval do
     return resource
   end
 
+  def self.getAllResources
+    ActivityObject.where("object_type in (?)", VishConfig.getAvailableResourceModels)
+  end
+
+  def self.getAllPublicResources
+    getAllResources.where("scope=0")
+  end
+
   def self.getResourceCount
-    getCount(["Workshop","Excursion", "Document", "Webapp", "Scormfile","Link","Embed"])
+    self.getAllResources.count
   end
 
-  def self.getCount(models=[])
-    ActivityObject.where("object_type in (?)", models).count
+  def save_tag_array_text
+    self.tag_array_text = self.tags.map{|tag| tag.plain_name}.uniq.reject{|tag| Vish::Application.config.stoptags.include? tag}.join(",") if self.tags_length > 0
   end
 
-
+  
   private
 
   def fill_relation_ids
