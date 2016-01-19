@@ -13,32 +13,28 @@
 <% end %>
 
 <section id="show_items" class="layout_show workshop_show">
-  <div class="header_image">
-    <img src="<%=@workshop.banner.url(:large)%>">
-  </div>
+  <% if @workshop.banner.present? %>
+    <div class="header_image"><img src="<%=@workshop.banner.url(:large)%>"></div>
+  <% end %>
 
-
-
-<!--++++++++++++++++header+++++++++++++++++++++++-->
-
-<div class="wa_activity_wrapper wa_activity_wrapper_show header_workshop">
-  <div class="layout_workshop">
-    <div style='background-image: url(<%=@workshop.thumbnail_url%>)' class="img-box workshop_thumbnail" >
+  <!--++++++++++++++++header+++++++++++++++++++++++-->
+  <div class="wa_activity_wrapper wa_activity_wrapper_show header_workshop">
+    <div class="layout_workshop">
+      <div style='background-image: url(<%=@workshop.thumbnail_url%>)' class="img-box workshop_thumbnail"></div>
     </div>
-  </div>
-  <section class="information">
-    <div class="briefing">
-      <!--title-->
-      <div class="name">
-        <h1 class="title_WS main_title_WS"><%=@workshop.title%></h1>
+    <section class="information">
+      <div class="briefing">
+        <!--title-->
+        <div class="name">
+          <h1 class="title_WS main_title_WS"><%=@workshop.title%></h1>
+        </div>
+        <!--description-->
+        <div class="description"><%=@workshop.description%></div>
+        <%= render :partial => 'workshops/workshop-info' %>
       </div>
-      <!--description-->
-      <div class="description"><%=@workshop.description%></div>
-      <%= render :partial => 'workshops/workshop-info' %>
-    </div>
-  </section>
+    </section>
 
-</div>
+  </div>
 
   <!--++++++++++++++++header/toolbar+++++++++++++++++++++++-->
   <div class="description-activity">
