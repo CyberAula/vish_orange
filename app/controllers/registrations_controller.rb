@@ -1,6 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
   skip_before_filter :store_location
-  before_filter :check_mooc_valid_mail, :only => [:create]
 
   # GET /resource/sign_up?mooc=boolean
   def new
@@ -15,6 +14,10 @@ class RegistrationsController < Devise::RegistrationsController
         #Infer user language from client information
         if !I18n.locale.nil? and !params[:user].nil? and I18n.available_locales.map{|i| i.to_s}.include? I18n.locale.to_s
             params[:user][:language] = I18n.locale.to_s
+        end
+
+        if params[:user][:mooc]
+          params[:user][:email] = params[:user][:email] + "@educa.madrid.org"
         end
 
         build_resource
@@ -80,6 +83,12 @@ class RegistrationsController < Devise::RegistrationsController
   # removing all OAuth session data.
   def cancel
     super
+  end
+
+  protected
+
+  def after_sign_up_path_for(resource)
+    ''
   end
 
 end
