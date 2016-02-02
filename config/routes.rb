@@ -37,6 +37,7 @@ Vish::Application.routes.draw do
   match 'contributors' => 'static#contributors'
   match 'teach' => 'static#teach'
   match 'learn' => 'static#learn'
+  match 'mooc_welcome' => 'static#mooc_welcome'
 
   #Download the user manual and count the number of downloads
   match 'user_manual' => 'static#download_user_manual'

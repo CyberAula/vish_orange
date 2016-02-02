@@ -753,12 +753,12 @@ es:
       body1: "Bienvenido"
       body2: "Gracias por registrarse en EducaInternet."
       body3: "Con el email y la contraseña que ha elegido para http://educainternet.es podrá acceder a la plataforma de MOOCS http://moodle.educainternet.es"
-      body4: "Una vez logueado en dicha plataforma verá un curso titulado '%{name}' al que podrá acceder con la contraseña %{password}" 
+      body4: "Una vez logueado en dicha plataforma verá un curso titulado '%{name}' al que podrá acceder con la contraseña %{password}"
       body5: "Muchas gracias por registrarse en EducaInternet"
       subject: "Bienvenido a EducaInternet"
     inscription:
       title: "Inscribirme en el MOOC"
-      
+
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"
@@ -871,7 +871,7 @@ es:
         select: "Selecciona tu ocupación"
         teacher: "Educación"
     remove: "Borrar usuario"
-    surname: "Apellidos"    
+    surname: "Apellidos"
     tags:
       default: "EducaInternet, unidad didáctica"
       other: "Áreas de interés"
@@ -1135,7 +1135,7 @@ es:
       overview: "Overview de ViSH"
       privacy_policy: "Política de privacidad"
       profile: "perfil"
-      sign_up: "Registro en ViSH"
+      sign_up: "Registro en EducaInternet"
       teach: "Enseña ciberseguridad"
       terms_of_use: "Términos de uso de ViSH"
     name: "EducaInternet"
