@@ -1,0 +1,33 @@
+<%content_for :title do%><%= t("site.meta_title.sign_up") %><%end%>
+<%content_for :keywords do%><%= t("site.current.keywords") %><%end%>
+<%content_for :description do%><%= t("site.meta_desc.sign_up")%><%end%>
+<%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
+
+<section id="registration">
+  <section class="registration">
+    <h4><%= t('mooc.inscription.title').capitalize %></h4>
+
+    <%= form_for(current_subject, :url => [current_subject]) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="form-group reg-labels">
+        <%= f.hidden_field :mooc, :value => true %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => "form-control", :autocomplete => "off" %>
+
+        <%= f.label t("profile.surname") %>
+        <%= f.text_field :surname, :class => "form-control", :autocomplete => "off" %>
+
+        <%= f.label t("profile.centercode") %>
+        <%= f.text_field :center_code, :class => "form-control", :autocomplete => "off" %>
+
+        <hr class="soften">
+          <div class="action">
+            <%= f.submit t('action.accept').capitalize, :class => "btn btn-primary pull-right" %>
+          </div>
+      </div>
+    <% end %>
+
+  </section>
+</section>
+

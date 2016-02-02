@@ -750,6 +750,16 @@ en:
     invitebody_html: "Click here to watch: <a href='http://www.mashme.tv/M/%{room}?name=%{username}'><img src='http://%{domain}/assets/mashme_button.png' /></a>"
     launch: "Launch"
     room_name: "Room name"
+  mooc:
+    first_mail:
+      body1: "Welcome"
+      body2: "Thank you for registering in EducaInternet"
+      body3: "With the email and password that you have chosen you can now access the MOOC platform http://moodle.educainternet.es"
+      body4: "Once logged in in that plaform you will see a course entitled '%{name}', and you will be able to access with the password: %{password}" 
+      body5: "Thank you very much for registering in EducaInternet"
+      subject: "Welcome to EducaInternet"
+    inscription:
+      title: "Join MOOC"
   navigation:
     catalogue: "Catalogue"
     home: "Home"
@@ -847,6 +857,7 @@ en:
       pupils_tab: "Pupils"
       excursions_tab: "Teaching units"
   profile:
+    centercode: "Center code"
     change_role: "Change role"
     edit: "Edit profile"
     edit_role: "Edit role"
@@ -860,6 +871,7 @@ en:
         other: "Other"
       select: "Select your occupation"
     remove: "Remove user"
+    surname: "Surname" 
     tags:
       default: "EducaInternet, teaching unit"
       other: "Areas of interest"

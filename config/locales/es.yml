@@ -748,6 +748,17 @@ es:
     invitebody_html: "Haz click aquí para unirte a la videoconferencia: <a href='http://www.mashme.tv/M/%{room}?name=%{username}'><img src='http://%{domain}/assets/mashme_button.png' /></a>"
     launch: "Empezar"
     room_name: "Nombre de la sala"
+  mooc:
+    first_mail:
+      body1: "Bienvenido"
+      body2: "Gracias por registrarse en EducaInternet."
+      body3: "Con el email y la contraseña que ha elegido para http://educainternet.es podrá acceder a la plataforma de MOOCS http://moodle.educainternet.es"
+      body4: "Una vez logueado en dicha plataforma verá un curso titulado '%{name}' al que podrá acceder con la contraseña %{password}" 
+      body5: "Muchas gracias por registrarse en EducaInternet"
+      subject: "Bienvenido a EducaInternet"
+    inscription:
+      title: "Inscribirme en el MOOC"
+      
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"
@@ -847,6 +858,7 @@ es:
       pupils_tab: "Alumnos"
       excursions_tab: "Unidades Didácticas"
   profile:
+    centercode: "Código de centro"
     change_role: "Cambiar rol"
     edit: "Editar perfil"
     edit_role: "Editar rol"
@@ -859,6 +871,7 @@ es:
         select: "Selecciona tu ocupación"
         teacher: "Educación"
     remove: "Borrar usuario"
+    surname: "Apellidos"    
     tags:
       default: "EducaInternet, unidad didáctica"
       other: "Áreas de interés"

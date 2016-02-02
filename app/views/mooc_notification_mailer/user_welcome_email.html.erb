@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <%if @user %>
+      <span><%=t('mooc.first_mail.body1') + " " + @user.name %>:</span>    
+    <%end%>
+
+    <div>
+      <div><%=t('mooc.first_mail.body2')%></div>
+      <div><%=t('mooc.first_mail.body3')%></div>
+      <div><%= raw t('mooc.first_mail.body4', :name => Vish::Application.config.APP_CONFIG["mooc"]["name"], :password => Vish::Application.config.APP_CONFIG["mooc"]["password"]) %></div>
+      <div><%=t('mooc.first_mail.body5')%></div>
+    </div>
+  </body>
+</html>

@@ -23,6 +23,9 @@ development:
     mode: "matchtag" #matchany or matchtag
     qualityThreshold: 5
   #certified: [10071, 5444, 12915, 7025, 16309, 2988, 6921, 3519, 10692, 8064, 10863]
+  mooc: 
+    name: "Uso seguro y responsable de las TIC en el aula"
+    password: "pepe"
 
 production:
   name: "ViSH"
