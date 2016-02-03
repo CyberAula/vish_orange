@@ -27,6 +27,16 @@ class UsersController < ApplicationController
     authorize! :edit_roles, resource
   end
 
+  def update
+    if resource.mooc && !resource.mailmoocsent
+    binding.pry
+
+        flash[:success] = t('mooc.alert.success_inscription')
+        flash[:error] = "pepepepepep"
+    end
+    super
+  end
+
   def update_role
     authorize! :edit_roles, resource
 

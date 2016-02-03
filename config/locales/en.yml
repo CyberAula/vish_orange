@@ -751,6 +751,11 @@ en:
     launch: "Launch"
     room_name: "Room name"
   mooc:
+    alert: 
+      success_inscription: "Thank you for registering in the MOOC. You will receive an email with instructions to access the course."
+    button:
+      new_mooc: "e-safety MOOC"
+      go_to_mooc: "Go to MOOC"
     first_mail:
       body1: "Welcome"
       body2: "Thank you for registering in EducaInternet"

@@ -749,6 +749,11 @@ es:
     launch: "Empezar"
     room_name: "Nombre de la sala"
   mooc:
+    alert: 
+      success_inscription: "Gracias por registrarte en el MOOC. Recibirás un email con instrucciones para acceder al curso."
+    button:
+      new_mooc: "Hay un MOOC de Menores y TIC"
+      go_to_mooc: "Ir al MOOC"
     first_mail:
       body1: "Bienvenido"
       body2: "Gracias por registrarse en EducaInternet."
@@ -758,7 +763,6 @@ es:
       subject: "Bienvenido a EducaInternet"
     inscription:
       title: "Inscribirme en el MOOC"
-
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"

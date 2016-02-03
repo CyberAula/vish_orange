@@ -1,5 +1,5 @@
 User.class_eval do
-  attr_accessible :tag_list, :occupation, :description, :organization, :city, :country, :birthday, :website, :surname, :mooc, :center_code
+  attr_accessible :tag_list, :occupation, :description, :organization, :city, :country, :birthday, :website, :surname, :mooc, :center_code, :mailmoocsent
 
   delegate  :description, :description=,
             :organization, :organization=,
@@ -59,7 +59,10 @@ User.class_eval do
   end
 
   def send_mooc_mail
-    MoocNotificationMailer.user_welcome_email(self)
+    if self.mooc && !self.mailmoocsent
+      MoocNotificationMailer.user_welcome_email(self)
+      self.update_column :mailmoocsent, true
+    end
   end
   
 end
