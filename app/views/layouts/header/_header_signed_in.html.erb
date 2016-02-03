@@ -188,13 +188,15 @@
       <li class="search-ui ">
       <%= render partial: 'layouts/header/uisearch_header' %>
       </li>
-
+      <ul class="nav navbar-nav navbar-right">
+      <%if current_subject.mooc%>
+        <li class="btn btn-default btn-header btn-home"><a class="linker" href="http://moodle.educainternet.es"><%=t('mooc.button.go_to_mooc')%></a></li>
+      <%elsif current_subject.email.ends_with? "@educa.madrid.org"%>
+        <li class="btn btn-default btn-header btn-home"><a class="linker" href="/mooc_welcome"><%=t('mooc.button.new_mooc')%></a></li>
+      <%end%>
+    </ul>
     </div>
-    <%if current_subject.email.ends_with? "@educa.madrid.org"%>
-        <li class="btn btn-default btn-header"><a class="linker" href="/mooc_welcome"><%=t('mooc.button.new_mooc')%></a></li>
-    <%elsif current_subject.mooc%>
-        <li class="btn btn-default btn-header"><a class="linker" href="http://moodle.educainternet.es"><%=t('mooc.button.go_to_mooc')%></a></li>
-    <%end%>
+
     <div class="nav-collapse navbar-responsive-collapse collapse hidden-desktop MOBILE">
       <%= render partial: 'layouts/header/header_signed_in_mobile' %>
     </div>
