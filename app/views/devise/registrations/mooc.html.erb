@@ -118,4 +118,13 @@
       $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
       return true;
     });
+
+    $('#user_email').keypress(function(e){
+      if(e.which == 64){
+        alert("Esta edición del MOOC está cerrada a profesores de la comunidad de Madrid. No escriba el dominio del email. La plataforma añadirá @educa.madrid.org automáticamente.");
+        return false;
+      } else {
+        return true;
+      }
+    });
 <% end %>
