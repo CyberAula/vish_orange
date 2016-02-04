@@ -190,9 +190,9 @@
       </li>
       <ul class="nav navbar-nav navbar-right">
       <%if current_subject.mooc%>
-        <li class="btn btn-default btn-header btn-home"><a class="linker" href="http://moodle.educainternet.es"><%=t('mooc.button.go_to_mooc')%></a></li>
+        <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="http://moodle.educainternet.es"><%=t('mooc.button.go_to_mooc')%></a></li>
       <%elsif current_subject.email.ends_with? "@educa.madrid.org"%>
-        <li class="btn btn-default btn-header btn-home"><a class="linker" href="/mooc_welcome"><%=t('mooc.button.new_mooc')%></a></li>
+        <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="/mooc_welcome"><%=t('mooc.button.new_mooc')%></a></li>
       <%end%>
     </ul>
     </div>
