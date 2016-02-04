@@ -33,7 +33,9 @@ class RegistrationsController < Devise::RegistrationsController
             end
         else
             clean_up_passwords resource
-
+            if params[:user][:mooc]
+              resource.email.slice! "@educa.madrid.org"
+            end
             render params[:user][:mooc] ? :mooc : :new                
         end
     else
