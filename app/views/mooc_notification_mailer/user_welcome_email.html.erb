@@ -24,7 +24,7 @@
                   <div style="line-height: 1.3em;height: auto;font-weight: 100;padding: 20px 50px 10px; color: #484848; background-color: #FFF; font-size: 15px;">
 
                     <p style="font-size: 20px;margin-bottom: 15px;">
-                      <% @user = User.last%>
+                    
                     <%if @user %>
                       <span><%=t('mooc.first_mail.body1') + " " + @user.name %>:</span>
                     <%end%>
