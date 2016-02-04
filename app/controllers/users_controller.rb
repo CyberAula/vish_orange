@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, only: :current
 
   respond_to :html, :xml, :js
+  skip_after_filter :discard_flash, :only => [:update]
+
   
   def index
     raise ActiveRecord::RecordNotFound
@@ -27,13 +29,10 @@ class UsersController < ApplicationController
     authorize! :edit_roles, resource
   end
 
-  def update
+  def update 
     if resource.mooc && !resource.mailmoocsent
-    binding.pry
-
-        flash[:success] = t('mooc.alert.success_inscription')
-        flash[:error] = "pepepepepep"
-    end
+      flash[:success] = t('mooc.alert.success_inscription')
+    end   
     super
   end
 
