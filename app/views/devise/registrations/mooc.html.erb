@@ -6,11 +6,13 @@
 <section id="registration">
   <section class="registration">
     <h4><%= t('mooc.log_in').capitalize %></h4>
-    <p class="separator"><%= t('mooc.go_to_login') %></p>
-    <%= link_to t('mooc.sign_in'), 'https://educainternet.es/cas/cas/login?service=http%3A%2F%2Feducainternet.es%2Fusers%2Fedit%3Fmooc%3Dtrue', :class => "btn btn-primary btn-logmooc pull-right"%>
-    <hr>
+    <p><%= t('mooc.go_to_login') %></p>
+    <%= link_to t('mooc.sign_in'), 'https://educainternet.es/cas/cas/login?service=http%3A%2F%2Feducainternet.es%2Fusers%2Fedit%3Fmooc%3Dtrue', :class => "btn btn-primary btn-logmooc pull-right "%>
+    <div class="clear"></div>
+  </section>
+  <section class="registration">
     <h4><%= t('mooc.sign_up').capitalize %></h4>
-
+    <p><%= t('mooc.sign_up2') %></p>
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group reg-labels">

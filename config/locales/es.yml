@@ -766,7 +766,8 @@ es:
     go_to_login: "Si ya eres usuario de EducaInternet, por favor accede con tus credenciales para registrarte en el curso"
     log_in: "Accede con tus datos"
     sign_in: "Acceder"
-    sign_up: "Regístrate en el curso"
+    sign_up: "Regístrate "
+    sign_up2: "Si todavía no eres usuario, rellena los campos y regístrate"
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"
