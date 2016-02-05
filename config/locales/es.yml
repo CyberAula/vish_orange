@@ -753,7 +753,7 @@ es:
       success_inscription: "Gracias por registrarte en el MOOC. Recibirás un email con instrucciones para acceder al curso."
     button:
       new_mooc: "MOOC de Menores y TIC"
-      go_to_mooc: "Ir al MOOC"
+      go_to_mooc: "MOOC de Menores y TIC"
     first_mail:
       body1: "Bienvenido"
       body2: "Se ha registrado correctamente en EducaInternet, con los siguientes datos:"
@@ -762,7 +762,10 @@ es:
       body5: "Muchas gracias por registrarse en EducaInternet"
       subject: "Bienvenido a EducaInternet"
     inscription:
-      title: "Inscribirme en el MOOC"
+      title: "Verifique y complete sus datos para inscribirse en el curso"
+    go_to_login: "Si ya es usuarios de EducaInternet por favor acceda con sus credenciales para registrarse en el curso"
+    sign_in: "Acceder"
+    sign_up: "Registrate en el curso"
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"

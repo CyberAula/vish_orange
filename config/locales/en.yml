@@ -755,7 +755,7 @@ en:
       success_inscription: "Thank you for registering in the MOOC. You will receive an email with instructions to access the course."
     button:
       new_mooc: "e-safety MOOC"
-      go_to_mooc: "Go to MOOC"
+      go_to_mooc: "e-safety MOOC"
     first_mail:
       body1: "Welcome"
       body2: "Thank you for registering in EducaInternet"
@@ -763,8 +763,11 @@ en:
       body4: "Once logged in in that plaform you will see a course entitled '%{name}', and you will be able to access with the password: %{password}" 
       body5: "Thank you very much for registering in EducaInternet"
       subject: "Welcome to EducaInternet"
+    go_to_login: "If you are already a user of EducaInternet please log in to register in the course"
     inscription:
       title: "Join MOOC"
+    sign_in: "Sign in"
+    sign_up: "Register in the course"
   navigation:
     catalogue: "Catalogue"
     home: "Home"

@@ -82,7 +82,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     if resource.mooc
-      Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"]
+      Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?service=http://moodle.educainternet.es/course/view.php?id=6"
     else
       '/home'
     end

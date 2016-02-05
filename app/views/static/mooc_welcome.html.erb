@@ -11,15 +11,13 @@
     <p class="highlight">4 semanas / 5 horas por semana</p>
     <h2>Fechas</h2>
     <p>La inscripción del curso empieza el día de Internet Segura, <span class="highlight"> 9 de Febrero</span> y está abierta a todos los <span class="highlight">usuarios de EducaMadrid</span>.
-    <br>El curso comienza el  <span class="highlight">23 de Febrero de 2016</span></p>
-    <p class="little_font">* Si ya eres usuario de EducaInternet, pincha en el enlace "Apuntarme al MOOC",<br> si no, elige "Registrarme y apuntarme"</p>
+    <br>El curso comienza el  <span class="highlight">23 de Febrero de 2016</span></p>    
     <%if current_user && (current_user.email.ends_with? "@educa.madrid.org")%>
       <a href="/users/edit?mooc=true"><div class="btn btn-default btn-mooc">Apuntarme al MOOC</div></a>
     <%elsif current_user%>
       Lo sentimos esta edición del MOOC está cerrada para profesores de la comunidad de Madrid. Si tienes un email @educa.madrid.org edita tu perfil y cámbialo para poder acceder.
-    <%else%>
-      <a href="https://educainternet.es/cas/cas/login?service=http%3A%2F%2Feducainternet.es%2Fusers%2Fedit%3Fmooc%3Dtrue"><div class="btn btn-default btn-mooc">Apuntarme al MOOC</div></a>
-      <a href="/users/sign_up?mooc=true"><div class="btn btn-default btn-mooc">Registrarme y apuntarme al MOOC</div>
+    <%else%>      
+      <a href="/users/sign_up?mooc=true"><div class="btn btn-default btn-mooc">Registrarme en el curso</div></a>
     <%end%>
   </div>
 </div>
