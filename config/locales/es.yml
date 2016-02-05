@@ -763,9 +763,10 @@ es:
       subject: "Bienvenido a EducaInternet"
     inscription:
       title: "Verifique y complete sus datos para inscribirse en el curso"
-    go_to_login: "Si ya es usuarios de EducaInternet por favor acceda con sus credenciales para registrarse en el curso"
+    go_to_login: "Si ya eres usuario de EducaInternet, por favor accede con tus credenciales para registrarte en el curso"
+    log_in: "Accede con tus datos"
     sign_in: "Acceder"
-    sign_up: "Registrate en el curso"
+    sign_up: "Regístrate en el curso"
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"

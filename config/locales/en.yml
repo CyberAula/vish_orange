@@ -751,7 +751,7 @@ en:
     launch: "Launch"
     room_name: "Room name"
   mooc:
-    alert: 
+    alert:
       success_inscription: "Thank you for registering in the MOOC. You will receive an email with instructions to access the course."
     button:
       new_mooc: "e-safety MOOC"
@@ -760,10 +760,11 @@ en:
       body1: "Welcome"
       body2: "Thank you for registering in EducaInternet"
       body3: "With the email and password that you have chosen you can now access the MOOC platform http://moodle.educainternet.es"
-      body4: "Once logged in in that plaform you will see a course entitled '%{name}', and you will be able to access with the password: %{password}" 
+      body4: "Once logged in in that plaform you will see a course entitled '%{name}', and you will be able to access with the password: %{password}"
       body5: "Thank you very much for registering in EducaInternet"
       subject: "Welcome to EducaInternet"
     go_to_login: "If you are already a user of EducaInternet please log in to register in the course"
+    log_in: "Log in"
     inscription:
       title: "Join MOOC"
     sign_in: "Sign in"
@@ -879,7 +880,7 @@ en:
         other: "Other"
       select: "Select your occupation"
     remove: "Remove user"
-    surname: "Surname" 
+    surname: "Surname"
     tags:
       default: "EducaInternet, teaching unit"
       other: "Areas of interest"
