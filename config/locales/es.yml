@@ -660,14 +660,14 @@ es:
       title: "Educación"
       description: "Encuentra los mejores recursos educativos y objetos de aprendizaje libres y gratuitos clasificados por temática. Los recursos de EducaInternet pueden ser utilizados para la enseñanza, el aprendizaje, como materiales de evaluación, en investigación o para otros fines."
     community:
-        title: "Comunidad"
-        description: "EducaInternet es una comunidad para profesores y profesionales de la educación que quieren conocer nuevos educadores, crear, compartir y descubrir recursos educativos innovadores, y conseguir acceso a herramientas para maximizar el aprendizaje potenciado por la tecnología."
+      title: "Comunidad"
+      description: "EducaInternet es una comunidad para profesores y profesionales de la educación que quieren conocer nuevos educadores, crear, compartir y descubrir recursos educativos innovadores, y conseguir acceso a herramientas para maximizar el aprendizaje potenciado por la tecnología."
     elearning:
-        title: "e-Learning"
-        description: "EducaInternet proporciona una colección de herramientas y servicios para facilitar la creación de materiales didácticos de alta calidad e impulsar el aprendizaje potenciado por la tecnología tanto en el aula como en Entornos de Aprendizaje Virtuales (VLEs) y Sistemas de Gestión del Aprendizaje (LMSs)."
+      title: "e-Learning"
+      description: "EducaInternet proporciona una colección de herramientas y servicios para facilitar la creación de materiales didácticos de alta calidad e impulsar el aprendizaje potenciado por la tecnología tanto en el aula como en Entornos de Aprendizaje Virtuales (VLEs) y Sistemas de Gestión del Aprendizaje (LMSs)."
     community_stats:
-        title: "Nuestra comunidad crece cada día"
-        subtitle: "Comparte tu conocimiento en nuestra comunidad y ayúdanos a crecer"
+      title: "Nuestra comunidad crece cada día"
+      subtitle: "Comparte tu conocimiento en nuestra comunidad y ayúdanos a crecer"
     join_us: "¡Únete a EducaInternet!"
     title_certified: "Fórmate con cursos especializados"
     title_not_certified: "Enseña con unidades didácticas"

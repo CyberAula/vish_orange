@@ -16,10 +16,10 @@
     <%if current_user && (current_user.email.ends_with? "@educa.madrid.org")%>
       <a href="/users/edit?mooc=true"><div class="btn btn-default">Apuntarme al MOOC</div></a>
     <%elsif current_user%>
-      Lo sentimos esta edición del MOOC está cerrada para profesores de la comunidad de Madrid. Si tienes un email @educa.madrid.org edita tu perfil y cámbialo para poder acceder.
+      Lo sentimos esta edición del MOOC está cerrada para profesores de la comunidad de Madrid. Si tienes un email @educa.madrid.org edita tu perfil y cámbialo para poder acceder.<br/>
     <%else%>
-      <a href="/users/sign_up?mooc=true"><div class="btn btn-primary"><i class="fa fa-hand-o-up"></i>  Registrarme en el curso</div></a>
-      <a href="/mooc_sheet" class="btn btn-default"><i class="fa fa-download"></i><%= t('mooc.download_sheet') %></a>
+      <a href="/users/sign_up?mooc=true"><div class="btn btn-primary"><i class="fa fa-hand-o-up"></i>  Registrarme en el curso</div></a>      
     <%end%>
+    <a href="/mooc_sheet" class="btn btn-default"><i class="fa fa-download"></i><%= t('mooc.download_sheet') %></a>
   </div>
 </div>
