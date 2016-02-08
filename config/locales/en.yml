@@ -756,6 +756,7 @@ en:
     button:
       new_mooc: "e-safety MOOC"
       go_to_mooc: "e-safety MOOC"
+    download_sheet: "Download course info"
     first_mail:
       body1: "Welcome"
       body2: "Thank you for registering in EducaInternet"

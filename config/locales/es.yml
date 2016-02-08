@@ -754,6 +754,7 @@ es:
     button:
       new_mooc: "MOOC de Menores y TIC"
       go_to_mooc: "MOOC de Menores y TIC"
+    download_sheet: "Descargar ficha del curso"
     first_mail:
       body1: "Bienvenido"
       body2: "Se ha registrado correctamente en EducaInternet, con los siguientes datos:"
