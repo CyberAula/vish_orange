@@ -30,13 +30,15 @@
                     <%end%>
                     </p>
                     <p><%=t('mooc.first_mail.body2')%></p>
-                    <div style="padding-left: 20px;padding-bottom: 15px;">
-                      <span style="margin-bottom: 5px;font-weight: bold;">nombre</span>
-                      <br>
-                      <span><% @user.email %></span>
-                      <br>
-                      <span><% @user.center_code %></span>
-                    </div>
+                    <%if @user %>
+                      <div style="padding-left: 20px;padding-bottom: 15px;">
+                        <span style="margin-bottom: 5px;font-weight: bold;"><%=@user.name%></span>
+                        <br>
+                        <span><%= @user.email %></span>
+                        <br>
+                        <span><%= @user.center_code %></span>
+                      </div>
+                    <%end%>
                     <p><%=t('mooc.first_mail.body3')%></p>
 
                     <div style="margin-bottom:10px;padding-left: 20px;padding-bottom:10px;">
@@ -48,6 +50,7 @@
                       <a href="http://moodle.educainternet.es/course/view.php?id=6" style="text-decoration: none; color: black;font-weight: bold;">> Moodle</a>
                     </div>
                     <p><div><%= raw t('mooc.first_mail.body4', :name => Vish::Application.config.APP_CONFIG["mooc"]["name"], :password => Vish::Application.config.APP_CONFIG["mooc"]["password"]) %></div></p>
+                    <br/>
                     <span><%=t('mooc.first_mail.body5')%></span>
                     <p style="padding-top: 15px;">Un saludo,</p>
 
