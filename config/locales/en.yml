@@ -770,6 +770,14 @@ en:
       title: "Join MOOC"
     sign_in: "Sign in"
     sign_up: "Register in the course"
+    sign_up2: "If you're not yet a member, fill up the form and sign up"
+    sign_up3: "* Required fields"
+    sign_up_form:
+      email: "Email *"
+      password: "Password *"
+      confirm_password: "Confirm password *"
+      name: "Name *"
+      surname: "Surname *"
   navigation:
     catalogue: "Catalogue"
     home: "Home"
@@ -1103,7 +1111,7 @@ en:
       user: "The secret Image and code were different"
     error: "There was an error with the captcha code below. Please re-enter the code."
     subtitle: "Enter the code in the box:"
-    title: "Captcha"
+    title: "Captcha *"
   site:
     current:
       description: "EducaInternet is for teachers to learn and then teach children about being safe in internet and with the apps"

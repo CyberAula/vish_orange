@@ -769,6 +769,14 @@ es:
     sign_in: "Acceder"
     sign_up: "Regístrate "
     sign_up2: "Si todavía no eres usuario, rellena los campos y regístrate"
+    sign_up3: "* Estos campos son obligatorios"
+    sign_up_form:
+      email: "Email *"
+      password: "Contraseña *"
+      confirm_password: "Confirmar contraseña *"
+      name: "Nombre *"
+      surname: "Apellidos *"
+
   navigation:
     catalogue: "Catálogo"
     home: "Inicio"
@@ -1102,7 +1110,7 @@ es:
       user: "El código y la imagen no coinciden"
     error: "Hay un error con el código captcha. Por favor vuelve a introducir el código."
     subtitle: "Introduce el valor de la imagen"
-    title: "Captcha"
+    title: "Captcha *"
   site:
     current:
       description: "EducaInternet está orientada a profesores para que aprendan y enseñen a los menores a estar seguros en la red y con las apps"

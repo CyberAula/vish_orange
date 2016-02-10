@@ -12,26 +12,26 @@
   </section>
   <section class="registration">
     <h4><%= t('mooc.sign_up').capitalize %></h4>
-    <p><%= t('mooc.sign_up2') %></p>
+    <p><%= t('mooc.sign_up2') %><br><span class="required_fields"><%= t('mooc.sign_up3') %></span></p>
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "new_user_devise_form", :autocomplete => :off}) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group reg-labels">
         <%= f.hidden_field :mooc, :value => true %>
 
-        <%= f.label :email %>
+        <%= f.label :email, t('mooc.sign_up_form.email')  %>
         <%= f.text_field :email, :class => "form-control small_field_email", :required => true, :autocomplete => "off" %>
         <span class="small_field_email2">@educa.madrid.org</span>
 
-        <%= f.label :password %>
+        <%= f.label :password, t('mooc.sign_up_form.password') %>
         <%= f.password_field :password, :class => "form-control", :required => true, :id => "devise_password", :autocomplete => "off" %>
 
-        <%= f.label :password_confirmation %>
+        <%= f.label :password_confirmation, t('mooc.sign_up_form.confirm_password') %>
         <%= f.password_field :password_confirmation, :class => "form-control", :required => true, :autocomplete => "off" %>
 
-        <%= f.label :name %>
+        <%= f.label :name, t('mooc.sign_up_form.name') %>
         <%= f.text_field :name, :class => "form-control", :required => true, :autocomplete => "off" %>
 
-        <%= f.label t("profile.surname") %>
+        <%= f.label t("profile.surname"), t('mooc.sign_up_form.surname') %>
         <%= f.text_field :surname, :class => "form-control", :required => true, :autocomplete => "off" %>
 
         <%= f.label t("profile.centercode") %>
@@ -74,7 +74,7 @@
           </label>
           <div class="action">
             <%= f.submit t('action.accept').capitalize, :class => "btn btn-primary pull-right" %>
-            
+
           </div>
         </div>
       </div>
