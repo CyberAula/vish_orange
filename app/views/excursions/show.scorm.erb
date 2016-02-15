@@ -70,6 +70,7 @@
 		<% else %>
 			options["watermarkURL"] = "<%=Vish::Application.config.full_domain%>";
 		<% end %>
+		options["watermarkIcon"] = "educainternet";
 
 		var presentation = <%= raw json.to_json %>;
 
