@@ -59,9 +59,9 @@
 
 
           <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
-          <%if Vish::Application.config.APP_CONFIG["login_policy"]=="LOCAL"%>
+          <%if Vish::Application.config.APP_CONFIG["login_policy"]!="CAS"%>
               <li class="btn btn-primary btn-header btn-access dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold"><%=t("sign_in")%><i class="icon-angle-down"></i></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold"><%=t("sign_in")%> <i class="icon-angle-down"></i></span></a>
                 <ul class="dropdown-menu pull-right access-form" role="menu">
                   <%= form_for User.new, :as => :user, :url => user_session_path do |f| %>
                     <%= f.email_field :email, :id => "username", :class => 'form-control' %>
