@@ -164,7 +164,7 @@
   <!--TABS-->
   <ul class="nav nav-tabs tooltab">
     <li class="active">
-      <a href="#tab1" tabTitle='description' data-toggle="tab">
+      <a href="#exc_description" tabTitle='description' data-toggle="tab">
         <i class="fa fa-align-left"></i>
         <span class="  hidden-xs">
           <%=t('excursion.description')%>
@@ -172,7 +172,7 @@
       </a>
     </li>
     <li>
-      <a href="#tab2" tabTitle='embed' data-toggle="tab">
+      <a href="#exc_embed" tabTitle='embed' data-toggle="tab">
         <i class="fa fa-code"></i>
         <span class="  hidden-xs">
           <%=t('excursion.actions.embed') %>
@@ -180,7 +180,7 @@
       </a>
     </li>
     <li>
-      <a href="#tab3" tabTitle='share' data-toggle="tab">
+      <a href="#exc_share" tabTitle='share' data-toggle="tab">
         <i class="fa fa-share"></i>
         <span class=" hidden-xs">
           <%=t('excursion.actions.share')%>
@@ -189,7 +189,7 @@
     </li>
     <% if can?(:download_source, @excursion) %>
       <li>
-        <a href="#tab4" tabTitle='download' data-toggle="tab">
+        <a href="#exc_scorm" tabTitle='download' data-toggle="tab">
           <i class="fa fa-download"></i>
           <span class="hidden-xs">
             <%=t('document.actions.download')%>
@@ -198,7 +198,7 @@
       </li>
     <%end%>
     <li>
-      <a href="#tab5" tabTitle='flag' data-toggle="tab">
+      <a href="#exc_spam" tabTitle='flag' data-toggle="tab">
         <i class="fa fa-warning"></i>
         <span class=" hidden-xs spam-name ">
           <%=t('excursion.actions.spam')%>
@@ -214,12 +214,12 @@
   <div class="tab-content excursion-social">
 
     <!-- tab1 / description -->
-    <div class="tab-pane active" id="tab0">
+    <div class="tab-pane active" id="exc_description">
         <%= render :partial => 'excursions/excursion-info' %>
     </div>
 
     <!-- tab2 / embed -->
-    <div class="tab-pane contentembed" id="tab2">
+    <div class="tab-pane contentembed" id="exc_embed">
       <div class="form-group">
         <div class="input-group">
           <textarea class="form-control" readonly="true" id="textarea_for_iframe" type="text">&lt;iframe id='presentation_iframe' src='//<%= request.env["HTTP_HOST"] + excursion_path(@excursion, :format => :full)%>' width='910' height='680' style='border:0' iframeborder='0' frameborder='0' iframeElement.frameBorder = 0; webkitallowfullscreen mozallowfullscreen allowfullscreen &gt;&lt;/iframe&gt</textarea>
@@ -235,7 +235,7 @@
     </div>
 
     <!-- tab3 / share -->
-    <div class="tab-pane contentShare" id="tab3">
+    <div class="tab-pane contentShare" id="exc_share">
       <div class="form-group">
         <div class="input-group">
 
@@ -271,14 +271,14 @@
 
     <% if can?(:download_source, @excursion) %>
       <!-- tab4 / scorm -->
-      <div class="tab-pane contentscorm" id="tab4">
+      <div class="tab-pane contentscorm" id="exc_scorm">
         <a class="btn btn-default" href='<%=excursion_path(@excursion) + '.scorm'%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm')%></a>
         <p><%=t("excursion.download_scorm")%></p>
       </div>
     <% end %>
 
     <!-- tab5 / spam -->
-    <div class="tab-pane" id="tab5">
+    <div class="tab-pane" id="exc_spam">
       <% @activity_object = @excursion.activity_object %>
       <%= render '/spam_report/form' %>
     </div>
