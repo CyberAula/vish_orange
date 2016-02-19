@@ -1,12 +1,7 @@
 <ul class="nav navbar-nav mobile-nav">
-  <!--SEARCH-->
-  <li class="search-mobile">
-    <%= render partial: 'layouts/search_mobile' %>
-  </li>
-  
-  <li><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-  <li><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
-  
+
+
+
   <!--login-->
   <%if Vish::Application.config.APP_CONFIG["login_policy"]!="CAS"%>
     <li class="sign_in_mobile dropdown">
@@ -15,17 +10,17 @@
         <%=t("sign_in")%>
         <i class="fa fa-angle-down"></i>
       </a>
-      
+
       <ul class="dropdown-menu">
                     <%= form_for User.new, :html => {:id => 'new_user_mobile', :class => "form-horizontal"}, :as => :user, :url => user_session_path do |f| %>
                 <div class="form-group">
                   <%= f.email_field :email, :id => 'username_mobile', :class => "form-control" %>
                   <%= f.password_field :password, :id => 'password_mobile', :class => "form-control"  %>
-                  
+
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> 
+                    <input type="checkbox">
                       <span class="lbl padding-0">
                         <%=t("activerecord.attributes.user.remember_me")%>
                       </span>
@@ -35,9 +30,9 @@
                 <%= f.submit t(:sign_in), :class => ' btn btn-primary'%>
                 <div class="remember_password"><%= link_to t('devise.links.forgot_password'), new_password_path(:user) %>
                 </div>
-                
-                
-                
+
+
+
               <% end %>
         <%content_for :javascript do%>
               if ("placeholder" in document.createElement("input")) {
@@ -57,7 +52,13 @@
         </a>
       </li>
   <% end %>
+  <!--SEARCH-->
+  <li class="search-mobile">
+    <%= render partial: 'layouts/search_mobile' %>
+  </li>
 
+  <li><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
+  <li><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
   <!--sign_up-->
   <li class="sign_up_mobile">
     <a href="<%=new_user_registration_path%>"class="signin">
