@@ -63,7 +63,10 @@
 	//Watermark
 	<% if @excursion %>
 		options["watermarkURL"] = "<%=excursion_path(@excursion)%>";
+	<% else %>
+		options["watermarkURL"] = "<%=Vish::Application.config.full_domain%>";
 	<% end %>
+	options["watermarkIcon"] = "educainternet";
 
 	//FullScreen
 	<% if @excursion %>
