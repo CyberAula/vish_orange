@@ -162,32 +162,44 @@
       width: 100%
 
 #banner_head
-  height: 80px
   background: white
+  padding: 15px
   .banner_align_right
     position: relative
     text-align: right
-    height: 80px
-    .banner_for_vertical
-      height: 80px
-      margin-top: 14px
+    padding: 0 10px
     .banner_orange_color
-      color: #f60
+      color: $orange-primary
+      font-weight: bold
   .banner_course_title
-    margin-top: 10px
-    margin-bottom: 10px
+    margin: 0
+    padding: 5px 20px
   .banner_logos
     text-align: center
-    height: 80px
+    padding: 10px
     .banner_enrol_button
       position: relative
-      margin-right: 30px
-      div
-        margin-top: 20px
+      padding: 0 25px
     .banner_one_logo
+      padding: 0 10px
       img
-        max-height: 80px
-        padding: 16px
+        max-height: 42px
+  @media (max-width: 991px)
+    padding: 30px 20px
+    .banner_align_right
+      text-align: center
+      margin-bottom: 10px
+    .banner_course_title
+      text-align: center
+      font-size: 1.8em
+      margin-bottom: 20px
+    .banner_logos
+      .banner_one_logo
+        padding: 0 5px
+        img
+          max-height: 35px
+      .banner_enrol_button
+        padding: 0 15px
 
 
 @media (min-width: 1751px)
@@ -225,16 +237,7 @@
             font-size: 3.5em
       img
         bottom: -100px
-  #banner_head    
-    .banner_align_right
-      .banner_for_vertical
-        margin-top: 0px
-    .banner_logos      
-      .banner_enrol_button
-        margin-right: 16px
-      .banner_one_logo
-        img
-          max-height: 72px
+
 
 @media (min-width: 768px) and (max-width: 991px)
   .entities_front
@@ -253,6 +256,7 @@
     .box-title-general
       img
         bottom: -120px
+
 
 @media (min-width: 481px) and (max-width: 767px)
   .entities_front
@@ -306,7 +310,7 @@
         .btn-main-title
           display: none
       img
-        bottom: 35px
+        bottom: 0px
     .box-title-general
       height: 60px
       .main-title

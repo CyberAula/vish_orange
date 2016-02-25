@@ -185,7 +185,8 @@ es:
   author: "autor"
   banner:
     one: "¡Nuevo curso!"
-    two: "Para profesores de la Comunidad de Madrid"
+    two: "para profesores de la"
+    twob: "Comunidad de Madrid"
     three: "Uso seguro y responsable de las Tecnologías de la Información y las Comunicaciones"
     four: "Inscribirme"
     learn: "Fórmate con cursos especializados"
