@@ -1,5 +1,5 @@
 User.class_eval do
-  attr_accessible :tag_list, :occupation, :description, :organization, :city, :country, :birthday, :website, :surname, :mooc, :center_code, :mailmoocsent
+  attr_accessible :tag_list, :occupation, :description, :organization, :city, :country, :birthday, :website, :surname, :madridorgid
 
   delegate  :description, :description=,
             :organization, :organization=,
@@ -11,12 +11,11 @@ User.class_eval do
   delegate_attributes :birthday, :birthday=,
                       :to => :profile
 
-  after_save :send_mooc_mail
   before_destroy :destroy_user_resources
 
   belongs_to :private_student_group
   has_one :private_teacher, class_name: "Actor", through: :private_student_group
-  
+
   Occupation = [:select, :teacher, :scientist, :other]
 
   scope :registered, lambda {
@@ -55,13 +54,6 @@ User.class_eval do
     ActivityObject.owned_by(self).each do |ao|
       object = ao.object
       object.destroy unless object.nil?
-    end
-  end
-
-  def send_mooc_mail
-    if self.mooc && !self.mailmoocsent
-      MoocNotificationMailer.user_welcome_email(self)
-      self.update_column :mailmoocsent, true
     end
   end
   

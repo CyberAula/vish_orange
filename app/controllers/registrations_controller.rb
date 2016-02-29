@@ -3,64 +3,37 @@ class RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up?mooc=boolean
   def new
-    resource = build_resource({})
-    render params[:mooc] ? :mooc : :new
+    super
   end
 
   # POST /resource
   def create
     if simple_captcha_valid?
+
+      #Infer user language from client information
+      if !I18n.locale.nil? and !params[:user].nil? and I18n.available_locales.map{|i| i.to_s}.include? I18n.locale.to_s
         params[:user] ||= {}
-        #Infer user language from client information
-        if !I18n.locale.nil? and !params[:user].nil? and I18n.available_locales.map{|i| i.to_s}.include? I18n.locale.to_s
-            params[:user][:language] = I18n.locale.to_s
-        end
+        params[:user][:language] = I18n.locale.to_s
+      end
 
-        if params[:user][:mooc]
-          params[:user][:email] = params[:user][:email] + "@educa.madrid.org"
-        end
-
-        build_resource
-        if resource.save
-            if resource.active_for_authentication?
-              set_flash_message :notice, :signed_up if is_navigational_format?
-              sign_up(resource_name, resource)
-              respond_with resource, :location => after_sign_up_path_for(resource)
-            else
-              set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
-              expire_session_data_after_sign_in!
-              respond_with resource, :location => after_inactive_sign_up_path_for(resource)
-            end
-        else
-            clean_up_passwords resource
-            if params[:user][:mooc]
-              resource.email.slice! "@educa.madrid.org"
-            end
-            render params[:user][:mooc] ? :mooc : :new                
-        end
+      super
     else
-        build_resource
-        
-        #clean_up_passwords(resource)
-        flash.now[:alert] = t('simple_captcha.error')   
-        flash.delete :recaptcha_error
-
-        render params[:user][:mooc] ? :mooc : :new      
+      build_resource
+      
+      #clean_up_passwords(resource)
+      flash.now[:alert] = t('simple_captcha.error')   
+      flash.delete :recaptcha_error
+      render :new
     end
   end
 
   # GET /resource/edit
   def edit
-    if (self.resource.email.ends_with? "@educa.madrid.org") && params[:mooc] =="true"
-      render :mooc_edit
-    else
-      render :edit
-    end    
+    super
   end
 
   # PUT /resource
   def update
-    bindint.pry
     super
   end
 
