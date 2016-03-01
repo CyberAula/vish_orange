@@ -11,7 +11,8 @@
       <%= devise_error_messages! %>
       <div class="form-group reg-labels">
         <%= f.hidden_field :madridorgid, :value => params[:uid]  %>
-        
+        <%= hidden_field_tag :course, params[:course] %>
+
         <%= f.label :name %>
         <%= f.text_field :name, :class => "form-control", :autocomplete => "off" %>
 

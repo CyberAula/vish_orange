@@ -15,7 +15,8 @@ User.class_eval do
 
   belongs_to :private_student_group
   has_one :private_teacher, class_name: "Actor", through: :private_student_group
-
+  has_and_belongs_to_many :courses
+  
   Occupation = [:select, :teacher, :scientist, :other]
 
   scope :registered, lambda {

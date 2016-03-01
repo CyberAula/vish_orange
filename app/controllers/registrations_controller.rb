@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   skip_before_filter :store_location
+  after_filter :process_course_enrolment, :only =>[:create]
 
   # GET /resource/sign_up?mooc=boolean
   def new
@@ -54,12 +55,23 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    if resource.mooc
+    if false
       Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?service=http://moodle.educainternet.es/course/view.php?id=6"
     else
       '/home'
     end
 
+  private
+
+
+  def process_course_enrolment
+    if params[:course].present?
+      course = Course.find(params[:course])
+      if !course.restricted
+        course.users << current_user
+        CourseNotificationMailer.user_welcome_email(current_user, course)
+      end
+    end
   end
 
 end

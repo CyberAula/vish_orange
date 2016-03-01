@@ -77,6 +77,10 @@
                 <li><a href="#AddCategoryHeader" data-toggle="modal"><i class="fa fa-th-large"></i> <%=t('categories.actions.add')%></a></li>
               <% elsif modelName == "Event" %>
                 <li><a href="#AddEvent" data-toggle="modal"><i class="fa fa-video-camera"></i> <%=t('event.actions.add')%></a></li>
+              <% elsif modelName == "Course" %>
+                  <%if Vish::Application.config.courses_enabled%>
+                    <li><%= link_to new_course_path do %><i class="fa fa-university"></i> <%=t('course.actions.add')%>    <% end %></li>
+                  <%end%>
               <%end%>
             <% end %>
           </ul>
@@ -135,6 +139,14 @@
                 <% end %>
               </li>
             <%end%>
+                  <%if availableModels.include? "Course" %>
+                    <li class="settings-menu">
+                      <%= link_to "/users/"+current_subject.slug+"/courses" do %>
+                          <i class="fa fa-cog"></i>
+                          <span><%= t('course.my') %></span>
+                      <% end %>
+                    </li>
+                  <%end%>
 
             <% if availableServices.include? "PrivateStudentGroups" and !current_subject.role?("PrivateStudent") %>
                 <li class="settings-menu">
