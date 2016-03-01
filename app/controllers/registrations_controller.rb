@@ -60,9 +60,9 @@ class RegistrationsController < Devise::RegistrationsController
     else
       '/home'
     end
+  end
 
   private
-
 
   def process_course_enrolment
     if params[:course].present?
