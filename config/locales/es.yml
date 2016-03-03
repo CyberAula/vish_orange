@@ -385,7 +385,7 @@ es:
   thevish: "EducaInternet"
   youtube: "Canal EducaInternet en Youtube"
   copy_to_clip: "Copiar al portapapeles"
-  course: 
+  course:
     actions:
       add: "Añadir curso"
       delete: "Borrar"
@@ -407,7 +407,7 @@ es:
     date_to: "hasta"
     extra_info: "Información adicional (solo visible para el propietario)"
     fields:
-      closed: "Cerrar curso. Precaución, esto inhabilita a los usuarios a ir al curso"
+      closed: "Cerrar curso (Precaución, esto inhabilita a los usuarios a ir al curso)"
       course_password: "Contraseña del curso en Moodle"
       end_date: "Fecha fin"
       enrol_password: "Contraseña"
@@ -443,7 +443,7 @@ es:
       course_registration_ended: "Este curso ya ha comenzado y no está abierto a registro"
       only_email: "Lo sentimos, este curso está restringido."
       unknown: "Curso restringido"
-    my: "Mis cursos"
+    my: "Cursos"
     new: "Nuevo curso"
     none: "No hay cursos que mostrar"
     no_attachment: "No se ha subido un programa del curso"
@@ -1268,8 +1268,8 @@ es:
     view_full: "Pantalla completa"
   workshop:
     actions:
-        add: "Crear Curso"
-        add_activity_title: "Añadir Actividad al Curso"
+        add: "Añadir Curso"
+        add_activity_title: "Añadir actividad a la curso"
         add_activity_button: "Añadir"
         adding_activity_button: "Añadiendo..."
         add_banner: "Escoge una imagen de portada"

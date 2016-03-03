@@ -244,6 +244,7 @@ en:
         teaching: "teaching"
     title: "Subjects"
     title_directory: "Resources"
+    title_archive: "Courses"
   category:
     belongs_to: "Belongs to"
     cat_add_select: "Select your categories"
@@ -402,7 +403,7 @@ en:
   thevish: "EducaInternet"
   youtube: "EducaInternet Youtube Channel"
   copy_to_clip: "Copy to clipboard"
-  course: 
+  course:
     actions:
       add: "Add course"
       delete: "Delete"
