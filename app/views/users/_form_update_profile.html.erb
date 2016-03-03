@@ -8,6 +8,9 @@
       <%= f.label t('actor.name'), :class => "name-required" %>
       <%= f.text_field :name, :class => "form-control required", :maxlength => 50 %>
 
+      <%= f.label t('profile.surname'), :class => "name-required" %>
+      <%= f.text_field :surname, :class => "form-control required", :maxlength => 50 %>
+
       <%= f.label t('profile.occupation.label'), :class => "text" %>
       <%= f.select(:occupation, options_for_select([[t('profile.occupation.options.select'), 0], [t('profile.occupation.options.teacher'), 1],[t('profile.occupation.options.scientist'),2], [t('profile.occupation.options.other'),3]], profile_subject.occupation)) %>
 

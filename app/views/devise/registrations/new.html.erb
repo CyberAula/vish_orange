@@ -16,19 +16,18 @@
         <%= f.label :name %>
         <%= f.text_field :name, :class => "form-control", :autocomplete => "off" %>
 
+        <%= f.label :surname, t("profile.surname") %>
+        <%= f.text_field :surname, :class => "form-control", :required => true, :autocomplete => "off" %>
+
         <%= f.label :email %>
         <%= f.text_field :email, :class => "form-control", :autocomplete => "off" %>
 
         <%= f.label :password %>
-
         <%= f.password_field :password, :class => "form-control", :id => "devise_password", :autocomplete => "off" %>
 
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, :class => "form-control", :autocomplete => "off" %>
-
-        <%= f.label t('profile.occupation.label') %>
-        <%= f.select(:occupation, options_for_select([[t('profile.occupation.options.select'), 0], [t('profile.occupation.options.teacher'), 1], [t('profile.occupation.options.scientist'), 2], [t('profile.occupation.options.other'), 3]], params[:user] ? params[:user][:occupation] : nil)) %>
-
+        
         <%= f.label t('activerecord.attributes.user.tag') %>
         <div class="tagBoxNew">
           <ul class="tagList">
