@@ -131,7 +131,7 @@
             <% if availableModels.include? "Excursion" and availableServices.include? "ARS" and !current_subject.role?("PrivateStudent") %>
               <!-- divider bar -->
               <li class="divider"></li>
-
+              
               <li class="settings-menu">
                 <%= link_to quiz_sessions_path do %>
                   <i class="fa fa-check-square"></i>
@@ -139,7 +139,8 @@
                 <% end %>
               </li>
             <%end%>
-                  <%if availableModels.include? "Course" %>
+
+                  <%if (availableModels.include? "Course") && current_subject.courses.length>0 %>
                     <li class="settings-menu">
                       <%= link_to "/users/"+current_subject.slug+"/courses" do %>
                           <i class="fa fa-graduation-cap"></i>
