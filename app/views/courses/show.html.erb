@@ -88,6 +88,9 @@
               <%end%>
 
           <%end%>
+          <% if @course.attachment.exists? %>
+            <a href="<%=@course.attachment.url%>" target="_blank" class="btn btn-default pull-right"><i class="fa fa-download"></i><%= t('course.actions.download_sheet') %></a>
+          <% end %>
       </div>
 
       <%if user_signed_in? && can?(:update, @course)%>
@@ -133,9 +136,7 @@
         <%end%>
         <a class="btn btn-default" href="<%=@course.url%>" target="_blank"><%=t('course.actions.go')%></a>
       <%end%>
-      <% if @course.attachment.exists? %>
-        <a href="<%=@course.attachment.url%>" target="_blank" class="btn btn-default pull-right"><i class="fa fa-download"></i><%= t('course.actions.download_sheet') %></a>
-      <% end %>
+      
     </div>
   </div>
 
