@@ -55,7 +55,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    if false
+    if params[:user][:madridorgid]
       Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?service=http://moodle.educainternet.es/course/view.php?id=6"
     else
       '/home'
@@ -71,6 +71,11 @@ class RegistrationsController < Devise::RegistrationsController
         course.users << current_user
         CourseNotificationMailer.user_welcome_email(current_user, course)
       end
+    end
+    if params[:user][:madridorgid].present?
+      course = Course.first
+      course.users << current_user
+      CourseNotificationMailer.user_welcome_email(current_user, course)      
     end
   end
 
