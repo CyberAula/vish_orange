@@ -73,7 +73,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
     end
     if params[:user][:madridorgid].present?
-      course = Course.first
+      course = Course.find(2)
       course.users << current_user
       CourseNotificationMailer.user_welcome_email(current_user, course)      
     end
