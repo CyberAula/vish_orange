@@ -7,16 +7,17 @@
 <section id="course" class="layout_show">
 
   <div class="row container_mooc">
-    <div class="col-md-4 mooc_image_main">
+    <div class="mooc_image_main">
       <%=course_thumb_for(@course)%>
     </div>
-    <div class="col-md-8 mooc_welcome_text">
+
+    <div class="col-md-12 mooc_welcome_text box_description">
       <h1><%=@course.title%></h1>
       <h2><%=t('course.description')%></h2>
       <p><%=@course.description%></p>
       <%if @course.start_date.present? || @course.end_date.present?%>
         <h2><%=t('course.dates')%></h2>
-        <p><%=t("course.date_from")%>: <%=@course.start_date%> <%=t("course.date_to")%>: <%=@course.end_date%></p>
+        <p><%=t("course.date_from")%> <span class="bold"><%=@course.start_date.strftime('%d-%m-%Y') %></span> <%=t("course.date_to")%> <span class="bold"><%=@course.end_date.strftime('%d-%m-%Y')%></span></p>
       <%end%>
       <%if @course.age_min!=0 || @course.age_max!=0%>
         <h2><%=t('course.age')%></h2>
@@ -36,6 +37,7 @@
           </li>
           <% end %>
         </ul>
+        <div class="clear"></div>
       <%end%>
 
       <%if current_user && @course.course_password && (@course.users.include? current_user)%>
@@ -53,7 +55,7 @@
               <%if current_user && (@course.users.include? current_user)%>
                   <a class="btn btn-default" href="<%=@course.url%>" target="_blank"><%=t('course.actions.go')%></a>
                   <%= form_for @course, :url => { :action => :leave }, method: "post"  do |f| %>
-                    <%= f.submit t('course.actions.leave') %>
+                    <%= f.submit t('course.actions.leave'), class: "btn btn-primary" %>
                   <% end %>
               <%else%>
                   <%if @course.end_date.present? && @course.end_date < Date.today%>
@@ -64,13 +66,13 @@
                     <%if current_user%>
                       <%if !@course.restricted || (@course.restricted && @course.restriction_email.present? && (current_user.email.ends_with? @course.restriction_email))%>
                         <%= form_for @course, :url => { :action => :join }, method: "post"  do |f| %>
-                          <%= f.submit t('course.actions.enrol') %>
+                          <%= f.submit t('course.actions.enrol'), class: "btn btn-primary" %>
                         <% end %>
                       <%elsif @course.restricted && @course.restriction_password.present?%>
                         <%= form_for @course, :url => { :action => :join }, method: "post"  do |f| %>
-                          <%= label_tag :password, t('course.fields.enrol_password') + ":" %>
-                          <%= text_field_tag :password, nil, :class => "form-control" %>
-                          <%= f.submit t('course.actions.enrol') %>
+                          <%#= label_tag :password, t('course.fields.enrol_password') + ":" %>
+                          <%= text_field_tag :password, nil, :class => "form-control", :placeholder => t('course.fields.enrol_password') %>
+                          <%= f.submit t('course.actions.enrol'), class: "btn btn-primary" %>
                         <% end %>
                       <%elsif @course.restricted && @course.restriction_email.present? && !(current_user.email.ends_with? @course.restriction_email)%>
                         <div class=""><%=t('course.msgs.only_email')%></div>
@@ -94,7 +96,7 @@
       </div>
 
       <%if user_signed_in? && can?(:update, @course)%>
-        <br/>
+
         <hr>
         <h2><%=t('course.extra_info')%></h2>
         <%if @course.restricted%>
@@ -136,7 +138,7 @@
         <%end%>
         <a class="btn btn-default" href="<%=@course.url%>" target="_blank"><%=t('course.actions.go')%></a>
       <%end%>
-      
+
     </div>
   </div>
 
