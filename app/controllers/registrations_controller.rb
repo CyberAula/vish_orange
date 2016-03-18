@@ -64,6 +64,8 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def process_course_enrolment
+    return unless user_signed_in?
+
     if params[:course].present?
       course = Course.find(params[:course])
       if !course.restricted
