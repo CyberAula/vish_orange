@@ -19,7 +19,11 @@
         <%= f.label :surname, t("profile.surname") %>
         <%= f.text_field :surname, :class => "form-control", :required => true, :autocomplete => "off" %>
 
-        <%= f.label :email %>
+        <%if !params[:uid]%>
+          <%= f.label :email %>
+        <%else%>
+          <%= f.label :email, "Correo electrónico de EducaMadrid (@educa.madrid.org)" %>
+        <%end%>
         <%= f.text_field :email, :class => "form-control", :autocomplete => "off" %>
 
         <%= f.label :password %>
@@ -28,23 +32,25 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, :class => "form-control", :autocomplete => "off" %>
         
-        <%= f.label t('activerecord.attributes.user.tag') %>
-        <div class="tagBoxNew">
-          <ul class="tagList">
-            <% unless resource.nil? %>
-              <% resource.tag_list.each do |tag| %>
-                <li><%=tag%></li>
+        <%if !params[:uid]%>
+          <%= f.label t('activerecord.attributes.user.tag') %>
+          <div class="tagBoxNew">
+            <ul class="tagList">
+              <% unless resource.nil? %>
+                <% resource.tag_list.each do |tag| %>
+                  <li><%=tag%></li>
+                <% end %>
               <% end %>
+            </ul>
+          </div>
+          <%= f.hidden_field :tag_list, :class => "form-control", :id => "input_tag_list", :placeholder => t('devise.tags') %>
+          <% @tags = ActivityObject.tag_counts(:limit => 100, :order => "count desc") %>
+          <ul id="preloadTagList" style="display:none">
+            <% @tags.each do |tag| %>
+                <li><%= tag.name %></li>
             <% end %>
           </ul>
-        </div>
-        <%= f.hidden_field :tag_list, :class => "form-control", :id => "input_tag_list", :placeholder => t('devise.tags') %>
-        <% @tags = ActivityObject.tag_counts(:limit => 100, :order => "count desc") %>
-        <ul id="preloadTagList" style="display:none">
-          <% @tags.each do |tag| %>
-              <li><%= tag.name %></li>
-          <% end %>
-        </ul>
+        <%end%>
 
         <%= f.label t('simple_captcha.title') %>
         <span><%= t('simple_captcha.subtitle') %></span>
@@ -75,44 +81,57 @@
 
 
 <%= content_for :javascript do %>
-    var registrationTags = [];
+    <%if !params[:uid]%>
+      var registrationTags = [];
 
-    //Load tags
-    $.each($("#preloadTagList li"), function (index, element) {
-      registrationTags.push($(element).html());
-    });
+      //Load tags
+      $.each($("#preloadTagList li"), function (index, element) {
+        registrationTags.push($(element).html());
+      });
 
-    $("#registration .tagList").tagit({
-      tagSource: registrationTags,
-      sortable: true,
-      maxLength: '<%= Vish::Application.config.tagsSettings["maxLength"] %>',
-      maxTags: '<%= Vish::Application.config.tagsSettings["maxTags"] %>',
-      triggerKeys: <%= raw(Vish::Application.config.tagsSettings["triggerKeys"].to_json) %>,
-      watermarkAllowMessage: '<%= t('document.tags.areasOfInterestMessage') %>',
-      watermarkDenyMessage: '<%= t('document.tags.limitMessage') %>',
-      tagsChanged: function (tag, action) {
-        //Check if the element popped is a suggestion
-        if (action == "popped") {
-          $.each($("#registration .tagit-suggestions li"), function (index, element) {
-            if ($(element).html() == tag) {
-              $(element).show();
-            }
-          });
+      $("#registration .tagList").tagit({
+        tagSource: registrationTags,
+        sortable: true,
+        maxLength: '<%= Vish::Application.config.tagsSettings["maxLength"] %>',
+        maxTags: '<%= Vish::Application.config.tagsSettings["maxTags"] %>',
+        triggerKeys: <%= raw(Vish::Application.config.tagsSettings["triggerKeys"].to_json) %>,
+        watermarkAllowMessage: '<%= t('document.tags.areasOfInterestMessage') %>',
+        watermarkDenyMessage: '<%= t('document.tags.limitMessage') %>',
+        tagsChanged: function (tag, action) {
+          //Check if the element popped is a suggestion
+          if (action == "popped") {
+            $.each($("#registration .tagit-suggestions li"), function (index, element) {
+              if ($(element).html() == tag) {
+                $(element).show();
+              }
+            });
+          }
         }
-      }
-    });
+      });
 
-    //Allow suggestions
-    $("#registration .tagit-suggestions li").on("click", function (){
-      var result = $(".tagit").tagit('add', $(this).html());
-      if (result == true) {
-        $(this).hide();
-      }
-    });
+      //Allow suggestions
+      $("#registration .tagit-suggestions li").on("click", function (){
+        var result = $(".tagit").tagit('add', $(this).html());
+        if (result == true) {
+          $(this).hide();
+        }
+      });
+    <%end%>
+
 
     //Fill tag_list hidden input before send
     $("#registration input[type='submit']").click(function(event){
-      $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
-      return true;
+      <%if !params[:uid]%>
+        $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
+        return true;
+      <%else%>
+        if($("#user_email").val().indexOf("@educa.madrid.org") === -1){
+          alert("Por favor registrese con una dirección de email de EducaMadrid, terminada en '@educa.madrid.org'. Si tiene alguna duda póngase en contacto con nosotros en contacto@educainternet.es. Muchas gracias");
+          return false;
+        } else {
+          return true;
+        }
+      <%end%>
+      
     });
 <% end %>

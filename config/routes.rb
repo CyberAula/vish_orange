@@ -33,7 +33,7 @@ Vish::Application.routes.draw do
   match 'overview' => 'static#overview'
   match 'faq' => 'static#overview'
   match 'help' => 'static#overview'
-  match 'legal_notice' => 'static#terms_of_use'
+  match 'legal_notice' => 'static#conditions_of_use'
   match 'privacy_policy' => 'static#privacy_policy'
   match 'conditions_of_use' => 'static#conditions_of_use'
   match 'contributors' => 'static#contributors'
