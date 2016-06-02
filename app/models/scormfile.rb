@@ -11,13 +11,15 @@ class Scormfile < ActiveRecord::Base
     activity_object_index
   end
 
+  validates_presence_of :title
+  validates_presence_of :lohref
   validates_inclusion_of :scorm_version, in: ["1.2","2004"], :allow_blank => false, :message => "Invalid SCORM version. Only SCORM 1.2 and 2004 are supported"
   validates_presence_of :schema, :message => "Invalid SCORM package. Schema is not defined."
   validates_presence_of :schemaversion, :message => "Invalid SCORM package. Schema version is not defined."
   before_validation :fill_scorm_version
 
 
-  def self.createScormfileFromZip(controller,zipfile)
+  def self.createScormfileFromZip(zipfile)
     begin
       resource = Scormfile.new
       resource.owner_id = zipfile.owner_id
@@ -35,7 +37,6 @@ class Scormfile < ActiveRecord::Base
       resource.activity_object.license_attribution = zipfile.activity_object.license_attribution
       resource.activity_object.license_custom = zipfile.activity_object.license_custom
       resource.activity_object.original_author = zipfile.activity_object.original_author
-
       #Copy attachment
       resource.file = zipfile.file
       #Copy avatar
@@ -44,54 +45,19 @@ class Scormfile < ActiveRecord::Base
       #Unpack the SCORM package and fill the lourl, lopath, zipurl and zippath fields
       #If the Package is not correct, SCORM::Package.open will raise an exception
       pkgPath = nil
-      loHref = nil
       Scorm::Package.open(zipfile.file, :cleanup => true) do |pkg|
         resource.schema = pkg.manifest.schema
         resource.schemaversion = pkg.manifest.schema_version
-        loHref = pkg.manifest.resources.first.href
+        resource.lohref = pkg.manifest.resources.first.href
         pkgPath = pkg.path
       end
 
-      raise "No resource has been found" if pkgPath.nil? or loHref.nil?
+      raise "No resource has been found" if pkgPath.nil? or resource.lohref.nil?
 
       #Save the resource to get its id
       resource.save!
 
-      if Vish::Application.config.APP_CONFIG["code_path"].nil?
-        scormPackagesDirectoryPath = Rails.root.join('public', 'scorm', 'packages').to_s
-      else
-        scormPackagesDirectoryPath = Vish::Application.config.APP_CONFIG["code_path"] + "/scorm/packages"
-      end
-      loDirectoryPath = scormPackagesDirectoryPath + "/" + resource.id.to_s
-      loURLRoot = Vish::Application.config.full_code_domain + "/scorm/packages/" + resource.id.to_s
-
-
-      require "fileutils"
-      FileUtils.mkdir_p(scormPackagesDirectoryPath)
-      FileUtils.move pkgPath, loDirectoryPath
-
-      #Generate wrapper HTML (vishubcode_scorm_wrapper.html)
-      scormWrapperFile = controller.render_to_string "show.scorm_wrapper.erb", :locals => {:loResourceUrl=>loURLRoot + "/" + loHref}, :layout => false
-      scormWrapperFilePath = loDirectoryPath + "/vishubcode_scorm_wrapper.html"
-      File.open(scormWrapperFilePath, "w"){|f| f << scormWrapperFile }
-
-      #URLs are saved as absolute URLs
-      #ZIP paths are always saved as relative paths (the same as the rest of the documents)
-      #LO paths are saved as absolute paths when APP_CONFIG["code_path"] is defined
-      resourceRelativePath = resource.file.path
-      resourceRelativePath.slice! Rails.root.to_s
-
-      loDirectoryPathToSave = loDirectoryPath
-      if Vish::Application.config.APP_CONFIG["code_path"].nil?
-        loDirectoryPathToSave.slice! Rails.root.to_s
-      end
-
-      resource.zipurl = Vish::Application.config.full_domain + "/" + resource.file.url[1..-1]
-      resource.zippath = resourceRelativePath
-      resource.lopath = loDirectoryPathToSave
-      resource.lourl = loURLRoot + "/vishubcode_scorm_wrapper.html"
-
-      resource.save!
+      resource.updateScormfile(pkgPath)
 
       #Remove previous ZIP file
       zipfile.destroy
@@ -112,6 +78,60 @@ class Scormfile < ActiveRecord::Base
       end
       return "Invalid SCORM package (" + errorMsg + ")"
     end
+  end
+
+  def updateScormfile(pkgPath=nil)
+
+    #Deal with blank pkgPath or undefined mandatory fields
+    if pkgPath.blank? or ["schema","schemaversion","lohref"].select{|f| self.send(f).blank?}.length > 1
+      #We need to unpack the SCORM file
+      unless self.file.blank?
+        Scorm::Package.open(self.file, :cleanup => true) do |pkg|
+          self.schema = pkg.manifest.schema
+          self.schemaversion = pkg.manifest.schema_version
+          self.lohref = pkg.manifest.resources.first.href
+          pkgPath = pkg.path
+        end
+      else
+        raise "No file has been found. This SCORM package is corrupted."
+      end
+    end
+    loURLRoot = Vish::Application.config.full_code_domain + "/scorm/packages/" + self.id.to_s
+
+    #Create folders
+    if Vish::Application.config.APP_CONFIG["code_path"].nil?
+      scormPackagesDirectoryPath = Rails.root.join('public', 'scorm', 'packages').to_s
+    else
+      scormPackagesDirectoryPath = Vish::Application.config.APP_CONFIG["code_path"] + "/scorm/packages"
+    end
+    loDirectoryPath = scormPackagesDirectoryPath + "/" + self.id.to_s
+    
+    require "fileutils"
+    FileUtils.mkdir_p(scormPackagesDirectoryPath)
+    FileUtils.rm_rf(loDirectoryPath) if File.exists? loDirectoryPath
+    FileUtils.move pkgPath, loDirectoryPath
+
+    #URLs are saved as absolute URLs
+    #ZIP paths are always saved as relative paths (the same as the rest of the documents)
+    #LO paths are saved as absolute paths when APP_CONFIG["code_path"] is defined
+    resourceRelativePath = self.file.path
+    resourceRelativePath.slice! Rails.root.to_s
+
+    loDirectoryPathToSave = loDirectoryPath.dup
+    loDirectoryPathToSave.slice! Rails.root.to_s if Vish::Application.config.APP_CONFIG["code_path"].nil?
+
+    self.zipurl = Vish::Application.config.full_domain + "/" + self.file.url[1..-1]
+    self.zippath = resourceRelativePath
+    self.lopath = loDirectoryPathToSave
+    self.lourl = loURLRoot + "/vishubcode_scorm_wrapper.html"
+    self.loresourceurl = loURLRoot + "/" + self.lohref
+
+    #Generate wrapper HTML (vishubcode_scorm_wrapper.html)
+    scormWrapperFile = DocumentsController.new.render_to_string "show.scorm_wrapper.erb", :locals => {:scormPackage => self}, :layout => false
+    scormWrapperFilePath = loDirectoryPath + "/vishubcode_scorm_wrapper.html"
+    File.open(scormWrapperFilePath, "w"){|f| f << scormWrapperFile }
+
+    self.save!
   end
 
   # Thumbnail file
@@ -151,20 +171,26 @@ class Scormfile < ActiveRecord::Base
     self.activity_object.increment_download_count
   end
 
+  #Return version to show in metadata UI
+  def resource_version
+    self.schema + " " + self.schemaversion
+  end
+
   def getZipPath
-    #ZIP paths are always saved as relative paths (the same as the rest of the documents)
-    return Rails.root.to_s + self.zippath
+    # ZIP paths are always saved as relative paths (the same as the rest of the documents)
+    # return Rails.root.to_s + self.zippath
+    self.file.path
   end
 
   def getLoPath
     #LO paths are saved as relative paths when APP_CONFIG["code_path"] is not defined
-    if Vish::Application.config.APP_CONFIG["code_path"].nil?
-      return Rails.root.to_s + self.lopath
-    end
-
+    return Rails.root.to_s + self.lopath if Vish::Application.config.APP_CONFIG["code_path"].nil?
     #LO paths are saved as absolute paths when APP_CONFIG["code_path"] is defined
     return self.lopath
   end
+
+
+  private
 
   def fill_scorm_version
     if self.schema == "ADL SCORM" and !self.schemaversion.blank?
@@ -174,45 +200,13 @@ class Scormfile < ActiveRecord::Base
         self.scorm_version = self.schemaversion
       end
     end
-    if self.scorm_version.blank? and self.schema.blank? and self.schemaversion.blank?
+    if self.schema.blank? and self.schemaversion.blank?
+      #Some ATs create SCORM 1.2 Packages without specifying schema data
       self.schema = "ADL SCORM"
       self.schemaversion = "1.2"
-      self.scorm_version = "1.2" #Some ATs create SCORM 1.2 Packages without specifying schema data
+      self.scorm_version = "1.2" 
     end
   end
-
-  #Return version to show in metadata UI
-  def resource_version
-    self.schema + " " + self.schemaversion
-  end
-
-  #Update the SCORM package to the current ViSH version
-  def updateScormPackage
-    begin
-      success = false
-      Scormfile.record_timestamps=false
-      ActivityObject.record_timestamps=false
-      
-      #Read manifest and update schema, schemaversion and scorm_version
-      Scorm::Package.open(self.getZipPath(), :cleanup => true) do |pkg|
-        self.schema = pkg.manifest.schema
-        self.schemaversion = pkg.manifest.schema_version
-      end
-      self.save!
-      
-      success = true
-    rescue Exception => e
-      #Error handling
-      success = false
-    ensure
-      Scormfile.record_timestamps=true
-      ActivityObject.record_timestamps=true
-    end
-    success
-  end
-
-
-  private
 
   def remove_files
     #Remove SCORM files from the public folder

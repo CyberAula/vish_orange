@@ -92,6 +92,7 @@ en:
     unfollow: "UnFollow"
   activity_object:
     author: "Author"
+    author_uploaded_by: "Uploaded by"
     title: "Title"
     type: "Type"
     description: "Description"
@@ -187,6 +188,14 @@ en:
     title: "EducaInternet Administration Panel"
     users: "Users Administration"
   all: "all"
+  analytics:
+    description: "This section is only visible for the author of the resource.<br/>It shows some learning analytics about the usage of the resource.<br/> Learning Analytics are calculated periodically. This information was last updated on: %{date}."
+    interactions:
+      title: "Interaction"
+      tlo: "Time spent per session (s)"
+      permanency_rate: "Permanency Rate (%)"
+      nclicks: "Quantity of clicks per session"
+    tabtitle: "Learning Analytics"
   announce:
     title: "Announcement"
     body: "In the course of February, the GLOBAL excursion project is organizing two live online sessions with scientists. More information and registration under"
@@ -577,6 +586,7 @@ en:
         document: "Document"
         embed: "Embedded Object"
         excursion: "Excursion (Interactive Presentation)"
+        imscpfile: "IMS Content Package"
         link: "Link"
         officedoc: "Document"
         picture: "Image"
@@ -786,6 +796,8 @@ en:
   home:
     foryou: "For you"
     populars: "Populars"
+  imscpfile:
+    confirm_delete: "Delete IMS Content Package?"
   info:
     author: "Author"
   lang:
@@ -1100,9 +1112,10 @@ en:
       embed: "Embeds"
       event: "Events"
       excursion: "Teaching units"
-      learning_object: "Educational resource"
       follower: "Followers"
       following: "Followings"
+      imscpfile: "IMS Content Package"
+      learning_object: "Educational resource"
       link: "Links"
       officedoc: "Office documents"
       picture: "Pictures"
@@ -1258,6 +1271,8 @@ en:
     other: "users"
     role: "role"
   username: "username"
+  value: "Value"
+  value_average: "Average Value"
   vish:
     about: "About EducaInternet"
     starterguide: "Starter Guide"

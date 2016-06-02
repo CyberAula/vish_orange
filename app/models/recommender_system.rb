@@ -221,7 +221,7 @@ class RecommenderSystem
     languageS = getSemanticDistanceForLanguage(loA.language,loB.language)
     keywordsS = getSemanticDistanceForKeywords(loA.tag_array_cached,loB.tag_array_cached)
 
-    return -1 if (!filters.blank? and (titleS < filters[:title] || descriptionS < filters[:description] || languageS < filters[:language] || yearS < filters[:keywords]))
+    return -1 if (!filters.blank? and (titleS < filters[:title] || descriptionS < filters[:description] || languageS < filters[:language] || keywordsS < filters[:keywords]))
 
     return weights[:title] * titleS + weights[:description] * descriptionS + weights[:language] * languageS + weights[:keywords] * keywordsS
   end
@@ -324,12 +324,12 @@ class RecommenderSystem
   end
 
   def self.normalizeText(text)
-    I18n.transliterate(text.gsub(/([\n])/," ").downcase.strip, :locale => "en")
+    I18n.transliterate(text.gsub(/([\n])/," ").strip, :locale => "en").downcase
   end
 
   # Term Frequency (TF)
   def self.TF(word,text)
-    processFreeText(text)[word] || 0
+    processFreeText(text)[normalizeText(word)] || 0
   end
 
   # Inverse Document Frequency (IDF)

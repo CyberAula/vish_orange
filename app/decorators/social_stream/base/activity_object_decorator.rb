@@ -9,6 +9,7 @@ ActivityObject.class_eval do
   
   before_validation :fill_license
   before_validation :fill_license_attribution
+  before_validation :check_original_author
   before_save :fill_relation_ids
   before_save :fill_indexed_lengths
   before_save :save_tag_array_text
@@ -118,7 +119,7 @@ ActivityObject.class_eval do
   end
 
   def should_have_license?
-    return ((self.object_type.is_a? String) and (["Document", "Excursion", "Scormfile", "Webapp", "Workshop", "Writing"].include? self.object_type))
+    return ((self.object_type.is_a? String) and (["Document", "Excursion", "Scormfile", "Imscpfile", "Webapp", "Workshop", "Writing"].include? self.object_type))
   end
 
   def should_have_authorship?
@@ -126,8 +127,8 @@ ActivityObject.class_eval do
   end
 
   def resource?
-    #"Actor", "Post", "Category", "Document", "Excursion", "Scormfile", "Link", "Webapp", "Comment", "Event", "Embed", "Workshop", "Writing"
-    return ((self.object_type.is_a? String) and (["Category", "Document", "Excursion", "Scormfile", "Link", "Webapp", "Event", "Embed", "Workshop", "Writing"].include? self.object_type))
+    #"Actor", "Post", "Category", "Document", "Excursion", "Scormfile", "Imscpfile", "Link", "Webapp", "Comment", "Event", "Embed", "Workshop", "Writing"
+    return ((self.object_type.is_a? String) and (["Category", "Document", "Excursion", "Scormfile", "Imscpfile", "Link", "Webapp", "Event", "Embed", "Workshop", "Writing"].include? self.object_type))
   end
 
   def document?
@@ -178,6 +179,14 @@ ActivityObject.class_eval do
     end
 
     true
+  end
+
+  def evaluable?
+    self.resource? and !Vish::Application.config.APP_CONFIG['loep'].nil?
+  end
+
+  def has_analytics?
+    self.resource? and !self.interaction_qscore.nil? and !self.lo_interaction.nil?
   end
 
   #Calculate quality score (in a 0-10 scale) 
@@ -405,7 +414,7 @@ ActivityObject.class_eval do
       if ["Picture","Swf"].include? resource.class.name
         relativePath = resource.file.url
       end
-    elsif ["Scormfile","Webapp"].include? resource.class.name
+    elsif ["Scormfile", "Imscpfile", "Webapp"].include? resource.class.name
       absolutePath = resource.lourl
     elsif ["Excursion"].include? resource.class.name
       # relativePath = Rails.application.routes.url_helpers.excursion_path(resource, :format=> "full")
@@ -432,7 +441,7 @@ ActivityObject.class_eval do
 
     if [resource.class.name,resource.class.superclass.name].include? "Document"
       relativePath = resource.file.url
-    elsif ["Scormfile","Webapp"].include? resource.class.name
+    elsif resource.respond_to?("zipurl")
       absolutePath = resource.zipurl
     elsif ["Excursion"].include? resource.class.name
       # relativePath = Rails.application.routes.url_helpers.excursion_path(resource, :format=> "scorm")
@@ -494,7 +503,7 @@ ActivityObject.class_eval do
     metadata = {}
 
     unless self.object_type.nil?
-      metadata[I18n.t("activity_object.type")] = self.object_type
+      metadata[I18n.t("activity_object.type")] = I18n.t("document.info.types." + self.object_type.downcase, :default => self.object_type)
     end
 
     unless self.title.nil?
@@ -518,8 +527,19 @@ ActivityObject.class_eval do
     end
 
     unless self.linked?
+      unless self.original_author_name.blank?
+        metadata[I18n.t("activity_object.author")] = self.original_author_name
+      end
+      unless self.author.nil? or self.author.name.nil? or self.original_author_name==self.author.name
+        metadata[I18n.t("activity_object.author_uploaded_by")] = self.author.name
+      end
+    else
+      #Links
+      unless self.original_author.nil?
+        metadata[I18n.t("activity_object.author")] = self.original_author_name
+      end
       unless self.author.nil? or self.author.name.nil?
-        metadata[I18n.t("activity_object.author")] = self.author.name
+        metadata[I18n.t("document.info.linked_by")] = self.author.name
       end
     end
 
@@ -751,6 +771,10 @@ ActivityObject.class_eval do
         self.license_attribution = self.default_license_attribution
       end
     end
+  end
+
+  def check_original_author
+    self.original_author = nil if self.author and self.author.name == self.original_author
   end
 
   def after_update_qscore

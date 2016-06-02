@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160312175232) do
+ActiveRecord::Schema.define(:version => 20160531100045) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20160312175232) do
     t.boolean  "allow_clone",                                                       :default => true
     t.boolean  "competition",                                                       :default => false
     t.text     "tag_array_text",                                                    :default => ""
+    t.decimal  "interaction_qscore",                 :precision => 12, :scale => 6
   end
 
   create_table "activity_objects_wa_resources_galleries", :id => false, :force => true do |t|
@@ -329,6 +330,28 @@ ActiveRecord::Schema.define(:version => 20160312175232) do
   end
 
   add_index "groups", ["actor_id"], :name => "index_groups_on_actor_id"
+
+  create_table "imscpfiles", :force => true do |t|
+    t.integer  "activity_object_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "zipurl"
+    t.text     "lourl"
+    t.text     "zippath"
+    t.text     "lopath"
+    t.integer  "width",              :default => 800
+    t.integer  "height",             :default => 600
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.string   "schema"
+    t.string   "schemaversion"
+    t.string   "imscp_version"
+    t.string   "lohref"
+    t.text     "lohrefs"
+    t.string   "loresourceurl"
+  end
 
   create_table "licenses", :force => true do |t|
     t.string   "key"
@@ -572,6 +595,8 @@ ActiveRecord::Schema.define(:version => 20160312175232) do
     t.string   "schema"
     t.string   "schemaversion"
     t.string   "scorm_version"
+    t.string   "lohref"
+    t.string   "loresourceurl"
   end
 
   create_table "service_permissions", :force => true do |t|

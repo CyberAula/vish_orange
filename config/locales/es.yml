@@ -82,6 +82,7 @@ es:
     unfollow: "Dejar de seguir"
   activity_object:
     author: "Autor"
+    author_uploaded_by: "Subido por"
     title: "Título"
     type: "Tipo"
     description: "Descripción"
@@ -175,6 +176,14 @@ es:
     requests: "Peticiones"
     status: "Estado"
     users: "Administración de Usuarios"
+  analytics:
+    description: "Esta sección solo es visible para el autor del recurso.<br/>Muestra algunas analíticas de aprendizaje acerca del uso del recurso.<br/> Las Analíticas de Aprendizaje se calculan periódicamente. Esta información fue actualizada por última vez a fecha: %{date}."
+    interactions:
+      title: "Interacción"
+      tlo: "Tiempo empleado por sesión (s)"
+      permanency_rate: "Ratio de Permanencia (%)"
+      nclicks: "Cantidad de clics por sesión"
+    tabtitle: "Analíticas de Aprendizaje"
   all: "todos"
   announce:
     title: "Noticia"
@@ -564,6 +573,7 @@ es:
         document: "Documento"
         embed: "Objeto Embebido"
         excursion: "Excursión (Presentación Interactiva)"
+        imscpfile: "Paquete de contenido IMS"
         link: "Enlace"
         officedoc: "Documento"
         picture: "Imagen"
@@ -782,6 +792,8 @@ es:
   home:
     foryou: "Para ti"
     populars: "Populares"
+  imscpfile:
+    confirm_delete: "¿Borrar paquete de contenido IMS?"
   info:
     author: "Autor"
   lang:
@@ -1101,9 +1113,10 @@ es:
       embed: "Embeds"
       event: "Eventos"
       excursion: "Unidades Didácticas"
-      learning_object: "Recursos educativos"
       follower: "Seguidores"
       following: "Contactos"
+      imscpfile: "Paquetes IMS CP"
+      learning_object: "Recursos educativos"
       link: "Links"
       officedoc: "Documentos de office"
       picture: "Imágenes"
@@ -1254,6 +1267,8 @@ es:
     other: "usuarios"
     role: "rol"
   username: "usuario"
+  value: "Valor"
+  value_average: "Valor Medio"
   vish:
     about: "Acerca de EducaInternet"
     starterguide: "Guía del principiante"

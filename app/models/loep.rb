@@ -6,24 +6,18 @@ require 'base64'
 class Loep
 
   #Get LO
-  def self.getLO(lo_id)
+  def self.getLO(lo)
     params = getParams
-
-    callAPI("GET","los/" + lo_id.to_s,params){ |response,code|
-      if block_given?
-        yield response, code
-      end
+    params["repository"] = lo["repository"] unless lo["repository"].blank?
+    callAPI("GET","los/" + lo["id_repository"].to_s,params){ |response,code|
+      yield response, code if block_given?
     }
   end
 
   #Create LO
-  def self.createLO(lo)
+  def self.createOrUpdateLO(lo)
     params = getParams
     params["lo"] = lo
-    
-    if params["lo"]["repository"].nil?
-      params["lo"]["repository"] = Vish::Application.config.APP_CONFIG['loep']['repository_name']
-    end 
 
     callAPI("POST","los",params){ |response,code|
       if block_given?
@@ -33,8 +27,10 @@ class Loep
   end
 
   #Create SessionToken
-  def self.createSessionToken()
-    callAPI("POST","session_token"){ |response,code|
+  def self.createSessionToken(sessionTokenParams)
+    params = {}
+    params["session_token"] = sessionTokenParams unless sessionTokenParams.blank?
+    callAPI("POST","session_token",params){ |response,code|
       if block_given?
         if code===200
           yield response["auth_token"], code
@@ -51,10 +47,7 @@ class Loep
   def self.callAPI(method,apiPath,params={})
     apiBaseURL = getAPIBaseUrl
     apiMethodURL = apiBaseURL+apiPath
-
-    if method.nil?
-      method = "GET"
-    end
+    method = "GET" if method.nil?
 
     begin
       case method.upcase
@@ -62,39 +55,35 @@ class Loep
         response = RestClient::Request.execute(
           :method => :post,
           :url => apiMethodURL,
+          :timeout => 8, 
+          :open_timeout => 8,
           :payload => params,
           :headers => {:'Authorization' => getBasicAuthHeader, :content_type => :json, :accept => :json}
         ){ |response|
-          if block_given?
-            yield JSON(response),response.code
-          end
+          yield JSON(response),response.code if block_given?
         }
       when "GET"
         response = RestClient::Request.execute(
           :method => :get,
           :url => apiMethodURL,
+          :timeout => 8, 
+          :open_timeout => 8,
+          :payload => params,
           :headers => {:'Authorization' => getBasicAuthHeader}
         ){ |response|
-          if block_given?
-            yield JSON(response),response.code
-          end
+          yield JSON(response),response.code if block_given?
         }
       else
-        if block_given?
-          yield "Error in Loep.callAPI: No method specified.",nil
-        end
+        yield "Error in Loep.callAPI: No method specified.",nil if block_given?
       end
-
     rescue => e
-      if block_given?
-        yield "Error in Loep.callAPI. Exception: " + e.message,nil
-      end
+        yield "Error in Loep.callAPI. Exception: " + e.message,nil if block_given?
     end
   end
 
   def self.getAPIBaseUrl
     loepConfig = Vish::Application.config.APP_CONFIG['loep']
-    return loepConfig['domain']+"/api/"+(loepConfig['api_version'] || "v1")+"/"
+    loepConfig['domain']+"/api/"+(loepConfig['api_version'] || "v1")+"/"
   end
 
   def self.getBasicAuthHeader
@@ -102,9 +91,7 @@ class Loep
   end
 
   def self.getParams(params=nil)
-    if params.nil?
-      params = Hash.new
-    end
+    params = Hash.new if params.blank?
     params["utf8"] = "✓"
     params
   end

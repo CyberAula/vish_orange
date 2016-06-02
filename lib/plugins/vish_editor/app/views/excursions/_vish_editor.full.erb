@@ -80,7 +80,7 @@
 									<span i18n-key="i.AddSlide">Add Slide</span>
 								</a>
 							</li>
-							<li>
+							<li id="vemenu_import">
 								<a class="menu_option expansive" href="#">
 									<i class="icon-button icon-rotate-180 icon-download-alt"></i>
 									<span i18n-key="i.Import">Import</span>
@@ -100,7 +100,7 @@
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="vemenu_export">
 								<a class="menu_option expansive" href="#">
 									<i class="icon-button icon-rotate-360 icon-download-alt"></i>
 									<span i18n-key="i.Export">Export</span>
@@ -320,7 +320,7 @@
 						<p id="presentation_details_preview_title" class="presentation_details_column_title" i18n-key="i.Preview">Preview</p>
 						<div id="presentation_details_preview">
 							<div id="presentation_details_preview_thumbnail">
-								<div title="Click to add an avatar. You should select an avatar to identify your didactic unit" id="presentation_details_preview_thumbnail_img_wrapper">
+								<div title="Click to add an avatar. You should select an avatar to identify your excursion" id="presentation_details_preview_thumbnail_img_wrapper">
 									<img id="presentation_details_preview_thumbnail_img" class="addThumbnailPlus" src="/assets/icons/addThumbnail.png">
 								</div>
 								<p class="addthumbtitle" i18n-key="i.Addanavatar" style="display: none;">Add an avatar *</p>
@@ -358,25 +358,26 @@
 
 						<div id="presentation_details_description">
 							<span class="presentation_details_text" i18n-key="i.Description">Description</span>
-							<textarea id="presentation_details_textarea" placeholder="Please describe in a few words what your didactic unit is about..." i18n-key="i.presDescriptionPlaceHolder"></textarea>
+							<textarea id="presentation_details_textarea" placeholder="Please describe in a few words what your excursion is about..." i18n-key="i.presDescriptionPlaceHolder"></textarea>
 						</div>			
 
 					    <div id="attachment_in_presentation_details">
-					    	<span class="presentation_details_text" i18n-key="i.Attatchment">Attatchment</span>
+					    	<span class="presentation_details_text" i18n-key="i.Attatchment">Attatchment</span><br/>
+					    	<div class="file_details_upload">
+								<form id="attachment_file_form" method="post" action="#" enctype="multipart/form-data">
+									<div class="attachmentFileUpload" disabled="disabled" i18n-key-tooltip="i.tooltip.UploadAttachment" title="If this button is deactivated, you need to save your excursion first.">
+										<span i18n-key="i.ChooseFile">Choose File</span>
+										<input type="file" name="attachment" id="attachment_file">
+									</div>
+									<input id="description_attachment" placeholder="Choose File" disabled="disabled">
+									<input type="hidden" name="author_id" id="attachment_author">
+									<input type="hidden" name="authenticity_token" id="attachment_auth_token">
+									<input id="upload_file_attachment" type="submit" class="button" i18n-key="i.Upload" value="Upload" disabled="true">
+									<input type="hidden" name="pres_id" id="attachment_pres_id">
+									<span id="upload_icon_success" class="icon-button icon-ok" aria-hidden="true"></span>
+								</form>
+							</div>
 					    </div>
-						<div class="file_details_upload">
-							<form id="attachment_file_form" method="post" action="attatchment_file.json" enctype="multipart/form-data">
-								<div class="attachmentFileUpload" disabled="disabled" i18n-key-tooltip="i.tooltip.UploadAttachment" title="If this button is deactivated, you need to save your didactic unit first.">
-									<span i18n-key="i.ChooseFile">Choose File</span>
-									<input type="file" name="attachment" id="attachment_file">
-								</div>
-								<input id="description_attachment" placeholder="Choose File" disabled="disabled">
-								<input type="hidden" name="author_id" id="attachment_author">
-								<input type="hidden" name="authenticity_token" id="attachment_aut_token">
-								<input id="upload_file_attachment" type="submit" class="button" i18n-key="i.Upload" value="Upload" disabled="true">
-								<span id="upload_icon_success" class="icon-button icon-ok" aria-hidden="true"></span>
-							</form>
-						</div>
 
 					</div>
 
@@ -543,7 +544,7 @@
 							<div id="educational_objectives_title">
 								<span i18n-key="i.EducationalObjectives">Educational Objectives</span>
 							</div>
-							<textarea id="educational_objectives_textarea" name="educational_objectives" placeholder="Please describe the educational objectives you aim to fulfil by using this didactic unit..." i18n-key="i.EducationalObjectivesPlaceholder"></textarea>
+							<textarea id="educational_objectives_textarea" name="educational_objectives" placeholder="Please describe the educational objectives you aim to fulfil by using this excursion..." i18n-key="i.EducationalObjectivesPlaceholder"></textarea>
 						</div>
 					</div>
 			 	</div>
@@ -707,7 +708,7 @@
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<div class="textD">
 						<p class="textfancy" i18n-key="i.AddslideshowPDF">Add slideshow from PDF file</p></br>
-						<form class="documentsForm" action="pdfex.json" method="post" enctype="multipart/form-data">
+						<form class="documentsForm" action="#" method="post" enctype="multipart/form-data">
 							<input type="file" name="pdfex[attach]" accept="application/pdf" class="upload_file_input">
 							<input type="hidden" name="pdfex[scope]" value="1">
 							<input type="hidden" name="pdfex[owner_id]">
@@ -729,7 +730,7 @@
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<div class="textD">
 						<p class="textfancy" i18n-key="i.AddePackage">Add an e-Learning package from a ZIP file. Supported formats: SCORM and custom HTML5 Web Applications.</p></br>
-						<form id="package_file_input" class="documentsForm" action="documents.json" method="post" enctype="multipart/form-data">
+						<form id="package_file_input" class="documentsForm" action="#" method="post" enctype="multipart/form-data">
 							<input type="file" name="document[file]" class="upload_file_input">
 							<input type="hidden" name="document[scope]" value="1">
 							<input type="hidden" name="document[title]">
@@ -757,7 +758,7 @@
 					<div class="textD">
 						<p class="textfancy" i18n-key="i.ImportFromEFile">Import resources from external files:</p>
 						<ul class="listInFancy">
-							<li><p class="textfancy" i18n-key="i.ImportFromEFileVEJSON">Educa Editor Presentations and Slides from JSON files</p></li>
+							<li><p class="textfancy" i18n-key="i.ImportFromEFileVEJSON">ViSH Editor Presentations and Slides from JSON files</p></li>
 							<li><p class="textfancy" i18n-key="i.ImportFromEFileIMSQTI">Quizzes from IMS QTI 2.1 compliant XML files</p></li>
 							<li><p class="textfancy" i18n-key="i.ImportFromEFileMoodleXML">Quizzes from MoodleXML compliant XML files</p></li>
 						</ul>
@@ -771,7 +772,7 @@
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_presentations_repo_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 				<div class="presentations_repo_content">
 					<p id="descSearch" i18n-key="i.PresentationsRepository">Search on the repository the presentation you would like to import</p>
-					<img src="/assets/logos/repositoryimg.png" id="repoLogo" class="imagelogotab repositoryimgclass"/>  
+					<img src="/assets/logos/vishlogo.png" id="repoLogo" class="imagelogotab repositoryimgclass"/>  
 					<div class="search_container">
 						<input type="search" class="input_text_fancy input_text_presentations formsizefancy2 marginsfancy3" > </input>
 					</div>
@@ -875,7 +876,7 @@
 	<div style='display:none'>
 		<div id='requirements_form_wrapper'>
 			<div id='requirements_form'>      
-				<span i18n-key="i.browserrequirements" class="adverttext">Your browser does not meet the minimum requirements to init Educa Editor, please update your browser.</span>
+				<span i18n-key="i.browserrequirements" class="adverttext">Your browser does not meet the minimum requirements to init ViSH Editor, please update your browser.</span>
 				<div id="recomended_browsers">
 					<div class="recomended_browser">
 						<span class="browserTitle">Google Chrome</span>
@@ -912,7 +913,7 @@
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_from_url'); return false;" id="tab_pic_from_url" class="fancy_tab tabbable" i18n-key="i.url">url</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_upload'); return false;" id="tab_pic_upload" class="fancy_tab" i18n-key="i.upload">upload</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_thumbnails'); return false;" id="tab_pic_thumbnails" class="fancy_tab tabbable venondefaulttab" style="display:none" i18n-key="i.thumbnails">thumbnails</a></li>
-					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_repo'); return false;" id="tab_pic_repo" class="fancy_tab">EducaInternet</a></li>
+					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_repo'); return false;" id="tab_pic_repo" class="fancy_tab">ViSH</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_flickr'); return false;" id="tab_pic_flickr" class="fancy_tab"><img src='/assets/logos/flickrlogo2.png'/></a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_europeana'); return false;" id="tab_pic_europeana" class="fancy_tab"><img src='/assets/logos/europeanalogo.png'/></a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_pic_lre'); return false;" id="tab_pic_lre" class="fancy_tab"><img src='/assets/logos/lrelogo.gif'/></a></li>
@@ -956,7 +957,7 @@
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<div class="textD">
 						<p class="textfancy" i18n-key="i.selectPicture">Select picture to upload</p></br>
-						<form class="documentsForm" action="documents.json" method="post" enctype="multipart/form-data">
+						<form class="documentsForm" action="#" method="post" enctype="multipart/form-data">
 							<input type="file" name="document[file]" class="upload_file_input"/>
 							<input type="hidden" name="document[scope]" value="1"/>
 							<input type="hidden" name="document[title]"/>
@@ -965,7 +966,7 @@
 							<input type="hidden" name="document[tag_list]"/>
 							<input type="hidden" name="authenticity_token"/>
 							<input type="hidden" name="preferred_conversion"/>
-							<input id="upload_document_submit" type="submit" class="button" i18n-key="i.Upload" value="Upload"/>
+							<input class="upload_file_submit" type="submit" class="button" i18n-key="i.Upload" value="Upload"/>
 						</form>
 
 						<div class="upload_progress_bar_wrapper">
@@ -988,7 +989,7 @@
 
 			<div id='tab_pic_repo_content' class="fancy_tab_content">
 				<div class="box1 box1fancy2">
-					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>				  		  
+					<img src="/assets/logos/vishlogo.png" class="imagelogotab repositoryimgclass"/>				  		  
 					<div class="search_container">
 						<input id="search_picture" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
@@ -1139,7 +1140,7 @@
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_snapshot'); return false;" id="tab_object_snapshot" class="fancy_tab">web snapshot</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_from_url'); return false;" id="tab_object_from_url" class="fancy_tab">embed</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_upload'); return false;" id="tab_object_upload" class="fancy_tab" i18n-key="i.upload">upload</a></li>
-					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_repo'); return false;" id="tab_object_repo" class="fancy_tab">EducaInternet</a></li>
+					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_repo'); return false;" id="tab_object_repo" class="fancy_tab">ViSH</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_object_lre'); return false;" id="tab_object_lre" class="fancy_tab"><img src='/assets/logos/lrelogo.gif'/></a></li>
 				</ul>
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_object_from_web_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
@@ -1196,7 +1197,7 @@
 					<img class="image_add_url" src="/assets/icons/url_upl.png"/>
 					<div class="textD">
 						<p class="textfancy"><span i18n-key="i.selectObjectUpload">Select a file to upload</span>. <span i18n-key="i.selectObjectUpload2">Supported formats: SWF (flash), PDF</span>.</p><br>
-						<form  id="object_file_input" class="documentsForm" action="documents.json" method="post" enctype="multipart/form-data">
+						<form  id="object_file_input" class="documentsForm" action="#" method="post" enctype="multipart/form-data">
 							<input type="file" name="document[file]" class="upload_file_input">
 							<input type="hidden" name="document[scope]" value="1">
 							<input type="hidden" name="document[title]">
@@ -1204,7 +1205,7 @@
 							<input type="hidden" name="document[owner_id]">
 							<input type="hidden" name="authenticity_token">
 							<input type="hidden" name="document[tag_list]">
-							<input id="upload_document_submit" type="submit" class="button" i18n-key="i.Upload" value="Upload">
+							<input class="upload_file_submit" type="submit" class="button" i18n-key="i.Upload" value="Upload">
 						</form>
 
 						<div class="upload_progress_bar_wrapper">
@@ -1227,7 +1228,7 @@
 
 			<div id='tab_object_repo_content' class="fancy_tab_content">
 				<div class="box1 box1fancy2">
-					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>
+					<img src="/assets/logos/vishlogo.png" class="imagelogotab repositoryimgclass"/>
 					<div class="search_container">
 						<input id="search_object" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
@@ -1291,15 +1292,13 @@
 			<div class="fancy_tabs" id="video_fancy_tabs_id">	   
 				<ul>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_from_url'); return false;" id="tab_video_from_url" class="fancy_tab" i18n-key="i.url">url</a></li>
-					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_repo'); return false;" id="tab_video_repo" class="fancy_tab">EducaInternet</a></li>
+					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_repo'); return false;" id="tab_video_repo" class="fancy_tab">ViSH</a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_youtube'); return false;" id="tab_video_youtube" class="fancy_tab"><img src='/assets/logos/youtube.png'/></a></li>
 					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_audio_soundcloud'); return false;" id="tab_audio_soundcloud" class="fancy_tab"><img src='/assets/logos/soundcloud.png'/></a></li>
-					<li><a href="#" onclick="VISH.Editor.Utils.loadTab('tab_video_vimeo'); return false;" id="tab_video_vimeo" class="fancy_tab disabled"><img src='/assets/logos/vimeo.png'/></a></li>
 				</ul>
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_video_from_url_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_video_repo_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_video_youtube_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
-				<img title="Help" i18n-key-tooltip="i.tooltip.Help" class='help_in_fancybox' id='tab_video_vimeo_help' src='/assets/vicons/helptutorial_circle_blank.png'/>
 			</div>
 
 			<div id='tab_video_from_url_content' class="fancy_tab_content">
@@ -1324,7 +1323,7 @@
 
 			<div id='tab_video_repo_content' class="fancy_tab_content">		
 				<div class="box1 box1fancy2">	
-					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>	  
+					<img src="/assets/logos/vishlogo.png" class="imagelogotab repositoryimgclass"/>	  
 					<div class="search_container">
 						<input id="search_video" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
@@ -1374,24 +1373,6 @@
 				</div>
 			</div>
 
-
-			<div id='tab_video_vimeo_content' class="fancy_tab_content">
-				<div class="box1 box1fancy2">
-					<img src="/assets/logos/vimeologo.png" class="imagelogotab">
-					<div class="search_container" id="vimeo_search_container">
-						<input id="search_vimeo_fancy" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" id="vimeo_text_to_search"> </input>
-					</div>
-					<div id="tab_video_vimeo_content_carrousel"></div>
-					<div id="tab_video_vimeo_content_preview" class="content_preview">
-						<div id="tab_video_vimeo_content_preview_video" class="content_preview_data"></div>
-						<div id="tab_video_vimeo_content_preview_metadata" class="content_preview_metadata"></div>
-						<div id="tab_video_vimeo_content_preview_foot" class="content_preview_foot">
-							<button type="button" class="okButton okButtonCarrousel" onclick="VISH.Editor.Video.vimeo.addSelectedVideo()">Add</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
 		</div>
 	</div>
 
@@ -1408,7 +1389,7 @@
 
 			<div id='tab_live_resource_content' class="fancy_tab_content"> 
 				<div class="box1 box1fancy2">
-					<img src="/assets/logos/repositoryimg.png" class="imagelogotab repositoryimgclass"/>
+					<img src="/assets/logos/vishlogo.png" class="imagelogotab repositoryimgclass"/>
 					<div class="search_container">
 						<input id="search_live_resource" type="search" class="input_text_fancy formsizefancy2 marginsfancy2" > </input>
 					</div>
@@ -1592,11 +1573,11 @@
 	<!-- Menu Help -->
 	<ol id="menubar_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Close" i18n-key="i.Close" class="tut_template_editorfull tut_without_arrow" data-options="tipLocation:none">
-			<h2 i18n-key="i.walkWelcome1_1">Welcome to Educa Editor!</h2>
-			<p i18n-key="i.walkWelcome1_2">Educa Editor is an innovative web application that allows you to create amazing web slideshows and novel educational resources such as Didactic Units.</p>
-			<p><span i18n-key="i.walkMenuHelp1a">To learn how to use Educa Editor you can watch several video tutorials in our</span> <a i18n-key="i.YouTubeChannel" class="tut_tutlink" href="http://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ?feature=watch" target="_blank">YouTube Channel</a>. <span i18n-key="i.walkMenuHelp1b">These tutorials cover from basic usage for beginners to advanced features.</span></p>
-			<p><span i18n-key="i.walkMenuHelp2">The following video tutorial will teach you how to getting started with Educa Editor in a few minutes.</span> <span class="tut_tutlink" onClick="VISH.Tour.startTourWithId('getting_started_help','top');" i18n-key="i.walkMenuHelp3">If you prefer you can click here to see a text tutorial which will teach you quickly the basics to get started.</span></p>
-			<p i18n-key="i.vtTitle_GStarted" class="tut_video_title">Getting Started with Educa Editor</p>
+			<h2 i18n-key="i.walkWelcome1_1">Welcome to ViSH Editor!</h2>
+			<p i18n-key="i.walkWelcome1_2">ViSH Editor is an innovative web application that allows you to create amazing web slideshows and novel educational resources such as Virtual Excursions.</p>
+			<p><span i18n-key="i.walkMenuHelp1a">To learn how to use ViSH Editor you can watch several video tutorials in our</span> <a i18n-key="i.YouTubeChannel" class="tut_tutlink" href="http://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ?feature=watch" target="_blank">YouTube Channel</a>. <span i18n-key="i.walkMenuHelp1b">These tutorials cover from basic usage for beginners to advanced features.</span></p>
+			<p><span i18n-key="i.walkMenuHelp2">The following video tutorial will teach you how to getting started with ViSH Editor in a few minutes.</span> <span class="tut_tutlink" onClick="VISH.Tour.startTourWithId('getting_started_help','top');" i18n-key="i.walkMenuHelp3">If you prefer you can click here to see a text tutorial which will teach you quickly the basics to get started.</span></p>
+			<p i18n-key="i.vtTitle_GStarted" class="tut_video_title">Getting Started with ViSH Editor</p>
 			<iframe class="tut_iframe_yt" width="625" height="380" src="//www.youtube.com/embed/fBSNZxs8m0I" frameborder="0" allowfullscreen></iframe>
 			<p class="tut_space">&nbsp;</p>			
 			<p class="tut_space">&nbsp;</p>
@@ -1606,8 +1587,8 @@
 	<!-- Getting started tutorial -->
 	<ol id="getting_started_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Next" i18n-key="i.Next" class="tut_width500_center tut_without_arrow" data-options="tipLocation:none">
-			<h2 i18n-key="i.walkWelcome1_1">Welcome to Educa Editor!</h2>
-			<p i18n-key="i.walkWelcome1_2">Educa Editor is an innovative web application that allows you to create amazing web slideshows and novel educational resources such as Didactic Units.</p>
+			<h2 i18n-key="i.walkWelcome1_1">Welcome to ViSH Editor!</h2>
+			<p i18n-key="i.walkWelcome1_2">ViSH Editor is an innovative web application that allows you to create amazing web slideshows and novel educational resources such as Virtual Excursions.</p>
 			<p i18n-key="i.walkWelcome1_3">In this walkthrough you will learn how to get started with this tool.</p>
 		</li>
 
@@ -1629,7 +1610,7 @@
 					<p i18n-key="i.walkWelcome4_3">Import slides from a PDF presentation.</p>
 				</li>
 				<li>
-					<p i18n-key="i.walkWelcome4_4">Import slides from other Educa Editor presentations.</p>
+					<p i18n-key="i.walkWelcome4_4">Import slides from other ViSH Editor presentations.</p>
 				</li>
 			</ul>
 			<p class="tut_space">&nbsp;</p>
@@ -1638,7 +1619,7 @@
 
 
 		<li data-id="toolbar_presentation" data-text="Next" i18n-key="i.Next" class="tut_width500 tut_menubar tut_with_arrow" data-options="tipLocation:bottom">
-			<h2 i18n-key="i.walkWelcome5_1">Educa Editor Toolbar</h2>
+			<h2 i18n-key="i.walkWelcome5_1">ViSH Editor Toolbar</h2>
 			<p i18n-key="i.walkWelcome5_2">This toolbar offers different features to manage and compose your presentation.</p>
 			<p i18n-key="i.walkWelcome5_3">Click next to see an explanation of the different elements of the toolbar.</p>
 			<p class="tut_space">&nbsp;</p>
@@ -1646,7 +1627,7 @@
 
 		<li data-id="toolbar_publish_wrapper" data-options="tipLocation:top" data-text="Next" i18n-key="i.Next" class="tut_width350 tut_with_arrow">
 			<h2 i18n-key="i.Publish">Publish</h2>
-			<p i18n-key="i.walkWelcome7_1">This button allows you to publish your presentation in the EducaInternet platform. If your presentation is not complete, you can also save it as a draft to keep it private and finish it later.</p>
+			<p i18n-key="i.walkWelcome7_1">This button allows you to publish your presentation in the ViSH platform. If your presentation is not complete, you can also save it as a draft to keep it private and finish it later.</p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
 
@@ -1699,10 +1680,10 @@
 		</li>
 
 		<li data-id="menuButton" class="tut_menubuttonpresentation tut_with_arrow" data-options="tipLocation:bottom;" data-text="Next" i18n-key="i.Next">
-			<h2 i18n-key="i.walkWelcome12_1">Educa Editor Menu</h2>
-			<p i18n-key="i.walkWelcome12_2">This button displays the Educa Editor menu, where you can find all the functionalities of the application.</p>
+			<h2 i18n-key="i.walkWelcome12_1">ViSH Editor Menu</h2>
+			<p i18n-key="i.walkWelcome12_2">This button displays the ViSH Editor menu, where you can find all the functionalities of the application.</p>
 			<img id="tutMenuImage" i18n-key="i.img.tut_menu" src="/assets/tutorial/tut_menu.png"/>
-			<p i18n-key="i.walkWelcome12_3">Many of these options are also available on the Educa Editor toolbar, but you always can access to any of them through this menu.</p>
+			<p i18n-key="i.walkWelcome12_3">Many of these options are also available on the ViSH Editor toolbar, but you always can access to any of them through this menu.</p>
 			<p i18n-key="i.walkWelcome12_4">Using this menu you can save and publish your presentation as well as export it to a external file, you can also preview the presentation before publish or export it, add new slides, import new contents, change the information of the presentation through the 'Settings' option, and start again this tutorial every time you want with the 'Help' option.</p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
@@ -1728,67 +1709,67 @@
 
 		<li data-id="presentation_details_description" data-text="Next" i18n-key="i.Next" data-options="tipLocation:none;" class="tut_settings tut_without_arrow">
 			<h2 i18n-key="i.walkSettings1_1">Welcome to the Settings screen</h2>
-			<p><span i18n-key="i.walkSettings1_2">Here you can specify information about your Didactic Unit.</span></p>
-			<p><span i18n-key="i.walkSettings1_3">The title and avatar (an image to identify your didactic unit in the EducaInternet platform) are mandatory fields, so you should fill them before publish your didactic unit.</span></p>
-			<p><span i18n-key="i.walkSettings1_4">At the left side, you can see a preview of how your didactic unit will be presented in the EducaInternet Platform.</span></p>
+			<p><span i18n-key="i.walkSettings1_2">Here you can specify information about your Virtual Excursion.</span></p>
+			<p><span i18n-key="i.walkSettings1_3">The title and avatar (an image to identify your excursion in the ViSH platform) are mandatory fields, so you should fill them before publish your excursion.</span></p>
+			<p><span i18n-key="i.walkSettings1_4">At the left side, you can see a preview of how your excursion will be presented in the ViSH Platform.</span></p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
 
 		<li data-id="presentation_details_title" data-text="Next" i18n-key="i.Next" data-options="tipLocation:bottom;" class="tut_width350 tut_with_arrow">
 			<h2 i18n-key="i.walkSettings2_1">Write a title (Mandatory)</h2>
-			<p i18n-key="i.walkSettings2_2">Type the title of your didactic unit in this input. The title is important because it is the one that will appear in the EducaInternet Platform and the one that other users of the platform will see.</p>
+			<p i18n-key="i.walkSettings2_2">Type the title of your excursion in this input. The title is important because it is the one that will appear in the ViSH Platform and the one that other users of the platform will see.</p>
 		</li>
 
 		<li data-id="presentation_details_preview_thumbnail_img" data-text="Next" i18n-key="i.Next" data-options="tipLocation:top;" class="tut_width350 tut_with_arrow">
-			<h2 i18n-key="i.walkSettings3_1">Add an avatar for your didactic unit (Mandatory)</h2>
-			<p i18n-key="i.walkSettings3_2">Click on this button to choose an image to represent your didactic unit. This image will be the avatar of the didactic unit and is important because it will be shown in the EducaInternet Platform, allowing users to identify the didactic unit.</p>
+			<h2 i18n-key="i.walkSettings3_1">Add an avatar for your excursion (Mandatory)</h2>
+			<p i18n-key="i.walkSettings3_2">Click on this button to choose an image to represent your excursion. This image will be the avatar of the excursion and is important because it will be shown in the ViSH Platform, allowing users to identify the excursion.</p>
 		</li>
 
 		<li data-id="presentation_details_license" data-text="Next" i18n-key="i.Next" data-options="tipLocation:top;" class="tut_width350 tut_with_arrow">
-			<h2 i18n-key="i.walkSettings4_1">Add a license for this didactic unit (Mandatory)</h2>
-			<p i18n-key="i.walkSettings4_2">Since you are the author of this didactic unit, you need to include a license for it. Choose between different licenses from Creative Commons and apply it from dropdown menu. This is Creative Commons license webpage (https://creativecommons.org/licenses/) where they explain different licenses in deep.</p>
-			<p i18n-key="i.walkSettings4_3">Remember that you can only change license before publishing the didactic unit. If you have published it, the didactic unit license dropdown will remain disabled and you will not be able to change it.</p>
+			<h2 i18n-key="i.walkSettings4_1">Add a license for this excursion (Mandatory)</h2>
+			<p i18n-key="i.walkSettings4_2">Since you are the author of this excursion, you need to include a license for it. Choose between different licenses from Creative Commons and apply it from dropdown menu. This is Creative Commons license webpage (https://creativecommons.org/licenses/) where they explain different licenses in deep.</p>
+			<p i18n-key="i.walkSettings4_3">Remember that you can only change license before publishing the excursion. If you have published it, the excursion license dropdown will remain disabled and you will not be able to change it.</p>
 		</li>
 
 		<li data-id="presentation_details_description" data-options="tipLocation:bottom;" i18n-key="i.Next" data-text="Next" class="tut_width350 tut_with_arrow">
 		<h2 i18n-key="i.walkSettings5_1">Write a description</h2>
-		<p i18n-key="i.walkSettings5_2">Here you can explain in detail what the didactic unit is about.</p>
-		<p i18n-key="i.walkSettings5_3">This description will be shown in the EducaInternet Platform in the page of this didactic unit. Therefore, all users that access this didactic unit will be able to read it.</p>
+		<p i18n-key="i.walkSettings5_2">Here you can explain in detail what the excursion is about.</p>
+		<p i18n-key="i.walkSettings5_3">This description will be shown in the ViSH Platform in the page of this excursion. Therefore, all users that access this excursion will be able to read it.</p>
 		</li>
 
 		<li data-id="selectthemeshelp" data-text="Next" i18n-key="i.Next" data-options="tipLocation:bottom;" class="tut_width350 tut_with_arrow">
 			<h2 i18n-key="i.walkSettings6_1">Select your presentation theme</h2>
-			<p i18n-key="i.walkSettings6_2">A theme defines the visual appearance of the presentation. Educa Editor offers different themes among them you can choose.</p>
+			<p i18n-key="i.walkSettings6_2">A theme defines the visual appearance of the presentation. ViSH Editor offers different themes among them you can choose.</p>
 			<p i18n-key="i.walkSettings6_3">To pick one theme, just click on the icon you like in this gallery.</p>
 			<p i18n-key="i.walkSettings6_4">Remember that you can change the theme of the presentation at any time by accesing to this screen or by clicking on the 'Style' button in the toolbar.</p>
 		</li>
 
 		<li data-id="tags_in_presentation_details" data-text="Next" i18n-key="i.Next" data-options="tipLocation:top;" class="tut_width500 tut_with_arrow">
-			<h2 i18n-key="i.walkSettings7_1">Add tags to your didactic unit</h2>
-			<p i18n-key="i.walkSettings7_2">Here you can add tags (or keywords) to your didactic unit.</p>
-			<p i18n-key="i.walkSettings7_3">These keywords are very useful to categorize the didactic unit. Also, they are used as search terms in the EducaInternet platform (as well as in other repositories), and therefore add keywords to an didactic unit facilitates its searching and retrieval.</p>
+			<h2 i18n-key="i.walkSettings7_1">Add tags to your excursion</h2>
+			<p i18n-key="i.walkSettings7_2">Here you can add tags (or keywords) to your excursion.</p>
+			<p i18n-key="i.walkSettings7_3">These keywords are very useful to categorize the excursion. Also, they are used as search terms in the ViSH platform (as well as in other repositories), and therefore add keywords to an excursion facilitates its searching and retrieval.</p>
 			<p><span i18n-key="i.walkSettings7_4">Tag examples</span>: <i i18n-key="i.nanoscience">nanoscience</i>, <i i18n-key="i.math">math</i> <span i18n-key="i.or">or</span> <i i18n-key="i.biology">biology</i></p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
 
 		<li data-id="attachment_in_presentation_details" data-text="Next" i18n-key="i.Next" data-options="tipLocation:top;" class="tut_width500 tut_with_arrow">
 			<h2 i18n-key="i.walkSettings8_1">Attachment</h2>
-			<p i18n-key="i.walkSettings8_2">You can add complementary materials for your didactic unit through an attachment.</p>
-			<p i18n-key="i.walkSettings8_3">To upload an attachment you must have previously saved the didactic unit. Once the attached file is uploaded, users can download it from the didactic unit page at the EducaInternet platform.</p>
+			<p i18n-key="i.walkSettings8_2">You can add complementary materials for your excursion through an attachment.</p>
+			<p i18n-key="i.walkSettings8_3">To upload an attachment you must have previously saved the excursion. Once the attached file is uploaded, users can download it from the excursion page at the ViSH platform.</p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
 
 		<li data-id="metadata_clasification_button" data-text="Next" i18n-key="i.Next" data-options="tipLocation:top;" class="tut_width500 tut_with_arrow">
 			<h2 i18n-key="i.walkSettings9_1">Advanced Settings</h2>
 			<p i18n-key="i.walkSettings9_2">Clicking on this button will bring up the Advanced Settings screen.</p>
-			<p i18n-key="i.walkSettings9_3">In this screen you can specify more pedagogy related information, permissions and other aspects about your didactic unit.</p>
+			<p i18n-key="i.walkSettings9_3">In this screen you can specify more pedagogy related information, permissions and other aspects about your excursion.</p>
 			<p><span i18n-key="i.walkSettings9_4">Details about the information that can be specified are described in the contextual help of the different screens.</p>
 		</li>
 
 		<li class="tut_width500 tut_with_arrow" data-id="save_presentation_details" class="tut_with_arrow" data-options="tipLocation:top" data-text="Finish" i18n-key="i.Finish">
-			<h2 i18n-key="i.walkSettings10_1">Start using Educa Editor</h2>
-			<p i18n-key="i.walkSettings10_2">Once you have fulfilled the information of your didactic unit, at least the title and avatar, you can start to create your didactic unit with Educa Editor by clicking on the 'Continue' button.</p>
-			<p i18n-key="i.walkSettings10_3">If you do not want to fulfill all the information now, you can also start using Educa Editor by clicking on the “Fill later” button, but in this case remember that you should come back to the Settings screen and complete all the mandatory fields before publish the didactic unit.</p>
+			<h2 i18n-key="i.walkSettings10_1">Start using ViSH Editor</h2>
+			<p i18n-key="i.walkSettings10_2">Once you have fulfilled the information of your excursion, at least the title and avatar, you can start to create your excursion with ViSH Editor by clicking on the 'Continue' button.</p>
+			<p i18n-key="i.walkSettings10_3">If you do not want to fulfill all the information now, you can also start using ViSH Editor by clicking on the “Fill later” button, but in this case remember that you should come back to the Settings screen and complete all the mandatory fields before publish the excursion.</p>
 			<p class="tut_space_big">&nbsp;</p>
 		</li>
 	</ol>
@@ -1797,16 +1778,16 @@
 	<ol id="help_metadata_selection_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Finish" i18n-key="i.Finish" class="tut_metadata tut_without_arrow" data-options="tipLocation:none">
 			<h2 i18n-key="i.walkMetadata1_1">Welcome to the Metadata screen</h2>
-			<p><span i18n-key="i.walkMetadata1_2_1">In this screen you can specify more pedagogy related information (or metadata) about your didactic unit. These metadata are grounded on and are compliant with the Learning Object Metadata (LOM) standard. The last specification of this standard, which explains in a detailed way all fields of this screen, can be found</span> <a href="http://ltsc.ieee.org/wg12/files/LOM_1484_12_1_v1_Final_Draft.pdf" target="_blank"><span i18n-key="i.walkMetadata1_2_2">here</span></a>.</p>
+			<p><span i18n-key="i.walkMetadata1_2_1">In this screen you can specify more pedagogy related information (or metadata) about your excursion. These metadata are grounded on and are compliant with the Learning Object Metadata (LOM) standard. The last specification of this standard, which explains in a detailed way all fields of this screen, can be found</span> <a href="http://ltsc.ieee.org/wg12/files/LOM_1484_12_1_v1_Final_Draft.pdf" target="_blank"><span i18n-key="i.walkMetadata1_2_2">here</span></a>.</p>
 			<p class="tut_space">&nbsp;</p>
 			<p i18n-key="i.walkMetadata1_3">Below is given a brief explanation of each of the fields that can be specified here.</p>
 			<p class="tut_space_small">&nbsp;</p>
-			<p> <i i18n-key="i.Language">Language</i>: <span i18n-key="i.walkMetadata1_4">The language of your didactic unit.</span></p>
-			<p> <i i18n-key="i.Context">Context</i>: <span i18n-key="i.walkMetadata1_5">The principal environment within which the learning and use of this learning object (i.e. the didactic unit) is intended to take place.</span></p>
+			<p> <i i18n-key="i.Language">Language</i>: <span i18n-key="i.walkMetadata1_4">The language of your excursion.</span></p>
+			<p> <i i18n-key="i.Context">Context</i>: <span i18n-key="i.walkMetadata1_5">The principal environment within which the learning and use of this learning object (i.e. the excursion) is intended to take place.</span></p>
 			<p> <i i18n-key="i.AgeRange">Age range</i>: <span i18n-key="i.walkMetadata1_6">Age of the typical intended user.</span></p>
 			<p> <i i18n-key="i.Difficulty">Difficulty</i>: <span i18n-key="i.walkMetadata1_7">How hard it is to work with or through this learning object.</span></p>
 			<p> <i i18n-key="i.TypicalLearningTime">Typical Learning Time</i>: <span i18n-key="i.walkMetadata1_8">Approximate or typical time it takes to work with this learning object.</span></p>
-			<p> <i i18n-key="i.Subject">Subject</i>: <span i18n-key="i.walkMetadata1_9">The topic (or topics) of the didactic unit.</span></p>
+			<p> <i i18n-key="i.Subject">Subject</i>: <span i18n-key="i.walkMetadata1_9">The topic (or topics) of the excursion.</span></p>
 			<p> <i i18n-key="i.EducationalObjectives">Educational Objectives</i>: <span i18n-key="i.walkMetadata1_10">Comments on how this learning object is to be used.</span></p>
 			<p class="tut_space_big">&nbsp;</p>
 		</li>
@@ -1816,10 +1797,10 @@
 	<ol id="help_publication_selection_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Finish" i18n-key="i.Finish" class="tut_metadata tut_without_arrow" data-options="tipLocation:none">
 			<h2 i18n-key="i.walkPublication1_1">Welcome to the Permissions screen</h2>
-			<p><span i18n-key="i.walkPublication1_2">In this screen you can change the permissions that other users of the EducaInternet platform will have on your didactic unit once it has been published. You will be able to change these settings at any time.</span></p>
-			<p><b><span i18n-key="i.allowComment">Comment</span></b>: <span i18n-key="i.walkPublication1_3">allows to enable or disable comments for this didactic unit.</span></p>
-			<p><b><span i18n-key="i.allowDownload">Download</span></b>: <span i18n-key="i.walkPublication1_4">allows other users to download the didactic unit in any format.</span></p>
-			<p><b><span i18n-key="i.allowClone">Clone</span></b>: <span i18n-key="i.walkPublication1_5">allows other users to obtain a copy of the didactic unit in their own account keeping the authoring chain and including a reference to the original author (or authors).</span></p>
+			<p><span i18n-key="i.walkPublication1_2">In this screen you can change the permissions that other users of the ViSH platform will have on your excursion once it has been published. You will be able to change these settings at any time.</span></p>
+			<p><b><span i18n-key="i.allowComment">Comment</span></b>: <span i18n-key="i.walkPublication1_3">allows to enable or disable comments for this excursion.</span></p>
+			<p><b><span i18n-key="i.allowDownload">Download</span></b>: <span i18n-key="i.walkPublication1_4">allows other users to download the excursion in any format.</span></p>
+			<p><b><span i18n-key="i.allowClone">Clone</span></b>: <span i18n-key="i.walkPublication1_5">allows other users to obtain a copy of the excursion in their own account keeping the authoring chain and including a reference to the original author (or authors).</span></p>
 			<p class="tut_space_big">&nbsp;</p>
 		</li>
 	</ol>
@@ -1828,7 +1809,7 @@
 	<ol id="help_rte_selection_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Finish" i18n-key="i.Finish" class="tut_metadata tut_without_arrow" data-options="tipLocation:none">
 			<h2 i18n-key="i.walkRTE1_1">Welcome to the RTE options screen</h2>
-			<p><span i18n-key="i.walkRTE1_2">In this screen you can specify the integration and interaction options of the learning object (i.e the didactic unit) with the RTE (Run-Time Environment).</span></p>
+			<p><span i18n-key="i.walkRTE1_2">In this screen you can specify the integration and interaction options of the learning object (i.e the excursion) with the RTE (Run-Time Environment).</span></p>
 			<p><span i18n-key="i.walkRTE1_3">When the learning object is exported to a standard e-Learning format like SCORM and it is integrated into an external system (for example, an LMS like Moodle or Blackboard), it communicates with the run-time environment of the external system. The options on this screen allow to configure different aspects of that communication.</span></p>
 			<p class="tut_space_big">&nbsp;</p>
 		</li>
@@ -1947,7 +1928,7 @@
 			<h2 i18n-key="i.walkPdf2ex_1">Insert a PDF slideshow</h2>
 			<p i18n-key="i.walkPdf2ex_2">Select a slideshow in PDF format and upload the file. Only files with PDF format are allowed. If you want to insert a slideshow in other format such as PowerPoint (.ppt), you should convert the file to PDF first.</p>
 			<p i18n-key="i.walkPdf2ex_3">Once the upload of the PDF file is complete, a new screen will pop up for you to select the slides of the uploaded slideshow that you want to insert.</p>
-			<p i18n-key="i.walkPdf2ex_4" class="tut_withoutbottomspace">This functionality will convert the PDF slideshow to a Educa Editor presentation, this means that each of the selected slides of the PDF slideshow will be inserted in the current presentation as a new slide.</p>
+			<p i18n-key="i.walkPdf2ex_4" class="tut_withoutbottomspace">This functionality will convert the PDF slideshow to a ViSH Editor presentation, this means that each of the selected slides of the PDF slideshow will be inserted in the current presentation as a new slide.</p>
 			
 			<table class="tut_table_image">
 				<tr>
@@ -1979,7 +1960,7 @@
 			<p i18n-key="i.walkInsertEfile_3" class="tut_withouttopspace">The following options are available:</p>
 			<p class="tut_space">&nbsp;</p>
 
-			<h3>-> <span i18n-key="i.walkInsertJSONfile_1">Add a Educa Editor Presentation from a JSON file</span></h3>
+			<h3>-> <span i18n-key="i.walkInsertJSONfile_1">Add a ViSH Editor Presentation from a JSON file</span></h3>
 			<p i18n-key="i.walkInsertJSONfile_2" class="tut_withlittletopspace">Pick the file in JSON format (.json) in which the presentation you want to insert is saved. Then, click on the preview button. A new screen will appear for you to select the slides to import.</p>
 			<p i18n-key="i.walkInsertJSONfile_3">You can save your presentation in JSON format by clicking on 'Menu -> Export -> toJSON'. A JSON file containing your presentation will be downloaded to your device. This  way you can share your presentation through a file (for instance sending it by email) and store it where you want.</p>
 			<p class="tut_space">&nbsp;</p>
@@ -1990,15 +1971,15 @@
 		</li>
 	</ol>
 
-	<!-- Help searching presentations in EducaInternet to insert -->
+	<!-- Help searching presentations in ViSH to insert -->
 	<ol id="help_pres_selection_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Close" i18n-key="i.Close" class="tut_add_resources_fancybox tut_width700_center tut_without_arrow" data-options="tipLocation:none">
-			<h2 i18n-key="i.walkInsertingEducaInternetPres_1">Adding Slides from Didactic Units</h2>
-			<p i18n-key="i.walkInsertingEducaInternetPres_2">Here you can search Didactic Units on the EducaInternet platform in order to add them (or add selected slides from them) to your presentation.</p>
+			<h2 i18n-key="i.walkInsertingViSHPres_1">Adding Slides from Virtual Excursions</h2>
+			<p i18n-key="i.walkInsertingViSHPres_2">Here you can search Virtual Excursions on the ViSH platform in order to add them (or add selected slides from them) to your presentation.</p>
 			<p>
-				<span i18n-key="i.walkSearch1">Write the name you want to search inside the text box, for example</span> <i><span i18n-key="i.nature">nature</span></i>, <span i18n-key="i.walkPresSearch2">and press the 'enter' key to start the search. When the search has finished, the found Didactic Units will be shown in this screen.</span>
+				<span i18n-key="i.walkSearch1">Write the name you want to search inside the text box, for example</span> <i><span i18n-key="i.nature">nature</span></i>, <span i18n-key="i.walkPresSearch2">and press the 'enter' key to start the search. When the search has finished, the found Virtual Excursions will be shown in this screen.</span>
 			</p>
-			<p i18n-key="i.walkInsertingEducaInternetPres_3">Click on any of the Didactic Units to select it. After that, a new button "Preview" will be displayed.	Once you click on this button, a new screen will pop up for you to select the slides  that you want to insert in your presentation.</p>
+			<p i18n-key="i.walkInsertingViSHPres_3">Click on any of the Virtual Excursions to select it. After that, a new button "Preview" will be displayed.	Once you click on this button, a new screen will pop up for you to select the slides  that you want to insert in your presentation.</p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
 	</ol>
@@ -2006,8 +1987,8 @@
 	<!-- Help in themes templates -->
 	<ol id="themes_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" class="tut_themes tut_width500_center tut_without_arrow" data-options="tipLocation:none;" data-text="Close" i18n-key="i.Close">
-			<h2 i18n-key="i.walkThemes_1">Educa Editor Themes</h2>
-			<p i18n-key="i.walkSettings6_2">A theme defines the visual appearance of the presentation. Educa Editor offers different themes among them you can choose.</p>
+			<h2 i18n-key="i.walkThemes_1">ViSH Editor Themes</h2>
+			<p i18n-key="i.walkSettings6_2">A theme defines the visual appearance of the presentation. ViSH Editor offers different themes among them you can choose.</p>
 			<p i18n-key="i.walkSettings6_3">To pick one theme, just click on the icon you like in this gallery.</p>
 			<p i18n-key="i.walkThemes_4">Remember that you can change the theme of the presentation at any time by accesing to this screen or by clicking on the 'Settings' option in the menu.</p>
 			<p class="tut_space">&nbsp;</p>
@@ -2017,8 +1998,8 @@
 	<!-- Help in Animation templates -->
 	<ol id="animation_help" class="joyRideTipContent">
 		<li data-id="thumbcontent" class="tut_themes tut_width500_center tut_without_arrow" data-options="tipLocation:none;" data-text="Close" i18n-key="i.Close">
-			<h2 i18n-key="i.walkAnimations_1">Educa Editor Animations</h2>
-			<p i18n-key="i.walkAnimations_2">An Animation defines the visual transition between the slides of the presentation. Educa Editor offers different animations among them you can choose.</p>
+			<h2 i18n-key="i.walkAnimations_1">ViSH Editor Animations</h2>
+			<p i18n-key="i.walkAnimations_2">An Animation defines the visual transition between the slides of the presentation. ViSH Editor offers different animations among them you can choose.</p>
 			<p i18n-key="i.walkAnimations_3">To pick one animation, just pass through the icons to previsualize the animation you like in this gallery.</p>
 			<p i18n-key="i.walkAnimations_4">Remember that you can change the animation between the slides of the presentation at any time by accesing to this screen.</p>
 			<p class="tut_space">&nbsp;</p>
@@ -2153,7 +2134,7 @@
 			<p class="tut_withmediumbottomspace" i18n-key="i.walkEVideo_3">You can change the selected video source at any time by clicking on the 'Video' button of the toolbar.</p>
 			<img class="big_toolbar_icon toolbar_web" src="/assets/toolbar/change_evideo.png">
 
-			<p class="tut_withmediumbottomspace"><span i18n-key="i.walkEVideo_4">You can use YouTube and HTML5 videos (mp4, webm and ogg formats). Also, you can upload your own video to EducaInternet to be converted to HTML5 compliant formats ensuring its full compatibility</span>. <span i18n-key="i.walkVideosMain_Videos" class="tut_tutlink" onClick="VISH.Tour.startTourWithId('video_fancy_tabs_main_help', 'top');">Click here to learn more about videos in Educa Editor</span>.</p>
+			<p class="tut_withmediumbottomspace"><span i18n-key="i.walkEVideo_4">You can use YouTube and HTML5 videos (mp4, webm and ogg formats). Also, you can upload your own video to ViSH to be converted to HTML5 compliant formats ensuring its full compatibility</span>. <span i18n-key="i.walkVideosMain_Videos" class="tut_tutlink" onClick="VISH.Tour.startTourWithId('video_fancy_tabs_main_help', 'top');">Click here to learn more about videos in ViSH Editor</span>.</p>
 
 			<p i18n-key="i.walkEVideo_5">When you are creating an Enriched Video, two main elements are displayed on the screen: the video player placed at the left side, and the 'Table of Contents' placed at the right side. The video player allows to play the video the same way classic media players do. The 'Table of Contents' allows to add 'Timestamp Links'. A timestamp link allows viewers to jump to a specific point in the video. The timestamp links are represented by lines displayed in the video progress bar and their titles are displayed in the table of contents. To edit or remove a timestamp link you can use the icons placed at its side in the table of contents.</p>
 
@@ -2190,7 +2171,7 @@
 		</li>
 	</ol>
 
-	<!-- Help inserting images [URL, Upload, EducaInternet, Flickr, Europeana, LRE] -->
+	<!-- Help inserting images [URL, Upload, ViSH, Flickr, Europeana, LRE] -->
 	<ol id="images_fancy_tabs_id_help" class="joyRideTipContent">
 
 		<li data-id="thumbcontent" data-text="Next" i18n-key="i.Next" class="tut_add_resources_fancybox tut_width600_center tut_without_arrow" data-options="tipLocation:none">
@@ -2207,8 +2188,8 @@
 					<td><p i18n-key="i.walkImagesMain_Upload">upload an own image from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkImagesMain_EducaInternet">search images on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkImagesMain_ViSH">search images on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>Flickr</p></td>
@@ -2257,8 +2238,8 @@
 					<td><p i18n-key="i.walkImagesMain_Upload">upload an own image from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkImagesMain_EducaInternet">search images on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkImagesMain_ViSH">search images on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>Flickr</p></td>
@@ -2280,7 +2261,7 @@
 
 		<li data-id="upload_file_inputbox" data-text="Close" i18n-key="i.Close" data-options="tipLocation:bottom" class="tut_width600 tut_with_arrow">
 			<h2 i18n-key="i.walkImagesUpload2_1">Uploading images</h2>
-			<p i18n-key="i.walkImagesUpload2_2">Here you can add an own image from your device. To do that, first you should select the desired image using the file picker. Optionally, you can type tags to classify the selected image. After that, you should click on the "upload" button in order to upload the image to the EducaInternet platform. When the upload has finished, a preview of the image will be shown at the bottom. Finally, to add the image to the slide you should click on the "Add Content" button.</p>
+			<p i18n-key="i.walkImagesUpload2_2">Here you can add an own image from your device. To do that, first you should select the desired image using the file picker. Optionally, you can type tags to classify the selected image. After that, you should click on the "upload" button in order to upload the image to the ViSH platform. When the upload has finished, a preview of the image will be shown at the bottom. Finally, to add the image to the slide you should click on the "Add Content" button.</p>
 			<p i18n-key="i.walkImagesUrl2_3">Almost every image format (jpg, png, gif, tiff, bmp, ...) is supported.</p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
@@ -2301,8 +2282,8 @@
 					<td><p i18n-key="i.walkImagesMain_Upload">upload an own image from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkImagesMain_EducaInternet">search images on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkImagesMain_ViSH">search images on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>Flickr</p></td>
@@ -2318,13 +2299,13 @@
 				</tr>
 			</table>
 
-			<p i18n-key="i.walkImagesEducaInternet1_1">Now you are in the EducaInternet tab, click on "Next" to continue.</p>
+			<p i18n-key="i.walkImagesViSH1_1">Now you are in the ViSH tab, click on "Next" to continue.</p>
 			<p class="tut_space">&nbsp;</p>
 		</li>
 
 		<li data-id="search_picture" data-text="Close" i18n-key="i.Close" class="tut_width500 tut_with_arrow" data-options="tipLocation:bottom">
-			<h2 i18n-key="i.walkImagesEducaInternet2_1">Search images on the EducaInternet repository</h2>
-			<p i18n-key="i.walkImagesEducaInternet2_2">This screen allows you to search images on the EducaInternet repository (http://educainternet.es).</p>
+			<h2 i18n-key="i.walkImagesViSH2_1">Search images on the ViSH repository</h2>
+			<p i18n-key="i.walkImagesViSH2_2">This screen allows you to search images on the ViSH repository (http://vishub.org).</p>
 			<p>
 				<span i18n-key="i.walkSearch1">Write the name you want to search inside the text box, for example</span> <i><span i18n-key="i.nature">nature</span></i>, <span i18n-key="i.walkImagesSearch2">and press the 'enter' key to start the search. When the search has finished, the found images will be shown in this screen. To add any of them to the slide, you should just click on the desired one.</span>
 			</p>
@@ -2347,8 +2328,8 @@
 					<td><p i18n-key="i.walkImagesMain_Upload">upload an own image from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkImagesMain_EducaInternet">search images on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkImagesMain_ViSH">search images on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>Flickr</p></td>
@@ -2393,8 +2374,8 @@
 					<td><p i18n-key="i.walkImagesMain_Upload">upload an own image from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkImagesMain_EducaInternet">search images on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkImagesMain_ViSH">search images on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>Flickr</p></td>
@@ -2439,8 +2420,8 @@
 					<td><p i18n-key="i.walkImagesMain_Upload">upload an own image from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkImagesMain_EducaInternet">search images on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkImagesMain_ViSH">search images on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>Flickr</p></td>
@@ -2495,8 +2476,8 @@
 					<td><p i18n-key="i.walkObjectsMain_Upload">upload your own PDF or SWF (flash) file from your computer</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkObjectsMain_EducaInternet">search objects on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkObjectsMain_ViSH">search objects on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>LRE</p></td>
@@ -2509,7 +2490,7 @@
 		</li>
 	</ol>
 
-	<!-- Help inserting videos [URL, EducaInternet, YouTube] -->
+	<!-- Help inserting videos [URL, ViSH, YouTube] -->
 	<ol id="video_fancy_tabs_main_help" class="joyRideTipContent">
 
 		<li data-id="thumbcontent" data-text="Close" i18n-key="i.Close" class="tut_add_resources_fancybox tut_width700_center tut_without_arrow" data-options="tipLocation:none">
@@ -2521,8 +2502,8 @@
 					<td><p i18n-key="i.walkVideosMain_Url">add a video by pasting a url. Only HTML5 and YouTube videos are allowed</p></td>
 				</tr>
 				<tr>
-					<td><p>EducaInternet</p></td>
-					<td><p i18n-key="i.walkVideosMain_EducaInternet">search HTML5 videos on the EducaInternet repository</p></td>
+					<td><p>ViSH</p></td>
+					<td><p i18n-key="i.walkVideosMain_ViSH">search HTML5 videos on the ViSH repository</p></td>
 				</tr>
 				<tr>
 					<td><p>YouTube</p></td>
@@ -2548,16 +2529,16 @@
 			<h2 i18n-key="i.walkVideosUpload_1">Uploading videos</h2>
 
 			<p>
-				<span i18n-key="i.walkVideosUpload_2">You can upload your own video from your computer. To do that, go to</span> <a class="tut_tutlink" href="http://educainternet.es" target="_blank">http://educainternet.es</a> <span i18n-key="i.walkVideosUpload_3">and upload your video file to the EducaInternet repository. Several video formats (mp4, flv, mpg, avi, ...) are allowed. When you finish uploading the video onto EducaInternet, it will be converted to all HTML5 compatible video formats (mp4, webm and ogg). Note that this process could take several minutes or even hours depending on the video size. This is a good way to insert the videos because thereby they will be available in several formats and will work in all HTML5 compliant web browsers. Once the process finish, you have two ways of adding the video</span>:
+				<span i18n-key="i.walkVideosUpload_2">You can upload your own video from your computer. To do that, go to</span> <a class="tut_tutlink" href="http://vishub.org" target="_blank">http://vishub.org</a> <span i18n-key="i.walkVideosUpload_3">and upload your video file to the ViSH repository. Several video formats (mp4, flv, mpg, avi, ...) are allowed. When you finish uploading the video onto ViSH, it will be converted to all HTML5 compatible video formats (mp4, webm and ogg). Note that this process could take several minutes or even hours depending on the video size. This is a good way to insert the videos because thereby they will be available in several formats and will work in all HTML5 compliant web browsers. Once the process finish, you have two ways of adding the video</span>:
 				<ul>
-					<li><span i18n-key="i.walkVideosUpload_4">Search your video on the EducaInternet repository from the Educa Editor through the 'EducaInternet' tab. In this case you will have to wait several hours (maximum) for the EducaInternet search engine to index the new video.</span></li>
+					<li><span i18n-key="i.walkVideosUpload_4">Search your video on the ViSH repository from the ViSH Editor through the 'ViSH' tab. In this case you will have to wait several hours (maximum) for the ViSH search engine to index the new video.</span></li>
 					<li class="tut_li_decnone">&nbsp;</li>
-					<li><span i18n-key="i.walkVideosUpload_5">Another way is to go to the page of the video in EducaInternet (for example, http://educainternet.es/videos/3366) and click on the 'embed' tab. After that, you should paste the provided embed code into the input text field of the 'url' tab in the Educa Editor. This way, the video will be inserted immediately.</span></li>
+					<li><span i18n-key="i.walkVideosUpload_5">Another way is to go to the page of the video in ViSH (for example, http://vishub.org/videos/3366) and click on the 'embed' tab. After that, you should paste the provided embed code into the input text field of the 'url' tab in the ViSH Editor. This way, the video will be inserted immediately.</span></li>
 				</ul>
 			</p>
 			<p class="tut_space">&nbsp;</p>
 			<p>
-				<span i18n-key="i.walkVideosUpload_6">Since Educa Editor allows to embed YouTube videos, you can also upload your videos to YouTube</span>: <a class="tut_tutlink" href="http://www.youtube.com/upload" target="_blank">http://www.youtube.com/upload</a>. <span i18n-key="i.walkVideosUpload_7">Once the video has been successfully uploaded to YouTube, you can insert it by its url, the embed code provided by YouTube, or by searching it from the Educa Editor through the 'YouTube' tab. YouTube also provide the videos in HTML5 compliant video formats, so they will work in nearly all devices including mobile phones.</span>
+				<span i18n-key="i.walkVideosUpload_6">Since ViSH Editor allows to embed YouTube videos, you can also upload your videos to YouTube</span>: <a class="tut_tutlink" href="http://www.youtube.com/upload" target="_blank">http://www.youtube.com/upload</a>. <span i18n-key="i.walkVideosUpload_7">Once the video has been successfully uploaded to YouTube, you can insert it by its url, the embed code provided by YouTube, or by searching it from the ViSH Editor through the 'YouTube' tab. YouTube also provide the videos in HTML5 compliant video formats, so they will work in nearly all devices including mobile phones.</span>
 			</p>
 			<p class="tut_space">&nbsp;</p>
 			<p class="tut_space">&nbsp;</p>
@@ -2597,9 +2578,9 @@
 	<ol id="tab_live_resource_id" class="joyRideTipContent">
 		<li data-id="thumbcontent" data-text="Close" i18n-key="i.Close" class="tut_add_resources_fancybox tut_width600_center tut_without_arrow" data-options="tipLocation:none">
 		<h2 i18n-key="i.walkLive_1">Adding Live Content</h2>
-		<p i18n-key="i.walkLive_2">EducaInternet offers special resources such as live webcams, microscopes or virtual laboratories provided by selected e-Infrastructures.</p>
-		<p i18n-key="i.walkLive_3">In this screen you will be able to search this type of resources on the EducaInternet repository.</p>
-		<p><span i18n-key="i.walkLive_4">If you want to discover more e-Infrastructure resources or attend to live scientific events you can visit</span> <a class="tut_tutlink" href="http://educainternet.es" target="_blank">http://educainternet.es</a>.</p>
+		<p i18n-key="i.walkLive_2">ViSH offers special resources such as live webcams, microscopes or virtual laboratories provided by selected e-Infrastructures.</p>
+		<p i18n-key="i.walkLive_3">In this screen you will be able to search this type of resources on the ViSH repository.</p>
+		<p><span i18n-key="i.walkLive_4">If you want to discover more e-Infrastructure resources or attend to live scientific events you can visit</span> <a class="tut_tutlink" href="http://vishub.org" target="_blank">http://vishub.org</a>.</p>
 
 		<p class="tut_space">&nbsp;</p>
 	</ol>
@@ -2609,7 +2590,7 @@
 	<!-- About screen -->
 	<ol id="about_screen" class="joyRideTipContent">
 		<li data-id="thumbcontent" class="about_fancybox tut_without_arrow" data-options="tipLocation:none">
-			<h2>Educa Editor</h2>
+			<h2>ViSH Editor</h2>
 			<p><span class="aboutfield" i18n-key="i.Version">Version</span>: <span id="VEversion"></span></p>
 			<p class="tut_withoutbottomspace"><span class="aboutfield" i18n-key="i.License">License</span>: <span>GNU Affero General Public License v3</span></p>
 			<p class="tut_withouttopspace"><span i18n-key="i.About2">Code available at</span> <a class="tut_tutlink" href="https://github.com/ging/vish_editor" target="_blank">https://github.com/ging/vish_editor</a>.</p>
@@ -2618,7 +2599,7 @@
 			<p class="tut_space">&nbsp;</p>
 			<p class="tut_space">&nbsp;</p>
 			<p class="tut_space">&nbsp;</p>
-			<h2 i18n-key="i.VESurvey1">Help us to improve Educa Editor</h2>
+			<h2 i18n-key="i.VESurvey1">Help us to improve ViSH Editor</h2>
 			<p class="tut_withoutbottomspace"><span i18n-key="i.VESurvey2">Please fill</span> <a i18n-key-href="i.VESurveyURL" class="tut_tutlink" i18n-key="i.VESurvey3" href="https://docs.google.com/forms/d/1jqgQsQ84sBsETRt0qY-vAz7dWk9hT3ouWH1dN0vGzQA/viewform" target="_blank">this survey</a>.</p>
 			<p class="tut_withouttopspace"><span i18n-key="i.VESurvey4">Thank you for your collaboration</span>!</p>
 		</li>

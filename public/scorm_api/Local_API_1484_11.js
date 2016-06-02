@@ -1,6 +1,6 @@
 /*
  * Local_API_1484_11
- * Mimics LMS Connectivity in Local Mode i.e. standalone functionality
+ * Mimics LMS Connectivity in Local Mode (i.e. standalone functionality) for SCORM 2004
  *
  * Modifiyed by GING.
  *
@@ -33,8 +33,8 @@ function Local_API_1484_11(options) {
     // Constructor
     "use strict";
     var defaults = {
-            version:     "2.2",
-            moddate:     "03/05/2013 5:10PM",
+            version:     "2.3",
+            moddate:     "20/04/2016 7:10PM",
             createdate:  "07/17/2010 08:15AM",
             prefix:      "Local_API_1484_11",
             errorCode:   0,
