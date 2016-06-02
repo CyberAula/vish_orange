@@ -1,0 +1,11 @@
+#presentation_details_logo {
+	opacity: 0;
+}
+
+#menuButton {
+	background-image: url("/assets/vetheme/logofondo_educa.png");
+}
+
+#embedWatermark {
+	background-image: url("/assets/vetheme/watermark_educainternet.png");
+}

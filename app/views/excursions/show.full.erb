@@ -1,3 +1,4 @@
+<%= javascript_include_tag 've_educainternet_locales' %>
 <%= render :partial => 'excursions/vish_viewer.full' %>
 
 <script>
@@ -49,6 +50,21 @@
 			configuration["loepSettings"]["user_id"] = '<%=current_user.id%>';
 		<% end %>
 	<%end%>
+
+	////////////////////
+	// Locales
+	///////////////////
+	configuration["defaultLanguage"] = "en";
+	configuration["locales"] = VE_EducaInternet_Locales;
+
+	////////////////////
+	// Apply a custom VE theme
+	///////////////////
+	configuration["ve_theme"] = {
+		"cssPath": "ve_theme.css",
+		"callback": function(V,options,presentation){
+		}
+	}
 
 	options["configuration"] = configuration;
 	options["developping"] = false;

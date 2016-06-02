@@ -1,3 +1,4 @@
+<%= javascript_include_tag 've_educainternet_locales' %>
 <%= render :partial => 'vish_editor' %>
 
 <script>	
@@ -60,7 +61,26 @@
 		configuration["catalog"] = <%= raw Vish::Application.config.catalogue["categories"].map{|c| c.capitalize}.to_json %>;
 	<% end %>
 
-	configuration["publishPermissions"] = ["Comment","Download","Clone"]
+	configuration["publishPermissions"] = ["Comment","Download","Clone"];
+
+	////////////////////
+	// Locales
+	///////////////////
+	configuration["defaultLanguage"] = "en";
+	configuration["locales"] = VE_EducaInternet_Locales;
+
+	////////////////////
+	// Apply a custom VE theme
+	///////////////////
+	configuration["ve_theme"] = {
+		"cssPath": "ve_theme.css",
+		"callback": function(V,options,presentation){
+			$("#presentation_details_logo").attr("src","/assets/vetheme/logo_educa2.png").load(function(){
+				$(this).css("opacity","1");
+			});
+			$("img.repositoryimgclass").attr("src","/assets/vetheme/repositoryimg_educa.png");
+		}
+	}
 
 	options["configuration"] = configuration;
 

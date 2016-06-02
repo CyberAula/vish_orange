@@ -2,7 +2,7 @@
 # Configure here all the variables of your ViSH instance.
 
 development:
-  name: "ViSH development"
+  name: "EducaInternet development"
   domain: "localhost:3000"
   test_domain: true
   no_reply_mail: "no-reply@vishub.org"
@@ -36,8 +36,8 @@ development:
 
 
 production:
-  name: "ViSH"
-  domain: "vishub.org"
+  name: "EducaInternet"
+  domain: "educainternet.es"
   test_domain: false
   code_domain: "vishubcode.global.dit.upm.es"
   code_path: "/home/isabel/vish-shared/documents/code"
