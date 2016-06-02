@@ -1,5 +1,5 @@
 <%= javascript_include_tag 've_educainternet_locales' %>
-<%= render :partial => 'vish_editor' %>
+<%= render :partial => 'vish_editor.full' %>
 
 <script>	
 	options = {};
@@ -79,6 +79,19 @@
 				$(this).css("opacity","1");
 			});
 			$("img.repositoryimgclass").attr("src","/assets/vetheme/repositoryimg_educa.png");
+
+			//Map ViSH to EducaInternet
+			$("#tab_pic_repo").html("EducaInternet");
+			$("#tab_object_repo").html("EducaInternet");
+			$("#tab_video_repo").html("EducaInternet");
+
+			$("p[i18n-key='i.walkObjectsMain_ViSH'],p[i18n-key='i.walkImagesMain_ViSH'],p[i18n-key='i.walkVideosMain_ViSH']").each(function(index,value){
+				var tds = $(value).parent().siblings();
+				if((tds.length === 1)&&($(tds[0]).html()==="<p>ViSH</p>")){
+					$(tds[0]).html("<p>EducaInternet</p>")
+				}
+			});
+			
 		}
 	}
 
