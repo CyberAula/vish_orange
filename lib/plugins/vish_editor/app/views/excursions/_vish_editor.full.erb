@@ -15,7 +15,9 @@
 		<img src="/assets/vicons/helptutorial_circle_hover.png" style="display:none"/>
 		<img src="/assets/vicons/helptutorial_circle2_hover.png" style="display:none"/>
 		<img src="/assets/vicons/helptutorial_circle_hover_tp.png" style="display:none"/>
+		<img src="/assets/vicons/ve_close.png" style="display:none"/>
 		<img src="/assets/vicons/ve_close_hover.png" style="display:none"/>
+		<img src="/assets/vicons/ve_close2.png" style="display:none"/>
 		<img src="/assets/vicons/ve_close2_hover.png" style="display:none"/>
 		<img src="/assets/icons/flashcard_add_img_button_hover.png" style="display:none"/>
 		<img src="/assets/icons/evideo_add_button_hover.png" style="display:none"/>
@@ -320,7 +322,7 @@
 						<p id="presentation_details_preview_title" class="presentation_details_column_title" i18n-key="i.Preview">Preview</p>
 						<div id="presentation_details_preview">
 							<div id="presentation_details_preview_thumbnail">
-								<div title="Click to add an avatar. You should select an avatar to identify your excursion" id="presentation_details_preview_thumbnail_img_wrapper">
+								<div id="presentation_details_preview_thumbnail_img_wrapper" title="" i18n-key="i.AddanavatarHover">
 									<img id="presentation_details_preview_thumbnail_img" class="addThumbnailPlus" src="/assets/icons/addThumbnail.png">
 								</div>
 								<p class="addthumbtitle" i18n-key="i.Addanavatar" style="display: none;">Add an avatar *</p>
@@ -329,7 +331,7 @@
 								</div>
 							</div>
 							<div id="presentation_details_preview_addtitle">
-								<input id="presentation_details_preview_addtitle_input" type="text" maxlength="120" placeholder="add a title" i18n-key="i.addatitle">
+								<textarea id="presentation_details_preview_addtitle_textarea" type="text" maxlength="100" placeholder="add a title" i18n-key="i.addatitle"></textarea>
 							</div>
 							<div id="presentation_details_preview_author">
 								<span i18n-key="i.by">by</span> <span id="author_span_in_preview">agordillo</span>
@@ -353,7 +355,7 @@
 
 						<div id="presentation_details_title">
 							<span class="presentation_details_text" title="Title is a mandatory field" i18n-key="i.TitleM">Title *</span>
-							<input id="presentation_details_input_title" class="presentation_details_input" type="text" placeholder="Excursion title" i18n-key="i.presTitle" maxlength="120">
+							<input id="presentation_details_input_title" class="presentation_details_input" type="text" placeholder="Excursion title" i18n-key="i.presTitle" maxlength="100">
 						</div>
 
 						<div id="presentation_details_description">
@@ -365,7 +367,7 @@
 					    	<span class="presentation_details_text" i18n-key="i.Attatchment">Attatchment</span><br/>
 					    	<div class="file_details_upload">
 								<form id="attachment_file_form" method="post" action="#" enctype="multipart/form-data">
-									<div class="attachmentFileUpload" disabled="disabled" i18n-key-tooltip="i.tooltip.UploadAttachment" title="If this button is deactivated, you need to save your excursion first.">
+									<div class="attachmentFileUpload" disabled="disabled" i18n-key="i.tooltip.UploadAttachment" title="">
 										<span i18n-key="i.ChooseFile">Choose File</span>
 										<input type="file" name="attachment" id="attachment_file">
 									</div>
@@ -395,7 +397,7 @@
 				<div id="presentation_details_fields_row2">
 					<button id="metadata_clasification_button" type="button" class="button" i18n-key="i.advancedSettings">Advanced</button>
 					<button id="fill_details_later_button" type="button" class="button" i18n-key="i.Filllater">Fill later</button>
-					<button id="save_presentation_details" type="button" class="button" i18n-key="i.Continue" disabledtitle="Write a title and choose an avatar to continue">Continue</button>
+					<button id="save_presentation_details" type="button" class="button" i18n-key="i.Continue" i18n-key-disabledtooltip="i.tooltip.continueDisabled">Continue</button>
 				</div>
 			</div>
 
@@ -1532,7 +1534,7 @@
 			</div>
 
 			<div class="wapp_settings" style="display:none">
-				<br/><br/><br/>
+				<br/><br/>
 				<p i18n-key="i.wappSettings" class="elsettings_fancybox_title">Web Application Settings</p>
 				<div class="new_elsettings_field">
 					<span i18n-key="i.wappSettingsEnableAPI">Enable Web Application API</span>
