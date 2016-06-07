@@ -1321,6 +1321,8 @@ es:
               bt_upload: "Subir recurso"
               notfound: "No tiene ningún recurso educativo en su perfil. Cree o suba uno."
               title: "Selecciona uno de tus recursos"
+              url_explanation: "Copie aquí la URL completa del recurso o excursión que desee subir. Este recurso debe ser suyo y público."
+              url_tab: "URL"
             modal_title: "Editar tarea"
             open_date: "Fecha comienzo"
             title: "Tarea"
@@ -1333,12 +1335,12 @@ es:
             text: "Podrás añadir a este curso todos los recursos que haya disponibles en EducaInternet. Para añadirlos, abre el recurso en EducaInternet, copia su URL de la barra del navegador y pégala en el siguiente cuadro de texto."
         resource_gallery:
             add: "Añadir"
-            title: "Galería recursos"
+            title: "Galería de recursos"
             description: "Añade una galería de recursos"
             text: "Las galerías de recursos son un componente del curso que te permiten incluir varios recursos de EducaInternet de cualquier tipo y tenerlos agrupados para facilitarte su visionado. Inserta este componente en tu curso y añade recursos de la forma más fácil e intuitiva."
             new_resource: "Añadir"
         contributions_gallery:
-            title: "Galería contribuciones"
+            title: "Galería de contribuciones"
             description: "La galería de contribuciones muestra las contribuciones enviadas al curso"
             text: "Los usuarios pueden contribuir a las tareas definidas en un curso añadiendo recursos o bloques de texto. Con el componente Galería de contribuciones podrás ver de forma agrupada los recursos y/o los textos con los que otros usuarios han contribuido."
             error: "Para añadir una galería de contribuciones debes incluir al menos una tarea"
