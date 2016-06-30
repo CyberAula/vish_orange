@@ -54,7 +54,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    if params[:user][:madridorgid]
+    if !params[:user][:madridorgid].empty?
       Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?first=true&service=http://moodle.educainternet.es/course/view.php?id=6"
     else
       '/home'
