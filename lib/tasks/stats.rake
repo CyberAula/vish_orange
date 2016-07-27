@@ -1,220 +1,548 @@
 # encoding: utf-8
-STATS_FILE_PATH = "reports/stats.txt";
+STATS_FILE_PATH = "reports/stats.txt"
 
 namespace :stats do
 
   #Usage
   #Development:   bundle exec rake stats:all
-  #In production: bundle exec rake stats:all RAILS_ENV=production
   task :all => :environment do
     Rake::Task["stats:prepare"].invoke
     Rake::Task["stats:excursions"].invoke(false)
+    Rake::Task["stats:excursions_ts"].invoke(false)
+    Rake::Task["stats:excursions_reuse"].invoke(false)
     Rake::Task["stats:resources"].invoke(false)
     Rake::Task["stats:users"].invoke(false)
   end
 
   task :prepare do
     require "#{Rails.root}/lib/task_utils"
-    prepareFile(STATS_FILE_PATH)
-    writeInStats("ViSH Stats Report")
   end
 
+  #Usage
+  #Development:   bundle exec rake stats:excursions
   task :excursions, [:prepare] => :environment do |t,args|
     args.with_defaults(:prepare => true)
+    Rake::Task["stats:prepare"].invoke if args.prepare
 
-    if args.prepare
-      Rake::Task["stats:prepare"].invoke
-    end
+    puts "Excursions Stats"
 
-    writeInStats("")
-    writeInStats("Excursions Report")
-    writeInStats("")
-
-    allCreatedExcursions = [];
-    for year in 2012..2014
+    allDates = []
+    allExcursionsByDate = []
+    for year in 2012..2016
       12.times do |index|
-        month = index+1;
-        # date = DateTime.new(params[:year],params[:month],params[:day]);
+        month = index+1
+        # date = DateTime.new(params[:year],params[:month],params[:day])
         startDate = DateTime.new(year,month,1)
-        endDate = startDate.next_month;
+        endDate = startDate.next_month
         excursions = Excursion.where(:created_at => startDate..endDate)
-        writeInStats(startDate.strftime("%B %Y"))
-        allCreatedExcursions.push(excursions);
+        allDates.push(startDate.strftime("%B %Y"))
+        allExcursionsByDate.push(excursions)
       end
     end
 
-    writeInStats("")
-    writeInStats("Total Views")
-
-    allTotalViews = [];
-    allCreatedExcursions.each do |excursions|
-      totalViews = getViews(excursions)
-      allTotalViews.push(totalViews);
-      writeInStats(totalViews)
+    #Created excursions
+    createdExcursions = []
+    accumulativeCreatedExcursions = []
+    publishedExcursions = []
+    allExcursionsByDate.each_with_index do |excursions,index|
+      lastAcCreated = (index > 0 ? accumulativeCreatedExcursions[index-1] : 0)
+      acCreated = excursions.order('id DESC').first.id rescue 0
+      acCreated = lastAcCreated if acCreated == 0
+      accumulativeCreatedExcursions.push(acCreated)
+      nCreated = acCreated - lastAcCreated
+      createdExcursions.push(nCreated)
+      publishedExcursions.push(excursions.count)
     end
 
-    writeInStats("")
-    writeInStats("Total Accumulative Views")
-    accumulativeViews = 0;
-    allTotalViews.each do |totalViews|
-      accumulativeViews = accumulativeViews + totalViews
-      writeInStats(accumulativeViews)
+    #Accumulative Published Excursions
+    accumulativePublishedExcursions = []
+    publishedExcursions.each_with_index do |n,index|
+      accumulativePublishedExcursions.push(n)
+      accumulativePublishedExcursions[index] = accumulativePublishedExcursions[index] + accumulativePublishedExcursions[index-1] unless index==0
     end
 
-    writeInStats("")
-    writeInStats("Created Excursions")
-    allCreatedExcursions.each do |createdExcursions|
-      writeInStats(createdExcursions.count)
-    end
+    #Visits, downloads and likes
+    allExcursions = Excursion.all
+    visits = allExcursions.map{|e| e.visit_count}
+    downloads = allExcursions.map{|e| e.download_count}
+    likes = allExcursions.map{|e| e.like_count}
 
-    writeInStats("")
-    writeInStats("Accumulative Created Excursions")
-    accumulativeExcursions = 0;
-    allCreatedExcursions.each do |createdExcursions|
-      accumulativeExcursions = accumulativeExcursions + createdExcursions.count
-      writeInStats(accumulativeExcursions)
-    end
+    totalVisits = visits.sum
+    totalDownloads = downloads.sum
+    totalLikes = likes.sum
+    totalLearningHours = allExcursions.map{|e| e.lo_interaction}.compact.map{|i| ((i.tlo * i.nsamples)/3600.to_f).ceil}.compact.sum
 
+    filePath = "reports/excursions_stats.xlsx"
+    prepareFile(filePath)
+
+    Axlsx::Package.new do |p|
+      p.workbook.add_worksheet(:name => "Presentations Stats") do |sheet|
+        rows = []
+        rows << ["Presentations Stats"]
+        rows << ["Date","Created Presentations","Published Presentations","Accumulative Created Presentations","Accumulative Published Presentations"]
+        rowIndex = rows.length
+        
+        rows += Array.new(createdExcursions.length).map{|e|[]}
+        createdExcursions.each_with_index do |n,i|
+          rows[rowIndex+i] = [allDates[i],createdExcursions[i],publishedExcursions[i],accumulativeCreatedExcursions[i],accumulativePublishedExcursions[i]]
+        end
+
+        rows << []
+        rows << ["Total Visits","Total Downloads","Total Likes","Total Learning Hours"]
+        rows << [totalVisits,totalDownloads,totalLikes,totalLearningHours]
+        rows << []
+        rows << ["Id","Draft","Visits","Downloads","Likes","Learning Hours"]
+        rowIndex = rows.length
+        rows += Array.new(allExcursions.length).map{|e|[]}
+        allExcursions.each_with_index do |e,i|
+          #Calculate Learning time
+          interaction = e.lo_interaction
+          if interaction.nil?
+            loTime = 0
+          else
+            loTime = ((interaction.tlo * interaction.nsamples)/3600.to_f).ceil
+          end
+          rows[rowIndex+i] = [e.id,e.draft.to_s,visits[i],downloads[i],likes[i],loTime]
+        end
+
+        rows.each do |row|
+          sheet.add_row row
+        end
+      end
+
+      prepareFile(filePath)
+      p.serialize(filePath)
+
+      puts("Task Finished. Results generated at " + filePath)
+    end
   end
 
+  #Usage
+  #Development:   bundle exec rake stats:excursions_ts
+  task :excursions_ts, [:prepare] => :environment do |t,args|
+    args.with_defaults(:prepare => true)
+    Rake::Task["stats:prepare"].invoke if args.prepare
+
+    puts "Excursions Stats (Tracking System)"
+
+    allDates = []
+    allTimes = []
+    for year in 2012..2016
+      12.times do |index|
+        month = index+1
+        # date = DateTime.new(params[:year],params[:month],params[:day])
+        startDate = DateTime.new(year,month,1)
+        endDate = startDate.next_month
+        vvEntries = TrackingSystemEntry.where(:app_id=>"ViSH Viewer",:created_at => startDate..endDate)
+        
+        time = 0
+        vvEntries.find_each batch_size: 1000 do |e|
+          d = JSON(e["data"]) rescue {}
+          time = time + d["duration"].to_i if LoInteraction.isValidInteraction?(d)
+        end
+        allTimes.push((time/3600.to_f).ceil)
+        allDates.push(startDate.strftime("%B %Y"))
+      end
+    end
+
+    accumulativeTimes = []
+    allTimes.each_with_index do |n,index|
+      accumulativeTimes.push(n)
+      accumulativeTimes[index] = accumulativeTimes[index] + accumulativeTimes[index-1] unless index==0
+    end
+
+    filePath = "reports/excursions_stats_ts.xlsx"
+    prepareFile(filePath)
+
+    Axlsx::Package.new do |p|
+      p.workbook.add_worksheet(:name => "Presentations Stats TS") do |sheet|
+        rows = []
+        rows << ["Presentations Stats (Tracking System)"]
+        rows << ["Date","Time","Accumulative Time"]
+        rowIndex = rows.length
+        
+        rows += Array.new(allTimes.length).map{|e|[]}
+        allTimes.each_with_index do |n,i|
+          rows[rowIndex+i] = [allDates[i],allTimes[i],accumulativeTimes[i]]
+        end
+
+        rows.each do |row|
+          sheet.add_row row
+        end
+      end
+
+      prepareFile(filePath)
+      p.serialize(filePath)
+
+      puts("Task Finished. Results generated at " + filePath)
+    end
+  end
+
+  #Usage
+  #Development:   bundle exec rake stats:excursions_reuse
+  task :excursions_reuse, [:prepare] => :environment do |t,args|
+    args.with_defaults(:prepare => true)
+    Rake::Task["stats:prepare"].invoke if args.prepare
+
+    puts "Excursions Reuse Stats"
+
+    reusedExcursions = []
+    reusedResources = []
+    #iterate from oldest to newest excursions
+    allExcursions = Excursion.order("id ASC")
+    # allExcursions = Excursion.where(:draft => false).order("id ASC")
+    allExcursionsLength = allExcursions.count
+
+    allExcursionsResources = {}
+    allExcursions.each do |ex|
+      allExcursionsResources[ex.id] = VishEditorUtils.getResources(JSON.parse(ex.json))
+    end
+
+    for i in 0..allExcursionsLength-1
+      for j in i+1..allExcursionsLength-1
+        rResources = (allExcursionsResources[allExcursions[i].id] & allExcursionsResources[allExcursions[j].id])
+        if rResources.length > 1
+          reusedResources = reusedResources + rResources
+          reusedExcursions.push(allExcursions[i])
+          break
+        end
+      end
+    end
+
+    reusedResources.uniq
+
+    #Visits, downloads and tLearning
+    allPublicExcursions = Excursion.where(:draft => false).order("id ASC")
+
+    filePath = "reports/excursions_reuse_stats.xlsx"
+    prepareFile(filePath)
+
+    Axlsx::Package.new do |p|
+      p.workbook.add_worksheet(:name => "Presentations Reuse") do |sheet|
+        rows = []
+        rows << ["Presentations Reuse"]
+        rows << ["Total Excursions","Reused Excursions","Percentage"]
+        rows << [allExcursions.length,reusedExcursions.length,((reusedExcursions.length/allExcursions.length.to_f)*100).to_s + "%"]
+        
+        # rows << []
+        # rows << ["Reused resources"]
+        # rowIndex = rows.length
+
+        # rows += Array.new(reusedResources.length).map{|e|[]}
+        # reusedResources.each_with_index do |resource,i|
+        #   rows[rowIndex+i] = [resource]
+        # end
+
+        rows << []
+        rows << ["Excursion Id","Visits","Downloads","Learning Hours"]
+        rowIndex = rows.length
+
+        rows += Array.new(allPublicExcursions.length).map{|e|[]}
+        allPublicExcursions.each_with_index do |e,i|
+          #Calculate Learning time
+          interaction = e.lo_interaction
+          if interaction.nil?
+            loTime = 0
+          else
+            loTime = ((interaction.tlo * interaction.nsamples)/3600.to_f).ceil
+          end
+          rows[rowIndex+i] = [e.id,e.visit_count,e.download_count,loTime]
+        end
+
+        rows.each do |row|
+          sheet.add_row row
+        end
+      end
+
+      prepareFile(filePath)
+      p.serialize(filePath)
+
+      puts("Task Finished. Results generated at " + filePath)
+    end
+  end
+
+  #Usage
+  #Development:   bundle exec rake stats:check_resources
+  task :check_resources, [:prepare] => :environment do |t,args|
+    allResourceTypes = (["Document", "Webapp", "Scormfile", "Imscpfile", "Link", "Embed", "Writing", "Excursion", "Workshop", "Category"] + VishConfig.getResourceModels).uniq
+    allResourceTypes.each do |type|
+      allResources = ActivityObject.where("object_type in (?)", [type]).order("id DESC").map{|ao| ao.object}
+      maxIndex = allResources.length-1
+      allResources.each_with_index do |resource,index|
+        unless (index+1) > maxIndex
+          rName = allResources[index].class.name + ":" + allResources[index].id.to_s
+          if (allResources[index+1].id - allResources[index].id > 5)
+            puts "Wrong sequence with " + rName
+          end
+
+          if allResources[index+1].created_at.blank? or allResources[index].created_at.blank?
+            if allResources[index].created_at.blank?
+              puts "Created_at nil for " + rName
+            end
+          else
+            if (allResources[index+1].created_at - allResources[index].created_at > (3600*24))
+              puts "Wrong created_at timestamp for " + rName
+            end
+          end
+         
+          if allResources[index+1].activity_object.created_at.blank? or allResources[index].activity_object.created_at.blank?
+            if allResources[index].activity_object.created_at.blank?
+              puts "Created_at nil for activity object of " + rName
+            end
+          else
+            if (allResources[index+1].activity_object.created_at - allResources[index].activity_object.created_at > (3600*24))
+              puts "Wrong created_at timestamp for activity object of " + rName
+            end
+          end
+        end
+      end
+    end
+  end
+
+  #Usage
+  #Development:   bundle exec rake stats:resources
   task :resources, [:prepare] => :environment do |t,args|
     args.with_defaults(:prepare => true)
+    Rake::Task["stats:prepare"].invoke if args.prepare
 
-    if args.prepare
-      Rake::Task["stats:prepare"].invoke
-    end
+    puts "Resources Stats"
 
-    writeInStats("")
-    writeInStats("Resources Report")
-    writeInStats("")
-
-    allCreatedResources = [];
-    for year in 2012..2014
+    allResourceTypes = (["Document", "Webapp", "Scormfile", "Imscpfile", "Link", "Embed", "Writing", "Excursion", "Workshop", "Category"] + VishConfig.getResourceModels).uniq
+    allDates = []
+    allResourcesByDateAndType = []
+    for year in 2012..2016
       12.times do |index|
-        month = index+1;
-        # date = DateTime.new(params[:year],params[:month],params[:day]);
+        month = index+1
+        # date = DateTime.new(params[:year],params[:month],params[:day])
         startDate = DateTime.new(year,month,1)
-        endDate = startDate.next_month;
-        resources = Document.where(:created_at => startDate..endDate)
-        writeInStats(startDate.strftime("%B %Y"))
-        allCreatedResources.push(resources);
+        endDate = startDate.next_month
+        allDates.push(startDate.strftime("%B %Y"))
+        allResourcesByDateAndType.push({})
+        gindex = (allResourcesByDateAndType.length - 1)
+        # resources = ActivityObject.where("object_type in (?)", allResourceTypes).where(:created_at => startDate..endDate)
+        allResourceTypes.each do |type|
+          allResourcesByDateAndType[gindex][type] = ActivityObject.where("object_type in (?)", [type]).where(:created_at => startDate..endDate).map{|ao| ao.object}
+        end
       end
     end
 
-    writeInStats("")
-    writeInStats("Created Resources")
-    allCreatedResources.each do |createdResources|
-      writeInStats(createdResources.count)
+    #Uploaded Resources by Type
+    uploadedResourcesByType = []
+    accumulativeUploadedResourcesByType = []
+
+    allResourcesByDateAndType.each_with_index do |resourcesHash,index|
+      accumulativeUploadedResourcesByType.push({})
+      uploadedResourcesByType.push({})
+      allResourceTypes.each do |type|
+        if accumulativeUploadedResourcesByType[index-1].blank? or accumulativeUploadedResourcesByType[index-1][type].blank?
+          prevACC = 0
+        else
+          prevACC = accumulativeUploadedResourcesByType[index-1][type]
+        end
+
+        if resourcesHash[type].blank?
+          nACC = prevACC
+        else
+          nACC = resourcesHash[type].max_by{|ao| ao.id}.id
+        end
+
+        accumulativeUploadedResourcesByType[index][type] = nACC
+
+        nUploaded = (nACC - prevACC)
+        uploadedResourcesByType[index][type] = nUploaded
+      end
     end
 
-    writeInStats("")
-    writeInStats("Accumulative Created Resources")
-    accumulativeResources = 0;
-    allCreatedResources.each do |createdResources|
-      accumulativeResources = accumulativeResources + createdResources.count
-      writeInStats(accumulativeResources)
+    #Uploaded Resources
+    uploadedResources = []
+    accumulativeUploadedResources = []
+
+    uploadedResourcesByType.each_with_index do |resourcesHash,index|
+      nUploaded = 0
+      allResourceTypes.each do |type|
+        nUploaded = nUploaded + resourcesHash[type]
+      end
+      uploadedResources.push(nUploaded)
     end
 
-    #Resources type
-    writeInStats("")
-    writeInStats("Type of Resources")
-    resourcesReport = getResourcesByType(Document.all)
-
-    resourcesReport.each do |resourceReport|
-      writeInStats(resourceReport["resourceType"].to_s);
-      writeInStats(resourceReport["percent"].to_s)
+    accumulativeUploadedResourcesByType.each_with_index do |resourcesHash,index|
+      nUploaded = 0
+      allResourceTypes.each do |type|
+        nUploaded = nUploaded + resourcesHash[type]
+      end
+      accumulativeUploadedResources.push(nUploaded)
     end
 
+
+    #Analyze different types of documents: "Picture", "Video", "Document", "Officedoc", "Swf", "Audio", "Zipfile"
+    allDocumentTypes = ["Picture", "Video", "Document", "Officedoc", "Swf", "Audio", "Zipfile"]
+    allDocumentsByDateAndType = []
+    allResourcesByDateAndType.each_with_index do |resourcesHash,index|
+      allDocumentsByDateAndType.push({})
+      allDocumentTypes.each do |docType|
+        allDocumentsByDateAndType[index][docType] = []
+      end
+      resourcesHash["Document"].each do |doc|
+        allDocumentsByDateAndType[index][doc.class.name].push(doc)
+      end
+    end
+
+    #Uploaded Documents by Type
+    uploadedDocumentsByType = []
+    accumulativeUploadedDocumentsByType = []
+
+    allDocumentsByDateAndType.each_with_index do |documentsHash,index|
+      uploadedDocumentsByType.push({})
+      accumulativeUploadedDocumentsByType.push({})
+
+      allDocumentTypes.each do |type|
+        nUploaded = documentsHash[type].length
+        uploadedDocumentsByType[index][type] = nUploaded
+
+        if accumulativeUploadedDocumentsByType[index-1].blank? or accumulativeUploadedDocumentsByType[index-1][type].blank?
+          prevACC = 0
+        else
+          prevACC = accumulativeUploadedDocumentsByType[index-1][type]
+        end
+
+        nACC = prevACC + nUploaded
+        accumulativeUploadedDocumentsByType[index][type] = nACC
+      end
+    end
+
+    # #Visits, downloads and likes
+    allResources = ActivityObject.where("object_type in (?)", allResourceTypes).map{|ao| ao.object}
+    visits = allResources.map{|e| e.visit_count}
+    downloads = allResources.map{|e| e.download_count}
+    likes = allResources.map{|e| e.like_count}
+
+    totalVisits = visits.sum
+    totalDownloads = downloads.sum
+    totalLikes = likes.sum
+
+    filePath = "reports/resources_stats.xlsx"
+    prepareFile(filePath)
+
+    Axlsx::Package.new do |p|
+      p.workbook.add_worksheet(:name => "Resources Stats") do |sheet|
+        rows = []
+        rows << ["Resources Stats"]
+        rows << ["Date","Uploaded Resources","Accumulative Uploaded Resources"]
+        rowIndex = rows.length
+        
+        rows += Array.new(uploadedResources.length).map{|e|[]}
+        uploadedResources.each_with_index do |n,i|
+          rows[rowIndex+i] = [allDates[i],uploadedResources[i],accumulativeUploadedResources[i]]
+        end
+
+        rows << []
+        rows << ["Resource type","Total Uploaded Resources"]
+        allResourceTypes.each do |type|
+          rows << [type,accumulativeUploadedResourcesByType[accumulativeUploadedResourcesByType.length-1][type]]
+        end
+
+        allResourceTypes.each do |type|
+          rows << []
+          rows << ["Resources Stats: " + type]
+          rows << ["Date","Uploaded Resources","Accumulative Uploaded Resources"]
+          uploadedResourcesByType.each_with_index do |resourcesHash,i|
+            rows << [allDates[i],resourcesHash[type],accumulativeUploadedResourcesByType[i][type]]
+          end
+        end
+
+        allDocumentTypes.each do |type|
+          dName = type
+          rows << []
+          rows << ["Documents estimation: " + dName]
+          rows << ["Date","Uploaded " + dName,"Accumulative Uploaded " + dName]
+          uploadedDocumentsByType.each_with_index do |documentsHash,i|
+            rows << [allDates[i],documentsHash[type],accumulativeUploadedDocumentsByType[i][type]]
+          end
+        end
+
+        rows << []
+        rows << ["Visits, Downloads and Likes"]
+        rows << ["Total Visits","Total Downloads","Total Likes"]
+        rows << [totalVisits,totalDownloads,totalLikes]
+        rows << []
+        rows << ["Visits","Downloads","Likes"]
+        rowIndex = rows.length
+        rows += Array.new(allResources.length).map{|e|[]}
+        allResources.each_with_index do |e,i|
+          rows[rowIndex+i] = [visits[i],downloads[i],likes[i]]
+        end
+
+        rows.each do |row|
+          sheet.add_row row
+        end
+      end
+
+      prepareFile(filePath)
+      p.serialize(filePath)
+
+      puts("Task Finished. Results generated at " + filePath)
+    end
   end
 
+  #Usage
+  #Development:   bundle exec rake stats:users
   task :users, [:prepare] => :environment do |t,args|
     args.with_defaults(:prepare => true)
+    Rake::Task["stats:prepare"].invoke if args.prepare
 
-    if args.prepare
-      Rake::Task["stats:prepare"].invoke
-    end
+    puts "Users Stats"
 
-    writeInStats("")
-    writeInStats("Users Report")
-    writeInStats("")
-
-    allUsers = [];
-    for year in 2012..2014
+    allDates = []
+    allUsersByDate = []
+    for year in 2012..2016
       12.times do |index|
-        month = index+1;
-        # date = DateTime.new(params[:year],params[:month],params[:day]);
+        month = index+1
+        # date = DateTime.new(params[:year],params[:month],params[:day])
         startDate = DateTime.new(year,month,1)
-        endDate = startDate.next_month;
+        endDate = startDate.next_month
         users = User.where(:created_at => startDate..endDate)
-        writeInStats(startDate.strftime("%B %Y"))
-        allUsers.push(users);
+        allDates.push(startDate.strftime("%B %Y"))
+        allUsersByDate.push(users)
       end
     end
 
-    writeInStats("")
-    writeInStats("Registered Users")
-    allUsers.each do |users|
-      writeInStats(users.count)
+    #Created users
+    createdUsers = []
+    accumulativeCreatedUsers = []
+    allUsersByDate.each_with_index do |users,index|
+      lastAcCreated = (index > 0 ? accumulativeCreatedUsers[index-1] : 0)
+      acCreated = users.order('id DESC').first.id rescue 0
+      acCreated = lastAcCreated if acCreated == 0
+      accumulativeCreatedUsers.push(acCreated)
+      nCreated = acCreated - lastAcCreated
+      createdUsers.push(nCreated)
     end
 
-    writeInStats("")
-    writeInStats("Accumulative Registered Users")
-    accumulativeUsers = 0;
-    allUsers.each do |users|
-      accumulativeUsers = accumulativeUsers + users.count
-      writeInStats(accumulativeUsers)
-    end
+    filePath = "reports/users_stats.xlsx"
+    prepareFile(filePath)
 
-  end
-
-  def getResourcesByType(resources)
-    results = [];
-    resourcesType = Hash.new;
-    #resourcesType['file_content_type'] = [resources];
-
-    resources.each do |resource|
-      if resource.file_content_type
-        if resourcesType[resource.file_content_type] == nil
-          resourcesType[resource.file_content_type] = [];
+    Axlsx::Package.new do |p|
+      p.workbook.add_worksheet(:name => "User Stats") do |sheet|
+        rows = []
+        rows << ["User Stats"]
+        rows << ["Date","Created Users","Accumulative Created Users"]
+        rowIndex = rows.length
+        
+        rows += Array.new(createdUsers.length).map{|e|[]}
+        createdUsers.each_with_index do |n,i|
+          rows[rowIndex+i] = [allDates[i],createdUsers[i],accumulativeCreatedUsers[i]]
         end
-        resourcesType[resource.file_content_type].push(resource);
+
+        rows.each do |row|
+          sheet.add_row row
+        end
       end
+
+      prepareFile(filePath)
+      p.serialize(filePath)
+
+      puts("Task Finished. Results generated at " + filePath)
     end
-
-    resourcesType.each do |e|
-      key = e[0]
-      value = e[1]
-
-      result = Hash.new;
-      result["resourceType"] = key;
-      result["percent"] = ((value.count/resources.count.to_f)*100).round(3);
-      results.push(result);
-    end
-
-    results
-  end
-
-  def getViews(excursions)
-    totalViews = 0;
-    excursions.each do |excursion|
-      totalViews = totalViews + excursion.visit_count
-    end
-    totalViews
-  end
-
-  def getAverage(array)
-    accumulativeItem = 0;
-    array.each do |item|
-      if item == nil
-        return nil
-      end
-       accumulativeItem = accumulativeItem + item;
-    end
-    return (accumulativeItem/array.count.to_f).round(2)
-  end
-
-  def writeInStats(line)
-    write(line,STATS_FILE_PATH)
   end
 
 end
