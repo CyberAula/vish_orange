@@ -252,10 +252,10 @@
       <div class="social_toolbar_excursion">
         <div class="social_toolbar_excursion">
           <div class="social">
-            <p><%=t('excursion.actions.send_email') %></p>
+            <!--<p><%=t('excursion.actions.send_email') %></p>-->
             <%= render :partial=>'shareon/email', :locals=>{:url=>shortURL, :title => @excursion.title, :name => (user_signed_in? ? current_subject.name : '')} %>
           </div>
-          <div class="social">
+          <div class="social networks">
             <%= render :partial=>'shareon/twitter', :locals=>{:url=>shortURL, :counturl=>(request.protocol + request.env['HTTP_HOST'].sub(/^(m|www)\./, '') + excursion_path(@excursion) )} %>
           </div>
           <div class="social networks">

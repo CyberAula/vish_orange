@@ -680,7 +680,7 @@ es:
       show_more: "Expandir"
       show_resource: "Ver recurso"
       scorm: "scorm"
-      spam: "Denunciar contenido"
+      spam: "Notificar"
     all: "todos"
     description: "descripción"
     detail: "Detalles"
