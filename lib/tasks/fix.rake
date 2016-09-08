@@ -780,6 +780,29 @@ namespace :fix do
     printTitle("Task finished. ViSH Competition contest created.")
   end
 
+  #Usage
+  #Development:   bundle exec rake fix:createEducaInternet2016Contest
+  task :createEducaInternet2016Contest => :environment do
+    printTitle("Create the EducaInternet 2016 Contest")
+
+    c = Contest.find_by_template("educa2016")
+    c.destroy unless c.nil?
+
+    c = Contest.new
+    c.name = "educa2016"
+    c.template = "educa2016"
+    c.show_in_ui = true
+    c.settings = ({"enroll" => "false", "submission" => "one_per_user", "submission_require_enroll" => "false"}).to_json
+    c.save!
+
+    cc = ContestCategory.new
+    cc.name = "General"
+    cc.contest_id = c.id
+    cc.save!
+
+    printTitle("Task finished. Contest created with id " + c.id.to_s)
+  end
+
 
   #Usage
   #Development:   bundle exec rake fix:createTestContest
