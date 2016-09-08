@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160531100045) do
+ActiveRecord::Schema.define(:version => 20160908125945) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
     t.boolean  "allow_download",                                                    :default => true
     t.boolean  "allow_comment",                                                     :default => true
     t.boolean  "allow_clone",                                                       :default => true
-    t.boolean  "competition",                                                       :default => false
     t.text     "tag_array_text",                                                    :default => ""
     t.decimal  "interaction_qscore",                 :precision => 12, :scale => 6
   end
@@ -120,7 +119,7 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
     t.datetime "updated_at"
   end
 
-  create_table "actor_historial", :id => false, :force => true do |t|
+  create_table "actor_historial", :force => true do |t|
     t.integer "actor_id"
     t.integer "activity_object_id"
   end
@@ -148,10 +147,8 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "notification_settings"
-    t.integer  "rank_mve",              :default => 0
     t.text     "category_order"
     t.string   "categories_view",       :default => "gallery"
-    t.boolean  "joined_competition",    :default => false
   end
 
   add_index "actors", ["activity_object_id"], :name => "index_actors_on_activity_object_id"
@@ -161,14 +158,6 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
   create_table "actors_roles", :id => false, :force => true do |t|
     t.integer "role_id"
     t.integer "actor_id"
-  end
-
-  create_table "announcements", :force => true do |t|
-    t.text     "message"
-    t.datetime "starts_at"
-    t.datetime "ends_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "audiences", :force => true do |t|
@@ -217,6 +206,39 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
   add_index "contacts", ["inverse_id"], :name => "index_contacts_on_inverse_id"
   add_index "contacts", ["receiver_id"], :name => "index_contacts_on_receiver_id"
   add_index "contacts", ["sender_id"], :name => "index_contacts_on_sender_id"
+
+  create_table "contest_categories", :force => true do |t|
+    t.integer  "contest_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contest_enrollments", :force => true do |t|
+    t.integer  "contest_id"
+    t.integer  "actor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contest_submissions", :force => true do |t|
+    t.integer  "contest_category_id"
+    t.integer  "activity_object_id"
+    t.integer  "actor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contests", :force => true do |t|
+    t.string   "name"
+    t.string   "template"
+    t.string   "status",       :default => "open"
+    t.text     "settings",     :default => "{}"
+    t.boolean  "show_in_ui",   :default => false
+    t.integer  "mail_list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contributions", :force => true do |t|
     t.integer  "activity_object_id"
@@ -311,10 +333,9 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
     t.integer  "slide_count",             :default => 1
     t.text     "thumbnail_url"
     t.boolean  "draft",                   :default => false
-    t.text     "offline_manifest",        :default => ""
+    t.text     "offline_manifest"
     t.datetime "scorm2004_timestamp"
     t.datetime "pdf_timestamp"
-    t.integer  "rank_mve",                :default => 0
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
@@ -418,16 +439,6 @@ ActiveRecord::Schema.define(:version => 20160531100045) do
   end
 
   add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
-
-  create_table "pages", :force => true do |t|
-    t.string   "name"
-    t.string   "permalink"
-    t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
   create_table "pdfexes", :force => true do |t|
     t.datetime "created_at",                             :null => false
