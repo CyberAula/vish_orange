@@ -19,6 +19,7 @@ es:
     header:
       index: "Inicio"
       comunity: "Comunidad"
+      contest: "Concurso"
       cursoteca: "Curso"
       curso_desc: "Aquí se muestra el catálogo de cursos para su uso libre en el aula y fuera de ella"
       ensena: "Enseña"

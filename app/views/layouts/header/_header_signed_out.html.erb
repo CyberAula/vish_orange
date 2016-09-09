@@ -18,9 +18,7 @@
         <!-- MENU -->
         <ul class="nav navbar-nav navbar-right">
 
-          <!-- teach and learn buttons -->
-          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
-          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+
 
           <!-- Help button -->
           <li class=" dropdown toggler ">
@@ -60,7 +58,7 @@
           <% if Vish::Application.config.registrations %>
             <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
           <%end%>
-          
+
           <% if !Vish::Application.config.cas %>
               <li class="btn btn-primary btn-header btn-access dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold"><%=t("sign_in")%> <i class="icon-angle-down"></i></span></a>
@@ -103,6 +101,12 @@
         <li class="search-ui ">
           <%= render partial: 'layouts/header/uisearch_header' %>
         </li>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- teach and learn buttons -->
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
+        </ul>
       </div>
 
 
