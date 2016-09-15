@@ -181,6 +181,7 @@ Vish::Application.routes.draw do
   match 'contest/:name' => 'contests#show'
   match 'contest/:name/page/:page' => 'contests#show'
   match 'contests/:id/page/:page' => 'contests#show'
+  match 'contest/:name/educa2016materials' => 'contests#educa2016materials', via: [:post]
 
   #Administration panel
   match 'admin' => 'admin#index'

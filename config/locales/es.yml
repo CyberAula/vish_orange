@@ -794,6 +794,7 @@ es:
     email_duplicated: "Esta dirección de correo ya ha sido suscrita a esta lista de correo"
     email_not_valid: "La dirección de correo no es válida"
     email_not_found: "Esta dirección de correo no está suscrita a esta lista"
+    grant_error: "Debes aceptar las condiciones"
     subscribe: "Suscribirse"
     subscribe_message_one: "¿Quieres suscribirse a esta lista de correo?"
     subscribe_message_two: "Escribe tu dirección de correo y pulsa sobre suscribirse"
