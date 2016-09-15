@@ -71,10 +71,10 @@
 
     <!-- recursos subidos -->
     <h3>Recursos subidos y votaciones</h3>
-    <%= render partial: 'contests/submission', locals: { contest: @contest} %>
+    
 
     <!-- condicionar para mostrar cuadro "no hay recursos subidos"-->
-    <%= render partial: 'contests/submissions', locals: { contest: @contest} %>
+    <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
 
     <!--<a href="<%#=contest_page_path(@contest,"submissions",true)%>" class="btn btn-primary">Ver todo</a>-->
     <!-- fin condición -->
