@@ -4,7 +4,7 @@
 	<ul class="items">
 
     <% if user_signed_in? and @contest.allowSubmissions?(current_subject.actor) %>
-    	<%= render partial: 'contests/submissions/form', locals: { contest_category: @contest.categories.first } %>
+    	<%= render partial: 'contests/templates/educa2016/submissions/form', locals: { contest_category: @contest.categories.first } %>
     <% end %>
 
 		<% aos.map{|ao| ao.object}.each do |resource| %>
@@ -26,6 +26,6 @@
         </h6>
       </div>
     </li>
-
+		<div class="clear"></div>
 	</ul>
 </div>

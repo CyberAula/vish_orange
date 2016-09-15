@@ -1285,7 +1285,7 @@ es:
             description: "Las tareas permiten a los participantes contribuir al taller subiendo sus propios recursos."
             due_date: "Fecha fin"
             modal:
-              bt_upload: "Subir recurso"
+              bt_upload: "Participar"
               notfound: "No tiene ningún recurso educativo en su perfil. Cree o suba uno."
               selected: "Seleccionado"
               title: "Selecciona uno de tus recursos"

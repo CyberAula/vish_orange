@@ -7,14 +7,17 @@
 
     <div class="row">
       <div class="col-md-6 text_info">
-        <h3> Bienvenido al I concurso EducaInternet</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h3>¡Queremos contar contigo!</h3>
+        <p>¡Profesor@, bienvenid@ al Primer Concurso EducaInternet, una iniciativa
+          en la que Orange y Macmillan unen sus conocimientos para promover el
+          uso seguro y responsable de las tecnologías de la información y la
+          comunicación en el sector educativo!
+          Nadie mejor que tú para guiar a tus alumnos y demostrarnos que sois los
+          mejores utilizando la tecnología para aprender, divertiros, relacionaros... de
+          forma responsable.
+          Buscamos ideas divertidas, innovadoras, originales, que sean útiles para
+          fomentar un uso responsable y seguro de la tecnología. ¿Te lanzas?
+        </p>
       </div>
       <div class="col-md-6 video">
         <iframe class="video_pres" width="560" height="280" src="https://www.youtube.com/embed/c8ulYWbHRZo?list=PLve_ezrFIJJwedWcJNc5m6CFSK70hY11K" frameborder="0" allowfullscreen></iframe>
@@ -71,35 +74,14 @@
 
     <!-- recursos subidos -->
     <h3>Recursos subidos y votaciones</h3>
-    
-
     <!-- condicionar para mostrar cuadro "no hay recursos subidos"-->
     <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
-
-    <!--<a href="<%#=contest_page_path(@contest,"submissions",true)%>" class="btn btn-primary">Ver todo</a>-->
     <!-- fin condición -->
 
-
     <% if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
-      <h5>Tu participación</h5>
+      <h3>Tu participación</h3>
       <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
     <% end %>
-
-    <!--<h4> Additional pages. </h4>
-    <p>Go to <a href="<%#=contest_page_path(@contest,"page2",true)%>">page 2</a> of the contest.</p>-->
-
-    <!--<h4> Enroll/Disenroll form </h4>
-    <%#= render partial: 'contests/enroll', locals: { contest: @contest} %>-->
-
-    <!--<h4> Submissions </h4>
-    <%#= render partial: 'contests/submissions', locals: { contest: @contest} %>
-    <p><a href="<%#=contest_page_path(@contest,"submissions",true)%>">View all</a></p>-->
-
-    <!--<h4> Submit your resource: </h4>
-    <%#= render partial: 'contests/submission', locals: { contest: @contest} %>-->
-
-    <!--<h4> Your submissions: </h4>
-    <%#= render partial: 'contests/submissions_user', locals: { contest: @contest} %>-->
 
   </div>
   <div class="col-md-2 email_box">
@@ -115,8 +97,6 @@
               Acepto recibir información sobre el concurso
             </span>
           </label>
-          <!--<input type="checkbox" id="cbox1" value="first_checkbox">Acepto recibir información sobre el concurso<br>-->
-
           <input type="submit" value="Enviar" class="btn btn-primary">
         </div>
       </form>
