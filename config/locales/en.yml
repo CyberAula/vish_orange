@@ -474,6 +474,10 @@ en:
       create_group_title: "Modal to create groups of pupils"
       create_group_p1: "Fill in the form with the name for the group and the number of pupils accounts"
       create_group_p2: "Once created you will have those accounts and will be able to download the credentials for your pupils to access the platform"
+      embed:
+        title: "Embed this link"
+        content: "If you check this option, this link will be embedded in an iframe. This way not only the link will be shown to the user inside the resource page but also the content will be displayed"
+        content: "If you check this option, the website referenced by the link will be embedded in the page of the platform that corresponds to the added link. This way not only the text of the link will be shown but also its content will be displayed."
       event_html: "Create a new event"
       event1_html : "1. Type a <b>title</b> and <b>description</b>.<br>"
       event2_html : "2. Choose the type of event: Videoconference or Streaming.<i>If your choice is streaming, you should add the embed code of the stream.</i><br>"
@@ -782,6 +786,7 @@ en:
     go: "Go to link"
     title3: "Write the link you want to upload"
     name: "link"
+    is_embed: "Embed this link?"
   lre:
     data_error: "There was an error and the data server responded with a code %{code}"
     json_error: "There was an error with the returned contents, try with another search terms"
