@@ -803,6 +803,7 @@ en:
     email_duplicated: "This email address has been already subscribed to this mail list"
     email_not_valid: "Email is not valid"
     email_not_found: "This email address is not subscribed in the mail list"
+    grant_error: "You must accept the conditions"
     subscribe: "Subscribe"
     subscribe_message_one: "Do you want to subscribe to this mail list?"
     subscribe_message_two: "Type your email and click on subscribe"

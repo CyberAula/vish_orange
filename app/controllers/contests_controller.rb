@@ -2,7 +2,8 @@ class ContestsController < ApplicationController
 
   before_filter :authenticate_user!, :only => [ :new, :create, :edit, :update, :enroll, :disenroll ]
   before_filter :find_contest
-  skip_after_filter :discard_flash, :only => [:enroll, :disenroll]
+  skip_after_filter :discard_flash, :only => [:enroll, :disenroll, :educa2016materials]
+  protect_from_forgery :except => [:educa2016materials]
 
   def show
     page = params[:page] || "index"
@@ -135,6 +136,53 @@ class ContestsController < ApplicationController
         end
       }
     end
+  end
+
+  #Educa2016 custom feature
+  def educa2016materials
+    error = nil
+
+    if @contest.mail_list
+      #Create subscription to MailList
+      if params[:grant]=="true"
+        @mail_list = @contest.mail_list
+        if params[:actor_id]
+          subscription = @mail_list.subscribe_actor(Actor.find_by_id(params[:actor_id]))
+        else
+          subscription = @mail_list.subscribe_email(params[:email],params[:user_name])
+        end
+        unless subscription.is_a? MailListItem
+          if subscription.is_a? String
+            error = subscription
+          else
+            error =  I18n.t("mail_list.subscription_generic_error")
+          end
+        end
+      else
+        error =  I18n.t("mail_list.grant_error")
+      end
+    end
+
+    respond_to do |format|
+      format.any {
+        #Return with success
+        if request.xhr?
+          if error.blank?
+            return render :json => {}, :status => 200
+          else
+            return render :json => error, :status => 400
+          end
+        else
+          if error.blank?
+            send_file "#{Rails.root}/public/Educa2016Materiales.pdf", :type => 'application/pdf'
+          else
+            flash[:error] = error
+            redirect_to @contest.getUrlWithName
+          end
+        end
+      }
+    end
+
   end
 
 
