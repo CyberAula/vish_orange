@@ -32,12 +32,19 @@
   background-color: white
   padding: 40px
   @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+  .text_info
+    h2
+      font-weight: bold
   .video
     .video_pres
       width: 100%
       margin-top: 20px
   .more_info
-    padding: 20px
+    .section_info_1
+      padding: 20px
+      background-color: $gray-lighter
+    .section_info_2
+      padding: 20px
   .items
     padding: 10px 0
     p
@@ -66,3 +73,18 @@
       height: 37px
     .lbl
       margin-top: 10px
+
+//button go up in contest page
+.scrollup
+  padding: 25px
+  background: $gray-dark
+  font-size: 20px
+  color: #fff
+  cursor: pointer
+  position: fixed
+  z-index: 2000
+  bottom: 20px
+  right: 20px
+  border-radius: 50px
+  display: none
+  opacity: 0.5
