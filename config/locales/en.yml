@@ -595,6 +595,9 @@ en:
     input: "Paste your embed here"
     name: "embed"
     title3: "Write the embed you want to upload"
+    messages:
+      fulltext_blank: "The HTML code of the embed can't be blank"
+      title_blank: "Title can't be blank"
   evaluation:
     contribute:
       student:
@@ -639,7 +642,6 @@ en:
       embed: "embed"
       favorite: "favorite"
       my_room: "my room"
-      send_email: "Send Email"
       show: "show"
       show_fewer: "Show fewer"
       show_meta: "Metadata"
@@ -667,12 +669,6 @@ en:
     draft: "Draft"
     favorites: "Favorites"
     how: "How to create an teaching unit"
-    invite:
-      email:
-        body: "Hi,%0A%0ACheck%20out%20this%20teaching%20unit%20at%20EducaInternet:%0A%0A%{url}%0A%0AI%20hope%20you%20like%20it!%0A%0A%{name}"
-        link: "e-mail"
-        subject: "Check%20out%20this%20teaching%20unit%20at%20%{url}%20:%20%{title}"
-        title: "Send link by email"
     is_draft: "[DRAFT]"
     modal:
       title: "Congratulations"
@@ -731,8 +727,6 @@ en:
     title_not_certified: "Teach with teaching units"
     view_more_workshops: "View more specialized courses"
     view_more_excursions: "View more teaching units"
-  go:
-    repository: "go to repository"
   header:
     tooltip:
       add_button: "Create teaching units, upload resources, etc."
@@ -783,10 +777,12 @@ en:
     one: "link"
     other: "links"
     confirm_delete: "Delete link?"
-    go: "Go to link"
     title3: "Write the link you want to upload"
     name: "link"
     is_embed: "Embed this link?"
+    messages:
+      url_blank: "The URL of the link can't be blank"
+      title_blank: "Title can't be blank"
   lre:
     data_error: "There was an error and the data server responded with a code %{code}"
     json_error: "There was an error with the returned contents, try with another search terms"
@@ -797,24 +793,27 @@ en:
     new_message_for: "New message for"
     delete_confirm: "Do you want to move '%{csubject}' to trash?"
   mail_list:
-    actor_duplicated: "This user has been already subscribed to this mail list"
-    actor_required: "Actor should be specified for this mail list"
-    blank_name_not_allowed: "Name is required for this mail list"
-    email_duplicated: "This email address has been already subscribed to this mail list"
-    email_not_valid: "Email is not valid"
-    email_not_found: "This email address is not subscribed in the mail list"
-    grant_error: "You must accept the conditions"
+    actor_duplicated: "This user has been already subscribed to this mail list."
+    actor_required: "Actor should be specified for this mail list."
+    blank_name_not_allowed: "Name is required for this mail list."
+    email_duplicated: "This email address has been already subscribed to this mail list."
+    email_missed: "You must provide a valid email address to subscribe to the list."
+    email_missed_unsubscribe: "You must provide a valid email address to unsubscribe from the list."
+    email_not_valid: "Email is not valid."
+    email_not_found: "This email address is not subscribed in the mail list."
+    grant_error: "You must accept the conditions."
+    grant_message: "I accept to subscribe to this mail list"
     subscribe: "Subscribe"
     subscribe_message_one: "Do you want to subscribe to this mail list?"
     subscribe_message_two: "Type your email and click on subscribe"
     subscribed_succcess_header_message: "Dear %{email}"
     subscribed_success_message: "You have been successfully subscribed to this mailing list"
-    subscription_generic_error: "An error occurred and subscription could not be done"
+    subscription_generic_error: "An error occurred and subscription could not be done."
     unsubscribe: "Unsubscribe"
     unsubscribe_message_one: "Do you want to unsubscribe from this mail list?"
     unsubscribe_message_two: "Type your email and click on unsubscribe"
     unsubscribed_succcess_header_message: "Dear %{email}"
-    unsubscribed_success_message: "You have successfully unsubscribed from this mailing list"
+    unsubscribed_success_message: "You have successfully unsubscribed from this mailing list."
   message:
     title: "Messages"
     send: "Send mesage"
@@ -1156,7 +1155,11 @@ en:
         someone_comments_on_my_post: "when someone comments on my post"
   share: "Post"
   sharing:
-    email: "Share by email"
+    email:
+      action: "Send Email"
+      title: "Share by email"
+      body: "Hi,%0A%0ACheck%20out%20this%20educational%20resource%20at%20EducaInternet:%0A%0A%{url}%0A%0AI%20hope%20you%20like%20it!%0A%0A%{name}"
+      subject: "Check%20out%20this%20resource%20at%20%{url}%20:%20%{title}"
     twitter:
       message: "Check out this resource at %{url}"
   sign_up: "Register"
