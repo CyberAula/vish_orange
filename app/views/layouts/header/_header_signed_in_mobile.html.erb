@@ -1,6 +1,8 @@
+<% availableModels = available_models %>
 <ul class="nav navbar-nav mobile-nav">
 
-  <%if true%>
+
+  <%if (availableModels.include? "Course") && Course.exists?(2) && (Course.find(2).users.include? current_subject)%>
     <li class="btn btn-primary btn-header"><a class="linker" href="http://moodle.educainternet.es"><%=t('mooc.button.go_to_mooc')%></a></li>
   <%elsif current_subject.email.ends_with? "@educa.madrid.org"%>
     <li class="btn btn-priamry btn-header"><a class="linker" href="/mooc_welcome"><%=t('mooc.button.new_mooc')%></a></li>
@@ -20,7 +22,7 @@
 
 
   <li><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-  <li><a href="/teach"><%=t('orange_front.header.ensena')%></a></li>
+  <li><a href="/teach"><%=t('orange_front.header.share')%></a></li>
 
 
   <!-- dropdown menu links -->
