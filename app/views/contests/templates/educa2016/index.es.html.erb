@@ -101,7 +101,7 @@
       <a href="/Educa2016Materiales.pdf" download class="btn btn-primary">Materiales</a>
     <% end %>
     <% unless showMaterials %>
-      <div class="form_box">
+      <div class="form_box" style="display:none">
         <form id="educa2016materialsform" action="/contest/educa2016/educa2016materials" method="post">
           <div class="form-group">
             <input class="form-control" type="text" name="user_name" id="name" placeholder="Nombre" value="<%=user_signed_in? ? current_subject.name : ""%>">
@@ -163,6 +163,9 @@
         $("#educa2016materialsform").find("input[type='submit']").hide();
         $("#educa2016materialsform").find("a[href='/Educa2016Materiales.pdf']").show();
         $("a[href='/Educa2016Materiales.pdf']")[0].click();
+        if (window.localStorage) {
+          localStorage.setItem("educa2016maillist", "subscribed");
+        }
       },
       error: function(data){
         if(typeof data.responseText == "string"){
@@ -171,6 +174,15 @@
       },
       dataType: "json"
     });
-
   });
+
+  <% unless showMaterials %>
+    if ((window.localStorage)&&(localStorage.getItem("educa2016maillist")==="subscribed")){
+      $("#educa2016materialsform").parent("div.form_box").hide();
+      $("#educa2016materials").show();
+    } else {
+      $("#educa2016materialsform").parent("div.form_box").show();
+      //localStorage.removeItem("educa2016maillist");
+    }
+  <% end %>
 <%end%>
