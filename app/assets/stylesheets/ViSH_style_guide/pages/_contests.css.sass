@@ -6,7 +6,7 @@
   z-index: 555
 
 #close_banner
-  color: black
+  color: $gray-dark
   text-align: right
   font-size: 1.2em
   font-weight: bold
@@ -15,7 +15,8 @@
   top: -25px
   right: 50px
   &:hover
-    background-color: $opacity2
+    color: black
+    cursor: pointer
 
 
 .banner_concurso
@@ -51,6 +52,9 @@
       padding: 20px
       margin-bottom: 20px
       background-color: $gray-lighter
+    .add-item, .item-view-more
+      &:hover
+        cursor: pointer
 
 .email_box
   height: 100px
