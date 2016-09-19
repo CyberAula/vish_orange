@@ -33,7 +33,7 @@
       <% else %>
         <div class="no_items"><%= I18n.t('workshop.activities.assignment.modal.notfound') %></div>
       <% end %>
-    </div> 
+    </div>
   </div>
 </div>
 <div class="modal-footer">
@@ -123,7 +123,7 @@
         $(this).parents("div").addClass("cursor_waiting");
         $(form).find(".box-item").addClass("cursor_waiting");
         $(form).find(".box-item").find("a").addClass("cursor_waiting");
-        
+
         var submission = {
           type: "Resource",
           contest_category_id: "<%=params[:contest_category_id]%>"
@@ -151,7 +151,7 @@
             }
           }
         });
-        
+
       }
     });
   });

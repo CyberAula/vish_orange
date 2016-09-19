@@ -1,14 +1,11 @@
 <ul class="nav navbar-nav mobile-nav">
-
-
-
   <!--login-->
   <% if !Vish::Application.config.cas %>
     <li class="sign_in_mobile dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <a class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="#">
         <i class="fa fa-signin"></i>
         <%=t("sign_in")%>
-        <i class="fa fa-angle-down"></i>
+
       </a>
 
       <ul class="dropdown-menu">
@@ -27,7 +24,7 @@
                   </label>
 
                 </div>
-                <%= f.submit t(:sign_in), :class => ' btn btn-primary'%>
+                <%= f.submit t(:sign_in), :class => 'btn btn-primary btn_ok'%>
                 <div class="remember_password"><%= link_to t('devise.links.forgot_password'), new_password_path(:user) %>
                 </div>
 
@@ -59,12 +56,12 @@
 
   <li><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
   <li><a href="/teach"><%=t('orange_front.header.share')%></a></li>
+  <li><a href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
 
   <% if Vish::Application.config.registrations %>
     <!--sign_up-->
     <li class="sign_up_mobile">
       <a href="<%=new_user_registration_path%>"class="signin">
-        <i class="fa fa-edit-sign"></i>
         <%=t("sign_up")%>
       </a>
     </li>

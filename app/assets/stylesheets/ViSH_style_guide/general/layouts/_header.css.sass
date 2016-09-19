@@ -243,11 +243,18 @@ nav.navbar-fixed-top
     //menu for small screens (phones&tablets) up to 991px
     //****************************************************
     .hidden-desktop
+      position: absolute
+      right: 24px
+      top: 50px
       .navbar-nav
-        margin: 40px 0 5px 0
-        float: none
         background-color: $gray-darker
         padding: 10px
+        li.sign_in_mobile
+          .dropdown-toggle
+            color: $gray-dark
+            background-color: $gray-light
+            &:hover, &:active, &:focus
+              background-color: darken($gray-light, 0.5) !important
         li.btn-access
           margin: 0 10px
           a
@@ -256,6 +263,7 @@ nav.navbar-fixed-top
           float: none
           a
             color: $orange-gray-45
+
             font-size: 1.2em
             &:hover
               color: white
@@ -263,8 +271,8 @@ nav.navbar-fixed-top
             margin-right: 10px
           .dropdown-menu
             padding: 10px
-            margin: 0 0 0 18px
             border-radius: $border-radius-base
+            @include transition (all 0.2s ease 0s)
             .form-group
               margin-left: 0 !important
               margin-right: 0 !important
@@ -278,14 +286,16 @@ nav.navbar-fixed-top
             .remember_password
               margin: 10px 0 0 0
               a
-                color: black
+                color: $gray-light
+                font-size: 1em
+            .btn_ok
+              width: 100%
             //languages
             li > a
               padding: 5px
               color: white
               img
                 margin-right: 5px
-
         .user
           margin: 0
           a
@@ -298,19 +308,17 @@ nav.navbar-fixed-top
               margin-right: 3px
         hr
           margin: 0
-        .open > a
-          background-color: white !important
         .navbar-search
-          width: 85%
+          width: 100%
           margin-bottom: 5px
-          padding: 10px
+          padding: 10px 0
           input
             float: left
-            width: 80%
+            width: 83%
           button
             float:left
             margin-left: 3px
-            padding: 7px 6px 6px
+            padding: 6px 10px 7px
             i
               margin: 0
     //****************************************************
