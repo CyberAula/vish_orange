@@ -77,7 +77,7 @@
   min-height: 52px
   .social_ntwoks
     position: absolute
-    top: 360px
+    top: 50vh
     right: 2%
     z-index: 1000
     .fa-big
@@ -89,11 +89,7 @@
         opacity: 1
   .social_ntwoks_general
     top: 115px
-  //.social_ntwoks_contest
-    top: 80px
-    right: 150px
-    .fa-big
-      color: $brand-primary
+
   .box-title-general.contest_img
     height: auto
     img
@@ -134,7 +130,7 @@
         line-height: 1.2em
 
   .box-title-home
-    height: 400px
+    height: 55vh
     position: relative
     overflow: hidden
     img
@@ -173,13 +169,22 @@
     .front_blocks
       padding: 0
       .block
+
         padding-top: 10px
         padding-bottom: 10px
         .img_block
+          @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
           height: 230px
           position: relative
           overflow: hidden
           background-color: $gray-light
+          &:hover
+            @include transition(border .2s ease-in-out)
+            @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
+            @include transition (all 0.2s ease 0s)
+            transform: scale(1.05)
+            -ms-transform: scale(1.05)
+            -webkit-transform: scale(1.05)
           img
             width: 100%
             position: absolute
@@ -275,7 +280,10 @@
     .box-item:nth-of-type(-n+4)
       display: block
   .illustration
+    .social_ntwoks
+      top: 44vh
     .box-title-home
+      height: 48vh
       .main-title
         .title
           h1
@@ -291,7 +299,10 @@
     .box-item:nth-of-type(-n+3)
       display: block
   .illustration
+    .social_ntwoks
+      top: 36vh
     .box-title-home
+      height: 40vh
       .main-title
         .title
           h1
@@ -311,12 +322,12 @@
       display: block
   .illustration
     .social_ntwoks
-      top: 270px
+      top: 31vh
       right: 3%
     .social_ntwoks_general
       top: 115px
     .box-title-home
-      height: 300px
+      height: 35vh
       .main-title
         padding: 90px 40px 0
         height: 100%
