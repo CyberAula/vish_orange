@@ -1,10 +1,10 @@
 <div class="layout_form_WS">
   <div class="modal-header">
-    <h3><%=t('writing.new')%></h3>
+    <h1><%=t('writing.new')%></h1>
   </div>
 
   <%= render :partial => "shared/ckeditor_apply", :locals => {:the_id=> "new_file_only_writing_fulltext"} %>
-  <div id="AddWriting" resource-type="writing" class="">
+  <div id="AddWriting" resource-type="writing" class="modal-body">
 
     <!-- Tags preloaded -->
     <%@tags = ActivityObject.tag_counts(:limit => 100, :order => "count desc")%>

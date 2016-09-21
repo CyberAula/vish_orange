@@ -18,7 +18,7 @@
             <td><%=resource.resource_version%></td>
           </tr>
         <% end %>
-        
+
         <!--description-->
         <% unless resource.description.blank? %>
           <tr>
@@ -26,7 +26,7 @@
             <td><%= truncate(resource.description, :length => 400) %></td>
           </tr>
         <% end %>
-        
+
         <!--tags-->
         <% unless resource.tag_list.blank? %>
           <tr>
@@ -206,9 +206,9 @@
           <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
           </button>
-          <h3 id="myMetadataLabel">
+          <h1 id="myMetadataLabel">
             <%= t('excursion.modal.metadata_title') %>
-          </h3>
+          </h1>
         </div>
 
         <div class="modal-body">

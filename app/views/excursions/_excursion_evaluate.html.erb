@@ -9,7 +9,7 @@
       return;
     }
     evaluationTabShown = true;
-        
+
     <% if showLearningEvaluationResults %>
       var learningLoepSettings = $.extend({}, loepSettings);
       learningLoepSettings.action = "showchart";
@@ -91,7 +91,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="learningModalLabel"><%= t('evaluation.modaltitle') %></h3>
+        <h1 id="learningModalLabel"><%= t('evaluation.modaltitle') %></h1>
       </div>
       <div class="modal-body evaluation_body"></div>
     </div>
@@ -102,7 +102,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="teachingModalLabel"><%= t('evaluation.modaltitle') %></h3>
+        <h1 id="teachingModalLabel"><%= t('evaluation.modaltitle') %></h1>
       </div>
       <div class="modal-body evaluation_body"></div>
     </div>
