@@ -34,6 +34,13 @@ en:
       bold: ""
     how_it_works: "How does it work?"
     message: "Learn and teach about safe and responsible use of technologies"
+    menu_blocks:
+      our_courses: "Our courses"
+      our_courses_txt: "Access all platform resources"
+      teaching_units: "Teaching units"
+      teaching_units_txt: "We offer free tools so you can create a course, a teaching unit or raise resources to the platform"
+      take_part: "Take part"
+      take_part_txt: "Throw yourself into the First EducaInternet Competition"
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
