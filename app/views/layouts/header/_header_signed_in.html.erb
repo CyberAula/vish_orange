@@ -1,7 +1,14 @@
 <% availableModels = available_models %>
 <% availableServices = available_services %>
 <% availableResources = available_resource_types %>
-<% front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
+<% front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false %>
+<% 
+  @show_mooc = false
+  if user_signed_in? and availableModels.include? "Course"
+    course = Course.find_by_id(2)
+    @show_mooc = (!course.nil? and course.users.include? current_subject)
+  end
+%>
 
 <nav class="navbar navbar-default navbar-fixed-top <%='navbar-home' if front_or_home%>" id="top" role="navigation">
   <div class="container-fluid">
@@ -203,7 +210,7 @@
         <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
         <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
 
-      <%if (availableModels.include? "Course") && Course.exists?(2) && (Course.find(2).users.include? current_subject)%>
+      <%if @show_mooc%>
         <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="http://moodle.educainternet.es/course/view.php?id=6"><%=t('mooc.button.go_to_mooc')%></a></li>
       <%elsif (current_subject.email.ends_with? "@educa.madrid.org")%>
         <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="/courses/2"><%=t('mooc.button.new_mooc')%></a></li>
