@@ -83,7 +83,7 @@
     <!-- fin condición -->
 
     <% if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
-      <h3>Tu participación</h3>
+      <h3>Your entry</h3>
       <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
     <% end %>
 
