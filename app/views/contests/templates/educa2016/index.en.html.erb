@@ -3,7 +3,7 @@
 <%end%>
 <div class="scrollup fa fa-arrow-up"></div>
 <div class="row">
-  <div class="col-md-10 contest_content">
+  <div class="col-md-10 col-xs-12 contest_content">
 
     <div class="row">
       <div class="col-md-5 text_info">
@@ -88,7 +88,7 @@
     <% end %>
 
   </div>
-  <div class="col-md-2 email_box">
+  <div class="col-md-2 col-xs-12 email_box">
     <div class="title_box">DOWNLOAD THE INDEX OF CONTENTS</div>
 
     <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
@@ -113,6 +113,7 @@
         </form>
       </div>
     <% end %>
+    <div class="clear"></div>
   </div>
 </div>
 

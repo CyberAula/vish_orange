@@ -57,7 +57,6 @@
         cursor: pointer
 
 .email_box
-  height: 100px
   padding: 0 0 0 15px
   position: fixed
   right: 20px
@@ -77,6 +76,13 @@
       height: 37px
     .lbl
       margin-top: 10px
+
+@media (min-width: 300px) and (max-width: 991px)
+  .email_box
+    position: static
+    width: 100%
+    padding: 15px
+
 
 //button go up in contest page
 .scrollup
