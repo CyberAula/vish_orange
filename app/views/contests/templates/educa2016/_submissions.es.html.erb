@@ -1,0 +1,34 @@
+<% aos = @contest.public_activity_objects.limit(10).order(Vish::Application::config.agnostic_random) %>
+
+<div id="submitted_aos_<%=contest.id.to_s%>" style="display:inline-block; width: 100%">
+	<% unless user_signed_in? and @contest.allowSubmissions?(current_subject.actor) %>
+    <p class="cannot_upload">Este concurso sólo permite subir un proyecto por participante. Si quieres, puedes eliminar tu participación y subir un nuevo recurso.</p>
+	<% end %>
+	<ul class="items">
+
+    <% if user_signed_in? and @contest.allowSubmissions?(current_subject.actor) %>
+    	<%= render partial: 'contests/templates/educa2016/submissions/form', locals: { contest_category: @contest.categories.first } %>
+    <% end %>
+
+		<% aos.map{|ao| ao.object}.each do |resource| %>
+			<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "contest_"+contest.id.to_s+"_submitted_aos" } %>
+		<% end %>
+
+		<li class="item-view-more">
+      <!-- image/icon -->
+      <div class="container-img">
+        <div class="img-box">
+          <a href="<%=contest_page_path(@contest,"submissions",true)%>" title="vermas"><i class="fa fa-angle-double-right"></i></a>
+        </div>
+      </div>
+      <!-- INFO -->
+      <div class="caption">
+        <!-- Title -->
+        <h6>
+          <%= t('view_all')%>
+        </h6>
+      </div>
+    </li>
+		<div class="clear"></div>
+	</ul>
+</div>

@@ -9,12 +9,12 @@
 
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-	<h1><%= I18n.t('workshop.activities.assignment.modal.title') %> (Spanish version)</h1>
+	<h1><%= I18n.t('workshop.activities.assignment.modal.title') %></h1>
 </div>
 <div class="modal-body">
   <div class="joining_tabs clearfix">
     <ul class="nav nav-tabs">
-      <li class="active"><a class="resources_choose_wa" data-toggle="tab"><%=t("search.models.resource")%></a></li>
+      <li class="active"><a class="resources_choose_wa" data-toggle="tab">Tus recursos</a></li>
       <li><a class="url_choose_wa" data-toggle="tab"><%=t("workshop.activities.assignment.modal.url_tab")%></a></li>
     </ul>
     <div class="url_choose_wa" class="tab-pane">
@@ -23,7 +23,7 @@
     </div>
     <div class="resources_choose_wa" class="tab-pane">
       <% unless resources.blank? %>
-        <ul class="items">
+        <ul class="items modal_items">
           <% with_format('html') do %>
             <% resources.each do |r| %>
               <%= render :partial => '/entities/entity', :formats => [:html], :locals => { :entity => r, :prefix_id => "submission" } %>

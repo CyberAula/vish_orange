@@ -1,6 +1,9 @@
 <% aos = @contest.public_activity_objects.limit(10).order(Vish::Application::config.agnostic_random) %>
 
 <div id="submitted_aos_<%=contest.id.to_s%>" style="display:inline-block; width: 100%">
+	<% unless user_signed_in? and @contest.allowSubmissions?(current_subject.actor) %>
+    <p class="cannot_upload">This competition only allows to upload one project per participant. You can delete your entry and upload a new project if you want.</p>
+	<% end %>
 	<ul class="items">
 
     <% if user_signed_in? and @contest.allowSubmissions?(current_subject.actor) %>
