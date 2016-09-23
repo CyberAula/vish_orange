@@ -9,15 +9,17 @@
       <div class="col-md-5 text_info">
         <h2 class="primary">We’d love you to take part!</h2>
         <br>
-        <p>Welcome to the <b>first EducaInternet Competition</b>, an initiative in which Orange and Macmillan have combined their knowledge to promote the responsible and safe use of ICT in the education sector.
-          There’s no one better than you to guide your pupils and show them that they are the best at using technology to learn, have fun, and build relationships responsibly.
-          We are looking for fun, innovative and original ideas which will be useful for developing the responsible and safe use of technology.  <b>Will you take the plunge?</b>
+        <p>
+          <b>Greetings to all teachers!</b> Welcome to the first edition of the EducaInternet Competition, a new venture in which Orange and Macmillan Iberia have combined their knowledge to promote the responsible and safe use of ICT in education.
+          There’s no one better than you to guide your students and show them that they are the best at using technology to learn, have fun, and build relationships responsibly.
+          We are looking for engaging, innovative and original ideas which will be useful for developing the responsible and safe use of technology. <br> <b>Will you take the plunge?</b>
         </p>
         <br>
       </div>
       <div class="col-md-1 text_info"></div>
       <div class="col-md-6 video">
-        <iframe class="video_pres" width="560" height="280" src="https://www.youtube.com/embed/c8ulYWbHRZo?list=PLve_ezrFIJJwedWcJNc5m6CFSK70hY11K" frameborder="0" allowfullscreen></iframe>
+        <!--<iframe class="video_pres" width="560" height="280" src="https://www.youtube.com/embed/c8ulYWbHRZo?list=PLve_ezrFIJJwedWcJNc5m6CFSK70hY11K" frameborder="0" allowfullscreen></iframe>-->
+        <img class="girl_img" src="/assets/orange/girl.jpg" alt="girl with tablet">
       </div>
     </div>
 
@@ -28,72 +30,74 @@
     <div id="collapseInfo" class="panel-collapse collapse more_info">
 
       <div class="section_info_1">
-        <h4>We’ll make it easy for you</h4>
-        On the EducaInternet platform there are teaching materials which will guide you step by step to help you create an entry to hand in to the Competition.
-        This is an exciting challenge, so use all your knowledge and experience to <br>TAKE PART!
+        <h4>We make it easy for you</h4>
+        On the EducaInternet platform there are teaching materials which will give you step-by-step guidance on how to create an entry to enter the Competition.
+        This is an exciting challenge, so we invite you to use all your knowledge and teaching experience and TAKE PART!
       </div>
+
       <div class="section_info_2">
         <h4>Who can take part?</h4>
         All teachers from 4th of Primary to 4th of ESO and from FP Básica in any centre in Spain who sign up with their class on the EducaInternet platform can take part.
-        They must know how to get the most from technology and also know how to use it responsibly.
+        You must demonstrate how to get the most from technology and also how to use it responsibly.
       </div>
+
       <div class="section_info_1">
-        <h4>What kind of entry can you hand in?</h4>
-        You can hand in any type of multimedia material: presentations, blogs or videos created with authoring tools, apps or with Web 2.0 tools.
-        The published entries must be original and created by the teachers with their classes during the 2016/2017 academic year in Spanish or English.
-        <br>Each teacher can take part with more than one class; in order to do so you have to sign up to the platform with each class you teach.
-        Only one entry will be accepted per class.
-        The jury will use the following criteria to choose the winners: originality, creativity, replicability, educational content and the involvement and participation of the class in the creativity of the entry.
+        <h4>Entry requirements</h4>
+        You can hand in any type of multimedia material: presentations, blogs, webs, videos or resources created with authoring tools, apps or with Web 2.0 tools.
+        The published entries must be original and created by the teachers with their classes during the 2016/2017 academic year and can be submitted either in Spanish or English.
+        <br>You can enter the competition with more than one class; in order to do so you will need to sign up each class separately to the platform.
+        Only one entry per class will be accepted.
+        The jury will use the following criteria to choose the winners: originality, creativity, replicability, educational content and the involvement and participation of the class in the creation of the entry.
       </div>
+
       <div class="section_info_2">
         <h4>How the competition Works</h4>
-        • You can send in your entries from 1st November 2016 to 28 February 2017.<br>
-        • Four winning entries will be chosen from amongst all the participants, two by the jury and two more by popular vote.<br>
-        • The popular vote is from 1st to 15th March.<br>
-        • The jury’s deliberation process is from 1st to 15th March.<br>
-        • The jury’s verdict will be pronounced on 22nd March.
+        • You can submit your entries between 1st November 2016 and 28th February 2017, inclusive.<br>
+        • Four winning entries will be chosen from amongst all the participants, two by the jury and two by popular vote.<br>
+        • The popular vote will take place between 1st and 15th March 2017.<br>
+        • The jury’s deliberation process will take place between 1st and 15th March 2017.<br>
+        • The jury’s verdict will be announced on 22nd March 2017.
       </div>
+
       <div class="section_info_1">
         <h4>How to participate</h4>
         1. Fill in the registration form and sign up to EducaInternet before 28th February 2017.<br>
-        2. Create an entry with your pupils.<br>
-        3. Upload your entry to the website http://educainternet.es/concurso before 28th February 2017
+        2. Create an entry with your students.<br>
+        3. Upload your entry to the website http://educainternet.es/contest/educa2016 before 28th February 2017
       </div>
       <div class="section_info_1">
-        <!-- botón descargar bases -->
-        <a href="/Educa2016Bases_EN.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Download the Competition rules</a>
+        <!-- botón descargar bases
+        <a href="/Educa2016Bases_EN.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Download the Competition rules</a>-->
       </div>
     </div>
 
 
-    <!-- materiales -->
+    <!-- materiales
     <h3>Materials</h3>
     <div class="items">
-      <% categories = Category.all.sample(6) %>
-      <% categories.each do |category| %>
-        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
-      <% end %>
+      <%# categories = Category.all.sample(6) %>
+      <%# categories.each do |category| %>
+        <%#= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <%# end %>
       <div class="clear"></div>
-    </div>
+    </div>-->
 
-    <!-- recursos subidos -->
+    <!-- recursos subidos
     <h3>Uploaded entries & votes</h3>
-    <!-- condicionar para mostrar cuadro "no hay recursos subidos"-->
-    <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
-    <!-- fin condición -->
-
-    <% if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
+    <%#= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
+    <%3 if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
       <h3>Your entry</h3>
-      <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
-    <% end %>
+      <%#= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
+    <%# end %>-->
 
   </div>
+
   <div class="col-md-2 col-xs-12 email_box">
     <div class="title_box">DOWNLOAD THE INDEX OF CONTENTS</div>
 
     <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
     <%= content_tag :div, class: "form_box", id: "educa2016materials", style: (showMaterials ? "" : "display:none") do |div| %>
-      <a href="/Educa2016Materiales.pdf" download class="btn btn-primary">Materiales</a>
+      <a href="/Educa2016Poster_EN.pdf" download class="btn btn-primary">Materiales</a>
     <% end %>
     <% unless showMaterials %>
       <div class="form_box" style="display:none">
@@ -101,14 +105,17 @@
           <div class="form-group">
             <input class="form-control" type="text" name="user_name" id="name" placeholder="Nombre" value="<%=user_signed_in? ? current_subject.name : ""%>">
             <input class="form-control" type="email" name="email" id="mail" placeholder="Email" value="<%=user_signed_in? ? current_subject.email : ""%>">
-            <label>
-              <input id="inlineCheckbox1" required="required" name="grant" title="You need to accept to receive information" value="true" type="checkbox">
-              <span class="lbl padding-0">
-                I agree to receive information about this contest
-              </span>
-            </label>
-            <input type="submit" value="Send" class="btn btn-primary">
-            <a href="/Educa2016Materiales.pdf" download class="btn btn-primary" style="display:none">Download materials</a>
+            <div class="actions">
+              <label>
+                <input id="inlineCheckbox1" required="required" name="grant" title="You need to accept to receive information" value="true" type="checkbox">
+                <span class="lbl padding-0">
+                  I agree to receive information about this contest
+                </span>
+              </label>
+              <input type="submit" value="Send" class="btn btn-primary pull-right">
+              <a href="/Educa2016Poster_EN.pdf" download class="btn btn-primary" style="display:none">Download materials</a>
+              <div class="clear"></div>
+            </div>
           </div>
         </form>
       </div>
@@ -157,8 +164,8 @@
         $(form).find("input[name='email']").val("").attr("readonly","readonly");
         $(form).find("input[name='grant']").prop( "checked", false ).attr("disabled","disabled");
         $("#educa2016materialsform").find("input[type='submit']").hide();
-        $("#educa2016materialsform").find("a[href='/Educa2016Materiales.pdf']").show();
-        $("a[href='/Educa2016Materiales.pdf']")[0].click();
+        $("#educa2016materialsform").find("a[href='/Educa2016Poster_EN.pdf']").show();
+        $("a[href='/Educa2016Poster_EN.pdf']")[0].click();
         if (window.localStorage) {
           localStorage.setItem("educa2016maillist", "subscribed");
         }

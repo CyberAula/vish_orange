@@ -23,7 +23,8 @@
       </div>
       <div class="col-md-1 text_info"></div>
       <div class="col-md-6 video">
-        <iframe class="video_pres" width="560" height="280" src="https://www.youtube.com/embed/c8ulYWbHRZo?list=PLve_ezrFIJJwedWcJNc5m6CFSK70hY11K" frameborder="0" allowfullscreen></iframe>
+        <!--<iframe class="video_pres" width="560" height="280" src="https://www.youtube.com/embed/c8ulYWbHRZo?list=PLve_ezrFIJJwedWcJNc5m6CFSK70hY11K" frameborder="0" allowfullscreen></iframe>-->
+        <img class="girl_img" src="/assets/orange/girl.jpg" alt="niña con tablet">
       </div>
     </div>
 
@@ -62,43 +63,40 @@
         <h4>¿Qué hacer para participar?</h4>
         1. Rellena el cuestionario de inscripción y date de alta en EducaInternet antes del 28 de febrero de 2017.<br>
         2. Crea un recurso con tus alumnos.<br>
-        3. Sube tu recurso a la página http://educainternet.es/concurso antes del 28 de febrero de 2017.
+        3. Sube tu recurso a la página http://educainternet.es/contest/educa2016 antes del 28 de febrero de 2017.
       </div>
       <div class="section_info_1">
-        <!-- botón descargar bases -->
-        <a href="/Educa2016Bases.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Descargar las bases del concurso</a>
+        <!-- botón descargar bases
+        <a href="/Educa2016Bases.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Descargar las bases del concurso</a>-->
       </div>
     </div>
 
 
-    <!-- materiales -->
+    <!-- materiales
     <h3>Materiales</h3>
     <div class="items">
-      <% categories = Category.all.sample(6) %>
-      <% categories.each do |category| %>
-        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
-      <% end %>
+      <%# categories = Category.all.sample(6) %>
+      <%# categories.each do |category| %>
+        <%#= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <%# end %>
       <div class="clear"></div>
-    </div>
+    </div>-->
 
-    <!-- recursos subidos -->
+    <!-- recursos subidos
     <h3>Recursos subidos y votaciones</h3>
-    <!-- condicionar para mostrar cuadro "no hay recursos subidos"-->
-    <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
-    <!-- fin condición -->
-
-    <% if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
+    <%#= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
+    <%# if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
       <h3>Tu participación</h3>
-      <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
-    <% end %>
-
+      <%#= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
+    <%# end %>
+    -->
   </div>
   <div class="col-md-2 col-xs-12 email_box">
     <div class="title_box">DESCÁRGATE EL ÍNDICE DE MATERIALES</div>
 
     <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
     <%= content_tag :div, class: "form_box", id: "educa2016materials", style: (showMaterials ? "" : "display:none") do |div| %>
-      <a href="/Educa2016Materiales.pdf" download class="btn btn-primary">Materiales</a>
+      <a href="/Educa2016Poster.pdf" download class="btn btn-primary">Materiales</a>
     <% end %>
     <% unless showMaterials %>
       <div class="form_box" style="display:none">
@@ -106,14 +104,17 @@
           <div class="form-group">
             <input class="form-control" type="text" name="user_name" id="name" placeholder="Nombre" value="<%=user_signed_in? ? current_subject.name : ""%>">
             <input class="form-control" type="email" name="email" id="mail" placeholder="Email" value="<%=user_signed_in? ? current_subject.email : ""%>">
-            <label>
-              <input id="inlineCheckbox1" required="required" name="grant" title="You need to accept to receive information" value="true" type="checkbox">
-              <span class="lbl padding-0">
-                Acepto recibir información sobre el concurso
-              </span>
-            </label>
-            <input type="submit" value="Enviar" class="btn btn-primary">
-            <a href="/Educa2016Materiales.pdf" download class="btn btn-primary" style="display:none">Descargate los materiales</a>
+            <div class="actions">
+              <label>
+                <input id="inlineCheckbox1" required="required" name="grant" title="You need to accept to receive information" value="true" type="checkbox">
+                <span class="lbl padding-0">
+                  Acepto recibir información sobre el concurso
+                </span>
+              </label>
+              <input type="submit" value="Enviar" class="btn btn-primary pull-right">
+              <a href="/Educa2016poster.pdf" download class="btn btn-primary" style="display:none">Descargate los materiales</a>
+              <div class="clear"></div>
+            </div>
           </div>
         </form>
       </div>
@@ -161,8 +162,8 @@
         $(form).find("input[name='email']").val("").attr("readonly","readonly");
         $(form).find("input[name='grant']").prop( "checked", false ).attr("disabled","disabled");
         $("#educa2016materialsform").find("input[type='submit']").hide();
-        $("#educa2016materialsform").find("a[href='/Educa2016Materiales.pdf']").show();
-        $("a[href='/Educa2016Materiales.pdf']")[0].click();
+        $("#educa2016materialsform").find("a[href='/Educa2016Poster.pdf']").show();
+        $("a[href='/Educa2016Poster.pdf']")[0].click();
         if (window.localStorage) {
           localStorage.setItem("educa2016maillist", "subscribed");
         }

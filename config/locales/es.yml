@@ -1,5 +1,6 @@
 es:
   orange_front:
+    banner_contest: "assets/orange/banner_contest1.png"
     carousel:
       title1: "Crea"
       desc1: "Educa<strong>Internet</strong> es una plataforma que proporciona contenidos para la adecuada formación de profesores y alumnos en el tema de la <strong>seguridad en Internet</strong>. Unete a la comunidad y colabora con otros miembros en la creación de contenidos."

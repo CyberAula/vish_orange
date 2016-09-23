@@ -10,6 +10,7 @@ en:
         ¡: "¡"
         ́ : ""
   orange_front:
+    banner_contest: "assets/orange/banner_contest1_EN.png"
     carousel:
       title1: "Create"
       desc1: "Educa<strong>Internet</strong> is a platform that provides content for adequate training of teachers and students on the topic of Internet security. Join the community and collaborates with other members in the creation of content."
@@ -35,12 +36,15 @@ en:
     how_it_works: "How does it work?"
     message: "Learn and teach about safe and responsible use of technologies"
     menu_blocks:
+      our_courses_tit: "Train yourself"
       our_courses: "Our courses"
-      our_courses_txt: "Access all platform resources"
+      our_courses_txt: "Access all the courses on our platform"
+      teaching_units_tit: "Share your ideas"
       teaching_units: "Teaching units"
-      teaching_units_txt: "We offer free tools so you can create a course, a teaching unit or raise resources to the platform"
+      teaching_units_txt: "We offer free tools so you can create your own course, a teaching unit or upload resources to the platform"
+      take_part_tit: "Take part in our competitions"
       take_part: "Take part"
-      take_part_txt: "Throw yourself into the First EducaInternet Competition"
+      take_part_txt: "Take the plunge in the first EducaInternet Competition"
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
