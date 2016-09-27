@@ -224,7 +224,7 @@ es:
   catalogue:
     actions:
       add_excursion:  "Crear Unidad didáctica"
-      add_resource: "Subir Documento"
+      add_resource: "Subir Recurso"
     help:
       add_excursion: "Aquí puedes añadir una unidad didáctica directamente a esta categoría de la temateca"
       add_resource: "Aquí puedes añadir un recurso directamente a esta categoría de la recursoteca"
@@ -730,7 +730,7 @@ es:
     view_more_excursions: "Ver más unidades didácticas"
   header:
     tooltip:
-      add_button: "Crea unidades didácticas, sube documentos, etc."
+      add_button: "Crea unidades didácticas, sube recursos, etc."
   help: "ayuda"
   helpers:
     submit:
