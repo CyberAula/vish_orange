@@ -10,8 +10,8 @@
         <h2 class="primary">We’d love you to take part!</h2>
         <br>
         <p>
-          <b>Greetings to all teachers!</b> Welcome to the first edition of the EducaInternet Competition, a new venture in which Orange and Macmillan Iberia have combined their knowledge to promote the responsible and safe use of ICT in education.
-          There’s no one better than you to guide your students and show them that they are the best at using technology to learn, have fun, and build relationships responsibly.
+          <b>Greetings to all teachers!</b> Welcome to the first edition of the EducaInternet Competition, a new venture in which Orange and Macmillan Iberia have combined their knowledge to promote the responsible and safe use of ICT in education.<br><br>
+          There’s no one better than you to guide your students and show them that they are the best at using technology to learn, have fun, and build relationships responsibly.<br><br>
           We are looking for engaging, innovative and original ideas which will be useful for developing the responsible and safe use of technology. <br> <b>Will you take the plunge?</b>
         </p>
         <br>
@@ -93,7 +93,7 @@
   </div>
 
   <div class="col-md-2 col-xs-12 email_box">
-    <div class="title_box">DOWNLOAD THE INDEX OF CONTENTS</div>
+    <div class="title_box">DOWNLOAD THE COMPETITION POSTER</div>
 
     <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
     <%= content_tag :div, class: "form_box", id: "educa2016materials", style: (showMaterials ? "" : "display:none") do |div| %>
@@ -113,7 +113,7 @@
                 </span>
               </label>
               <input type="submit" value="Send" class="btn btn-primary pull-right">
-              <a href="/Educa2016Poster_EN.pdf" download class="btn btn-primary" style="display:none">Download materials</a>
+              <a href="/Educa2016Poster_EN.pdf" download class="btn btn-primary" style="display:none">Download poster</a>
               <div class="clear"></div>
             </div>
           </div>

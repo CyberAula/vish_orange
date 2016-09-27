@@ -12,10 +12,10 @@
         <p>¡Profesor@, bienvenid@ al <b>Primer Concurso EducaInternet</b>, una iniciativa
           en la que Orange y Macmillan unen sus conocimientos para promover el
           uso seguro y responsable de las tecnologías de la información y la
-          comunicación en el sector educativo!
+          comunicación en el sector educativo!<br><br>
           Nadie mejor que tú para guiar a tus alumnos y demostrarnos que sois los
           mejores utilizando la tecnología para aprender, divertiros, relacionaros... de
-          forma responsable.
+          forma responsable.<br><br>
           Buscamos ideas divertidas, innovadoras, originales, que sean útiles para
           fomentar un uso responsable y seguro de la tecnología. <b>¿Te lanzas?</b>
         </p>
@@ -92,7 +92,7 @@
     -->
   </div>
   <div class="col-md-2 col-xs-12 email_box">
-    <div class="title_box">DESCÁRGATE EL ÍNDICE DE MATERIALES</div>
+    <div class="title_box">DESCÁRGATE EL PÓSTER DEL CONCURSO</div>
 
     <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
     <%= content_tag :div, class: "form_box", id: "educa2016materials", style: (showMaterials ? "" : "display:none") do |div| %>
