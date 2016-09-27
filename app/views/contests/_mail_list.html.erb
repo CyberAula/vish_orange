@@ -9,8 +9,8 @@
 			<%= render :partial => "mail_lists/subscribe", :locals => {:mail_list => @contest.mail_list, :email => (user_signed_in? ? current_subject.actor.email : nil)} %>
 		<% end %>
 	<% else %>
-		<p>Contest is close. Subscription to mail list not allowed.</p>
+		<p>Contest is closed. Subscription to mailing list is not allowed.</p>
 	<% end %>
 <% else %>
-	<p>This contest does not have a mail list.</p>
+	<p>This contest does not have a mailing list.</p>
 <% end %>

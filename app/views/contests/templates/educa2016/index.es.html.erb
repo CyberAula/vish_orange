@@ -107,12 +107,15 @@
             <div class="actions">
               <label>
                 <input id="inlineCheckbox1" required="required" name="grant" title="You need to accept to receive information" value="true" type="checkbox">
-                <span class="lbl padding-0">
+                <span id="agree_joining" class="lbl padding-0">
                   Acepto recibir información sobre el concurso
+                </span>
+                <span id="thanks_joining" class="lbl padding-0" style="display:none">
+                  Gracias, recibirás información pronto en tu email
                 </span>
               </label>
               <input type="submit" value="Enviar" class="btn btn-primary pull-right">
-              <a href="/Educa2016poster.pdf" download class="btn btn-primary" style="display:none">Descargate los materiales</a>
+              <a href="/Educa2016Poster.pdf" download class="btn btn-primary" style="display:none">Descargate los materiales</a>
               <div class="clear"></div>
             </div>
           </div>
@@ -163,6 +166,8 @@
         $(form).find("input[name='grant']").prop( "checked", false ).attr("disabled","disabled");
         $("#educa2016materialsform").find("input[type='submit']").hide();
         $("#educa2016materialsform").find("a[href='/Educa2016Poster.pdf']").show();
+        $("#agree_joining").hide();
+        $("#thanks_joining").show();
         $("a[href='/Educa2016Poster.pdf']")[0].click();
         if (window.localStorage) {
           localStorage.setItem("educa2016maillist", "subscribed");
