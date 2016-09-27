@@ -17,7 +17,7 @@
           mejores utilizando la tecnología para aprender, divertiros, relacionaros... de
           forma responsable.<br><br>
           Buscamos ideas divertidas, innovadoras, originales, que sean útiles para
-          fomentar un uso responsable y seguro de la tecnología. <b>¿Te lanzas?</b>
+          fomentar un uso responsable y seguro de la tecnología. <br><b>¿Te lanzas?</b>
         </p>
         <br>
       </div>
@@ -96,7 +96,7 @@
 
     <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
     <%= content_tag :div, class: "form_box", id: "educa2016materials", style: (showMaterials ? "" : "display:none") do |div| %>
-      <a href="/Educa2016Poster.pdf" download class="btn btn-primary">Materiales</a>
+      <a href="/Educa2016Poster.pdf" download class="btn btn-primary width100">Descarga el póster</a>
     <% end %>
     <% unless showMaterials %>
       <div class="form_box" style="display:none">
@@ -110,12 +110,12 @@
                 <span id="agree_joining" class="lbl padding-0">
                   Acepto recibir información sobre el concurso
                 </span>
-                <span id="thanks_joining" class="lbl padding-0" style="display:none">
+                <span id="thanks_joining" class="lbl padding-0 thanks_txt" style="display:none">
                   Gracias, recibirás información pronto en tu email
                 </span>
               </label>
               <input type="submit" value="Enviar" class="btn btn-primary pull-right">
-              <a href="/Educa2016Poster.pdf" download class="btn btn-primary" style="display:none">Descargate los materiales</a>
+              <a href="/Educa2016Poster.pdf" download class="btn btn-primary" style="display:none">Descargate el poster</a>
               <div class="clear"></div>
             </div>
           </div>
