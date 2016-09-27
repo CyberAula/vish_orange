@@ -1,5 +1,5 @@
 <!-- banner concurso -->
-<div id="banner">
+<div id="banner" style="display:none">
   <div id="close_banner">x</div>
   <a href="/contest/educa2016">
     <div class="banner_concurso">
@@ -37,4 +37,6 @@
   $('#close_banner').click(function(){
     $("#banner").remove();
   });
+  $("#banner").show("slide", { direction: "left", easing: "easeOutQuart" }, 1000);
+
 <% end %>
