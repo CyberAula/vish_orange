@@ -34,10 +34,13 @@ es:
     how_it_works: "¿Cómo funciona?"
     message: "Aprende y enseña sobre el uso seguro y responsable de las tecnologías"
     menu_blocks:
+      our_courses_tit: "Fórmate"
       our_courses: "Nuestros cursos"
       our_courses_txt: "Accede a todos los recursos de la plataforma"
+      teaching_units_tit: "Comparte tus ideas"
       teaching_units: "Unidades didácticas"
       teaching_units_txt: "Te ofrecemos herramientas gratuitas para que puedas crear un curso, una unidad didáctica o subir recursos a la plataforma"
+      take_part_tit: "Participa en nuestro concurso"
       take_part: "Participa"
       take_part_txt: "¡Lánzate al Primer Concurso EducaInternet!"
   about:
