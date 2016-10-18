@@ -10,7 +10,6 @@
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group reg-labels">
-        <%= f.hidden_field :madridorgid, :value => params[:uid]  %>
         <%= hidden_field_tag :course, params[:course] %>
 
         <%= f.label :name %>
@@ -19,11 +18,8 @@
         <%= f.label :surname, t("profile.surname") %>
         <%= f.text_field :surname, :class => "form-control", :required => true, :autocomplete => "off" %>
 
-        <%if !params[:uid]%>
-          <%= f.label :email %>
-        <%else%>
-          <%= f.label :email, "Correo electrónico de EducaMadrid (@educa.madrid.org)" %>
-        <%end%>
+        <%= f.label :email %>
+
         <%= f.text_field :email, :class => "form-control", :autocomplete => "off" %>
 
         <%= f.label :password %>
@@ -31,8 +27,8 @@
 
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, :class => "form-control", :autocomplete => "off" %>
-        
-        <%if !params[:uid]%>
+
+        <%if !params[:course]%>
           <%= f.label t('activerecord.attributes.user.tag') %>
           <div class="tagBoxNew">
             <ul class="tagList">
@@ -81,7 +77,7 @@
 
 
 <%= content_for :javascript do %>
-    <%if !params[:uid]%>
+    <%if !params[:course]%>
       var registrationTags = [];
 
       //Load tags
@@ -121,7 +117,7 @@
 
     //Fill tag_list hidden input before send
     $("#registration input[type='submit']").click(function(event){
-      <%if !params[:uid]%>
+      <%if !params[:course]%>
         $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
         return true;
       <%else%>
@@ -132,6 +128,6 @@
           return true;
         }
       <%end%>
-      
+
     });
 <% end %>

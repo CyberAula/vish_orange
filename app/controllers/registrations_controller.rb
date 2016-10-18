@@ -19,9 +19,9 @@ class RegistrationsController < Devise::RegistrationsController
       super
     else
       build_resource
-      
+
       #clean_up_passwords(resource)
-      flash.now[:alert] = t('simple_captcha.error')   
+      flash.now[:alert] = t('simple_captcha.error')
       flash.delete :recaptcha_error
       render :new
     end
@@ -76,7 +76,7 @@ class RegistrationsController < Devise::RegistrationsController
     if params[:user][:madridorgid].present?
       course = Course.find(2)
       course.users << current_user
-      CourseNotificationMailer.user_welcome_email(current_user, course)      
+      CourseNotificationMailer.user_welcome_email(current_user, course)
     end
   end
 

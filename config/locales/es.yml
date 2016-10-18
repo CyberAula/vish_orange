@@ -407,6 +407,7 @@ es:
       course_closed: "Este curso está cerrado"
       course_ended: "Este curso ha terminado"
       course_registration_ended: "Este curso ya ha comenzado y no está abierto a registro"
+      registration_passwd: "Te vas a registrar en EducaInternet y en un curso online que tiene contraseña, por favor pon aquí la contraseña del curso"
       only_email: "Lo sentimos, este curso está restringido."
       unknown: "Curso restringido"
     my: "Cursos"
