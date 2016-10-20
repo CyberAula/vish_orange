@@ -397,6 +397,7 @@ es:
       subject: "Bienvenido a EducaInternet"
     flash:
       already_in: "Ya estás inscrito en el curso"
+      bad_credentials: "El curso tiene restricciones de acceso y no las cumple. Si el curso tiene contraseña, asegurese de haber puesto la correcta."
       join_success: "Gracias por inscribirse en el curso. Recibirá un email con instrucciones para acceder al curso."
       leave_success: "Te has desinscrito exitosamente"
       not_allowed: "Debes introducir la contraseña del curso. Revisa tu bandeja de entrada."

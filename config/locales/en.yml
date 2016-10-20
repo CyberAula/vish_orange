@@ -397,6 +397,7 @@ en:
     fields:
       closed: "Close course. Warning this disables users going to the course"
       course_password: "Moodle course password"
+      course_program: "Course Program"
       end_date: "End date"
       enrol_password: "Course password (revise your register email)"
       program: "Course program"
@@ -419,6 +420,7 @@ en:
       subject: "Welcome to EducaInternet"
     flash:
       already_in: "You are already enrolled"
+      bad_credentials: "The course has restriction access and you did not pass it. If the course has password please provide it correctly"
       join_success: "You succesfully joined this course. You will receive an email with instructions to access the course."
       leave_success: "You succesfully leaved this course"
       not_allowed: "You don't have the correct access rights"

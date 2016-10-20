@@ -16,6 +16,16 @@ class RegistrationsController < Devise::RegistrationsController
         params[:user][:language] = I18n.locale.to_s
       end
 
+      if params[:course].present?
+        @course = Course.find(params[:course])
+
+        if @course.restricted && ((@course.has_password? && params[:course_password]!=@course.restriction_password) || (@course.restriction_email.present? && !(params[:user][:email].ends_with? @course.restriction_email)) )
+          flash.now[:alert] = t("course.flash.bad_credentials")
+          build_resource
+          render :new and return
+        end
+      end
+
       super
     else
       build_resource
@@ -54,8 +64,8 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    if !params[:user][:madridorgid].empty?
-      Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?first=true&service=http://moodle.educainternet.es/course/view.php?id=6"
+    if params[:course].present?
+      Course.find(params[:course]).url
     else
       '/home'
     end
@@ -63,21 +73,15 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def process_course_enrolment
-    return unless user_signed_in?
+    #this method is only called when user has provided the right credentials for the course
+    #we call it after_filter because when we check credentials, current_user still does not exist
+    def process_course_enrolment
+      return unless user_signed_in?
 
-    if params[:course].present?
-      course = Course.find(params[:course])
-      if !course.restricted
-        course.users << current_user
-        CourseNotificationMailer.user_welcome_email(current_user, course)
+      if @course
+          @course.users << current_user
+          CourseNotificationMailer.user_welcome_email(current_user, @course)
       end
     end
-    if params[:user][:madridorgid].present?
-      course = Course.find(2)
-      course.users << current_user
-      CourseNotificationMailer.user_welcome_email(current_user, course)
-    end
-  end
 
-end
+  end

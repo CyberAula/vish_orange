@@ -10,6 +10,10 @@ class Course < ActiveRecord::Base
     self.getAvatarUrl || "/assets/logos/original/default_course.png"
   end
 
+  def has_password?
+    restriction_password.present?
+  end
+
   private
 
   def update_course_count
