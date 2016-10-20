@@ -126,12 +126,7 @@
         $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
         return true;
       <%else%>
-        if($("#user_email").val().indexOf("@educa.madrid.org") === -1){
-          alert("Por favor registrese con una dirección de email de EducaMadrid, terminada en '@educa.madrid.org'. Si tiene alguna duda póngase en contacto con nosotros en contacto@educainternet.es. Muchas gracias");
-          return false;
-        } else {
-          return true;
-        }
+          return true;      
       <%end%>
 
     });
