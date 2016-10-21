@@ -65,7 +65,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     if params[:course].present?
-      Course.find(params[:course]).url
+      Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?first=true&service=" + Course.find(params[:course]).url
     else
       '/home'
     end
