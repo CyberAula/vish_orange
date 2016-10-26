@@ -48,7 +48,7 @@
           </ul>
         <%end%>
 
-        <%if params[:course] && Course.find(params[:course]).restricted && Course.find(params[:course]).has_password?%>
+        <%if params[:course].present? && Course.find(params[:course]).restricted && Course.find(params[:course]).has_password?%>
           <%= label_tag :course_password, t("course.msgs.registration_passwd")  %>
           <%= password_field_tag :course_password, nil, :class => "form-control", :autocomplete => "off" %>
         <%end%>
@@ -126,7 +126,7 @@
         $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
         return true;
       <%else%>
-          return true;      
+          return true;
       <%end%>
 
     });
