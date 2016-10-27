@@ -277,6 +277,21 @@ ActiveRecord::Schema.define(:version => 20160914122525) do
     t.integer "course_id"
   end
 
+  create_table "dali_documents", :force => true do |t|
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "activity_object_id"
+    t.text     "json"
+    t.string   "title"
+  end
+
+  create_table "dali_exercises", :force => true do |t|
+    t.integer  "dali_document_id"
+    t.text     "xml"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "documents", :force => true do |t|
     t.string   "type"
     t.integer  "activity_object_id"
