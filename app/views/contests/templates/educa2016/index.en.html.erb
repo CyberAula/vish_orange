@@ -63,9 +63,9 @@
 
       <div class="section_info_1">
         <h4>How to participate</h4>
-        1. Fill in the registration form and sign up to EducaInternet before 28th February 2017.<br>
+        1. Sign up to EducaInternet before 28th February 2017.<br>
         2. Create an entry with your students.<br>
-        3. Upload your entry to the website http://educainternet.es/contest/educa2016 before 28th February 2017
+        3. Upload your entry clicking on 'submit resource' before 28th February 2017
       </div>
       <div class="section_info_1">
         <!-- botón descargar bases-->
@@ -84,13 +84,13 @@
       <div class="clear"></div>
     </div>-->
 
-    <!-- recursos subidos
+    <!-- recursos subidos -->
     <h3>Uploaded entries & votes</h3>
-    <%#= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
-    <%3 if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
+    <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
+    <% if user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
       <h3>Your entry</h3>
-      <%#= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
-    <%# end %>-->
+      <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
+    <% end %>
 
   </div>
 
