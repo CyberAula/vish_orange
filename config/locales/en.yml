@@ -333,7 +333,7 @@ en:
   community: "Community"
   conditions:
     check_message: "I Accept EducaInternet "
-    check_message_1: "Terms and Conditions."
+    check_message_1: "Privacy policy"
     check_message_2: ""
     other: "terms and conditions"
     terms_use: "Terms of use"

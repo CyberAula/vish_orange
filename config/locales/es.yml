@@ -315,8 +315,8 @@ es:
     no_comments: "No hay comentarios para este recurso"
   community: "Comunidad"
   conditions:
-    check_message: "Acepto las "
-    check_message_1: "Condiciones de Uso"
+    check_message: "Acepto la "
+    check_message_1: "Política de protección de Datos"
     check_message_2: " de EducaInternet."
     other: "términos y condiciones"
     terms_use: "Condiciones de uso"
