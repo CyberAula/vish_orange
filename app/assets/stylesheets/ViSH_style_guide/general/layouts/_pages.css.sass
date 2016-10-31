@@ -21,11 +21,9 @@ a.btn.btn_delete_item
   @include border-top-right-radius(3px)
   @include border-bottom-right-radius(0)
   @include border-bottom-left-radius(3px)
-  &:hover
+  &:hover, &:focus, &:active
     padding: 6px !important
     color: $brand-danger
-  &:focus
-    padding: 6px !important
   @media (max-width: $screen-xs-max)
     bottom: 26px
     padding: 1px 9px
