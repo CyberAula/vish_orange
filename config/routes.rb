@@ -46,18 +46,10 @@ Vish::Application.routes.draw do
   match 'legal_notice' => 'static#conditions_of_use'
   match 'privacy_policy' => 'static#privacy_policy'
   match 'conditions_of_use' => 'static#conditions_of_use'
-  match 'contributors' => 'static#contributors'
   match 'teach' => 'static#teach'
   match 'learn' => 'static#learn'
-
-
-  match 'mooc_welcome' => 'static#mooc_welcome'
-
-  #Download the user manual and count the number of downloads
-  match 'user_manual' => 'static#download_user_manual'
-
   match 'download_perm_request' => 'static#download_perm_request'
-  match 'mooc_sheet' => 'static#download_mooc_sheet'
+  match 'user_manual' => 'static#download_user_manual'
 
   #APIs
   match '/apis/search' => 'federated_search#search'

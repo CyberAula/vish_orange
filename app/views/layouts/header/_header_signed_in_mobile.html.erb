@@ -3,8 +3,6 @@
 
   <%if @show_mooc%>
     <li class="btn btn-primary btn-header"><a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
-  <%elsif current_subject.email.ends_with? "@educa.madrid.org"%>
-    <li class="btn btn-priamry btn-header"><a class="linker" href="/mooc_welcome"><%=t('mooc.button.new_mooc')%></a></li>
   <%end%>
 
   <!--search-->
