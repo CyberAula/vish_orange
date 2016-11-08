@@ -74,15 +74,15 @@
     </div>
 
 
-    <!-- materiales
+    <!-- materiales -->
     <h3>Materiales</h3>
     <div class="items">
-      <%# categories = Category.all.sample(6) %>
-      <%# categories.each do |category| %>
-        <%#= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
-      <%# end %>
+      <% categories = Category.all.sample(6) %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
       <div class="clear"></div>
-    </div>-->
+    </div>
 
     <!-- recursos subidos -->
     <h3>Recursos subidos y votaciones</h3>
