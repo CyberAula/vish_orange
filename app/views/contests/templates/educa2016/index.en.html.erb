@@ -77,7 +77,7 @@
     <!-- materiales -->
     <h3>Materials</h3>
     <div class="items">
-      <% categories = Category.owner %>
+      <% categories = Category.all.sample(6) %>
       <% categories.each do |category| %>
         <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
       <% end %>
