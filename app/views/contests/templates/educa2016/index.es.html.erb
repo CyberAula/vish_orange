@@ -75,9 +75,15 @@
 
 
     <!-- materiales -->
-    <h3>Materiales</h3>
+    <h3>Materiales pedagógicos</h3>
+    <span>Estos módulos te guiarán para crear un recurso con el que participar en el Concurso EducaInternet</span>
     <div class="items">
-      <% categories = Category.all.sample(6) %>
+      <% begin 
+          categories = [Category.find(39)] 
+	rescue ActiveRecord::RecordNotFound => e
+	  categories = Category.all.sample(6)
+	end
+	%>
       <% categories.each do |category| %>
         <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
       <% end %>

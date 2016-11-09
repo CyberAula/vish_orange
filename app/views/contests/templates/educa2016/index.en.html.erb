@@ -75,9 +75,15 @@
 
 
     <!-- materiales -->
-    <h3>Materials</h3>
+    <h3>Teaching materials</h3>
+    <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
     <div class="items">
-      <% categories = Category.all.sample(6) %>
+       <% begin
+          categories = [Category.find(42)]   
+        rescue ActiveRecord::RecordNotFound => e
+          categories = Category.all.sample(6)
+        end
+        %>
       <% categories.each do |category| %>
         <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
       <% end %>
