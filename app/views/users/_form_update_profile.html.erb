@@ -11,6 +11,9 @@
       <%= f.label t('profile.surname'), :class => "name-required" %>
       <%= f.text_field :surname, :class => "form-control required", :maxlength => 50 %>
 
+      <%= f.label t('profile.school_html'), :class => "name-required" %>
+      <%= f.text_field :school, :class => "form-control required", :maxlength => 80 %>
+
       <%= f.label t('profile.occupation.label'), :class => "text" %>
       <%= f.select(:occupation, options_for_select([[t('profile.occupation.options.select'), 0], [t('profile.occupation.options.teacher'), 1],[t('profile.occupation.options.scientist'),2], [t('profile.occupation.options.other'),3]], profile_subject.occupation)) %>
 
@@ -61,7 +64,7 @@
         <%=link_to t('hide'), "#", :id=>"hide_profile_form", :class=>"btn btn-default"%>
       </div>
     <% end %>
-   
+
     <%= content_for :javascript do %>
         var userTagList = $(".userTagList");
         var userTagsSource = [];
@@ -83,7 +86,7 @@
           maxLength: '<%=Vish::Application.config.tagsSettings["maxLength"]%>',
           maxTags: '<%=Vish::Application.config.tagsSettings["maxTags"]%>',
           triggerKeys: <%=raw(Vish::Application.config.tagsSettings["triggerKeys"].to_json)%>,
-          watermarkAllowMessage: '<%=t('document.tags.areasOfInterestMessage')%>', 
+          watermarkAllowMessage: '<%=t('document.tags.areasOfInterestMessage')%>',
           watermarkDenyMessage: '<%=t('document.tags.limitMessage')%>',
           tagsChanged:function (tag, action) {
             //Check if the element popped is a suggestion

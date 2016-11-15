@@ -18,6 +18,9 @@
         <%= f.label :surname, t("profile.surname") %>
         <%= f.text_field :surname, :class => "form-control", :required => true, :autocomplete => "off" %>
 
+        <%= f.label :school, t("profile.school_html") %>
+        <%= f.text_field :school, :class => "form-control", :required => false, :autocomplete => "off" %>
+
         <%= f.label :email %>
 
         <%= f.text_field :email, :class => "form-control", :autocomplete => "off" %>

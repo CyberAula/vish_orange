@@ -1,5 +1,5 @@
 User.class_eval do
-  attr_accessible :tag_list, :occupation, :description, :organization, :city, :country, :birthday, :website, :surname, :madridorgid
+  attr_accessible :tag_list, :occupation, :description, :organization, :city, :country, :birthday, :website, :surname, :madridorgid, :school
 
   delegate  :description, :description=,
             :organization, :organization=,
@@ -10,7 +10,7 @@ User.class_eval do
 
   delegate_attributes :birthday, :birthday=,
                       :to => :profile
- 
+
   Occupation = [:select, :teacher, :scientist, :other]
 
   scope :registered, lambda {
@@ -66,11 +66,11 @@ User.class_eval do
       object = ao.object
       object.destroy unless object.nil?
     end
-    
+
     ActivityObject.owned_by(self).each do |ao|
       object = ao.object
       object.destroy unless object.nil?
     end
   end
-  
+
 end
