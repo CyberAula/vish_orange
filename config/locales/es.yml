@@ -949,6 +949,7 @@ es:
         select: "Selecciona tu ocupación"
         teacher: "Educación"
     remove: "Borrar usuario"
+    school_html: "Centro y aula (ej: 'Francisco Arranz, 3ºB' o 'Francisco Arranz, Matemáticas de 2º bachillerato')"
     surname: "Apellidos"
     tags:
       default: "EducaInternet, unidad didáctica"
