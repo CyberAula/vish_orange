@@ -79,7 +79,7 @@
     <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
     <div class="items">
        <% begin
-          categories = [Category.find(42)]   
+          categories = [Category.find(42), Category.find(48)]   
         rescue ActiveRecord::RecordNotFound => e
           categories = Category.all.sample(6)
         end

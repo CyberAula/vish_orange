@@ -79,7 +79,7 @@
     <span>Estos módulos te guiarán para crear un recurso con el que participar en el Concurso EducaInternet</span>
     <div class="items">
       <% begin 
-          categories = [Category.find(39)] 
+          categories = [Category.find(39), Category.find(47)] 
 	rescue ActiveRecord::RecordNotFound => e
 	  categories = Category.all.sample(6)
 	end
