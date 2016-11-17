@@ -960,7 +960,8 @@ en:
         other: "Other"
       select: "Select your occupation"
     remove: "Remove user"
-    school_html: "School and classroom (ex: 'Francisco Arranz, 3ºB' or 'Francisco Arranz, Maths 2º bachillerato')"
+    school_html: "School and classroom"
+    school_txt: "Ex: 'Francisco Arranz, 3ºB' or 'Francisco Arranz, Maths 2º bachillerato'"
     surname: "Surname"
     tags:
       default: "EducaInternet, teaching unit"
