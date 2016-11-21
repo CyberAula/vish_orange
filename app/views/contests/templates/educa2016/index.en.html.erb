@@ -29,6 +29,8 @@
     <a class="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
       <span id="showingMore" class="showMore accordion-toggle btn btn-secundary collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo" title="<%=t('excursion.actions.show_more')%>" status="collapsed">Read more about the Competition</span>
     </a>
+    <!-- botón descargar bases-->
+    <a href="/Educa2016Bases.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Download the Competition rules</a>
     <div id="collapseInfo" class="panel-collapse collapse more_info">
 
       <div class="section_info_1">
@@ -67,10 +69,7 @@
         2. Create an entry with your students.<br>
         3. Upload your entry clicking on 'submit resource' before 28th February 2017
       </div>
-      <div class="section_info_1">
-        <!-- botón descargar bases-->
-        <a href="/Educa2016Bases.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Download the Competition rules</a>
-      </div>
+
     </div>
 
 
@@ -106,7 +105,7 @@
       <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
     <%else%>
       <h3>To participate you have to create a EducaInternet user</h3>
-    <% end %>   
+    <% end %>
 
 
   </div>

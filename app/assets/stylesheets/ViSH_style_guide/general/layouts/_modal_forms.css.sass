@@ -326,25 +326,31 @@
 //----------------------
 .new_contribution_resource
   .modal-dialog
-    .modal-body
-      .items
-        li
-          .selecting-item
-            background: #000 none repeat scroll 0% 0%
-            height: 100%
-            width: 100%
-            position: absolute
-            z-index: 99999
-            opacity: 0.7
-            display: none
-            color: white
-            font-size: 0.9em
-            i
+    .modal-content
+      overflow: inherit !important
+      overflow-y: initial !important
+      .modal-body
+        overflow-y: auto
+        height: 85% !important
+        .items
+          li
+            .selecting-item
+              background: #000 none repeat scroll 0% 0%
+              height: 100%
+              width: 100%
+              position: absolute
+              z-index: 99999
+              opacity: 0.7
+              display: none
               color: white
-              padding: 10px
-        .selected
-          .selecting-item
-            display: block !important
-    .modal-footer
-      .btn
-        float: right
+              font-size: 0.9em
+              i
+                color: white
+                padding: 10px
+          .selected
+            .selecting-item
+              display: block !important
+      .modal-footer
+        margin-top: 0
+        .btn
+          float: right
