@@ -38,10 +38,10 @@ en:
     menu_blocks:
       our_courses_tit: "Train yourself"
       our_courses: "Our courses"
-      our_courses_txt: "Access all the courses on our platform"
+      our_courses_txt: "Access all the courses, modules and guides on our platform"
       teaching_units_tit: "Share your ideas"
-      teaching_units: "Teaching units"
-      teaching_units_txt: "We offer free tools so you can create your own course, a teaching unit or upload resources to the platform"
+      teaching_units: "create and share"
+      teaching_units_txt: "We offer you a resources library and tools, so you can create your own resources and share them through the platform"
       take_part_tit: "Take part in our competitions"
       take_part: "Take part"
       take_part_txt: "Take the plunge in the first EducaInternet Competition"
@@ -222,7 +222,7 @@ en:
     two: "Madrid teachers"
     three: "Safe and responsible use of TIC"
     four: "Join this course"
-    learn: "Learn with specialised courses"
+    learn: "Our courses"
     search: "Educational resources library"
     teach: "Teach the way you like"
   browse:

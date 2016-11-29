@@ -36,13 +36,13 @@ es:
     menu_blocks:
       our_courses_tit: "Fórmate"
       our_courses: "Nuestros cursos"
-      our_courses_txt: "Accede a todos los recursos de la plataforma"
+      our_courses_txt: "Accede a todos los cursos, módulos y guías didácticas de la plataforma"
       teaching_units_tit: "Comparte tus ideas"
-      teaching_units: "Unidades didácticas"
-      teaching_units_txt: "Te ofrecemos herramientas gratuitas para que puedas crear un curso, una unidad didáctica o subir recursos a la plataforma"
+      teaching_units: "Crea y comparte"
+      teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos en la plataforma"
       take_part_tit: "Participa en nuestro concurso"
       take_part: "Participa"
-      take_part_txt: "¡Lánzate al Primer Concurso EducaInternet!"
+      take_part_txt: "¡Lánzate al Primer Concurso EducaInternet! Una iniciativa para promover el uso seguro y responsable de las tecnologías de la información"
   about:
     blog: "Novedades"
     contact: "Contacto"
@@ -211,7 +211,7 @@ es:
     twob: "Comunidad de Madrid"
     three: "Uso seguro y responsable de las Tecnologías de la Información y las Comunicaciones"
     four: "Inscribirme"
-    learn: "Fórmate con cursos especializados"
+    learn: "Nuestros cursos"
     search: "Biblioteca de recursos educativos"
     teach: "Enseña como más te guste"
   browse:
