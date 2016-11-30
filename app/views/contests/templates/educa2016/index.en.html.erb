@@ -73,7 +73,7 @@
     </div>
 
 
-    <!-- materiales -->
+    <!-- materials -->
     <h3>Teaching materials</h3>
     <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
     <div class="items">
@@ -83,6 +83,38 @@
           categories = Category.all.sample(6)
         end
         %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
+    <!-- materiales castellano -->
+    <h3>Materiales pedagógicos</h3>
+    <span>Estos módulos te guiarán para crear un recurso con el que participar en el Concurso EducaInternet</span>
+    <div class="items">
+
+      <% begin
+          categories = [Category.find(39), Category.find(47)]
+      	rescue ActiveRecord::RecordNotFound => e
+      	  categories = Category.all.sample(6)
+      	end %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
+    <!-- materiales OSI -->
+    <h3>Amplía tus conocimientos</h3>
+    <span>Puedes consultar estas herramientas educativas del Instituto Nacional de Ciberseguridad de España</span>
+    <div class="items">
+
+      <% begin
+          categories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+      	rescue ActiveRecord::RecordNotFound => e
+      	  categories = Category.all.sample(6)
+      	end %>
       <% categories.each do |category| %>
         <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
       <% end %>
@@ -104,7 +136,9 @@
       <h3>Your contribution</h3>
       <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
     <%else%>
-      <h3>To participate you have to create a EducaInternet user</h3>
+      <div class="alert alert-info alert-contest">To participate you have to create a EducaInternet user.
+        <a href="/users/sign_up" class="alert-link">Regístrate </a>o<a href="/users/sign_in" class="alert-link"> Accede con tu cuenta</a>
+      </div>
     <% end %>
 
 

@@ -91,6 +91,38 @@
       <div class="clear"></div>
     </div>
 
+    <!-- materiales en inglés -->
+    <h3>Teaching materials</h3>
+    <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
+    <div class="items">
+       <% begin
+          categories = [Category.find(42), Category.find(48)]
+        rescue ActiveRecord::RecordNotFound => e
+          categories = Category.all.sample(6)
+        end
+        %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
+    <!-- materiales OSI -->
+    <h3>Amplía tus conocimientos</h3>
+    <span>Puedes consultar estas herramientas educativas del Instituto Nacional de Ciberseguridad de España</span>
+    <div class="items">
+
+      <% begin
+          categories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+      	rescue ActiveRecord::RecordNotFound => e
+      	  categories = Category.all.sample(6)
+      	end %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
     <!-- recursos subidos, solo mostramos los recursos cuando se contribuye -->
     <% if user_signed_in? and @contest.allowMoreSubmissions?(current_subject.actor) %>
       <h3>Aquí puedes participar en el concurso</h3>
