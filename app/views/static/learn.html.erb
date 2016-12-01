@@ -4,13 +4,43 @@
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
 
 <% content_for :banner do %>
-  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('banner.learn') }%>
+  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('learn.title') }%>
 <%end%>
-<% certified = certified_entities %>
-	<% if !certified.blank? %>
+
+
 	<ul class="items entities_get_trained">
-		<% certified.each do |resource| %>
-			<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "frontpage2" } %>
-		<% end %>
+		  <li class="box-item categorie-item">
+        <!-- corner -->
+        <%= link_to "/train_yourself" do %>
+          <div class="corner-item">
+            <div class="corner-item2">
+              <div class="corner-color"></div>
+              <i class="fa fa-th-large"></i>
+            </div>
+            <div class="corner-background"></div>
+          </div>
+        <% end %>
+        <div class="caption learn_group">
+          <h5>
+            <%= link_to t('learn.group1'), "/train_yourself" %>
+          </h6>
+        </div>
+      </li>
+      <li class="box-item categorie-item">
+        <!-- corner -->
+        <%= link_to "/train_students" do %>
+          <div class="corner-item">
+            <div class="corner-item2">
+              <div class="corner-color"></div>
+              <i class="fa fa-th-large"></i>
+            </div>
+            <div class="corner-background"></div>
+          </div>
+          <div class="caption learn_group">
+            <h5>
+              <%= link_to t('learn.group2'), "/train_students" %>
+            </h6>
+          </div>
+        <% end %>
+      </li>
 	</ul>
-<% end %>

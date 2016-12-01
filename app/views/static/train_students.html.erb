@@ -1,0 +1,52 @@
+<%content_for :title do%><%= t('site.meta_title.learn') %><%end%>
+<%content_for :keywords do%><%= t('site.meta_keywords.learn') %><%end%>
+<%content_for :description do%><%= t('site.meta_desc.learn')%><%end%>
+<%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
+
+<% content_for :banner do %>
+  <%=render :partial => "search/main_title", :locals => { :main_title_body => t('learn.group2') }%>
+<%end%>
+
+<!-- materiales -->
+<h3 class="train_title">Materiales pedagógicos</h3>
+<div class="items">
+  <% begin
+      categories = [Category.find(39), Category.find(47)]
+    rescue ActiveRecord::RecordNotFound => e
+      categories = Category.all.sample(6)
+    end %>
+  <% categories.each do |category| %>
+    <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<!-- materiales en inglés -->
+<h3 class="train_title">Teaching materials</h3>
+<div class="items">
+   <% begin
+      categories = [Category.find(42), Category.find(48)]
+    rescue ActiveRecord::RecordNotFound => e
+      categories = Category.all.sample(6)
+    end
+    %>
+  <% categories.each do |category| %>
+    <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<!-- materiales OSI -->
+<h3 class="train_title">Amplía tus conocimientos</h3>
+<div class="items">
+
+  <% begin
+      categories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+    rescue ActiveRecord::RecordNotFound => e
+      categories = Category.all.sample(6)
+    end %>
+  <% categories.each do |category| %>
+    <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+  <% end %>
+  <div class="clear"></div>
+</div>

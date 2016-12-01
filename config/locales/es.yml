@@ -766,6 +766,10 @@ es:
       ru: "Ruso"
       hu: "Húngaro"
       nl: "Holandés"
+  learn:
+    title: "Nuestros cursos"
+    group1: "Fórmate"
+    group2: "Forma a tus alumnos"
   licenses:
       public: "Dominio Público"
       cc-by: "Creative Commons Reconocimiento"
