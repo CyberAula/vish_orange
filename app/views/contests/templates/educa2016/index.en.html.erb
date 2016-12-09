@@ -78,7 +78,7 @@
     <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
     <div class="items">
        <% begin
-          categories = [Category.find(42), Category.find(48)]
+          categories = [Category.find(42), Category.find(48), Category.find(84)]
         rescue ActiveRecord::RecordNotFound => e
           categories = Category.all.sample(6)
         end
@@ -95,7 +95,7 @@
     <div class="items">
 
       <% begin
-          categories = [Category.find(39), Category.find(47)]
+          categories = [Category.find(39), Category.find(47), Category.find(81)]
       	rescue ActiveRecord::RecordNotFound => e
       	  categories = Category.all.sample(6)
       	end %>
