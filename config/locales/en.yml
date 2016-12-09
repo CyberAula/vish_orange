@@ -38,13 +38,13 @@ en:
     menu_blocks:
       our_courses_tit: "Train yourself"
       our_courses: "Our courses"
-      our_courses_txt: "Access all the courses, modules and guides on our platform"
+      our_courses_txt: "Access the courses, modules and teaching guides on the platform"
       teaching_units_tit: "Share your ideas"
-      teaching_units: "create and share"
-      teaching_units_txt: "We offer you a resources library and tools, so you can create your own resources and share them through the platform"
+      teaching_units: "Teaching units"
+      teaching_units_txt: "We have a library and tools for you to create your own resource and share it on the platform"
       take_part_tit: "Take part in our competitions"
       take_part: "Take part"
-      take_part_txt: "Take the plunge in the first EducaInternet Competition"
+      take_part_txt: "Take the plunge in the first EducaInternet Competition. A new venture to promote the responsible and safe use of ICT"
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
