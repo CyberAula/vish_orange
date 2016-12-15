@@ -164,6 +164,8 @@ Vish::Application.routes.draw do
     post 'unsubscribed', :on => :member
   end
 
+  match "/contest/educa2" => redirect("/contest/educa2016")
+
   # Contests
   resources :contests do
     post 'enroll', :on => :member
