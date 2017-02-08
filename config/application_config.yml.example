@@ -11,29 +11,17 @@ development:
     available: ["Excursion","Resource","Category","Event","Workshop"]
     resources: ["Document","Webapp","Scormfile","Link","Embed", "Writing"]
     home: ["Excursion"]
-    archive: ["Workshop"]
     catalogue: ["Excursion"]
-    directory: ["Document","Webapp","Scormfile","Link","Embed"]
   services: ["ARS","Catalogue","ASearch"]
   languages: ["en", "es", "de", "nl", "hu", "fr"]
   register_policy: "REGISTER_ONLY"  #this can be 'REGISTER_ONLY', 'INVITATION_ONLY' or 'HYBRID'
   login_policy: "LOCAL" #this can be "LOCAL" or "CAS"
-  CAS:  #only if login_policy is "CAS"
-    cas_base_url: "https://educainternet.es/cas"
-    cas_create_user: false
-    cas_username_column: "email"
-    cas_logout_url_param: "destination"
-    cas_destination_url: "http://localhost:3000/"
-    cas_destination_logout_param_name: "service2"
-    cas_enable_single_sign_out: false
   advanced_search:
     instances: ["http://vishub.org"]
   catalogue:
     mode: "matchtag" #matchany or matchtag
     qualityThreshold: 5
   #certified: [10071, 5444, 12915, 7025, 16309, 2988, 6921, 3519, 10692, 8064, 10863]
-  moodle_url: "http://moodle.vishub.org"  #this param is optional
-
 
 production:
   name: "EducaInternet"
@@ -47,10 +35,8 @@ production:
     available: ["Excursion","Resource","Category","Event","Workshop"]
     resources: ["Document","Webapp","Scormfile","Link","Embed", "Writing"]
     home: ["Excursion"]
-    archive: ["Workshop"]
     catalogue: ["Excursion"]
-    directory: ["Document","Webapp","Scormfile","Link","Embed"]
-  services: ["ARS","Catalogue","Contests","ASearch","MediaConversion", "PrivateStudentGroups"]
+  services: ["ARS","Catalogue","Contests","ASearch","MediaConversion"]
   languages: ["en", "es", "de", "nl", "hu", "fr"]
   register_policy: "REGISTER_ONLY"
   advanced_search:
@@ -77,33 +63,24 @@ production:
     #    location: "/usr/sbin/sendmail"
     #    arguments: "-i -t"
 
-test:
-  domain: "localhost:3000"
-  test_domain: true
-  no_reply_mail: "no-reply@vishub.org"
-  main_mail: "virtual.science.hub@gmail.com"
-  models:
-    available: ["Excursion","Resource","Category","Event","Workshop"]
-    resources: ["Document","Webapp","Scormfile","Link","Embed", "Writing"]
-    home: ["Excursion"]
-    catalogue: ["Excursion"]
-    directory: ["Document","Webapp","Scormfile","Link","Embed"]
-  services: ["ARS","Catalogue","ASearch"]
-  languages: ["en", "es", "de", "nl", "hu", "fr"]
-  register_policy: "REGISTER_ONLY"   #this can be 'REGISTER_ONLY', 'INVITATION_ONLY' or 'HYBRID'
-  advanced_search:
-    instances: ["http://vishub.org"]
-  catalogue:
-    mode: "matchany" #matchany or matchtag
 
-
-# Other configuration options
+# More configuration options
 
 # Specify settings for tags
-#  tagsSettings:
-#    maxLength: 20
-#    maxTags: 8
-#    triggerKeys: ['enter', 'comma', 'tab', 'space']
+# tagsSettings:
+#   maxLength: 20
+#   maxTags: 8
+#   triggerKeys: ['enter', 'comma', 'tab', 'space']
+
+# Catalogue settings
+# catalogue:
+#  mode: "matchtag" #matchany or matchtag
+#  qualityThreshold: 5
+#  categories: ["computerScience","education","technology","..."]
+#  combinedCategories:
+#    technology: ["computerScience"]
+#  extraTerms:
+#    education: ["learning","teaching"]
 
 # Automatically detect resources language using the service provided by http://detectlanguage.com
 # languageDetectionAPIKEY: "API Key from http://detectlanguage.com to allow automatic language detection."
@@ -116,6 +93,12 @@ test:
 
 # Enable Europeana in the ViSH Editor. Get the API key from http://labs.europeana.eu/
 # EuropeanaAPIKEY: "secret_key"
+
+# Enable Flickr in the ViSH Editor. No key required.
+# Flickr: "true"
+
+# Enable LRE (Learning Resource Exchange) in the ViSH Editor. No key required.
+# LRE: "true"
 
 # LOEP configuration. Allow to evaluate the quality of the ViSH resources in a systematic way (See http://loep.global.dit.upm.es for more info).
 # loep:
@@ -167,6 +150,51 @@ test:
 # gwebmastertools:
 #   site-verification: "content attribute value of the google-site-verification meta tag"
 
+# Specify params for the ViSH metrics
+# metrics:
+#   popularity:
+#     timeWindowLength: 2
+#     resources:
+#       w_fVisits: 0.6
+#       w_fLikes: 0.3
+#       w_fDownloads: 0.1
+#     non_downloadable_resources:
+#       w_fVisits: 0.7
+#       w_fLikes: 0.3
+#     users:
+#       w_followers: 0.4
+#       w_resources: 0.6
+#     events:
+#       w_fVisits: 0.7
+#       w_fLikes: 0.3
+#     coefficients:
+#       excursion: 1
+#       resource: 0.9
+#       user: 0.8
+#       event: 0.1
+#       category: 0.8
+#   default_ranking:
+#     w_popularity: 0.7
+#     w_qscore: 0.3
+#     coefficients:
+#       excursion: 1
+#       resource: 0.9
+#       user: 0.9
+#       event: 0.9
+#       category: 0.9
+#   relevance_ranking:
+#     w_rquery: 0.8
+#     w_popularity: 0.1
+#     w_qscore: 0.1
+#     rquery:
+#       w_title: 50
+#       w_description: 1
+#       w_tags: 40
+#   qscore:
+#     w_reviewers: 0.6
+#     w_users: 0.3
+#     w_teachers: 0.1
+
 # ViSH Recommender System
 # recommender_system:
 #   settings:
@@ -211,3 +239,16 @@ test:
 #       language: 0
 #       keywords: 0
 #       los: 0
+
+# Moodle LMS
+# moodle_url: "http://moodle.vishub.org" #URL of the Moodle instance
+
+# CAS (Central Authentication Service)
+# CAS:  #only if login_policy is "CAS"
+#   cas_base_url: "https://educainternet.es/cas"
+#   cas_create_user: false
+#   cas_username_column: "email"
+#   cas_logout_url_param: "destination"
+#   cas_destination_url: "http://localhost:3000/"
+#   cas_destination_logout_param_name: "service2"
+#   cas_enable_single_sign_out: false
