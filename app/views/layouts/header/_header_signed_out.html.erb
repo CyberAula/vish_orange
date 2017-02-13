@@ -1,4 +1,5 @@
 <% front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
+<%protocol = Rails.env==="production" ? "https":"http"%>
 
 <nav class="navbar navbar-default navbar-fixed-top <%='navbar-home' if front_or_home%>" role="navigation">
   <div class="container-fluid">
@@ -50,7 +51,7 @@
           </li>
 
           <% if Vish::Application.config.registrations %>
-            <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="<%=new_user_registration_path%>"><%=t("sign_up")%></a></li>
+            <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>"><%=t("sign_up")%></a></li>
           <%end%>
 
           <% if !Vish::Application.config.cas %>
