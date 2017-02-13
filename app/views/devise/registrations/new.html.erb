@@ -4,7 +4,8 @@
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
 
 <% course = (params[:course].blank? ? nil : Course.find_by_id(params[:course])) %>
-
+<% default_email = params[:email].blank? ? nil : params[:email]%>
+<% readonly_email = params[:email].blank? ? false:true%>
 
 <section id="registration">
   <section class="registration">
@@ -27,8 +28,7 @@
         <%= f.text_field :school, :class => "form-control", :required => false, :autocomplete => "off", :placeholder => t('profile.school_txt') %>
 
         <%= f.label :email %>
-
-        <%= f.text_field :email, :class => "form-control", :autocomplete => "off" %>
+        <%= f.text_field :email, :class => "form-control", :autocomplete => "off" , :value=>default_email , :readonly => readonly_email%>
 
         <%= f.label :password %>
         <%= f.password_field :password, :class => "form-control", :id => "devise_password", :autocomplete => "off" %>
