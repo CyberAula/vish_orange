@@ -2,10 +2,7 @@
 <%content_for :keywords do%><%= t("site.current.keywords") %><%end%>
 <%content_for :description do%><%= t("site.meta_desc.sign_up")%><%end%>
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
-
 <% course = (params[:course].blank? ? nil : Course.find_by_id(params[:course])) %>
-<% default_email = params[:email].blank? ? nil : params[:email]%>
-<% readonly_email = params[:email].blank? ? false:true%>
 
 <section id="registration">
   <section class="registration">
@@ -17,6 +14,9 @@
         <% unless course.nil? %>
           <%= hidden_field_tag :course, course.id %>
         <% end %>
+        <%unless params[:email].blank?%>
+          <%= hidden_field_tag :email, params[:email] %>
+        <%end%>
 
         <%= f.label :name %>
         <%= f.text_field :name, :class => "form-control", :autocomplete => "off" %>
@@ -28,7 +28,11 @@
         <%= f.text_field :school, :class => "form-control", :required => false, :autocomplete => "off", :placeholder => t('profile.school_txt') %>
 
         <%= f.label :email %>
-        <%= f.text_field :email, :class => "form-control", :autocomplete => "off" , :value=>default_email , :readonly => readonly_email%>
+        <%unless params[:email].blank?%>
+          <%= f.text_field :email, :class => "form-control", :value=>params[:email] , :readonly => true%>
+        <%else%>
+          <%= f.text_field :email, :class => "form-control"%>
+        <%end%>
 
         <%= f.label :password %>
         <%= f.password_field :password, :class => "form-control", :id => "devise_password", :autocomplete => "off" %>

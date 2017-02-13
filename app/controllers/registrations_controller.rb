@@ -75,14 +75,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def process_course_enrolment
-    return unless user_signed_in?
-    if @course
-        @course.users << current_user
-        CourseNotificationMailer.user_welcome_email(current_user, @course)
-    end
-  end
-
   #this method is only called when user has provided the right credentials for the course
   #we call it after_filter because when we check credentials, current_user still does not exist
   def process_course_enrolment
