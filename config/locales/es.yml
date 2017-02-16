@@ -190,12 +190,12 @@ es:
     status: "Estado"
     users: "Administración de Usuarios"
   analytics:
-    description: "Esta sección solo es visible para el autor del recurso.<br/>Muestra algunas analíticas de aprendizaje acerca del uso del recurso.<br/> Las Analíticas de Aprendizaje se calculan periódicamente. Esta información fue actualizada por última vez a fecha: %{date}."
+    description: "Esta sección solo es visible para el autor del recurso.<br/>Muestra algunas analíticas de aprendizaje acerca del uso del recurso.<br/> Las analíticas de aprendizaje se calculan periódicamente. Esta información fue actualizada por última vez a fecha: %{date}."
     interactions:
-      title: "Interacción"
+      title: "Analítica de aprendizaje"
       tlo: "Tiempo empleado por sesión (s)"
       permanency_rate: "Ratio de Permanencia (%)"
-      nclicks: "Cantidad de clics por sesión"
+      nclicks: "Frequencia de clics por sesión"
     tabtitle: "Analíticas de Aprendizaje"
   all: "todos"
   announce:
@@ -243,6 +243,7 @@ es:
         tecnoaddictions: "Tecnoadicciones"
         dangerous_communities: "Comunidades peligrosas en línea"
         virus_protection: "Protección ante virus y fraudes"
+        licenses: "Licencias"
     extras:
         learning: "aprendizaje"
         teaching: "enseñanza"
@@ -1202,9 +1203,8 @@ es:
       legal_notice: "Aviso legal de EducaInternet"
       overview: "Esta página le cuenta al usuario qué puede hacer en esta plataforma educativa."
       profile: "Perfil de "
-      profile2: "Aquí puedes encontrar sus recursos y actividad educativa. Todo lo que ha hecho en esta plataforma educativa"
-      privacy_policy: "Política de privacidad de EducaInternet"
-      search: "Búsqueda de EducaInternet. Aquí puedes buscar entre los contenidos educativos, presentaciones, cursos, talleres, en el repositorio de EducaInternet"
+      profile2: "Aquí puedes encontrar tus recursos y actividad educativa. Todo lo que ha hecho en esta plataforma educativa."
+      search: "Búsqueda de EducaInternet. Aquí puedes buscar entre los diferentes contenidos educativos disponibles en el repositorio de EducaInternet: presentaciones, lecciones, etc."
       sign_up: "Página de registro para crear un usuario en la plataforma educativa EducaInternet."
       tab_excursions: "Presentaciones enriquecidas creadas por "
       tab_resources: "Recursos educativos gratuitos subidos por "
@@ -1224,7 +1224,7 @@ es:
       learn: "Fórmate con cursos especializados"
       legal_notice: "Aviso legal"
       overview: "Overview de EducaInternet"
-      privacy_policy: "Política de privacidad"
+      privacy_policy: "Política de privacidad de EducaInternet"
       profile: "perfil"
       sign_up: "Registro en EducaInternet"
       teach: "Enseña ciberseguridad"
@@ -1274,12 +1274,12 @@ es:
   workshop:
     actions:
         add: "Añadir Curso"
-        add_activity_title: "Añadir actividad a la curso"
+        add_activity_title: "Añadir actividad al curso"
         add_activity_button: "Añadir"
         adding_activity_button: "Añadiendo..."
         add_banner: "Escoge una imagen de portada"
         add_banner_help: "Tamaño recomendado 1280x100px"
-        cancel_&_go: "Cancelar e ir a curso"
+        cancel_&_go: "Cancelar e ir al curso"
         collapse_all: "Reducir todo"
         confirm_delete: "¿Borrar curso?"
         delete: "Borrar curso"
@@ -1304,7 +1304,7 @@ es:
                 writing: "Texto"
             content: "Contenido"
             contribution_message: "Participa:"
-            description: "Las tareas permiten a los participantes contribuir al taller subiendo sus propios recursos."
+            description: "Las tareas permiten a los participantes contribuir a la lección subiendo sus propios recursos."
             due_date: "Fecha fin"
             modal:
               bt_upload: "Participar"

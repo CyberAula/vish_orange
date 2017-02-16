@@ -17,9 +17,9 @@ class RegistrationsController < Devise::RegistrationsController
       end
 
       if params[:course].present?
-        @course = Course.find(params[:course])
+        @course = Course.find_by_id(params[:course])
 
-        if @course.restricted && ((@course.has_password? && params[:course_password]!=@course.restriction_password) || (@course.restriction_email.present? && !(params[:user][:email].ends_with? @course.restriction_email)) )
+        if @course and @course.restricted && ((@course.has_password? && params[:course_password]!=@course.restriction_password) || (@course.restriction_email.present? && !(params[:user][:email].ends_with? @course.restriction_email)) )
           flash.now[:alert] = t("course.flash.bad_credentials")
           build_resource
           render :new and return
@@ -61,27 +61,28 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+
   protected
 
   def after_sign_up_path_for(resource)
     if params[:course].present?
-      Vish::Application.config.APP_CONFIG["CAS"]["cas_base_url"] + "/login?first=true&service=" + Course.find(params[:course]).url
-    else
-      '/home'
+      course = Course.find_by_id(params[:course])
+      return course.url unless course.nil?
     end
+    '/home'
   end
+
 
   private
 
-    #this method is only called when user has provided the right credentials for the course
-    #we call it after_filter because when we check credentials, current_user still does not exist
-    def process_course_enrolment
-      return unless user_signed_in?
-
-      if @course
-          @course.users << current_user
-          CourseNotificationMailer.user_welcome_email(current_user, @course)
-      end
+  #this method is only called when user has provided the right credentials for the course
+  #we call it after_filter because when we check credentials, current_user still does not exist
+  def process_course_enrolment
+    return unless user_signed_in?
+    if @course
+        @course.users << current_user
+        CourseNotificationMailer.user_welcome_email(current_user, @course)
     end
-
   end
+
+end

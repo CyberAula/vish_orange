@@ -202,12 +202,12 @@ en:
     users: "Users Administration"
   all: "all"
   analytics:
-    description: "This section is only visible for the author of the resource.<br/>It shows some learning analytics about the usage of the resource.<br/> Learning Analytics are calculated periodically. This information was last updated on: %{date}."
+    description: "This section is only visible to the author of the resource.<br/>It shows some learning analytics about the usage of the resource.<br/> These learning analytics are calculated periodically. This information was last updated on: %{date}."
     interactions:
-      title: "Interaction"
+      title: "Learning analytic"
       tlo: "Time spent per session (s)"
-      permanency_rate: "Permanency Rate (%)"
-      nclicks: "Quantity of clicks per session"
+      permanency_rate: "Permanency rate (%)"
+      nclicks: "Frequency of clicks per session"
     tabtitle: "Learning Analytics"
   announce:
     title: "Announcement"
@@ -254,6 +254,7 @@ en:
         tecnoaddictions: "Tecnoaddictions"
         dangerous_communities: "Online dangerous communities"
         virus_protection: "Virus and fraud protection"
+        licenses: "Licenses"
     extras:
         computerScience_extra1: "ComputerScience"
         naturalScience_extra1: "NaturalScience"
@@ -1215,8 +1216,7 @@ en:
       overview: "This page tells the user what he/she can do with the e-learning platform."
       profile: "User profile of "
       profile2: " Here you can find his/her educational resources and contacts. Everything he/she has done in this educational platform"
-      privacy_policy: "EducaInternet privacy policy"
-      search: "EducaInternet search page. Here you can search in educational resources, presentations, courses, workshops, present in educational respository."
+      search: "EducaInternet search page. Here you can search for the different educational resources of the EducaInternet repository: presentations, lessons, etc."
       sign_up: "Sign up page to create a user in the EducaInternet educational platform"
       tab_excursions: "HTML5 Enhanced presentations created by "
       tab_resources: "Free Educational resources uploaded by "
@@ -1236,7 +1236,7 @@ en:
       learn: "Learn with specialised courses about e-safety"
       legal_notice: "Legal notice"
       overview: "Overview page of EducaInternet"
-      privacy_policy: "Privacy policy"
+      privacy_policy: "EducaInternet privacy policy"
       profile: "profile"
       sign_up: "Sign up in EducaInternet"
       teach: "Teach the way you like"
@@ -1286,12 +1286,12 @@ en:
   workshop:
     actions:
       add: "Create Course"
-      add_activity_title: "Add Activity to the Course"
+      add_activity_title: "Add activity to the course"
       add_activity_button: "Add"
       adding_activity_button: "Adding..."
       add_banner: "Choose a cover image"
       add_banner_help: "Recommended size 1280x100px"
-      cancel_&_go: "Cancel and go to Course"
+      cancel_&_go: "Cancel and go to course"
       collapse_all: "Collapse all"
       confirm_delete: "Delete course?"
       delete: "Delete course"
@@ -1333,7 +1333,7 @@ en:
           modal_title: "Edit resource"
           modal_instructions: "Open the resource you want to add. Copy the URL navigation bar and paste it here"
           title: "Resource"
-          description: "Insert any type of resource into the Course."
+          description: "Insert any type of resource into the course."
           text: "You can add to this course all the resources that are available in EducaInternet. To add them, open the resource in EducaInternet, copy its URL from the browser toolbar and paste in the following text box."
       resource_gallery:
           add: "Add"

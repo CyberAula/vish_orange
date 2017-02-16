@@ -154,10 +154,10 @@ ActivityObject.class_eval do
     end
   end
 
-  def license_name
+  def license_name(locale=nil)
     if self.should_have_license? and !self.license.nil?
       if self.license.key != "other"
-        self.license.name
+        self.license.name(locale)
       elsif !self.license_custom.blank?
         self.license_custom
       end
@@ -192,15 +192,19 @@ ActivityObject.class_eval do
     self.resource? and !self.interaction_qscore.nil? and !self.lo_interaction.nil?
   end
 
-  #Calculate quality score (in a 0-10 scale) 
+  #Calculate quality score
   def calculate_qscore
+    return self.object.calculate_qscore if self.object_type=="Category" and !self.object.nil?
+
     #self.reviewers_qscore is the LORI score in a 0-10 scale
     #self.users_qscore is the WBLT-S score in a 0-10 scale
     #self.teachers_qscore is the WBLT-T score in a 0-10 scale
+
+    metricParams = Vish::Application::config.metrics_qscore
     qscoreWeights = {}
-    qscoreWeights[:reviewers] = BigDecimal(0.6,6)
-    qscoreWeights[:users] = BigDecimal(0.3,6)
-    qscoreWeights[:teachers] = BigDecimal(0.1,6)
+    qscoreWeights[:reviewers] = BigDecimal(metricParams[:w_reviewers],6)
+    qscoreWeights[:users] = BigDecimal(metricParams[:w_users],6)
+    qscoreWeights[:teachers] = BigDecimal(metricParams[:w_teachers],6)
 
     unless (self.reviewers_qscore.nil? and self.users_qscore.nil? and self.teachers_qscore.nil?)
       if self.reviewers_qscore.nil?
@@ -240,7 +244,7 @@ ActivityObject.class_eval do
       overallQualityScore = 5
     end
 
-    #Translate it to a scale of [0,1000000]
+    #Translate score from a scale of [0,10] to a scale of [0,1000000]
     overallQualityScore = [overallQualityScore * 100000, 999999].min
 
     self.update_column :qscore, overallQualityScore
@@ -404,7 +408,11 @@ ActivityObject.class_eval do
   end
 
   def getMetadataUrl
-    self.getUrl + "/metadata.xml"
+    if ["Excursion"].include?(self.object_type)
+     return self.getUrl + "/metadata.xml"
+    else
+      return Vish::Application.config.full_domain + "/activity_objects/" + self.id.to_s + "/metadata.xml"
+    end
   end
 
   def getFullUrl(controller)
@@ -590,6 +598,10 @@ ActivityObject.class_eval do
     else
       nil
     end
+  end
+
+  def generate_LOM_metadata(options)
+    Lom.generateMetadata(self,options)
   end
 
   ##############

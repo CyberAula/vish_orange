@@ -2,6 +2,7 @@
 <%content_for :keywords do%><%= t("site.current.keywords") %><%end%>
 <%content_for :description do%><%= t("site.meta_desc.sign_up")%><%end%>
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
+<% course = (params[:course].blank? ? nil : Course.find_by_id(params[:course])) %>
 
 <section id="registration">
   <section class="registration">
@@ -10,7 +11,12 @@
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group reg-labels">
-        <%= hidden_field_tag :course, params[:course] %>
+        <% unless course.nil? %>
+          <%= hidden_field_tag :course, course.id %>
+        <% end %>
+        <%unless params[:email].blank?%>
+          <%= hidden_field_tag :email, params[:email] %>
+        <%end%>
 
         <%= f.label :name %>
         <%= f.text_field :name, :class => "form-control", :autocomplete => "off" %>
@@ -22,8 +28,11 @@
         <%= f.text_field :school, :class => "form-control", :required => false, :autocomplete => "off", :placeholder => t('profile.school_txt') %>
 
         <%= f.label :email %>
-
-        <%= f.text_field :email, :class => "form-control", :autocomplete => "off" %>
+        <%unless params[:email].blank?%>
+          <%= f.text_field :email, :class => "form-control", :value=>params[:email] , :readonly => true%>
+        <%else%>
+          <%= f.text_field :email, :class => "form-control"%>
+        <%end%>
 
         <%= f.label :password %>
         <%= f.password_field :password, :class => "form-control", :id => "devise_password", :autocomplete => "off" %>
@@ -31,29 +40,28 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, :class => "form-control", :autocomplete => "off" %>
 
-        <%if !params[:course]%>
-          <%= f.label t('activerecord.attributes.user.tag') %>
-          <div class="tagBoxNew">
-            <ul class="tagList">
-              <% unless resource.nil? %>
-                <% resource.tag_list.each do |tag| %>
-                  <li><%=tag%></li>
-                <% end %>
+        <%= f.label t('activerecord.attributes.user.tag') %>
+        <div class="tagBoxNew">
+          <ul class="tagList">
+            <% unless resource.nil? %>
+              <% resource.tag_list.each do |tag| %>
+                <li><%=tag%></li>
               <% end %>
-            </ul>
-          </div>
-          <%= f.hidden_field :tag_list, :class => "form-control", :id => "input_tag_list", :placeholder => t('devise.tags') %>
-          <% @tags = ActivityObject.tag_counts(:limit => 100, :order => "count desc") %>
-          <ul id="preloadTagList" style="display:none">
-            <% @tags.each do |tag| %>
-                <li><%= tag.name %></li>
             <% end %>
           </ul>
-        <%end%>
-
-        <%if params[:course].present? && Course.find(params[:course]).restricted && Course.find(params[:course]).has_password?%>
-          <%= label_tag :course_password, t("course.msgs.registration_passwd")  %>
-          <%= password_field_tag :course_password, nil, :class => "form-control", :autocomplete => "off" %>
+        </div>
+        <%= f.hidden_field :tag_list, :class => "form-control", :id => "input_tag_list", :placeholder => t('devise.tags') %>
+        <% @tags = ActivityObject.tag_counts(:limit => 100, :order => "count desc") %>
+        <ul id="preloadTagList" style="display:none">
+          <% @tags.each do |tag| %>
+              <li><%= tag.name %></li>
+          <% end %>
+        </ul>
+        <% unless course.nil? %>
+          <% if course.restricted and course.has_password? %>
+            <%= label_tag :course_password, t("course.msgs.registration_passwd")  %>
+            <%= password_field_tag :course_password, nil, :class => "form-control", :autocomplete => "off" %>
+          <% end %>
         <%end%>
 
         <%= f.label t('simple_captcha.title') %>
@@ -85,52 +93,44 @@
 
 
 <%= content_for :javascript do %>
-    <%if !params[:course]%>
-      var registrationTags = [];
+    var registrationTags = [];
 
-      //Load tags
-      $.each($("#preloadTagList li"), function (index, element) {
-        registrationTags.push($(element).html());
-      });
+    //Load tags
+    $.each($("#preloadTagList li"), function (index, element) {
+      registrationTags.push($(element).html());
+    });
 
-      $("#registration .tagList").tagit({
-        tagSource: registrationTags,
-        sortable: true,
-        maxLength: '<%= Vish::Application.config.tagsSettings["maxLength"] %>',
-        maxTags: '<%= Vish::Application.config.tagsSettings["maxTags"] %>',
-        triggerKeys: <%= raw(Vish::Application.config.tagsSettings["triggerKeys"].to_json) %>,
-        watermarkAllowMessage: '<%= t('document.tags.areasOfInterestMessage') %>',
-        watermarkDenyMessage: '<%= t('document.tags.limitMessage') %>',
-        tagsChanged: function (tag, action) {
-          //Check if the element popped is a suggestion
-          if (action == "popped") {
-            $.each($("#registration .tagit-suggestions li"), function (index, element) {
-              if ($(element).html() == tag) {
-                $(element).show();
-              }
-            });
-          }
+    $("#registration .tagList").tagit({
+      tagSource: registrationTags,
+      sortable: true,
+      maxLength: '<%= Vish::Application.config.tagsSettings["maxLength"] %>',
+      maxTags: '<%= Vish::Application.config.tagsSettings["maxTags"] %>',
+      triggerKeys: <%= raw(Vish::Application.config.tagsSettings["triggerKeys"].to_json) %>,
+      watermarkAllowMessage: '<%= t('document.tags.areasOfInterestMessage') %>',
+      watermarkDenyMessage: '<%= t('document.tags.limitMessage') %>',
+      tagsChanged: function (tag, action) {
+        //Check if the element popped is a suggestion
+        if (action == "popped") {
+          $.each($("#registration .tagit-suggestions li"), function (index, element) {
+            if ($(element).html() == tag) {
+              $(element).show();
+            }
+          });
         }
-      });
+      }
+    });
 
-      //Allow suggestions
-      $("#registration .tagit-suggestions li").on("click", function (){
-        var result = $(".tagit").tagit('add', $(this).html());
-        if (result == true) {
-          $(this).hide();
-        }
-      });
-    <%end%>
-
+    //Allow suggestions
+    $("#registration .tagit-suggestions li").on("click", function (){
+      var result = $(".tagit").tagit('add', $(this).html());
+      if (result == true) {
+        $(this).hide();
+      }
+    });
 
     //Fill tag_list hidden input before send
     $("#registration input[type='submit']").click(function(event){
-      <%if !params[:course]%>
-        $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
-        return true;
-      <%else%>
-          return true;
-      <%end%>
-
+      $("#input_tag_list").val(Vish.Utils.convertToTagsArray($("#registration .tagList").tagit("tags")));
+      return true;
     });
 <% end %>

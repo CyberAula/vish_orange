@@ -18,12 +18,4 @@ class Catalogue
     end
   end
 
-  def self.getDefaultCategories(temateca=false)
-    default_categories = Hash.new
-    for category in Vish::Application.config.catalogue["default_categories"]
-      default_categories[category] = Catalogue.getCategoryResources(category,7,temateca)
-    end
-    default_categories
-  end
-
 end

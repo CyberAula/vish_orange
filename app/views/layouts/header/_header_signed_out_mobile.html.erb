@@ -1,3 +1,4 @@
+<%protocol = Rails.env==="production" ? "https":"http"%>
 <ul class="nav navbar-nav mobile-nav">
   <!--login-->
   <% if !Vish::Application.config.cas %>
@@ -61,7 +62,7 @@
   <% if Vish::Application.config.registrations %>
     <!--sign_up-->
     <li class="sign_up_mobile">
-      <a href="<%=new_user_registration_path%>"class="signin">
+      <a href="<%=new_user_registration_url(:protocol=>protocol)%>"class="signin">
         <%=t("sign_up")%>
       </a>
     </li>
