@@ -62,6 +62,7 @@ es:
       infoaction:
         audio: "Audio añadido"
         category: "Categoría añadida"
+        course: "Curso añadido"
         document: "Documento añadido"
         embed: "Embed añadido"
         event: "Evento añadido"
@@ -159,6 +160,7 @@ es:
   admin:
     close_report: "Cerrar reporte"
     closed_reports: "Reportes cerrados"
+    courses: "Cursos"
     modal:
       change_role: "Rol de usuario en la plataforma"
       delete_user: "Borrar usuario"
@@ -364,14 +366,12 @@ es:
       register_and_enrol: "Registrarme e inscribirme"
       register: "Registrarme"
     age: "Edad recomendada"
-    age_from: "Desde"
-    age_to: "hasta"
+    age_range: "de %{age_min} a %{age_max} años"
     confirm_delete: "Está seguro que quiere borrar este curso?"
     course_access: "Acceso al curso"
     description: "Descripción"
-    dates: "Fechas"
-    date_from: "El curso empieza el día "
-    date_to: ", y termina el día "
+    date: "Fecha"
+    date_range: "desde %{date_from} hasta %{date_to}"
     extra_info: "Información adicional (solo visible para el propietario)"
     fields:
       closed: "Cerrar curso (Precaución, esto inhabilita a los usuarios a ir al curso)"
@@ -423,7 +423,6 @@ es:
     required_fields: "*Estos campos son obligatorios"
     show_password: "Contraseña del curso en Moodle (solo visible para inscritos)"
     tags: "Etiquetas"
-    years: "años"
   date_name: "fecha"
   description: "descripción"
   devise:
