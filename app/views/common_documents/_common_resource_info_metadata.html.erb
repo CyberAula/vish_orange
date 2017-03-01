@@ -3,6 +3,32 @@
 
     <header>
       <table class="table table-hover">
+        <%if Contest.first.activity_objects.include? resource.activity_object%>
+          <tr>
+            <td>
+              <span>Votaciones</span>
+            </td>
+            <td>
+                <div class="like like_contest">
+                  <span class="count"><%=resource.post_activity.likes.count.to_s%></span>
+                  <%= link_like(resource.post_activity)%>
+                </div>
+
+              <div class="social social_twitter like_contest">
+                <%= render :partial=>'shareon/twitter_contest', :locals=>{:url=>resource.getUrl, :counturl=>resource.getUrl} %>
+              </div>
+
+              <div class="social social_facebook like_contest">
+                <%= render :partial=>'shareon/facebook', :locals=>{:url=>resource.getUrl} %>
+              </div>
+
+              <div class="social social_gplus like_contest">
+                <%= render :partial=>'shareon/gplus', :locals=>{:url=>resource.getUrl} %>
+              </div>
+            </td>
+          </tr>
+        <%end%>
+
         <!--type-->
         <% unless resource.class.name.blank? %>
           <tr>

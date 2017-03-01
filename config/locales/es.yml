@@ -1170,6 +1170,7 @@ es:
       body: "Hola,%0A%0ATe%20recomiendo%20este%20recurso%20educativo%20en%20EducaInternet:%0A%0A%{url}%0A%0A¡Espero%20que%20te%20guste!%0A%0A%{name}"
       subject: "Mira%20este%20recurso%20en%20%{url}%20:%20%{title}"
     twitter:
+      contest: "Voto por este recurso educativo en #ConcursoEducaInternet"
       message: "Echa un vistazo a este recurso en %{url}"
   sign_up: "Regístrate"
   sign_in: "Acceso"

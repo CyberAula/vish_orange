@@ -1,7 +1,7 @@
 <% return if resource.nil? or resource.author.nil? %>
 
 <li class="resource box-item" <%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
-  
+
   <!-- corner -->
   <%= link_to(resource) do %>
     <div class="corner-item">
@@ -40,23 +40,33 @@
     <div class="info-bottom">
 
       <!--like -->
-      <div class="like">
+      <div class="like like_contest">
         <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
         <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
       </div>
-
-      <!--views -->
-      <div class="views">
-        <%if resource.private_scope? %>
-          <div class="private-resource-mark">
-            <i class="fa fa-lock"></i>
-          </div>
-        <%else%>
-          <%=resource.visit_count.to_s%>
-          <i class="fa fa-eye"></i>
-        <%end%>
-      </div>
-
+      <%if Contest.first.activity_objects.include? resource.activity_object%>
+        <div class="social social_twitter like_contest">
+          <%= render :partial=>'shareon/twitter_contest', :locals=>{:url=>resource.getUrl, :counturl=>resource.getUrl} %>
+        </div>
+        <div class="social social_facebook like_contest">
+          <%= render :partial=>'shareon/facebook', :locals=>{:url=>resource.getUrl} %>
+        </div>
+        <div class="social social_gplus like_contest">
+          <%= render :partial=>'shareon/gplus', :locals=>{:url=>resource.getUrl} %>
+        </div>
+      <%else%>
+        <!--views -->
+        <div class="views">
+          <%if resource.private_scope? %>
+            <div class="private-resource-mark">
+              <i class="fa fa-lock"></i>
+            </div>
+          <%else%>
+            <%=resource.visit_count.to_s%>
+            <i class="fa fa-eye"></i>
+          <%end%>
+        </div>
+      <%end%>
     </div>
 
   </div>
