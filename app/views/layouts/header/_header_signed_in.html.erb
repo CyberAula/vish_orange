@@ -5,7 +5,7 @@
 <%
   @show_mooc = false
   if user_signed_in? and availableModels.include? "Course"
-    @course = Course.find_by_id(3)
+    @course = Course.find_by_id(4)
     @show_mooc = (!@course.nil? and @course.users.include? current_subject)
   end
 %>
@@ -202,12 +202,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
         <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
-        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
-
       <%if @show_mooc%>
         <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
-      <%elsif (current_subject.email.ends_with? "@educa.madrid.org")%>
-        <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="/courses/3"><%=t('mooc.button.new_mooc')%></a></li>
+      <%else%>
+        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
       <%end%>
     </ul>
     </div>
