@@ -39,22 +39,16 @@
 
     <div class="info-bottom">
 
-      <!--like -->
-      <div class="like like_contest">
-        <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
-        <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
-      </div>
+
+
       <%if Contest.first.activity_objects.include? resource.activity_object%>
-        <div class="social social_twitter like_contest">
-          <%= render :partial=>'shareon/twitter_contest', :locals=>{:url=>resource.getUrl, :counturl=>resource.getUrl} %>
-        </div>
-        <div class="social social_facebook like_contest">
-          <%= render :partial=>'shareon/facebook', :locals=>{:url=>resource.getUrl} %>
-        </div>
-        <!--<div class="social social_gplus like_contest">
-          <%= render :partial=>'shareon/gplus', :locals=>{:url=>resource.getUrl} %>
-        </div>-->
+        Votaciones cerradas
       <%else%>
+          <!--like -->
+          <div class="like like_contest">
+              <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
+              <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
+          </div>
         <!--views -->
         <div class="views">
           <%if resource.private_scope? %>
