@@ -27,7 +27,7 @@ SocialStream::Documents.setup do |config|
   if VishConfig.getAvailableServices.include? "MediaConversion"
       config.video_processors = [:ffmpeg, :qtfaststart]
       config.video_styles[:"170x127#"] = {  :geometry => "170x127#", :format => 'png', :time => 4 }
-      config.video_styles[:webm] = {  :format => 'webm' }
+      #config.video_styles[:webm] = {  :format => 'webm' }
       config.video_styles[:flv] = {  :format => 'flv', :convert_options => { :output => {:ar =>'22050'}}}
       config.video_styles[:mp4] = {  :format => 'mp4', :convert_options => { :output => {:vcodec =>'libx264', :acodec =>"aac", :strict => "-2"}}, :streaming => true }
   end

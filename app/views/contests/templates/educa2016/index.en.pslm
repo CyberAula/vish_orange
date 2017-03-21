@@ -7,10 +7,12 @@
 
     <div class="row">
       <div class="col-md-5 text_info">
-        <h2 class="primary">Soon we will know who the winners are!</h2>
+        <h2 class="primary">We’d love you to take part!</h2>
         <br>
-        <p>Welcome to the First EducaInternet Competition, an initiative in which Orange and Macmillan have combined their knowledge and expertise to promote the safe and responsible use of information and communication technologies in the education sector!
-          Voting is now closed and the judges are making their decisions. Very soon we will be finding out which are the winning resources of the first EducaInternet competition.
+        <p>
+          <b>Greetings to all teachers!</b> Welcome to the first edition of the EducaInternet Competition, a new venture in which Orange and Macmillan Iberia have combined their knowledge to promote the responsible and safe use of ICT in education.<br>
+          There’s no one better than you to guide your students and show them that they are the best at using technology to learn, have fun, and build relationships responsibly.<br>
+          We are looking for engaging, innovative and original ideas which will be useful for developing the responsible and safe use of technology. <br> <b>Will you take the plunge?</b>
         </p>
         <br>
       </div>
@@ -19,7 +21,7 @@
         <div class="video_container">
           <iframe class="video_pres" width="640" height="480" src="https://www.youtube.com/embed/mlKCJcILTP0" frameborder="0" allowfullscreen></iframe>
         </div>
-        <!--<img class="girl_img" src="/assets/orange/girl.jpg" alt="niña con tablet">-->
+        <!--<img class="girl_img" src="/assets/orange/girl.jpg" alt="girl with tablet">-->
       </div>
     </div>
 
@@ -70,14 +72,21 @@
 
     </div>
 
-    <!-- recursos participantes -->
-    <h3>Access the participants page</h3>
-    <div class="items">
-      <a href="/contest/educa2016/page/submissions" class="btn btn-primary">See participants</a>
+    <h3>Discover how to upload your resource</h3>
+    <div class="row">
+      <div class="col-md-6 video">
+        <div>Ideas to participate</div>
+        <div class="video_container">
+          <iframe class="video_pres" width="640" height="480" src="https://www.youtube.com/embed/AY1dOv8IEkE" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-6 video">
+        <div>Uploading a resource</div>
+        <div class="video_container">
+          <iframe class="video_pres" width="640" height="480" src="https://www.youtube.com/embed/_qC6YN2mFDA" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
-
-    <!--<a href="/contest/educa2016/page/submissions"><h3><i class="fa fa-star"></i> Access the participants page</h3></a>-->
-
     <!-- materials -->
     <h3>Teaching materials</h3>
     <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
@@ -127,6 +136,25 @@
       <div class="clear"></div>
     </div>
 
+    <!-- recursos subidos -->
+    <% if user_signed_in? and @contest.allowMoreSubmissions?(current_subject.actor) %>
+      <h3>Here you can participate in the contest</h3>
+      <div id="submitted_aos_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
+        <ul class="items">
+          <%= render partial: 'contests/templates/educa2016/submissions/form', locals: { contest_category: @contest.categories.first } %>
+          <div class="clear"></div>
+        </ul>
+      </div>
+    <%elsif user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
+      <h3>Uploaded entries & votes</h3>
+      <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
+      <h3>Your contribution</h3>
+      <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
+    <%else%>
+      <div class="alert alert-info alert-contest">To participate you have to create a EducaInternet user.
+        <a href="/users/sign_up" class="alert-link">Regístrate </a>o<a href="/users/sign_in" class="alert-link"> Accede con tu cuenta</a>
+      </div>
+    <% end %>
 
 
   </div>

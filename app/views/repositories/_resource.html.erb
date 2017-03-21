@@ -1,7 +1,7 @@
 <% return if resource.nil? or resource.author.nil? %>
 
 <li class="resource box-item" <%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
-  
+
   <!-- corner -->
   <%= link_to(resource) do %>
     <div class="corner-item">
@@ -39,24 +39,28 @@
 
     <div class="info-bottom">
 
-      <!--like -->
-      <div class="like">
-        <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
-        <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
-      </div>
 
-      <!--views -->
-      <div class="views">
-        <%if resource.private_scope? %>
-          <div class="private-resource-mark">
-            <i class="fa fa-lock"></i>
+
+      <%if Contest.first.activity_objects.include? resource.activity_object%>
+        Votaciones cerradas
+      <%else%>
+          <!--like -->
+          <div class="like like_contest">
+              <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
+              <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
           </div>
-        <%else%>
-          <%=resource.visit_count.to_s%>
-          <i class="fa fa-eye"></i>
-        <%end%>
-      </div>
-
+        <!--views -->
+        <div class="views">
+          <%if resource.private_scope? %>
+            <div class="private-resource-mark">
+              <i class="fa fa-lock"></i>
+            </div>
+          <%else%>
+            <%=resource.visit_count.to_s%>
+            <i class="fa fa-eye"></i>
+          <%end%>
+        </div>
+      <%end%>
     </div>
 
   </div>

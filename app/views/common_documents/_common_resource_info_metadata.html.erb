@@ -3,6 +3,17 @@
 
     <header>
       <table class="table table-hover">
+        <%if Contest.first.activity_objects.include? resource.activity_object%>
+          <tr>
+            <td>
+              <span>Votaciones</span>
+            </td>
+            <td>
+                Votaciones cerradas
+            </td>
+          </tr>
+        <%end%>
+
         <!--type-->
         <% unless resource.class.name.blank? %>
           <tr>

@@ -17,28 +17,36 @@
       <h1><%=@course.title%></h1>
       <h2><%=t('course.description')%></h2>
       <p><%=@course.description%></p>
+      <br/>
       <% unless @course.start_date.blank? or @course.end_date.blank? %>
-        <h2><%=t('course.dates')%></h2>
-        <p><%=t("course.date_from")%> <span class="bold"><%=@course.start_date.strftime('%d-%m-%Y') %></span> <%=t("course.date_to")%> <span class="bold"><%=@course.end_date.strftime('%d-%m-%Y')%></span></p>
+        <div class="mooc_inline_field">
+          <h2><%=t('course.date')%>:</h2>
+          <p><%=t("course.date_range", :date_from => @course.start_date.strftime('%d-%m-%Y'), :date_to => @course.end_date.strftime('%d-%m-%Y'))%></p>
+        </div>
       <%end%>
       <% if @course.age_min!=0 || @course.age_max!=0 %>
-        <h2><%=t('course.age')%></h2>
-        <p><%=t("course.age_from")%>: <%=@course.age_min%> <%=t("course.years")%> <%=t("course.age_to")%>: <%=@course.age_max%> <%=t("course.years")%></p>
+        <div class="mooc_inline_field">
+          <h2><%=t('course.age')%>:</h2>
+          <p><%=t("course.age_range", :age_min => @course.age_min, :age_max => @course.age_max)%></p>
+        </div>
       <% end %>
       <% if @course.language.present? && @course.language!="independent" %>
-        <h2><%=t('course.language')%></h2>
-        <p>
-        <%=@course.readable_language%></p>
+        <div class="mooc_inline_field">
+          <h2><%=t('course.language')%>:</h2>
+          <p><%=@course.readable_language%></p>
+        </div>
       <% end %>
       <% if @course.tags.length>0 %>
-        <h2><%=t('course.tags')%></h2>
-        <ul class="tagit-suggestions">
-          <% @course.tag_list.each do |tag| %>
-          <li class="tagit-choice">
-            <%= link_to tag, search_path(:q => tag) %>
-          </li>
-          <% end %>
-        </ul>
+        <div class="mooc_inline_field">
+          <h2><%=t('course.tags')%>:</h2>
+          <ul class="tagit-suggestions">
+            <% @course.tag_list.each do |tag| %>
+            <li class="tagit-choice">
+              <%= link_to tag, search_path(:q => tag) %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
         <div class="clear"></div>
       <% end %>
 
@@ -59,7 +67,7 @@
                   <% end %>
               <%else%>
                   <% if @course.end_date.present? && @course.end_date < Date.today %>
-                    <div class=""><%=t('course.msgs.course_ended')%></div>                  
+                    <div class=""><%=t('course.msgs.course_ended')%></div>
                   <% else %>
                     <% if user_signed_in? %>
                       <%if !@course.restricted || (@course.restricted && @course.restriction_email.present? && (current_user.email.ends_with? @course.restriction_email))%>
@@ -141,14 +149,14 @@
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-    $('#course_delete').popover({
-      html : true,
-      placement: "left",
-      content: function() {
-        return $('.contentdelete').html();
-      },
-      container: "#course_button_bar"
-    });
-});
+  document.addEventListener("DOMContentLoaded", function(){
+      $('#course_delete').popover({
+        html : true,
+        placement: "left",
+        content: function() {
+          return $('.contentdelete').html();
+        },
+        container: "#course_button_bar"
+      });
+  });
 </script>

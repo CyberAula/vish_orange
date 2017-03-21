@@ -7,10 +7,17 @@
 
     <div class="row">
       <div class="col-md-5 text_info">
-        <h2 class="primary">¡Pronto conoceremos a los ganadores!</h2>
+        <h2 class="primary">¡Queremos contar contigo!</h2>
         <br>
-        <p>¡Profesor@, bienvenid@ al Primer Concurso EducaInternet, una iniciativa en la que Orange y Macmillan unen sus conocimientos para promover el uso seguro y responsable de las tecnologías de la información y la comunicación en el sector educativo!<br/>
-           Se ha cerrado el plazo de votaciones y el jurado pasa a deliberar. Muy pronto sabremos cuáles son los recursos ganadores de esta primera edición.
+        <p>¡Profesor@, bienvenid@ al <b>Primer Concurso EducaInternet</b>, una iniciativa
+          en la que Orange y Macmillan unen sus conocimientos para promover el
+          uso seguro y responsable de las tecnologías de la información y la
+          comunicación en el sector educativo!<br>
+          Nadie mejor que tú para guiar a tus alumnos y demostrarnos que sois los
+          mejores utilizando la tecnología para aprender, divertiros, relacionaros... de
+          forma responsable.<br>
+          Buscamos ideas divertidas, innovadoras, originales, que sean útiles para
+          fomentar un uso responsable y seguro de la tecnología. <br><b>¿Te lanzas?</b>
         </p>
         <br>
       </div>
@@ -66,15 +73,27 @@
       </div>
 
     </div>
-    <!-- recursos participantes -->
-    <!--<a href="/contest/educa2016/page/submissions"><h3><i class="fa fa-star"></i> Accede a la página de los recursos que han participado</h3></a>-->
-    <h3>Accede a la página de los recursos que han participado</h3>
-    <div class="items">
-      <a href="/contest/educa2016/page/submissions" class="btn btn-primary">Ver participantes</a>
+
+    <h3>Descubre cómo subir tu recurso </h3>
+    <div class="row">
+      <div class="col-md-6 video">
+        <div>Presentación e ideas para participar</div>
+        <div class="video_container">
+          <iframe class="video_pres" width="640" height="480" src="https://www.youtube.com/embed/AY1dOv8IEkE" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-6 video">
+        <div>Cómo subir un recurso</div>
+        <div class="video_container">
+          <iframe class="video_pres" width="640" height="480" src="https://www.youtube.com/embed/_qC6YN2mFDA" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
     <!-- materiales -->
     <h3>Materiales pedagógicos</h3>
+    <span>Estos módulos te guiarán para crear un recurso con el que participar en el Concurso EducaInternet</span>
     <div class="items">
+
       <% begin
           categories = [Category.find(68), Category.find(97), Category.find(81), Category.find(87),Category.find(103), Category.find(111)]
       	rescue ActiveRecord::RecordNotFound => e
@@ -88,6 +107,7 @@
 
     <!-- materiales en inglés -->
     <h3>Teaching materials</h3>
+    <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
     <div class="items">
        <% begin
           categories = [Category.find(71), Category.find(100),Category.find(84),Category.find(90),Category.find(106), Category.find(114)]
@@ -117,8 +137,27 @@
       <div class="clear"></div>
     </div>
 
-  </div>
+    <!-- recursos subidos, solo mostramos los recursos cuando se contribuye -->
+    <% if user_signed_in? and @contest.allowMoreSubmissions?(current_subject.actor) %>
+      <h3>Aquí puedes participar en el concurso</h3>
+      <div id="submitted_aos_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
+      	<ul class="items">
+          <%= render partial: 'contests/templates/educa2016/submissions/form', locals: { contest_category: @contest.categories.first } %>
+          <div class="clear"></div>
+      	</ul>
+      </div>
+    <%elsif user_signed_in? && @contest.hasSubmissions?(current_subject.actor) %>
+      <h3>Recursos subidos y votaciones</h3>
+      <%= render partial: 'contests/templates/educa2016/submissions', locals: { contest: @contest} %>
+      <h3>Tu participación</h3>
+      <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
+    <%else%>
+      <div class="alert alert-info alert-contest">Para participar en el concurso debes estar registrado en EducaInternet.
+        <a href="/users/sign_up" class="alert-link">Regístrate </a>o<a href="/users/sign_in" class="alert-link"> Accede con tu cuenta</a>
+      </div>
+    <% end %>
 
+  </div>
   <div class="col-md-2 col-xs-12 email_box">
     <div class="title_box">DESCÁRGATE EL PÓSTER DEL CONCURSO</div>
 
@@ -177,7 +216,38 @@
       $("#showingMore").attr("status", "expanded");
     }
   });
-
+  $("#educa2016materialsform").submit(function(event){
+    event.preventDefault();
+    var data = {};
+    data["user_name"] = $("#educa2016materialsform").find("input[name='user_name']").val();
+    data["email"] = $("#educa2016materialsform").find("input[name='email']").val();
+    data["grant"] = $("#educa2016materialsform").find("input[name='grant']").prop("checked");
+    $.ajax({
+      type: "POST",
+      url: $(this).attr("action"),
+      data: data,
+      success: function(data){
+        var form = $("#educa2016materialsform")
+        $(form).find("input[name='user_name']").val("").attr("readonly","readonly");
+        $(form).find("input[name='email']").val("").attr("readonly","readonly");
+        $(form).find("input[name='grant']").prop( "checked", false ).attr("disabled","disabled");
+        $("#educa2016materialsform").find("input[type='submit']").hide();
+        $("#educa2016materialsform").find("a[href='/Educa2016Poster.pdf']").show();
+        $("#agree_joining").hide();
+        $("#thanks_joining").show();
+        $("a[href='/Educa2016Poster.pdf']")[0].click();
+        if (window.localStorage) {
+          localStorage.setItem("educa2016maillist", "subscribed");
+        }
+      },
+      error: function(data){
+        if(typeof data.responseText == "string"){
+          alert(data.responseText);
+        }
+      },
+      dataType: "json"
+    });
+  });
 
   <% unless showMaterials %>
     if ((window.localStorage)&&(localStorage.getItem("educa2016maillist")==="subscribed")){

@@ -72,7 +72,7 @@ class ContestsController < ApplicationController
     else
       return submit_return_with_error("Invalid contribution type",pathToReturn)
     end
-    
+
     if object.new_record?
       #We need to create and save the object
       authorize! :create, object
@@ -195,6 +195,5 @@ class ContestsController < ApplicationController
       @contest = Contest.find(params[:id])
     end
   end
-  
-end
 
+end
