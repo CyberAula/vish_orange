@@ -12,13 +12,38 @@
         <div class="section_winners">
           <div class="section_jury col-md-6">
             <img src="../assets/contest/IMG_WEB_PREMIOS_01.jpg">
-              <!--Respectivas excursiones (_excusion.html.erb)-->
+            <!-- judge's winners -->
+            <div class="items win">
+              <% begin
+                  winers = [Excursion.find(293), Excursion.find(9229)]
+                rescue ActiveRecord::RecordNotFound => e
+                  winers = Excursion.all.sample(2)
+                end %>
+                <% winers.each do |excursion| %>
+                  <%= render partial: 'repositories/resource', locals: { resource: excursion} %>
+                <% end %>
+                <div class="clear"></div>
+            </div>
           </div>
           <div class="section_public col-md-6">
             <img src="../assets/contest/IMG_WEB_PREMIOS_02.jpg">
-              <!--Respectivas excursiones (_excusion.html.erb)-->
+
+              <!-- public's winners -->
+              <div class="items win">
+                <% begin
+                    winers = [Excursion.find(9218), Excursion.find(9228)]
+                  rescue ActiveRecord::RecordNotFound => e
+                    winers = Excursion.all.sample(2)
+                  end %>
+                  <% winers.each do |excursion| %>
+                    <%= render partial: 'repositories/resource', locals: { resource: excursion} %>
+                  <% end %>
+                  <div class="clear"></div>
+              </div>
           </div>
         </div>
+
+
 
     <!-- materiales -->
     <h3>Materiales pedagógicos</h3>
