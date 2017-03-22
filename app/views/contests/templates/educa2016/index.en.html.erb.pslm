@@ -1,0 +1,235 @@
+<% content_for :banner do %>
+  <%=render :partial => "contests/templates/educa2016/main_title", :locals => { :main_title_body => "" }%>
+<%end%>
+<div class="scrollup fa fa-arrow-up"></div>
+<div class="row">
+  <div class="col-md-10 col-xs-12 contest_content">
+
+    <div class="row">
+      <div class="col-md-5 text_info">
+        <h2 class="primary">Soon we will know who the winners are!</h2>
+        <br>
+        <p>Welcome to the First EducaInternet Competition, an initiative in which Orange and Macmillan have combined their knowledge and expertise to promote the safe and responsible use of information and communication technologies in the education sector!
+          Voting is now closed and the judges are making their decisions. Very soon we will be finding out which are the winning resources of the first EducaInternet competition.
+        </p>
+        <br>
+      </div>
+      <div class="col-md-1 text_info"></div>
+      <div class="col-md-6 video">
+        <div class="video_container">
+          <iframe class="video_pres" width="640" height="480" src="https://www.youtube.com/embed/mlKCJcILTP0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!--<img class="girl_img" src="/assets/orange/girl.jpg" alt="niña con tablet">-->
+      </div>
+    </div>
+
+    <!-- botón más info-->
+    <a class="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
+      <span id="showingMore" class="showMore accordion-toggle btn btn-secundary collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo" title="<%=t('excursion.actions.show_more')%>" status="collapsed">Read more about the Competition</span>
+    </a>
+    <!-- botón descargar bases-->
+    <a href="/Educa2016Bases.pdf" class="btn btn-secundary" download><i class="fa fa-download"></i> Download the Competition rules</a>
+    <div id="collapseInfo" class="panel-collapse collapse more_info">
+
+      <div class="section_info_1">
+        <h4>We make it easy for you</h4>
+        On the EducaInternet platform there are teaching materials which will give you step-by-step guidance on how to create an entry to enter the Competition.
+        This is an exciting challenge, so we invite you to use all your knowledge and teaching experience and TAKE PART!
+      </div>
+
+      <div class="section_info_2">
+        <h4>Who can take part?</h4>
+        All teachers from 4th of Primary to 4th of ESO and from FP Básica in any centre in Spain who sign up with their class on the EducaInternet platform can take part.
+        You must demonstrate how to get the most from technology and also how to use it responsibly.
+      </div>
+
+      <div class="section_info_1">
+        <h4>Entry requirements</h4>
+        You can hand in any type of multimedia material: presentations, blogs, webs, videos or resources created with authoring tools, apps or with Web 2.0 tools.
+        The published entries must be original and created by the teachers with their classes during the 2016/2017 academic year and can be submitted either in Spanish or English.
+        <br>You can enter the competition with more than one class; in order to do so you will need to sign up each class separately to the platform.
+        Only one entry per class will be accepted.
+        The jury will use the following criteria to choose the winners: originality, creativity, replicability, educational content and the involvement and participation of the class in the creation of the entry.
+      </div>
+
+      <div class="section_info_2">
+        <h4>How the competition Works</h4>
+        • You can submit your entries between 1st November 2016 and 28th February 2017, inclusive.<br>
+        • Four winning entries will be chosen from amongst all the participants, two by the jury and two by popular vote.<br>
+        • The popular vote will take place between 1st and 15th March 2017.<br>
+        • The jury’s deliberation process will take place between 1st and 15th March 2017.<br>
+        • The jury’s verdict will be announced on 22nd March 2017.
+      </div>
+
+      <div class="section_info_1">
+        <h4>How to participate</h4>
+        1. Sign up to EducaInternet before 28th February 2017.<br>
+        2. Create an entry with your students.<br>
+        3. Upload your entry clicking on 'submit resource' before 28th February 2017
+      </div>
+
+    </div>
+
+    <!-- recursos participantes -->
+    <h3>Access the participants page</h3>
+    <div class="items">
+      <a href="/contest/educa2016/page/submissions" class="btn btn-primary">See participants</a>
+    </div>
+
+    <!--<a href="/contest/educa2016/page/submissions"><h3><i class="fa fa-star"></i> Access the participants page</h3></a>-->
+
+    <!-- materials -->
+    <h3>Teaching materials</h3>
+    <span>This materials will give you step by step guidance on how to create an entry to enter the Competition</span>
+    <div class="items">
+       <% begin
+          categories = [Category.find(71), Category.find(100), Category.find(84),Category.find(90), Category.find(106), Category.find(114)]
+        rescue ActiveRecord::RecordNotFound => e
+          categories = Category.all.sample(6)
+        end
+        %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
+
+    <!-- materiales castellano -->
+    <h3>Materiales pedagógicos</h3>
+    <span>Estos módulos te guiarán para crear un recurso con el que participar en el Concurso EducaInternet</span>
+    <div class="items">
+
+      <% begin
+          categories = [Category.find(68), Category.find(97), Category.find(81), Category.find(87),Category.find(103),Category.find(111)]
+      	rescue ActiveRecord::RecordNotFound => e
+      	  categories = Category.all.sample(6)
+      	end %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
+    <!-- materiales OSI -->
+    <h3>Amplía tus conocimientos</h3>
+    <span>Puedes consultar estas herramientas educativas del Instituto Nacional de Ciberseguridad de España</span>
+    <div class="items">
+
+      <% begin
+          categories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+      	rescue ActiveRecord::RecordNotFound => e
+      	  categories = Category.all.sample(6)
+      	end %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2016/category', locals: { category: category} %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+
+
+
+  </div>
+
+  <div class="col-md-2 col-xs-12 email_box">
+    <div class="title_box">DOWNLOAD THE COMPETITION POSTER</div>
+
+    <% showMaterials = (user_signed_in? and @contest.mail_list and @contest.mail_list.isActorSubscribed?(current_subject.actor)) %>
+    <%= content_tag :div, class: "form_box", id: "educa2016materials", style: (showMaterials ? "" : "display:none") do |div| %>
+      <a href="/Educa2016Poster_EN.pdf" download class="btn btn-primary width100">Download poster</a>
+    <% end %>
+    <% unless showMaterials %>
+      <div class="form_box" style="display:none">
+        <form id="educa2016materialsform" action="/contest/educa2016/educa2016materials" method="post">
+          <div class="form-group">
+            <input class="form-control" type="text" name="user_name" id="name" placeholder="Nombre" value="<%=user_signed_in? ? current_subject.name : ""%>">
+            <input class="form-control" type="email" name="email" id="mail" placeholder="Email" value="<%=user_signed_in? ? current_subject.email : ""%>">
+            <div class="actions">
+              <label>
+                <input id="inlineCheckbox1" required="required" name="grant" title="You need to accept to receive information" value="true" type="checkbox">
+                <span id="agree_joining" class="lbl padding-0">
+                  I agree to receive information about this contest
+                </span>
+                <span id="thanks_joining" class="lbl padding-0 thanks_txt" style="display:none">
+                  Thanks, you will receive information soon
+                </span>
+              </label>
+              <input type="submit" value="Send" class="btn btn-primary pull-right">
+              <a href="/Educa2016Poster_EN.pdf" download class="btn btn-primary" style="display:none">Download poster</a>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    <% end %>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<% content_for :javascript do %>
+  $(window).scroll(function(){
+   if ($(this).scrollTop() > 100) {
+      $('.scrollup').fadeIn();
+   } else {
+      $('.scrollup').fadeOut();
+   }
+  });
+  $('.scrollup').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
+  $("#showingMore").click(function(e){
+    if($("#showingMore").attr("status")==="expanded"){
+      $("#showingMore").html('Read more about the Competition');
+      $("#showingMore").attr("title", "<%=t('excursion.actions.show_fewer')%>");
+      $("#showingMore").attr("status", "collapsed");
+    } else {
+      $("#showingMore").html('Hide info');
+      $("#showingMore").attr("title", "<%=t("excursion.actions.show_more")%>");
+      $("#showingMore").attr("status", "expanded");
+    }
+  });
+  $("#educa2016materialsform").submit(function(event){
+    event.preventDefault();
+    var data = {};
+    data["user_name"] = $("#educa2016materialsform").find("input[name='user_name']").val();
+    data["email"] = $("#educa2016materialsform").find("input[name='email']").val();
+    data["grant"] = $("#educa2016materialsform").find("input[name='grant']").prop("checked");
+    $.ajax({
+      type: "POST",
+      url: $(this).attr("action"),
+      data: data,
+      success: function(data){
+        var form = $("#educa2016materialsform")
+        $(form).find("input[name='user_name']").val("").attr("readonly","readonly");
+        $(form).find("input[name='email']").val("").attr("readonly","readonly");
+        $(form).find("input[name='grant']").prop( "checked", false ).attr("disabled","disabled");
+        $("#educa2016materialsform").find("input[type='submit']").hide();
+        $("#educa2016materialsform").find("a[href='/Educa2016Poster_EN.pdf']").show();
+        $("#agree_joining").hide();
+        $("#thanks_joining").show();
+        $("a[href='/Educa2016Poster_EN.pdf']")[0].click();
+        if (window.localStorage) {
+          localStorage.setItem("educa2016maillist", "subscribed");
+        }
+      },
+      error: function(data){
+        if(typeof data.responseText == "string"){
+          alert(data.responseText);
+        }
+      },
+      dataType: "json"
+    });
+  });
+
+  <% unless showMaterials %>
+    if ((window.localStorage)&&(localStorage.getItem("educa2016maillist")==="subscribed")){
+      $("#educa2016materialsform").parent("div.form_box").hide();
+      $("#educa2016materials").show();
+    } else {
+      $("#educa2016materialsform").parent("div.form_box").show();
+      //localStorage.removeItem("educa2016maillist");
+    }
+  <% end %>
+<%end%>
