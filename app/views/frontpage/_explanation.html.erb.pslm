@@ -1,5 +1,4 @@
-<!-- banner concurso
-
+<!-- banner concurso -->
 <div id="banner" style="display:none">
   <div id="close_banner">x</div>
   <a href="/contest/educa2016/page/submissions">
@@ -9,7 +8,7 @@
   </a>
 </div>
 
-fin banner -->
+<!-- fin banner -->
 
 <div class="social_ntwoks">
   <a href="https://twitter.com/EducaInternet" target="_blank"><i class="fa fa-twitter fa-big"></i></a>
@@ -18,7 +17,7 @@ fin banner -->
 <div class="box-title-home">
   <img src="assets/orange/2.jpg" alt="cover_image">
   <!-- center sentence + buttons -->
-  <div class="row main-title">
+  <!--<div class="row main-title">
     <div class="col-xs-12 title"><h1><%= t('orange_front.message')%></h1></div>
     <a href="/overview" class="btn-js btn-anim">
       <svg>
@@ -32,7 +31,7 @@ fin banner -->
       </svg>
      <%=t("orange_front.community")%>
     </a>
-  </div>
+  </div>-->
 </div>
 
 <% content_for :javascript do %>

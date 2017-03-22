@@ -40,9 +40,9 @@ es:
       teaching_units_tit: "Comparte tus ideas"
       teaching_units: "Crea y comparte"
       teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos en la plataforma"
-      take_part_tit: "Votaciones cerradas"
-      take_part: "Ver participantes"
-      take_part_txt: "Muy pronto sabremos cuáles son los recursos ganadores del primer concurso EducaInternet"
+      take_part_tit: "Concurso EducaInternet"
+      take_part: "Conoce a los ganadores"
+      take_part_txt: "Ya sabemos quiénes son los recursos ganadores del primer concurso EducaInternet"
   about:
     blog: "Novedades"
     contact: "Contacto"
