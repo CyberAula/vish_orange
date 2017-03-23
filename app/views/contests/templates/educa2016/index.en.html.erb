@@ -15,12 +15,12 @@
             <!-- judge's winners -->
             <div class="items win">
               <% begin
-                  winers = [Excursion.find(293), Excursion.find(9229)]
+                  winers = [Document.find(293), Document.find(9229)]
                 rescue ActiveRecord::RecordNotFound => e
-                  winers = Excursion.all.sample(2)
+                  winers = Document.all.sample(2)
                 end %>
-                <% winers.each do |excursion| %>
-                  <%= render partial: 'repositories/resource', locals: { resource: excursion} %>
+                <% winers.each do |doc| %>
+                  <%= render partial: 'repositories/resource', locals: { resource: doc} %>
                 <% end %>
                 <div class="clear"></div>
             </div>
@@ -30,12 +30,12 @@
             <!-- public's winners -->
             <div class="items win">
               <% begin
-                  winers = [Excursion.find(9218), Excursion.find(9228)]
+                  winers = [Document.find(9218), Document.find(9228)]
                 rescue ActiveRecord::RecordNotFound => e
-                  winers = Excursion.all.sample(2)
+                  winers = Document.all.sample(2)
                 end %>
-                <% winers.each do |excursion| %>
-                  <%= render partial: 'repositories/resource', locals: { resource: excursion} %>
+                <% winers.each do |doc| %>
+                  <%= render partial: 'repositories/resource', locals: { resource: doc} %>
                 <% end %>
                 <div class="clear"></div>
             </div>
