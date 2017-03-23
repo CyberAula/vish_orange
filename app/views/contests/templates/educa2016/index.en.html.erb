@@ -15,7 +15,7 @@
             <!-- judge's winners -->
             <div class="items win">
               <% begin
-                  winers = [Document.find(293), Document.find(9229)]
+                  winers = [Link.find(293), Document.find(9229)]
                 rescue ActiveRecord::RecordNotFound => e
                   winers = Document.all.sample(2)
                 end %>
