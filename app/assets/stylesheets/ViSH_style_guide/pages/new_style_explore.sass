@@ -1,0 +1,63 @@
+//colors
+$color_tundora_approx: #444
+
+//@extend-elements
+//original selectors
+//.articles article >.resources .resources_imgs div .resource_img, .articles article >.resources2 .resources_imgs div .resource_img
+.extend_1
+	width: 100%
+	height: 160px
+	background: $color_tundora_approx
+
+
+.articles article
+	.teach
+		width: 60%
+		height: auto
+		display: block
+		text-align: center
+		h4
+			width: auto
+			margin-bottom: .8em
+
+		.article_img
+			width: 128px
+			height: 128px
+			background: $color_tundora_approx
+			padding: .8em 0
+			//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+			border-radius: 50%
+			display: block
+
+		.article_cont h3
+			font-weight: 400
+			&:first-child
+				padding-bottom: .8em
+
+			&:last-child
+				padding-top: .8em
+
+
+	>
+		.resources
+			overflow: hidden
+			.resources_imgs
+				width: 60%
+				div
+					float: left
+					padding: .8em 1em
+					width: 20%
+					.resource_img
+						@extend %extend_1
+
+
+		.resources2
+			overflow: hidden
+			.resources_imgs
+				width: 52%
+				div
+					float: left
+					padding: .8em 1em
+					width: 25%
+					.resource_img
+						@extend %extend_1

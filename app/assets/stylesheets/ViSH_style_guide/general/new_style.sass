@@ -1,0 +1,443 @@
+//colors
+$color_log_cabin_approx: #222
+$color_tundora_approx: #444
+$white: #fff
+$black: #000
+$color_mercury_approx: #e4e4e4
+$black_70: rgba(0, 0, 0, .7)
+
+//fonts
+$font_0: Roboto
+$font_1: sans-serif
+
+//@extend-elements
+//original selectors
+//html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+.extend_1
+	margin: 0 auto
+	padding: 0
+	vertical-align: baseline
+
+
+//original selectors
+//header .brand, header .form_header
+.extend_2
+	display: inline-block
+	position: absolute
+	top: 2vh
+
+
+html
+	@extend %extend_1
+
+body
+	@extend %extend_1
+	font-family: $font_0, $font_1
+
+div
+	@extend %extend_1
+
+span
+	@extend %extend_1
+
+applet
+	@extend %extend_1
+
+object
+	@extend %extend_1
+
+iframe
+	@extend %extend_1
+
+h1
+	@extend %extend_1
+	margin: 0
+
+h2
+	@extend %extend_1
+	margin: 0
+
+h3
+	@extend %extend_1
+	margin: 0
+
+h4
+	@extend %extend_1
+	margin: 0
+
+h5
+	@extend %extend_1
+	margin: 0
+
+h6
+	@extend %extend_1
+	margin: 0
+
+p
+	@extend %extend_1
+
+blockquote
+	@extend %extend_1
+	quotes: none
+	&:before
+		content: ''
+		content: none
+
+	&:after
+		content: ''
+		content: none
+
+
+pre
+	@extend %extend_1
+
+a
+	@extend %extend_1
+	color: $color_log_cabin_approx
+	text-decoration: none
+
+abbr
+	@extend %extend_1
+
+acronym
+	@extend %extend_1
+
+address
+	@extend %extend_1
+
+big
+	@extend %extend_1
+
+cite
+	@extend %extend_1
+
+code
+	@extend %extend_1
+
+del
+	@extend %extend_1
+
+dfn
+	@extend %extend_1
+
+em
+	@extend %extend_1
+
+img
+	@extend %extend_1
+
+ins
+	@extend %extend_1
+
+kbd
+	@extend %extend_1
+
+q
+	@extend %extend_1
+	quotes: none
+	&:before
+		content: ''
+		content: none
+
+	&:after
+		content: ''
+		content: none
+
+
+s
+	@extend %extend_1
+
+samp
+	@extend %extend_1
+
+small
+	@extend %extend_1
+
+strike
+	@extend %extend_1
+
+strong
+	@extend %extend_1
+
+sub
+	@extend %extend_1
+
+sup
+	@extend %extend_1
+
+tt
+	@extend %extend_1
+
+var
+	@extend %extend_1
+
+b
+	@extend %extend_1
+
+u
+	@extend %extend_1
+
+i
+	@extend %extend_1
+
+center
+	@extend %extend_1
+
+dl
+	@extend %extend_1
+
+dt
+	@extend %extend_1
+
+dd
+	@extend %extend_1
+
+ol
+	@extend %extend_1
+	list-style: none
+
+ul
+	@extend %extend_1
+	list-style: none
+
+li
+	@extend %extend_1
+
+fieldset
+	@extend %extend_1
+
+form
+	@extend %extend_1
+
+label
+	@extend %extend_1
+
+legend
+	@extend %extend_1
+
+table
+	@extend %extend_1
+
+caption
+	@extend %extend_1
+
+tbody
+	@extend %extend_1
+
+tfoot
+	@extend %extend_1
+
+thead
+	@extend %extend_1
+
+tr
+	@extend %extend_1
+
+th
+	@extend %extend_1
+
+td
+	@extend %extend_1
+
+article
+	@extend %extend_1
+	display: block
+
+aside
+	@extend %extend_1
+	display: block
+
+canvas
+	@extend %extend_1
+
+details
+	@extend %extend_1
+	display: block
+
+embed
+	@extend %extend_1
+
+figure
+	@extend %extend_1
+	display: block
+
+figcaption
+	@extend %extend_1
+	display: block
+
+footer
+	@extend %extend_1
+	display: block
+	padding: 2em
+	section
+		p
+			margin: 1em 0
+			font-size: .9em
+			line-height: 1.4em
+			span
+				color: $black_70
+				font-weight: 300
+
+
+		&:first-child
+			padding-left: 2.4em
+
+		&:last-child
+			padding-right: 2.4em
+
+		ul li
+			margin: 1em 0
+
+
+	.brand2 a
+		font-size: 1.2em
+		span
+			font-weight: bold
+
+
+header
+	@extend %extend_1
+	display: block
+	background: $color_log_cabin_approx
+	height: 8vh
+	.brand
+		@extend %extend_2
+		left: 1.6em
+		a
+			color: $white
+			font-size: 1.6em
+			span
+				font-weight: bold
+
+
+	.form_header
+		@extend %extend_2
+		right: 1.6em
+		input[type=search]
+			min-width: 256px
+			padding: .56em
+			border: 0
+			padding-left: .4em
+
+		i
+			color: $color_log_cabin_approx
+			position: relative
+			right: 32px
+
+		input:first-child
+			background: $white
+
+
+hgroup
+	@extend %extend_1
+	display: block
+
+menu
+	@extend %extend_1
+	display: block
+
+nav
+	@extend %extend_1
+	display: block
+
+output
+	@extend %extend_1
+
+ruby
+	@extend %extend_1
+
+section
+	@extend %extend_1
+	display: block
+
+summary
+	@extend %extend_1
+
+time
+	@extend %extend_1
+
+mark
+	@extend %extend_1
+
+audio
+	@extend %extend_1
+
+video
+	@extend %extend_1
+
+.btn
+	//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+	border-radius: 0
+
+[class^="col-"]
+	padding: 0
+
+.horizontal_line
+	border-bottom: solid .4px $color_tundora_approx
+	width: 320px
+
+.banner
+	background: $color_log_cabin_approx
+	color: $white
+	padding-bottom: 8vh
+	text-align: center
+	h2
+		margin-top: 12px
+
+	button
+		color: $black
+		margin: 24px
+
+
+.articles
+	padding: 2em 4em
+	overflow: hidden
+	article
+		margin: .8em 1.6em
+		overflow: hidden
+		> div
+			padding-bottom: 1.6em
+			display: block
+			height: auto
+
+		h3
+			margin: .8em 0
+			display: inline-block
+			font-weight: 700
+
+		h4
+			margin: .8em 0
+
+		p
+			font-size: 1.2em
+
+		.article_cont
+			padding: 1.6em
+			.btn
+				margin: .8em 0
+				//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+				border-radius: 0
+
+
+		.article_img
+			height: 32vh
+			background: $color_log_cabin_approx
+			color: $white
+
+
+.create_account
+	background: $color_mercury_approx
+	height: 28vh
+	text-align: center
+	.btn
+		//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+		border-radius: 0
+		margin: 2em 1em
+
+
+*FOOTER*/footer
+	border-top: solid 1px $black
+	overflow: hidden
+
+*MAIN*/main section
+	padding: 2em
