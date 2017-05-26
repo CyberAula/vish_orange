@@ -19,8 +19,16 @@ $gray-lighter:           #E7E7E7;
 $gray-lighter-extra:     #EDEDED;
 $white:                  #FFFFFF;
 
+/*Black opacity*/
+$opacity8:  rgba(0, 0, 0, 0.8);
 $opacity4:  rgba(0, 0, 0, 0.4);
 $opacity2:  rgba(0, 0, 0, 0.2);
+
+/*White opacity*/
+$w_opacity8: rgba(250, 250, 250, 0.8);
+$w_opacity4: rgba(250, 250, 250, 0.4);
+$w_opacity2: rgba(250, 250, 250, 0.2);
+
 //Orange colors
 // -------------------------
 $orange-primary:        #ff6600 ;

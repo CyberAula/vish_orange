@@ -53,7 +53,7 @@
 .simple_captcha
   width: 100%
   float: left
-  margin-top: 7px
+  margin-top: 8px
   margin-bottom: 20px
   .simple_captcha_image
     width: 40%
@@ -63,7 +63,7 @@
     width: 50%
     display: block
     float: left
-    margin-left: 15px
+    margin-left: 16px
 
 .dropdown-log
   width: 242px
@@ -76,15 +76,17 @@
 .illustration
   min-height: 52px
   .social_ntwoks
+    background: $gray
     position: absolute
     top: 50vh
-    right: 2%
+    left: 0
     z-index: 1000
     .fa-big
-      font-size: 1.4em
-      color: white
-      opacity: 0.7
-      margin-left: 10px
+      color: #fff
+      padding: 8px
+      text-align: center
+      display: block
+      font-size: 1.2em
       &:hover
         opacity: 1
   .social_ntwoks_general
@@ -144,18 +146,20 @@
       bottom: -400px
     .main-title
       position: relative
-      background: $opacity4
+      background: $opacity2
       text-align: center
-      padding-top: 128px
-      padding-bottom: 64px
+      padding: 128px 0
       .title
+        font-family: $font-family-sans-serif-titles
+        color: #fff
+        font-weight: 500
+        line-height: 1.2em
+        text-shadow: 2px 2px 4px rgba(52, 52, 52, 0.24)
         h1
           font-size: 4em
-          font-family: $font-family-sans-serif-titles
-          text-shadow: 2px 2px 4px rgba(52, 52, 52, 0.24)
-          color: white
-          font-weight: 500
-          line-height: 1.2em
+        h2
+          font-size: 2em
+
 
     .btn-main-title
       position: relative
@@ -170,8 +174,8 @@
   .entities
     h3
       font-weight: 200
-      font-size: 2em
-      margin: 0 8px 28px
+      font-size: 1.6em
+      margin-bottom: 12px
     .entities_front
       margin-bottom: 10px
       float: left
@@ -179,41 +183,33 @@
     .front_blocks
       padding: 0
       .block
-        padding: 10px 0
-
+        padding: 16px 0
         /*images*/
         .img_block
-          @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
           width: 40%
-          height: 260px
-          position: relative
-          overflow: hidden
-          background-color: $gray-light
+          height: 256px
+          text-align: center
           &:hover
-            @include transition(border .2s ease-in-out)
             @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
-            @include transition (all 0.2s ease 0s)
-            transform: scale(1.05)
-            -ms-transform: scale(1.05)
-            -webkit-transform: scale(1.05)
           img
-            width: 100%
-            height: auto
-            position: absolute
+            width: auto
+            height: 100%
 
-        /*titles*/
-        .title_block, .text_block
-          padding: 12px 24px
+        /*text*/
+        .text_block
+          width: 60%
+        .title_block, .p_block
           color: #222
         .title_block
+          width: 100%
           border-bottom: 1px solid white
           border-right: 1px solid white
           font-size: 1.2em
-
-        /*texts*/
-        .text_block
-          width: 100%
-          padding: 8px 24px
+        .p_block
+          width: 88%
+          padding: 12px 0
+        .btn
+          margin: 8px 16px 0 0
 
         /*buttons*/
         .bt_block
@@ -298,9 +294,7 @@
       .main-title
         .title
           h1
-            font-size: 3.5em
-      img
-        bottom: -100px
+            font-size: 3.6em
 
 
 @media (min-width: 768px) and (max-width: 991px)
