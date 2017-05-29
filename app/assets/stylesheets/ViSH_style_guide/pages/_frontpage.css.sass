@@ -182,15 +182,17 @@
       width: 100%
     .front_blocks
       padding: 0
-      .block
-        padding: 16px 0
+      .block_darker
+        background: $gray-lighter
+      .block, .block_darker
+        margin-bottom: 20px
+        padding: 20px 128px
+
         /*images*/
         .img_block
           width: 40%
           height: 256px
           text-align: center
-          &:hover
-            @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
           img
             width: auto
             height: 100%
