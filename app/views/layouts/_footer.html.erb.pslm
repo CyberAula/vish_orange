@@ -1,0 +1,115 @@
+<footer id="footer" class="container-fluid hidden-sm">
+
+  <nav class="footercontent">
+    <ul class="ul-content">
+      <!-- orange brand -->
+
+      <!-- terms of use -->
+      <li class="item_footer">
+        <a href="http://www.orange.es" target="_new"><img src="/assets/orange/logo_orange.png" alt="Logo Orange"></a>
+        <a href="http://www.macmillaneducation.com/" target="_new"><img src="/assets/orange/logo_MacEd.png" alt="Logo MacMillan"></a>
+        <div class="links">
+          <!--<a href="/legal_notice"><%=t('orange_front.footer.legal')%></a> |-->
+          <a href="/privacy_policy"><%=t('orange_front.footer.privacity')%></a> |
+          <a href="/conditions_of_use"><%=t('orange_front.footer.conditions')%></a> |
+          <a href="http://www.orange.es/static/html/cookies.html" target="_blank"><%=t('orange_front.footer.cookies')%></a>
+        </div>
+        <div class="copyright">© Orange 2015 <%=t('orange_front.footer.rights ')%></div>
+        <div class="clear"></div>
+
+      </li>
+
+      <!-- logo comunidad madrid
+      <li class="dropup">
+        <a href="http://www.madrid.org/cs/Satellite?language=es&pagename=PortalEducacion%2FPage%2FEDUC_home" target="_new"><img class="logo_cm" src="/assets/orange/logo_cm_edu.jpg"></a>
+      </li>-->
+
+      <!-- logo red.es -->
+      <li class="dropup">
+        <a href="#" target="_new"><img class="logo_cm" src="/assets/orange/logo_ministerio.jpg"></a>
+        <a href="http://www.red.es/redes/" target="_new"><img class="logo_cm" src="/assets/orange/logo_redes.jpg"></a>
+        <a href="https://www.incibe.es/" target="_new"><img class="logo_cm" src="/assets/orange/logo_incibe.jpg"></a>
+        <a href="https://www.osi.es/" target="_new"><img class="logo_cm" src="/assets/orange/logo_osi.jpg"></a>
+      </li>
+
+      <!-- about -->
+      <li class="dropup">
+        <div data-toggle="dropdown" class="btn dropdown-toggle">
+          <span class="ddfootertitle"><%= t('about.title') %></span>
+        </div>
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+          <li>
+            <a href="mailto:virtual.science.hub@gmail.com">
+              <i class="fa fa-envelope-o"> </i>
+              <span><%= t('about.contact') %></span>
+            </a>
+          </li>
+          <li>
+            <a href="http://vishub.wordpress.com" target="_blank">
+              <i class="fa fa-asterisk"> </i>
+              <span><%= t('about.blog') %></span>
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/ging/vish" target="_blank">
+              <i class="fa fa-github"> </i>
+              <span><%= t('about.code') %></span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= (I18n.locale.to_s=="es") ? 'https://docs.google.com/forms/d/1AO5MN_r3n-hsGQuok6HKWhUSPjMnFQvYxuOB88S32yA/viewform' : 'https://docs.google.com/forms/d/1uEQI1BzPtEOyh-QuOaw9WzqHcYZtlMqkIceybrP40YQ/viewform'%>" target="_blank">
+              <i class="fa fa-check"> </i>
+              <span><%= t('about.survey') %></span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Help -->
+      <li class="dropup">
+        <div data-toggle="dropdown" class="btn dropdown-toggle">
+          <span class="ddfootertitle"><%= t('help') %></span>
+        </div>
+
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+          <li>
+            <a href="/overview">
+              <i class="fa fa-question"> </i>
+              <span><%= t('overview_title') %></span>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ">
+              <i class="fa fa-youtube-play"> </i>
+              <span><%= t('youtube') %></span>
+            </a>
+          </li>
+          <li>
+            <%= link_to user_manual_path do %>
+              <i class='fa fa-download'> </i>
+              <span><%= t('help_manual')%>   </span>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+      <!-- language -->
+      <li class="dropup">
+        <div data-toggle="dropdown" class="btn dropdown-toggle">
+          <% the_locale = I18n.locale.to_s %>
+          <span class="ddfootertitle"><%=image_tag("flags/" + the_locale + ".png", :title=>the_locale, :class=> "")%><%=t('lang.title')%></span>
+
+        </div>
+          <ul class="dropdown-menu">
+            <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
+             <li class="">
+                <%= link_to image_tag("flags/" + locale + ".png", :title=>locale, :class=> "") + " " + t(:language_name, :locale => locale), session_locale_path(:new_locale => locale), :method => :post, :remote => false %>
+              </li>
+            <% end %>
+          </ul>
+      </li>
+    </ul>
+  </nav>
+</footer>
