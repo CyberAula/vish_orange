@@ -22,6 +22,10 @@ es:
       privacity: "Política de privacidad"
       conditions: "Condiciones de uso"
       contributors: "Comité asesor"
+      reference_center_html: Tu centro de referencia en <br>ciberseguridad y uso de <br>las TIC.<br><span>© Orange 2015 Rights</span>
+      project: Proyecto
+      community: Community
+      help: Ayuda
     header:
       index: "Inicio"
       comunity: "Comunidad"
