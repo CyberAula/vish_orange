@@ -25,4 +25,7 @@ class StaticController < ApplicationController
   def learn
   end
 
+  def about_us
+  end
+
 end

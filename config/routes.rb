@@ -48,6 +48,7 @@ Vish::Application.routes.draw do
   match 'conditions_of_use' => 'static#conditions_of_use'
   match 'teach' => 'static#teach'
   match 'learn' => 'static#learn'
+  match 'about' => 'static#about_us'
   match 'train_yourself' => 'static#train_yourself'
   match 'train_students' => 'static#train_students'
   match 'download_perm_request' => 'static#download_perm_request'
