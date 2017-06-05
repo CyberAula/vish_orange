@@ -78,7 +78,7 @@ es:
         writing: "Texto añadido"
         zipfile: "Archivo ZIP añadido"
     more: "Ver más..."
-    new_user: "¡Bienvenido al EducaInternet! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
+    new_user: "¡Bienvenido a EducaInternet! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
     newmessage: "Esta es tu timeline. Comparte con tus seguidores tus opiniones, sube imágenes, enlaces, vídeos..."
     timeline: "timeline"
     verb:
@@ -193,11 +193,14 @@ es:
     users: "Administración de Usuarios"
   analytics:
     description: "Esta sección solo es visible para el autor del recurso.<br/>Muestra algunas analíticas de aprendizaje acerca del uso del recurso.<br/> Las analíticas de aprendizaje se calculan periódicamente. Esta información fue actualizada por última vez a fecha: %{date}."
+    description_chart_a: "El siguiente gráfico muestra una estimación de la calidad del recurso basada en las interacciones que los usuarios tuvieron con el."
+    description_chart_b: "Esta estimación se calcula en base a las analíticas de aprendizaje tiempo empleado, ratio de permanencia y frecuencia de clics (expresada en clics por minuto). "
+    description_chart_c: "Las puntuaciones del recurso son calculadas comparando sus analíticas de aprendizaje con aquellas obtenidas por los otros recursos publicados en el repositorio."
     interactions:
       title: "Analítica de aprendizaje"
-      tlo: "Tiempo empleado por sesión (s)"
-      permanency_rate: "Ratio de Permanencia (%)"
-      nclicks: "Frequencia de clics por sesión"
+      tlo: "Tiempo medio empleado en el recurso por sesión (s)"
+      permanency_rate: "Ratio de permanencia (%)"
+      nclicks: "Número medio de clics de ratón por sesión"
     tabtitle: "Analíticas de Aprendizaje"
   all: "todos"
   announce:
@@ -712,16 +715,16 @@ es:
     is_favorite: "Favorito"
     views: "visitas"
   frontpage:
-    main_text: "EducaInternet es una red social colaborativa centrada en la creación y compartición de recursos educativos para la realización de actividades didácticas."
+    main_text: "EducaInternet es una plataforma social y colaborativa centrada en la creación y compartición de recursos educativos abiertos"
     educational:
       title: "Educación"
-      description: "Encuentra los mejores recursos educativos y objetos de aprendizaje libres y gratuitos clasificados por temática. Los recursos de EducaInternet pueden ser utilizados para la enseñanza, el aprendizaje, como materiales de evaluación, en investigación o para otros fines."
+      description: "Encuentra los mejores recursos educativos y objetos de aprendizaje libres y gratuitos clasificados por temática. EducaInternet puede ser utilizado para enseñar, aprender, crear, compartir y descubrir recursos educativos innovadores, realizar proyectos educativos, en investigación o para otros fines."
     community:
-      title: "Comunidad"
-      description: "EducaInternet es una comunidad para profesores y profesionales de la educación que quieren conocer nuevos educadores, crear, compartir y descubrir recursos educativos innovadores, y conseguir acceso a herramientas para maximizar el aprendizaje potenciado por la tecnología."
+        title: "Comunidad"
+        description: "EducaInternet está dirigido a todos los miembros de la comunidad educativa (profesores, educadores, estudiantes), y a cualquier persona interesada en aprender, enseñar, crear y compartir recursos educativos, conocer otros miembros de la comunidad, o utilizar herramientas para impulsar el aprendizaje potenciado por la tecnología."
     elearning:
-      title: "e-Learning"
-      description: "EducaInternet proporciona una colección de herramientas y servicios para facilitar la creación de materiales didácticos de alta calidad e impulsar el aprendizaje potenciado por la tecnología tanto en el aula como en Entornos de Aprendizaje Virtuales (VLEs) y Sistemas de Gestión del Aprendizaje (LMSs)."
+        title: "e-Learning"
+        description: "EducaInternet proporciona una colección de herramientas y servicios para facilitar la creación, distribución y uso de materiales didácticos de alta calidad e impulsar el aprendizaje potenciado por la tecnología tanto en el aula como en Entornos Virtuales de Aprendizaje (EVAs) y Sistemas de Gestión del Aprendizaje (LMSs)."
     community_stats:
       title: "Nuestra comunidad crece cada día"
       subtitle: "Comparte tu conocimiento en nuestra comunidad y ayúdanos a crecer"

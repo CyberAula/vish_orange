@@ -205,11 +205,14 @@ en:
   all: "all"
   analytics:
     description: "This section is only visible to the author of the resource.<br/>It shows some learning analytics about the usage of the resource.<br/> These learning analytics are calculated periodically. This information was last updated on: %{date}."
+    description_chart_a: "The following chart shows an estimation of the quality of the resource based on the interactions that users had with it."
+    description_chart_b: "This estimation is calculated based on the learning analytics time spent, permanency rate, and clicks frequency (expressed in clicks per minute). "
+    description_chart_c: "The scores of the resource are calculated by comparing its learning analytics with those obtained by the other resources published in the repository."
     interactions:
       title: "Learning analytic"
-      tlo: "Time spent per session (s)"
+      tlo: "Average time spent in the resource per session (s)"
       permanency_rate: "Permanency rate (%)"
-      nclicks: "Frequency of clicks per session"
+      nclicks: "Average number of mouse clicks per session"
     tabtitle: "Learning Analytics"
   announce:
     title: "Announcement"
@@ -724,16 +727,16 @@ en:
     is_favorite: "Is favorite"
     views: "views"
   frontpage:
-    main_text: "EducaInternet is a social and collaborative site for creating and sharing knowledge resources for the realization of educational activities."
+    main_text: "EducaInternet is a social and collaborative platform focused on the creation and sharing of open educational resources"
     educational:
-      title: "Educational"
-      description: "Find the best free and openly licensed educational resources and learning objects classified by subject. EducaInternet resources can be used for teaching, learning, assessment, research and other purposes."
+      title: "Education"
+      description: "Find the best free and openly licensed educational resources and learning objects classified by topic. EducaInternet can be used for teaching, learning, creating, sharing and discovering innovative educational resources, carrying out educational projects, research, and other purposes."
     community:
         title: "Community"
-        description: "EducaInternet is a community for teachers and educational professionals who want to meet new educators, create, share and discover novel educational resources, and get access to tools for maximizing technology enhanced learning."
+        description: "EducaInternet is aimed at all members of the educational community (teachers, educators, students), and at any person interested in learning, teaching, creating and sharing educational resources, meeting other members of the community, or using tools to foster technology enhanced learning."
     elearning:
         title: "e-Learning"
-        description: "EducaInternet provides a collection of tools and services for facilitating the creation of high quality courseware and maximizing technology enhanced learning both in the classroom and in Virtual Learning Environments and Learning Management Systems."
+        description: "EducaInternet provides a collection of tools and services to facilitate the creation, distribution and use of high quality educational materials and to foster technology enhanced learning both in the classroom as well as in Virtual Learning Environments (VLEs) and Learning Management Systems (LMSs)."
     community_stats:
         title: "Our community grows every day"
         subtitle: "Share your knowledge in our community and help us to grow"
@@ -1107,8 +1110,8 @@ en:
       excursion: "Teaching units"
       follower: "Followers"
       following: "Followings"
-      imscpfile: "IMS Content Package"
-      learning_object: "Educational resource"
+      imscpfile: "IMS Content Packages"
+      learning_object: "Learning object"
       link: "Links"
       officedoc: "Office documents"
       picture: "Pictures"

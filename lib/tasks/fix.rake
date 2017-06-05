@@ -351,16 +351,18 @@ namespace :fix do
     User.record_timestamps=false
     ActivityObject.record_timestamps=false
 
-    Actor.all.each do |actor|
-      if actor.admin?
-        actor.activity_object.scope = 1
-        actor.activity_object.relation_ids = [Relation::Private.instance.id]
+    User.registered.each do |u|
+      if u.admin?
+        u.activity_object.scope = 1
+        u.activity_object.relation_ids = [Relation::Private.instance.id]
       else
-        actor.activity_object.scope = 0
-        actor.activity_object.relation_ids = [Relation::Public.instance.id]
+        u.activity_object.scope = 0
+        u.activity_object.relation_ids = [Relation::Public.instance.id]
       end
-      actor.save!
+      u.save!
     end
+
+    # Actor.where("subject_type!='User'")
 
     Actor.record_timestamps=true
     User.record_timestamps=true
@@ -734,6 +736,37 @@ namespace :fix do
 
     Scormfile.record_timestamps=true
     ActivityObject.record_timestamps=true
+    printTitle("Task finished")
+  end
+
+  #Usage
+  #Development:   bundle exec rake fix:updateWebapps
+  #In production: bundle exec rake fix:updateWebapps RAILS_ENV=production
+  task :updateWebapps => :environment do
+    printTitle("Updating Web Applications")
+    Webapp.record_timestamps=false
+    ActivityObject.record_timestamps=false
+
+    Webapp.all.each do |webapp|
+      begin
+        webapp.updateWebapp
+      rescue Exception => e
+        puts "Exception in Webapp with id '" + webapp.id.to_s + "'. Exception message: " + e.message
+      end
+    end
+
+    Webapp.record_timestamps=true
+    ActivityObject.record_timestamps=true
+    printTitle("Task finished")
+  end
+
+  #Usage
+  #Development:   bundle exec rake fix:updateCodeResources
+  #In production: bundle exec rake fix:updateCodeResources RAILS_ENV=production
+  task :updateCodeResources => :environment do
+    printTitle("Updating code resources")
+    Rake::Task["fix:updateScormPackages"].invoke
+    Rake::Task["fix:updateWebapps"].invoke
     printTitle("Task finished")
   end
 

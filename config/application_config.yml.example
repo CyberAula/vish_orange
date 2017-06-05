@@ -22,6 +22,10 @@ development:
     mode: "matchtag" #matchany or matchtag
     qualityThreshold: 5
   #certified: [10071, 5444, 12915, 7025, 16309, 2988, 6921, 3519, 10692, 8064, 10863]
+  #Uncomment to enable recaptcha. Get your own keys from https://www.google.com/recaptcha
+  #recaptcha:
+  #  site_key: AAABBBCCC
+  #  secret_key: DDDEEEFFF
 
 production:
   name: "EducaInternet"
