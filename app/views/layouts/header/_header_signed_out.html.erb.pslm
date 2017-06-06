@@ -21,12 +21,11 @@
 
 
 
-          <!-- Help button
+          <!-- Help button -->
           <li class=" dropdown toggler ">
             <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
               <i class="fa fa-question-circle"></i>
             </div>
-          -->
 
             <ul class="dropdown-menu add-menu" role="menu" >
 
@@ -52,16 +51,12 @@
           </li>
 
           <% if Vish::Application.config.registrations %>
-            <li class="btn btn-header btn-access <%='btn-home' if front_or_home%>">
-              <a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>"><%=t("sign_up")%></a>
-            </li>
+            <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>"><%=t("sign_up")%></a></li>
           <%end%>
 
           <% if !Vish::Application.config.cas %>
-              <li class="btn btn-header btn-access btn-home2 dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                  <span class="menu_bold"><%=t("sign_in")%></span>
-                </a>
+              <li class="btn btn-primary btn-header btn-access dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="menu_bold"><%=t("sign_in")%> <i class="icon-angle-down"></i></span></a>
                 <ul class="dropdown-menu pull-right access-form" role="menu">
                   <%= form_for User.new, :as => :user, :url => user_session_path do |f| %>
                     <%= f.email_field :email, :id => "username", :class => 'form-control' %>
@@ -101,14 +96,12 @@
         <li class="search-ui ">
           <%= render partial: 'layouts/header/uisearch_header' %>
         </li>
-        <!--
-          <ul class="nav navbar-nav navbar-right">
-            teach and learn buttons
-            <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
-            <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
-            <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
-          </ul>
-        -->
+        <ul class="nav navbar-nav navbar-right">
+          <!-- teach and learn buttons -->
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
+          <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
+        </ul>
       </div>
 
 

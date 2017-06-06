@@ -23,10 +23,8 @@ nav.navbar-fixed-top
         color: $gray-darker-extra
       .logo
         font-weight: 200
-        color: $orange-gray-75
         outline: none
         .logo_bold
-          color: $brand-primary
           font-weight: 600
 
     .hidden-phone
@@ -35,35 +33,25 @@ nav.navbar-fixed-top
 
       .navbar-right
         float: none
-        li
-          padding: 5px 8px
-          a
-            padding: 4px 0
-            outline: none
-            font-weight: 200
-            &:hover, &:active, &:focus
-              color: $brand-primary
-          .menu_bold
-            font-weight: 800
 
         .btn-header
-          padding: 0px 7px
-          margin: 5px 5px
+          margin: 4px
           border: none
+          a
+            color: #fff
+            padding: 0
 
-          a:hover
-            color: $brand-primary
-        .btn-access > a
-          color: white
-          &:hover, &:focus, &:active
-            color: white
+        .btn-home
+          background: $orange-primary
+        .btn-home2
+          background: $gray-dark
 
         .dropdown
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
           .access-form
-            margin-top: 5px
+            margin-top: 4px
           .user-menu, .add-menu
             padding: 0 !important
             li
@@ -110,11 +98,11 @@ nav.navbar-fixed-top
       //************************
       .search-ui
         float: right
-        padding: 5px 10px
+        padding: 4px 8px
         .search-query
-          width: 250px !important
-          float: left
-          font-size: 0.95em
+          width: 200px !important
+          float: right
+          font-size: 0.96em
         .quick-search
           .search-nav
             margin-left: -3px
@@ -124,9 +112,12 @@ nav.navbar-fixed-top
               height: 30px
 
             .search_button_class
+              color: #000
               margin: 0 0 0 5px
-              padding: 3px 8px 4px
-              float: left
+              padding: 4px
+              border: none
+              position: relative
+              left: 196px
             .mat
               z-index: 10
               display: none
@@ -239,21 +230,11 @@ nav.navbar-fixed-top
         li.sign_in_mobile
           .dropdown-toggle
             color: $gray-dark
-            background-color: $gray-light
+            background: $gray-light
             &:hover, &:active, &:focus
               background-color: darken($gray-light, 0.5) !important
-        li.btn-access
-          margin: 0 10px
           a
             color: white
-        li
-          float: none
-          a
-            color: $orange-gray-45
-
-            font-size: 1.2em
-            &:hover
-              color: white
           i
             margin-right: 10px
           .dropdown-menu
@@ -279,10 +260,8 @@ nav.navbar-fixed-top
               width: 100%
             //languages
             li > a
-              padding: 5px
-              color: white
               img
-                margin-right: 5px
+                margin-right: 4px
         .user
           margin: 0
           a
@@ -301,9 +280,9 @@ nav.navbar-fixed-top
           padding: 10px 0
           input
             float: left
-            width: 83%
+            width: 84%
           button
-            float:left
+            float: left
             margin-left: 3px
             padding: 6px 10px 7px
             i
@@ -316,7 +295,7 @@ nav.navbar-fixed-top
   margin: 0px
   text-align: center
   color: $white
-  background-color: rgba(0, 0, 0, 0.8)
+  background: rgba(0, 0, 0, 0.8)
   height: auto
   z-index: 1010
   position: fixed

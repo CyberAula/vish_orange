@@ -1129,7 +1129,7 @@ es:
       workshop: "Cursos"
       writing: "Textos"
       zipfile: "Ficheros ZIP"
-    name: "¿qué recurso educativo buscas?"
+    name: "¿qué recurso buscas?"
     rendering:
       title: "Opciones de visualización"
       boxes: "Ver como avatares"
@@ -1186,8 +1186,8 @@ es:
     twitter:
       contest: "Voto por este recurso educativo en #ConcursoEducaInternet"
       message: "Echa un vistazo a este recurso en %{url}"
-  sign_up: "Regístrate"
-  sign_in: "Acceso"
+  sign_up: "Quiero una cuenta"
+  sign_in: "Entrar"
   mail_example: "ejemplo@ejemplo.com"
   simple_captcha:
     placeholder: "Introduce el valor de la imagen"

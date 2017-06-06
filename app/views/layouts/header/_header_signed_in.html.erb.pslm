@@ -27,7 +27,7 @@
       <!-- MENU -->
       <ul class="nav navbar-nav navbar-right" id="main_menu">
 
-        <!-- Help button
+        <!-- Help button -->
         <li class=" dropdown toggler ">
           <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
             <i class="fa fa-question-circle"></i>
@@ -54,7 +54,6 @@
             </li>
           </ul>
         </li>
-        -->
 
         <!-- ADD -->
         <li class="btn btn-default btn-xs <%='btn-home' if front_or_home%> toggler dropdown">
