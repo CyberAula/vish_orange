@@ -144,6 +144,9 @@
       background: $opacity2
       text-align: center
       padding: 200px 0 60px 0
+      .btn-main-title
+        position: relative
+        margin: 30px
       .title
         font-family: $font-family-sans-serif-titles
         color: #fff
@@ -154,12 +157,6 @@
           font-size: 4em
         h2
           font-size: 2em
-
-
-    .btn-main-title
-      position: relative
-      margin: 30px
-
 
 #frontpage
   .item_L
@@ -179,10 +176,10 @@
       padding: 0
       .block_darker
         background: $gray-lighter
-        overflow: hidden
       .block, .block_darker
         margin-bottom: 20px
         padding: 20px 128px
+        overflow: hidden
 
         /*images*/
         .img_block
@@ -262,6 +259,11 @@
       display: block
 
 @media (min-width: 992px) and (max-width: 1199px)
+  #frontpage
+    .entities
+      .front_blocks
+        .block, .block_darker
+          padding: 20px 64px
   .entities_front
     .box-item
       display: none
@@ -276,17 +278,29 @@
             font-size: 3.6em
 
 @media (min-width: 768px) and (max-width: 991px)
+  #frontpage
+    .entities
+      .front_blocks
+        .block, .block_darker
+          padding: 20px 40px
+          .text_block
+            padding-left: 20px
   .entities_front
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 100px
     .box-item
       display: none
     .box-item:nth-of-type(-n+3)
       display: block
+
   .illustration
     .main-box
       .main-title
         .title
           h1
             font-size: 3em
+
     .box-title-general.contest_img
       .btn-signup-contest
         right: 3.5vw
@@ -295,11 +309,23 @@
         font-size: 1.2em
 
 @media (min-width: 481px) and (max-width: 767px)
+  #frontpage
+    .entities
+      .front_blocks
+        .block, .block_darker
+          padding: 20px 30px
+          .text_block
+            padding-left: 0
+            width: 100%
+          .img_block
+            padding: 20px 0
+            width: 100%
   .entities_front
     .box-item
       display: none
     .box-item:nth-of-type(-n+2)
       display: block
+
   .illustration
     .main-box
       .main-title
@@ -326,6 +352,17 @@
         font-size: 1em
 
 @media (max-width: 480px)
+  #frontpage
+    .entities
+      .front_blocks
+        .block, .block_darker
+          padding: 20px 20px
+          .text_block
+            padding-left: 0
+            width: 100%
+          .img_block
+            padding: 20px 0
+            width: 100%
   .entities_front
     .box-item
       display: none
