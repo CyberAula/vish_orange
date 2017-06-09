@@ -70,7 +70,6 @@
   form#new_user
     @include dropdown-log
 
-
 /*FRONTPAGE _ image */
 
 .illustration
@@ -87,10 +86,6 @@
       text-align: center
       display: block
       font-size: 1.2em
-      &:hover
-        opacity: 1
-  .social_ntwoks_general
-    top: 115px
 
   .box-title-general.contest_img
     height: auto
@@ -137,13 +132,13 @@
         font-weight: 500
         line-height: 1.2em
 
-  .box-title-home
+  .main-box
     position: relative
     overflow: hidden
     img
       width: 100%
       position: absolute
-      bottom: -280px
+      top: 0
     .main-title
       position: relative
       background: $opacity2
@@ -184,6 +179,7 @@
       padding: 0
       .block_darker
         background: $gray-lighter
+        overflow: hidden
       .block, .block_darker
         margin-bottom: 20px
         padding: 20px 128px
@@ -204,8 +200,6 @@
           color: #222
         .title_block
           width: 100%
-          border-bottom: 1px solid white
-          border-right: 1px solid white
           font-size: 1.2em
         .p_block
           width: 88%
@@ -243,23 +237,8 @@
       padding: 0 10px
       img
         max-height: 42px
-  @media (max-width: 991px)
-    padding: 30px 20px
-    .banner_align_right
-      text-align: center
-      margin-bottom: 10px
-    .banner_course_title
-      text-align: center
-      font-size: 1.8em
-      margin-bottom: 20px
-    .banner_logos
-      .banner_one_logo
-        padding: 0 5px
-        img
-          max-height: 35px
-      .banner_enrol_button
-        padding: 0 15px
 
+// media-queries
 
 @media (min-width: 1751px)
   .entities_front
@@ -289,15 +268,12 @@
     .box-item:nth-of-type(-n+4)
       display: block
   .illustration
-    .social_ntwoks
-      top: 44vh
-    .box-title-home
-      height: 48vh
+    .main-box
+      img
       .main-title
         .title
           h1
             font-size: 3.6em
-
 
 @media (min-width: 768px) and (max-width: 991px)
   .entities_front
@@ -306,26 +282,17 @@
     .box-item:nth-of-type(-n+3)
       display: block
   .illustration
-    .social_ntwoks
-      top: 36vh
-    .box-title-home
-      height: 40vh
+    .main-box
       .main-title
         .title
           h1
             font-size: 3em
-      img
-        bottom: -50px
-    .box-title-general
-      img
-        bottom: -120px
     .box-title-general.contest_img
       .btn-signup-contest
         right: 3.5vw
         bottom: 3vw
         width: 30vw
         font-size: 1.2em
-
 
 @media (min-width: 481px) and (max-width: 767px)
   .entities_front
@@ -334,16 +301,8 @@
     .box-item:nth-of-type(-n+2)
       display: block
   .illustration
-    .social_ntwoks
-      top: 31vh
-      right: 3%
-    .social_ntwoks_general
-      top: 115px
-    .box-title-home
-      height: 35vh
+    .main-box
       .main-title
-        padding: 90px 40px 0
-        height: 100%
         .title
           h1
             font-size: 2.5em
@@ -365,6 +324,7 @@
         bottom: 3vw
         width: 35vw
         font-size: 1em
+
 @media (max-width: 480px)
   .entities_front
     .box-item
@@ -374,7 +334,7 @@
   .illustration
     .social_ntwoks
       display: none
-    .box-title-home
+    .main-box
       height: 250px
       .main-title
         padding: 50px
