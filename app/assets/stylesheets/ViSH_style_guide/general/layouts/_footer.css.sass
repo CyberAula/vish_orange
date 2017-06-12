@@ -4,6 +4,8 @@ footer
   overflow: hidden
 
   section
+    width: 24%
+    display: inline-block
     ul
       li, p
         margin: .4em 0
@@ -20,3 +22,24 @@ footer
         color: $gray-darker-extra
       span
         font-weight: 700
+
+@media (max-width: 1200px)
+  footer
+    padding: 20px 64px
+
+@media (max-width: 992px)
+  footer
+    padding: 20px 40px
+
+@media (max-width: 768px)
+  footer
+    padding: 20px 30px
+    section
+      width: 48%
+      margin-bottom: 16px
+
+@media (max-width: 481px)
+  footer
+    padding: 20px 20px
+    section
+      width: 100%
