@@ -100,30 +100,27 @@ nav.navbar-fixed-top
         float: right
         padding: 4px 8px
         .search-query
-          width: 200px !important
           float: right
           font-size: 0.96em
-        .quick-search
+        .quick-search, .mat
+          width: 256px
           .search-nav
-            margin-left: -3px
-            @media (max-width: $screen-xs-max)
-              margin-left: 0
             input[type="text"]
               height: 30px
 
             .search_button_class
+              background: transparent
               color: #000
-              margin: 0 0 0 5px
               padding: 4px
               border: none
               position: relative
-              left: 196px
+              left: 228px
+              bottom: 30px
             .mat
               z-index: 10
               display: none
               position: absolute
               top: 46px
-              width: 265px
               background-color: rgba(85,85,85,0.97)
               @include border-bottom-radius ($border-radius-base)
               @media (max-width: 768px)
