@@ -36,7 +36,7 @@ en:
     message: "Learn and teach about safe and responsible use of technologies"
     menu_blocks:
       our_courses_tit: "Train yourself"
-      our_courses: "Our courses"
+      our_courses: "Our lessons"
       our_courses_txt: "Access the lessons, modules and teaching guides on the platform"
       teaching_units_tit: "Share your ideas"
       teaching_units: "Teaching units"
@@ -1103,7 +1103,7 @@ en:
       user: "Users"
       video: "Videos"
       webapp: "Web Applications"
-      workshop: "Courses"
+      workshop: "Lessons"
       writing: "Writings"
       zipfile: "ZIP files"
     name: "What educational resource are you looking for?"
@@ -1342,7 +1342,7 @@ en:
     titles:
         editing_details: "Editing lesson details"
         editing_main: "Editing Lesson"
-        show_main: "Show lesson"
+        show_main: "Lesson"
   writing:
     actions:
       add: "Add text"

@@ -40,8 +40,8 @@
     <div class="info-bottom">
 
 
-
-      <%if Contest.first.activity_objects.include? resource.activity_object%>
+      <% contest = Contest.first %>
+      <%if contest and contest.activity_objects.include? resource.activity_object%>
         Votaciones cerradas
       <%else%>
           <!--like -->

@@ -1095,7 +1095,7 @@ es:
       user: "Usuarios"
       video: "Videos"
       webapp: "Aplicaciones Web"
-      workshop: "Cursos"
+      workshop: "Lecciones"
       writing: "Textos"
       zipfile: "Ficheros ZIP"
     name: "¿qué recurso educativo buscas?"
@@ -1329,7 +1329,7 @@ es:
     titles:
         editing_details: "Editando detalles de la lección"
         editing_main: "Editando lección"
-        show_main: "Detalles de la lección"
+        show_main: "Lección"
   writing:
     actions:
       add: "Añadir texto"
