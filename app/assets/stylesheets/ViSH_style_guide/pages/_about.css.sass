@@ -1,15 +1,6 @@
-.box-title-about
-  position: relative
-  overflow: hidden
-  img
-    width: 100%
-    position: absolute
-    bottom: -1200px
-
 .why
   width: 40%
   height: auto
-  display: block
   text-align: center
 
 .values, .great_team
@@ -17,35 +8,45 @@
   display: block
 
 .values
-  .sub_values
-    width: 100%
-    padding-top: 2em
-    overflow: hidden
-    div
-      padding-left: .8em
-      div:not(:last-child)
-        border-right: solid .4px #444
-        height: auto
-      h5, span
-        font-size: 1.2em
-        display: block
-      h5
-        margin-bottom: .4em
-        font-weight: 300
-      span
-        font-weight: 700
+  .article_img
+    width: 32%
+  .article_cont
+    width: 68%
+
+.sub_values
+  background: $gray-lighter
+  width: 100%
+  padding: 2.4em 15.6em
+  overflow: hidden
+  div
+    width: 32.8%
+    display: inline-block
+    div:not(:last-child)
+      border-right: solid .4px #444
+      height: 24px
+    h5, span
+      font-size: 1.2em
+      display: block
+    h5
+      margin-bottom: .4em
+      font-weight: 300
+    span
+      color: $orange-primary
+      font-weight: 700
 
 .great_team
+  padding: 2.4em 0
   p, h3
-    padding: 0 .8em
+    width: 50%
   p
-    margin-top: 1.2em
+    float: right
   .great_team_imgs
     width: 100%
+    padding-top: 2.4em
     overflow: hidden
     > div
-      padding: .8em 1em
-    .great_team .great_team_imgs
-      width: 100%
+      width: 32.8%
+      display: inline-block
+    .great_team_img
       height: 128px
       background: #444
