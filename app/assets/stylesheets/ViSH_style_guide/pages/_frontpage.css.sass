@@ -73,25 +73,31 @@
 /*FRONTPAGE _ image */
 
 .illustration
-  .social_ntwoks
+  .social_networks_drop_right, .social_networks
     position: absolute
-    top: 50vh
+    top: 44vh
+  .social_networks_drop_right
+    background: #fff
+    width: 256px
+    height: 512px
+    left: -256px
+    z-index: 999
+  .social_networks
     left: 0
     z-index: 1000
     i
       background: $gray
-      color: $white
+      color: #fff
       text-align: center
       display: block
       font-size: 1.2em
       padding: 8px
-      &:hover
-    .fa-twitter
-      &:hover
-        background: #1DA1F3
     .fa-facebook
       &:hover
         background: #3B579D
+    .fa-twitter
+      &:hover
+        background: #1DA1F3
     .fa-youtube
       &:hover
         background: #D40C1D
@@ -347,7 +353,7 @@
     .box-item:nth-of-type(-n+4)
       display: block
   .illustration
-    .social_ntwoks
+    .social_networks
       display: none
     .main-box
       height: 250px

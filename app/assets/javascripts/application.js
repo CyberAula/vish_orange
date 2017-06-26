@@ -17,6 +17,7 @@
 //= require social_stream-linkser
 //= require social_stream-documents
 //= require pageless
+//= require social_networks
 //= require jquery.jscrollpane.min
 //= require jquery.mousewheel
 //= require tagit
@@ -37,4 +38,3 @@
 //= require jqxpanel
 //= require query-string
 //= require_tree .
-
