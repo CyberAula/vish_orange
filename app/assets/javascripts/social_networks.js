@@ -1,7 +1,14 @@
 $(document).ready(function(){
-
-    $("#social_networks").click(function(){
-        $("#social_networks_drop_right").toggleClass("left_36");
-    });
-
+  //facebook
+  $("#facebook_btn").click(function(){
+      $("#drop_right_facebook").toggleClass("left_36");
+  });
+  //twitter
+  $("#twitter_btn").click(function(){
+      $("#drop_right_twitter").toggleClass("left_36");
+  });
+  //youtube
+  $("#youtube_btn").click(function(){
+      $("#drop_right_youtube").toggleClass("left_36");
+  });
 });
