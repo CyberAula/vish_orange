@@ -1,14 +1,16 @@
 $(document).ready(function(){
-  //facebook
   $("#facebook_btn").click(function(){
-      $("#drop_right_facebook").toggleClass("left_36");
+    $(this).toggleClass("padding_btn")
+      $("#drop_right_facebook").toggleClass("left_44");
   });
   //twitter
   $("#twitter_btn").click(function(){
-      $("#drop_right_twitter").toggleClass("left_36");
+    $(this).toggleClass("padding_btn")
+      $("#drop_right_twitter").toggleClass("left_44");
   });
   //youtube
   $("#youtube_btn").click(function(){
-      $("#drop_right_youtube").toggleClass("left_36");
+    $(this).toggleClass("padding_btn")
+      $("#drop_right_youtube").toggleClass("left_44");
   });
 });
