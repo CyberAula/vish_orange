@@ -50,7 +50,7 @@
 //   Kathryn Reeve (https://github.com/BinaryKitten)
 //
 // Thanks to:
-//  * codemonky.com/post/34940898
+//  * codemonky.com/post/34944898
 //  * www.unspace.ca/discover/pageless/
 //  * famspam.com/facebox
 // =======================================================================
