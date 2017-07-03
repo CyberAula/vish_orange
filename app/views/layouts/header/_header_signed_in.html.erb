@@ -25,7 +25,7 @@
     <div class="hidden-phone hidden-tablet">
 
       <!-- MENU -->
-      <ul class="nav navbar-nav navbar-right" id="main_menu">
+      <ul class="nav navbar-nav float_R" id="main_menu">
 
         <!-- Help button
         <li class=" dropdown toggler ">
@@ -200,7 +200,7 @@
       <li class="search-ui ">
       <%= render partial: 'layouts/header/uisearch_header' %>
       </li>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav float_R">
         <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
         <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
       <%if @show_mooc%>

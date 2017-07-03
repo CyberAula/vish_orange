@@ -47,7 +47,7 @@ es:
     how_it_works: "¿Cómo funciona?"
     about: "Acerca de EducaInternet"
     message: "Bienvenido a EducaInternet"
-    message2: El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC
+    message_html: El centro de referencia para la comunidad educativa <br> sobre el uso seguro y responsable de las TIC
     menu_blocks:
       our_courses_tit: "Fórmate"
       our_courses: "Nuestros cursos"
