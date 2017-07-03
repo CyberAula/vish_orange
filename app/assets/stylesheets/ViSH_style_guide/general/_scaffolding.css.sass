@@ -1,3 +1,12 @@
+#wrap
+  background: #fff
+  min-height: 100%
+  max-width: 2000px
+  margin: 0 auto
+  padding: 0
+  @media (max-width: $screen-sm-min)
+    margin: 0
+
 .articles
   padding: 2em 0
   article
@@ -56,3 +65,52 @@
   border-bottom: solid 1px #444
   width: 320px
   margin: 2em auto
+
+label
+  cursor: auto
+*
+  outline: 0 !important
+a
+  &:hover,&:focus
+    text-decoration: none
+
+  .fa-star
+    color: $brand-primary
+
+  .fa-star-o
+    color: $gray
+    &:hover
+      color: $brand-primary !important
+
+// old scaffolding
+
+#user_occupation
+  margin-bottom: 10px
+  min-height: 26px
+
+.tagit-new
+  .tagit-input
+    margin-bottom: 10px
+.primary
+  color: $brand-primary
+
+.green
+  color: green
+.underline
+  text-decoration: underline
+
+.no_content
+  padding: 10px
+  background-color: $gray-lighter-extra
+  color: $gray-light
+.width100
+  width: 100%
+textarea,input
+  resize: none
+.tab-content
+  overflow: visible
+
+input#captcha
+  @extend .form-control
+
+// end old scaffolding
