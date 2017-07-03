@@ -2,7 +2,9 @@
 <ul class="nav navbar-nav mobile-nav">
 
   <%if @show_mooc%>
-    <li class="btn btn-primary btn-header"><a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
+    <li class="btn btn-primary">
+      <a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a>
+    </li>
   <%end%>
 
   <!--search-->
