@@ -22,10 +22,9 @@
 
     <div class="<%= 'container-content' if controller_name != 'workshops' %>">
       <%= yield %>
+      <%= render :partial => "layouts/footer" %>
     </div>
   </div>
-
-  <%= render :partial => "layouts/footer" %>
 </body>
 
 <%= javascript_include_tag "application" %>
