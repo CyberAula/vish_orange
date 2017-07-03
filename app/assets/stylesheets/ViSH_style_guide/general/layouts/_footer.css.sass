@@ -1,30 +1,38 @@
 footer
   width: 100%
   background: #fff
+  color: $gray-darker-extra
   padding: 20px 128px
   overflow: hidden
+  max-width: 1280px
+  margin: 0 auto
   section
     width: 24%
     display: inline-block
     vertical-align: top
-    ul
-      li, p
-        margin: .4em 0
-      p
-        font-size: .8em
-      span
-        color: rgba(0, 0, 0, .7)
-        font-weight: 300
-
-    .brand2
+    .brand_footer
       margin-bottom: 12px
-      a
+      font-size: 1.2em
+    .description_footer
+      font-size: 0.9em
+      color: $gray
+    .social_footer
+      padding: 10px 0
+      .social_bt_footer
+        padding: 5px
         font-size: 1.2em
-        color: $gray-darker-extra
-      span
-        font-weight: 700
+        color: inherit
+        &:hover
+          color: $orange-primary
+    .footer_link
+      padding: 10px 0 0
+      a
+        color: $gray
+        &:hover
+          color: $orange-primary
 
-@media (max-width: 1200px)
+
+//@media (max-width: 1200px)
   footer
     padding: 20px 64px
 
@@ -35,11 +43,16 @@ footer
 @media (max-width: 768px)
   footer
     padding: 20px 30px
+    .hide_footer
+      display: none
+    .social_footer
+      float: right
+      font-size: 1.3em
+      padding: 7px
     section
-      width: 48%
-      margin-bottom: 16px
+      width: 100%
 
-@media (max-width: 481px)
+//@media (max-width: 481px)
   footer
     padding: 20px 20px
     section

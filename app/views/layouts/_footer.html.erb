@@ -1,47 +1,50 @@
 <footer>
-  
   <section>
-      <div class="brand2">
-        <a href="#">Educa<span>Internet</span></a>
+      <div class="brand_footer">
+        Educa<span class="bold">Internet</span>
       </div>
-        <p><%= t('orange_front.footer.reference_center_html')%></p>
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-          <i class="fa fa-github" aria-hidden="true"></i>
+      <p class="description_footer"><%= t('orange_front.footer.reference_center_html')%></p>
+      <div class="social_footer">
+          <a class="social_bt_footer" href="https://www.facebook.com/EducaInternet/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a class="social_bt_footer" href="https://twitter.com/EducaInternet" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a class="social_bt_footer" href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          <a class="social_bt_footer" href="https://github.com/ging/vish_orange" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+      </div>
   </section>
 
-  <section>
+  <section class="hide_footer">
     <h4><%= t('orange_front.footer.project')%></h4>
       <ul>
-        <li>Explorar</li>
-        <li><a href="/about">Acerca de</a></li>
-        <li>Desarrolladores</li>
-        <li>Danos tu opinion</li>
+        <li class="footer_link"><a href="/search">Explorar</a></li>
+        <li class="footer_link"><a  href="/about">Acerca de</a></li>
+        <li class="footer_link"><a href="https://github.com/ging/vish_orange" target="_blank">Desarrolladores</a></li>
+        <li class="footer_link"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfGNqSSQk8nCsqiKV-laILGJ0nAYINPMzDtDDaKUPow5xCX_w/viewform" target="_blank">Danos tu opinion</a></li>
         <!--Desplegable seleccionar idioma-->
       </ul>
   </section>
 
-  <section>
+  <section class="hide_footer">
     <h4><%= t('orange_front.footer.community')%></h4>
       <ul>
-        <li>Blog</li>
-        <li>Sala de prensa</li>
-        <li>Comunidad</li>
-        <li>Facebook</li>
-        <li>Twitter</li>
-        <li>Canal Youtube</li>
+        <li class="footer_link"><a href="http://blog.educainternet.es" target="_blank">Blog</a></li>
+        <li class="footer_link"><a href="#">¿Qué hacemos?</a></li>
+        <li class="footer_link"><a href="/search?type=User">Comunidad</a></li>
+        <li class="footer_link"><a href="https://www.facebook.com/EducaInternet/" target="_blank">Facebook</a></li>
+        <li class="footer_link"><a href="https://twitter.com/EducaInternet" target="_blank">Twitter</a></li>
+        <li class="footer_link"><a href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg" target="_blank">Canal Youtube</a></li>
       </ul>
   </section>
 
-  <section>
+  <section class="hide_footer">
     <h4><%= t('orange_front.footer.help')%></h4>
       <ul>
-        <li>Soy una institución</li>
-        <li>Política de privacidad</li>
-        <li>Condiciones de uso</li>
-        <li>Cookies</li>
-        <li>Contáctanos</li>
+
+        <li class="footer_link"><a href="#">Soy una institución</a></li>
+        <li class="footer_link"><a href="/privacy_policy">Política de privacidad</a></li>
+        <li class="footer_link"><a href="/conditions_of_use">Condiciones de uso</a></li>
+        <li class="footer_link"><a href="http://www.orange.es/static/html/cookies.html" target="_blank">Cookies</a></li>
+        <li class="footer_link"><a href="mailto:virtual.science.hub@gmail.com">Contáctanos</a></li>
+
       </ul>
   </section>
 
