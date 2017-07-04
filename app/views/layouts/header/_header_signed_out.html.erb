@@ -50,13 +50,13 @@
           </li>
 
           <% if Vish::Application.config.registrations %>
-            <li class="btn btn-primary">
+            <button class="btn btn-primary">
               <a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>"><%=t("sign_up")%></a>
-            </li>
+            </button>
           <%end%>
 
           <% if !Vish::Application.config.cas %>
-              <li class="btn btn-secundary dropdown">
+              <button class="btn btn-secundary dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                   <span class="menu_bold"><%=t("sign_in")%></span>
                 </a>
@@ -82,15 +82,15 @@
                     }
                   <% end %>
                 </ul>
-              </li>
+              </button>
           <%else%>
-              <li class="btn btn-primary">
+              <button class="btn btn-primary">
                 <a type="button" id="drop3" class="" href="<%=user_session_path%>">
                   <span class="menu_bold">
                     <%=t("sign_in")%>
                   </span>
                 </a>
-              </li>
+              </button>
           <%end%>
         </ul>
 

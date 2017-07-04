@@ -3,11 +3,11 @@
   <!--login-->
   <% if !Vish::Application.config.cas %>
     <li class="sign_in_mobile dropdown">
-      <a class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="#">
+      <button class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="#">
         <i class="fa fa-signin"></i>
         <%=t("sign_in")%>
 
-      </a>
+      </button>
 
       <ul class="dropdown-menu">
                     <%= form_for User.new, :html => {:id => 'new_user_mobile', :class => "form-horizontal"}, :as => :user, :url => user_session_path do |f| %>
