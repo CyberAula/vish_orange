@@ -34,13 +34,15 @@ nav.navbar-fixed-top
     .hidden-phone
       @media (max-width: $screen-sm-max)
         display: none
-
+      .navbar-nav
+        .btn-primary a
+          color: white
+        .btn-secondary a
+          color: $gray-dark
         .dropdown
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
-          .access-form
-            margin-top: 4px
           .user-menu, .add-menu
             padding: 0 !important
             li
