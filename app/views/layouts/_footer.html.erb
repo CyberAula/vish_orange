@@ -5,12 +5,31 @@
           Educa<span class="bold">Internet</span>
         </div>
         <p class="description_footer"><%= t('orange_front.footer.reference_center_html')%></p>
+        <!-- language -->
+        <div class="dropdown">
+          <button id="dlanguage" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-secondary btn-footer">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <% the_locale = I18n.locale.to_s %>
+            <%=t('lang.title')%>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dlanguage">
+            <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
+             <li class="">
+                <%= link_to image_tag("flags/" + locale + ".png", :title=>locale, :class=> "") + " " + t(:language_name, :locale => locale), session_locale_path(:new_locale => locale), :method => :post, :remote => false %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- social_networks -->
         <div class="social_footer">
             <a class="social_bt_footer" href="https://www.facebook.com/EducaInternet/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="social_bt_footer" href="https://twitter.com/EducaInternet" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a class="social_bt_footer" href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
             <a class="social_bt_footer" href="https://github.com/ging/vish_orange" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
         </div>
+
+
     </section>
 
     <section class="hide_footer">

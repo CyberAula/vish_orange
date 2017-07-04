@@ -1,5 +1,4 @@
 <!-- banner concurso
-
 <div id="banner" style="display:none">
   <div id="close_banner">x</div>
   <a href="/contest/educa2016/page/submissions">
@@ -8,7 +7,6 @@
     </div>
   </a>
 </div>
-
 fin banner -->
 
 <div id="social_networks" class="social_networks">
@@ -61,9 +59,9 @@ fin banner -->
 <div class="entities">
   <%= render partial: 'frontpage/menu_blocks'%>
 </div>
-<div class="create_account">
-  <%= render partial: 'layouts/create_account'%>
-</div>
+
+<%= render partial: 'layouts/create_account'%>
+
 
 <% content_for :javascript do %>
   $('#close_banner').click(function(){
