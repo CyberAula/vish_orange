@@ -1,16 +1,16 @@
+
 nav.navbar-home
   background-color: transparent !important
   position: fixed
+
 nav.navbar-fixed-top
   background-color: $white
   height: 8vh
   font-size: 0.8em
   padding: 4px 16px
   border: 0
-
   @media (max-width: $screen-sm-max)
     padding: 8px 4px
-
   .container-fluid
     .btn-navbar
       margin-top: 4px
@@ -19,7 +19,6 @@ nav.navbar-fixed-top
       float: right
       @media (max-width: $screen-sm-max)
         display: block
-
     .brand
       font-size: 2em
       float: left
@@ -81,9 +80,6 @@ nav.navbar-fixed-top
         .dropdown.open.active > .dropdown-toggle
           background: transparent !important
 
-        .photo_user
-          @include photo-user
-
       //************************
       //input de quick search
       //************************
@@ -96,14 +92,14 @@ nav.navbar-fixed-top
           margin-right: 5px
           .search-nav
             input[type="text"]
-              height: 35px
+              height: 36px
             .search_button_class
               background: transparent
               color: #000
               border: none
               position: relative
-              left: 221px
-              bottom: 35px
+              left: 224px
+              bottom: 36px
             .mat
               z-index: 10
               display: none
@@ -272,7 +268,8 @@ nav.navbar-fixed-top
             padding: 6px 10px 7px
             i
               margin: 0
-    //****************************************************
+
+//****************************************************
 
 #warning_cookie_bar
   display: none
@@ -303,3 +300,12 @@ nav.navbar-fixed-top
       border: 1px solid $white
   h3
     margin-top: 0
+
+//****************************************************
+
+.photo_user
+  a
+    padding: 0 4px !important
+    img
+      width: 36px
+      height: 36px

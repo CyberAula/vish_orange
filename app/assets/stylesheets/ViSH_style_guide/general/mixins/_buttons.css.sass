@@ -121,19 +121,25 @@
   padding: 0px
   height: 30px
   width: 30px
-  outline: none
-  float: left
-  margin-left: 5px
-  margin-top: 5px
   img
     border-radius: $border-radius-base
-    height: 30px
-    width: 30px
+    height: 20px
+    width: 20px
     float: left
-    border: 1px solid #EEEEEE
     &:hover
       border: 1px solid $orange-primary
   a
     padding: 0
+
+.btn-add
+  width: 32px
+
 .user_name
   font-weight: 600
+  a
+    background: transparent
+    color: $gray-dark
+    &:hover
+      color: $orange-primary
+    .caret
+      margin-left: 4px

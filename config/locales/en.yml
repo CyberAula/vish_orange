@@ -1131,7 +1131,7 @@ en:
       workshop: "Courses"
       writing: "Writings"
       zipfile: "ZIP files"
-    name: "What educational resource are you looking for?"
+    name: "What resource are you looking for?"
     instances:
       add_instance: "Add Instance"
       add: "Add"
