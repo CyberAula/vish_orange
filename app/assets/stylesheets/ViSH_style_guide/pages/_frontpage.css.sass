@@ -73,6 +73,28 @@
 /*FRONTPAGE _ image */
 
 .illustration
+  .entities
+    h3
+      font-weight: 200
+      font-size: 1.6em
+      margin-bottom: 12px
+    .entities_front
+      margin-bottom: 10px
+      float: left
+      width: 100%
+    .front_blocks
+      padding: 0
+      .block_darker
+        background: $gray-lighter-extra
+      .block, .block_darker
+        width: 100%
+        padding: 32px
+        overflow: hidden
+      .block
+        background: $white
+      .content_block
+        margin: 0 auto
+        max-width: 1128px
   .social_networks, .drop_right_facebook, .drop_right_twitter, .drop_right_youtube
     position: absolute
     top: 40vh
@@ -177,7 +199,7 @@
         h2
           font-size: 2em
 
-#frontpage
+//#frontpage
   .entities
     h3
       font-weight: 200
@@ -193,12 +215,13 @@
         background: $gray-lighter-extra
       .block, .block_darker
         width: 100%
-        margin-bottom: 20px
-        padding: 20px 128px
+        padding: 32px
         overflow: hidden
+      .block
+        background: $white
       .content_block
         margin: 0 auto
-        max-width: 1280px
+        max-width: 1128px
 
 #banner_head
   background: white
@@ -248,11 +271,11 @@
       display: block
 
 @media (min-width: 992px) and (max-width: 1199px)
-  #frontpage
-    .entities
-      .front_blocks
-        .block, .block_darker
-          padding: 20px 64px
+
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 64px
   .entities_front
     .box-item
       display: none
@@ -268,13 +291,13 @@
             font-size: 3.6em
 
 @media (min-width: 768px) and (max-width: 991px)
-  #frontpage
-    .entities
-      .front_blocks
-        .block, .block_darker
-          padding: 20px 40px
-          .text_block
-            padding-left: 20px
+
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 40px
+        .text_block
+          padding-left: 20px
   .entities_front
     .front_blocks
       .block, .block_darker
@@ -300,17 +323,17 @@
         font-size: 1.2em
 
 @media (min-width: 481px) and (max-width: 767px)
-  #frontpage
-    .entities
-      .front_blocks
-        .block, .block_darker
-          padding: 20px 30px
-          .text_block
-            padding-left: 0
-            width: 100%
-          .img_block
-            padding: 20px 0
-            width: 100%
+
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 30px
+        .text_block
+          padding-left: 0
+          width: 100%
+        .img_block
+          padding: 20px 0
+          width: 100%
   .entities_front
     .box-item
       display: none
@@ -344,17 +367,17 @@
         font-size: 1em
 
 @media (max-width: 480px)
-  #frontpage
-    .entities
-      .front_blocks
-        .block, .block_darker
-          padding: 20px 20px
-          .text_block
-            width: 100%
-            padding-left: 0
-          .img_block
-            width: 100%
-            padding: 20px 0
+
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 20px
+        .text_block
+          width: 100%
+          padding-left: 0
+        .img_block
+          width: 100%
+          padding: 20px 0
   .entities_front
     .box-item
       display: none

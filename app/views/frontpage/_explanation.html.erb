@@ -58,6 +58,13 @@ fin banner -->
   </div>
 </div>
 
+<div class="entities">
+  <%= render partial: 'frontpage/menu_blocks'%>
+</div>
+<div class="create_account">
+  <%= render partial: 'layouts/create_account'%>
+</div>
+
 <% content_for :javascript do %>
   $('#close_banner').click(function(){
     $("#banner").remove();

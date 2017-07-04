@@ -27,35 +27,6 @@
       <!-- MENU -->
       <ul class="nav navbar-nav float_R" id="main_menu">
 
-        <!-- Help button
-        <li class=" dropdown toggler ">
-          <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
-            <i class="fa fa-question-circle"></i>
-          </div>
-
-          <ul class="dropdown-menu add-menu" role="menu" >
-            <li>
-              <a href="/overview">
-                <i class="fa fa-question"> </i>
-                <span><%= t('overview_title') %></span>
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ">
-                <i class="fa fa-youtube-play"> </i>
-                <span><%= t('youtube') %></span>
-              </a>
-            </li>
-            <li>
-              <%= link_to user_manual_path do %>
-                <i class='fa fa-download'> </i>
-                <span><%= t('help_manual')%>   </span>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-        -->
-
         <!-- ADD -->
         <li class="btn btn-default btn-xs <%='btn-home' if front_or_home%> toggler dropdown">
           <div class="without-data-toggle " data-toggle="dropdown" href="#" >
@@ -201,12 +172,9 @@
       <%= render partial: 'layouts/header/uisearch_header' %>
       </li>
       <ul class="nav navbar-nav float_R">
-        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
-        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
+
       <%if @show_mooc%>
         <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
-      <%else%>
-        <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
       <%end%>
     </ul>
     </div>
