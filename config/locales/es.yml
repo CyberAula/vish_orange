@@ -26,6 +26,15 @@ es:
       project: Proyecto
       community: Community
       help: Ayuda
+    front_blocks:
+      block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
+      block2_tit: "Te ofrecemos gratuitamente cursos acreditados online, para que aprendas a tu ritmo y llegues a ser un experto en ciberseguridad"
+      block3_tit: "Crea junto a tus alumnos recursos educativos sorprendentes que podrás compartir en la plataforma"
+      block4_tit: "Trabajamos junto a los mejores expertos para ofrecerte los contenidos más actuales"
+      block1_txt_html: "En EducaInternet puedes encontrar recursos educativos para todas las edades. Además, hay muchos tipos de recursos, como <a href='/search?type=Picture'>imágenes</a>, <a href='/search?type=Audio'>audios</a>, links, webapps, pdfs... puedes encontrar incluso el formato SCORM, un estándar en educación y un mundo de posibilidades para tus alumnos. Aprende y enseña en el aula sobre el uso seguro y responsable de las tecnologías"
+      block2_txt_html: "Seguro que ya has oído hablar de los MOOCs (Massive Open Online Course), los cursos online dirigidos a un amplio número de participantes según el principio de educación abierta y masiva. En esta plataforma podrás cursar diferentes <a href='/search'>cursos que se ajusten a tus necesidades</a>. Aprovecha en nuestra <a href='/search'>biblioteca</a> todos los módulos y unidades didácticas que puedes compartir en el aula"
+      block3_txt_html: "Prepara el contenido para tus clases, sube los recursos que más utilices, ordena los recursos en carpetas, indica cuáles son tus presentaciones favoritas, compártelas… y todo aquello que puedas imaginar puedes hacerlo en EducaInternet.<a href='/search?type=User'> Más de 1.500 profesores ya forman parte de esta comunidad</a>. Súmate a ellos y descubre una herramienta sencilla con grandes funcionalidades para la creación de contenido educativo sobre la seguridad en Internet."
+      block4_txt_html: "La seguridad en Internet es un aspecto que como educadores debemos tener presente en todo momento. Ciertos conceptos relacionados, como <a href='/search?type=Learning_object&category_ids=tecnoaddictions'>Tecnoadicción</a>, <a href='/search?type=Learning_object&category_ids=privacy'>Identidad digital</a>, Grooming, Netiqueta o Licencias son fundamentales a este respecto. En EducaInternet contamos con la colaboración de los principales organismos y entidades sobre Ciberseguridad que nos avalan como centro de referencia y núcleo de la comunidad preocupada por la seguridad en Internet. "
     header:
       index: "Inicio"
       comunity: "Comunidad"
@@ -34,10 +43,6 @@ es:
       curso_desc: "Aquí se muestra el catálogo de cursos para su uso libre en el aula y fuera de ella"
       ensena: "Enseña"
       formate: "Fórmate"
-      fuente_inagotable: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
-      cursos_acreditados: "Cursos acreditados online, para que aprendas a tu ritmo y llegues a ser un experto en ciberseguridad"
-      desata_cratividad: "Desata tu creatividad creando tus propios recursos, o mejor, hazlo con tus alumnos"
-      profesores: "Más de 1500 profesores ya forman parte de esta comunidad"
       recursoteca: "Recurso"
       recurso_desc: "Aquí se muestra el catálogo de recursos para que crees tus propias unidades didácticas"
       share: "Comparte"
