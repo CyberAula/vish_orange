@@ -4,37 +4,33 @@ footer
   color: $gray-darker-extra
   padding: 20px 128px
   overflow: hidden
-  max-width: 1280px
-  margin: 0 auto
-  section
-    width: 24%
-    display: inline-block
-    vertical-align: top
-    .brand_footer
-      margin-bottom: 12px
-      font-size: 1.2em
-    .description_footer
-      font-size: 0.9em
-      color: $gray
-    .social_footer
-      padding: 10px 0
-      .social_bt_footer
-        padding: 5px
+  .footer_container
+    max-width: 1280px
+    margin: 0 auto
+    section
+      width: 24%
+      display: inline-block
+      vertical-align: top
+      .brand_footer
+        margin-bottom: 12px
         font-size: 1.2em
-        color: inherit
-        &:hover
-          color: $orange-primary
-    .footer_link
-      padding: 10px 0 0
-      a
+      .description_footer
+        font-size: 0.9em
         color: $gray
-        &:hover
-          color: $orange-primary
-
-
-//@media (max-width: 1200px)
-  footer
-    padding: 20px 64px
+      .social_footer
+        padding: 10px 0
+        .social_bt_footer
+          padding: 5px
+          font-size: 1.2em
+          color: inherit
+          &:hover
+            color: $orange-primary
+      .footer_link
+        padding: 10px 0 0
+        a
+          color: $gray
+          &:hover
+            color: $orange-primary
 
 @media (max-width: 992px)
   footer
@@ -43,18 +39,12 @@ footer
 @media (max-width: 768px)
   footer
     padding: 20px 30px
-    .hide_footer
-      display: none
-    .social_footer
-      float: right
-      font-size: 1.3em
-      padding: 7px
-    section
-      width: 100%
-
-//@media (max-width: 481px)
-  footer
-    padding: 20px 20px
-    section
-      width: 100%
-      padding-left: 24%
+    .footer_container
+      .hide_footer
+        display: none
+      .social_footer
+        float: right
+        font-size: 1.3em
+        padding: 7px
+      section
+        width: 100%
