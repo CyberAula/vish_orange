@@ -1294,7 +1294,7 @@ en:
     view_full: "View full"
   workshop:
     actions:
-      add: "Create Course"
+      add: "Create Lesson"
       add_activity_title: "Add activity to the course"
       add_activity_button: "Add"
       adding_activity_button: "Adding..."
