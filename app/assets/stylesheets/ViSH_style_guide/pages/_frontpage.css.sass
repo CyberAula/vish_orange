@@ -183,7 +183,7 @@
       background: $opacity2
       position: relative
       text-align: center
-      padding: 160px 0 60px 0
+      padding: 160px 160px 60px
       margin: 0 auto
       .btn-main-title
         position: relative
@@ -198,30 +198,6 @@
           font-size: 4em
         h2
           font-size: 2em
-
-//#frontpage
-  .entities
-    h3
-      font-weight: 200
-      font-size: 1.6em
-      margin-bottom: 12px
-    .entities_front
-      margin-bottom: 10px
-      float: left
-      width: 100%
-    .front_blocks
-      padding: 0
-      .block_darker
-        background: $gray-lighter-extra
-      .block, .block_darker
-        width: 100%
-        padding: 32px
-        overflow: hidden
-      .block
-        background: $white
-      .content_block
-        margin: 0 auto
-        max-width: 1128px
 
 #banner_head
   background: white
@@ -271,103 +247,83 @@
       display: block
 
 @media (min-width: 992px) and (max-width: 1199px)
-
-  .entities
-    .front_blocks
-      .block, .block_darker
-        padding: 20px 64px
   .entities_front
     .box-item
       display: none
     .box-item:nth-of-type(-n+4)
       display: block
+
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 64px
+
   .illustration
     .main-box
+      height: 320px
       img
+        top: -200px
       .main-title
-        padding: 52px
+        padding: 80px 60px 40px
         .title
           h1
             font-size: 3.6em
 
 @media (min-width: 768px) and (max-width: 991px)
-
   .entities
+    .box-item
+      display: none
+    .box-item:nth-of-type(-n+3)
+      display: block
     .front_blocks
       .block, .block_darker
         padding: 20px 40px
         .text_block
           padding-left: 20px
-  .entities_front
-    .front_blocks
-      .block, .block_darker
-        padding: 20px 100px
-    .box-item
-      display: none
-    .box-item:nth-of-type(-n+3)
-      display: block
 
   .illustration
     .main-box
+      height: 280px
+      img
+        top: -160px
       .main-title
-        padding: 40px
+        padding: 80px 40px 20px
         .title
           h1
             font-size: 3em
-
-    .box-title-general.contest_img
-      .btn-signup-contest
-        right: 3.5vw
-        bottom: 3vw
-        width: 30vw
-        font-size: 1.2em
+          h2
+            font-size: 2em
 
 @media (min-width: 481px) and (max-width: 767px)
-
   .entities
+    .entities_front
+      .box-item
+        display: none
+      .box-item:nth-of-type(-n+2)
+        display: block
     .front_blocks
       .block, .block_darker
-        padding: 20px 30px
         .text_block
           padding-left: 0
           width: 100%
         .img_block
           padding: 20px 0
           width: 100%
-  .entities_front
-    .box-item
-      display: none
-    .box-item:nth-of-type(-n+2)
-      display: block
 
   .illustration
     .main-box
+      height: 240px
+      img
+        top: -80px
       .main-title
+        padding: 84px 40px
         .title
           h1
-            font-size: 2.5em
-        .btn-main-title
-          display: none
-      img
-        bottom: 0
-
-    .box-title-general
-      .main-title
-        padding: 28px
-        .title
-          font-size: 2.5em
-          padding: 10px
-      img
-        bottom: -50px
-    .box-title-general.contest_img
-      .btn-signup-contest
-        right: 3.5vw
-        bottom: 3vw
-        width: 35vw
-        font-size: 1em
+            font-size: 2.4em
+          h2
+            font-size: 1.6em
 
 @media (max-width: 480px)
-
   .entities
     .front_blocks
       .block, .block_darker
@@ -378,36 +334,18 @@
         .img_block
           width: 100%
           padding: 20px 0
-  .entities_front
-    .box-item
-      display: none
-    .box-item:nth-of-type(-n+4)
-      display: block
+
   .illustration
     .social_networks
       display: none
     .main-box
-      height: 250px
+      height: 200px
+      img
+        top: -20px
       .main-title
-        padding: 20px
-        height: 100%
+        padding: 88px 40px
         .title
           h1
-            font-size: 1.8em
-        .btn-main-title
-          display: none
-      img
-        bottom: 0px
-    .box-title-general
-      height: 60px
-      .main-title
-        .title
-          font-size: 1.35em
-      img
-        bottom: 0px
-    .box-title-general.contest_img
-      .btn-signup-contest
-        left: 3.5vw
-        bottom: 3vw
-        width: 50vw
-        font-size: 1em
+            font-size: 2em
+          h2
+            display: none
