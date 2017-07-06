@@ -57,7 +57,6 @@ en:
     contact: "Contact"
     code: "Source code"
     survey: "EducaInternet survey"
-    rsevaluation: "ViSHRS Evaluation"
     title: "about"
   activerecord:
     attributes:

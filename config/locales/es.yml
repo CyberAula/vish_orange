@@ -46,7 +46,6 @@ es:
     contact: "Contacto"
     code: "Código fuente"
     survey: "Encuesta de EducaInternet"
-    rsevaluation: "Evaluación de ViSHRS"
     title: "about"
   activerecord:
     attributes:
