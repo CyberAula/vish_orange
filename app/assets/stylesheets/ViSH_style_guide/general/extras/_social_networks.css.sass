@@ -1,0 +1,34 @@
+.social_networks
+  .social_networks_buttons, .drop_right_facebook, .drop_right_twitter, .drop_right_youtube
+    position: fixed
+    top: 40vh
+
+  .social_networks_drop_right
+    div
+      background: #fff
+      width: 340px
+      height: 500px
+      left: -340px
+      z-index: 999
+
+  .social_networks_buttons
+    left: 0
+    z-index: 1000
+    div
+      background: $gray
+      display: block
+      cursor: pointer
+      padding: 8px
+      text-align: center
+    .facebook_btn
+      &:hover
+        background: #3B579D
+    .twitter_btn
+      &:hover
+        background: #1DA1F3
+    .youtube_btn
+      &:hover
+        background: #D40C1D
+    i
+      color: #fff
+      font-size: 1.2em
