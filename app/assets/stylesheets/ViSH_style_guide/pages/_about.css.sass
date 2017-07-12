@@ -53,6 +53,8 @@
       img
         width: 100%
         height: auto
-        opacity: 80%
-        :hover
-          opacity: 100%
+        opacity: .8
+        filter: grayscale(100%)
+        &:hover
+          opacity: 1
+          filter: grayscale(0%)
