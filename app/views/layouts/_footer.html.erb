@@ -5,22 +5,6 @@
           Educa<span class="bold">Internet</span>
         </div>
         <p class="description_footer"><%= t('orange_front.footer.reference_center_html')%></p>
-        <!-- language -->
-        <div class="dropdown">
-          <button id="dlanguage" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-secondary btn-footer">
-            <i class="fa fa-globe" aria-hidden="true"></i>
-            <% the_locale = I18n.locale.to_s %>
-            <%=t('lang.title')%>
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dlanguage">
-            <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
-             <li class="">
-                <%= link_to image_tag("flags/" + locale + ".png", :title=>locale, :class=> "") + " " + t(:language_name, :locale => locale), session_locale_path(:new_locale => locale), :method => :post, :remote => false %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
         <!-- social_networks -->
         <div class="social_footer">
             <a class="social_bt_footer" href="https://www.facebook.com/EducaInternet/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -39,7 +23,22 @@
           <li class="footer_link"><a  href="/about">Acerca de</a></li>
           <li class="footer_link"><a href="https://github.com/ging/vish_orange" target="_blank">Desarrolladores</a></li>
           <li class="footer_link"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfGNqSSQk8nCsqiKV-laILGJ0nAYINPMzDtDDaKUPow5xCX_w/viewform" target="_blank">Danos tu opinion</a></li>
-          <!--Desplegable seleccionar idioma-->
+          <!-- language -->
+          <div class="dropdown">
+            <button id="dlanguage" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-secondary btn-footer">
+              <i class="fa fa-globe" aria-hidden="true"></i>
+              <% the_locale = I18n.locale.to_s %>
+              <%=t('lang.title')%>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dlanguage">
+              <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
+               <li class="">
+                  <%= link_to image_tag("flags/" + locale + ".png", :title=>locale, :class=> "") + " " + t(:language_name, :locale => locale), session_locale_path(:new_locale => locale), :method => :post, :remote => false %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </ul>
     </section>
 
