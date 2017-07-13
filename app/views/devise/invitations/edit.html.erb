@@ -1,4 +1,4 @@
-<section id="registration"> 
+<section id="registration">
   <section class="welcome">
   </section>
 
@@ -11,16 +11,16 @@
 	  <div class="reg-labels">
 	  <%= f.label :name %>
 	  <%= f.text_field :name, :class =>"form_tag", :autocomplete => "off" %>
-	        
+
 	  <%= f.label :email %>
 	  <%= f.text_field :email, :class =>"form_tag", :autocomplete => "off", :value => resource.email %>
-	  
+
 	  <%= f.label :password %>
 	  <%= f.password_field :password %>
 
 	  <%= f.label :password_confirmation %>
 	  <%= f.password_field :password_confirmation %>
-		
+
 		<%= f.label t('profile.occupation.label') %>
         <%= f.select(:occupation, options_for_select([[t('profile.occupation.options.select'), 0], [t('profile.occupation.options.teacher'), 1],[t('profile.occupation.options.scientist'),2], [t('profile.occupation.options.other'),3]], params[:user] ? params[:user][:occupation]:nil)) %>
 
@@ -37,7 +37,7 @@
             </li>
           <%end%>
         </ul>
-        
+
         <hr class="soften">
         <div class="conditions">
           <%= t('conditions.check_message') %>
@@ -54,11 +54,11 @@
 
       <hr class="soften">
       <%= render :partial => "devise/shared/links" %>
-      
+
     <% end %>
   </section>
 </section>
-	  
+
 
 
 <%= content_for :javascript do %>
@@ -71,8 +71,8 @@
     });
 
     $(tagList).tagit({
-      tagSource:tags, 
-      sortable:true, 
+      tagSource:tags,
+      sortable:true,
       maxLength: '<%=Vish::Application.config.tagsSettings["maxLength"]%>',
       maxTags: '<%=Vish::Application.config.tagsSettings["maxTags"]%>',
       triggerKeys: <%=raw(Vish::Application.config.tagsSettings["triggerKeys"].to_json)%>,
@@ -88,7 +88,7 @@
             }
           });
         }
-      } 
+      }
     });
 
     //Allow suggestions
