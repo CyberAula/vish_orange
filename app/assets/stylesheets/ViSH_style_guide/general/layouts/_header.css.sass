@@ -101,7 +101,7 @@ nav.navbar-fixed-top
               left: 224px
               bottom: 36px
             .mat
-              background: $gray
+              background: $gray-dark
               display: none
               position: absolute
               top: 40px
@@ -138,59 +138,55 @@ nav.navbar-fixed-top
                 margin-top: 2px
 
               .results
-                max-height: 431px
+                max-height: 432px
                 height: auto
                 ul
-                  width: 95%
-                  padding-left: 0
+                  width: 96%
                   float: none
+                  margin-bottom: 6px !important
                   @include border-bottom-radius ($border-radius-base)
-                  @include center-block
                   @include items
                   .add-item
                     display: none
                   li.box-item
                     @include excursion-small
-                    margin: 3px 7px
-                    width: 95%
+                    margin: 4px
+                    width: 96%
                     border: none
-                    max-height: 43px
+                    max-height: 44px
                     .container-img
-                      width: 27% !important
+                      width: 24% !important
                       .avatar img
-                        margin-top: -7px
+                        margin-top: -8px
                       .img-box
                         i
-                          font-size: 35px
+                          font-size: 2em
                           padding-top: 4px
                     .caption
-                      padding-top: 2px
-                      width: 73%
-                      h6
-                        height: 20px
+                      padding: 4px
+                      width: 72%
                       h6, .count-followers
                         text-align: left
+                      h6
+                        height: 20px
                     .corner-item, .add, .info-bottom, hr
                       display: none
                   li, .container-img, .caption
-                    max-height: 43px
-
+                    max-height: 44px
                   .more
-                    display: block
+                    background: $gray-darker-extra
+                    padding: 8px 0
                     clear: both
                     text-align: center
-                    margin: 8px
-                    padding: 4px
-                    a
-                      color: $gray-darker
-                      font-family: $corporate-font-family-sans-serif-Medium
-                      text-decoration: none
+                    cursor: pointer
                     &:hover
-                      background: $gray-darker-extra
-                      a
+                      background: $gray-darker
+                    a
+                      color: $gray
+                      padding: 8px 52px
+                      &:hover
                         color: $white
-                        &:hover
-                          background-color: $gray-darker-extra !important
+
                   .img-box
                     padding-bottom: 0
 
