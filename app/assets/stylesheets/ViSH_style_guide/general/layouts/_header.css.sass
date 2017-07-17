@@ -140,6 +140,7 @@ nav.navbar-fixed-top
               .results
                 max-height: 432px
                 height: auto
+                text-align: center
                 ul
                   width: 96%
                   float: none
@@ -174,10 +175,10 @@ nav.navbar-fixed-top
                   li, .container-img, .caption
                     max-height: 44px
                   .more
+                    width: 236px
                     background: $gray-darker-extra
                     padding: 8px 0
-                    clear: both
-                    text-align: center
+                    display: inline-block
                     cursor: pointer
                     &:hover
                       background: $gray-darker
@@ -195,21 +196,17 @@ nav.navbar-fixed-top
     //****************************************************
     .hidden-desktop
       position: absolute
-      right: 24px
-      top: 50px
+      right: 16px
+      top: 32px
       .navbar-nav
         background-color: $gray-darker
         padding: 10px
         li.sign_in_mobile
+          background: transparent
           .dropdown-toggle
-            color: $gray-dark
-            background: $gray-light
-            &:hover, &:active, &:focus
-              background-color: darken($gray-light, 0.5) !important
+            width: 80px
           a
             color: white
-          i
-            margin-right: 10px
           .dropdown-menu
             padding: 10px
             border-radius: $border-radius-base
@@ -219,13 +216,13 @@ nav.navbar-fixed-top
               margin-right: 0 !important
             //log in
             input[type="email"]
-              margin-bottom: 3px
+              margin-bottom: 4px
             .checkbox
-              padding: 0 5px
+              padding: 0 4px
               .lbl
                 color: white
             .remember_password
-              margin: 10px 0 0 0
+              margin-top: 10px
               a
                 color: $gray-light
                 font-size: 1em
@@ -249,15 +246,16 @@ nav.navbar-fixed-top
           margin: 0
         .navbar-search
           width: 100%
-          margin-bottom: 5px
+          margin-bottom: 4px
           padding: 10px 0
-          input
+          input, button
             float: left
+            border: none
+          input
             width: 84%
           button
-            float: left
-            margin-left: 3px
-            padding: 6px 10px 7px
+            width: 16%
+            padding: 8px
             i
               margin: 0
 

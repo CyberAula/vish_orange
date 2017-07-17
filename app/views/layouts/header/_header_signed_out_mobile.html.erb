@@ -2,36 +2,31 @@
 <ul class="nav navbar-nav mobile-nav">
   <!--login-->
   <% if !Vish::Application.config.cas %>
+
     <li class="sign_in_mobile dropdown">
       <button class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="#">
         <i class="fa fa-signin"></i>
         <%=t("sign_in")%>
-
       </button>
 
       <ul class="dropdown-menu">
-                    <%= form_for User.new, :html => {:id => 'new_user_mobile', :class => "form-horizontal"}, :as => :user, :url => user_session_path do |f| %>
-                <div class="form-group">
-                  <%= f.email_field :email, :id => 'username_mobile', :class => "form-control" %>
-                  <%= f.password_field :password, :id => 'password_mobile', :class => "form-control"  %>
+        <%= form_for User.new, :html => {:id => 'new_user_mobile', :class => "form-horizontal"}, :as => :user, :url => user_session_path do |f| %>
+          <div class="form-group">
+            <%= f.email_field :email, :id => 'username_mobile', :class => "form-control" %>
+            <%= f.password_field :password, :id => 'password_mobile', :class => "form-control"  %>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox">
+                <span class="lbl padding-0"><%=t("activerecord.attributes.user.remember_me")%></span>
+            </label>
+          </div>
+          <%= f.submit t(:sign_in), :class => 'btn btn-primary btn_ok'%>
+          <div class="remember_password">
+            <%=link_to t('devise.links.forgot_password'), new_password_path(:user)%>
+          </div>
+  <% end %>
 
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox">
-                      <span class="lbl padding-0">
-                        <%=t("activerecord.attributes.user.remember_me")%>
-                      </span>
-                  </label>
-
-                </div>
-                <%= f.submit t(:sign_in), :class => 'btn btn-primary btn_ok'%>
-                <div class="remember_password"><%= link_to t('devise.links.forgot_password'), new_password_path(:user) %>
-                </div>
-
-
-
-              <% end %>
         <%content_for :javascript do%>
               if ("placeholder" in document.createElement("input")) {
                 $("#username_mobile").attr('placeholder', I18n.t('activerecord.attributes.user.email'));
@@ -54,10 +49,6 @@
   <li class="search-mobile">
     <%= render partial: 'layouts/search_mobile' %>
   </li>
-
-  <li><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-  <li><a href="/teach"><%=t('orange_front.header.share')%></a></li>
-  <li><a href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
 
   <% if Vish::Application.config.registrations %>
     <!--sign_up-->
