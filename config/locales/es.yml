@@ -37,10 +37,10 @@ es:
       our_courses_txt: "Accede a todas las lecciones, módulos y guías didácticas de la plataforma"
       teaching_units_tit: "Comparte tus ideas"
       teaching_units: "Crea y comparte"
-      teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos en la plataforma"
+      teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos"
       take_part_tit: "Concurso EducaInternet"
-      take_part: "Conoce a los ganadores"
-      take_part_txt: "Ya sabemos quiénes son los recursos ganadores del primer concurso EducaInternet"
+      take_part: "Ver vídeo"
+      take_part_txt: "Descubre nuestro resumen del concurso y conoce los centros escolares galardonados con los Premios"
   about:
     blog: "Novedades"
     contact: "Contacto"
