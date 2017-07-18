@@ -9,7 +9,7 @@ nav.navbar-fixed-top
   font-size: 0.8em
   padding: 4px 16px
   border: 0
-  @media (max-width: $screen-sm-max)
+  @media (max-width: 768px)
     padding: 8px 4px
   .container-fluid
     .btn-navbar
@@ -17,7 +17,7 @@ nav.navbar-fixed-top
       padding: 4px 8px
       display: none
       float: right
-      @media (max-width: $screen-sm-max)
+      @media (max-width: 768px)
         display: block
     .brand
       font-size: 2em
@@ -31,7 +31,7 @@ nav.navbar-fixed-top
           font-weight: 600
 
     .hidden-phone
-      @media (max-width: $screen-sm-max)
+      @media (max-width: 768px)
         display: none
       .navbar-nav
         .btn-primary a
@@ -199,14 +199,19 @@ nav.navbar-fixed-top
       right: 16px
       top: 32px
       .navbar-nav
-        background-color: $gray-darker
-        padding: 10px
+        width: 256px
+        background: $gray-darker
+        padding: 12px
+        li
+          width: 100%
+          display: block
+          a
+            color: $white
+            padding: 8px
         li.sign_in_mobile
           background: transparent
           .dropdown-toggle
             width: 80px
-          a
-            color: white
           .dropdown-menu
             padding: 10px
             border-radius: $border-radius-base
