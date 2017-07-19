@@ -18,10 +18,10 @@
 .sub_values
   background: $gray-lighter
   width: 100%
-  padding: 2.4em 15.6em
+  padding: 2.4em 16em
   overflow: hidden
   div
-    width: 32.8%
+    width: 32%
     display: inline-block
     div:not(:last-child)
       border-right: solid .4px #444
@@ -50,7 +50,7 @@
     padding-top: 2.4em
     overflow: hidden
     > div
-      width: 32.8%
+      width: 32%
       display: inline-block
     .great_team_img
       height: 128px
@@ -58,8 +58,52 @@
       img
         width: 100%
         height: auto
-        opacity: .8
+        padding: 8px
+        opacity: .4em
         filter: grayscale(100%)
         &:hover
           opacity: 1
           filter: grayscale(0%)
+
+@media (max-width: 1200px)
+  .sub_values
+    padding: 2.4em 12em
+
+@media (max-width: 992px)
+  .why
+    width: 60%
+  .values
+    padding-bottom: 0
+    .text_block
+      width: 100%
+      margin-bottom: .8em
+    .img_block
+      width: 100%
+      img
+        height: 80%
+  .sub_values
+    padding: 2.4em 8em
+
+@media (max-width: 767px)
+  .sub_values
+    padding: 2.4em 6em
+  .great_team
+    p, h3
+      width: 100%
+      padding: 0
+    .great_team_imgs
+      > div
+        width: 48%
+
+@media (max-width: 480px)
+  .sub_values
+    padding: 2.4em 60px
+    div
+      display: block
+      margin-bottom: .8em
+  .great_team
+    .great_team_imgs
+      .great_team_img
+        img
+          width: 128px
+          height: auto
