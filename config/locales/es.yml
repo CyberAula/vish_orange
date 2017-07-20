@@ -1192,6 +1192,7 @@ es:
     twitter:
       contest: "Voto por este recurso educativo en #ConcursoEducaInternet"
       message: "Echa un vistazo a este recurso en %{url}"
+  access: "Acceder"
   sign_up: "Quiero una cuenta"
   sign_in: "Entrar"
   mail_example: "ejemplo@ejemplo.com"
