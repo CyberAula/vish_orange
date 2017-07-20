@@ -16,6 +16,7 @@
 //= require social_stream-base
 //= require social_stream-linkser
 //= require social_stream-documents
+//= require header
 //= require pageless
 //= require social_networks
 //= require jquery.jscrollpane.min
