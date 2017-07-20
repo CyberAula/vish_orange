@@ -1,11 +1,10 @@
-$(document).ready(function(){
 
-	var sh = $(window).scrollHeight();
-
-	if (sh > 400) {
-		$("#navbar-home").css("background", "transparent");
-	} else {
-		$("#navbar-home").css("background", "white");
+$( window ).scroll(function() {
+  var sh = $(window).scrollTop();
+	if (sh > 410) {
+    $("#navbar-home").css("background-color", "white");
 	}
-
+  if (sh < 410) {
+		$("#navbar-home").css("background-color", "transparent");
+	}
 });
