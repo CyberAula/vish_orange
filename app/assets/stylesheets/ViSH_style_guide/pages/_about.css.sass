@@ -3,6 +3,10 @@
   height: auto
   text-align: center
 
+.values, .great_team, .great_team
+  h4
+    text-align: center
+
 .values, .great_team
   width: 68%
   display: block
@@ -10,10 +14,12 @@
 .values
   padding-bottom: 2em
   overflow: hidden
-  .article_img
+  .img_block
     width: 32%
-  .article_cont
+  .text_block
     width: 68%
+    img
+      margin-right: 8px
 
 .sub_values
   background: $gray-lighter
@@ -85,6 +91,10 @@
     padding: 2.4em 8em
 
 @media (max-width: 767px)
+  .values
+    .text_block
+      img
+        display: none
   .sub_values
     padding: 2.4em 6em
   .great_team
