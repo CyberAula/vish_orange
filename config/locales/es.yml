@@ -1039,7 +1039,9 @@ es:
     private_student: "Crear grupos privados de estudiantes"
   resource:
     actions:
-      add: "Subir Fichero"
+      add_html: "Añadir HTML"
+      add_link: "Añadir Enlace"
+      upload_document: "Subir fichero" 
     empty: "No"
     network: "recursos de mi red"
     newmy_html: "Aún no has creado ningún recurso. Puedes crear uno nuevo haciendo click en el botón subir o en este "
