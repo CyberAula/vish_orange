@@ -24,6 +24,4 @@
     <%= render partial: 'frontpage/menu_blocks'%>
   </div>
 
-  <%= render partial: 'create_account/create_account'%>
-
 </section>
