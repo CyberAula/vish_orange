@@ -19,84 +19,84 @@
 
   <article>
     <div class="teach">
-      <h4>SI ERES PROFESOR, ESTE ES TU SITIO</h4>
+      <span>SI ERES PROFESOR, ESTE ES TU SITIO</span>
       <!--linea horizontal divisoria-->
       <div class="horizontal_line"></div>
       <!--/linea horizontal divisoria-->
           <div class="article_cont">
             <h3>Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos.</h3>
-              <div class="article_img">
-                <!--imagen-->
+              <div class="article_links">
+                <button class="btn btn-default">Sexting</button>
+                <button class="btn btn-default">Privacidad</button>
+                <button class="btn btn-default">Ciberacoso</button>
+                <button class="btn btn-default">Grooming</button>
+                <button class="btn btn-default">Sexting</button>
+                <button class="btn btn-default">Privacidad</button>
+                <button class="btn btn-default">Ciberacoso</button>
+                <button class="btn btn-default">Grooming</button>
               </div>
-            <h3>Con los recursos de <strong>McMillan</strong> tus alumnos y tú aprenderéis juntos cómo navegar seguro.</h3>
           </div>
     </div>
+  </article>
 
-    <ul class="items">
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-    </ul>
-    <ul class="items">
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-    </ul>
+  <article>
+    <div class="resources">
+      <div class="article_cont">
+        <div class="article_img">
+          <!--imagen-->
+        </div>
+        <h3>Estos son los <strong>recursos educativos favoritos</strong>de los usuarios de EducaInternet</h3>
+          <p>Lorem ipsum dolor sit amet, Quisque porta, erat sit amet dapibus molestie, dolor quam tempus lacus, sed aliquam arcu dolor in dolor. Pellentesque a nibh orci. Aenean in ligula quis eros suscipit auctor.</p>
+          <div class="items">
+            <% begin
+                favorites = Document.all.sample(10)
+              end %>
+              <% favorites.each do |doc| %>
+                <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+              <% end %>
+              <div class="clear"></div>
+          </div>
+      </div>
+    </div>
   </article>
 
   <article>
     <div class="teach">
-          <div class="article_cont">
-              <div class="article_img">
-                <!--imagen-->
-              </div>
-            <h3>El <strong>Instituto Nacional de Ciberseguridad de España</strong><br>te ayuda con la mediación parental y las tecnoadicciones.</h3>
+      <div class="article_cont">
+        <div class="article_img">
+          <!--imagen-->
+        </div>
+          <h3>Deja que sean los <strong>expertos en seguridad TIC</strong> los que te cuenten todo lo que necesitas saber.</h3>
             <p>Lorem ipsum dolor sit amet, Quisque porta, erat sit amet dapibus molestie, dolor quam tempus lacus, sed aliquam arcu dolor in dolor. Pellentesque a nibh orci. Aenean in ligula quis eros suscipit auctor.</p>
-          </div>
+            <div class="items">
+              <% begin
+                  favorites = Document.all.sample(5)
+                end %>
+                <% favorites.each do |doc| %>
+                  <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+                <% end %>
+                <div class="clear"></div>
+            </div>
+        <div class="article_img">
+          <!--imagen-->
+        </div>
+            <h3><strong>Recursos de calidad</strong> diseñados para que tus alumnos y tú aprendais juntos cómo navegar seguro.</h3>
+            <div class="items">
+              <% begin
+                  favorites = Document.all.sample(5)
+                end %>
+                <% favorites.each do |doc| %>
+                  <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+                <% end %>
+                <div class="clear"></div>
+            </div>
+      </div>
     </div>
-    <ul class="items">
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-      <li class="box-item">
-        <!--imagen-->
-      </li>
-    </ul>
   </article>
 
   <article>
-    <div class="teach">
-      <h4>BIBLIOTECA</h4>
+    <div class="resources">
+      <span>BIBLIOTECA</span>
       <!--linea horizontal divisoria-->
       <div class="horizontal_line"></div>
       <!--/linea horizontal divisoria-->
