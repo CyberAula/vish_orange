@@ -1,5 +1,8 @@
 es:
+  lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
   orange_front:
+    about_title: "Acerca de EducaInternet"
+    about_subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
     banner_contest: "assets/orange/banner_contest3.png"
     carousel:
       title1: "Crea"
@@ -50,11 +53,10 @@ es:
       tema_desc: "Aquí se muestra el catálogo de unidades didácticas para su uso libre en el aula y fuera de ella"
       bold: "teca"
     how_it_works: "¿Cómo funciona?"
-    about: "Acerca de EducaInternet"
+
     explore: "Explora EducaInternet"
     explore_msg: "Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad"
     main_message: "Bienvenido a EducaInternet"
-    second_message: El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC
     menu_blocks:
       our_courses_tit: "Fórmate"
       our_courses: "Nuestros cursos"
@@ -65,6 +67,13 @@ es:
       take_part_tit: "Concurso EducaInternet"
       take_part: "Conoce a los ganadores"
       take_part_txt: "Ya sabemos quiénes son los recursos ganadores del primer concurso EducaInternet"
+    second_message: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
+    whatwedo_title: "¿Qué hacemos?"
+    whatwedo_subtitle: "talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC"
+    whatwedo_txtblock_1: "Ya está aquí la Segunda Edición Concurso EducaInternet"
+    whatwedo_txtblock_2: "Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación"
+    whatwedo_txtblock_3: "Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable"
+    whatwedo_txtblock_4: "Te contamos cómo fue la Primera Edición del Concurso EducaInternet"
   about:
     blog: "Novedades"
     contact: "Contacto"
@@ -1296,6 +1305,7 @@ es:
       previous: "«"
       truncate: "..."
   view_all: "ver todos"
+  view_more: "[leer más...]"
   webapp:
     name: "aplicación web"
     confirm_delete: "¿Borrar aplicación web?"

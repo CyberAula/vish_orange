@@ -9,7 +9,10 @@ en:
         ¿: "¿"
         ¡: "¡"
         ́ : ""
+  lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
   orange_front:
+    about_title: "About EducaInternet"
+    about_subtitle: "The center of reference for the educational community on the safe and responsible use of Internet"
     banner_contest: "assets/orange/banner_contest3_EN.png"
     carousel:
       title1: "Create"
@@ -54,6 +57,12 @@ en:
       take_part_tit: "First EducaInternet competition"
       take_part: "Meet the winners"
       take_part_txt: "We now know which are the winning resources of the first EducaInternet competition"
+    whatwedo_title: "What do we do?"
+    whatwedo_subtitle: "workshops, contests, courses and many more activities to train you to dominate the world of ICTs"
+    whatwedo_txtblock_1: "Ya está aquí la Segunda Edición Concurso EducaInternet"
+    whatwedo_txtblock_2: "Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación"
+    whatwedo_txtblock_3: "Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable"
+    whatwedo_txtblock_4: "Te contamos cómo fue la Primera Edición del Concurso EducaInternet"
     footer:
       cookies: "Cookies"
       rights: "All rights reserved"
@@ -1294,6 +1303,7 @@ en:
       previous: "«"
       truncate: "..."
   view_all: "view all"
+  view_more: "[read more...]"
   webapp:
     name: "Web Application"
     confirm_delete: "Delete Web application?"

@@ -49,6 +49,7 @@ Vish::Application.routes.draw do
   match 'teach' => 'static#teach'
   match 'learn' => 'static#learn'
   match 'about' => 'static#about_us'
+  match 'whatwedo' => 'static#what_we_do'
   match 'explore' => 'static#explore'
   match 'train_yourself' => 'static#train_yourself'
   match 'train_students' => 'static#train_students'
