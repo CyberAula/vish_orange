@@ -185,18 +185,15 @@
 // Add resource modal-form
 //--------------------------
 
-#AddResource
+#ModalDocument, #ModalLink, #ModalEmbed
   .modal-body
     .layoutform
-      hr
-        margin: 5px 0
-      .panel-group
-        margin: 15px 0
-        .panel-default
-          border-color: $gray-light
+      .option_title
+        color: $orange-primary
+        font-size: 1.1em
+      .option_content
+        padding: 15px
       .resource_info
-        border-radius: $border-radius-base
-        padding: 0 15px 30px 15px
         section
           input[type=checkbox]
             display: block

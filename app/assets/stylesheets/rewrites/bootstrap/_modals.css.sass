@@ -1,33 +1,29 @@
 .modal-content
   border-radius: 0
   @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
-
-.modal-header
-  border-bottom: 1px solid $gray-light
-  padding: 15px 20px
-  h1
-    margin-right: 20px
-    display: inline
-    font-weight: 200
-    font-size: 2em
-  .helpheader
-    float: right
-    margin-right: 10px
-    .fa-question-circle
-      color: $gray-light
+  .modal-header
+    padding: 15px 20px
+    border: 0
+    h1
+      margin-right: 20px
+      display: inline
+      font-weight: 200
+      font-size: 2em
+    .helpheader
+      float: right
+      margin-right: 10px
+      .fa-question-circle
+        color: $gray-light
+  .modal-body
+    padding: 30px
+    label
+      margin: 10px 0 5px
+      width: 100%
+      font-weight: normal
+  .modal-footer
+    background-color: $white
+    border: 0
+    @include border-bottom-radius ($border-radius-base)
 
 #helpembed
   float: none
-#popoverhelpembedlink
-  top: 200px !important
-
-.modal-body
-  padding-top: 14px
-  label
-    margin-top: 10px
-    width: 100%
-
-.modal-footer
-  background-color: $white
-  border-top: 1px solid $border-color
-  @include border-bottom-radius ($border-radius-base)

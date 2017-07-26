@@ -469,6 +469,8 @@ es:
   disjunction:
     or: "o"
   document:
+    add: "Añadir"
+    adding: "Añadiendo..."
     body:
       title1: "Selecciona el tipo de contenido que subirás"
       title2: "Identifica tu recurso"
@@ -508,10 +510,10 @@ es:
       favorite1_html: "Favoritos"
       favorite2_html: "Esta sección muestra tus recursos favoritos, en ella verás los elementos que has marcado como favoritos."
       home1_html: "Esta zona muestra las unidades didácticas creadas por los usuarios a los que <a href=\"%{profile}\">sigues.</a>"
-      info1_html: "Haga click en una de las siguientes opciones en función del tipo de recurso que desee subir:"
-      info1_doc_html: "<b>Documentos</b>: para subir cualquier tipo de archivo (imágenes, vídeos, ...)."
-      info1_link_html: "<b>Enlaces</b>: para añadir enlaces a páginas web."
-      info1_embed_html: "<b>Embed</b>: para añadir un recurso mediante un código de inserción HTML."
+      info1_html: "Puede subir diferentes tipos de documento reconocibles por la plataforma [.doc] [.pdf] [.png] [.jpg] [.gif] [.rtf] [.ppt] [.xls] [.mp3] [.mp4]"
+      info1_doc_html: ""
+      info1_link_html: ""
+      info1_embed_html: ""
       info2AA_html: "Para subir un <b>documento</b> seleccione el archivo a subir haciendo clic en el botón situado debajo de la opción 'Documentos'.<br>"
       info2AB_html: "Para subir un <b>documento</b> seleccione el archivo a subir haciendo clic en el botón situado debajo de la opción 'Fichero'.<br>"
       info2B_html: "Para añadir un <b>enlace</b> o un <b>código embed</b> escriba o pegue el contenido del mismo en la caja de texto correspondiente.<br>"
@@ -578,9 +580,11 @@ es:
       scope: "Ámbito"
       tags: "Etiquetas"
       title: "Título"
-    main_title: "Sube videos, imágenes y otros recursos"
+    main_title_doc: "Sube videos, imágenes, pdfs, ..."
+    main_title_link: "Añade enlaces copiando URLs"
+    main_title_embed: "Añade código HTML"
     options:
-      documents: "Documentos/Videos/Audios"
+      documents: "Documentos / Videos / Audios"
       embed: "Embed (Código HTML)"
       links: "Enlaces (URLs)"
       browse: "Buscar"
