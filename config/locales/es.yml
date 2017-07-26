@@ -10,10 +10,10 @@ es:
       desc3: "Aprende de los contenidos y enseña a tus alumnos sobre temas tan importantes como ciberacoso, sexting, tecnoadicciones, etc. Recuerda que tus alumnos podrán también crear contenidos relacionados con los temas aquí presentes y así 'aprender haciendo'."
     community: "Comunidad"
     create_account:
-      title_html: Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad
-      btn_reg: Registrarme
-      btn_ent: Entrar
-      btn_exp: Explorar
+      title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
+      btn_reg: "Registrarme"
+      btn_ent: "Entrar"
+      btn_exp: "Explorar"
     footer:
       cookies: "Cookies"
       rights: "Todos los derechos reservados"
@@ -1041,7 +1041,9 @@ es:
     private_student: "Crear grupos privados de estudiantes"
   resource:
     actions:
-      add: "Subir Fichero"
+      add_html: "Añadir HTML"
+      add_link: "Añadir Enlace"
+      upload_document: "Subir fichero"
     empty: "No"
     network: "recursos de mi red"
     newmy_html: "Aún no has creado ningún recurso. Puedes crear uno nuevo haciendo click en el botón subir o en este "

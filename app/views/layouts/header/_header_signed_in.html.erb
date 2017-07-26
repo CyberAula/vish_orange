@@ -40,10 +40,12 @@
               <% elsif modelName == "Workshop" %>
                 <li><%= link_to new_workshop_path do %><i class="fa fa-book"></i> <%= t('workshop.actions.add') %><% end %></li>
               <% elsif modelName == "Resource" %>
-                <li><a href="#AddResource" data-toggle="modal"><i class="fa fa-upload"></i> <%=t('resource.actions.add')%></a></li>
-                <% if availableResources.include? "Writing" %>
-                  <li><%= link_to new_writing_path do %><i class="fa fa-pencil-square-o"></i> <%= t('writing.actions.add') %><% end %></li>
-                <%end%>
+                  <li><a href="#ModalDocument" data-toggle="modal"><i class="fa fa-upload"></i> <%=t('resource.actions.upload_document')%></a></li>
+                  <li><a href="#ModalLink" data-toggle="modal"><i class="fa fa-upload"></i> <%=t('resource.actions.add_link')%></a></li>
+                  <li><a href="#ModalEmbed" data-toggle="modal"><i class="fa fa-upload"></i> <%=t('resource.actions.add_html')%></a></li>
+                  <% if availableResources.include? "Writing" %>
+                      <li><%= link_to new_writing_path do %><i class="fa fa-pencil-square-o"></i> <%= t('writing.actions.add') %><% end %></li>
+                  <%end%>
               <% elsif modelName == "Category" %>
                 <li><a href="#AddCategoryHeader" data-toggle="modal"><i class="fa fa-th-large"></i> <%=t('categories.actions.add')%></a></li>
               <% elsif modelName == "Event" %>

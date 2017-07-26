@@ -1040,7 +1040,9 @@ en:
     private_student: "Create private students group"
   resource:
     actions:
-      add: "Upload file"
+      add_html: "Add HTML"
+      add_link: "Add Link"
+      upload_document: "Upload file"
     empty: "You"
     network: "my network resources"
     newmy_html: "You have not uploaded any resources yet. You can add a new one by clicking on the upload button or on this "
