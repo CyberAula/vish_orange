@@ -51,6 +51,8 @@ es:
       bold: "teca"
     how_it_works: "¿Cómo funciona?"
     about: "Acerca de EducaInternet"
+    explore: "Explora EducaInternet"
+    explore_msg: "Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad"
     main_message: "Bienvenido a EducaInternet"
     second_message: El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC
     menu_blocks:
