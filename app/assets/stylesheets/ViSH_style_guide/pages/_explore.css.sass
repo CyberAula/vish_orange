@@ -1,25 +1,39 @@
-.teach, .resources
-  width: 60%
-  height: auto
-  display: block
-  overflow: hidden
-  h3, span
-    display: block
-    text-align: center
-    margin-bottom: .8em
-  .article_cont, .article_img
-    margin: 0 auto
-  .article_cont
-    h3
-      font-weight: 400
-      &:first-child
-        padding-bottom: .8em
-      &:last-child
-        padding-top: .8em
-  .article_img
-    width: 128px
-    height: 128px
-    background: #444
-    padding: .8em 0
-    border-radius: 50%
-    display: block
+.articles
+  article
+    .teach, .resources
+      width: 60%
+      height: auto
+      display: block
+      overflow: hidden
+      h3, span
+        display: block
+        text-align: center
+        margin-bottom: .8em
+
+      .article_cont, .article_img, .article_links
+        margin: 0 auto
+
+      .article_cont
+        p
+          margin-bottom: 1.6em
+
+      .article_links, .article_img
+        text-align: center
+
+      .article_links
+        width: 80%
+        margin-bottom: 1.6em
+        button
+          margin: .4em
+
+      .article_img
+        width: 128px
+        height: 128px
+        background: $orange-primary
+        padding: .8em 0
+        border-radius: 50%
+        display: block
+        i
+          color: $white
+          position: relative
+          top: 24%
