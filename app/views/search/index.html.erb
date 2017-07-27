@@ -28,9 +28,7 @@
 <section id="search" class="library_page">
   <div class="row">
     <div id="search-sidebar" class="search-filterbar">
-
       <div class="srch-panel">
-
         <% if params[:browse] %>
           <li><h2><i class="fa fa-folder-open-o"></i><%= t("browse.title")%></h2></li>
         <% elsif params[:catalogue] %>
@@ -42,8 +40,6 @@
         <% else %>
           <li><h2><i class="fa fa-search"></i><%= t("search.title")%></h2></li>
         <% end %>
-
-
 
         <div filter_type="super_type" search_filter="true" style="display:none" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
@@ -71,16 +67,16 @@
         </div>
 
         <div filter_type="resouce_type" id="resource_type" directory_filter="true" opens_with="Resource" style="display:none" class="filter_set indented">
-            <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
-              <a>-</a>
-            </button>
-            <span class="filter_title"><%=t("search.titles.filter_by")%> <span class="filter_title_bold"><%=t("search.titles.resource")%></span></span>
-            <hr class="separator">
-            <ul class="opened_filter">
-              <% VishConfig.getAvailableNotMainResourceModels(:include_subtypes=>true).reject!{|e| e=="Document" }.each do |res| %>
-                <li class="filter_item" filter_key="type" filter="<%=res%>"><%=t("search.models.#{res.downcase}")%></li>
-              <%end%>
-            </ul>
+          <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
+            <a>-</a>
+          </button>
+          <span class="filter_title"><%=t("search.titles.filter_by")%> <span class="filter_title_bold"><%=t("search.titles.resource")%></span></span>
+          <hr class="separator">
+          <ul class="opened_filter">
+            <% VishConfig.getAvailableNotMainResourceModels(:include_subtypes=>true).reject!{|e| e=="Document" }.each do |res| %>
+              <li class="filter_item" filter_key="type" filter="<%=res%>"><%=t("search.models.#{res.downcase}")%></li>
+            <%end%>
+          </ul>
         </div>
 
         <div filter_type="category_ids" opens_with="Learning_object" search_filter="true" style="display:none" class="filter_set">
@@ -109,7 +105,6 @@
           </ul>
         </div>
 
-
         <div filter_type="language" style="display:none" search_filter="true" archive_filter="true" directory_filter="true" catalogue_filter="true" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
             <a>-</a>
@@ -123,7 +118,6 @@
           </ul>
         </div>
 
-
         <div filter_type="tags" search_filter="true" archive_filter="true" directory_filter="true" catalogue_filter="true" style="display:none" class="filter_set">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
             <a>-</a>
@@ -133,118 +127,114 @@
           <ul class="opened_filter ul_selected_tags" id="selected_tags_ul"></ul>
           <ul class="opened_filter ul_tags" id="tags_ul"></ul>
         </div>
-
-        </div>
       </div>
+    </div>
 
     <div class="filter-results">
-
       <div class="search_filters filters-applied">
-
         <%= render partial: 'help/help_search' %>
-
         <% if searchTerms %>
           <div><%= t("search.terms")%>: <span class="n_results"><%=params[:q]%></span></div>
         <% end %>
-        <div><span class="n_results" id="n_results"><%=@search_result.total_entries%></span> <%= t("search.results")%></div>
+        <div>
+          <span class="n_results" id="n_results"><%=@search_result.total_entries%></span>
+          <%= t("search.results")%>
+        </div>
         <div class="title_applied_filters"><%= t("search.applied_filters")%></div>
+        <div id="applied_filters" class="filter_boxes"></div>
+        <div class="clear"></div>
 
-          <div id="applied_filters" class="filter_boxes"></div>
-          <div class="clear"></div>
-
-          <div class="dropdown dropdown_order_by" id="order_by_selector_search">
-
-            <button class="btn btn-secundary dropdown-toggle" type="button" data-toggle="dropdown">
-              <span>
-                <%if params[:browse] %>
+        <div class="dropdown dropdown_order_by" id="order_by_selector_search">
+          <button class="btn btn-secundary dropdown-toggle" type="button" data-toggle="dropdown">
+            <span>
+              <%if params[:browse] %>
+                <i class="fa fa-tachometer"></i>
+                <%=t('order_by.popularity')%>
+              <%elsif params[:catalogue] || params[:directory] %>
+                <% if (params[:catalogue] && VishConfig.getCatalogueModels() === ["Excursion"]) || (params[:directory] && VishConfig.getDirectoryModels() === ["Excursion"]) %>
+                  <i class="fa fa-tachometer"></i>
+                  <%=t('order_by.quality')%>
+                <% else %>
                   <i class="fa fa-tachometer"></i>
                   <%=t('order_by.popularity')%>
-                <%elsif params[:catalogue] || params[:directory] %>
-                  <% if (params[:catalogue] && VishConfig.getCatalogueModels() === ["Excursion"]) || (params[:directory] && VishConfig.getDirectoryModels() === ["Excursion"]) %>
-                    <i class="fa fa-tachometer"></i>
-                    <%=t('order_by.quality')%>
-                  <% else %>
-                    <i class="fa fa-tachometer"></i>
-                    <%=t('order_by.popularity')%>
-                  <% end %>
-                <% else %>
-                  <i class="fa fa-sort-amount-desc"></i>
-                  <%=t('order_by.relevance')%>
-                <%end%>
-              </span><i class="fa fa-angle-down"></i>
-            </button>
-
-            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="order_by_selector_search">
-              <li role="presentation">
-                <a href="#" sort-by-key="relevance">
-                  <i class="fa fa-sort-amount-desc"></i>
-                  <span><%=t('order_by.relevance')%> </span>
-                </a>
-              </li>
-             <li role="presentation">
-                <a href="#" sort-by-key="popularity">
-                  <i class="fa fa-tachometer"></i>
-                  <span><%=t('order_by.popularity')%> </span>
-                </a>
-              </li>
-
-              <li role="presentation">
-                <a href="#"  sort-by-key="created_at">
-                  <i class="fa fa-bolt"></i>
-                  <span><%=t('order_by.created_at')%> </span>
-                </a>
-              </li>
-              <li role="presentation" class="only_for_excursion disabled" title="<%=t('search.titles.tooltip2')%>">
-                <a href="#" sort-by-key="quality">
-                  <i class="fa fa-check-circle"></i>
-                  <span><%=t('order_by.quality')%> </span>
-                </a>
-              </li>
-              <li role="presentation" class="disable_for_user" title="">
-                <a href="#" sort-by-key="updated_at">
-                  <i class="fa fa-pencil"></i>
-                  <span><%=t('order_by.updated_at')%> </span>
-                </a>
-              </li>
-                <li role="presentation" class="disable_for_user" title="">
-                  <a href="#" sort-by-key="visits">
-                    <i class="fa fa-eye"></i>
-                    <span><%=t('order_by.visits')%> </span>
-                  </a>
-                </li>
-                <li role="presentation" class="disable_for_user" title="">
-                  <a href="#" sort-by-key="favorites">
-                    <i class="fa fa-star"></i>
-                    <span><%=t('order_by.favorites')%> </span>
-                  </a>
-                </li>
-            </ul>
-          </div>
-          <div class="clear"></div>
-
-        </div>
-        <div id="search-all" class="searched-items">
-          <ul class="items">
-            <% @search_result.each do |r| %>
-                <% unless r.nil? %>
-                  <%= render partial: "#{ r.class.to_s.tableize }/search_result",
-                             locals:  { r.class.to_s.underscore.to_sym => r, :prefix_id => "search" }  %>
                 <% end %>
-            <% end %>
+              <% else %>
+                <i class="fa fa-sort-amount-desc"></i>
+                <%=t('order_by.relevance')%>
+              <%end%>
+            </span><i class="fa fa-angle-down"></i>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="order_by_selector_search">
+            <li role="presentation">
+              <a href="#" sort-by-key="relevance">
+                <i class="fa fa-sort-amount-desc"></i>
+                <span><%=t('order_by.relevance')%> </span>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#" sort-by-key="popularity">
+                <i class="fa fa-tachometer"></i>
+                <span><%=t('order_by.popularity')%> </span>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#"  sort-by-key="created_at">
+                <i class="fa fa-bolt"></i>
+                <span><%=t('order_by.created_at')%> </span>
+              </a>
+            </li>
+            <li role="presentation" class="only_for_excursion disabled" title="<%=t('search.titles.tooltip2')%>">
+              <a href="#" sort-by-key="quality">
+                <i class="fa fa-check-circle"></i>
+                <span><%=t('order_by.quality')%> </span>
+              </a>
+            </li>
+            <li role="presentation" class="disable_for_user" title="">
+              <a href="#" sort-by-key="updated_at">
+                <i class="fa fa-pencil"></i>
+                <span><%=t('order_by.updated_at')%> </span>
+              </a>
+            </li>
+            <li role="presentation" class="disable_for_user" title="">
+              <a href="#" sort-by-key="visits">
+                <i class="fa fa-eye"></i>
+                <span><%=t('order_by.visits')%> </span>
+              </a>
+            </li>
+            <li role="presentation" class="disable_for_user" title="">
+              <a href="#" sort-by-key="favorites">
+                <i class="fa fa-star"></i>
+                <span><%=t('order_by.favorites')%> </span>
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="loader_pagination">
-          <div class="pageless-loader" style="text-align:center;width:100%;">
-            <div class="msg" style="font-size:2em">
-              <%=t('search.loading')%>
-            </div>
-            <%= render :partial => 'layouts/loading'%>
-          </div>
-        </div>
-        <div id="last_content_shown" style="display:none"> <%=t('search.end')%></div>
-      </div>
 
-    </div>
+        <div class="clear"></div>
+      </div>
+      <div id="search-all" class="searched-items">
+        <ul class="items">
+          <% @search_result.each do |r| %>
+              <% unless r.nil? %>
+                <%= render partial: "#{ r.class.to_s.tableize }/search_result",
+                           locals:  { r.class.to_s.underscore.to_sym => r, :prefix_id => "search" }  %>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="loader_pagination">
+        <div class="pageless-loader" style="text-align:center;width:100%;">
+          <div class="msg" style="font-size:2em">
+            <%=t('search.loading')%>
+          </div>
+          <%= render :partial => 'layouts/loading'%>
+        </div>
+      </div>
+      <div id="last_content_shown" style="display:none"> <%=t('search.end')%></div>
+
+
+
   </div>
 
 </section>
