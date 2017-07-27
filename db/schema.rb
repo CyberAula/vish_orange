@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170308141313) do
+ActiveRecord::Schema.define(:version => 20170720134310) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -219,6 +219,7 @@ ActiveRecord::Schema.define(:version => 20170308141313) do
     t.integer  "actor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "settings",   :default => "{}"
   end
 
   create_table "contest_submissions", :force => true do |t|
