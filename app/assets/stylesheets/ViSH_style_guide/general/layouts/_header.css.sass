@@ -103,8 +103,7 @@
             .mat
               background: $gray-dark
               display: none
-              position: absolute
-              top: 40px
+              position: relative
               z-index: 10
               @include border-bottom-radius ($border-radius-base)
               @media (max-width: 768px)
@@ -138,15 +137,14 @@
                 margin-top: 2px
 
               .results
-                max-height: 432px
+                padding: 5px
                 height: auto
                 text-align: center
                 ul
-                  width: 96%
-                  float: none
-                  margin-bottom: 6px !important
+                  float: none                  
                   @include border-bottom-radius ($border-radius-base)
                   @include items
+                  margin: 0
                   .add-item
                     display: none
                   li.box-item
@@ -175,7 +173,8 @@
                   li, .container-img, .caption
                     max-height: 44px
                   .more
-                    width: 236px
+                    margin: 4px
+                    width: 96%
                     background: $gray-darker-extra
                     padding: 8px 0
                     display: inline-block

@@ -7,15 +7,12 @@
       <a class="btn btn-navbar btn-default <%='b' if front_or_home%>" data-toggle="collapse" data-target=".nav-collapse">
         <i class="fa fa-bars"></i>
       </a>
-
       <!-- BRAND -->
       <div id="brand" class="brand">
         <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
       </div>
-
       <!--______________________________desktop-->
       <div class=" hidden-phone hidden-tablet">
-
         <!-- MENU -->
         <ul class="nav navbar-nav float_R">
 
@@ -25,9 +22,7 @@
               <i class="fa fa-question-circle"></i>
             </div>
           -->
-
             <ul class="dropdown-menu add-menu" role="menu" >
-
               <li>
                 <a href="/overview">
                   <i class="fa fa-question"> </i>
@@ -54,7 +49,6 @@
               <a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>"><%=t("sign_up")%></a>
             </button>
           <%end%>
-
           <% if !Vish::Application.config.cas %>
               <button class="btn btn-secondary dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
