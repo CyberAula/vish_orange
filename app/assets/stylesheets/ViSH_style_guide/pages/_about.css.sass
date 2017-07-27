@@ -1,119 +1,124 @@
-.why
-  width: 40%
-  height: auto
-  text-align: center
-
-.values, .great_team, .great_team
-  h4
-    text-align: center
-
-.values, .great_team
-  width: 68%
-  display: block
-
-.values
-  padding-bottom: 2em
-  overflow: hidden
-  .img_block
-    width: 32%
-  .text_block
-    width: 68%
-    img
-      margin-right: 8px
-
-.sub_values
-  background: $gray-lighter
-  width: 100%
-  padding: 2.4em 16em
-  overflow: hidden
-  div
-    width: 32%
-    display: inline-block
-    div:not(:last-child)
-      border-right: solid .4px #444
-      height: 24px
-    h5, span
-      font-size: 1.2em
-      display: block
-    h5
-      margin-bottom: .4em
-      font-weight: 300
-    span
-      color: $orange-primary
-      font-weight: 700
-
-.great_team
-  padding: 2.4em 0
-  p, h3
-    width: 50%
-  p
-    float: right
-    padding-left: .8em
-  h3
-    padding-right: .8em
-  .great_team_imgs
-    width: 100%
-    padding-top: 2.4em
-    overflow: hidden
-    > div
-      width: 32%
-      display: inline-block
-    .great_team_img
-      height: 128px
+.articles
+  article
+    .why, .values, .great_team
+      margin-bottom: 1.6em
+    .why
+      width: 40%
+      height: auto
       text-align: center
-      img
-        width: 100%
-        height: auto
-        padding: 8px
-        opacity: .4em
-        filter: grayscale(100%)
-        &:hover
-          opacity: 1
-          filter: grayscale(0%)
-
-@media (max-width: 1200px)
-  .sub_values
-    padding: 2.4em 12em
-
-@media (max-width: 992px)
-  .why
-    width: 60%
-  .values
-    padding-bottom: 0
-    .text_block
-      width: 100%
-      margin-bottom: .8em
-    .img_block
-      width: 100%
-      img
-        height: 80%
-  .sub_values
-    padding: 2.4em 8em
-
-@media (max-width: 767px)
-  .values
-    .text_block
-      img
-        display: none
-  .sub_values
-    padding: 2.4em 6em
-  .great_team
-    p, h3
-      width: 100%
-      padding: 0
-    .great_team_imgs
-      > div
-        width: 48%
-
-@media (max-width: 480px)
-  .sub_values
-    padding: 2.4em 60px
-    div
+    .values, .great_team
+      width: 68%
       display: block
-      margin-bottom: .8em
-  .great_team
-    .great_team_imgs
-      .great_team_img
+      span
+        display: block
+        text-align: center
+        margin-bottom: .8em
+
+    .values
+      padding-bottom: 2em
+      overflow: hidden
+      .img_block
+        width: 32%
+      .text_block
+        width: 68%
         img
-          width: 128px
-          height: auto
+          margin-right: 8px
+
+    .sub_values
+      background: $gray-lighter
+      width: 100%
+      padding: 2.4em 16em
+      overflow: hidden
+      div
+        width: 32%
+        display: inline-block
+        div:not(:last-child)
+          border-right: solid .4px #444
+          height: 24px
+        h4, span
+          font-size: 1.2em
+          display: block
+        h4
+          margin-bottom: .4em
+          font-weight: 300
+        span
+          color: $orange-primary
+          font-weight: 700
+
+    .great_team
+      padding: 2.4em 0
+      h3, p
+        width: 50%
+      h3
+        padding-right: .8em
+        display: inline-block
+      p
+        float: right
+        padding-left: .8em
+        margin-top: .8em
+      .great_team_imgs
+        width: 100%
+        padding-top: 2.4em
+        overflow: hidden
+        > div
+          width: 32%
+          display: inline-block
+        .great_team_img
+          height: 128px
+          text-align: center
+          img
+            width: 100%
+            height: auto
+            padding: 8px
+            opacity: .4em
+            filter: grayscale(100%)
+            &:hover
+              opacity: 1
+              filter: grayscale(0%)
+
+    @media (max-width: 1200px)
+      .sub_values
+        padding: 2.4em 12em
+
+    @media (max-width: 992px)
+      .why
+        width: 60%
+      .values
+        padding-bottom: 0
+        .text_block
+          width: 100%
+          margin-bottom: .8em
+        .img_block
+          width: 100%
+          img
+            height: 80%
+      .sub_values
+        padding: 2.4em 8em
+
+    @media (max-width: 767px)
+      .values
+        .text_block
+          img
+            display: none
+      .sub_values
+        padding: 2.4em 6em
+      .great_team
+        p, h3
+          width: 100%
+          padding: 0
+        .great_team_imgs
+          > div
+            width: 48%
+
+    @media (max-width: 480px)
+      .sub_values
+        padding: 2.4em 60px
+        div
+          display: block
+          margin-bottom: .8em
+      .great_team
+        .great_team_imgs
+          .great_team_img
+            img
+              width: 128px
+              height: auto
