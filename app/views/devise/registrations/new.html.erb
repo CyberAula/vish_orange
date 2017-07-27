@@ -4,7 +4,7 @@
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
 <% course = (params[:course].blank? ? nil : Course.find_by_id(params[:course])) %>
 
-<section id="registration">
+<section id="registration" class="registration_page">
   <section class="registration">
     <h4><%= t('sign_up').capitalize %></h4>
 

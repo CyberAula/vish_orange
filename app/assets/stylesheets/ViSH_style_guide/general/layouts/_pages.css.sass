@@ -5,14 +5,24 @@
 .container-content
   width: 100%
   margin: 0 auto
-  padding: 0 20px
   @media (max-width: $screen-xs)
     padding: 0
+  .library_page,
+  .user_page,
+  .registration_page,
+  .new_session_page
+    padding-top: 80px
+  .workshop_show,
+  .workshop-edit
+    padding-top: 130px
 
 .general_toolbar
-  position: sticky
-  top: 0
+  position: absolute
+  top: 65px
+  width: 100%
   z-index: 1000
+  @media (max-width: $screen-xs)
+    top: 55px
 
 a.btn.btn_delete_item
   position: absolute

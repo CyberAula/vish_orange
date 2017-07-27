@@ -1,17 +1,20 @@
-nav.navbar-home
-  background: transparent
-  position: fixed
 
-nav.navbar-fixed-top
-  height: 7vh
+.navbar-main
+  @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
+  background-color: white
+  position: fixed
+  height: 65px
   font-size: 0.8em
-  padding: 4px 16px
+  padding: 15px
   border: 0
+  z-index: $zindex-navbar-fixed
+  width: 100%
+
   @media (max-width: 768px)
-    padding: 8px 4px
+    padding: 12px 0
+    height: 55px
   .container-fluid
     .btn-navbar
-      margin-top: 4px
       padding: 4px 8px
       display: none
       float: right
@@ -21,7 +24,7 @@ nav.navbar-fixed-top
       font-size: 2em
       float: left
       .logo
-        color: #fff
+        color: #333
         font-weight: 200
         outline: none
         .logo_bold
@@ -260,6 +263,14 @@ nav.navbar-fixed-top
             padding: 8px
             i
               margin: 0
+
+.navbar-transparent
+  background-color: transparent
+  box-shadow: none
+  .container-fluid
+    .brand
+      .logo
+        color: white
 
 //****************************************************
 

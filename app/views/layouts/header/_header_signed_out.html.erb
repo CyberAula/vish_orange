@@ -1,7 +1,7 @@
 <%front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
 <%protocol = Rails.env==="production" ? "https":"http"%>
 
-<nav id="navbar-home" class="navbar navbar-default navbar-fixed-top <%='navbar-home' if front_or_home%>" role="navigation">
+<nav id="navbar-home" class="navbar navbar-main <%='navbar-transparent' if front_or_home%>" role="navigation">
   <div class="container-fluid">
     <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <a class="btn btn-navbar btn-default <%='b' if front_or_home%>" data-toggle="collapse" data-target=".nav-collapse">
