@@ -1,23 +1,26 @@
 .articles
   article
+    .teach
+      background: $white
     .teach, .resources
-      width: 60%
+      width: 100%
       height: auto
       display: block
       overflow: hidden
+      .article_cont, .article_txt, .article_img, .article_links
+        margin: 0 auto
+      .article_cont
+        max-width: 60%
       h3, span
         display: block
         text-align: center
         margin-bottom: .8em
 
-      .article_cont, .article_img, .article_links
-        margin: 0 auto
-
-      .article_cont
+      .article_txt
         p
           margin-bottom: 1.6em
 
-      .article_links, .article_img
+      .article_img, .article_links
         text-align: center
 
       .article_links
