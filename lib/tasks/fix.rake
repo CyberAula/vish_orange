@@ -229,6 +229,37 @@ namespace :fix do
     printTitle("Task finished. Contest created with id " + c.id.to_s)
   end
 
+  task :createEducaInternet2017Contest => :environment do
+    printTitle("Create the EducaInternet 2017 Contest")
+
+    c = Contest.find_by_template("educa2017")
+    c.destroy unless c.nil?
+
+    ml = MailList.find_by_name("Educa2017 MailList")
+    ml.destroy unless ml.nil?
+
+    #Create MailList
+    ml = MailList.new
+    ml.name = "Educa2017 MailList"
+    ml.settings = ({"require_login" => "true", "require_name" => "true"}).to_json
+    ml.save!
+
+    c = Contest.new
+    c.name = "educa2017"
+    c.template = "educa2017"
+    c.show_in_ui = true
+    c.settings = ({"enroll" => "true", "submission" => "free", "submission_require_enroll" => "true", "additional_fields" => ["province","postal_code", "school_name", "teaching_subject, phone_number"]}).to_json
+    c.mail_list_id = ml.id
+    c.save!
+
+    cc = ContestCategory.new
+    cc.name = "General"
+    cc.contest_id = c.id
+    cc.save!
+
+    printTitle("Task finished. Contest created with id " + c.id.to_s)
+  end
+
   #Usage
   #Development:   bundle exec rake fix:createTestContest
   task :createTestContest => :environment do
