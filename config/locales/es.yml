@@ -18,17 +18,23 @@ es:
       btn_ent: "Entrar"
       btn_exp: "Explorar"
     footer:
+      about: "Sobre Nosotros"
+      community: "Comunidad"
+      contact: "Contacto"
       cookies: "Cookies"
-      rights: "Todos los derechos reservados"
-      faq: "FAQ"
-      legal: "Aviso legal"
-      privacity: "Política de privacidad"
       conditions: "Condiciones de uso"
       contributors: "Comité asesor"
-      reference_center_html: Tu centro de referencia en <br>ciberseguridad y uso de <br>las TIC.<br><span>© Orange 2015 Rights</span>
-      project: Proyecto
-      community: Community
-      help: Ayuda
+      developers: "Desarrolladores"
+      explore: "Explorar"
+      faq: "FAQ"
+      help: "Ayuda"
+      legal: "Aviso legal"
+      privacity: "Política de privacidad"
+      project: "Proyecto"
+      reference_center_html: "Tu centro de referencia en <br>ciberseguridad y uso de <br>las TIC.<br><span>© Orange 2015 Rights</span>"
+      review: "Danos tu opinion"
+      rights: "Todos los derechos reservados"
+      whatwedo: "¿Que hacemos?"
     front_blocks:
       block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
       block2_tit: "Te ofrecemos gratuitamente cursos acreditados online, para que aprendas a tu ritmo y llegues a ser un experto en ciberseguridad"
