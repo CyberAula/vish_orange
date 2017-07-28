@@ -5,7 +5,8 @@
     .resources
     .teach, .resources
       width: 100%
-      padding: 1.6em 0
+      padding-top: 1.6em
+      padding-bottom: 6em
       display: block
       overflow: hidden
       .article_cont, .article_txt, .article_img, .article_links
@@ -36,6 +37,11 @@
         padding: .8em 0
         border-radius: 50%
         display: block
+        position: relative
+        bottom: 6em
+        overflow: hidden
+        &:last-child
+          bottom: -2em
         i
           color: $white
           position: relative
