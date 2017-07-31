@@ -46,6 +46,9 @@ en:
       tema_desc: "Here you can see the catalogue of teaching units for their use in classroom and outside it"
       bold: ""
     how_it_works: "How does it work?"
+    explore: "Explore EducaInternet"
+    explore_msg: "You will find everything you need to become an expert in cybersecurity"
+    main_message: "Welcome to EducaInternet"
     message: "Learn and teach about safe and responsible use of technologies"
     menu_blocks:
       our_courses_tit: "Train yourself"

@@ -59,10 +59,10 @@ es:
       tema_desc: "Aquí se muestra el catálogo de unidades didácticas para su uso libre en el aula y fuera de ella"
       bold: "teca"
     how_it_works: "¿Cómo funciona?"
-
     explore: "Explora EducaInternet"
     explore_msg: "Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad"
     main_message: "Bienvenido a EducaInternet"
+    message: "Aprender y enseñar sobre el uso seguro y responsable de las tecnologías"
     menu_blocks:
       our_courses_tit: "Fórmate"
       our_courses: "Nuestros cursos"
