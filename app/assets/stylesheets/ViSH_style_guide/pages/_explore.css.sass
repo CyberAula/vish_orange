@@ -2,13 +2,11 @@
   article
     .teach
       background: $white
-    .resources
     .teach, .resources
       width: 100%
       padding-top: 1.6em
       padding-bottom: 6em
       display: block
-      overflow: hidden
       .article_cont, .article_txt, .article_img, .article_links
         margin: 0 auto
       .article_cont
@@ -18,7 +16,7 @@
       .article_txt
         p
           margin-bottom: 1.6em
-      h3, span
+      h3, h4
         display: block
         text-align: center
         margin-bottom: .8em
@@ -41,3 +39,36 @@
           color: $white
           position: relative
           top: 24%
+      .items li.box-item
+        width: 18.8%
+
+// media-queries
+
+@media (max-width: 1199px)
+  .articles
+    article
+      .teach, .resources
+        .items li.box-item
+          width: 18.4%
+@media (max-width: 991px)
+  .articles
+    article
+      .teach, .resources
+        .article_cont
+          max-width: 80%
+        .items li.box-item
+          width: 18%
+@media (max-width: 767px)
+  .articles
+    article
+      .teach, .resources
+        .article_cont
+        .items li.box-item
+          width: 44%
+@media (max-width: 480px)
+  .articles
+    article
+      .teach, .resources
+        .article_cont
+        .items li.box-item
+          width: 100%

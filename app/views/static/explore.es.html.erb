@@ -8,7 +8,7 @@
         <h2><%= t('orange_front.explore_msg')%></h2>
       </div>
       <button class="btn btn-secondary btn-main-title" onclick="location.href='/search';">
-       <%= t('orange_front.teach.go_to_library')%>
+       <%= t('teach.go_to_library')%>
      </button>
     </div>
   </div>
@@ -20,7 +20,7 @@
   <article>
     <div class="teach">
       <div class="article_cont">
-        <span>SI ERES PROFESOR, ESTE ES TU SITIO</span>
+        <h4>SI ERES PROFESOR, ESTE ES TU SITIO</h4>
         <!--linea horizontal divisoria-->
         <div class="horizontal_line"></div>
         <!--/linea horizontal divisoria-->
@@ -39,7 +39,8 @@
             </div>
         </div>
     </div>
-
+  </article>
+  <article>
     <div class="resources">
       <div class="article_cont">
         <div class="article_img">
@@ -60,7 +61,8 @@
         </div>
       </div>
     </div>
-
+  </article>
+  <article>
     <div class="teach">
       <div class="article_cont">
         <div class="article_img">
@@ -81,7 +83,8 @@
           </div>
       </div>
     </div>
-
+  </article>
+  <article>
     <div class="resources">
       <div class="article_cont">
         <div class="article_img">
@@ -97,14 +100,15 @@
               <% favorites.each do |doc| %>
                 <%= render partial: 'repositories/resource', locals: { resource: doc} %>
               <% end %>
-              <div class="clear"></div>
-          </div>
+          <div class="clear"></div>
         </div>
       </div>
-
+    </div>
+  </article>
+  <article>
     <div class="resources teach">
       <div class="article_cont">
-        <span>BIBLIOTECA</span>
+        <h4>BIBLIOTECA</h4>
           <!--linea horizontal divisoria-->
           <div class="horizontal_line"></div>
           <!--/linea horizontal divisoria-->
