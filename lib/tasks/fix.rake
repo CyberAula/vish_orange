@@ -248,7 +248,7 @@ namespace :fix do
     c.name = "educa2017"
     c.template = "educa2017"
     c.show_in_ui = true
-    c.settings = ({"enroll" => "true", "submission" => "free", "submission_require_enroll" => "true", "additional_fields" => ["province","postal_code", "school_name", "teaching_subject, phone_number"]}).to_json
+    c.settings = ({"enroll" => "true", "submission" => "free", "submission_require_enroll" => "true", "additional_fields" => ["province","postal_code", "school_name", "teaching_subject", "phone_number"]}).to_json
     c.mail_list_id = ml.id
     c.save!
 

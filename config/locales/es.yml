@@ -353,6 +353,14 @@ es:
       require_enrollment: "Necesitas estar inscrito para realizar un envío."
       one_per_user: "Solo se permite un envío por usuario."
       one_per_user_category: "Solo se permite un envío por usuario y categoría."
+    educa2017:
+      mailers:
+        first_subject_email: "Bienvenido al concurso de EducaInternet 2017"
+      postal_code: "Código postal"
+      province: Provincia
+      school_name: Nombre de la escuela
+      teaching_subject: Asignatura
+      phone_number: Número de teléfono
   thevish: "EducaInternet"
   youtube: "Canal EducaInternet en Youtube"
   copy_to_clip: "Copiar al portapapeles"

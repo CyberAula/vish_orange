@@ -181,6 +181,8 @@ Vish::Application.routes.draw do
   match 'contest/:name/educa2016materials' => 'contests#educa2016materials', via: [:post]
   match 'contest/:name/other_fields_enrollment' => 'contests#other_fields_enrollment'
   match 'contest/:id/get_enrolled_users_to_contest' => 'contests#get_enrolled_users_to_contest'
+  match 'contest/:name/full_enrollment_registration' => 'contests#full_enrollment_registration'
+  match 'contest/:id/sign_up' => 'contests#user_sign_up_and_enroll'
 
   #Administration panel
   match 'admin' => 'admin#index'

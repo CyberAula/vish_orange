@@ -1,0 +1,61 @@
+<%content_for :title do%><%= t("site.meta_title.sign_up") %><%end%>
+<%content_for :keywords do%><%= t("site.current.keywords") %><%end%>
+<%content_for :description do%><%= t("site.meta_desc.sign_up")%><%end%>
+<%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
+
+<section id="registration">
+  <section class="registration">
+    <h4><%= t('sign_up').capitalize %></h4>
+
+    <%= form_tag('/contests/'+@contest.id.to_s+'/sign_up', method: "post", :html => {:id => "new_user_devise_form"} ) do |f| %>
+      <div class="form-group reg-labels">
+
+        <%= label :user, :name %>
+        <%= text_field :user, :name, :class => "form-control", :autocomplete => "off" %>
+
+        <%= label :user, :email %>
+        <%= text_field :user, :email, :class => "form-control", :autocomplete => "off" %>
+
+        <%= label :user, :password %>
+
+        <%= password_field :user, :password, :class => "form-control", :id => "devise_password", :autocomplete => "off" %>
+
+        <%= label :user, :password_confirmation %>
+        <%= password_field :user, :password_confirmation, :class => "form-control", :autocomplete => "off" %>
+
+        <%= label :user, t('profile.occupation.label') %>
+        <%= select(:user, :occupation, options_for_select([[t('profile.occupation.options.select'), 0], [t('profile.occupation.options.teacher'), 1], [t('profile.occupation.options.scientist'), 2], [t('profile.occupation.options.other'), 3]], params[:user] ? params[:user][:occupation] : nil)) %>
+
+        <% if @contest.has_additional_fields? %>
+          <% @contest.additional_fields.each do |element|%>
+          <%= label :enrollment, t("contest." + @contest.name + "." + element) %>
+          <%= text_field_tag element, nil, :required => true %>
+          </br>
+        <%end%>
+        <% end %>
+
+        <hr class="soften">
+        <div class="conditions">
+          <label>
+            <input type="checkbox" id="inlineCheckbox1" required="required" title="You need to accept the Terms and Conditions to create your account" value="option1">
+            <span class="lbl padding-0">
+              <%= t('conditions.check_message') %>
+              <%= link_to t('conditions.check_message_1'), '/legal_notice', :target => '_blank' %>
+              <%= t('conditions.check_message_2') %>
+            </span>
+          </label>
+          
+          <div class="action">
+              <%if Vish::Application.config.enable_recaptcha %>
+                  <%= invisible_recaptcha_tags :text=> t('action.accept').capitalize, :callback=> 'submitRegistrationInvisibleRecaptchaForm', :class => "btn btn-primary pull-right" %>
+              <%else%>
+                  <%= submit_tag t('action.accept').capitalize, :class => "btn btn-primary pull-right" %>
+              <%end%>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+  </section>
+</section>

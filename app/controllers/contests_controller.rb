@@ -16,6 +16,10 @@ class ContestsController < ApplicationController
     render "contests/registration/other_fields_enrollment"
   end
 
+  def full_enrollment_registration
+    render 'contests/registration/full_enrollment_registration'
+  end
+
   def get_enrolled_users_to_contest
     if current_user.admin?
       @contest = Contest.find(params[:id])
@@ -220,6 +224,14 @@ class ContestsController < ApplicationController
 
   end
 
+  def user_sign_up_and_enroll
+    #check user is fine with devise or call devise controller
+    if @user.save
+      #create enrrollment
+      CourseNotificationMailer.contest_enrolled(current_user, @contest).deliver_later
+      format.html{ redirect_to @contest}
+    end  
+  end
 
   private
 
