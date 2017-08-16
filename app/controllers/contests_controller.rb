@@ -226,10 +226,22 @@ class ContestsController < ApplicationController
 
   def user_sign_up_and_enroll
     #check user is fine with devise or call devise controller
+    @user = User.create(params[:user])
     if @user.save
       #create enrrollment
-      CourseNotificationMailer.contest_enrolled(current_user, @contest).deliver_later
-      format.html{ redirect_to @contest}
+      binding.pry
+      CourseNotificationMailer.user_welcome_email(@user, @contest)
+      if @contest.has_additional_fields?
+        additional_fields =  {}
+        @contest.additional_fields.map do |n|
+            additional_fields[n] = params[n]
+        end
+        result = @contest.enrollActorWithOtherData(@user.actor, additional_fields)
+        redirect_to(@contest.getUrlWithName)
+      else
+        result = @contest.enrollActor(@user.actor)
+        format.html{ redirect_to @contest}
+      end
     end  
   end
 
