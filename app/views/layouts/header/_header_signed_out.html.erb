@@ -126,7 +126,6 @@
       if (theElement) theElement.removeClass('open');
       window.clearTimeout(theTimer);
       theElement = $(this);
-
       theTimer = window.setTimeout(function () {
         theElement.addClass('open');
       }, delay);
@@ -139,7 +138,6 @@
               theLastPosition.y = inEvent.ScreenY;
               return;
           }
-
       if (theElement.hasClass('open')) return;
       window.clearTimeout(theTimer);
       theTimer = window.setTimeout(function () {
