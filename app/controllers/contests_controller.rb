@@ -177,6 +177,30 @@ class ContestsController < ApplicationController
     end
   end
 
+   def sign_enroll
+    #check user is fine with devise or call devise controller
+    @user = User.create(params[:user])
+    if @user.save
+      #create enrrollment
+      CourseNotificationMailer.user_welcome_email(@user, @contest)
+      if @contest.has_additional_fields?
+        additional_fields =  {}
+        @contest.additional_fields.map do |n|
+            additional_fields[n] = params[n]
+        end
+        result = @contest.enrollActorWithOtherData(@user.actor, additional_fields)
+        sign_in @user
+        redirect_to(@contest.getUrlWithName)
+      else
+        result = @contest.enrollActor(@user.actor)
+        sign_in @user
+        format.html{ redirect_to @contest}
+      end
+    else
+      redirect_to :back
+    end  
+  end
+
   #Educa2016 custom feature
   def educa2016materials
     error = nil
@@ -222,27 +246,6 @@ class ContestsController < ApplicationController
       }
     end
 
-  end
-
-  def user_sign_up_and_enroll
-    #check user is fine with devise or call devise controller
-    @user = User.create(params[:user])
-    if @user.save
-      #create enrrollment
-      binding.pry
-      CourseNotificationMailer.user_welcome_email(@user, @contest)
-      if @contest.has_additional_fields?
-        additional_fields =  {}
-        @contest.additional_fields.map do |n|
-            additional_fields[n] = params[n]
-        end
-        result = @contest.enrollActorWithOtherData(@user.actor, additional_fields)
-        redirect_to(@contest.getUrlWithName)
-      else
-        result = @contest.enrollActor(@user.actor)
-        format.html{ redirect_to @contest}
-      end
-    end  
   end
 
   private

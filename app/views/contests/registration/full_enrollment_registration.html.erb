@@ -29,9 +29,16 @@
         <% if @contest.has_additional_fields? %>
           <% @contest.additional_fields.each do |element|%>
           <%= label :enrollment, t("contest." + @contest.name + "." + element) %>
-          <%= text_field_tag element, nil, :required => true %>
-          </br>
-        <%end%>
+
+          <% if element == 'province' %>
+            <%= select_tag element, options_for_select(['Alava','Albacete','Alicante','Almería','Asturias','Avila','Badajoz','Barcelona','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ciudad Real','Córdoba','La Coruña','Cuenca','Gerona','Granada','Guadalajara','Guipúzcoa','Huelva','Huesca','Islas Baleares','Jaén','León','Lérida','Lugo','Madrid','Málaga','Murcia','Navarra','Orense','Palencia','Las Palmas','Pontevedra','La Rioja','Salamanca','Segovia','Sevilla','Soria','Tarragona','Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya','Zamora','Zaragoza'], 'Madrid'), :required => true %>
+          <% elsif element == 'postal_code' %>
+             <%= text_field_tag element, nil, :required => true, :maxlength => 5, :pattern => '\d+' %>
+          <% else %>
+            <%= text_field_tag element, nil, :required => true %>
+          <%end%> 
+         </br>
+        <% end %>
         <% end %>
 
         <hr class="soften">
