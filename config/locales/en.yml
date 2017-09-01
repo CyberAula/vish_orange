@@ -22,6 +22,11 @@ en:
       title3: "Share"
       desc3: "Learn from the content and teach your students about important issues such as cyberbullying, sexting, techno-addictions, etc... Remember that your students can also create content related topics here present and so 'learning by doing'"
     community: "Community"
+    create_account:
+      title_html: "Create your free account <br> and become an expert in cybersecurity"
+      btn_reg: "Sign in"
+      btn_ent: "Enter"
+      btn_exp: "Explore"
     front_blocks:
       block1_tit: "EducaInternet, an endless source of safety and educational resources"
       block2_tit: "Certified online courses, so you can learn at your own pace and become an expert in cybersecurity"
