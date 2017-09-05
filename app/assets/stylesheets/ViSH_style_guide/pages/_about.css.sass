@@ -7,12 +7,17 @@
       height: auto
       text-align: center
     .values, .great_team
-      width: 68%
       display: block
+      > div
+        margin: 0 auto
+        width: 68%
       span
         display: block
         text-align: center
         margin-bottom: .8em
+
+    .values, .great_team
+      background: $white
 
     .values
       padding-bottom: 2em
@@ -21,8 +26,13 @@
         width: 32%
       .text_block
         width: 68%
+        img, h3
+          float: left
         img
           margin-right: 8px
+        p
+          margin-top: .8em
+          display: inline-block
 
     .sub_values
       background: $gray-lighter

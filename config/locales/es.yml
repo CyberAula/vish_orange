@@ -1,8 +1,26 @@
 es:
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+  about_page:
+    subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
+    title: "Acerca de EducaInternet"
+    data:
+      year: ''
+      resources: ''
+      members: ''
+    great_team:
+      intro: ''
+      title: ''
+      text: ''
+    values:
+      intro: ''
+      title: ''
+      text: ''
+    why:
+      intro: 'UN PORQUÉ'
+      title: ''
+      text: ''
+
   orange_front:
-    about_title: "Acerca de EducaInternet"
-    about_subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
     banner_contest: "assets/orange/banner_contest3.png"
     carousel:
       title1: "Crea"
