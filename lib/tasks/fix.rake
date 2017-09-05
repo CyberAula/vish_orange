@@ -60,7 +60,7 @@ namespace :fix do
   task :resetScormTimestamps => :environment do
     printTitle("Reset SCORM timestamps")
 
-    Excursion.all.map { |ex| 
+    Excursion.all.map { |ex|
       ex.update_column :scorm2004_timestamp, nil
       ex.update_column :scorm12_timestamp, nil
     }
@@ -250,7 +250,7 @@ namespace :fix do
     end
   end
 
-  
+
 
   #Usage
   #Development:   bundle exec rake fix:recalculateScores
@@ -470,7 +470,7 @@ namespace :fix do
         owner = owner || e.owner
         newAvatarURL = downloadAvatar(oldAvatarURL,owner,index)
       end
-      
+
       eJson = JSON(e.json)
       eJson["avatar"] = newAvatarURL
       e.update_column :json, eJson.to_json
@@ -497,7 +497,7 @@ namespace :fix do
       filePath = nil
       fileName = index.to_s + "_default"
     end
-    
+
     if filePath.nil? or !File.exist?(filePath) or File.zero?(filePath)
       filePath = Rails.root.to_s + '/app/assets/images/logos/original/ao-default.png'
     end
@@ -776,7 +776,7 @@ namespace :fix do
         cc.addActivityObject(ao)
       end
     end
-    
+
     printTitle("Task finished. ViSH Competition contest created.")
   end
 
@@ -802,6 +802,39 @@ namespace :fix do
     c.template = "educa2016"
     c.show_in_ui = true
     c.settings = ({"enroll" => "false", "submission" => "one_per_user", "submission_require_enroll" => "false"}).to_json
+    c.mail_list_id = ml.id
+    c.save!
+
+    cc = ContestCategory.new
+    cc.name = "General"
+    cc.contest_id = c.id
+    cc.save!
+
+    printTitle("Task finished. Contest created with id " + c.id.to_s)
+  end
+
+  #Usage
+  #Development:   bundle exec rake fix:createEducaInternet2017Contest
+  task :createEducaInternet2017Contest => :environment do
+    printTitle("Create the EducaInternet 2017 Contest")
+
+    c = Contest.find_by_template("educa2017")
+    c.destroy unless c.nil?
+
+    ml = MailList.find_by_name("Educa2017 MailList")
+    ml.destroy unless ml.nil?
+
+    #Create MailList
+    ml = MailList.new
+    ml.name = "Educa2017 MailList"
+    ml.settings = ({"require_login" => "false", "require_name" => "false"}).to_json
+    ml.save!
+
+    c = Contest.new
+    c.name = "educa2017"
+    c.template = "educa2017"
+    c.show_in_ui = true
+    c.settings = ({"enroll" => "true", "submission" => "free", "submission_require_enroll" => "true"}).to_json
     c.mail_list_id = ml.id
     c.save!
 
