@@ -1,0 +1,27 @@
+
+<div id="<%=form_id%>" class="modal fade new_contribution_resource">
+  <div class="modal-dialog">
+    <div class="modal-content" >
+      <!-- This body is replaced with views/contests/submissions/new_resource.partial.erb every time the modal is called -->
+    </div>
+  </div>
+</div>
+  <!-- condicionar = si ya he subido, mejor no mostrar (o avisar al hacer click) -->
+  <% if user_signed_in? and @contest.allowMoreSubmissions?(current_subject.actor) %>
+    <li class="box-item add-item add-excursion hidden-sm hidden-xs" data-toggle="modal" data-target="#<%=form_id%>" data-remote="<%=contest_path(@contest) + "/new_resource_submission?form_id=" + form_id + "&contest_category_id=" + contest_category.id.to_s%>">
+      <div class="add_border">
+        <div class="container-img">
+            <div class="img-box">
+              <i class="fa fa-upload"></i>
+            </div>
+        </div>
+        <div class="caption">
+          <div class="name">
+            <%= I18n.t('workshop.activities.assignment.modal.bt_upload') %>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% else %>
+    <p class="cannot_upload">This competition only allows to upload one project per participant. You can delete your entry and upload a new project if you want.</p>
+  <% end %>
