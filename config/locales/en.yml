@@ -21,6 +21,7 @@ en:
       desc2: "You can include the resources provided in the <a href='/search?directory=true'>Recurso<strong>teca</strong></a> to create your own presentations, and bring your own resources or use the presentations created by community members that are available for your classes in the <a href='/search?catalogue=true'>Tema<strong>teca</strong></a>"
       title3: "Share"
       desc3: "Learn from the content and teach your students about important issues such as cyberbullying, sexting, techno-addictions, etc... Remember that your students can also create content related topics here present and so 'learning by doing'"
+      title4: "Go to blog"
     community: "Community"
     create_account:
       title_html: "Create your free account <br> and become an expert in cybersecurity"

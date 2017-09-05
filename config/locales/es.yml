@@ -9,8 +9,9 @@ es:
       desc1: "Educa<strong>Internet</strong> es una plataforma que proporciona contenidos para la adecuada formación de profesores y alumnos en el tema de la <strong>seguridad en Internet</strong>. Unete a la comunidad y colabora con otros miembros en la creación de contenidos."
       title2: "Explora"
       desc2: "Incluye los recursos proporcionados en la <a href='/search?directory=true'>Recurso<strong>teca</strong></a> para crear tus propias presentaciones, aporta tus propios recursos o utiliza las presentaciones creadas por otros miembros de la comunidad y disponibles en la <a href='/search?catalogue=true'>Tema<strong>teca</strong></a> para tus clases"
-      title3: "Comparte "
+      title3: "Comparte"
       desc3: "Aprende de los contenidos y enseña a tus alumnos sobre temas tan importantes como ciberacoso, sexting, tecnoadicciones, etc. Recuerda que tus alumnos podrán también crear contenidos relacionados con los temas aquí presentes y así 'aprender haciendo'."
+      title4: "Ir al blog"
     community: "Comunidad"
     create_account:
       title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
