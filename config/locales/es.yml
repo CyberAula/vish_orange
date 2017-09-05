@@ -20,6 +20,26 @@ es:
       title: ''
       text: ''
 
+  explore_page:
+    subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
+    title: 'Explora EducaInternet'
+    experts:
+      intro: ''
+      title: ''
+      text: ''
+    favs:
+      title: ''
+      text: ''
+    library:
+      intro: ''
+      title: ''
+    resources:
+      title: ''
+      text: ''
+    teacher:
+      title: ''
+      text: ''
+
   orange_front:
     banner_contest: "assets/orange/banner_contest3.png"
     carousel:
@@ -36,8 +56,6 @@ es:
       btn_reg: "Registrarme"
       btn_ent: "Entrar"
       btn_exp: "Explorar"
-    explore_title: "Explora EducaInternet"
-    explore_subtitle: "Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad"
     footer:
       about: "Sobre Nosotros"
       community: "Comunidad"

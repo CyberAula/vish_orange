@@ -11,10 +11,46 @@ en:
         ́ : ""
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
   about_page:
-    title: "About EducaInternet"
-    subtitle: "The center of reference for the educational community on the safe and responsible use of Internet"
-  orange_front:
+    subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
+    title: "Acerca de EducaInternet"
+    data:
+      year: ''
+      resources: ''
+      members: ''
+    great_team:
+      intro: ''
+      title: ''
+      text: ''
+    values:
+      intro: ''
+      title: ''
+      text: ''
+    why:
+      intro: 'WHY'
+      title: ''
+      text: ''
 
+  explore_page:
+    subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
+    title: 'Explora EducaInternet'
+    experts:
+      intro: ''
+      title: ''
+      text: ''
+    favs:
+      title: ''
+      text: ''
+    library:
+      intro: ''
+      title: ''
+    resources:
+      title: ''
+      text: ''
+    teacher:
+      title: ''
+      text: ''
+
+  orange_front:
     banner_contest: "assets/orange/banner_contest3_EN.png"
     carousel:
       title1: "Create"
