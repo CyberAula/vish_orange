@@ -28,6 +28,8 @@ en:
       btn_reg: "Sign in"
       btn_ent: "Enter"
       btn_exp: "Explore"
+    explore_title: "Explore EducaInternet"
+    explore_subtitle: "and you will find everything you need to become an expert in cybersecurity"
     front_blocks:
       block1_tit: "EducaInternet, an endless source of safety and educational resources"
       block2_tit: "Certified online courses, so you can learn at your own pace and become an expert in cybersecurity"
