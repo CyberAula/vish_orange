@@ -15,13 +15,17 @@ development:
   services: ["ARS","Catalogue","ASearch"]
   languages: ["en", "es", "de", "nl", "hu", "fr"]
   register_policy: "REGISTER_ONLY"  #this can be 'REGISTER_ONLY', 'INVITATION_ONLY' or 'HYBRID'
-  login_policy: "LOCAL" #this can be "LOCAL" or "CAS"
+  login_policy: "LOCAL" #this can be "LOCAL" or "CAS" or "HYBRID"
   advanced_search:
     instances: ["http://vishub.org"]
   catalogue:
     mode: "matchtag" #matchany or matchtag
     qualityThreshold: 5
   #certified: [10071, 5444, 12915, 7025, 16309, 2988, 6921, 3519, 10692, 8064, 10863]
+  #Uncomment to enable recaptcha. Get your own keys from https://www.google.com/recaptcha
+  #recaptcha:
+  #  site_key: AAABBBCCC
+  #  secret_key: DDDEEEFFF
 
 production:
   name: "EducaInternet"

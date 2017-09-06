@@ -69,8 +69,6 @@ es:
       index: "Inicio"
       comunity: "Comunidad"
       contest: "Concurso"
-      cursoteca: "Curso"
-      curso_desc: "Aquí se muestra el catálogo de cursos para su uso libre en el aula y fuera de ella"
       ensena: "Enseña"
       formate: "Fórmate"
       recursoteca: "Recurso"
@@ -84,11 +82,11 @@ es:
     message: "Aprender y enseñar sobre el uso seguro y responsable de las tecnologías"
     menu_blocks:
       our_courses_tit: "Fórmate"
-      our_courses: "Nuestros cursos"
-      our_courses_txt: "Accede a todos los cursos, módulos y guías didácticas de la plataforma"
+      our_courses: "Nuestras lecciones"
+      our_courses_txt: "Accede a todas las lecciones, módulos y guías didácticas de la plataforma"
       teaching_units_tit: "Comparte tus ideas"
       teaching_units: "Crea y comparte"
-      teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos en la plataforma"
+      teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos"
       take_part_tit: "Concurso EducaInternet"
       take_part: "Conoce a los ganadores"
       take_part_txt: "Ya sabemos quiénes son los recursos ganadores del primer concurso EducaInternet"
@@ -104,7 +102,6 @@ es:
     contact: "Contacto"
     code: "Código fuente"
     survey: "Encuesta de EducaInternet"
-    rsevaluation: "Evaluación de ViSHRS"
     title: "about"
   activerecord:
     attributes:
@@ -130,11 +127,11 @@ es:
         swf: "SWF añadido"
         video: "Vídeo añadido"
         webapp: "Aplicación Web añadida"
-        workshop: "Curso añadido"
+        workshop: "Lección añadida"
         writing: "Texto añadido"
         zipfile: "Archivo ZIP añadido"
     more: "Ver más..."
-    new_user: "¡Bienvenido al EducaInternet! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
+    new_user: "¡Bienvenido a EducaInternet! Desde aquí podrás compartir y enviar mensajes, enlaces, imágenes, vídeos, etc"
     newmessage: "Esta es tu timeline. Comparte con tus seguidores tus opiniones, sube imágenes, enlaces, vídeos..."
     timeline: "timeline"
     verb:
@@ -249,11 +246,14 @@ es:
     users: "Administración de Usuarios"
   analytics:
     description: "Esta sección solo es visible para el autor del recurso.<br/>Muestra algunas analíticas de aprendizaje acerca del uso del recurso.<br/> Las analíticas de aprendizaje se calculan periódicamente. Esta información fue actualizada por última vez a fecha: %{date}."
+    description_chart_a: "El siguiente gráfico muestra una estimación de la calidad del recurso basada en las interacciones que los usuarios tuvieron con el."
+    description_chart_b: "Esta estimación se calcula en base a las analíticas de aprendizaje tiempo empleado, ratio de permanencia y frecuencia de clics (expresada en clics por minuto). "
+    description_chart_c: "Las puntuaciones del recurso son calculadas comparando sus analíticas de aprendizaje con aquellas obtenidas por los otros recursos publicados en el repositorio."
     interactions:
       title: "Analítica de aprendizaje"
-      tlo: "Tiempo empleado por sesión (s)"
-      permanency_rate: "Ratio de Permanencia (%)"
-      nclicks: "Frequencia de clics por sesión"
+      tlo: "Tiempo medio empleado en el recurso por sesión (s)"
+      permanency_rate: "Ratio de permanencia (%)"
+      nclicks: "Número medio de clics de ratón por sesión"
     tabtitle: "Analíticas de Aprendizaje"
   all: "todos"
   announce:
@@ -401,12 +401,22 @@ es:
     enroll: "Inscribirse"
     enrollment_failure: "Ocurrió un error y la inscripción no pudo llevarse a cabo."
     enrollment_success: "Te has inscrito satifactoriamente."
+    names: "Nombres de los concursos"
+    participants_excel: "Excel de los participantes"
     submissions:
       contest_not_open: "No se admiten más envíos."
       not_valid: "El recurso enviado no es válido."
       require_enrollment: "Necesitas estar inscrito para realizar un envío."
       one_per_user: "Solo se permite un envío por usuario."
       one_per_user_category: "Solo se permite un envío por usuario y categoría."
+    educa2017:
+      mailers:
+        first_subject_email: "Bienvenido al concurso de EducaInternet 2017"
+      postal_code: "Código postal"
+      province: Provincia
+      school_name: Nombre de la escuela
+      teaching_subject: Asignatura
+      phone_number: Número de teléfono
   thevish: "EducaInternet"
   youtube: "Canal EducaInternet en Youtube"
   copy_to_clip: "Copiar al portapapeles"
@@ -592,7 +602,7 @@ es:
         audio: "Audio"
         document: "Documento"
         embed: "Objeto Embebido"
-        excursion: "Excursión (Presentación Interactiva)"
+        excursion: "Unidad Didáctica"
         imscpfile: "Paquete de contenido IMS"
         link: "Enlace"
         officedoc: "Documento"
@@ -772,23 +782,23 @@ es:
     is_favorite: "Favorito"
     views: "visitas"
   frontpage:
-    main_text: "EducaInternet es una red social colaborativa centrada en la creación y compartición de recursos educativos para la realización de actividades didácticas."
+    main_text: "EducaInternet es una plataforma social y colaborativa centrada en la creación y compartición de recursos educativos abiertos"
     educational:
       title: "Educación"
-      description: "Encuentra los mejores recursos educativos y objetos de aprendizaje libres y gratuitos clasificados por temática. Los recursos de EducaInternet pueden ser utilizados para la enseñanza, el aprendizaje, como materiales de evaluación, en investigación o para otros fines."
+      description: "Encuentra los mejores recursos educativos y objetos de aprendizaje libres y gratuitos clasificados por temática. EducaInternet puede ser utilizado para enseñar, aprender, crear, compartir y descubrir recursos educativos innovadores, realizar proyectos educativos, en investigación o para otros fines."
     community:
-      title: "Comunidad"
-      description: "EducaInternet es una comunidad para profesores y profesionales de la educación que quieren conocer nuevos educadores, crear, compartir y descubrir recursos educativos innovadores, y conseguir acceso a herramientas para maximizar el aprendizaje potenciado por la tecnología."
+        title: "Comunidad"
+        description: "EducaInternet está dirigido a todos los miembros de la comunidad educativa (profesores, educadores, estudiantes), y a cualquier persona interesada en aprender, enseñar, crear y compartir recursos educativos, conocer otros miembros de la comunidad, o utilizar herramientas para impulsar el aprendizaje potenciado por la tecnología."
     elearning:
-      title: "e-Learning"
-      description: "EducaInternet proporciona una colección de herramientas y servicios para facilitar la creación de materiales didácticos de alta calidad e impulsar el aprendizaje potenciado por la tecnología tanto en el aula como en Entornos de Aprendizaje Virtuales (VLEs) y Sistemas de Gestión del Aprendizaje (LMSs)."
+        title: "e-Learning"
+        description: "EducaInternet proporciona una colección de herramientas y servicios para facilitar la creación, distribución y uso de materiales didácticos de alta calidad e impulsar el aprendizaje potenciado por la tecnología tanto en el aula como en Entornos Virtuales de Aprendizaje (EVAs) y Sistemas de Gestión del Aprendizaje (LMSs)."
     community_stats:
       title: "Nuestra comunidad crece cada día"
       subtitle: "Comparte tu conocimiento en nuestra comunidad y ayúdanos a crecer"
     join_us: "¡Únete a EducaInternet!"
-    title_certified: "Fórmate con cursos especializados"
+    title_certified: "Fórmate con lecciones especializadas"
     title_not_certified: "Enseña con unidades didácticas"
-    view_more_workshops: "Ver más cursos especializados"
+    view_more_workshops: "Ver más lecciones especializadas"
     view_more_excursions: "Ver más unidades didácticas"
   header:
     tooltip:
@@ -799,7 +809,7 @@ es:
       create: "Crear"
       update: "Actualizar"
       workshop:
-        create: "Crear curso"
+        create: "Crear Lección"
   help_page: "AYUDA DE EducaInternet"
   help_manual: "Descargar el manual de usuario"
   hide: "Ocultar"
@@ -827,7 +837,7 @@ es:
       hu: "Húngaro"
       nl: "Holandés"
   learn:
-    title: "Nuestros cursos"
+    title: "Nuestras lecciones"
     group1: "Fórmate"
     group2: "Forma a tus alumnos"
   licenses:
@@ -1101,24 +1111,6 @@ es:
     user: "Usuario"
     premium_user: "Usuario Premium"
     private_student: "Estudiante Privado"
-  rsevaluation:
-    messages:
-      duplicated: "La evaluación ya ha sido enviada. ¡Muchas gracias por tu colaboración!"
-      norelevance: "Debes indicar la relevancia para todos los objetos de aprendizaje. Hay al menos un objeto de aprendizaje sin relevancia."
-      resources: "Debes marcar como favorito un mínimo de 4 excursiones para realizar la evaluación del sistema de recomendación de EducaInternet."
-      success: "Evaluación finalizada. ¡Muchas gracias por su colaboración!"
-    stars:
-      one: "No relevante para mí en absoluto"
-      five: "Muy relevante para mí"
-    step1:
-      description: "Bienvenido a la herramienta de evaluación del <b>Sistema de Recomendación de EducaInternet</b>.<br/><br/>En este punto usted ya debe de haber completado las tareas iniciales descritas en la 'Guía de usuario para la evaluación del sistema de recomendación de EducaInternet' y también debe de haber marcado como favorito al menos 4 objetos de aprendizaje que encajen con sus intereses. En caso contrario, debe descargar <a target='_blank' href='/ViSHRSEvaluacionGuiaUsuario.pdf'>aquí</a> la 'Guía de usuario para la evaluación del sistema de recomendación de EducaInternet' y seguir sus instrucciones.<br/><br/>Por favor, antes de seguir con los siguientes pasos, <b>rellene el cuestionario del sistema de recomendación de EducaInternet</b>. Puede rellenarlo directamente en esta página web o puede acceder al cuestionario en el siguiente <a target='_blank' href='https://docs.google.com/forms/d/1Mv9W64GEbIlYojnOXHDYfui-O-KscB-gSohs6eEaGk4/viewform'>enlace</a>.<br/><b>Una vez que haya completado y enviado el cuestionario</b>, haga clic en el botón 'Siguiente' en la parte inferior de la página (debajo del cuestionario) para continuar con la evaluación.<br/>"
-    step2:
-      description: "La siguiente lista muestra 12 objetos de aprendizaje ordenados de forma aleatoria.<br/>Póngase en la situación de que esta lista de objetos de aprendizaje ha sido recomendada para usted en la página principal (o página de inicio) de la plataforma EducaInternet (o en cualquier otro repositorio de objetos de aprendizaje) teniendo en cuenta su perfil de usuario.<br/>Por favor, indique, para cada uno de los objetos de aprendizaje, la relevancia o interés que tiene para usted empleando una escala de 5 puntos, siendo 1 \'no relevante para mí en absoluto\' y siendo 5 \'muy relevante para mí\'.<br/>Una vez haya indicado la relevancia para cada objeto de aprendizaje, haga clic en siguiente para avanzar al siguiente paso.<br/>"
-    step3:
-      descriptiona: "Esta página muestra una nueva lista que contiene otros 12 objetos de aprendizaje ordenados de forma aleatoria.</br>En esta ocasión, póngase en la situación de que está navegando y explorando objetos de aprendizaje en la plataforma EducaInternet (o en cualquier otro repositorio de objetos de aprendizaje) y que usted finalmente encuentra un objeto de aprendizaje en la cuál está interesado. Después hace clic en un enlace que le lleva a una nueva página donde puede ver los detalles de este objeto de aprendizaje.</br>Concretamente, el objeto de aprendizaje cuyos detalles está viendo es el siguiente:</br>"
-      descriptionb: "Ahora, dada la situación descrita anteriormente, suponga que la siguiente lista de objetos de aprendizaje ha sido recomendada para usted <b>en la misma página en la que está viendo los detalles del objeto de aprendizaje seleccionado</b>.</br>Por favor, indique, para cada uno de los objetos de aprendizaje de la lista, la relevancia o interés que tiene para usted empleando una escala de 5 puntos, siendo 1 \'no relevante para mí en absoluto\' y siendo 5 \'muy relevante para mí\'.<br/>Una vez haya indicado la relevancia para cada objeto de aprendizaje, haga clic en terminar para enviar la evaluación.</br>"
-    steptitle: "Evaluación: Paso %{step} de 3."
-    surveyurl: "https://docs.google.com/forms/d/1Mv9W64GEbIlYojnOXHDYfui-O-KscB-gSohs6eEaGk4/viewform"
   save: "Salvar"
   saving: "Salvando"
   scope:
@@ -1174,7 +1166,7 @@ es:
       user: "Usuarios"
       video: "Videos"
       webapp: "Aplicaciones Web"
-      workshop: "Cursos"
+      workshop: "Lecciones"
       writing: "Textos"
       zipfile: "Ficheros ZIP"
     name: "¿qué recurso buscas?"
@@ -1272,19 +1264,19 @@ es:
       tab_excursions: "Presentaciones enriquecidas creadas por "
       tab_resources: "Recursos educativos gratuitos subidos por "
       tab_events: "Eventos de videoconferencia o streaming creados por "
-      tab_workshops: "Cursos gratuitos creados por "
+      tab_workshops: "Lecciones gratuitas creadas por "
       tab_categories: "Carpetas educativas o categorías creadas por "
       tab_followers: "Los seguidores de "
       tab_followings: "Los contactos de "
       teach: "Enseña ciberseguridad a menores como más te guste. Con presentaciones enriquecidas, creando contenidos o que los menores creen contenidos."
       terms_of_use: "Términos de uso de EducaInternet"
-      workshop: "Curso gratuito sobre "
+      workshop: "Lección gratuita sobre "
     meta_keywords:
-      learn: "Aprender, Cursos gratuitos, Netiqueta, ciberseguridad, Grooming, Comunidades peligrosas en línea, Protección ante virus y fraudes, Tecnoadicciones, Suplantación de identidad, Sexting, privacidad"
+      learn: "Aprender, Recursos gratuitos, Netiqueta, ciberseguridad, Grooming, Comunidades peligrosas en línea, Protección ante virus y fraudes, Tecnoadicciones, Suplantación de identidad, Sexting, privacidad"
       teach:  "Enseñar, herramienta online, Netiqueta, ciberseguridad, Grooming, Comunidades peligrosas en línea, Protección ante virus y fraudes, Tecnoadicciones, Suplantación de identidad, Sexting, privacidad"
     meta_title:
       contest: "EducaInternet competición"
-      learn: "Fórmate con cursos especializados"
+      learn: "Fórmate con lecciones especializadas"
       legal_notice: "Aviso legal"
       overview: "Overview de EducaInternet"
       privacy_policy: "Política de privacidad de EducaInternet"
@@ -1299,10 +1291,11 @@ es:
   teach:
     creating: "Creando tus propios recursos"
     creating_desc: "Te ofrecemos herramientas gratuitas para que puedas crear un curso, una presentación o subir recursos a la plataforma."
+
     go_to_library: "Ir a la biblioteca"
     help: "Consultar ayuda"
     library: "Buscando en la biblioteca de recursos"
-    library_desc: "La biblioteca te permite acceder a todos los recursos de la plataforma, cursos, unidades didácticas y otros recursos para que crees tus propios contenidos o los uses para enseñar a tus alumnos o hijos."
+    library_desc: "La biblioteca te permite acceder a todos los recursos de la plataforma, lecciones, unidades didácticas y otros recursos para que crees tus propios contenidos o los uses para enseñar a tus alumnos o hijos."
     projects: "Con proyectos de clase"
     projects_desc: "Los 'proyectos de clase' permiten que los alumnos sean los que utilicen las herramientas de creación de contenidos y así 'aprender haciendo'"
     view_tutorial: "Ver tutorial"
@@ -1343,10 +1336,10 @@ es:
         adding_activity_button: "Añadiendo..."
         add_banner: "Escoge una imagen de portada"
         add_banner_help: "Tamaño recomendado 1280x100px"
-        cancel_&_go: "Cancelar e ir al curso"
+        cancel_&_go: "Cancelar e ir a la lección"
         collapse_all: "Reducir todo"
-        confirm_delete: "¿Borrar curso?"
-        delete: "Borrar curso"
+        confirm_delete: "¿Borrar lección?"
+        delete: "Borrar lección"
         edit_activity_button: "Guardar"
         edit_mode_btOn: "Activar modo edición"
         edit_mode_btOff: "Desactivar modo edición"
@@ -1385,32 +1378,32 @@ es:
             modal_title: "Editar Recurso"
             modal_instructions: "Abre el recurso que quieras añadir. Copia la URL de la barra de navegación y pégala aquí"
             title: "Recurso"
-            description: "Inserta cualquier tipo de recurso en el curso"
-            text: "Podrás añadir a este curso todos los recursos que haya disponibles en EducaInternet. Para añadirlos, abre el recurso en EducaInternet, copia su URL de la barra del navegador y pégala en el siguiente cuadro de texto."
+            description: "Inserta cualquier tipo de recurso en la lección"
+            text: "Podrás añadir a esta lección todos los recursos que haya disponibles en EducaInternet. Para añadirlos, abre el recurso en EducaInternet, copia su URL de la barra del navegador y pégala en el siguiente cuadro de texto."
         resource_gallery:
             add: "Añadir"
             title: "Galería de recursos"
             description: "Añade una galería de recursos"
-            text: "Las galerías de recursos son un componente del curso que te permiten incluir varios recursos de EducaInternet de cualquier tipo y tenerlos agrupados para facilitarte su visionado. Inserta este componente en tu curso y añade recursos de la forma más fácil e intuitiva."
+            text: "Las galerías de recursos son un componente de la lección que te permiten incluir varios recursos de EducaInternet de cualquier tipo y tenerlos agrupados para facilitarte su visionado. Inserta este componente en tu lección y añade recursos de la forma más fácil e intuitiva."
             new_resource: "Añadir"
         contributions_gallery:
             title: "Galería de contribuciones"
-            description: "La galería de contribuciones muestra las contribuciones enviadas al curso"
-            text: "Los usuarios pueden contribuir a las tareas definidas en un curso añadiendo recursos o bloques de texto. Con el componente Galería de contribuciones podrás ver de forma agrupada los recursos y/o los textos con los que otros usuarios han contribuido."
+            description: "La galería de contribuciones muestra las contribuciones enviadas a la lección"
+            text: "Los usuarios pueden contribuir a las tareas definidas en una lección añadiendo recursos o bloques de texto. Con el componente Galería de contribuciones podrás ver de forma agrupada los recursos y/o los textos con los que otros usuarios han contribuido."
             error: "Para añadir una galería de contribuciones debes incluir al menos una tarea"
-            no_content: "La galería de contribuciones muestra las contribuciones enviadas al curso. Esta galería no contiene ningún recurso todavía"
+            no_content: "La galería de contribuciones muestra las contribuciones enviadas a la lección. Esta galería no contiene ningún recurso todavía"
         text:
             title: "Texto"
             description: "Incluye un párrafo de texto"
-            text: "Además de la descripción del curso y las tareas definidas en él, en ocasiones necesitarás la posibilidad de insertar un bloque de texto con otra finalidad, como podría ser una bibliografía u otros datos de interés para el curso. Con este componente puedes añadir un texto completamente personalizado y editable a tu curso."
-    confirm_delete: "¿Borrar curso?"
-    name: "curso"
-    new: "Nuevo Curso"
-    other: "Cursos"
+            text: "Además de la descripción de la lección y las tareas definidas en ella, en ocasiones necesitarás la posibilidad de insertar un bloque de texto con otra finalidad, como podría ser una bibliografía u otros datos de interés para la lección. Con este componente puedes añadir un texto completamente personalizado y editable a tu lección."
+    confirm_delete: "¿Borrar lección?"
+    name: "lección"
+    new: "Nueva Lección"
+    other: "Lecciones"
     titles:
-        editing_details: "Editando detalles del curso"
-        editing_main: "Editando curso"
-        show_main: "Detalles curso"
+        editing_details: "Editando detalles de la lección"
+        editing_main: "Editando lección"
+        show_main: "Lección"
   writing:
     actions:
       add: "Añadir texto"

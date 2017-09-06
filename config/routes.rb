@@ -73,7 +73,6 @@ Vish::Application.routes.draw do
 
   match 'excursions/last_slide' => 'excursions#last_slide'
   match 'excursions/preview' => 'excursions#preview'
-  match 'excursions/interactions' => 'excursions#interactions'
 
   match 'excursions/:id/metadata' => 'excursions#metadata'
   match 'excursions/:id/scormMetadata' => 'excursions#scormMetadata'
@@ -174,16 +173,22 @@ Vish::Application.routes.draw do
     post 'submit', :on => :member
     post 'remove_submit', :on => :member
   end
+
   match 'contest/:name' => 'contests#show'
   match 'contest/:name/page/:page' => 'contests#show'
   match 'contests/:id/page/:page' => 'contests#show'
   match 'contest/:name/educa2016materials' => 'contests#educa2016materials', via: [:post]
+  match 'contest/:name/other_fields_enrollment' => 'contests#other_fields_enrollment'
+  match 'contest/:id/get_enrolled_users_to_contest' => 'contests#get_enrolled_users_to_contest'
+  match 'contest/:name/full_enrollment_registration' => 'contests#full_enrollment_registration'
+  match 'contests/:id/sign_up' => 'contests#sign_enroll', :via => :post
 
   #Administration panel
   match 'admin' => 'admin#index'
   match 'admin/closed_reports' => 'admin#closed_reports'
   match 'admin/users' => 'admin#users'
   match 'admin/requests' => 'admin#requests'
+  match 'admin/contests' => 'admin#contests'
 
   #Spam reports
   resources :spam_reports
@@ -193,10 +198,6 @@ Vish::Application.routes.draw do
   # Shorten URLs
   # Add this at the end so other URLs take prio
   match '/s/:id' => "shortener/shortened_urls#show"
-
-  #ViSHRS evaluation
-  match '/rsevaluation', to: 'rsevaluation#start', via: [:get]
-  match '/rsevaluation/step/:step', to: 'rsevaluation#step', via: [:post]
 
   # for OAI-MPH
   mount OaiRepository::Engine => "/oai_repository"
