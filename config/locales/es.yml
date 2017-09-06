@@ -1,44 +1,55 @@
 es:
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+
   about_page:
     subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
     title: "Acerca de EducaInternet"
     data:
-      year: ''
-      resources: ''
-      members: ''
+      year: 'AÑO DE CREACIÓN'
+      resources: 'RECURSOS'
+      members: 'MIEMBROS'
     great_team:
-      intro: ''
-      title: ''
-      text: ''
+      intro: 'UN GRAN EQUIPO DE PROFESIONALES'
+      title: 'Una iniciativa avalada por los principales representantes y experos en Ciberseguridad. Ayúdanos a hacer de Internet un lugar seguro.'
+      text: 'Lorem ipsum...'
     values:
-      intro: ''
-      title: ''
-      text: ''
+      intro: 'LOS VALORES'
+      title: 'Un compromiso con la seguridad en Internet'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper malesuada pharetra. Suspendisse quis aliquet metus. Vivamus viverra metus blandit sapien condimentum mollis. Aliquam ornare orci rhoncus mi pretium, in condimentum erat consectetur. Sed placerat velit sit amet auctor vestibulum.'
     why:
       intro: 'UN PORQUÉ'
-      title: ''
-      text: ''
+      title: 'La necesidad de EducaInternet'
+      text: 'Lorem ipsum...'
 
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
     title: 'Explora EducaInternet'
     experts:
-      intro: ''
-      title: ''
-      text: ''
+      title: 'Deja que sean los expertos en seguridad TIC los que te cuenten todo lo que necesitas saber.'
+      text: 'Lorem ipsum...'
     favs:
-      title: ''
-      text: ''
+      title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
+      text: 'Lorem ipsum...'
     library:
-      intro: ''
-      title: ''
-    resources:
-      title: ''
-      text: ''
+      intro: 'BIBLIOTECA'
+      title: 'Esto no es todo. Pásate por la biblioteca de recursos. Puedes consultar todo el material de forma gratuita.'
+    quality_resources:
+      title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:
-      title: ''
-      text: ''
+      intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
+      title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
+
+    whatwedo_page:
+      subtitle: 'talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC'
+      title: '¿Qué hacemos?'
+      article_1:
+        title: 'Ya está aquí la Segunda Edición Concurso EducaInternet'
+      article_2:
+        title: 'Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación'
+      article_3:
+        title: 'Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable'
+      article_4:
+        title: 'Te contamos cómo fue la Primera Edición del Concurso EducaInternet'
 
   orange_front:
     banner_contest: "assets/orange/banner_contest3.png"
