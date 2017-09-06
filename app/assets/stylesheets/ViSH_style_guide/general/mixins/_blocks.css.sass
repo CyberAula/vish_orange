@@ -3,7 +3,7 @@
     background: $gray-lighter-extra
   .block, .block_darker
     width: 100%
-    padding: 32px
+    padding: 25px
     overflow: hidden
   .block
     background: $white
@@ -12,4 +12,30 @@
     max-width: 1128px
     overflow: hidden
     .text_block, .img_block
-      padding: 10px
+      padding: 0 20px
+    .img_block
+      width: 50%
+      height: 256px
+      text-align: center
+      img
+        width: auto
+        height: 100%
+    .text_block
+      width: 50%
+      .title_block, .p_block
+        color: #222
+      .title_block
+        width: 100%
+        font-size: 1.2em
+      .p_block
+        width: 88%
+        padding: 12px 0
+        a
+          color: $orange_primary
+          font-weight: bold
+
+    .video_block
+      background-color: $gray-lighter
+      height: 240px
+      width: 50%
+      padding: 20px
