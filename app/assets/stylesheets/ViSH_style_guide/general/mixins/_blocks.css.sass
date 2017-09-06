@@ -1,3 +1,52 @@
+@mixin contest_block
+  background: $white
+  width: 100%
+  padding: 2em
+  display: block
+  h1
+    text-align: center
+    color: $gray
+    font-size: 1.1em
+  .content_block
+    margin: 0 auto
+    display: flex
+    padding: 10px
+    max-width: 70%
+    .text_block
+      padding: 20px
+      h2
+        color: $gray-dark
+      .p_block
+        color: $gray
+        line-height: 1.6em
+        padding: 10px 0
+      .step
+        display: flex
+        .number
+          font-weight: bold
+          color: $orange-primary
+          padding: 10px
+
+.flex_cont
+  display: flex
+  justify-content: space-between
+
+  
+.icon_block
+  width: 128px
+  height: 128px
+  background: $orange-primary
+  border-radius: 50%
+  display: block
+  position: relative
+  padding: 35px
+  top: -95px
+  left: 45%
+  i
+    color: $white
+    position: relative
+
+
 @mixin blocks
   .block_darker
     background: $gray-lighter-extra
@@ -28,7 +77,7 @@
         width: 100%
         font-size: 1.2em
       .p_block
-        width: 88%
+        //width: 88%
         padding: 12px 0
         a
           color: $orange_primary
@@ -36,6 +85,6 @@
 
     .video_block
       background-color: $gray-lighter
-      height: 240px
+      //height: 240px
       width: 50%
       padding: 20px

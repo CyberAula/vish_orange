@@ -23,129 +23,198 @@
 <%end%>
 
 <!--Articles-->
-<section class="articles">
-  <article>
-    <div class="teach">
-      <div class="article_cont">
-        <h4>SI TE GUSTAN LOS RETOS, ESTE ES EL TUYO</h4>
-        <!--linea horizontal divisoria-->
-        <div class="horizontal_line"></div>
+<section class="articles contest_blocks">
+  <!--presentation + video-->
+  <article class="contest_block">
+    <h1>SI TE GUSTAN LOS RETOS, ESTE ES EL TUYO</h1>
+    <div class="horizontal_line"></div>
 
-        <div class="block">
-          <div class="content_block">
-            <div class="text_block float_R">
-              <div class="title_block">
-                <h2>Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos</h2>
-              </div>
-              <div class="p_block">
-                <p>Inscríbete con tu clase, disfruta de todos nuestros materiales formativos y llévate el reconocimiento de la comunidad educativa con nuestro sello de participación.</p>
-              </div>
-              <button class="btn btn-primary">Descarga las bases</button>
-            </div>
-            <div class="video_block float_L">
-            </div>
-          </div>
-        </div>
-
+    <div class="content_block">
+      <div class="video_block">
+        <!--pending-->
       </div>
-      <div class="article_cont">
-        <h4>PROFESORES COMO TÚ HACEN IMPORTANTE ESTE CONCURSO</h4>
-        <!--linea horizontal divisoria-->
-        <div class="horizontal_line"></div>
-
-        <div class="block">
-          <div class="content_block">
-            <div class="text_block float_L">
-              <p>El concurso EducaInternet es una iniciativa socialmente responsable que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación.</p>
-            </div>
-            <div class="text_block float_R">
-              <p>El concurso EducaInternet es una iniciativa socialmente responsable que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación.</p>
-            </div>
-          </div>
-        </div>
-
+      <div class="text_block">
+        <h2>Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos</h2>
+        <p class="p_block">
+          Inscríbete con tu clase, disfruta de todos nuestros materiales formativos y llévate el reconocimiento de la comunidad educativa con nuestro sello de participación.
+        </p>
+        <button class="btn btn-primary">Descarga las bases</button>
       </div>
     </div>
   </article>
-  <article>
-    <div class="resources">
-      <div class="article_cont">
-        <div class="article_txt">
-          <div class="article_img">
-            <i class="fa fa-star fa-4x" aria-hidden="true"></i>
-          </div>
-          <h3>Estos son los <strong>recursos educativos favoritos</strong><br>de los usuarios de EducaInternet</h3>
-            <p>Lorem ipsum dolor sit amet, Quisque porta, erat sit amet dapibus molestie, dolor quam tempus lacus, sed aliquam arcu dolor in dolor. Pellentesque a nibh orci. Aenean in ligula quis eros suscipit auctor.</p>
-            <div class="items">
-              <% begin
-                  favorites = Document.all.sample(10)
-                end %>
-                <% favorites.each do |doc| %>
-                  <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-                <% end %>
-                <div class="clear"></div>
-            </div>
-        </div>
+
+  <!-- explanation -->
+  <article class="contest_block">
+    <h1>PROFESORES COMO TÚ HACEN IMPORTANTE ESTE CONCURSO</h1>
+    <div class="horizontal_line"></div>
+
+    <div class="content_block">
+      <div class="text_block">
+        <p class="p_block">
+          El concurso EducaInternet es una iniciativa socialmente responsable que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación.
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Con él se pretende fomentar en los jóvenes una posición crítica y colaborativa respecto a la seguridad en la Red.
+        </p>
       </div>
     </div>
   </article>
-  <article>
-    <div class="teach">
-      <div class="article_cont">
-        <div class="article_txt">
-          <div class="article_img">
-            <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
-          </div>
-          <h3>Deja que sean los <strong>expertos en seguridad TIC</strong> los que te cuenten todo lo que necesitas saber.</h3>
-          <p>Lorem ipsum dolor sit amet, Quisque porta, erat sit amet dapibus molestie, dolor quam tempus lacus, sed aliquam arcu dolor in dolor. Pellentesque a nibh orci. Aenean in ligula quis eros suscipit auctor.</p>
+
+  <!-- 3 steps -->
+  <article class="contest_block_dark">
+    <div class="content_block">
+      <div class="text_block">
+        <h2>Participa en 3 sencillos pasos</h2>
+        <div class="step">
+          <div class="number">1</div>
+          <p class="p_block">
+            Inscríbete en la web para disponer de todos los materiales formativos que te interesen. Para ti o para tus alumnos.
+          </p>
         </div>
-          <div class="items">
-            <% begin
-              favorites = Document.all.sample(5)
+        <div class="step">
+          <div class="number">2</div>
+          <p class="p_block">
+            Crea un recurso junto a tu clase y súbelo a la web ¡Nuestros tutoriales te ayudarán!
+          </p>
+        </div>
+        <div class="step">
+          <div class="number">3</div>
+          <p class="p_block">
+            Vota los recursos que más te hayan gustado. ¿Estará tu centro entre los 4 colegios ganadores?
+          </p>
+        </div>
+      </div>
+      <div class="text_block flex_cont">
+        <div class=""><i class="fa fa-star fa-4x" aria-hidden="true"></i></div>
+        <div class=""><i class="fa fa-star fa-4x" aria-hidden="true"></i></div>
+        <div class=""><i class="fa fa-star fa-4x" aria-hidden="true"></i></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- help center -->
+  <article class="contest_block">
+    <div class="icon_block">
+      <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>
+    </div>
+    <h1>PROFESORES COMO TÚ HACEN IMPORTANTE ESTE CONCURSO</h1>
+    <div class="horizontal_line"></div>
+    <div class="content_block">
+      <div class="video_block">
+        <!--pending-->
+      </div>
+      <div class="text_block">
+        <h2>Estamos aquí para ayudarte</h2>
+        <p class="p_block">
+          Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
+        </p>
+      </div>
+    </div>
+    <div class="content_block">
+      <h2>Herramientas gratuitas para crear los recursos</h2>
+    </div>
+    <div class="content_block">
+      <div class="text_block">
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+    </div>
+    <div class="content_block">
+      <div class="text_block">
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
+        </p>
+      </div>
+      <div class="text_block">
+        <p class="p_block">
+          Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
+        </p>
+      </div>
+    </div>
+    <div class="content_block">
+      <h2>Inspírate con los trabajos ganadores de la anterior edición del Concurso EducaInternet</h2>
+    </div>
+    <div class="content_block">
+      <div class="items">
+          <% begin
+              favorites = Document.all.sample(4)
             end %>
             <% favorites.each do |doc| %>
               <%= render partial: 'repositories/resource', locals: { resource: doc} %>
             <% end %>
-            <div class="clear"></div>
-          </div>
+        <div class="clear"></div>
       </div>
     </div>
   </article>
-  <article>
-    <div class="resources">
-      <div class="article_cont">
-        <div class="article_txt">
-          <div class="article_img">
-            <i class="fa fa-th-large fa-4x" aria-hidden="true"></i>
-          </div>
-          <h3><strong>Recursos de calidad</strong> diseñados para que tus alumnos y tú aprendais juntos cómo navegar seguro.</h3>
-        </div>
-          <div class="items">
-            <% begin
-                favorites = Document.all.sample(5)
-              end %>
-              <% favorites.each do |doc| %>
-                <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-              <% end %>
-          <div class="clear"></div>
-        </div>
-      </div>
+  <!-- McMillan resources -->
+  <article class="contest_block_dark">
+    <div class="icon_block">
+      <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
+    </div>
+    <div class="content_block">
+      <h2>Materiales pedagógicos McMillan disponibles en castellano e inglés</h2>
+    </div>
+
+    <div class="content_block">
+    <div class="items">
+        <% begin
+            favorites = Document.all.sample(10)
+          end %>
+          <% favorites.each do |doc| %>
+            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+          <% end %>
+      <div class="clear"></div>
+    </div>
     </div>
   </article>
-  <article>
-    <div class="resources teach">
-      <div class="article_cont">
-        <h4>BIBLIOTECA</h4>
-          <!--linea horizontal divisoria-->
-          <div class="horizontal_line"></div>
-          <!--/linea horizontal divisoria-->
-            <div class="article_txt">
-              <h3>Esto no es todo. Pásate por la biblioteca de recursos. Puedes consultar todo el material de forma gratuita.</h3>
-              <div class="article_img">
-                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
-              </div>
-            </div>
-      </div>
+
+  <!-- INCIBE resources -->
+  <article class="contest_block">
+    <div class="icon_block">
+      <i class="fa fa-lock fa-4x" aria-hidden="true"></i>
+    </div>
+    <div class="content_block">
+      <h2>Materiales INCIBE sobre mediación parental y tecnoadicciones</h2>
+    </div>
+
+    <div class="content_block">
+    <div class="items">
+        <% begin
+            favorites = Document.all.sample(10)
+          end %>
+          <% favorites.each do |doc| %>
+            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+          <% end %>
+      <div class="clear"></div>
+    </div>
     </div>
   </article>
 
