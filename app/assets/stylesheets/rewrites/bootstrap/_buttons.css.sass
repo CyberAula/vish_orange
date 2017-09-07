@@ -1,3 +1,6 @@
+button
+  box-shadow: none !important
+
 .btn
   @include btn
 
@@ -6,18 +9,13 @@
   color: $white
 
 .open .btn-default.dropdown-toggle
-  background-color: rgba(85, 85, 85, 0.97) !important
+  background-color: rgba(84, 84, 84, 0.96) !important
 
 .btn-group.open .btn-secundary.dropdown-toggle
   background-color: darken($btn-secundary-bg, 10%)
 
 .btn-group.open .btn-primary.dropdown-toggle
-  background-color: darken($brand-primary, 7%)
-
-.label, .badge
-  text-shadow: 0 1px 0 transparent
-  font-weight: normal
-  padding: 3px 6px
+  background-color: darken($brand-primary, 8%)
 
 .open .btn-default.dropdown-toggle, .open div.new_comment form#new_comment input.dropdown-toggle[type="submit"], div.new_comment form#new_comment .open input.dropdown-toggle[type="submit"]
   border: 1px solid rgba(0, 0, 0, 0)
@@ -25,5 +23,7 @@
 .btn-group.open .dropdown-toggle
   box-shadow: none
 
-button
-  box-shadow: none !important
+.label, .badge
+  text-shadow: 0 1px 0 transparent
+  font-weight: normal
+  padding: 3px 6px
