@@ -1,5 +1,6 @@
 
 <%content_for :banner do%>
+
   <div class="main-box main-box-contest">
     <img src="../assets/orange/contest17.jpg" alt="Imagen consurso EducaInternet" class="img_contest">
     <!-- center sentence + buttons -->
@@ -36,7 +37,7 @@
       <div class="text_block">
         <h2>Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos</h2>
         <p class="p_block">
-          Inscríbete con tu clase, disfruta de todos nuestros materiales formativos y llévate el reconocimiento de la comunidad educativa con nuestro sello de participación.
+          Inscríbete con tu clase y descubre todos los materiales formativos que te ofrecemos para que puedas apoyar a tus alumnos en sus necesidades educativas.
         </p>
         <button class="btn btn-primary">Descarga las bases</button>
       </div>
@@ -49,14 +50,14 @@
     <div class="horizontal_line"></div>
 
     <div class="content_block">
-      <div class="text_block">
+      <div class="basic_block">
         <p class="p_block">
           El concurso EducaInternet es una iniciativa socialmente responsable que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación.
         </p>
       </div>
-      <div class="text_block">
+      <div class="basic_block">
         <p class="p_block">
-          Con él se pretende fomentar en los jóvenes una posición crítica y colaborativa respecto a la seguridad en la Red.
+          Ponemos materiales a disposición de los profesores para que puedan trabajar con los niños y jóvenes en el aula sobre el uso seguro de las nuevas tecnologías.
         </p>
       </div>
     </div>
@@ -65,7 +66,7 @@
   <!-- 3 steps -->
   <article class="contest_block_dark">
     <div class="content_block">
-      <div class="text_block">
+      <div class="steps_block">
         <h2>Participa en 3 sencillos pasos</h2>
         <div class="step">
           <div class="number">1</div>
@@ -82,28 +83,36 @@
         <div class="step">
           <div class="number">3</div>
           <p class="p_block">
-            Vota los recursos que más te hayan gustado. ¿Estará tu centro entre los 4 colegios ganadores?
+            Difunde tu recurso para conseguir el mayor número de votos posibles.
           </p>
         </div>
       </div>
-      <div class="text_block">
-        <div class=""><i class="fa fa-star fa-4x" aria-hidden="true"></i></div>
-        <div class=""><i class="fa fa-star fa-4x" aria-hidden="true"></i></div>
-        <div class=""><i class="fa fa-star fa-4x" aria-hidden="true"></i></div>
+      <div class="icons_block">
+        <%if user_signed_in? && isUserEnrolled? %>
+          <div class="icon_block active"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apuntad@</div></div>
+        <% elsif user_signed_in? %>
+          <a href="/contest/educa2017/other_fields_enrollment"><div class="icon_block active"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
+        <% else %>
+          <a href="/contest/educa2017/full_enrollment_registration"><div class="icon_block active"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
+        <% end %>
+
+        <div class="icon_block"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div>
+        <div class="icon_block"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Difunde</div></div>
       </div>
     </div>
   </article>
 
   <!-- help center -->
   <article class="contest_block">
-    <div class="icon_block">
+    <div class="intro_icon_block">
       <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>
     </div>
-    <h1>PROFESORES COMO TÚ HACEN IMPORTANTE ESTE CONCURSO</h1>
+    <div class="fix_gap"></div>
+    <h1>CENTRO DE AYUDA Y SOPORTE PARA PARTICIPAR</h1>
     <div class="horizontal_line"></div>
     <div class="content_block">
       <div class="video_block">
-        <!--pending-->
+        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/2k9zJBIr61E" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="text_block">
         <h2>Estamos aquí para ayudarte</h2>
@@ -112,55 +121,70 @@
         </p>
       </div>
     </div>
+  </article>
+  <!-- free tools -->
+  <article class="contest_block">
     <div class="content_block">
-      <h2>Herramientas gratuitas para crear los recursos</h2>
+      <h2><b>Herramientas gratuitas</b> para crear los recursos</h2>
+      <div class="tools_block">
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+      </div>
+      <div class="tools_block">
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+        <div class="tool_block">
+          <img>
+          <p class="p_block">
+            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+          </p>
+        </div>
+      </div>
     </div>
+  </article>
+
+  <!-- last winners -->
+  <article class="contest_block padding_bottom60">
     <div class="content_block">
-      <div class="text_block">
-        <p class="p_block">
-          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-        </p>
-      </div>
-      <div class="text_block">
-        <p class="p_block">
-          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-        </p>
-      </div>
-      <div class="text_block">
-        <p class="p_block">
-          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-        </p>
-      </div>
-      <div class="text_block">
-        <p class="p_block">
-          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-        </p>
-      </div>
-    </div>
-    <div class="content_block">
-      <div class="text_block">
-        <p class="p_block">
-          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-        </p>
-      </div>
-      <div class="text_block">
-        <p class="p_block">
-          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-        </p>
-      </div>
-      <div class="text_block">
-        <p class="p_block">
-          Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
-        </p>
-      </div>
-      <div class="text_block">
-        <p class="p_block">
-          Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
-        </p>
-      </div>
-    </div>
-    <div class="content_block">
-      <h2>Inspírate con los trabajos ganadores de la anterior edición del Concurso EducaInternet</h2>
+      <h2>Inspírate con los trabajos <b>ganadores de la anterior edición</b> del Concurso EducaInternet</h2>
     </div>
     <div class="content_block">
       <div class="items">
@@ -174,13 +198,15 @@
       </div>
     </div>
   </article>
+
   <!-- McMillan resources -->
-  <article class="contest_block_dark">
-    <div class="icon_block">
+  <article class="contest_block_dark padding_bottom60">
+    <div class="intro_icon_block">
       <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
     </div>
+    <div class="fix_gap"></div>
     <div class="content_block">
-      <h2>Materiales pedagógicos McMillan disponibles en castellano e inglés</h2>
+      <h2>Materiales pedagógicos <b>Macmillan</b> disponibles en castellano e inglés</h2>
     </div>
 
     <div class="content_block">
@@ -197,12 +223,13 @@
   </article>
 
   <!-- INCIBE resources -->
-  <article class="contest_block">
-    <div class="icon_block">
+  <article class="contest_block padding_bottom60">
+    <div class="intro_icon_block">
       <i class="fa fa-lock fa-4x" aria-hidden="true"></i>
     </div>
+    <div class="fix_gap"></div>
     <div class="content_block">
-      <h2>Materiales INCIBE sobre mediación parental y tecnoadicciones</h2>
+      <h2>Materiales <b>INCIBE</b> sobre la seguridad en la red</h2>
     </div>
 
     <div class="content_block">
@@ -221,6 +248,7 @@
   <%= render :partial => "shared/create_account" %>
 
 </section>
+
 <%
 # <h3> This page is a template used for testing Contests. </h3>
 # <h4> Feel free to copy it to create your own contest. </h4>

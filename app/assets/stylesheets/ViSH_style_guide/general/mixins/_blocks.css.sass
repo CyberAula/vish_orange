@@ -11,16 +11,39 @@
     margin: 0 auto
     line-height: 1.3em
   .content_block
+    h2
+      color: $gray-dark
+      font-weight: 300
+      width: 60%
+      text-align: center
+    .p_block
+      color: $gray
+      line-height: 1.6em
     @include flex_container
     margin: 0 auto
     padding: 10px
     max-width: 70%
     @media (max-width: 900px)
       max-width: 90%
-    .text_block,.video_block
+    .text_block,.video_block,.basic_block
       width: 100%
       @media (min-width: 800px)
         width: 50%
+    .text_block, .steps_block
+      padding: 20px
+      @media (min-width: 800px)
+        padding-top: 0
+      h2
+        width: 100%
+        text-align: left
+      .p_block
+        padding: 10px 0
+      .step
+        display: flex
+        .number
+          font-weight: bold
+          color: $orange-primary
+          padding: 10px
     .video_block
       height: 0px
       padding-top: 28%
@@ -33,38 +56,51 @@
         width: 100%
         top: 0px
         left: 0px
-    .text_block
-      padding: 20px
+    .steps_block
+      width: 100%
       @media (min-width: 800px)
-        padding-top: 0
-      h2
-        color: $gray-dark
-      .p_block
-        color: $gray
-        line-height: 1.6em
-        padding: 10px 0
-      .step
-        display: flex
-        .number
-          font-weight: bold
-          color: $orange-primary
-          padding: 10px
+        width: 40%
+    .tools_block
+      @include flex_container
+      .tool_block
+        padding: 20px
+        width: 100%
+        @media (min-width: 800px)
+          width: 25%
+        .p_block
+          color: $gray
+          line-height: 1.6em
+          text-align: center
 
-
-.icon_block
-  width: 128px
-  height: 128px
-  background: $orange-primary
-  border-radius: 50%
-  display: block
-  position: relative
-  padding: 35px
-  top: -95px
-  left: 45%
-  i
-    color: $white
-    position: relative
-
+    .icons_block
+      width: 100%
+      padding: 0 0 60px 0
+      @media (min-width: 800px)
+        width: 60%
+      @include flex_container_nowrap
+      .icon_block
+        width: 100px
+        height: 100px
+        padding: 20px
+        margin: 20px 10px
+        border-radius: 50%
+        border: 3px solid $gray-light
+        i
+          color: $gray-light
+        .icon_block_txt
+          color: $gray-light
+          text-align: center
+          margin: 30px 0 0 0
+      .icon_block.active
+        border: 3px solid $brand-primary
+        i
+          color: $brand-primary
+        .icon_block_txt
+          color: $brand-primary
+    .items
+      width: 100%
+      margin: 10px auto
+      @include flex_container
 
 @mixin blocks
   .block_darker
@@ -77,27 +113,35 @@
     background: $white
   .content_block
     margin: 0 auto
-    max-width: 1128px
-    overflow: hidden
+    max-width: 75%
+    //overflow: hidden
     .text_block, .img_block
       padding: 0 20px
     .img_block
-      width: 50%
+      width: 100%
+      margin: 20px 0
+      @media (min-width: 800px)
+        width: 50%
       height: 256px
       text-align: center
       img
         width: auto
         height: 100%
     .text_block
-      width: 50%
-      .title_block, .p_block
-        color: #222
+      width: 100%
+      @media (min-width: 800px)
+        width: 50%
       .title_block
+        color: #222
         width: 100%
         font-size: 1.2em
       .p_block
-        //width: 88%
+        width: 88%
         padding: 12px 0
+        color: $gray
+        font-size: 1.1em
+        font-weight: 300
+        line-height: 1.4em
         a
           color: $orange_primary
           font-weight: bold
