@@ -6,14 +6,37 @@
   h1
     text-align: center
     color: $gray
-    font-size: 1.1em
-  .content_block
+    font-size: 1em
+    width: 60%
     margin: 0 auto
-    display: flex
+    line-height: 1.3em
+  .content_block
+    @include flex_container
+    margin: 0 auto
     padding: 10px
     max-width: 70%
+    @media (max-width: 900px)
+      max-width: 90%
+    .text_block,.video_block
+      width: 100%
+      @media (min-width: 800px)
+        width: 50%
+    .video_block
+      height: 0px
+      padding-top: 28%
+      position: relative
+      @media (max-width: 800px)
+        padding-top: 52%
+      .video_presentation
+        position: absolute
+        height: 100%
+        width: 100%
+        top: 0px
+        left: 0px
     .text_block
       padding: 20px
+      @media (min-width: 800px)
+        padding-top: 0
       h2
         color: $gray-dark
       .p_block
@@ -78,9 +101,3 @@
         a
           color: $orange_primary
           font-weight: bold
-
-    .video_block
-      background-color: $gray-lighter
-      //height: 240px
-      width: 50%
-      padding: 20px
