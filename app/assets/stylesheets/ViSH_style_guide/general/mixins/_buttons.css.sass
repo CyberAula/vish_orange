@@ -1,3 +1,42 @@
+//
+
+@mixin btn-primary-orange
+  background: $brand-primary
+  color: $white
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: darken($brand-primary, 20%)
+
+@mixin btn-secondary-orange
+  background: $gray-lighter
+  color: $gray-dark
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: darken($gray-lighter, 20%)
+    color: $gray-dark
+
+@mixin btn-default-orange
+  color: $gray-light
+  background: transparent
+  border: 1px solid $gray-light
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: $white
+    color: $brand-primary
+    border: 1px solid $brand-primary
+
 @mixin follow-profile
   text-align: center
   color: $brand-primary
@@ -90,7 +129,7 @@
   display: block
   width: 160px
   @include btn
-  @include btn-primary
+  @include btn-primary-orange
   @include border-top-radius (0)
   height: 33px
   margin: 0 auto
