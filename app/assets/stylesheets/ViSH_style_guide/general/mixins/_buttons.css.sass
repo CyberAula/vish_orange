@@ -42,13 +42,11 @@
     -webkit-transition-duration: .2s
     -o-transition-property: background-color, color
     -o-transition-duration: .2s
-
   &:active,
   &.active
     outline: 0
     background-image: none
     @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125))
-
   &.disabled,
   &[disabled],
   fieldset[disabled] &
@@ -124,7 +122,6 @@
     padding: 6px 9px
     @include border-top-radius ($border-radius-base)
     @include border-bottom-radius ($border-radius-base)
-
   .unfollow-button
     width: 120px
     margin: 0 auto
@@ -134,10 +131,10 @@
       input
         border: 0px none
         width: 100%
-        background-color: $brand-secundary
+        background: $brand-secundary
         color: $white
         margin-top: 0px
-        padding: 6px 9px
+        padding: 4px 8px
         @include border-top-radius ($border-radius-base)
         @include border-bottom-radius ($border-radius-base)
 
@@ -165,19 +162,6 @@
     width: 100%
     margin-top: 0px
     padding: 5px 5px 5px 0
-
-  .unfollow-button
-    form
-      margin: 0px
-      input
-        background-color: transparent
-        text-align: left
-        border: 0px none
-        width: 100%
-        color: $brand-secundary
-        margin-top: 0px
-        padding: 5px 5px 5px 0
-
 
 @mixin see-more
   margin-top: 2% !important
