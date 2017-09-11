@@ -19,21 +19,13 @@
   -o-transition-property: background-color, color
   -o-transition-duration: .2s
   padding: 6px
-
+  box-shadow: none
   &,
-  &:active,
-  &.active
-    &:focus,
-    &.focus
-      @include tab-focus
-  &:hover,
-  &:focus,
-  &.focus
+  &:hover, &:focus, &.focus
     color: $btn-default-color
     text-decoration: none
     outline: none
-  &:hover,
-  a
+  &:hover, a
     text-decoration: none
     -moz-transition-property: background-color, color
     -moz-transition-duration: .2s
@@ -42,14 +34,14 @@
     -webkit-transition-duration: .2s
     -o-transition-property: background-color, color
     -o-transition-duration: .2s
-  &:active,
-  &.active
+  &:active, &.active
     outline: 0
     background-image: none
     @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125))
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] &
+    &:focus,
+    &.focus
+      @include tab-focus
+  &.disabled, &[disabled], fieldset[disabled] &
     pointer-events: none // Future-proof disabling of clicks
     @include opacity(.65)
     @include box-shadow(none)
@@ -78,9 +70,9 @@
     color: $gray-dark
 
 @mixin btn-default-orange
-  color: $gray-light
+  color: $gray
   background: transparent
-  border: 1px solid $gray-light
+  border: 1px solid $gray
   &:hover,
   &:focus,
   &:active,
@@ -154,7 +146,6 @@
       width: 100%
       margin-top: 0px
       padding: 5px 5px 5px 0
-
   .following-button
     background-color: transparent
     color: $gray
@@ -179,7 +170,6 @@
     color: $white
     &:hover
       text-decoration: none
-
   &.disabled,
   &[disabled]
     cursor: default
@@ -200,6 +190,8 @@
   padding: 0px
   height: 30px
   width: 30px
+  a
+    padding: 0
   img
     border-radius: $border-radius-base
     height: 20px
@@ -207,18 +199,3 @@
     float: left
     &:hover
       border: 1px solid $orange-primary
-  a
-    padding: 0
-
-.btn-add
-  width: 32px
-
-.user_name
-  font-weight: 600
-  a
-    background: transparent
-    color: $gray-dark
-    &:hover
-      color: $orange-primary
-    .caret
-      margin-left: 4px

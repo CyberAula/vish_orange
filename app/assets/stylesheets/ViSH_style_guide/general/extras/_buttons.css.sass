@@ -1,3 +1,6 @@
+.btn
+  @include btn
+
 .btn-primary
   @include btn-primary-orange
 .btn-secondary
@@ -14,17 +17,11 @@
   &:hover
     color: $brand-primary
 
-//social networks
-.fb-like
-  span
-    height: 20px !important
-
-//Just for home & front
 .btn-mooc
   background: rgba(black, 0.4) !important
   border: 1px solid $white
   &:hover
-    background: rgba(black, 0.7) !important
+    background: rgba(black, 0.8) !important
   a
     color: white !important
     &:hover
@@ -49,21 +46,20 @@
   border-right: none
   &:hover
     border-right: none
-
-.btn-file input[type=file]
-  position: absolute
-  top: 0
-  right: 0
-  min-width: 100%
-  min-height: 100%
-  font-size: 100px
-  text-align: right
-  filter: alpha(opacity=0)
-  opacity: 0
-  outline: none
-  background: white
-  cursor: inherit
-  display: block
+  input[type=file]
+    position: absolute
+    top: 0
+    right: 0
+    min-width: 100%
+    min-height: 100%
+    font-size: 100px
+    text-align: right
+    filter: alpha(opacity=0)
+    opacity: 0
+    outline: none
+    background: white
+    cursor: inherit
+    display: block
 
 .btn-js
   cursor: pointer
@@ -79,7 +75,6 @@
     text-decoration: none
   @media(min-width: 400px)
     display: inline-block
-    //margin-right: 2.5em
     &:nth-of-type(even)
       margin-right: 0
   @media(min-width: 600px)
@@ -115,3 +110,44 @@
     stroke-dasharray: 15, 310
     stroke-dashoffset: 48
     transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1)
+
+//Other kind of buttons
+.btn-add
+  width: 32px
+
+.user_name
+  font-weight: 600
+  a
+    background: transparent
+    color: $gray-dark
+    &:hover
+      color: $orange-primary
+    .caret
+      margin-left: 4px
+
+.wall_input .input-group-addon .new_document,
+.timeline .more a
+  color: $white
+
+.label, .badge
+  text-shadow: 0 1px 0 transparent
+  font-weight: normal
+  padding: 3px 6px
+
+//Dropdowns
+.btn-group.open .dropdown-toggle
+  box-shadow: none
+
+.open .btn-default.dropdown-toggle
+  background-color: rgba(84, 84, 84, 0.96) !important
+
+.btn-group.open .btn-secundary.dropdown-toggle
+  background-color: darken($btn-secundary-bg, 10%)
+
+.btn-group.open .btn-primary.dropdown-toggle
+  background-color: darken($brand-primary, 8%)
+
+.open .btn-default.dropdown-toggle,
+.open div.new_comment form#new_comment input.dropdown-toggle[type="submit"],
+div.new_comment form#new_comment .open input.dropdown-toggle[type="submit"]
+  border: 1px solid rgba(0, 0, 0, 0)
