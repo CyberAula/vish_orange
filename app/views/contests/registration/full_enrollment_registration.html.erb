@@ -3,9 +3,9 @@
 <%content_for :description do%><%= t("site.meta_desc.sign_up")%><%end%>
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
 
-<section id="registration">
+<section id="registration" class="registration_page">
   <section class="registration">
-    <h4><%= t('sign_up').capitalize %></h4>
+    <h1><%= t('sign_up').capitalize %></h1>
 
     <%= form_tag('/contests/'+@contest.id.to_s+'/sign_up', method: "post", :html => {:id => "new_user_devise_form"} ) do |f| %>
       <div class="form-group reg-labels">
@@ -36,12 +36,10 @@
              <%= text_field_tag element, nil, :required => true, :maxlength => 5, :pattern => '\d+' %>
           <% else %>
             <%= text_field_tag element, nil, :required => true %>
-          <%end%> 
+          <%end%>
          </br>
         <% end %>
         <% end %>
-
-        <hr class="soften">
         <div class="conditions">
           <label>
             <input type="checkbox" id="inlineCheckbox1" required="required" title="You need to accept the Terms and Conditions to create your account" value="option1">
@@ -51,7 +49,7 @@
               <%= t('conditions.check_message_2') %>
             </span>
           </label>
-          
+
           <div class="action">
               <%if Vish::Application.config.enable_recaptcha %>
                   <%= invisible_recaptcha_tags :text=> t('action.accept').capitalize, :callback=> 'submitRegistrationInvisibleRecaptchaForm', :class => "btn btn-primary pull-right" %>

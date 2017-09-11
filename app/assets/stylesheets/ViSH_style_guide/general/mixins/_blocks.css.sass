@@ -19,6 +19,8 @@
     .p_block
       color: $gray
       line-height: 1.6em
+      font-weight: 300
+      padding: 0 10px
     @include flex_container
     margin: 0 auto
     padding: 10px
@@ -64,13 +66,20 @@
       @include flex_container
       .tool_block
         padding: 20px
-        width: 100%
+        width: 70%
         @media (min-width: 800px)
           width: 25%
         .p_block
           color: $gray
           line-height: 1.6em
           text-align: center
+          font-weight: 300
+        .img_tool_block
+          width: 100%
+          max-width: 150px
+          margin: 0 auto
+          padding: 10px
+          display: block
 
     .icons_block
       width: 100%
