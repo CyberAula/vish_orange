@@ -189,11 +189,13 @@
     <div class="content_block">
       <div class="items">
           <% begin
-              favorites = Document.all.sample(4)
-            end %>
-            <% favorites.each do |doc| %>
-              <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-            <% end %>
+            winers = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
+          rescue ActiveRecord::RecordNotFound => e
+            winers = Document.all.sample(2)
+          end %>
+          <% winers.each do |doc| %>
+            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+          <% end %>
         <div class="clear"></div>
       </div>
     </div>
@@ -211,12 +213,14 @@
 
     <div class="content_block">
     <div class="items">
-        <% begin
-            favorites = Document.all.sample(10)
-          end %>
-          <% favorites.each do |doc| %>
-            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-          <% end %>
+      <% begin
+          categories = [Category.find(68), Category.find(97), Category.find(81), Category.find(87),Category.find(103), Category.find(111), Category.find(71), Category.find(100),Category.find(84),Category.find(90),Category.find(106), Category.find(114)]
+        rescue ActiveRecord::RecordNotFound => e
+          categories = Category.all.sample(12)
+        end %>
+        <% categories.each do |category| %>
+          <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
+        <% end %>
       <div class="clear"></div>
     </div>
     </div>
@@ -234,12 +238,14 @@
 
     <div class="content_block">
     <div class="items">
-        <% begin
-            favorites = Document.all.sample(10)
-          end %>
-          <% favorites.each do |doc| %>
-            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-          <% end %>
+      <% begin
+          incibecategories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+        rescue ActiveRecord::RecordNotFound => e
+          incibecategories = Category.all.sample(8)
+        end %>
+      <% incibecategories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
+      <% end %>
       <div class="clear"></div>
     </div>
     </div>
