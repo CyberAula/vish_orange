@@ -1,6 +1,6 @@
 
 <%content_for :banner do%>
-
+<!--illustration -->
   <div class="main-box main-box-contest">
     <img src="../assets/orange/contest17.jpg" alt="Imagen consurso EducaInternet" class="img_contest">
     <!-- center sentence + buttons -->
@@ -23,236 +23,55 @@
   </div>
 <%end%>
 
-<!--Articles-->
+<!--contest blocks -->
 <section class="articles contest_blocks">
-  <!--presentation + video-->
-  <article class="contest_block">
-    <h1>SI TE GUSTAN LOS RETOS, ESTE ES EL TUYO</h1>
-    <div class="horizontal_line"></div>
+  <%if user_signed_in? &&  isUserEnrolled? && contest_fase == 2 %>
+    <!--user resources gallery -->
+    <%= render partial: 'contests/templates/educa2017/user_resources' %>
+  <%end%>
 
-    <div class="content_block">
-      <div class="video_block">
-        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/2k9zJBIr61E" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="text_block">
-        <h2>Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos</h2>
-        <p class="p_block">
-          Inscríbete con tu clase y descubre todos los materiales formativos que te ofrecemos para que puedas apoyar a tus alumnos en sus necesidades educativas.
-        </p>
-        <button class="btn btn-primary">Descarga las bases</button>
-      </div>
-    </div>
-  </article>
+  <%if contest_fase <= 2 %>
+    <!--presentation + video -->
+    <%= render partial: 'contests/templates/educa2017/presentation' %>
+  <%end%>
+  <%if contest_fase == 3 %>
+    <!-- share resources -->
+    <%= render partial: 'contests/templates/educa2017/share_resources' %>
+  <%end%>
+  <%if contest_fase == 4 %>
+    <!-- winners -->
+    <%= render partial: 'contests/templates/educa2017/winners' %>
+  <%end%>
+  <%if contest_fase <= 2 %>
+    <!-- explanation -->
+    <%= render partial: 'contests/templates/educa2017/explanation' %>
+  <%end%>
+  <%if user_signed_in? &&  isUserEnrolled? && contest_fase >= 2 %>
+    <!--educainternet seal -->
+    <%= render partial: 'contests/templates/educa2017/educainternet_seal' %>
+  <%end%>
 
-  <!-- explanation -->
-  <article class="contest_block">
-    <h1>PROFESORES COMO TÚ HACEN IMPORTANTE ESTE CONCURSO</h1>
-    <div class="horizontal_line"></div>
+  <%if contest_fase >= 2 %>
+    <!--educaconsejos -->
+    <%= render partial: 'contests/templates/educa2017/educaconsejos' %>
+  <%end%>
+  <%if contest_fase <= 3 %>
+    <!-- 3 steps -->
+    <%= render partial: 'contests/templates/educa2017/steps' %>
+  <%end%>
 
-    <div class="content_block">
-      <div class="basic_block">
-        <p class="p_block">
-          El concurso EducaInternet es una iniciativa socialmente responsable que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación.
-        </p>
-      </div>
-      <div class="basic_block">
-        <p class="p_block">
-          Ponemos materiales a disposición de los profesores para que puedan trabajar con los niños y jóvenes en el aula sobre el uso seguro de las nuevas tecnologías.
-        </p>
-      </div>
-    </div>
-  </article>
 
-  <!-- 3 steps -->
-  <article class="contest_block_dark">
-    <div class="content_block">
-      <div class="steps_block">
-        <h2>Participa en 3 sencillos pasos</h2>
-        <div class="step">
-          <div class="number">1</div>
-          <p class="p_block">
-            Inscríbete en la web para disponer de todos los materiales formativos que te interesen. Para ti o para tus alumnos.
-          </p>
-        </div>
-        <div class="step">
-          <div class="number">2</div>
-          <p class="p_block">
-            Crea un recurso junto a tu clase y súbelo a la web ¡Nuestros tutoriales te ayudarán!
-          </p>
-        </div>
-        <div class="step">
-          <div class="number">3</div>
-          <p class="p_block">
-            Difunde tu recurso para conseguir el mayor número de votos posibles.
-          </p>
-        </div>
-      </div>
-      <div class="icons_block">
-        <%if user_signed_in? && isUserEnrolled? %>
-          <div class="icon_block active"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apuntad@</div></div>
-        <% elsif user_signed_in? %>
-          <a href="/contest/educa2017/other_fields_enrollment"><div class="icon_block active"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
-        <% else %>
-          <a href="/contest/educa2017/full_enrollment_registration"><div class="icon_block active"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
-        <% end %>
-
-        <div class="icon_block"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div>
-        <div class="icon_block"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Difunde</div></div>
-      </div>
-    </div>
-  </article>
-
+  <%if contest_fase <= 2 %>  <!-- **** este no tengo muy claro si debe estar tb en fase 3 -->
   <!-- help center -->
-  <article class="contest_block">
-    <div class="intro_icon_block">
-      <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>
-    </div>
-    <div class="fix_gap"></div>
-    <h1>CENTRO DE AYUDA Y SOPORTE PARA PARTICIPAR</h1>
-    <div class="horizontal_line"></div>
-    <div class="content_block">
-      <div class="video_block">
-        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/2k9zJBIr61E" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="text_block">
-        <h2>Estamos aquí para ayudarte</h2>
-        <p class="p_block">
-          Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
-        </p>
-      </div>
-    </div>
-  </article>
-  <!-- free tools -->
-  <article class="contest_block">
-    <div class="content_block">
-      <h2><b>Herramientas gratuitas</b> para crear los recursos</h2>
-      <div class="tools_block">
-        <div class="tool_block">
-          <a href="/excursions/new"><img src="../assets/orange/tools/logo_editor.png" alt="Logo Vish Editor" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-        <div class="tool_block">
-          <a href="https://piktochart.com" target="_blank"><img src="../assets/orange/tools/logo_pikto.png" alt="Logo Piktochart" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-        <div class="tool_block">
-          <a href="https://www.blogger.com/about/?r=1-null_user" target="_blank"><img src="../assets/orange/tools/logo_blogger.png" alt="Logo Blogger" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-        <div class="tool_block">
-          <a href="https://www.genial.ly/es" target="_blank"><img src="../assets/orange/tools/logo_genially.png" alt="Logo Genially" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-      </div>
-      <div class="tools_block">
-        <div class="tool_block">
-          <a href="https://www.easel.ly" target="_blank"><img src="../assets/orange/tools/logo_easelly.jpg" alt="Logo Easelly" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-        <div class="tool_block">
-          <a href="https://www.canva.com/es_es/" target="_blank"><img src="../assets/orange/tools/logo_canva.png" alt="Logo Canva" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-        <div class="tool_block">
-          <a href="https://prezi.com/?rc=paid0sem0branded0search0&gclid=Cj0KCQjw6NjNBRDKARIsAFn3NMqW-ND6nzaP32lySbPHeHod4mFFG0PS9AH4wmJ1p5f99JnqHA3U22AaAlAqEALw_wcB" target="_blank"><img src="../assets/orange/tools/logo_prezi.png" alt="Logo Prezi" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-        <div class="tool_block">
-          <a href="https://kahoot.it" target="_blank"><img src="../assets/orange/tools/logo_kahoot.png" alt="Logo Kahoot" class="img_tool_block"></a>
-          <p class="p_block">
-            Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
-          </p>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- last winners -->
-  <article class="contest_block padding_bottom60">
-    <div class="content_block">
-      <h2>Inspírate con los trabajos <b>ganadores de la anterior edición</b> del Concurso EducaInternet</h2>
-    </div>
-    <div class="content_block">
-      <div class="items">
-          <% begin
-            winers = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
-          rescue ActiveRecord::RecordNotFound => e
-            winers = Document.all.sample(2)
-          end %>
-          <% winers.each do |doc| %>
-            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-          <% end %>
-        <div class="clear"></div>
-      </div>
-    </div>
-  </article>
-
+  <%= render partial: 'contests/templates/educa2017/help_center' %>
+  <%end%>
   <!-- McMillan resources -->
-  <article class="contest_block_dark padding_bottom60">
-    <div class="intro_icon_block">
-      <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
-    </div>
-    <div class="fix_gap"></div>
-    <div class="content_block">
-      <h2>Materiales pedagógicos <b>Macmillan</b> disponibles en castellano e inglés</h2>
-    </div>
-
-    <div class="content_block">
-    <div class="items">
-      <% begin
-          categories = [Category.find(68), Category.find(97), Category.find(81), Category.find(87),Category.find(103), Category.find(111), Category.find(71), Category.find(100),Category.find(84),Category.find(90),Category.find(106), Category.find(114)]
-        rescue ActiveRecord::RecordNotFound => e
-          categories = Category.all.sample(12)
-        end %>
-        <% categories.each do |category| %>
-          <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
-        <% end %>
-      <div class="clear"></div>
-    </div>
-    </div>
-  </article>
-
+  <%= render partial: 'contests/templates/educa2017/macmillan_resources' %>
   <!-- INCIBE resources -->
-  <article class="contest_block padding_bottom60">
-    <div class="intro_icon_block">
-      <i class="fa fa-lock fa-4x" aria-hidden="true"></i>
-    </div>
-    <div class="fix_gap"></div>
-    <div class="content_block">
-      <h2>Materiales <b>INCIBE</b> sobre la seguridad en la red</h2>
-    </div>
+  <%= render partial: 'contests/templates/educa2017/incibe_resources' %>
 
-    <div class="content_block">
-    <div class="items">
-      <% begin
-          incibecategories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
-        rescue ActiveRecord::RecordNotFound => e
-          incibecategories = Category.all.sample(8)
-        end %>
-      <% incibecategories.each do |category| %>
-        <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
-      <% end %>
-      <div class="clear"></div>
-    </div>
-    </div>
-  </article>
-
+  <!-- create account -->
   <%= render :partial => "shared/create_account" %>
-
 </section>
 
 <%

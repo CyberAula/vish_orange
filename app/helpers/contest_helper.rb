@@ -19,4 +19,8 @@ module ContestHelper
 			contestPath
 		end
 	end
+
+	def contest_fase
+		return 1
+	end
 end

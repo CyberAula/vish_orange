@@ -1,0 +1,17 @@
+
+
+<article class="contest_block">
+  <h1>GALERÍA DE RECURSOS PRESENTADOS</h1>
+  <div class="horizontal_line"></div>
+  <%if ActivityObject.authored_by(current_user).length > 0 %>
+      <div class="no_resources">
+        aquí va el bt de añadir recurso + los recursos presentados
+      </div>
+  <%else%>
+    <div class="no_resources">
+      <p>Ahora mismo cuentas con <b>0 recursos</b> creados</p>
+      <p>¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b></p>
+      <p>Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b></p>
+    </div>
+  <%end%>
+</article>

@@ -1,0 +1,37 @@
+<article class="contest_block_dark">
+  <div class="content_block">
+    <div class="steps_block">
+      <h2>Participa en 3 sencillos pasos</h2>
+      <div class="step">
+        <div class="number">1</div>
+        <p class="p_block">
+          Inscríbete en la web para disponer de todos los materiales formativos que te interesen. Para ti o para tus alumnos.
+        </p>
+      </div>
+      <div class="step">
+        <div class="number">2</div>
+        <p class="p_block">
+          Crea un recurso junto a tu clase y súbelo a la web ¡Nuestros tutoriales te ayudarán!
+        </p>
+      </div>
+      <div class="step">
+        <div class="number">3</div>
+        <p class="p_block">
+          Difunde tu recurso para conseguir el mayor número de votos posibles.
+        </p>
+      </div>
+    </div>
+    <div class="icons_block">
+      <%if user_signed_in? && isUserEnrolled? %>
+        <div class="icon_block <%= 'active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apuntad@</div></div>
+      <% elsif user_signed_in? %>
+        <a href="/contest/educa2017/other_fields_enrollment"><div class="icon_block <%= 'active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
+      <% else %>
+        <a href="/contest/educa2017/full_enrollment_registration"><div class="icon_block <%= 'active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
+      <% end %>
+
+      <div class="icon_block <%= 'active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div>
+      <div class="icon_block <%= 'active' if contest_fase >= 3 %>"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Difunde</div></div>
+    </div>
+  </div>
+</article>

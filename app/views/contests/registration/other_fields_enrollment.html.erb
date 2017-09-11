@@ -2,7 +2,8 @@
 
 	<section id="registration" class="registration_page">
 	  <section class="registration">
-			<h1><%= t('sign_up').capitalize %></h1>
+			<h1><%= t('enroll_contest') %></h1>
+			<p><%= t('enroll_contest_txt') %></p>
 			<%= form_tag(enroll_contest_path(@contest), method: "post") do  %>
 			<div class="form-group reg-labels">
 				<% @contest.additional_fields.each do |element|%>

@@ -1,0 +1,98 @@
+<article class="contest_block">
+  <div class="intro_icon_block">
+    <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>
+  </div>
+  <div class="fix_gap"></div>
+  <h1>CENTRO DE AYUDA Y SOPORTE PARA PARTICIPAR</h1>
+  <div class="horizontal_line"></div>
+  <div class="content_block">
+    <div class="video_block">
+      <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/2k9zJBIr61E" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="text_block">
+      <h2>Estamos aquí para ayudarte</h2>
+      <p class="p_block">
+        Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
+      </p>
+    </div>
+  </div>
+</article>
+
+<!-- free tools -->
+<article class="contest_block">
+  <div class="content_block">
+    <h2><b>Herramientas gratuitas</b> para crear los recursos</h2>
+    <div class="tools_block">
+      <div class="tool_block">
+        <a href="/excursions/new"><img src="../assets/orange/tools/logo_editor.png" alt="Logo Vish Editor" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="tool_block">
+        <a href="https://piktochart.com" target="_blank"><img src="../assets/orange/tools/logo_pikto.png" alt="Logo Piktochart" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="tool_block">
+        <a href="https://www.blogger.com/about/?r=1-null_user" target="_blank"><img src="../assets/orange/tools/logo_blogger.png" alt="Logo Blogger" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="tool_block">
+        <a href="https://www.genial.ly/es" target="_blank"><img src="../assets/orange/tools/logo_genially.png" alt="Logo Genially" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+    </div>
+    <div class="tools_block">
+      <div class="tool_block">
+        <a href="https://www.easel.ly" target="_blank"><img src="../assets/orange/tools/logo_easelly.jpg" alt="Logo Easelly" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="tool_block">
+        <a href="https://www.canva.com/es_es/" target="_blank"><img src="../assets/orange/tools/logo_canva.png" alt="Logo Canva" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="tool_block">
+        <a href="https://prezi.com/?rc=paid0sem0branded0search0&gclid=Cj0KCQjw6NjNBRDKARIsAFn3NMqW-ND6nzaP32lySbPHeHod4mFFG0PS9AH4wmJ1p5f99JnqHA3U22AaAlAqEALw_wcB" target="_blank"><img src="../assets/orange/tools/logo_prezi.png" alt="Logo Prezi" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+      <div class="tool_block">
+        <a href="https://kahoot.it" target="_blank"><img src="../assets/orange/tools/logo_kahoot.png" alt="Logo Kahoot" class="img_tool_block"></a>
+        <p class="p_block">
+          Esta herramientas es útil para crear presentaciones interactivas con las que participar en el concurso
+        </p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- last winners -->
+<article class="contest_block padding_bottom60">
+  <div class="content_block">
+    <h2>Inspírate con los trabajos <b>ganadores de la anterior edición</b> del Concurso EducaInternet</h2>
+  </div>
+  <div class="content_block">
+    <div class="items">
+        <% begin
+          winers = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
+        rescue ActiveRecord::RecordNotFound => e
+          winers = Document.all.sample(4)
+        end %>
+        <% winers.each do |doc| %>
+          <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+        <% end %>
+      <div class="clear"></div>
+    </div>
+  </div>
+</article>

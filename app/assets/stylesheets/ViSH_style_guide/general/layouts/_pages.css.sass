@@ -94,7 +94,35 @@ div.icontitle
       .following-button
         padding: 1px 0
 
+.registration,
+.forgot,
+.confirmation,
 #sign_in
+  @include devise-box
+  color: $gray-dark
+  .required_fields
+    font-size: 0.9em
+    color: $orange_primary
+  h1
+    margin: 0 0 10px
+    font-weight: 300
+  label
+    padding: 10px 0px 5px !important
+    font-weight: 400
+  p
+    color: $gray
+    font-weight: 300
+
+  ul.tag-list
+    margin-left: 0
+  .conditions
+    font-size: 0.9em
+    label
+      color: $gray !important
+
+
+
+//#sign_in
   padding-bottom: 0px !important
   @include log
   a,label
@@ -106,19 +134,6 @@ div.icontitle
       color: $gray-dark
 
 
-.registration,
-.forgot,
-#sign_in
-  margin-bottom: 20px
-  .required_fields
-    font-size: 0.9em
-    color: $orange_primary
-  h4
-    margin: 0px 0px 10px
-    padding: 10px 0px
-  label
-    padding: 10px 0px 5px !important
-    font-weight: 500
 
 .cke_skin_BootstrapCK-Skin
   .cke_contents

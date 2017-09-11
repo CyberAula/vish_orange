@@ -6,7 +6,7 @@
 
 <section id="registration" class="registration_page">
   <section class="registration">
-    <h4><%= t('sign_up').capitalize %></h4>
+    <h1><%= t('sign_up').capitalize %></h1>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
@@ -61,9 +61,6 @@
           <% end %>
         <%end%>
 
-
-
-        <hr class="soften">
         <div class="conditions">
           <label>
             <input type="checkbox" id="inlineCheckbox1" required="required" title="You need to accept the Terms and Conditions to create your account" value="option1">
@@ -76,7 +73,7 @@
               <% end -%>
             </span>
           </label>
-          
+
           <div class="action">
               <%if Vish::Application.config.enable_recaptcha %>
                   <%= invisible_recaptcha_tags :text=> t('action.accept').capitalize, :callback=> 'submitRegistrationInvisibleRecaptchaForm', :class => "btn btn-primary pull-right" %>

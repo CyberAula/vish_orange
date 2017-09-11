@@ -5,8 +5,8 @@
 
 <section id="registration" class="registration_page">
   <section class="registration">
-    <h1><%= t('sign_up').capitalize %></h1>
-
+    <h1><%= t('sign_up_contest') %></h1>
+    <p><%= t('sign_up_contest_txt') %></p>
     <%= form_tag('/contests/'+@contest.id.to_s+'/sign_up', method: "post", :html => {:id => "new_user_devise_form"} ) do |f| %>
       <div class="form-group reg-labels">
 

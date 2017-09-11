@@ -1263,8 +1263,12 @@ en:
     twitter:
       contest: "One vote for this educational resource in #ConcursoEducaInternet"
       message: "Check out this resource at %{url}"
-  sign_up: "Register"
   sign_in: "Enter"
+  sign_up: "Register"
+  sign_up_contest: "Create your account"
+  sign_up_contest_txt: "Generate your own free and unlimited resources and upload them to the web"
+  enroll_contest: "What a good team you do!"
+  enroll_contest_txt: "Please complete the fields with your data and those of your school"
   mail_example: "example@example.com"
   simple_captcha:
     placeholder: "Enter the image value"
