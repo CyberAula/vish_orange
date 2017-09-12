@@ -38,6 +38,9 @@
     <hr>
 
     <div class="info-bottom">
+      <%if defined?(is_contest) && is_contest%>
+	hola
+      <%end%>
       <!--like -->
       <div class="like like_contest">
           <div class="count"><%=resource.post_activity.likes.count.to_s%></div>

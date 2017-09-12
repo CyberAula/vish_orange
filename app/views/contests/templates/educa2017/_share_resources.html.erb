@@ -5,14 +5,15 @@
   <div class="content_block">
     <p class="p_block">Comparte tu recurso en las redes sociales o por correo y conviértelo en el más votado del Concurso.</p>
     <div class="items">
-        <% begin
-          educaconsejos = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
-        rescue ActiveRecord::RecordNotFound => e
-          educaconsejos = Document.all.sample(4)
-        end %>
-        <% educaconsejos.each do |doc| %>
-          <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-        <% end %>
+		<%aos = @contest.activity_objects.authored_by(current_subject)%>
+
+<div id="submitted_aos_user_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
+	<ul class="items">
+  	  <% aos.map{|ao| ao.object}.each do |resource| %>
+	   <%= render partial: 'repositories/resource', locals: { :resource => resource, :is_contest => true} %>
+	  <% end %>
+	</ul>
+</div>
       <div class="clear"></div>
     </div>
   </div>
