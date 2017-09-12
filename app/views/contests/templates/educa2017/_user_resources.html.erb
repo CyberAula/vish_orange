@@ -5,7 +5,17 @@
   <div class="horizontal_line"></div>
   <%if ActivityObject.authored_by(current_user).length > 0 %>
       <div class="no_resources">
-        aquí va el bt de añadir recurso + los recursos presentados
+
+        <h3>Aquí puedes participar en el concurso</h3>
+        <div id="submitted_aos_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
+      	  <ul class="items">
+            <%= render partial: 'contests/templates/educa2016/submissions/form', locals: { contest_category: @contest.categories.first } %>
+            <div class="clear"></div>
+      	  </ul>
+        </div>
+        <h3>Tu participación</h3>
+        <%= render partial: 'contests/submissions_user', locals: { contest: @contest} %>
+
       </div>
   <%else%>
     <div class="no_resources">
