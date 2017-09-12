@@ -22,6 +22,7 @@
       </div>
     </div>
     <div class="icons_block">
+      <!-- step 1-->
       <%if user_signed_in? && isUserEnrolled? %>
         <div class="icon_block <%= 'active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apuntad@</div></div>
       <% elsif user_signed_in? %>
@@ -29,9 +30,14 @@
       <% else %>
         <a href="/contest/educa2017/full_enrollment_registration"><div class="icon_block <%= 'active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
       <% end %>
-
-      <div class="icon_block <%= 'active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div>
-      <div class="icon_block <%= 'active' if contest_fase >= 3 %>"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Difunde</div></div>
+      <!-- step 2-->
+      <%if user_signed_in? && isUserEnrolled? %>
+        <a href=""><div class="icon_block <%= 'active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div></a>
+      <% else %>
+        <div class="icon_block <%= 'active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div>
+      <% end %>
+      <!-- step 3-->
+      <div class="spread icon_block <%= 'active' if contest_fase >= 3 %>"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Difunde</div></div>
     </div>
   </div>
 </article>

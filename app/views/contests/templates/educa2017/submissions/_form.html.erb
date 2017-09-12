@@ -5,5 +5,5 @@
 
   <% available_submissions.each_with_index do |contribution_type,index| %>
     <% form_id += "_" + (index+1).to_s %>
-    <%= render partial: "contests/templates/educa2016/submissions/submit_#{contribution_type.downcase}", locals: { contest_category: contest_category, :form_id => form_id } %>
+    <%= render partial: "contests/templates/educa2017/submissions/submit_#{contribution_type.downcase}", locals: { contest_category: contest_category, :form_id => form_id } %>
   <% end %>

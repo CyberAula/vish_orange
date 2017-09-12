@@ -21,6 +21,10 @@ es:
       title: 'La necesidad de EducaInternet'
       text: 'Lorem ipsum...'
 
+  contest_page:
+    user_resources:
+      bt_upload: "Presentar recurso"
+
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
     title: 'Explora EducaInternet'
@@ -39,17 +43,17 @@ es:
       intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
       title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
 
-    whatwedo_page:
-      subtitle: 'talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC'
-      title: '¿Qué hacemos?'
-      article_1:
-        title: 'Ya está aquí la Segunda Edición Concurso EducaInternet'
-      article_2:
-        title: 'Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación'
-      article_3:
-        title: 'Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable'
-      article_4:
-        title: 'Te contamos cómo fue la Primera Edición del Concurso EducaInternet'
+  whatwedo_page:
+    subtitle: 'talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC'
+    title: '¿Qué hacemos?'
+    article_1:
+      title: 'Ya está aquí la Segunda Edición Concurso EducaInternet'
+    article_2:
+      title: 'Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación'
+    article_3:
+      title: 'Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable'
+    article_4:
+      title: 'Te contamos cómo fue la Primera Edición del Concurso EducaInternet'
 
   orange_front:
     banner_contest: "assets/orange/banner_contest3.png"
