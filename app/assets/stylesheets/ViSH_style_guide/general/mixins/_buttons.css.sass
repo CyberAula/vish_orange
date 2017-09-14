@@ -34,7 +34,7 @@
     -webkit-transition-duration: .2s
     -o-transition-property: background-color, color
     -o-transition-duration: .2s
-    @include scale1
+
   &:active, &.active
     outline: 0
     background-image: none
@@ -58,6 +58,7 @@
   &[disabled]
     background: darken($brand-primary, 20%)
     color: white
+    @include scale1
 
 @mixin btn-secondary-orange
   background: $gray-lighter
@@ -70,6 +71,7 @@
   &[disabled]
     background: darken($gray-lighter, 20%)
     color: $gray-dark
+    @include scale1
 
 @mixin btn-default-orange
   color: $gray
@@ -84,6 +86,7 @@
     background: $white
     color: $brand-primary
     border: 1px solid $brand-primary
+    @include scale1
 
 @mixin btn-contest-orange
   color: $black
@@ -100,6 +103,7 @@
   &.disabled,
   &[disabled]
     color: $black
+    @include scale1
 
 @mixin follow-profile
   text-align: center

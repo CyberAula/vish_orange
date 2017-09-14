@@ -1,8 +1,10 @@
 
 
 <article class="contest_block">
-  <h1>GALERÍA DE RECURSOS PRESENTADOS</h1>
-  <div class="horizontal_line"></div>
+  <div class="intro">
+    <h1>GALERÍA DE RECURSOS PRESENTADOS</h1>
+    <div class="horizontal_line"></div>
+  </div>
   <%types = VishConfig.getAvailableResourceModels%>
   <%if ActivityObject.authored_by(current_user).where(:object_type => types).length > 0 %>
     <div class="content_block">
