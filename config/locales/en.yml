@@ -1251,7 +1251,7 @@ en:
     enrollments:
       header: "change your enrollments (curses, contests...)"
       cancel_enrollment: "I want to cancel my suscription"
-      unroll: "Unroll"
+      disenroll: "Disenroll"
     notifications:
       briefing: "Change your notifications behaviour and mail alerts"
       by_email:

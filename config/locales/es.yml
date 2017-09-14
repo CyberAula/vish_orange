@@ -1243,7 +1243,7 @@ es:
     enrollments:
       header: "Cambia tus suscripciones (cursos, concursos...)"
       cancel_enrollment: "Ya no quiero participar en el concurso"
-      unroll: "Desapuntarme"
+      disenroll: "Desapuntarme"
     notifications:
       briefing: "Cambia tus notificaciones y alertas de correo"
       by_email:
