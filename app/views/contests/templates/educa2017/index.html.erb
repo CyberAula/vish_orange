@@ -6,10 +6,11 @@
     <!-- center sentence + buttons -->
     <div class="main-title main-title-contest">
       <div class="title">
+
         ¡Participa creando con tu aula un recurso sobre el <b>uso seguro de internet</b>!
       </div>
       <%if user_signed_in? && isUserEnrolled? %>
-        <div>No hay nada</div>
+        <div></div>
       <% elsif user_signed_in? %>
         <button class="btn btn-contest" onclick="location.href='/contest/educa2017/other_fields_enrollment';">
           Apúntate
