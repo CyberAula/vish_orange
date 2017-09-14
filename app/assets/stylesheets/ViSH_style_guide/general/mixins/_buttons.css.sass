@@ -34,6 +34,7 @@
     -webkit-transition-duration: .2s
     -o-transition-property: background-color, color
     -o-transition-duration: .2s
+    @include scale1
   &:active, &.active
     outline: 0
     background-image: none
@@ -56,6 +57,7 @@
   &.disabled,
   &[disabled]
     background: darken($brand-primary, 20%)
+    color: white
 
 @mixin btn-secondary-orange
   background: $gray-lighter
@@ -85,9 +87,6 @@
 
 @mixin btn-contest-orange
   color: $black
-  //marrón
-  //background: #7d0f0f
-  //amarillo
   background-color: #ffdc11
   border: 1px solid transparent
   min-width: 100px
@@ -100,7 +99,6 @@
   &.active,
   &.disabled,
   &[disabled]
-    background: lighten(#ffdc11, 20%)
     color: $black
 
 @mixin follow-profile
