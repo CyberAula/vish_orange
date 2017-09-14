@@ -6,18 +6,18 @@
     <!-- center sentence + buttons -->
     <div class="main-title main-title-contest">
       <div class="title">
-
-        ¡Participa creando con tu aula un recurso sobre el <b>uso seguro de internet</b>!
+        <!-- TODO: diferenciar las fases -->
+        <%= t('contest_page.main_title.title1_html') %>
       </div>
       <%if user_signed_in? && isUserEnrolled? %>
         <div></div>
       <% elsif user_signed_in? %>
         <button class="btn btn-contest" onclick="location.href='/contest/educa2017/other_fields_enrollment';">
-          Apúntate
+          <%= t('contest_page.main_title.action1') %>
         </button>
       <% else %>
         <button class="btn btn-contest" onclick="location.href='/contest/educa2017/full_enrollment_registration';">
-         Apúntate
+          <%= t('contest_page.main_title.action1') %>
         </button>
       <% end %>
     </div>

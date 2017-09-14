@@ -1,6 +1,5 @@
 es:
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
-
   about_page:
     subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
     title: "Acerca de EducaInternet"
@@ -22,7 +21,57 @@ es:
       text: 'Lorem ipsum...'
 
   contest_page:
+    educaconsejos_title_html: "EducaConsejos"
+    explanation:
+      intro: "PROFESORES COMO TÚ HACEN IMPORTANTE ESTE CONCURSO"
+      text1: "El concurso EducaInternet es una iniciativa socialmente responsable que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación."
+      text2: "Ponemos materiales a disposición de los profesores para que puedan trabajar con los niños y jóvenes en el aula sobre el uso seguro de las nuevas tecnologías."
+    help_center:
+      free_tools:
+        title_html: "<b>Herramientas gratuitas</b> para crear los recursos"
+        tool1_text: "Esta herramientas está integrada en EducaInternet para crear presentaciones interactivas"
+        tool2_text: "Con esta herramienta puedes participar creando las mejores presentaciones e infografías"
+        tool3_text: "Crea tus presentaciones incluyendo audio y vídeo y súbelas a la plataforma"
+        tool4_text: "¿Todavía no conoces Prezi? Dale orden a tus presentaciones con sus plantillas"
+        tool5_text: "Usa las redes sociales como base para tus historias con esta herramienta"
+        tool6_text: "Obtén imágenes gratuitas para tus recursos visitando esta comunidad"
+        tool7_text: "Aprende a crear presentaciones animadas y personaliza tu recurso con imágenes y audio"
+        tool8_text: "Anima tu recurso con esta herramienta para crear sencillos vídeos y presentaciones"
+      intro: "CENTRO DE AYUDA Y SOPORTE PARA PARTICIPAR"
+      title: "Estamos aquí para ayudarte"
+      text: "Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales."
+      winners:
+        title_html: "Inspírate con los trabajos <b>ganadores de la anterior edición</b> del Concurso EducaInternet"
+    incibe_title_html: "Materiales <b>INCIBE</b> sobre la seguridad en la red"
+    macmillan_title_html: "Materiales pedagógicos <b>Macmillan</b> disponibles en castellano e inglés"
+    main_title:
+      title1_html: "¡Participa creando con tu aula un recurso sobre el <b>uso seguro de internet</b>!"
+      action1: "Apúntate"
+    presentation:
+      intro: "SI TE GUSTAN LOS RETOS, ESTE ES EL TUYO"
+      title: "Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos"
+      text: "Inscríbete con tu clase y descubre todos los materiales formativos que te ofrecemos para que puedas apoyar a tus alumnos en sus necesidades educativas."
+      action1: "Descarga las bases"
+    seal:
+      intro: "TU COMPROMISO CON LA SEGURIDAD DE INTERNET"
+      text: "Descarga tu sello de participación del 2º Concurso EducaInternet y convierte a tu centro en referente en el sector educativo. Puedes publicarlo en las redes sociales o en la web de tu colegio."
+      action1: "Descarga tu sello"
+    steps:
+      enrolled: "Apuntad@"
+      title: "Participa en 3 sencillos pasos"
+      step1_text: "Inscríbete en la web para disponer de todos los materiales formativos que te interesen. Para ti o para tus alumnos."
+      step2_text: "Crea un recurso junto a tu clase y súbelo a la web ¡Nuestros tutoriales te ayudarán!"
+      step3_text: "Difunde tu recurso para conseguir el mayor número de votos posibles."
+      step1_action: "Apúntate"
+      step2_action: "Participa"
+      step3_action: "Difunde"
+
     user_resources:
+      intro: "GALERÍA DE RECURSOS PRESENTADOS"
+      no_resources:
+        text1_html: "Ahora mismo cuentas con <b>0 recursos</b> creados"
+        text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b>"
+        text3_html: "Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b>"
       bt_upload: "Presentar recurso"
 
   explore_page:

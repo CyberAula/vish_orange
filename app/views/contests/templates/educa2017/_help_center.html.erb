@@ -4,7 +4,7 @@
   </div>
   <div class="fix_gap"></div>
   <div class="intro">
-    <h1>CENTRO DE AYUDA Y SOPORTE PARA PARTICIPAR</h1>
+    <h1><%= t('contest_page.help_center.intro') %></h1>
     <div class="horizontal_line"></div>
   </div>
   <div class="content_block">
@@ -12,9 +12,9 @@
       <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/2k9zJBIr61E" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="text_block">
-      <h2>Estamos aquí para ayudarte</h2>
+      <h2><%= t('contest_page.help_center.title') %></h2>
       <p class="p_block">
-        Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales.
+        <%= t('contest_page.help_center.text') %>
       </p>
     </div>
   </div>
@@ -23,33 +23,33 @@
 <!-- free tools -->
 <article class="contest_block">
   <div class="content_block">
-    <h2><b>Herramientas gratuitas</b> para crear los recursos</h2>
+    <h2><%= t('contest_page.help_center.free_tools.title_html') %></h2>
     <div class="tools_block">
       <div class="tool_block">
         <a href="/excursions/new"><img src="../assets/orange/tools/logo_editor.png" alt="Logo Vish Editor" class="img_tool_block"></a>
         <p class="p_block">
-          Esta herramientas está integrada en EducaInternet para crear presentaciones interactivas
+          <%= t('contest_page.help_center.free_tools.tool1_text') %>
         </p>
       </div>
       <!-- visme -->
       <div class="tool_block">
         <a href="https://www.visme.co" target="_blank"><img src="../assets/orange/tools/logo_visme.jpeg" alt="Logo Visme" class="img_tool_block"></a>
         <p class="p_block">
-          Con esta herramienta puedes participar creando las mejores presentaciones e infografías
+          <%= t('contest_page.help_center.free_tools.tool2_text') %>
         </p>
       </div>
       <!-- knovio -->
       <div class="tool_block">
         <a href="http://www.knovio.com/?utm_referrer=https%3A%2F%2Fwww.google.es%2F" target="_blank"><img src="../assets/orange/tools/logo_knovio.png" alt="Logo Knovio" class="img_tool_block"></a>
         <p class="p_block">
-          Crea tus presentaciones incluyendo audio y vídeo y súbelas a la plataforma
+          <%= t('contest_page.help_center.free_tools.tool3_text') %>
         </p>
       </div>
       <!-- prezi -->
       <div class="tool_block">
         <a href="https://prezi.com/?rc=paid0sem0branded0search0&gclid=Cj0KCQjw6NjNBRDKARIsAFn3NMqW-ND6nzaP32lySbPHeHod4mFFG0PS9AH4wmJ1p5f99JnqHA3U22AaAlAqEALw_wcB" target="_blank"><img src="../assets/orange/tools/logo_prezi.png" alt="Logo Prezi" class="img_tool_block"></a>
         <p class="p_block">
-          ¿Todavía no conoces Prezi? Dale orden a tus presentaciones con sus plantillas
+          <%= t('contest_page.help_center.free_tools.tool4_text') %>
         </p>
       </div>
     </div>
@@ -59,28 +59,28 @@
       <div class="tool_block">
         <a href="https://storify.com" target="_blank"><img src="../assets/orange/tools/logo_storyfy.jpg" alt="Logo Storyfy" class="img_tool_block"></a>
         <p class="p_block">
-          Usa las redes sociales como base para tus historias con esta herramienta
+          <%= t('contest_page.help_center.free_tools.tool5_text') %>
         </p>
       </div>
       <!-- Pixabay -->
       <div class="tool_block">
         <a href="https://pixabay.com/es/" target="_blank"><img src="../assets/orange/tools/logo_pixabay.png" alt="Logo Pixabay" class="img_tool_block"></a>
         <p class="p_block">
-          Obtén imágenes gratuitas para tus recursos visitando esta comunidad
+          <%= t('contest_page.help_center.free_tools.tool6_text') %>
         </p>
       </div>
       <!-- powtoon -->
       <div class="tool_block">
         <a href="https://www.powtoon.com/home/g/es/" target="_blank"><img src="../assets/orange/tools/logo_powtoon.png" alt="Logo Powtoon" class="img_tool_block"></a>
         <p class="p_block">
-          Aprende a crear presentaciones animadas y personaliza tu recurso con imágenes y audio
+          <%= t('contest_page.help_center.free_tools.tool7_text') %>
         </p>
       </div>
       <!-- moovly -->
       <div class="tool_block">
         <a href="https://www.moovly.com/" target="_blank"><img src="../assets/orange/tools/logo_moovly.png" alt="Logo Moovly" class="img_tool_block"></a>
         <p class="p_block">
-          Anima tu recurso con esta herramienta para crear sencillos vídeos y presentaciones
+          <%= t('contest_page.help_center.free_tools.tool8_text') %>
         </p>
       </div>
     </div>
@@ -90,7 +90,7 @@
 <!-- last winners -->
 <article class="contest_block padding_bottom60">
   <div class="content_block">
-    <h2>Inspírate con los trabajos <b>ganadores de la anterior edición</b> del Concurso EducaInternet</h2>
+    <h2><%= t('contest_page.help_center.winners.title_html') %></h2>
   </div>
   <div class="content_block">
     <div class="items">

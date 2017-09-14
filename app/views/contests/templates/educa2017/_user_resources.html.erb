@@ -2,7 +2,7 @@
 
 <article class="contest_block">
   <div class="intro">
-    <h1>GALERÍA DE RECURSOS PRESENTADOS</h1>
+    <h1><%= t('contest_page.user_resources.intro')%></h1>
     <div class="horizontal_line"></div>
   </div>
   <%types = VishConfig.getAvailableResourceModels%>
@@ -20,9 +20,9 @@
     </div>
   <%else%>
     <div class="no_resources">
-      <p>Ahora mismo cuentas con <b>0 recursos</b> creados</p>
-      <p>¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b></p>
-      <p>Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b></p>
+      <p><%= t('contest_page.user_resources.no_resources.text1_html')%></p>
+      <p><%= t('contest_page.user_resources.no_resources.text2_html')%></p>
+      <p><%= t('contest_page.user_resources.no_resources.text3_html')%></p>
     </div>
   <%end%>
 </article>

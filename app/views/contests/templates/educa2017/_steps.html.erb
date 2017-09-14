@@ -1,43 +1,43 @@
 <article class="contest_block_dark">
   <div class="content_block">
     <div class="steps_block">
-      <h2>Participa en 3 sencillos pasos</h2>
+      <h2><%= t('contest_page.steps.title') %></h2>
       <div class="step">
         <div class="number">1</div>
         <p class="p_block">
-          Inscríbete en la web para disponer de todos los materiales formativos que te interesen. Para ti o para tus alumnos.
+          <%= t('contest_page.steps.step1_text') %>
         </p>
       </div>
       <div class="step">
         <div class="number">2</div>
         <p class="p_block">
-          Crea un recurso junto a tu clase y súbelo a la web ¡Nuestros tutoriales te ayudarán!
+          <%= t('contest_page.steps.step2_text') %>
         </p>
       </div>
       <div class="step">
         <div class="number">3</div>
         <p class="p_block">
-          Difunde tu recurso para conseguir el mayor número de votos posibles.
+          <%= t('contest_page.steps.step3_text') %>
         </p>
       </div>
     </div>
     <div class="icons_block">
       <!-- step 1-->
       <%if user_signed_in? && isUserEnrolled? %>
-        <div class="icon_block <%= 'btn active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apuntad@</div></div>
+        <div class="icon_block <%= 'btn active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt"><%= t('contest_page.steps.enrolled') %></div></div>
       <% elsif user_signed_in? %>
-        <a href="/contest/educa2017/other_fields_enrollment"><div class="icon_block <%= 'btn active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
+        <a href="/contest/educa2017/other_fields_enrollment"><div class="icon_block <%= 'btn active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt"><%= t('contest_page.steps.step1_action') %></div></div></a>
       <% else %>
-        <a href="/contest/educa2017/full_enrollment_registration"><div class="icon_block <%= 'btn active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Apúntate</div></div></a>
+        <a href="/contest/educa2017/full_enrollment_registration"><div class="icon_block <%= 'btn active' if contest_fase == 1 %>"><i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i><div class="icon_block_txt"><%= t('contest_page.steps.step1_action') %></div></div></a>
       <% end %>
       <!-- step 2-->
       <%if user_signed_in? && isUserEnrolled? %>
-        <a href=""><div class="icon_block <%= 'btn active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div></a>
+        <a href=""><div class="icon_block <%= 'btn active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt"><%= t('contest_page.steps.step2_action') %></div></div></a>
       <% else %>
-        <div class="icon_block <%= 'btn active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Participa</div></div>
+        <div class="icon_block <%= 'btn active' if contest_fase == 2 %>"><i class="fa fa-upload fa-4x" aria-hidden="true"></i><div class="icon_block_txt"><%= t('contest_page.steps.step2_action') %></div></div>
       <% end %>
       <!-- step 3-->
-      <div class="spread icon_block <%= 'btn active' if contest_fase >= 3 %>"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt">Difunde</div></div>
+      <div class="spread icon_block <%= 'btn active' if contest_fase >= 3 %>"><i class="fa fa-trophy fa-4x" aria-hidden="true"></i><div class="icon_block_txt"><%= t('contest_page.steps.step3_action') %></div></div>
     </div>
   </div>
 </article>
