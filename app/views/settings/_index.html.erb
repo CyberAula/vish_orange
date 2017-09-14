@@ -18,7 +18,8 @@
         <% #render partial: 'settings/api_key' %>
       <% #end %>
 
-      <% if current_subject == current_user %>
+      <% if current_subject == current_user && !Contest.where(:template => "educa2017").first.contest_enrollments.where(:actor_id => current_subject.actor.id).blank? %>
+
         <%= render partial: "devise/registrations/enrollments",
                    locals: { resource: current_user,
                              resource_name: :user } %>

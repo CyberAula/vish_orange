@@ -4,7 +4,8 @@
   </header>
 
   <div class="panel-body collapse" id="change_enrollments_content">
-    <%=t('settings.enrollments.cancel_enrollment') %> <%= link_to t('settings.enrollments.disenroll'), registration_path(resource_name), :confirm => t('are_you_sure'), :method => :delete %>
+    <%=t('settings.enrollments.cancel_enrollment') %>
+    <%= link_to t('settings.enrollments.disenroll'), disenroll_contest_path(Contest.where(:template => "educa2017").first.id), :confirm => t('are_you_sure'), :method => :post %>
     <!-- cambiar el registration path por la acción de disenroll-->
 
   </div>
