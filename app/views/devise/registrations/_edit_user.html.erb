@@ -3,9 +3,7 @@
 <div id="password_form" class="panel panel-default">
 
   <header class="panel-heading">
-    <h5>
-      <%= link_to t("settings.password_change.briefing"),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#password_form_content" %>
-    </h5>
+    <%= link_to t("settings.password_change.briefing"),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#password_form_content" %>
   </header>
 
   <div class="panel-body collapse" id="password_form_content">
@@ -28,19 +26,17 @@
 
 <div id="email_form" class="panel panel-default">
   <header class="panel-heading">
-    <h5>
-      <%= link_to t("settings.email_change.briefing"),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => "collapse", "data-parent" => "#settings-accordion", 'data-target' => '#email_form_content' %>
-    </h5>
+    <%= link_to t("settings.email_change.briefing"),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => "collapse", "data-parent" => "#settings-accordion", 'data-target' => '#email_form_content' %>    
   </header>
 
   <div class="panel-body content settings_content collapse" id="email_form_content">
     <%= form_for(resource, :class => "form-group", :as => resource_name, :url => registration_path(resource_name), :html => { :id => "user_email_form", :method => :put }) do |f| %>
         <%= f.label :email %>
         <%= f.email_field :email, :class => "required form-control" %>
-    
+
         <%= f.label :current_password %>
         <%= f.password_field :current_password, :class => "required form-control", :id=>"user_current_password2" %>
-  
+
         <%= f.submit t('button.update'), :class => "btn btn-primary", "data-loading-text" => t('button.sending') %>
     <% end %>
   </div>
@@ -57,4 +53,3 @@
     $(this).button('loading');
   });
 <%end%>
-

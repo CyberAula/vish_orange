@@ -6,8 +6,8 @@ es:
       already_confirmed: "ya fue confirmada. Intenta iniciar sesión."
       not_locked: "no ha sido bloqueada"
       not_saved:
-        one: "Ha habido 1 error:"
-        other: "Han habido %{count} errores:"
+        one: "Ha habido 1 error"
+        other: "Ha habido %{count} errores"
 
   devise:
     failure:

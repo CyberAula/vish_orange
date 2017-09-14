@@ -1237,6 +1237,13 @@ es:
   send:
     send: "Enviar"
   settings:
+    cancel_account:
+      cancel_my_account: "Cancelar mi cuenta"
+      unhappy: "¿No estás contento?"
+    enrollments:
+      header: "Cambia tus suscripciones (cursos, concursos...)"
+      cancel_enrollment: "Ya no quiero participar en el concurso"
+      unroll: "Desapuntarme"
     notifications:
       briefing: "Cambia tus notificaciones y alertas de correo"
       by_email:

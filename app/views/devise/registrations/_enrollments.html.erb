@@ -1,0 +1,11 @@
+<div id="cancel_account" class="panel panel-default">
+  <header class="panel-heading">
+    <%= link_to t('settings.enrollments.header'), "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#cancel_account_content" %>
+  </header>
+
+  <div class="panel-body collapse" id="cancel_account_content">
+    <%=t('settings.enrollments.cancel_enrollment') %> <%= link_to t('settings.enrollments.unroll'), registration_path(resource_name), :confirm => t('are_you_sure'), :method => :delete %>
+    <!-- cambiar el registration path por la acción de uroll-->
+  </div>
+
+</div>
