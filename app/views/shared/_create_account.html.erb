@@ -2,19 +2,19 @@
 <% unless user_signed_in?%>
 <div class="create_account">
 
-  <h2><%= t('orange_front.create_account.title_html')%></h2>
+  <h2><%= t('create_account.title_html')%></h2>
 
   <div class="account_buttons">
     <button class="btn btn-primary" onclick="location.href='<%=new_user_registration_url%>'">
-      <%= t('orange_front.create_account.btn_reg')%>
+      <%= t('create_account.btn_reg')%>
     </button>
 
     <button class="btn btn-secondary" onclick="location.href='<%=user_session_path%>'">
-        <%= t('orange_front.create_account.btn_ent')%>
+        <%= t('create_account.btn_ent')%>
     </button>
 
     <button class="btn btn-default" onclick="location.href='/explore'">
-      <%= t('orange_front.create_account.btn_exp')%>
+      <%= t('create_account.btn_exp')%>
     </button>
   </div>
 </div>

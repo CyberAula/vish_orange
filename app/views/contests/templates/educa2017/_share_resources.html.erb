@@ -1,21 +1,21 @@
 <article class="contest_block">
   <div class="intro">
-    <h1>COMPARTE TUS RECURSOS</h1>
+    <h1><%=t('contest_page.share_resources.intro')%></h1>
     <div class="horizontal_line"></div>
   </div>
 
   <div class="content_block">
-    <p class="p_block">Comparte tu recurso en las redes sociales o por correo y conviértelo en el más votado del Concurso.</p>
+    <p class="p_block"><%=t('contest_page.share_resources.text')%></p>
     <div class="items">
-		<%aos = @contest.activity_objects.authored_by(current_subject)%>
+		  <%aos = @contest.activity_objects.authored_by(current_subject)%>
 
-<div id="submitted_aos_user_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
-	<ul class="items">
-  	  <% aos.map{|ao| ao.object}.each do |resource| %>
-	   <%= render partial: 'repositories/resource', locals: { :resource => resource, :is_contest => true} %>
-	  <% end %>
-	</ul>
-</div>
+      <div id="submitted_aos_user_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
+      	<ul class="items">
+        	  <% aos.map{|ao| ao.object}.each do |resource| %>
+      	       <%= render partial: 'repositories/resource', locals: { :resource => resource, :is_contest => true} %>
+      	   <% end %>
+      	</ul>
+      </div>
       <div class="clear"></div>
     </div>
   </div>

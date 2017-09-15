@@ -1,16 +1,15 @@
 #social_networks_buttons
   position: fixed
-  top: 300px
+  top: 40%
   width: 50px
   z-index: 1000
   .social_btn
     cursor: pointer
-    width: 50px
-    height: 50px
-    padding: 0
-    margin-bottom: 1px
+    width: 40px
+    height: 40px
+    padding: 10px
     text-align: center
-    line-height: 50px
+    margin: 0
     font-size: 22px
     color: #fff
     position: relative
@@ -21,54 +20,42 @@
     -webkit-transition: all 250ms
     -moz-transition: all 250ms
     transition: all 250ms
-  .social_btn.clicked
-    padding-left: 20px
-    width: 70px
+  .social_btn.clicked,
+  .social_btn:hover
+    width: 50px
+    color: #fff
   .facebook_btn
     background: #3B579D
-    &:hover
-      color: #fff
-      padding-left: 20px
-      width: 70px
   .twitter_btn
     background: #1DA1F3
-    &:hover
-      color: #fff
-      padding-left: 20px
-      width: 70px
   .youtube_btn
-    background: #D40C1D
-    &:hover
-      color: #fff
-      padding-left: 20px
-      width: 70px
+    background: #D40C1D   
   i
     color: #fff
-    font-size: 1.2em
+    font-size: 1em
+    display: block
 
 #social_networks_drop_right
   div.drop_right
+    @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
     position: fixed
     background: #fff
     width: 340px
     height: 500px
-    left: 50px
+    top: 35%
+    left: 40px
     z-index: 999
     display: none
     .close_social_btn
       position: absolute
-      top: -10px
-      right: -10px
+      top: 0
+      right: 0
       z-index: 9999
-#drop_right_facebook
-  top: 120px
-#drop_right_twitter
-  top: 120px
+      width: 35px
+      height: 35px
 #drop_right_youtube
   width: 445px
   height: 500px
-  position: fixed
-  top: 120px
   z-index: 999
 #YourPlayerID
   height: 100%
@@ -76,7 +63,6 @@
 .fb-like
   span
     height: 20px !important
-
 
 @media (max-width: 480px)
   .social_networks

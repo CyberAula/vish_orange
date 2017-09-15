@@ -56,6 +56,9 @@ es:
       intro: "TU COMPROMISO CON LA SEGURIDAD DE INTERNET"
       text: "Descarga tu sello de participación del 2º Concurso EducaInternet y convierte a tu centro en referente en el sector educativo. Puedes publicarlo en las redes sociales o en la web de tu colegio."
       action1: "Descarga tu sello"
+    share_resources:
+      intro: "COMPARTE TUS RECURSOS"
+      text: "Comparte tu recurso en las redes sociales o por correo y conviértelo en el más votado del Concurso."
     steps:
       enrolled: "Apuntad@"
       title: "Participa en 3 sencillos pasos"
@@ -65,7 +68,6 @@ es:
       step1_action: "Apúntate"
       step2_action: "Participa"
       step3_action: "Difunde"
-
     user_resources:
       intro: "GALERÍA DE RECURSOS PRESENTADOS"
       no_resources:
@@ -73,6 +75,14 @@ es:
         text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b>"
         text3_html: "Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b>"
       bt_upload: "Presentar recurso"
+    winners:
+      intro: "LOS GANADORES DEL CONCURSO"
+
+  create_account:
+    title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
+    btn_reg: "Registrarme"
+    btn_ent: "Entrar"
+    btn_exp: "Explorar"
 
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
@@ -97,6 +107,7 @@ es:
     title: '¿Qué hacemos?'
     article_1:
       title: 'Ya está aquí la Segunda Edición Concurso EducaInternet'
+      text: "Participa creando con tu aula un recurso sobre el uso seguro de Internet. Inscríbete en la página para acceder a toda la información."
     article_2:
       title: 'Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación'
     article_3:
@@ -115,11 +126,6 @@ es:
       desc3: "Aprende de los contenidos y enseña a tus alumnos sobre temas tan importantes como ciberacoso, sexting, tecnoadicciones, etc. Recuerda que tus alumnos podrán también crear contenidos relacionados con los temas aquí presentes y así 'aprender haciendo'."
       title4: "Ir al blog"
     community: "Comunidad"
-    create_account:
-      title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
-      btn_reg: "Registrarme"
-      btn_ent: "Entrar"
-      btn_exp: "Explorar"
     footer:
       about: "Sobre Nosotros"
       community: "Comunidad"
@@ -173,12 +179,6 @@ es:
       take_part: "Conoce a los ganadores"
       take_part_txt: "Ya sabemos quiénes son los recursos ganadores del primer concurso EducaInternet"
     second_message: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
-    whatwedo_title: "¿Qué hacemos?"
-    whatwedo_subtitle: "talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC"
-    whatwedo_txtblock_1: "¡Bienvenido al 2º Concurso EducaInternet!"
-    whatwedo_txtblock_2: "Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación"
-    whatwedo_txtblock_3: "Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable"
-    whatwedo_txtblock_4: "Te contamos cómo fue la Primera Edición del Concurso EducaInternet"
   about:
     blog: "Novedades"
     contact: "Contacto"
