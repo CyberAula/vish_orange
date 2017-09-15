@@ -32,8 +32,69 @@ en:
       text: 'Lorem ipsum...'
 
   contest_page:
+    educaconsejos_title_html: "EducaConsejos"
+    explanation:
+      intro: "TEACHERS LIKE YOU MAKE THIS CONTEST IMPORTANT"
+      text1: "The EducaInternet competition is a socially responsible initiative created with the purpose of training schools in the safe and responsible use of information and communication technology"
+      text2: "Ponemos materiales a disposición de los profesores para que puedan trabajar con los niños y jóvenes en el aula sobre el uso seguro de las nuevas tecnologías."
+    help_center:
+      free_tools:
+        title_html: "<b>Free tools</b> for creating the resources"
+        tool1_text: "This tool is integrated in EducaInternet to create virtual excursions"
+        tool2_text: "With this tool you can create the best presentations and graphics"
+        tool3_text: "Create your presentations including audio and video, and upload them to the platform"
+        tool4_text: "You haven’t already heard of Prezi? Give order to your presentations with slides"
+        tool5_text: "Use social networks as a basis for your stories with this tool"
+        tool6_text: "Obtén imágenes gratuitas para tus recursos visitando esta comunidad"
+        tool7_text: "Learn to create animated presentations and personalise your resource with images and audio"
+        tool8_text: "Liven up your resource with this tool to create simple videos and presentations"
+      intro: "CENTRE FOR HELP AND SUPPORT IN TAKING PART"
+      title: "We are here to help you"
+      text: "If you have any doubts about how to create your resource or upload it, we invite you to watch our tutorials."
+      winners:
+        title_html: "Get inspired with the <b>winning entries of the previous edition</b> of the EducaInternet Competition"
+    incibe_title_html: "<b>INCIBE</b> materials about online safety"
+    macmillan_title_html: "<b>Macmillan</b> teaching materials available in Spanish and English"
+    main_title:
+      title1_html: "Create a resource about the safe use of the internet in your classroom!"
+      action1: "Sign up"
+    presentation:
+      intro: "IF YOU LIKE A CHALLENGE, THIS ONE’S FOR YOU!"
+      title: "An opportunity for your pupils to become experts of new technologies"
+      text: "Register with your class and discover all the training materials that we offer so that you can support your pupils in their educational needs"
+      action1: "Download competition rules"
+    seal:
+      intro: "TU COMPROMISO CON LA SEGURIDAD DE INTERNET"
+      text: "Descarga tu sello de participación del 2º Concurso EducaInternet y convierte a tu centro en referente en el sector educativo. Puedes publicarlo en las redes sociales o en la web de tu colegio."
+      action1: "Descarga tu sello"
+    share_resources:
+      intro: "COMPARTE TUS RECURSOS"
+      text: "Comparte tu recurso en las redes sociales o por correo y conviértelo en el más votado del Concurso."
+    steps:
+      enrolled: "Apuntad@"
+      title: "How to take part in 3 simple steps"
+      step1_text: "Register online to access all the training materials you like for you or for your pupils"
+      step2_text: "Create a resource together in class and upload it online. Our tutorials will help you!"
+      step3_text: "Share your resource to win as many votes as possible"
+      step1_action: "Sign up"
+      step2_action: "Take part"
+      step3_action: "Share"
+
     user_resources:
+      intro: "GALERÍA DE RECURSOS PRESENTADOS"
+      no_resources:
+        text1_html: "Ahora mismo cuentas con <b>0 recursos</b> creados"
+        text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b>"
+        text3_html: "Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b>"
       bt_upload: "Upload resource"
+    winners:
+      intro: "LOS GANADORES DEL CONCURSO"
+
+  create_account:
+    title_html: "Create your free account <br> and become an expert on cybersecurity"
+    btn_reg: "Create an account"
+    btn_ent: "Enter"
+    btn_exp: "Explore"
 
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
@@ -54,10 +115,11 @@ en:
       title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
 
   whatwedo_page:
-    subtitle: 'talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC'
-    title: '¿Qué hacemos?'
+    subtitle: 'workshops, contests, courses and many more activities to train you to dominate the world of ICTs'
+    title: 'What do we do?'
     article_1:
-      title: 'Ya está aquí la Segunda Edición Concurso EducaInternet'
+      title: 'Welcome to the 2nd EducaInternet Competition!'
+      text: "Take part by creating a resource about the safe use of the internet in your classroom. Register online to access all the information."
     article_2:
       title: 'Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación'
     article_3:
@@ -76,16 +138,12 @@ en:
       desc3: "Learn from the content and teach your students about important issues such as cyberbullying, sexting, techno-addictions, etc... Remember that your students can also create content related topics here present and so 'learning by doing'"
       title4: "Go to blog"
     community: "Community"
-    create_account:
-      title_html: "Create your free account <br> and become an expert in cybersecurity"
-      btn_reg: "Sign in"
-      btn_ent: "Enter"
-      btn_exp: "Explore"
+    
     explore_title: "Explore EducaInternet"
-    explore_subtitle: "and you will find everything you need to become an expert in cybersecurity"
+    explore_subtitle: "and you will find everything you need to become an expert on cybersecurity"
     front_blocks:
       block1_tit: "EducaInternet, an endless source of safety and educational resources"
-      block2_tit: "Certified online courses, so you can learn at your own pace and become an expert in cybersecurity"
+      block2_tit: "Certified online courses, so you can learn at your own pace and become an expert on cybersecurity"
       block3_tit: "Create with your students amazing educational resources that you can share on the platform"
       block4_tit: "We work with the best experts to bring you the latest content"
       block1_txt_html: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
@@ -120,12 +178,7 @@ en:
       take_part_tit: "First EducaInternet competition"
       take_part: "Meet the winners"
       take_part_txt: "We now know which are the winning resources of the first EducaInternet competition"
-    whatwedo_title: "What do we do?"
-    whatwedo_subtitle: "workshops, contests, courses and many more activities to train you to dominate the world of ICTs"
-    whatwedo_txtblock_1: "Ya está aquí la Segunda Edición Concurso EducaInternet"
-    whatwedo_txtblock_2: "Segunda Edición Curso: Uso seguro y responsable de las tecnologías de la Información y la comunicación"
-    whatwedo_txtblock_3: "Estrenamos plataforma, la nueva Imagen de EducaInternet: segura y responsable"
-    whatwedo_txtblock_4: "Te contamos cómo fue la Primera Edición del Concurso EducaInternet"
+    
     footer:
       about: "About us"
       community: "Comunidad"
@@ -143,7 +196,7 @@ en:
       reference_center_html: "Your center of reference in <br>cybersecurity and use <br>of ICT.<br><span>© Orange 2015 Rights</span>"
       review: "Give us your opinion"
       rights: "All rights reserved"
-      whatwedo: "What we do?"
+      whatwedo: "What do we do?"
   about:
     blog: "News"
     contact: "Contact"
@@ -1278,8 +1331,8 @@ en:
   sign_up: "Register"
   sign_up_contest: "Create your account"
   sign_up_contest_txt: "Generate your own free and unlimited resources and upload them to the web"
-  enroll_contest: "What a good team you do!"
-  enroll_contest_txt: "Please complete the fields with your data and those of your school"
+  enroll_contest: "What a great team you make!"
+  enroll_contest_txt: "Please complete the fields with your details and those of your school"
   mail_example: "example@example.com"
   simple_captcha:
     placeholder: "Enter the image value"
