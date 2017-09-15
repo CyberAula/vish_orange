@@ -50,12 +50,11 @@
           <h3>Estos son los <strong>recursos educativos favoritos</strong><br>de los usuarios de EducaInternet</h3>
             <p>Lorem ipsum dolor sit amet, Quisque porta, erat sit amet dapibus molestie, dolor quam tempus lacus, sed aliquam arcu dolor in dolor. Pellentesque a nibh orci. Aenean in ligula quis eros suscipit auctor.</p>
             <div class="items">
-              <% begin
-                  favorites = Document.all.sample(10)
-                end %>
-                <% favorites.each do |doc| %>
-                  <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-                <% end %>
+                 <% types = VishConfig.getAvailableResourceModels({:return_instances => true})
+                    favorites = Search.search({:n => 10, :order => "ranking DESC", :ao_ids_to_avoid => [2538, 2513, 2559, 3510, 6392], :models=> types})%>
+                  <% favorites.each do |doc| %>
+                    <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+                  <% end %>
                 <div class="clear"></div>
             </div>
         </div>
@@ -74,11 +73,13 @@
         </div>
           <div class="items">
             <% begin
-              favorites = Document.all.sample(5)
-            end %>
-            <% favorites.each do |doc| %>
-              <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-            <% end %>
+                experts = [Excursion.find(331), Excursion.find(329), Excursion.find(333), Excursion.find(434), Excursion.find(679)]
+              rescue ActiveRecord::RecordNotFound => e
+                experts = Excursion.all.sample(5)
+              end %>
+              <%experts.each do |doc| %>
+                <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+              <% end %>
             <div class="clear"></div>
           </div>
       </div>
@@ -95,9 +96,11 @@
         </div>
           <div class="items">
             <% begin
-                favorites = Document.all.sample(5)
+                quality = [Category.find(68), Category.find(97), Category.find(81), Category.find(87), Category.find(103), Category.find(111)]
+              rescue ActiveRecord::RecordNotFound => e
+                quality = Category.all.sample(6)
               end %>
-              <% favorites.each do |doc| %>
+              <%quality.each do |doc| %>
                 <%= render partial: 'repositories/resource', locals: { resource: doc} %>
               <% end %>
           <div class="clear"></div>
