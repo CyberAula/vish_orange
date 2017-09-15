@@ -1,41 +1,82 @@
-.social_networks
-  .social_networks_buttons, .drop_right_facebook, .drop_right_twitter, .drop_right_youtube
-    position: fixed
-    top: 40vh
-
-  .social_networks_drop_right
-    div
-      background: #fff
-      width: 340px
-      height: 500px
-      left: -340px
-      z-index: 999
-
-  .social_networks_buttons
+#social_networks_buttons
+  position: fixed
+  top: 300px
+  width: 50px
+  z-index: 1000
+  .social_btn
+    cursor: pointer
+    width: 50px
+    height: 50px
+    padding: 0
+    margin-bottom: 1px
+    text-align: center
+    line-height: 50px
+    font-size: 22px
+    color: #fff
+    position: relative
     left: 0
-    z-index: 1000
-    div
-      background: $gray
-      display: block
-      cursor: pointer
-      padding: 8px
-      text-align: center
-    .facebook_btn
-      &:hover
-        background: #3B579D
-    .twitter_btn
-      &:hover
-        background: #1DA1F3
-    .youtube_btn
-      &:hover
-        background: #D40C1D
-    i
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    -webkit-transition: all 250ms
+    -moz-transition: all 250ms
+    transition: all 250ms
+  .social_btn.clicked
+    padding-left: 20px
+    width: 70px
+  .facebook_btn
+    background: #3B579D
+    &:hover
       color: #fff
-      font-size: 1.2em
+      padding-left: 20px
+      width: 70px
+  .twitter_btn
+    background: #1DA1F3
+    &:hover
+      color: #fff
+      padding-left: 20px
+      width: 70px
+  .youtube_btn
+    background: #D40C1D
+    &:hover
+      color: #fff
+      padding-left: 20px
+      width: 70px
+  i
+    color: #fff
+    font-size: 1.2em
+
+#social_networks_drop_right
+  div.drop_right
+    position: fixed
+    background: #fff
+    width: 340px
+    height: 500px
+    left: 50px
+    z-index: 999
+    display: none
+    .close_social_btn
+      position: absolute
+      top: -10px
+      right: -10px
+      z-index: 9999
+#drop_right_facebook
+  top: 120px
+#drop_right_twitter
+  top: 120px
+#drop_right_youtube
+  width: 445px
+  height: 500px
+  position: fixed
+  top: 120px
+  z-index: 999
+#YourPlayerID
+  height: 100%
 
 .fb-like
   span
     height: 20px !important
+
 
 @media (max-width: 480px)
   .social_networks

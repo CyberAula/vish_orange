@@ -5,7 +5,7 @@
  * Released under the MIT Licence
  * http://opensource.org/licenses/MIT
  *
- * Github:  
+ * Github:
  * Version: 3.0.5
  */
 /*jslint browser: true, undef:true, unused:true, laxbreak:true, loopfunc:true*/
@@ -13,7 +13,7 @@
 
 (function(win, doc) {
 	'use strict';
-	var apiKey = 'YOUR_API_KEY_HERE';
+	var apiKey = 'AIzaSyAdGvEMv7SOsK6asCvBcvvKVp9C31f408I';
 	var YTV = YTV || function(id, opts){
 
 		var noop = function(){},
@@ -42,7 +42,7 @@
 					stateChange: noop
 				}
 			},
-			
+
 			cache = {
 				data: {},
 				remove: function (url) {
@@ -131,7 +131,7 @@
 									}
 								};
 							} else if (win.XMLHttpRequest){ // Modern Browsers
-								handle = new XMLHttpRequest(); 
+								handle = new XMLHttpRequest();
 							}
 							handle.onreadystatechange = function(){
 								if (handle.readyState === 4 && handle.status === 200){
@@ -290,7 +290,7 @@
 							list += '</a>';
 						}
 						list += '</ul></div>';
-						
+
 						var lh = settings.element.getElementsByClassName('ytv-list-header')[0],
 							headerLink = lh.children[0];
 						headerLink.href="#";
@@ -315,7 +315,7 @@
 								videos = data.items,
 								first = true,
 								i;
-							settings.channelId = userInfo.items[0].id; 
+							settings.channelId = userInfo.items[0].id;
 							if(settings.currentPlaylist) user.title += ' &middot; '+(settings.currentPlaylist);
 							if (settings.sortList) videos.sort(function(a,b){if(a.snippet.publishedAt > b.snippet.publishedAt) return -1;if(a.snippet.publishedAt < b.snippet.publishedAt) return 1;return 0;});
 							if (settings.reverseList) videos.reverse();
@@ -329,7 +329,7 @@
 									list += '<span><i class="ytv-arrow down"></i>'+(user.title)+'</span>';
 								list += '</a>';
 							list += '</div>';
-							
+
 							list += '<div class="ytv-list-inner"><ul>';
 							for(i=0; i<videos.length; i++){
 								if(videos[i].status.embeddable){
@@ -342,7 +342,7 @@
 										duration: (videos[i].contentDetails.duration),
 										thumb: videos[i].snippet.thumbnails.medium.url
 									};
-									
+
 									var durationString = video.duration.match(/[0-9]+[HMS]/g);
 									var h = 0, m = 0, s = 0, time = '';
 									durationString.forEach(function (duration) {
@@ -357,7 +357,7 @@
 									if (h){ time += h+':';}
 									if (m){ time += m+':';} else { time += '00:';}
 									if (s){ time += s;} else { time += '00';}
-									
+
 									var isFirst = '';
 									if(settings.playId==video.slug){
 										isFirst = ' class="ytv-active"';
@@ -384,30 +384,30 @@
 							var active = settings.element.getElementsByClassName('ytv-active')[0];
 							active.parentNode.parentNode.scrollTop = active.offsetTop;
 							action.logic.loadVideo(first, settings.autoplay);
-							
+
 							if (settings.playlist){
 								utils.ajax.get( utils.endpoints.playlistInfo(settings.playlist), prepare.playlists );
 							} else if(settings.browsePlaylists){
 								utils.ajax.get( utils.endpoints.userPlaylists(), prepare.playlists );
 							}
-							
+
 						});
 					} else console.log ('Youtube-TV Error: Empty video list');
 				}
 			},
 			action = {
-				
+
 				logic: {
-					
+
 					playerStateChange: function(d){
 						console.log(d);
 					},
-					
+
 					loadVideo: function(slug, autoplay){
 						var house = settings.element.getElementsByClassName('ytv-video')[0];
 						var counter = settings.element.getElementsByClassName('ytv-video-playerContainer').length;
 						house.innerHTML = '<div id="ytv-video-player'+id+counter+'" class="ytv-video-playerContainer"></div>';
-						
+
 						cache.player = new YT.Player('ytv-video-player'+id+counter, {
 							videoId: slug,
 							events: {
@@ -427,7 +427,7 @@
 								controls: settings.controls ? 1 : 0,
 								rel: 0,
 								showinfo: 0,
-								iv_load_policy: settings.annotations ? '' : 3, 
+								iv_load_policy: settings.annotations ? '' : 3,
 								autoplay: autoplay ? 1 : 0,
 								theme: settings.playerTheme,
 								wmode: settings.wmode
@@ -435,7 +435,7 @@
 						});
 					}
 				},
-				
+
 				endpoints: {
 					videoClick: function(e){
 						var target = utils.parentUntil(e.target ? e.target : e.srcElement, 'data-ytv');
@@ -468,15 +468,15 @@
 					},
 					playlistClick: function(e){
 						var target = utils.parentUntil(e.target ? e.target : e.srcElement, 'data-ytv-playlist');
-						
+
 						if(target && target.getAttribute('data-ytv-playlist')){
-							
+
 							// Load Playlist
 							utils.events.prevent(e);
-							
+
 							settings.pid = target.getAttribute('data-ytv-playlist');
 							target.children[1].innerHTML = 'Loading...';
-							
+
 							utils.ajax.get( utils.endpoints.playlistInfo(settings.pid), function(res){
 								var lh = settings.element.getElementsByClassName('ytv-list-header')[0];
 								lh.className = lh.className.replace(' ytv-playlist-open', '');
@@ -491,7 +491,7 @@
 					utils.events.addEvent( settings.element, 'click', action.endpoints.playlistClick );
 				}
 			},
-			
+
 			initialize = function(id, opts){
 				utils.deepExtend(settings, opts);
 				if(settings.apiKey.length===0){
@@ -535,7 +535,7 @@
 					}
 				}
 			};
-			
+
 		initialize(id, opts);
 	};
 

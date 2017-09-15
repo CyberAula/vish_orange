@@ -1,31 +1,33 @@
 <!-- Botones -->
 <div id="social_networks_buttons" class="social_networks_buttons">
-  <div id="facebook_btn" class="facebook_btn">
+  <div id="facebook_btn" class="social_btn facebook_btn">
     <i class="fa fa-facebook fa-big"></i>
   </div>
-  
-  <div id="twitter_btn" class="twitter_btn">
+
+  <div id="twitter_btn" class="social_btn twitter_btn">
     <i class="fa fa-twitter fa-big"></i>
   </div>
 
-  <div id="youtube_btn" class="youtube_btn">
+  <div id="youtube_btn" class="social_btn youtube_btn">
     <i class="fa fa-youtube fa-big"></i>
   </div>
 </div>
 
 <!-- Desplegables -->
 <div id="social_networks_drop_right" class="social_networks_drop_right">
-  <div id="drop_right_facebook" class="drop_right_facebook">
+  <div id="drop_right_facebook" class="drop_right">
+    <button type="button" class="close_social_btn">×</button>
     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FEducaInternet%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="overflow:hidden" scrolling="no" border="0" frameborder="0" allowTransparency="true"></iframe>
   </div>
 
-  <div id="drop_right_twitter" class="drop_right_twitter">
+  <div id="drop_right_twitter" class="drop_right">
+    <button type="button" class="close_social_btn">×</button>
     <a class="twitter-timeline" href="https://twitter.com/EducaInternet" width="340" height="500" border="0" frameborder="0">Tweets by EducaInternet</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
-  <div id="drop_right_youtube" class="drop_right_youtube">
+  <div id="drop_right_youtube" class="drop_right">
+    <button type="button" id="youtube_close_btn" class="close_social_btn">×</button>
+    <div id="YourPlayerID"></div>
   </div>
-</div>
 
-<!-- Velo ("Tapa la pantalla completa con baja opacidad, si haces click sobre este cierra cualquier desplegable de la red social abierto") -->
-<div id="veil" class="veil disp_none"></div>
+</div>

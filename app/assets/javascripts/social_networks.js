@@ -1,24 +1,64 @@
 $(document).ready(function(){
   $("#facebook_btn").click(function(){
-    $(this).toggleClass("padding_btn")
-      $("#drop_right_facebook").toggleClass("left_44");
+    if($(this).hasClass("clicked")){
+      $(this).removeClass("clicked");
+      $(".drop_right").hide();
+    } else {
+      $(".social_btn").removeClass("clicked");
+      $(this).addClass("clicked");
+      $(".drop_right").hide();
+      $("#drop_right_facebook").show();
+    }
   });
   //twitter
   $("#twitter_btn").click(function(){
-    $(this).toggleClass("padding_btn")
-      $("#drop_right_twitter").toggleClass("left_44");
+    if($(this).hasClass("clicked")){
+      $(this).removeClass("clicked");
+      $(".drop_right").hide();
+    } else {
+      $(".social_btn").removeClass("clicked");
+      $(this).addClass("clicked");
+      $(".drop_right").hide();
+      $("#drop_right_twitter").show();
+    }
   });
   //youtube
   $("#youtube_btn").click(function(){
-    $(this).toggleClass("padding_btn")
-      $("#drop_right_youtube").toggleClass("left_44");
+    if($(this).hasClass("clicked")){
+      $(this).removeClass("clicked");
+      $(".drop_right").hide();
+    } else {
+      $(".social_btn").removeClass("clicked");
+      $(this).addClass("clicked");
+      $(".drop_right").hide();
+      $("#drop_right_youtube").show();
+    }
+  });
+  //close button
+  $(".close_social_btn").click(function(){
+      close_drop_right();
   });
 
-  var controller = new YTV('drop_right_youtube', {
+  var close_drop_right = function(){
+    $(".social_btn").removeClass("clicked");
+    $(".drop_right").hide();
+    $(".ytv-video-playerContainer")[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+  }
+
+  var controller = new YTV('YourPlayerID', {
 	   playlist: 'PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST',
      accent: '#fff',
-     playerTheme: 'dark',
-     listTheme: 'dark',
-     responsive: false     
+     playerTheme: 'light',
+     listTheme: 'light',
+     responsive: false
     });
+
+    //code to hide drop_right panels when clicking outside
+    $('html').on('click', function(e){
+      //avoid closing the panels when click on social buttons or directly in the panels
+      if(!$(e.target).hasClass("social_btn") && !$(e.target).parent().hasClass("social_btn") && !$(e.target).parents().hasClass("ytv-list") && !$(e.target).hasClass("close_social_btn") && $(".social_btn.clicked").length > 0){
+        close_drop_right();
+      }
+    });
+
 });
