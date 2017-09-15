@@ -36,7 +36,7 @@
       color: $gray
       line-height: 1.6em
       font-weight: 300
-      padding: 0 10px
+      padding: 10px
     @include flex_container
     margin: 0 auto
     padding: 10px
@@ -55,7 +55,8 @@
         width: 100%
         text-align: left
       .p_block
-        padding: 10px 0
+        padding: 10px
+        font-size: 1.1em
       .step
         display: flex
         .number
@@ -90,6 +91,10 @@
           line-height: 1.6em
           text-align: center
           font-weight: 300
+          font-size: 1.2em
+          @media (min-width: 800px)
+            font-size: 1em
+
         .img_tool_block
           width: auto
           margin: 0 auto
@@ -140,15 +145,16 @@
   .content_block
     margin: 0 auto
     max-width: 75%
-    //overflow: hidden
     .text_block, .img_block
       padding: 0 20px
+      @media (max-width: 768px)
+        text-align: center !important
+        margin: 10px auto
     .img_block
       width: 100%
-      margin: 20px 0
       @media (min-width: 800px)
         width: 50%
-      height: 256px
+      height: 270px
       text-align: center
       img
         width: auto
@@ -162,7 +168,6 @@
         width: 100%
         font-size: 1.2em
       .p_block
-        width: 88%
         padding: 12px 0
         color: $gray
         font-size: 1.1em

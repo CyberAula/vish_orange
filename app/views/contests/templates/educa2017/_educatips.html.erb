@@ -4,10 +4,11 @@
   </div>
   <div class="fix_gap"></div>
   <div class="content_block">
-    <h2><%= t('contest_page.educaconsejos_title_html')%></h2>
+    <h2><%= t('contest_page.educatips.title_html')%></h2>
   </div>
 
   <div class="content_block">
+    <p class="p_block basic_block"><%= t('contest_page.educatips.text')%></p>
     <div class="items">
         <% begin
           educaconsejos = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
