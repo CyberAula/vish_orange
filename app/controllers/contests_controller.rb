@@ -17,7 +17,7 @@ class ContestsController < ApplicationController
   end
 
   def full_enrollment_registration
-    if current_user
+    if user_signed_in?
       render "contests/registration/other_fields_enrollment"
     else
       render 'contests/registration/full_enrollment_registration'
