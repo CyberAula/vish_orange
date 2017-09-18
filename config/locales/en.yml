@@ -60,6 +60,11 @@ en:
     main_title:
       title1_html: "Create a resource about the safe use of the internet in your classroom!"
       action1: "Sign up"
+    modal_submission:
+      title: "Select one of your resources and take part"
+      text_html: "Be sure to include your <b>school’s address and the class in the description of the resource</b>. <br>If you don´t know how to do it, we’ll help you here."
+      bt_upload: "Upload resource"
+      bt_cancel: "Cancel"
     presentation:
       intro: "IF YOU LIKE A CHALLENGE, THIS ONE’S FOR YOU!"
       title: "An opportunity for your pupils to become experts of new technologies"
@@ -70,8 +75,9 @@ en:
       text: "Download your 2nd EducaInternet Competition participation certificate and make your school an expert in the education sector. You can publish it on your school’s social media or website."
       action1: "Download your certificate"
     share_resources:
-      intro: "COMPARTE TUS RECURSOS"
-      text: "Comparte tu recurso en las redes sociales o por correo y conviértelo en el más votado del Concurso."
+      intro: "SHARE YOUR RESOURCES"
+      text: "Share your resource on social media or via email and make it the most voted in the competition."
+      bt_vote: "Vote for your favourite resource"
     steps:
       enrolled: "Apuntad@"
       title: "How to take part in 3 simple steps"

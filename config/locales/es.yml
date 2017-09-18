@@ -49,6 +49,11 @@ es:
     main_title:
       title1_html: "¡Participa creando con tu aula un recurso sobre el <b>uso seguro de internet</b>!"
       action1: "Apúntate"
+    modal_submission:
+      title: "Selecciona uno de tus recursos y participa"
+      text_html: "Recuerda que para participar debes asegurarte de incluir <b>la dirección del Colegio y la Clase en la descripción del recurso</b>. <br>Si no sabes cómo hacerlo te ayudamos aquí"
+      bt_upload: "Subir recurso"
+      bt_cancel: "Cancelar"
     presentation:
       intro: "SI TE GUSTAN LOS RETOS, ESTE ES EL TUYO"
       title: "Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos"
@@ -61,6 +66,7 @@ es:
     share_resources:
       intro: "COMPARTE TUS RECURSOS"
       text: "Comparte tu recurso en las redes sociales o por correo y conviértelo en el más votado del Concurso."
+      bt_vote: "Vota tu recurso favorito"
     steps:
       enrolled: "Apuntad@"
       title: "Participa en 3 sencillos pasos"

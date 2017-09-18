@@ -21,6 +21,6 @@ module ContestHelper
 	end
 
 	def contest_fase
-		return 2
+		return 3
 	end
 end
