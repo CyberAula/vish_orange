@@ -1,6 +1,7 @@
 es:
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
   about_page:
+    header_bt: "Explora"
     subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
     title: "Acerca de EducaInternet"
     data:
@@ -10,15 +11,15 @@ es:
     great_team:
       intro: 'UN GRAN EQUIPO DE PROFESIONALES'
       title: 'Una iniciativa avalada por los principales representantes y experos en Ciberseguridad. Ayúdanos a hacer de Internet un lugar seguro.'
-      text: 'Lorem ipsum...'
+      text: 'En Orange estamos comprometidos a ayudar a las familias a realizar un uso positivo, seguro y responsable de las tecnologías. A través de EducaInternet pretendemos proveer a la comunidad docente de los mejores recursos para aprender y enseñar en el aula sobre este uso seguro y responsable de las TIC, afrontando, además, un reto: conseguir que el alumnado pase de ser mero consumidor de contenido a tener un papel activo en el desarrollo de la tecnología.'
     values:
       intro: 'LOS VALORES'
-      title: 'Un compromiso con la seguridad en Internet'
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper malesuada pharetra. Suspendisse quis aliquet metus. Vivamus viverra metus blandit sapien condimentum mollis. Aliquam ornare orci rhoncus mi pretium, in condimentum erat consectetur. Sed placerat velit sit amet auctor vestibulum.'
+      title: 'El compromiso de Orange con la seguridad en Internet'
+      text: 'En Orange estamos comprometidos a ayudar a las familias a realizar un uso positivo, seguro y responsable de las tecnologías. A través de EducaInternet pretendemos proveer a la comunidad docente de los mejores recursos para aprender y enseñar en el aula sobre este uso seguro y responsable de las TIC, afrontando, además, un reto: conseguir que el alumnado pase de ser mero consumidor de contenido a tener un papel activo en el desarrollo de la tecnología.'
     why:
       intro: 'UN PORQUÉ'
-      title: 'La necesidad de EducaInternet'
-      text: 'Lorem ipsum...'
+      title: 'EducaInternet es necesario'
+      text: 'EducaInternet es una plataforma creada para que los docentes puedan formarse en el uso seguro y responsable de la tecnología, así como un lugar donde crear y compartir con el resto de la comunidad sus recursos y materiales didácticos. El objetivo final es que los educadores puedan compartir buenas prácticas sobre un uso correcto y seguro de las TIC con sus alumnos.'
 
   contest_page:
     educatips:
@@ -122,7 +123,7 @@ es:
     block2_txt_html: "Aprovecha en nuestra <a href='/search'>biblioteca</a> todas las <a href='/search?type=Workshop'>lecciones</a> y <a href='/search?type=Excursion'>presentaciones</a> que puedes compartir en el aula. Seguro que ya has oído hablar de los <a href='https://moodle.educainternet.es' target='_blank'>MOOC</a> (Massive Open Online Course), los cursos online dirigidos a un amplio número de participantes según el principio de educación abierta y masiva. En esta plataforma podrás realizar diferentes cursos que se ajusten a tus necesidades."
     block3_txt_html: "Crea, junto a tus alumnos, vuestros propios recursos que podrás compartir en la plataforma. Prepara el contenido para tus clases, sube los recursos que más utilices, indica cuáles son tus presentaciones favoritas, compártelas… todo aquello que puedas imaginar puedes hacerlo en EducaInternet.
 <a href='/search?type=User'>Más de 1.500 profesores ya forman parte de esta comunidad</a>. Súmate a ellos y descubre una herramienta sencilla con grandes funcionalidades para la creación de contenido educativo sobre la seguridad en Internet."
-    block4_txt_html: "La seguridad en Internet es un aspecto que como educadores debemos tener presente en todo momento. Ciertos conceptos relacionados, como <a href='/search?type=Learning_object&category_ids=tecnoaddictions'>Tecnoadicciones</a>, <a href='/search?type=Learning_object&category_ids=privacy'>Identidad digital</a>, <a href='/search?type=Learning_object&category_ids=grooming'>Grooming</a>, <a href='/search?type=Learning_object&category_ids=netiquette'>Netiqueta</a> o <a href='/search?type=Learning_object&category_ids=licenses'>Licencias</a> son fundamentales en este ámbito. En EducaInternet contamos con la colaboración de los principales organismos y entidades sobre Ciberseguridad que nos avalan como centro de referencia y núcleo de la comunidad preocupada por la seguridad en Internet. "
+    block4_txt_html: "La seguridad en Internet es un aspecto que como educadores debemos tener presente en todo momento. Ciertos conceptos relacionados, como <a href='/search?type=Learning_object&category_ids=tecnoaddictions'>Tecnoadicciones</a>, <a href='/search?type=Learning_object&category_ids=privacy'>Identidad digital</a>, <a href='/search?type=Learning_object&category_ids=grooming'>Grooming</a>, <a href='/search?type=Learning_object&category_ids=netiquette'>Netiqueta</a> o <a href='/search?type=Learning_object&category_ids=licenses'>Licencias</a> son fundamentales en este ámbito. En EducaInternet contamos con la colaboración de los principales organismos y entidades sobre Ciberseguridad que nos avalan como centro de referencia y núcleo de la comunidad preocupada por la seguridad en Internet."
 
   whatwedo_page:
     subtitle: 'talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC'

@@ -1,12 +1,62 @@
-.articles
-  article
-    .why, .values, .great_team
-      padding: 1.6em 0
-    .why
-      width: 40%
-      height: auto
-      text-align: center
-    .values, .great_team
+.blocks
+  @include blocks
+  h2
+    font-size: 1.6em
+    font-weight: 300
+
+  .why
+    text-align: center
+    .content_block
+      .text_block
+        margin: 0 auto
+  .great_team
+    .content_block
+      .text_block
+        margin-top: 10px
+        h2
+          margin-left: 80px
+      .great_team_imgs
+        width: 100%
+        overflow: hidden
+        display: flex
+
+        .great_team_img
+          text-align: center
+          max-width: 250px
+          img
+            width: 100%
+            padding: 8px
+            opacity: .4em
+            filter: grayscale(100%)
+            &:hover
+              opacity: 1
+              filter: grayscale(0%)
+
+
+  .sub_values
+    background: $gray-lighter
+    width: 100%
+    padding: 2.4em 16em
+    overflow: hidden
+    div
+      width: 32%
+      display: inline-block
+      div:not(:last-child)
+        border-right: solid .4px #444
+        height: 24px
+      h4, span
+        font-size: 1.2em
+        display: block
+      h4
+        margin-bottom: .4em
+        font-weight: 300
+      span
+        color: $orange-primary
+        font-weight: 700
+
+  //article
+
+    //.values, .great_team
       display: block
       > div
         margin: 0 auto
@@ -16,10 +66,10 @@
         text-align: center
         margin-bottom: .8em
 
-    .values, .great_team
+    //.values, .great_team
       background: $white
 
-    .values
+    //.values
       padding-bottom: 2em
       overflow: hidden
       .img_block
@@ -34,7 +84,7 @@
           margin-top: .8em
           display: inline-block
 
-    .sub_values
+    //.sub_values
       background: $gray-lighter
       width: 100%
       padding: 2.4em 16em
@@ -55,7 +105,7 @@
           color: $orange-primary
           font-weight: 700
 
-    .great_team
+    //.great_team
       padding: 2.4em 0
       h3, p
         width: 50%
@@ -83,11 +133,11 @@
               opacity: 1
               filter: grayscale(0%)
 
-    @media (max-width: 1200px)
+    //@media (max-width: 1200px)
       .sub_values
         padding: 2.4em 12em
 
-    @media (max-width: 992px)
+    //@media (max-width: 992px)
       .why
         width: 60%
       .values
@@ -102,7 +152,7 @@
       .sub_values
         padding: 2.4em 8em
 
-    @media (max-width: 767px)
+    //@media (max-width: 767px)
       .values
         .text_block
           img
@@ -117,7 +167,7 @@
           > div
             width: 48%
 
-    @media (max-width: 480px)
+    //@media (max-width: 480px)
       .sub_values
         padding: 2.4em 60px
         div

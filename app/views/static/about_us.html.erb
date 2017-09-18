@@ -8,92 +8,107 @@
         <h2><%= t('about_page.subtitle')%></h2>
       </div>
       <button class="btn btn-secondary btn-main-title" onclick="location.href='/explore';">
-        <%= t('orange_front.carousel.title2')%>
+        <%= t('about_page.header_bt')%>
      </button>
     </div>
   </div>
 <%end%>
 
-<section class="articles">
-  <article>
-    <div class="why">
-      <span><%= t('about_page.why.intro')%></span>
-        <h3>La necesidad de EducaInternet</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper malesuada pharetra. Suspendisse quis aliquet metus. Vivamus viverra metus blandit sapien condimentum mollis. Aliquam ornare orci rhoncus mi pretium, in condimentum erat consectetur. Sed placerat velit sit amet auctor vestibulum.</p>
-    </div>
-  </article>
-
-  <div class="horizontal_line"></div>
-
-  <article>
-    <div class="values">
-      <diV>
-        <span>LOS VALORES</span>
-          <div class="text_block float_L">
-            <img src="assets/orange/logo_orange.png" class="">
-            <h3>Un compromiso con la seguridad en Internet</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper malesuada pharetra. Suspendisse quis aliquet metus. Vivamus viverra metus blandit sapien condimentum mollis. Aliquam ornare orci rhoncus mi pretium, in condimentum erat consectetur. Sed placerat velit sit amet auctor vestibulum.</p>
-          </div>
-          <div class="img_block float_L">
-            <img src="assets/orange/ilustracion-5.png" alt="cover_image">
-          </div>
+<section class="blocks">
+  <article class="block why">
+    <div class="content_block">
+      <div class="intro">
+        <h1><%= t('about_page.why.intro')%></h1>
+        <div class="horizontal_line"></div>
       </div>
-    </div>
-    <div class="sub_values">
-      <div>
-        <h4>AÑO DE CREACIÓN</h4>
-        <span>2015</span>
-      </div>
-      <div>
-        <h4>RECURSOS</h4>
-        <span>100.000</span>
-      </div>
-      <div>
-        <h4>MIEMBROS</h4>
-        <span>1.500</span>
+      <div class="text_block">
+        <h2><%= t('about_page.why.title')%></h2>
+        <p class="p_block"><%= t('about_page.why.text')%></p>
       </div>
     </div>
   </article>
 
-  <article>
-    <div class="great_team">
-      <div>
-        <span>UN GRAN EQUIPO DE PROFESIONALES</span>
-          <h3>Una iniciativa avalada por los principales representantes y experos en Ciberseguridad. Ayúdanos a hacer de Internet un lugar seguro.</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper malesuada pharetra. Suspendisse quis aliquet metus. Vivamus viverra metus blandit sapien condimentum mollis. Aliquam ornare orci rhoncus mi pretium, in condimentum erat consectetur. Sed placerat velit sit amet auctor vestibulum.</p>
-        <div class="great_team_imgs">
-          <div>
-            <div class="great_team_img">
-              <img src="assets/orange/macmillan_edu_logo-02.png">
-            </div>
-          </div>
-          <div>
-            <div class="great_team_img">
-              <img src="assets/orange/red.es_logo-06.png">
-            </div>
-          </div>
-          <div>
-            <div class="great_team_img">
-              <img src="assets/orange/incibe_logo-01.png">
-            </div>
-          </div>
-          <div>
-            <div class="great_team_img">
-              <img src="assets/orange/mecd_logo-03.png">
-            </div>
-          </div>
-          <div>
-            <div class="great_team_img">
-              <img src="assets/orange/osi_logo-04.png">
-            </div>
-          </div>
-          <div>
-            <div class="great_team_img">
-              <img src="assets/orange/ging_logo-05.png">
-            </div>
-          </div>
-        </div>
+  <article class="block values">
+    <div class="content_block">
+      <div class="intro">
+        <h1><%= t('about_page.values.intro')%></h1>
+        <div class="horizontal_line"></div>
       </div>
+
+      <div class="text_block float_L">
+        <img src="assets/orange/logo_orange.png" class="">
+        <h2><%= t('about_page.values.title')%></h2>
+        <p class="p_block"><%= t('about_page.values.text')%></p>
+      </div>
+      <div class="img_block float_L">
+        <img src="assets/orange/ilustracion-5.png" alt="cover_image">
+      </div>
+    </div>
+  </article>
+
+  <div class="sub_values">
+    <div>
+      <h4><%= t('about_page.data.year')%></h4>
+      <span>2015</span>
+    </div>
+    <div>
+      <h4><%= t('about_page.data.resources')%></h4>
+      <span>100.000</span>
+    </div>
+    <div>
+      <h4><%= t('about_page.data.members')%></h4>
+      <span>1.500</span>
+    </div>
+  </div>
+
+  <article class="block great_team">
+    <div class="content_block">
+
+      <div class="intro">
+        <h1><%= t('about_page.great_team.intro')%></h1>
+        <div class="horizontal_line"></div>
+      </div>
+
+      <div class="text_block float_L">
+        <h2><%= t('about_page.great_team.title')%></h2>
+      </div>
+      <div class="text_block float_L">
+        <p class="p_block float_L"><%= t('about_page.great_team.text')%></p>
+      </div>
+
+      <div class="great_team_imgs">
+
+          <div class="great_team_img">
+            <img src="assets/orange/macmillan_edu_logo-02.png">
+          </div>
+
+
+          <div class="great_team_img">
+            <img src="assets/orange/red.es_logo-06.png">
+          </div>
+
+
+          <div class="great_team_img">
+            <img src="assets/orange/incibe_logo-01.png">
+          </div>
+
+
+          <div class="great_team_img">
+            <img src="assets/orange/mecd_logo-03.png">
+          </div>
+
+
+          <div class="great_team_img">
+            <img src="assets/orange/osi_logo-04.png">
+          </div>
+
+
+          <div class="great_team_img">
+            <img src="assets/orange/ging_logo-05.png">
+          </div>
+
+      </div>
+
     </div>
   </article>
   <%= render :partial => "shared/create_account" %>

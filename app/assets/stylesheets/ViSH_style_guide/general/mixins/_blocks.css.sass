@@ -134,14 +134,24 @@
       @include flex_container
 
 @mixin blocks
-  .block_darker
-    background: $gray-lighter-extra
   .block, .block_darker
     width: 100%
     padding: 25px
     overflow: hidden
+  .block_darker
+    background: $gray-lighter-extra
   .block
     background: $white
+  .intro
+    width: fit-content
+    margin: 0 auto
+    h1
+      text-align: center
+      color: $gray
+      font-size: 1em
+      width: fit-content
+      margin: 0 auto
+      line-height: 1.3em
   .content_block
     margin: 0 auto
     max-width: 75%
