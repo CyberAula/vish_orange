@@ -103,7 +103,7 @@ es:
     teacher:
       intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
       title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
-      
+
   home_page:
     contest_block:
       title: "¡Bienvenido al 2º Concurso EducaInternet!"
@@ -159,7 +159,7 @@ es:
       review: "Danos tu opinion"
       rights: "Todos los derechos reservados"
       whatwedo: "¿Que hacemos?"
-      
+
     header:
       index: "Inicio"
       comunity: "Comunidad"
@@ -1327,6 +1327,7 @@ es:
   sign_in: "Entrar"
   sign_up: "Quiero una cuenta"
   sign_up_contest: "Crea tu cuenta"
+  sign_up_contest_already: "¿Ya estás registrado?"
   sign_up_contest_txt: "Genera tus propios recursos gratuitos e ilimitados y súbelos a la web"
   enroll_contest: "¡Qué buen equipo hacéis!"
   enroll_contest_txt: "Por favor, completa los campos con tus datos y los de tu colegio"

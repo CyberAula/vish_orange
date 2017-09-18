@@ -17,7 +17,11 @@ class ContestsController < ApplicationController
   end
 
   def full_enrollment_registration
-    render 'contests/registration/full_enrollment_registration'
+    if current_user
+      render "contests/registration/other_fields_enrollment"
+    else
+      render 'contests/registration/full_enrollment_registration'
+    end
   end
 
   def get_enrolled_users_to_contest
@@ -198,7 +202,7 @@ class ContestsController < ApplicationController
       end
     else
       redirect_to :back
-    end  
+    end
   end
 
   #Educa2016 custom feature
