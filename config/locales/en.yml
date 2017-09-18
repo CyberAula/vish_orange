@@ -96,7 +96,7 @@ en:
         text3_html: "If you already know how it works,<br><b>you can proceed directly to your profile</b>"
       bt_upload: "Submit your resource"
     winners:
-      intro: "LOS GANADORES DEL CONCURSO"
+      intro: "THE COMPETITION WINNERS"
 
   create_account:
     title_html: "Create your free account <br> and become an expert on cybersecurity"
