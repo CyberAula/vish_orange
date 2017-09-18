@@ -17,7 +17,9 @@ class ContestsController < ApplicationController
   end
 
   def full_enrollment_registration
-    if user_signed_in?
+    if user_signed_in? && !@contest.contest_enrollments.where(:actor_id => current_subject.actor.id).blank?
+      redirect_to(@contest.getUrlWithName)
+    elsif user_signed_in?
       render "contests/registration/other_fields_enrollment"
     else
       render 'contests/registration/full_enrollment_registration'
