@@ -5,7 +5,7 @@ $(window).scroll(function(){
       $('.scrollup').fadeOut();
    }
   });
-  $('.scrollup, .spread').click(function(){
+  $('.scrollup').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
   });
