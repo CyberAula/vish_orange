@@ -153,7 +153,7 @@ en:
       desc3: "Learn from the content and teach your students about important issues such as cyberbullying, sexting, techno-addictions, etc... Remember that your students can also create content related topics here present and so 'learning by doing'"
       title4: "Go to blog"
     community: "Community"
-    
+
     explore_title: "Explore EducaInternet"
     explore_subtitle: "and you will find everything you need to become an expert on cybersecurity"
     front_blocks:
@@ -193,7 +193,7 @@ en:
       take_part_tit: "First EducaInternet competition"
       take_part: "Meet the winners"
       take_part_txt: "We now know which are the winning resources of the first EducaInternet competition"
-    
+
     footer:
       about: "About us"
       community: "Comunidad"
@@ -531,6 +531,14 @@ en:
       require_enrollment: "You need to be enrolled to perform a submission."
       one_per_user: "Only one submission per user is allowed."
       one_per_user_category: "Only one submission per user and category is allowed."
+    educa2017:
+      mailers:
+        first_subject_email: "Welcome to the EducaInternet 2017 contest"
+      postal_code: "Postal code"
+      province: Province
+      school_name: School Name
+      teaching_subject: Subject
+      phone_number: Phone number
     templates:
       vish2013:
           title: "#ViSHCompetition2013"
