@@ -38,6 +38,9 @@
           color: white
         .btn-secondary a
           color: $gray-dark
+        .user_name
+          background-color: white
+          border: 1px solid $gray-light
         .dropdown
           float: right
           margin: 0 0 0 5px
@@ -51,7 +54,7 @@
               a
                 padding: 8px
                 &:hover, &:active,&:focus
-                  background-color: $gray-darker !important
+                  //background-color: $gray-darker !important
                   color: white
               .notification
                 color: $brand-primary
@@ -91,10 +94,10 @@
           margin-bottom: .4em
         .quick-search, .mat
           width: 256px
-          margin-right: 5px
+          margin-right: 10px
           .search-nav
             input[type="text"]
-              height: 36px
+              height: 34px
             .search_button_class
               background: transparent
               color: #000
@@ -314,8 +317,14 @@
 //****************************************************
 
 .photo_user
+  height: 34px
+  width: 34px
+  overflow: hidden
+  border: 1px solid $gray-light
+  &:hover
+    @include scale1
   a
-    padding: 0 4px !important
+    padding: 0 !important
     img
       width: 36px
       height: 36px
