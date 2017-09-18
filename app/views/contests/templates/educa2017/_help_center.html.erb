@@ -94,15 +94,29 @@
   </div>
   <div class="content_block">
     <div class="items">
-        <% begin
-          winers = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
-        rescue ActiveRecord::RecordNotFound => e
-          winers = Document.all.sample(4)
-        end %>
-        <% winers.each do |doc| %>
-          <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-        <% end %>
-      <div class="clear"></div>
+      <% begin
+        win1, win2, win3, win4 = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
+      rescue ActiveRecord::RecordNotFound => e
+        win1, win2, win3, win4 = Document.all.sample(4)
+      end %>
+      <%= render partial: 'repositories/resource', locals: { resource: win1 } %>
+      <div class="item_extra_text">
+        Ganador primer premio del jurado
+      </div>
+      <%= render partial: 'repositories/contest_special_resource', locals: { resource: win2 } %>
+      <div class="item_extra_text">
+        Ganador segundo premio del jurado
+      </div>
+      <%= render partial: 'repositories/contest_special_resource', locals: { resource: win3 } %>
+      <div class="item_extra_text">
+        Ganador primer premio del público
+      </div>
+      <%= render partial: 'repositories/contest_special_resource', locals: { resource: win4 } %>
+      <div class="item_extra_text">
+        Ganador segundo premio del público 
+      </div>
+
+    <div class="clear"></div>
     </div>
   </div>
 </article>
