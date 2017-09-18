@@ -12,7 +12,7 @@
       <div id="submitted_aos_user_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
       	<ul class="items">
         	  <% aos.map{|ao| ao.object}.each do |resource| %>
-      	       <%= render partial: 'repositories/resource', locals: { :resource => resource} %>
+      	       <%= render partial: 'repositories/resource', locals: { :resource => resource, :with_share => true} %>
       	   <% end %>
       	</ul>
       </div>
