@@ -7,6 +7,7 @@
   <section class="registration">
     <h1><%= t('sign_up_contest') %></h1>
     <a class="already_registered" href="<%=user_session_path%>"><%= t('sign_up_contest_already') %></a>
+    <div class="clear"></div>
     <p><%= t('sign_up_contest_txt') %></p>
     <%= form_tag('/contests/'+@contest.id.to_s+'/sign_up', method: "post", :id => "new_user_devise_form" ) do |f| %>
       <div class="form-group reg-labels">

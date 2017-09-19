@@ -48,6 +48,7 @@ es:
     incibe_title_html: "Materiales <b>INCIBE</b> sobre la seguridad en la red"
     macmillan_title_html: "Materiales pedagógicos <b>Macmillan</b> disponibles en castellano e inglés"
     main_title:
+      img: "contest17_ES.jpg"
       title1_html: "¡Participa creando con tu aula un recurso sobre el <b>uso seguro de internet</b>!"
       action1: "Apúntate"
     modal_submission:
@@ -110,9 +111,9 @@ es:
     teacher:
       intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
       title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
-
   home_page:
     contest_block:
+      img: "contest17_illustration_ES.png"
       title: "¡Bienvenido al 2º Concurso EducaInternet!"
       text: "Participa creando con tu aula un recurso sobre el uso seguro de Internet. Inscríbete y accede a toda la información. Plazo de presentación del material digital: 31 de enero de 2018."
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
@@ -132,13 +133,13 @@ es:
       title: 'Primera Edición  del Curso: "Uso seguro y responsable de las tecnologías de la Información y la comunicación"'
       text: "Entre los meses de marzo y mayo de 2016 se ha realizado la primera edición curso UsoSeguroTIC para profesores de la Comunidad de Madrid. El curso es muy completo y los profesores han aprendido sobre cómo cuidar su Identidad Digital, gestión de la privacidad, el uso de contenidos digitales y las licencias libres y  muchos otros temas muy interesantes. Con este post damos por cerrado el curso. <a href='https://blog.educainternet.es/index.php/category/mooc/'>!Consulta los resultados y todo lo que aprendieron los alumnos!</a>"
     article_2:
-      title: 'Nueva Edición  del Curso: "Uso seguro y responsable de las tecnologías de la Información y la comunicación"'
+      title: 'Nueva Edición  del Curso: "Uso seguro y responsable de las tecnologías de la Información y la comunicación'
       text: "Entre los meses de octubre y diciembre de 2016 se ha realizado una nueva edición del curso UsoSeguroTIC para profesores de la Comunidad de Madrid. <a href='https://blog.educainternet.es/index.php/2016/12/25/resultados-de-la-2a-edicion-del-mooc-valoracion-mas-que-notable/'>Con este post damos por cerrado el curso</a>. También puedes ver <a href='https://blog.educainternet.es/index.php/category/mooc-2016-ii-edicion/trabajos-alumnos-mooc-2016-ii-edicion/'> algunos de los trabajos de los alumnos</a>"
     article_3:
       title: 'Te contamos cómo fue el primer Concurso EducaInternet'
       text: "Se ha cerrado la <a href='http://educainternet.es/contest/educa2016'>primera edición del Concurso EducaInternet</a> en el que colaboran Orange y Macmillan. Enhorabuena a los ganadores, esperamos que disfrutéis de la experiencia educativa con vuestras aulas. <a href='https://blog.educainternet.es/index.php/category/concurso/'>!Consulta los ganadores y cómo fue el concurso!</a>"
     article_4:
-      title: 'Nueva Edición  del Curso: "Uso seguro y responsable de las tecnologías de la Información y la comunicación"'
+      title: 'Nueva Edición del Curso UsoSeguroTIC para Castilla y León'
       text: "Entre los meses de marzo y abril de 2017 se ha realizado la edición del curso para profesores de Castilla y León. Con este post damos por cerrado el curso. !Consulta los resultados y todo lo que aprendieron los alumnos!"
     article_5:
       title: 'Estrenamos plataforma, la nueva imagen de EducaInternet: segura y responsable'

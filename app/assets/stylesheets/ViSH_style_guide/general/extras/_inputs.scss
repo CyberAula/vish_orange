@@ -16,6 +16,29 @@ input[type=radio]:checked+.lbl::before{content:"\2022";}
 input[type="radio"]:checked + .lbl:before { background-color: $brand-secundary; border-color: $brand-secundary;}
 input[type="checkbox"]:checked + .lbl:before { background-color: $white; border-color: $brand-secundary;}
 
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]{
+  height: 38px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #FFF0F5 inset !important;

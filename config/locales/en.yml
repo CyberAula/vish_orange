@@ -40,7 +40,7 @@ en:
     explanation:
       intro: "TEACHERS LIKE YOU MAKE THIS CONTEST IMPORTANT"
       text1: "The EducaInternet competition is a socially responsible initiative created with the purpose of training schools in the safe and responsible use of information and communication technology"
-      text2: "Ponemos materiales a disposición de los profesores para que puedan trabajar con los niños y jóvenes en el aula sobre el uso seguro de las nuevas tecnologías."
+      text2: "We make materials available to teachers so that they can work on the safe use of new technologies with kids and young adults in the classroom."
     help_center:
       free_tools:
         title_html: "<b>Free tools</b> for creating the resources"
@@ -49,7 +49,7 @@ en:
         tool3_text: "Create your presentations including audio and video, and upload them to the platform"
         tool4_text: "You haven’t already heard of Prezi? Give order to your presentations with slides"
         tool5_text: "Use social networks as a basis for your stories with this tool"
-        tool6_text: "Obtén imágenes gratuitas para tus recursos visitando esta comunidad"
+        tool6_text: "Get free images for your resources by visiting this online community"
         tool7_text: "Learn to create animated presentations and personalise your resource with images and audio"
         tool8_text: "Liven up your resource with this tool to create simple videos and presentations"
       intro: "CENTRE FOR HELP AND SUPPORT IN TAKING PART"
@@ -60,6 +60,7 @@ en:
     incibe_title_html: "<b>INCIBE</b> materials about online safety"
     macmillan_title_html: "<b>Macmillan</b> teaching materials available in Spanish and English"
     main_title:
+      img: "contest17_EN.jpg"
       title1_html: "Create a resource about the safe use of the internet in your classroom!"
       action1: "Sign up"
     modal_submission:
@@ -126,6 +127,7 @@ en:
 
   home_page:
     contest_block:
+      img: "contest17_illustration_EN.png"
       title: "Welcome to the 2nd EducaInternet Competition!"
       text: "Register to access all the information. Deadline for entry of digital material: 31st January 2018."
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
