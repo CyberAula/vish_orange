@@ -9,6 +9,13 @@
     .content_block
       .text_block
         margin: 0 auto
+  .values
+    .content_block
+      .flex
+        @media (max-width: 768px)
+          flex-direction: column
+        .logo_orange
+          margin: 0 auto
   .great_team
     .content_block
       .text_block
@@ -19,7 +26,7 @@
         width: 100%
         overflow: hidden
         display: flex
-
+        flex-flow: row wrap
         .great_team_img
           text-align: center
           max-width: 250px
