@@ -9,7 +9,7 @@
     <div class="video_block">
       <%if contest_fase == 1 %>
       <!-- video presentation -->
-        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/2k9zJBIr61E" frameborder="0" allowfullscreen></iframe>
+        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/AYtoXuGg-hQ" frameborder="0" allowfullscreen></iframe>
       <%end%>
       <%if contest_fase == 2 %>
       <!-- videotutorial -->
@@ -21,7 +21,7 @@
       <p class="p_block">
         <%= t('contest_page.presentation.text') %>
       </p>
-      <button class="btn btn-primary"> <%= t('contest_page.presentation.action1') %></button>
+      <a class="btn btn-primary" href="/pdf/Bases.pdf" download="Certificate"> <%= t('contest_page.presentation.action1') %></a>
     </div>
   </div>
 </article>
