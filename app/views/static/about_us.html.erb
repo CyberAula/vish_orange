@@ -52,15 +52,15 @@
   <div class="sub_values">
     <div>
       <h4><%= t('about_page.data.year')%></h4>
-      <span>2015</span>
+      <span>2013</span>
     </div>
     <div>
       <h4><%= t('about_page.data.resources')%></h4>
-      <span>100.000</span>
+      <span><%=Document.count%></span>
     </div>
     <div>
       <h4><%= t('about_page.data.members')%></h4>
-      <span>1.500</span>
+      <span><%=User.count%></span>
     </div>
   </div>
   <!-- great team -->
