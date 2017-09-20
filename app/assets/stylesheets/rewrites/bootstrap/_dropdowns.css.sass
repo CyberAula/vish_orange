@@ -1,6 +1,8 @@
+.dropup
+  position: relative
+
 .dropdown-menu
   padding: 0
-  //margin: 2px 0 !important
   i.fa-bolt
     margin-left: 5px
 
@@ -8,8 +10,7 @@
 .dropdown-menu > .disabled > a:focus
   text-decoration: none
   cursor: default
-  background-color: transparent
-  background-image: none
+  background: transparent
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
 
 .dropdown-menu
@@ -32,12 +33,10 @@
   &:hover
     text-decoration: none
     color: $gray-lighter-extra
-    //background-color: #E60054 !important
-    background-color: $gray-darker !important
+    background: $gray-darker !important
   i
     margin-right: 6px
     color: $white
-
 
 .open .btn-default.dropdown-toggle
   color: $gray-light

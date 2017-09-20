@@ -1,0 +1,192 @@
+
+@mixin contest_block
+  background: $white
+  width: 100%
+  padding: 2em
+  display: block
+  .intro
+    width: fit-content
+    margin: 0 auto
+    h1
+      text-align: center
+      color: $gray
+      font-size: 1em
+      width: fit-content
+      margin: 0 auto
+      line-height: 1.3em
+  .no_resources
+    background-color: $gray-lighter
+    padding: 20px
+    max-width: 70%
+    margin: 0 auto
+    p
+      color: $gray
+      padding: 10px
+      text-align: center
+      b
+        color: $gray-dark
+  .content_block
+    h2
+      color: $gray-dark
+      font-weight: 300
+      width: 60%
+      text-align: center
+      padding-top: 10px
+    .p_block
+      color: $gray
+      line-height: 1.6em
+      font-weight: 300
+      padding: 10px
+    @include flex_container
+    margin: 0 auto
+    padding: 10px
+    max-width: 70%
+    @media (max-width: 900px)
+      max-width: 90%
+    .text_block,.video_block,.basic_block
+      width: 100%
+      @media (min-width: 800px)
+        width: 50%
+    .text_block, .steps_block
+      padding: 20px
+      @media (min-width: 800px)
+        padding-top: 0
+      h2
+        width: 100%
+        text-align: left
+      .p_block
+        padding: 10px
+        font-size: 1.1em
+      .step
+        display: flex
+        .number
+          font-weight: bold
+          color: $orange-primary
+          padding: 10px
+    .video_block
+      height: 0px
+      padding-top: 28%
+      position: relative
+      @media (max-width: 800px)
+        padding-top: 52%
+      .video_presentation
+        position: absolute
+        height: 100%
+        width: 100%
+        top: 0px
+        left: 0px
+    .steps_block
+      width: 100%
+      @media (min-width: 800px)
+        width: 40%
+    .tools_block
+      @include flex_container
+      .tool_block
+        padding: 20px
+        width: 70%
+        @media (min-width: 800px)
+          width: 25%
+        .p_block
+          color: $gray
+          line-height: 1.6em
+          text-align: center
+          font-weight: 300
+          font-size: 1.2em
+          @media (min-width: 800px)
+            font-size: 1em
+
+        .img_tool_block
+          width: auto
+          margin: 0 auto
+          padding: 10px
+          display: block
+          max-height: 65px
+
+    .icons_block
+      width: 100%
+      padding: 0 0 60px 0
+      @media (min-width: 800px)
+        width: 60%
+      @include flex_container_nowrap
+      .icon_block
+        width: 100px
+        height: 100px
+        padding: 20px
+        margin: 20px 10px
+        border-radius: 50%
+        border: 3px solid $gray-light
+        i
+          color: $gray-light
+        .icon_block_txt
+          color: $gray-light
+          text-align: center
+          margin: 30px 0 0 0
+      .icon_block.active
+        border: 3px solid $brand-primary
+        cursor: pointer
+        i
+          color: $brand-primary
+        .icon_block_txt
+          color: $brand-primary
+    .items
+      width: 100%
+      margin: 10px auto
+      @include flex_container
+
+@mixin blocks
+  .block, .block_darker
+    width: 100%
+    padding: 25px
+    overflow: hidden
+  .block_darker
+    background: $gray-lighter-extra
+  .block
+    background: $white
+  .intro
+    width: fit-content
+    margin: 0 auto
+    h1
+      text-align: center
+      color: $gray
+      font-size: 1em
+      width: fit-content
+      margin: 0 auto
+      line-height: 1.3em
+  .content_block
+    margin: 0 auto
+    max-width: 75%
+    .text_block, .img_block
+      padding: 0 20px
+      @media (max-width: 768px)
+        text-align: center !important
+        margin: 10px auto
+    .img_block
+      width: 100%
+      @media (min-width: 800px)
+        width: 50%
+      height: 270px
+      text-align: center
+      img
+        width: auto
+        height: 100%
+    .text_block
+      width: 100%
+      @media (min-width: 800px)
+        width: 50%
+      .title_block
+        color: #222
+        width: 100%
+        font-size: 1.2em
+        a
+          color: inherit
+          &:hover
+            color: $brand-primary
+      .p_block
+        padding: 12px 0
+        color: $gray
+        font-size: 1.1em
+        font-weight: 300
+        line-height: 1.4em
+        a
+          color: $orange_primary
+          font-weight: bold

@@ -7,7 +7,7 @@
 
 <body>
   <%= render :partial => "layouts/header/header_warning" %>
-
+  <div class="scrollup fa fa-arrow-up"></div>
   <div id="wrap">
     <%= render :partial => "layouts/header/header" %>
     <%= flashy %>
@@ -20,12 +20,19 @@
       <%= yield :gtools %>
     </div>
 
-    <div class="<%= 'container-fluid container-content' if controller_name != 'workshops' %>">
+    <div class="container-content">
       <%= yield %>
     </div>
-  </div>
 
-  <%= render :partial => "layouts/footer" %>
+    <div class="social_networks">
+      <%= render :partial => "layouts/social_networks" %>
+    </div>
+
+    <div class="footer">
+      <%= render :partial => "layouts/footer" %>
+    </div>
+
+  </div>
 </body>
 
 <%= javascript_include_tag "application" %>

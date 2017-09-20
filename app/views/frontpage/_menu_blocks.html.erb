@@ -1,28 +1,92 @@
-<div class="container-fluid front_blocks">
-  <div class="row">
-    <div class="col-md-4 block">
-      <div class="img_block">
-        <img src="assets/orange/home_learn.jpg">
-        <div class="title_block"><%= t('orange_front.menu_blocks.our_courses_tit')%></div>
-        <a href="/learn" class="btn btn-primary bt_block"><%= t('orange_front.menu_blocks.our_courses')%></a>
-        <div class="text_block"><%= t('orange_front.menu_blocks.our_courses_txt')%></div>
+<div class="front_blocks">
+  <!-- CONTEST17 BLOCK -->
+  <div class="block">
+    <div class="content_block">
+      <a href="/contest/educa2017">
+      <div class="img_block float_R">
+        <img src="assets/orange/<%= t('home_page.contest_block.img')%>">
       </div>
-    </div>
-    <div class="col-md-4 block">
-      <div class="img_block">
-        <img src="assets/orange/resources.jpg">
-        <div class="title_block"><%= t('orange_front.menu_blocks.teaching_units_tit')%></div>
-        <a href="/teach" class="btn btn-primary bt_block"><%= t('orange_front.menu_blocks.teaching_units')%></a>
-        <div class="text_block"><%= t('orange_front.menu_blocks.teaching_units_txt')%></div>
-      </div>
-    </div>
-    <div class="col-md-4 block">
-      <div class="img_block">
-        <img src="assets/orange/home_contest.jpg">
-        <div class="title_block"><%= t('orange_front.menu_blocks.take_part_tit')%></div>
-        <a href="/contest/educa2016" class="btn btn-primary bt_block"><%= t('orange_front.menu_blocks.take_part')%></a>
-        <div class="text_block"><%= t('orange_front.menu_blocks.take_part_txt')%></div>
+      </a>
+      <div class="text_block float_L align_right space_top">
+        <div class="title_block">
+          <h3><%= t('home_page.contest_block.title')%></h3>
+        </div>
+        <div class="p_block">
+          <p><%= t('home_page.contest_block.text')%></p>
+        </div>
+        <button class="btn btn-primary min_width_btn" onclick="location.href='/contest/educa2017';">Apúntate</button>
+
       </div>
     </div>
   </div>
+  <!-- BLOCK 1 -->
+  <div class="block_darker">
+    <div class="content_block">
+      <div class="img_block float_L">
+        <img src="assets/orange/ilustracion-1.png">
+      </div>
+      <div class="text_block float_L">
+        <div class="title_block">
+          <h3><%= t('home_page.block1_tit')%></h3>
+        </div>
+        <div class="p_block">
+          <p><%= t('home_page.block1_txt_html')%></p>
+        </div>
+        <!--<button class="btn btn-default">Incibe (5000)</button>
+        <button class="btn btn-default">OSI (5000)</button>
+        <button class="btn btn-default">red.es (5000)</button>-->
+      </div>
+    </div>
+  </div>
+  <!-- BLOCK 2 -->
+  <div class="block">
+    <div class="content_block">
+      <div class="img_block float_R">
+        <img src="assets/orange/ilustracion-2.png">
+      </div>
+      <div class="text_block float_L align_right">
+        <div class="title_block">
+          <h3><%= t('home_page.block2_tit')%></h3>
+        </div>
+        <div class="p_block">
+          <p><%= t('home_page.block2_txt_html')%></p>
+        </div>
+        <!--<button class="btn btn-default">cursos abiertos</button>
+        <button class="btn btn-default">cursos acreditados</button>-->
+      </div>
+    </div>
+  </div>
+  <!-- BLOCK 3 -->
+  <div class="block_darker">
+    <div class="content_block">
+      <div class="img_block float_L">
+        <img src="assets/orange/ilustracion-3.png">
+      </div>
+      <div class="text_block float_L">
+        <div class="title_block">
+          <h3><%= t('home_page.block3_tit')%></h3>
+        </div>
+        <div class="p_block">
+          <p><%= t('home_page.block3_txt_html')%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BLOCK 4 -->
+  <div class="block">
+    <div class="content_block">
+      <div class="img_block float_R ">
+        <img src="assets/orange/ilustracion-4.png">
+      </div>
+      <div class="text_block float_L align_right">
+        <div class="title_block">
+          <h3><%= t('home_page.block4_tit')%></h3>
+        </div>
+        <div class="p_block">
+          <p><%= t('home_page.block4_txt_html')%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

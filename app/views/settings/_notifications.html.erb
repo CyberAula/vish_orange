@@ -1,8 +1,6 @@
 <div id="notifications_settings" class="panel panel-default">
   <header class="panel-heading">
-    <h5>
-      <%= link_to t('settings.notifications.briefing'),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#notifications_settings_content" %>
-    </h5>
+    <%= link_to t('settings.notifications.briefing'),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#notifications_settings_content" %>    
   </header>
 
   <div class="panel-body collapse" id="notifications_settings_content">
@@ -29,7 +27,7 @@
       <% SocialStream.default_notification_settings.keys.each do |key| %>
         <div class="form_label">
           <label> <%= [t("settings.notification_settings.prefix"), t("settings.notification_settings.#{key}")].join " " %> </label>
-          </div> 
+          </div>
           <div class="options">
             <label>
               <%= radio_button_tag "notification_settings[#{key}]", 'always', current_subject.notification_settings[key] %>
@@ -55,7 +53,6 @@
         $(this).button('loading');
       });
     <%end%>
-    
+
   </div>
 </div>
-

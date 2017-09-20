@@ -285,7 +285,7 @@
       <% unless params[:activity].blank? %>
         var workshop_activity_anchor = "<%=params[:activity]%>";
         setTimeout(function(){
-          var vishHeader = $("#wrap > header.navbar.navbar-fixed-top");
+          var vishHeader = $("#wrap > header.navbar.navbar-main");
           var workshopHeader = $("#wrap div.toolbar_nav-tab_workshop");
           var scrollMargin = 25;
           var headersHeight = $(vishHeader).height() + $(workshopHeader).height() + scrollMargin;

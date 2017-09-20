@@ -7,14 +7,16 @@
       <%= render partial: 'events/form' %>
     <% end %>
     <% if availableModels.include? "Resource" %>
-      <%= render partial: 'repositories/form' %>
+      <%= render partial: 'repositories/form', :locals => { :div_id => "ModalDocument"} %>
+      <%= render partial: 'repositories/form', :locals => { :div_id => "ModalLink"} %>
+      <%= render partial: 'repositories/form', :locals => { :div_id => "ModalEmbed"} %>
     <% end %>
     <% if availableModels.include? "Category" %>
       <%= render partial: 'categories/form', :locals => { :div_id => "AddCategoryHeader", :remote => true} %>
     <% end %>
     <% if Vish::Application.config.invitations %>
       <%= render partial: 'devise/invitations/new_modal' %>
-    <% end %> 
+    <% end %>
 <% else %>
   <%= render :partial => 'layouts/header/header_signed_out' %>
 <% end %>

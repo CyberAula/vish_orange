@@ -1,0 +1,81 @@
+<article class="contest_block_dark">
+  <div class="content_block">
+    <div class="steps_block">
+      <h2><%= t('contest_page.steps.title') %></h2>
+      <div class="step">
+        <div class="number">1</div>
+        <p class="p_block">
+          <%= t('contest_page.steps.step1_text') %>
+        </p>
+      </div>
+      <div class="step">
+        <div class="number">2</div>
+        <p class="p_block">
+          <%= t('contest_page.steps.step2_text') %>
+        </p>
+      </div>
+      <div class="step">
+        <div class="number">3</div>
+        <p class="p_block">
+          <%= t('contest_page.steps.step3_text') %>
+        </p>
+      </div>
+    </div>
+    <div class="icons_block">
+      <!-- step 1-->
+      <%if user_signed_in? && isUserEnrolled? %>
+        <div class="icon_block <%= 'btn active' if [1].include? contest_fase %>">
+          <i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i>
+          <div class="icon_block_txt">
+            <%= t('contest_page.steps.enrolled') %>
+          </div>
+        </div>
+      <% elsif user_signed_in? %>
+        <a href="/contest/educa2017/other_fields_enrollment">
+          <div class="icon_block <%= 'btn active' if [1,2].include? contest_fase %>">
+            <i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i>
+            <div class="icon_block_txt"><%= t('contest_page.steps.step1_action') %>
+            </div>
+          </div>
+        </a>
+      <% else %>
+        <a href="/contest/educa2017/full_enrollment_registration">
+          <div class="icon_block <%= 'btn active' if [1,2].include? contest_fase %>">
+            <i class="fa fa-hand-o-up fa-4x" aria-hidden="true"></i>
+            <div class="icon_block_txt"><%= t('contest_page.steps.step1_action') %>
+            </div>
+          </div>
+        </a>
+      <% end %>
+      <!-- step 2-->
+      <%if user_signed_in? && isUserEnrolled? %>
+          <div id="step2click" class="icon_block <%= 'btn active' if contest_fase == 2 %>">
+            <i class="fa fa-upload fa-4x" aria-hidden="true"></i>
+            <div class="icon_block_txt"><%= t('contest_page.steps.step2_action') %>
+            </div>
+          </div>
+      <% else %>
+        <div class="icon_block">
+          <i class="fa fa-upload fa-4x" aria-hidden="true"></i>
+          <div class="icon_block_txt"><%= t('contest_page.steps.step2_action') %>
+          </div>
+        </div>
+      <% end %>
+      <!-- step 3-->
+      <div class="spread icon_block <%= 'btn active' if contest_fase >= 3 %>">
+        <i class="fa fa-trophy fa-4x" aria-hidden="true"></i>
+        <div class="icon_block_txt"><%= t('contest_page.steps.step3_action') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<%if user_signed_in? && isUserEnrolled? && contest_fase == 2%>
+  <%= content_for :javascript do %>
+      $("#step2click").click(function(){
+        $("#add_resource_contest_button").click();
+      });
+  <%end%>
+<%end%>

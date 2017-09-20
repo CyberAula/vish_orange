@@ -15,3 +15,18 @@
   background: -o-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
   background: -moz-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))
   background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7))
+
+@mixin grayscale
+  filter: gray
+  -webkit-filter: grayscale(1)
+  filter: grayscale(1)
+
+  &:hover
+    filter: none
+    -webkit-filter: grayscale(0)
+    filter: grayscale(0)
+
+@mixin scale1
+  transform: scale(1.05)
+  -ms-transform: scale(1.05)
+  -webkit-transform: scale(1.05)

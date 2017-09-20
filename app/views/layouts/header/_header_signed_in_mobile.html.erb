@@ -2,7 +2,9 @@
 <ul class="nav navbar-nav mobile-nav">
 
   <%if @show_mooc%>
-    <li class="btn btn-primary btn-header"><a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
+    <li class="btn btn-primary">
+      <a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a>
+    </li>
   <%end%>
 
   <!--search-->
@@ -16,11 +18,6 @@
       <%= truncate_name(current_subject.name, length: 20) %>
     <% end %>
   </li>
-
-
-  <li><a href="/learn"><%=t('orange_front.header.formate')%></a></li>
-  <li><a href="/teach"><%=t('orange_front.header.share')%></a></li>
-
 
   <!-- dropdown menu links -->
   <li>

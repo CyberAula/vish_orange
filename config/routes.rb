@@ -44,12 +44,11 @@ Vish::Application.routes.draw do
   match 'faq' => 'static#overview'
   match 'help' => 'static#overview'
   match 'legal_notice' => 'static#conditions_of_use'
-  match 'privacy_policy' => 'static#privacy_policy'
   match 'conditions_of_use' => 'static#conditions_of_use'
-  match 'teach' => 'static#teach'
-  match 'learn' => 'static#learn'
-  match 'train_yourself' => 'static#train_yourself'
-  match 'train_students' => 'static#train_students'
+  match 'privacy_policy' => 'static#privacy_policy'
+  match 'about' => 'static#about_us'
+  match 'whatwedo' => 'static#what_we_do'
+  match 'explore' => 'static#explore'
   match 'download_perm_request' => 'static#download_perm_request'
   match 'user_manual' => 'static#download_user_manual'
 
@@ -178,9 +177,12 @@ Vish::Application.routes.draw do
   match 'contest/:name' => 'contests#show'
   match 'contest/:name/page/:page' => 'contests#show'
   match 'contests/:id/page/:page' => 'contests#show'
+
+  match 'contest/:name/educa2016materials' => 'contests#educa2016materials', via: [:post]
   match 'contest/:name/other_fields_enrollment' => 'contests#other_fields_enrollment'
   match 'contest/:id/get_enrolled_users_to_contest' => 'contests#get_enrolled_users_to_contest'
-  match 'contest/:name/educa2016materials' => 'contests#educa2016materials', via: [:post]
+  match 'contest/:name/full_enrollment_registration' => 'contests#full_enrollment_registration'
+  match 'contests/:id/sign_up' => 'contests#sign_enroll', :via => :post
 
   #Administration panel
   match 'admin' => 'admin#index'

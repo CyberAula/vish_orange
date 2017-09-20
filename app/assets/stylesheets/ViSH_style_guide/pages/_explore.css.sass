@@ -1,0 +1,77 @@
+.articles
+  article
+    @include blocks
+    .teach
+      background: $white
+    .teach, .resources
+      width: 100%
+      padding-top: 1.6em
+      padding-bottom: 6em
+      display: block
+      .article_cont, .article_txt, .article_img, .article_links
+        margin: 0 auto
+      .article_cont
+        max-width: 60%
+      .article_img, .article_links
+        text-align: center
+      .article_txt
+        p
+          margin-bottom: 1.6em
+      h3, h4
+        display: block
+        text-align: center
+      h4
+        font-size: 1em
+        color: $gray
+      .article_links
+        width: 80%
+        button
+          margin: .4em
+      .article_img
+        width: 128px
+        height: 128px
+        background: $orange-primary
+        padding: .8em 0
+        border-radius: 50%
+        display: block
+        position: relative
+        bottom: 6em
+        &:last-child
+          bottom: -2em
+        i
+          color: $white
+          position: relative
+          top: 24%
+      .items li.box-item
+        width: 18.8%
+
+// media-queries
+
+@media (max-width: 1199px)
+  .articles
+    article
+      .teach, .resources
+        .items li.box-item
+          width: 18.4%
+@media (max-width: 991px)
+  .articles
+    article
+      .teach, .resources
+        .article_cont
+          max-width: 80%
+        .items li.box-item
+          width: 18%
+@media (max-width: 767px)
+  .articles
+    article
+      .teach, .resources
+        .article_cont
+        .items li.box-item
+          width: 44%
+@media (max-width: 480px)
+  .articles
+    article
+      .teach, .resources
+        .article_cont
+        .items li.box-item
+          width: 100%

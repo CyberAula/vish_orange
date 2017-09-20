@@ -38,6 +38,7 @@
     <hr>
 
     <div class="info-bottom">
+
       <!--like -->
       <div class="like like_contest">
           <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
@@ -54,6 +55,11 @@
           <i class="fa fa-eye"></i>
         <%end%>
       </div>
+      <%if defined?(with_share) && with_share%>
+         <button data-clipboard-text="heheh" class="btn btn-secondary btn-copy"><i class="fa fa-copy"></i>Copiar Link</button>
+
+      <%end%>
+      <div class="clear"></div>
     </div>
 
   </div>

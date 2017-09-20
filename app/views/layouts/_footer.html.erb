@@ -1,111 +1,68 @@
-<footer id="footer" class="container-fluid hidden-sm">
 
-  <nav class="footercontent">
-    <ul class="ul-content">
-      <!-- orange brand -->
-
-      <!-- terms of use -->
-      <li class="item_footer">
-        <a href="http://www.orange.es" target="_new"><img src="/assets/orange/logo_orange.png" alt="Logo Orange"></a>
-        <a href="http://www.macmillaneducation.com/" target="_new"><img src="/assets/orange/logo_MacEd.png" alt="Logo MacMillan"></a>
-        <div class="links">
-          <!--<a href="/legal_notice"><%=t('orange_front.footer.legal')%></a> |-->
-          <a href="/privacy_policy"><%=t('orange_front.footer.privacity')%></a> |
-          <a href="/conditions_of_use"><%=t('orange_front.footer.conditions')%></a> |
-          <a href="http://www.orange.es/static/html/cookies.html" target="_blank"><%=t('orange_front.footer.cookies')%></a>
-        </div>
-        <div class="copyright">© Orange 2015 <%=t('orange_front.footer.rights ')%></div>
-        <div class="clear"></div>
-
-      </li>
-
-      <!-- logo red.es -->
-      <li class="dropup">
-        <a href="#" target="_new"><img class="logo_cm" src="/assets/orange/logo_ministerio.jpg"></a>
-        <a href="http://www.red.es/redes/" target="_new"><img class="logo_cm" src="/assets/orange/logo_redes.jpg"></a>
-        <a href="https://www.incibe.es/" target="_new"><img class="logo_cm" src="/assets/orange/logo_incibe.jpg"></a>
-        <a href="https://www.osi.es/" target="_new"><img class="logo_cm" src="/assets/orange/logo_osi.jpg"></a>
-      </li>
-
-      <!-- about -->
-      <li class="dropup">
-        <div data-toggle="dropdown" class="btn dropdown-toggle">
-          <span class="ddfootertitle"><%= t('about.title') %></span>
-        </div>
-
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-          <li>
-            <a href="mailto:virtual.science.hub@gmail.com">
-              <i class="fa fa-envelope-o"> </i>
-              <span><%= t('about.contact') %></span>
-            </a>
-          </li>
-          <li>
-            <a href="http://vishub.wordpress.com" target="_blank">
-              <i class="fa fa-asterisk"> </i>
-              <span><%= t('about.blog') %></span>
-            </a>
-          </li>
-          <li>
-            <a href="http://github.com/ging/vish" target="_blank">
-              <i class="fa fa-github"> </i>
-              <span><%= t('about.code') %></span>
-            </a>
-          </li>
-          <li>
-            <a href="<%='https://docs.google.com/forms/d/e/1FAIpQLSfGNqSSQk8nCsqiKV-laILGJ0nAYINPMzDtDDaKUPow5xCX_w/viewform'%>" target="_blank">
-              <i class="fa fa-check"> </i>
-              <span><%= t('about.survey') %></span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <!-- Help -->
-      <li class="dropup">
-        <div data-toggle="dropdown" class="btn dropdown-toggle">
-          <span class="ddfootertitle"><%= t('help') %></span>
-        </div>
-
-
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-          <li>
-            <a href="/overview">
-              <i class="fa fa-question"> </i>
-              <span><%= t('overview_title') %></span>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.youtube.com/channel/UCo-73n6eZBWNBs2gvKLyBhQ">
-              <i class="fa fa-youtube-play"> </i>
-              <span><%= t('youtube') %></span>
-            </a>
-          </li>
-          <li>
-            <%= link_to user_manual_path do %>
-              <i class='fa fa-download'> </i>
-              <span><%= t('help_manual')%>   </span>
-            <% end %>
-          </li>
-        </ul>
-      </li>
-
-      <!-- language -->
-      <li class="dropup">
-        <div data-toggle="dropdown" class="btn dropdown-toggle">
-          <% the_locale = I18n.locale.to_s %>
-          <span class="ddfootertitle"><%=image_tag("flags/" + the_locale + ".png", :title=>the_locale, :class=> "")%><%=t('lang.title')%></span>
+<footer>
+  <div class="footer_container">
+    <section>
+        <div class="brand_footer">
+          Educa<span class="bold">Internet</span>
 
         </div>
-          <ul class="dropdown-menu">
+        <p class="description_footer"><%= t('orange_front.footer.reference_center_html')%></p>
+        <!-- social_networks -->
+        <div class="social_footer">
+            <a class="social_bt_footer" href="https://www.facebook.com/EducaInternet/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="social_bt_footer" href="https://twitter.com/EducaInternet" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="social_bt_footer" href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a class="social_bt_footer" href="https://github.com/ging/vish_orange" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+        <!-- language -->
+        <div class="dropup">
+          <button id="dlanguage" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-secondary btn-footer">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <% the_locale = I18n.locale.to_s %>
+            <%=t('lang.title')%>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dlanguage">
             <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
              <li class="">
                 <%= link_to image_tag("flags/" + locale + ".png", :title=>locale, :class=> "") + " " + t(:language_name, :locale => locale), session_locale_path(:new_locale => locale), :method => :post, :remote => false %>
               </li>
             <% end %>
           </ul>
-      </li>
 
-    </ul>
-  </nav>
+        </div>
+    </section>
+
+    <section class="hide_footer">
+      <h4><%= t('orange_front.footer.project')%></h4>
+        <ul>
+          <li class="footer_link"><a href="/explore"><%=t('orange_front.footer.explore')%></a></li>
+          <li class="footer_link"><a  href="/about"><%=t('orange_front.footer.about')%></a></li>
+          <li class="footer_link"><a href="https://github.com/ging/vish_orange" target="_blank"><%=t('orange_front.footer.developers')%></a></li>
+          <li class="footer_link"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfGNqSSQk8nCsqiKV-laILGJ0nAYINPMzDtDDaKUPow5xCX_w/viewform" target="_blank"><%= t('orange_front.footer.review')%></a></li>
+        </ul>
+    </section>
+
+    <section class="hide_footer">
+      <h4><%= t('orange_front.footer.community')%></h4>
+        <ul>
+          <li class="footer_link"><a href="http://blog.educainternet.es" target="_blank">Blog</a></li>
+          <li class="footer_link"><a href="/whatwedo"><%= t('orange_front.footer.whatwedo')%></a></li>
+          <li class="footer_link"><a href="/search?type=User"><%= t('orange_front.footer.community')%></a></li>
+          <li class="footer_link"><a href="https://www.facebook.com/EducaInternet/" target="_blank">Facebook</a></li>
+          <li class="footer_link"><a href="https://twitter.com/EducaInternet" target="_blank">Twitter</a></li>
+          <li class="footer_link"><a href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg" target="_blank">Youtube</a></li>
+        </ul>
+    </section>
+
+    <section class="hide_footer">
+      <h4><%= t('orange_front.footer.help')%></h4>
+        <ul>
+          <li class="footer_link"><a href="/privacy_policy"><%=t('orange_front.footer.privacity')%></a></li>
+          <li class="footer_link"><a href="/conditions_of_use"><%=t('orange_front.footer.conditions')%></a></li>
+          <li class="footer_link"><a href="http://www.orange.es/static/html/cookies.html" target="_blank"><%=t('orange_front.footer.cookies')%></a></li>
+          <li class="footer_link"><a href="mailto:virtual.science.hub@gmail.com"><%=t('orange_front.footer.contact')%></a></li>
+        </ul>
+    </section>
+  </div>
 </footer>

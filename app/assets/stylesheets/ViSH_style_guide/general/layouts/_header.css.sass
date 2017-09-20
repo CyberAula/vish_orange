@@ -1,82 +1,52 @@
-nav.navbar-home
-  background-color: rgba(0,0,0,0.1) !important
 
-nav.navbar-fixed-top
-  font-size: 0.9em
-  padding: 6px 2%
+.navbar-main
+  @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
   background-color: white
-  background: rgba( 255, 255, 255, 0.98)
+  position: fixed
+  height: 55px
+  font-size: 0.8em
+  padding: 10px
   border: 0
-  @media (max-width: $screen-sm-max)
-    padding: 9px 1%
+  z-index: $zindex-navbar-fixed
+  width: 100%
 
+  @media (max-width: 768px)
+    padding: 12px 0
+    height: 55px
   .container-fluid
-    max-width: 2000px
-    margin-left: auto
-    margin-right: auto
-    display: block
-    width: auto
-
-
     .btn-navbar
-      margin-top: 3px
-      padding: 5px 10px
+      padding: 4px 8px
       display: none
       float: right
-      @media (max-width: $screen-sm-max)
+      @media (max-width: 768px)
         display: block
-
     .brand
-      height: auto
       font-size: 2em
       float: left
-      .logo-home
-        color: $white !important
       .logo
-        font-family: Helvetica Neue, Helvetica, sans-serif !important
+        color: #333
         font-weight: 200
-        color: $orange-gray-75
         outline: none
         .logo_bold
-          color: $brand-primary
-          font-family: Helvetica Neue, Helvetica, sans-serif !important
           font-weight: 600
+
     .hidden-phone
-      float: right
-      @media (max-width: $screen-sm-max)
+      @media (max-width: 768px)
         display: none
-
-      .navbar-right
-        float: none
-        li
-          padding: 5px 8px
-          a
-            padding: 4px 0
-            outline: none
-            font-weight: 200
-            &:hover, &:active, &:focus
-              color: $brand-primary
-          .menu_bold
-            font-weight: 800
-
-        .btn-header
-          padding: 0px 7px
-          margin: 5px 5px
-          border: none
-
-          a:hover
-            color: $brand-primary
-        .btn-access > a
+      .navbar-nav
+        .btn-primary a
           color: white
-          &:hover, &:focus, &:active
-            color: white
-
+        .btn-secondary a
+          color: $gray-dark
+        .user_name
+          background-color: white
+          border: 1px solid $gray-light
         .dropdown
+          float: right
+          margin: 0 0 0 5px
           .dropdown-menu
             padding: 10px !important
             border-radius: $border-radius-base
-          .access-form
-            margin-top: 5px
           .user-menu, .add-menu
             padding: 0 !important
             li
@@ -84,7 +54,7 @@ nav.navbar-fixed-top
               a
                 padding: 8px
                 &:hover, &:active,&:focus
-                  background-color: $gray-darker !important
+                  //background-color: $gray-darker !important
                   color: white
               .notification
                 color: $brand-primary
@@ -115,38 +85,31 @@ nav.navbar-fixed-top
         .dropdown.open.active > .dropdown-toggle
           background: transparent !important
 
-        .photo_user
-          @include photo-user
-
       //************************
       //input de quick search
       //************************
       .search-ui
         float: right
-        padding: 5px 10px
         .search-query
-          width: 250px !important
-          float: left
-          font-size: 0.95em
-        .quick-search
+          margin-bottom: .4em
+        .quick-search, .mat
+          width: 300px
+          margin-right: 10px
           .search-nav
-            margin-left: -3px
-            @media (max-width: $screen-xs-max)
-              margin-left: 0
             input[type="text"]
-              height: 30px
-
+              height: 34px
             .search_button_class
-              margin: 0 0 0 5px
-              padding: 3px 8px 4px
-              float: left
+              background: transparent
+              color: #000
+              border: none
+              position: relative
+              padding: 6px 15px
+              bottom: 40px
             .mat
-              z-index: 10
+              background: $gray-dark
               display: none
-              position: absolute
-              top: 46px
-              width: 265px
-              background-color: rgba(85,85,85,0.97)
+              position: relative
+              z-index: 10
               @include border-bottom-radius ($border-radius-base)
               @media (max-width: 768px)
                 width: 80.5%
@@ -179,96 +142,82 @@ nav.navbar-fixed-top
                 margin-top: 2px
 
               .results
-                max-height: 431px
+                padding: 5px
                 height: auto
+                text-align: center
                 ul
-                  width: 95%
-                  padding-left: 0
                   float: none
                   @include border-bottom-radius ($border-radius-base)
-                  @include center-block
                   @include items
+                  margin: 0
                   .add-item
                     display: none
                   li.box-item
                     @include excursion-small
-                    margin: 3px 7px
-                    width: 95%
+                    margin: 4px
+                    width: 96%
                     border: none
-                    max-height: 43px
+                    max-height: 44px
                     .container-img
-                      width: 27% !important
+                      width: 24% !important
                       .avatar img
-                        margin-top: -7px
+                        margin-top: -8px
                       .img-box
                         i
-                          font-size: 35px
+                          font-size: 2em
                           padding-top: 4px
                     .caption
-                      padding-top: 2px
-                      width: 73%
-                      h6
-                        height: 20px
+                      padding: 4px
+                      width: 72%
                       h6, .count-followers
                         text-align: left
+                      h6
+                        height: 20px
                     .corner-item, .add, .info-bottom, hr
                       display: none
                   li, .container-img, .caption
-                    max-height: 43px
-
+                    max-height: 44px
                   .more
-                    display: block
-                    clear: both
-                    text-align: center
-                    height: auto
-                    margin: 7px 7px 10px
-                    padding: 5px
-                    a
-                      color: $gray-darker
-                      font-family: $corporate-font-family-sans-serif-Medium
-                      text-decoration: none
+                    margin: 4px
+                    width: 96%
+                    background: $gray-darker-extra
+                    padding: 8px 0
+                    display: inline-block
+                    cursor: pointer
                     &:hover
-                      background: $gray-darker-extra
-                      a
+                      background: $gray-darker
+                    a
+                      color: $gray
+                      padding: 8px 52px
+                      &:hover
                         color: $white
-                        &:hover
-                          background-color: $gray-darker-extra !important
+
                   .img-box
                     padding-bottom: 0
-
-
-
 
     //****************************************************
     //menu for small screens (phones&tablets) up to 991px
     //****************************************************
     .hidden-desktop
       position: absolute
-      right: 24px
-      top: 50px
+      right: 15px
+      top: 40px
       .navbar-nav
-        background-color: $gray-darker
-        padding: 10px
+        width: 256px
+        background: $gray-darker
+        padding: 12px
+        li
+          width: 100%
+          display: block
+          font-size: 1.1em
+          &:hover
+            background: $gray
+          a
+            color: $white
+            padding: 8px
         li.sign_in_mobile
           .dropdown-toggle
-            color: $gray-dark
-            background-color: $gray-light
-            &:hover, &:active, &:focus
-              background-color: darken($gray-light, 0.5) !important
-        li.btn-access
-          margin: 0 10px
-          a
-            color: white
-        li
-          float: none
-          a
-            color: $orange-gray-45
-
-            font-size: 1.2em
-            &:hover
-              color: white
-          i
-            margin-right: 10px
+            width: 100%
           .dropdown-menu
             padding: 10px
             border-radius: $border-radius-base
@@ -278,13 +227,13 @@ nav.navbar-fixed-top
               margin-right: 0 !important
             //log in
             input[type="email"]
-              margin-bottom: 3px
+              margin-bottom: 4px
             .checkbox
-              padding: 0 5px
+              padding: 0 4px
               .lbl
                 color: white
             .remember_password
-              margin: 10px 0 0 0
+              margin-top: 10px
               a
                 color: $gray-light
                 font-size: 1em
@@ -292,10 +241,8 @@ nav.navbar-fixed-top
               width: 100%
             //languages
             li > a
-              padding: 5px
-              color: white
               img
-                margin-right: 5px
+                margin-right: 4px
         .user
           margin: 0
           a
@@ -310,18 +257,32 @@ nav.navbar-fixed-top
           margin: 0
         .navbar-search
           width: 100%
-          margin-bottom: 5px
+          margin-bottom: 20px
           padding: 10px 0
-          input
+          input, button
             float: left
-            width: 83%
+            border: none
+          input
+            width: 84%
           button
-            float:left
-            margin-left: 3px
-            padding: 6px 10px 7px
+            width: 16%
+            padding: 8px
             i
               margin: 0
-    //****************************************************
+
+.navbar-transparent
+  background-color: transparent
+  box-shadow: none
+  .container-fluid
+    .brand
+      .logo
+        color: white
+
+@media (min-width: 768px)
+  #navbar_mobile.collapse.in
+    display: none
+
+//****************************************************
 
 #warning_cookie_bar
   display: none
@@ -329,12 +290,12 @@ nav.navbar-fixed-top
   margin: 0px
   text-align: center
   color: $white
-  background-color: rgba(0, 0, 0, 0.8)
+  background: rgba(0, 0, 0, 0.8)
   height: auto
   z-index: 1010
   position: fixed
-  top: 52px
-  padding: 40px
+  bottom: 0
+  padding: 20px
 
   p
     border-radius: 0 0 10px 10px
@@ -352,3 +313,18 @@ nav.navbar-fixed-top
       border: 1px solid $white
   h3
     margin-top: 0
+
+//****************************************************
+
+.photo_user
+  height: 34px
+  width: 34px
+  overflow: hidden
+  border: 1px solid $gray-light
+  &:hover
+    @include scale1
+  a
+    padding: 0 !important
+    img
+      width: 36px
+      height: 36px

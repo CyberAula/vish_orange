@@ -1,11 +1,4 @@
-.registration,
-.forgot,
-.confirmation,
-#sign_in
-  @include devise-box
 
-.registration
-  color: $gray-dark
 
 #user_email.small_field_email
   width: 48%
@@ -32,8 +25,6 @@
   hr
     margin-top: 20px !important
     margin-bottom: 15px !important
-  .new_session
-    padding: 17px 0px 7px !important
   input
     &[type="submit"]
       margin-top: -23px
@@ -41,19 +32,12 @@
 #nav-collapse-out
   .dropdown a
     color: $white
-.registration
-  hr
-    border: 1px solid $gray-lighter
-  ul.tag-list
-    margin-left: 0
-  .conditions
-    font-size: 0.9em
-    label
-      color: $gray !important
+
+
 .simple_captcha
   width: 100%
   float: left
-  margin-top: 7px
+  margin-top: 8px
   margin-bottom: 20px
   .simple_captcha_image
     width: 40%
@@ -63,32 +47,28 @@
     width: 50%
     display: block
     float: left
-    margin-left: 15px
+    margin-left: 16px
 
 .dropdown-log
   width: 242px
   form#new_user
     @include dropdown-log
 
-
 /*FRONTPAGE _ image */
 
 .illustration
-  min-height: 52px
-  .social_ntwoks
-    position: absolute
-    top: 50vh
-    right: 2%
-    z-index: 1000
-    .fa-big
-      font-size: 1.4em
-      color: white
-      opacity: 0.7
-      margin-left: 10px
-      &:hover
-        opacity: 1
-  .social_ntwoks_general
-    top: 115px
+  .entities
+    h3
+      font-weight: 200
+      font-size: 1.6em
+      margin-bottom: 12px
+    .entities_front
+      margin-bottom: 10px
+      float: left
+      width: 100%
+    .front_blocks
+      padding: 0
+      @include blocks
 
   .box-title-general.contest_img
     height: auto
@@ -103,10 +83,12 @@
       font-size: 1.2em
 
   .box-title-general
+    display: none
     height: 100px
+    width: 100%
     position: relative
     overflow: hidden
-    margin-top: 52px
+    margin: 0
     img
       width: 100%
       position: absolute
@@ -135,87 +117,54 @@
         font-weight: 500
         line-height: 1.2em
 
-  .box-title-home
-    height: 55vh
+  .main-box
     position: relative
     overflow: hidden
+    width: 100%
     img
       width: 100%
       position: absolute
-      bottom: -15vh
+      top: -200px
     .main-title
+      background: $opacity2
       position: relative
       text-align: center
-      padding: 110px 50px
+      padding: 128px 160px 60px
+      margin: 0 auto
+      .btn-main-title
+        width: 128px
+        margin-top: 24px
+
       .title
+        font-family: $font-family-sans-serif-titles
+        color: #fff
+        font-weight: 500
+        line-height: 1.2em
+        text-shadow: 2px 2px 4px rgba(52, 52, 52, 0.24)
         h1
           font-size: 4em
-          font-family: $font-family-sans-serif-titles
-          text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
-          color: white
-          font-weight: 500
-          line-height: 1.2em
+        h2
+          font-size: 2em
+          font-weight: 300
+          max-width: 70%
+          margin: 4px auto
 
-    .btn-main-title
-      position: relative
-      margin: 30px
-
-
-#frontpage
-  .entities
-    h3
-      font-weight: 200
-      font-size: 2.3em
-      margin: 0 8px 30px
-    .entities_front
-      display: block
-      margin-bottom: 10px
-      float: left
-      width: 100%
-    .front_blocks
-      padding: 0
-      .block
-
-        padding-top: 10px
-        padding-bottom: 10px
-        .img_block
-          @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
-          height: 260px
-          position: relative
-          overflow: hidden
-          background-color: $gray-light
-          &:hover
-            @include transition(border .2s ease-in-out)
-            @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
-            @include transition (all 0.2s ease 0s)
-            transform: scale(1.05)
-            -ms-transform: scale(1.05)
-            -webkit-transform: scale(1.05)
-          img
-            width: calc(100% + 80px)
-            position: absolute
-        .title_block
-          position: absolute
-          padding: 10px 20px
-          background-color: $opacity2
-          border-bottom: 1px solid white
-          border-right: 1px solid white
-          color: white
-          font-size: 1.2em
-        .text_block
-          position: absolute
-          width: 100%
-          height: 80px
-          bottom: 0
-          padding: 10px 20px
-          background-color: $opacity4
-          color: white
-        .bt_block
-          position: absolute
-          width: 50%
-          bottom: 50%
-          left: 25%
-
+  .main-box-contest
+    .img_contest
+      top: 0px
+    .main-title-contest
+      background: transparent
+      padding: 26vw 3vw 1vw
+      text-align: right
+      display: flex
+      justify-content: flex-end
+      .btn-main-title-contest
+        margin: 8px 15px
+        height: 35px
+      .title
+        width: 500px
+        font-weight: 300
+        font-size: 1.5em
 
 #banner_head
   background: white
@@ -240,23 +189,8 @@
       padding: 0 10px
       img
         max-height: 42px
-  @media (max-width: 991px)
-    padding: 30px 20px
-    .banner_align_right
-      text-align: center
-      margin-bottom: 10px
-    .banner_course_title
-      text-align: center
-      font-size: 1.8em
-      margin-bottom: 20px
-    .banner_logos
-      .banner_one_logo
-        padding: 0 5px
-        img
-          max-height: 35px
-      .banner_enrol_button
-        padding: 0 15px
 
+// media-queries
 
 @media (min-width: 1751px)
   .entities_front
@@ -285,116 +219,128 @@
       display: none
     .box-item:nth-of-type(-n+4)
       display: block
+
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 64px
+
   .illustration
-    .social_ntwoks
-      top: 44vh
-    .box-title-home
-      height: 48vh
+    .main-box
+      height: 320px
+      img
+        top: -200px
       .main-title
+        padding: 80px 60px 40px
         .title
           h1
-            font-size: 3.5em
-      img
-        bottom: -100px
+            font-size: 3.6em
 
+    .main-box-contest
+      height: auto
+      .main-title-contest
+        padding: 26vw 3vw 1vw
 
 @media (min-width: 768px) and (max-width: 991px)
-  .entities_front
+  .entities
     .box-item
       display: none
     .box-item:nth-of-type(-n+3)
       display: block
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 40px
+        .text_block
+          padding-left: 20px
+
   .illustration
-    .social_ntwoks
-      top: 36vh
-    .box-title-home
-      height: 40vh
+    .main-box
+      height: 320px
+      img
+        top: -120px
       .main-title
+        padding: 80px 40px
         .title
           h1
             font-size: 3em
-      img
-        bottom: -50px
-    .box-title-general
-      img
-        bottom: -120px
-    .box-title-general.contest_img
-      .btn-signup-contest
-        right: 3.5vw
-        bottom: 3vw
-        width: 30vw
-        font-size: 1.2em
-
-
+          h2
+            font-size: 2em
+    .main-box-contest
+      height: auto
+      .img_contest
+        top: 10px
+      .main-title-contest
+        padding: 26vw 3vw 1vw
 @media (min-width: 481px) and (max-width: 767px)
-  .entities_front
-    .box-item
-      display: none
-    .box-item:nth-of-type(-n+2)
-      display: block
-  .illustration
-    .social_ntwoks
-      top: 31vh
-      right: 3%
-    .social_ntwoks_general
-      top: 115px
-    .box-title-home
-      height: 35vh
-      .main-title
-        padding: 90px 40px 0
-        height: 100%
-        .title
-          h1
-            font-size: 2.5em
-        .btn-main-title
-          display: none
-      img
-        bottom: 0
+  .entities
+    .entities_front
+      .box-item
+        display: none
+      .box-item:nth-of-type(-n+2)
+        display: block
+    .front_blocks
+      .block, .block_darker
+        .text_block
+          padding-left: 0
+          width: 100%
+        .img_block
+          padding: 20px 0
+          width: 100%
 
-    .box-title-general
-      .main-title
-        .title
-          font-size: 2.5em
-          padding: 10px
-      img
-        bottom: -50px
-    .box-title-general.contest_img
-      .btn-signup-contest
-        right: 3.5vw
-        bottom: 3vw
-        width: 35vw
-        font-size: 1em
-@media (max-width: 480px)
-  .entities_front
-    .box-item
-      display: none
-    .box-item:nth-of-type(-n+4)
-      display: block
   .illustration
-    .social_ntwoks
-      display: none
-    .box-title-home
-      height: 250px
+    .main-box
+      height: 248px
+      img
+        top: -60px
       .main-title
-        padding: 50px
-        height: 100%
+        padding: 80px 40px 120px
         .title
           h1
-            font-size: 1.8em
-        .btn-main-title
-          display: none
-      img
-        bottom: 0px
-    .box-title-general
-      height: 60px
-      .main-title
+            font-size: 2.4em
+          h2
+            font-size: 1.6em
+    .main-box-contest
+      height: auto
+      .img_contest
+        top: 30px
+      .main-title-contest
+        padding: 29vw 3vw 1vw
         .title
-          font-size: 1.35em
+          font-size: 1.3em
+
+@media (max-width: 480px)
+  .entities
+    .front_blocks
+      .block, .block_darker
+        padding: 20px 20px
+        .text_block
+          width: 100%
+          padding-left: 0
+        .img_block
+          width: 100%
+          padding: 20px 0
+
+  .illustration
+    .social_networks
+      display: none
+    .main-box
+      height: 180px
       img
-        bottom: 0px
-    .box-title-general.contest_img
-      .btn-signup-contest
-        left: 3.5vw
-        bottom: 3vw
-        width: 50vw
-        font-size: 1em
+        top: 0px
+      .main-title
+        padding: 60px 40px
+        .title
+          h1
+            font-size: 2em
+          h2
+            display: none
+        .btn-main-title
+          margin-top: 12px
+    .main-box-contest
+      height: auto
+      .img_contest
+        top: 40px
+      .main-title-contest
+        padding: 34vw 35vw 1vw
+        .title
+          display: none

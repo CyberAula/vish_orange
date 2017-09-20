@@ -1,15 +1,35 @@
+
 .container-editor
   padding-top: 15px
-.container-content
-  padding: 3vh 3vw 70px 3vw
-  @media (max-width: $screen-sm-max)
-    padding: 3% 15px
 
+.container-content
+  width: 100%
+  margin: 0 auto
+  @media (max-width: $screen-xs)
+    padding: 0
+  .library_page,
+  .user_page,
+  .registration_page,
+  .new_session_page,
+  .settings_page,
+  .layout_show
+    padding-top: 80px
+    .already_registered
+      float: right
+      color: gray
+      &:hover
+        color: $brand-primary
+  .workshop_show,
+  .workshop-edit
+    padding-top: 130px
 
 .general_toolbar
-  position: sticky
-  top: 0
+  position: absolute
+  top: 65px
+  width: 100%
   z-index: 1000
+  @media (max-width: $screen-xs)
+    top: 55px
 
 a.btn.btn_delete_item
   position: absolute
@@ -77,10 +97,40 @@ div.icontitle
     form
       input
         min-height: 19px !important
-      .following-button
+      .follow-button
         padding: 1px 0
 
+.registration,
+.forgot,
+.confirmation,
 #sign_in
+  @include devise-box
+  color: $gray-dark
+  .required_fields
+    font-size: 0.9em
+    color: $orange_primary
+  h1
+    margin: 0 0 10px
+    font-weight: 300
+    float: left
+  label
+    padding: 10px 0px 5px !important
+    font-weight: 400
+  p
+    color: $gray
+    font-weight: 300
+    margin: 0
+
+  ul.tag-list
+    margin-left: 0
+  .conditions
+    font-size: 0.9em
+    label
+      color: $gray !important
+
+
+
+//#sign_in
   padding-bottom: 0px !important
   @include log
   a,label
@@ -92,19 +142,6 @@ div.icontitle
       color: $gray-dark
 
 
-.registration,
-.forgot,
-#sign_in
-  margin-bottom: 20px
-  .required_fields
-    font-size: 0.9em
-    color: $orange_primary
-  h4
-    margin: 0px 0px 10px
-    padding: 10px 0px
-  label
-    padding: 10px 0px 5px !important
-    font-weight: 500
 
 .cke_skin_BootstrapCK-Skin
   .cke_contents

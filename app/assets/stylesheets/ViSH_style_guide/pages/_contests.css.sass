@@ -1,12 +1,60 @@
+//-----------------------------
+// contest 2017
+//-----------------------------
+.contest_blocks
+  .contest_block
+    @include contest_block
+  .contest_block_dark
+    @include contest_block
+    background: $gray-lighter-extra
+
+.item_extra_text
+  width: 150px
+  padding: 0px 10px
+  color: $gray
+  text-align: center
+  @media (max-width: 768px)
+    display: none
+
+
+.intro_icon_block
+  width: 100px
+  height: 100px
+  background: $orange-primary
+  border-radius: 50%
+  display: block
+  position: relative
+  padding: 20px 13px
+  top: -80px
+  margin: auto
+  text-align: center
+  i
+    color: $white
+.btn-copy
+  width: 101%
+  position: absolute
+  left: -1px
+  top: 86%
+  i
+    margin: 0 5px
+  @media (max-width: $screen-xs-min)
+    width: 40%
+    left: 0
+    top: 64%
+
+
+//-----------------------------
+// contest 2016
+//-----------------------------
 //homepage banner
-#banner
+//#banner
   position: absolute
   top: 10%
   //left: 3%
   right: 0
   z-index: 555
 
-#close_banner
+//#close_banner
   color: $gray-dark
   text-align: right
   font-size: 1.2em
@@ -19,7 +67,7 @@
     color: black
     cursor: pointer
 
-.banner_concurso
+//.banner_concurso
   height: 300px
   width: 500px
   position: relative
@@ -29,7 +77,7 @@
     position: absolute
 
 //contest page
-.contest_content
+//.contest_content
   background-color: white
   padding: 40px
   @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
@@ -38,10 +86,10 @@
     &:hover
       color: $brand-primary
 
-  .text_info
+  //.text_info
     h2
       font-weight: bold
-  .video
+  //.video
     .girl_img
       width: 100%
       padding-bottom: 20px
@@ -57,17 +105,17 @@
       width: 100%
       top: 0px
       left: 0px
-  .expand
+  //.expand
     .showMore
       margin-right: 7px
-  .more_info
+  //.more_info
     margin-top: 10px
     .section_info_1
       padding: 20px
       background-color: $gray-lighter
     .section_info_2
       padding: 20px
-  .win
+  //.win
     display: flex
     flex-wrap: wrap
     justify-content: center
@@ -75,7 +123,7 @@
       @media (min-width: 992px) and (max-width: 1750px)
         width: 40%
 
-  .items
+  //.items
     padding: 10px 0
     p
       padding: 20px
@@ -86,7 +134,7 @@
         cursor: pointer
 
 //winners page
-.section_winners
+//.section_winners
   overflow: hidden
   .section_jury
   .section_public
@@ -97,8 +145,8 @@
     max-width: 100%
     max-height: 100%
 
-//
-.email_box
+
+//.email_box
   padding: 0 0 0 15px
   position: fixed
   right: 20px
@@ -123,12 +171,12 @@
     .thanks_txt
       margin-bottom: 5px
 
-@media (min-width: 300px) and (max-width: 991px)
+//@media (min-width: 300px) and (max-width: 991px)
   .email_box
     position: static
     width: 100%
     padding: 15px 15px 60px
-@media (max-height: 700px)
+//@media (max-height: 700px)
   .email_box
     position: static
 

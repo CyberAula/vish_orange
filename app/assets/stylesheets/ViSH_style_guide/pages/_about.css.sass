@@ -1,0 +1,66 @@
+.blocks
+  @include blocks
+  h2
+    font-size: 1.6em
+    font-weight: 300
+
+  .why
+    text-align: center
+    .content_block
+      .text_block
+        margin: 0 auto
+  .values
+    .content_block
+      .flex
+        @media (max-width: 768px)
+          flex-direction: column
+        .logo_orange
+          margin: 0 auto
+  .great_team
+    .content_block
+      .text_block
+        margin-top: 10px
+        h2
+          margin-left: 80px
+          @media (max-width: 768px)
+            margin-left: 0
+
+      .great_team_imgs
+        width: 100%
+        overflow: hidden
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        .great_team_img
+          text-align: center
+          max-width: 250px
+          img
+            width: 100%
+            padding: 8px
+            opacity: .4em
+            filter: grayscale(100%)
+            &:hover
+              opacity: 1
+              filter: grayscale(0%)
+
+
+  .sub_values
+    background: $gray-lighter
+    max-width: 70%
+    padding: 20px
+    margin: 0 auto
+    div
+      width: 32%
+      display: inline-block
+      div:not(:last-child)
+        border-right: solid .4px #444
+        height: 24px
+      h4, span
+        font-size: 1.2em
+        display: block
+      h4
+        margin-bottom: .4em
+        font-weight: 300
+      span
+        color: $orange-primary
+        font-weight: 700

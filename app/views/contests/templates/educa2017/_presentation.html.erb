@@ -1,0 +1,27 @@
+
+<article class="contest_block">
+  <div class="intro">
+    <h1><%= t('contest_page.presentation.intro') %></h1>
+    <div class="horizontal_line"></div>
+  </div>
+
+  <div class="content_block">
+    <div class="video_block">
+      <%if contest_fase == 1 %>
+      <!-- video presentation -->
+        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/AYtoXuGg-hQ" frameborder="0" allowfullscreen></iframe>
+      <%end%>
+      <%if contest_fase == 2 %>
+      <!-- videotutorial -->
+        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/QRlKdO3sDbA" frameborder="0" allowfullscreen></iframe>
+      <%end%>
+    </div>
+    <div class="text_block">
+      <h2><%= t('contest_page.presentation.title') %></h2>
+      <p class="p_block">
+        <%= t('contest_page.presentation.text') %>
+      </p>
+      <a class="btn btn-primary" href="/pdf/BasesConcurso2017.pdf" download="BasesConcurso2017"> <%= t('contest_page.presentation.action1') %></a>
+    </div>
+  </div>
+</article>

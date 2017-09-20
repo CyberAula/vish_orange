@@ -1,0 +1,141 @@
+<%content_for :banner do%>
+  <div class="main-box">
+    <img src="assets/orange/que_hacemos.jpg" alt="cover_image">
+    <!-- center sentence + buttons -->
+    <div class="main-title">
+      <div class="title">
+        <h1><%= raw t('whatwedo_page.title')%></h1>
+        <h2><%= raw t('whatwedo_page.subtitle')%></h2>
+      </div>
+     <button class="btn btn-secondary btn-main-title" onclick="location.href='http://blog.educainternet.es';">
+       <%= raw t('orange_front.carousel.title4')%>
+    </button>
+    </div>
+  </div>
+
+  <section class="entities">
+    <div class="front_blocks">
+        <!-- En los bloques falta definir qué enrtradas mostramos y cambiar los links -->
+        <!-- BLOCK 6
+        <div class="block_darker">
+          <div class="content_block">
+            <div class="img_block float_L grayscale">
+              <a href="http://blog.educainternet.es" target="_blank"><img src="assets/orange/contest17_small.jpg"></a>
+            </div>
+            <div class="text_block float_L">
+              <div class="title_block">
+                <h3><%= raw t('whatwedo_page.article_6.title')%></h3>
+              </div>
+              <div class="p_block">
+                <p><%= raw t('whatwedo_page.article_6.text')%></p>
+                <a href="http://blog.educainternet.es" target="_blank"><%= raw t('view_more')%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+        <!-- BLOCK 5 -->
+        <div class="block">
+          <div class="content_block">
+            <div class="img_block float_R grayscale">
+              <a href="http://blog.educainternet.es/index.php/2017/09/19/estrenamos-plataforma-la-nueva-imagen-de-educainternet-segura-y-responsable/" target="_blank"><img src="assets/orange/home.jpg"></a>
+            </div>
+            <div class="text_block float_L">
+              <div class="title_block">
+                <a href="http://blog.educainternet.es/index.php/2017/09/19/estrenamos-plataforma-la-nueva-imagen-de-educainternet-segura-y-responsable/" target="_blank">
+                  <h3><%= raw t('whatwedo_page.article_5.title')%></h3>
+                </a>
+              </div>
+              <div class="p_block">
+                <p><%= raw t('whatwedo_page.article_5.text')%></p>
+                <a href="http://blog.educainternet.es/index.php/2017/09/19/estrenamos-plataforma-la-nueva-imagen-de-educainternet-segura-y-responsable/" target="_blank"><%= raw t('view_more')%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 4 -->
+        <div class="block_darker">
+          <div class="content_block">
+            <div class="img_block float_L grayscale">
+              <a href="http://blog.educainternet.es/index.php/2017/02/01/nueva-edicion-del-curso-usosegurotic-para-castilla-y-leon/" target="_blank"><img src="assets/orange/nina.jpg"></a>
+            </div>
+            <div class="text_block float_L">
+              <div class="title_block">
+                <a href="http://blog.educainternet.es/index.php/2017/02/01/nueva-edicion-del-curso-usosegurotic-para-castilla-y-leon/" target="_blank">
+                  <h3><%= raw t('whatwedo_page.article_4.title')%></h3>
+                </a>
+              </div>
+              <div class="p_block">
+                <p><%= raw t('whatwedo_page.article_4.text')%></p>
+                <a href="http://blog.educainternet.es/index.php/2017/02/01/nueva-edicion-del-curso-usosegurotic-para-castilla-y-leon/" target="_blank"><%= raw t('view_more')%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 3 -->
+        <div class="block">
+          <div class="content_block">
+            <div class="img_block float_R grayscale">
+              <a href="https://blog.educainternet.es/index.php/category/concurso/" target="_blank"><img src="assets/orange/contest2.jpg"></a>
+            </div>
+            <div class="text_block float_L">
+              <div class="title_block">
+                <a href="https://blog.educainternet.es/index.php/category/concurso/" target="_blank">
+                  <h3><%= raw t('whatwedo_page.article_3.title')%></h3>
+                </a>
+              </div>
+              <div class="p_block">
+                <p><%= raw t('whatwedo_page.article_3.text')%></p>
+                <a href="https://blog.educainternet.es/index.php/category/concurso/" target="_blank"><%= raw t('view_more')%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 2 -->
+        <div class="block">
+          <div class="content_block">
+            <div class="img_block float_L grayscale">
+              <a href="https://blog.educainternet.es/index.php/2016/12/25/resultados-de-la-2a-edicion-del-mooc-valoracion-mas-que-notable/" target="_blank"><img src="assets/orange/course2.jpg"></a>
+            </div>
+            <div class="text_block float_L">
+              <div class="title_block">
+                <a href="https://blog.educainternet.es/index.php/2016/12/25/resultados-de-la-2a-edicion-del-mooc-valoracion-mas-que-notable/" target="_blank">
+                  <h3><%= raw t('whatwedo_page.article_2.title')%></h3>
+                </a>
+              </div>
+              <div class="p_block">
+                <p><%= raw t('whatwedo_page.article_2.text')%></p>
+                <a href="https://blog.educainternet.es/index.php/2016/12/25/resultados-de-la-2a-edicion-del-mooc-valoracion-mas-que-notable/" target="_blank"><%= raw t('view_more')%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 1 -->
+        <div class="block">
+          <div class="content_block">
+            <div class="img_block float_R grayscale">
+              <a href="https://blog.educainternet.es/index.php/category/mooc/" target="_blank"><img src="assets/orange/course.jpg"></a>
+            </div>
+            <div class="text_block float_L">
+              <div class="title_block">
+                <a href="https://blog.educainternet.es/index.php/category/mooc/" target="_blank">
+                  <h3><%= raw t('whatwedo_page.article_1.title')%></h3>
+                </a>
+              </div>
+              <div class="p_block">
+                <p><%= raw t('whatwedo_page.article_1.text')%></p>
+                <a href="https://blog.educainternet.es/index.php/category/mooc/" target="_blank"><%= raw t('view_more')%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <%= render :partial => "shared/create_account" %>
+  </section>
+
+<%end%>

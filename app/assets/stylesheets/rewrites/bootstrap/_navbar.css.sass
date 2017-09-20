@@ -1,8 +1,3 @@
-.navbar-fixed-top
-  background-color: $navbar-default-bg
-  padding: 0
-  position: absolute
-
 .navbar
   margin-bottom: 0
   @media (max-width: 877px)
@@ -52,21 +47,11 @@
 
 @media (max-width: $screen-xs-max)
   .navbar-nav .open .dropdown-menu
-    background-color: rgba(0, 0, 0, 0.57)
+    background-color: rgba(0, 0, 0, 0.56)
 
 .nav-collapse.collapse
   background-color: $gray
 
-ul.navbar-nav > li
-  font-family: $corporate-font-family-sans-serif-Regular
-
-.navbar-nav > li a
-  font-family: $corporate-font-family-sans-serif-Regular
-  padding-top: 9px
-  padding-bottom: 9px
-
-.navbar-default .navbar-nav > li > a
-  color: $orange-gray-75
 
 .navbar-nav.navbar-right:last-child
   margin-right: $zero
@@ -93,7 +78,7 @@ ul.navbar-nav > li
   background-color: $gray-lighter-extra !important
 
 @media (max-width: 767px)
-  .navbar-fixed-top .navbar-collapse
+  .navbar-main .navbar-collapse
     max-height: auto !important
 .navbar-form
   margin-top: 0

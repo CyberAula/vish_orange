@@ -41,5 +41,5 @@ class HomeController < ApplicationController
       name: current_subject.name
     }.to_json
   end
-  
+
 end

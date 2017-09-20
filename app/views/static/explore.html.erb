@@ -1,0 +1,128 @@
+<%content_for :banner do%>
+  <div class="main-box">
+    <img src="assets/orange/explora.jpg" alt="cover_image">
+    <!-- center sentence + buttons -->
+    <div class="main-title">
+      <div class="title">
+        <h1><%= t('explore_page.title')%></h1>
+        <h2><%= t('explore_page.subtitle')%></h2>
+      </div>
+      <button class="btn btn-secondary btn-main-title" onclick="location.href='/search';">
+       <%= t('teach.go_to_library')%>
+     </button>
+    </div>
+  </div>
+<%end%>
+
+<!--Articles-->
+<section class="articles">
+
+  <article>
+    <div class="teach">
+      <div class="article_cont">
+        <h4>SI ERES PROFESOR, ESTE ES TU SITIO</h4>
+        <!--linea horizontal divisoria-->
+        <div class="horizontal_line"></div>
+        <!--/linea horizontal divisoria-->
+            <div class="article_txt">
+              <h3>Trabajamos junto a los mejores expertos para ofrecerte gratuitamente los mejores recursos en uso responsable y seguro de las TIC</h3>
+                <div class="article_links">
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=sexting'">Sexting</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=privacy'">Privacidad</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=cyberbullying'">Ciberacoso</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=grooming'">Grooming</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=info_management'">Gestión información</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=netiquette'">Netiqueta</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=virus_protection'">Virus y fraudes</button>
+                  <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=tecnoaddictions'">Tecnoadicciones</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </article>
+  <article>
+    <div class="resources">
+      <div class="article_cont">
+        <div class="article_txt">
+          <div class="article_img">
+            <i class="fa fa-star fa-4x" aria-hidden="true"></i>
+          </div>
+          <h3>Aquí tienes los recursos favoritos de los usuarios de EducaInternet</h3>
+            <div class="items">
+                 <% types = VishConfig.getAvailableResourceModels({:return_instances => true})
+                    favorites = Search.search({:n => 10, :order => "ranking DESC", :ao_ids_to_avoid => [2538, 2513, 2559, 3510, 6392], :models=> types})%>
+                  <% favorites.each do |doc| %>
+                    <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+                  <% end %>
+                <div class="clear"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article>
+    <div class="teach">
+      <div class="article_cont">
+        <div class="article_txt">
+          <div class="article_img">
+            <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+          </div>
+          <h3>Los expertos en seguridad TIC te cuentan todo lo que necesitas saber</h3>
+        </div>
+          <div class="items">
+            <% begin
+                experts = [Excursion.find(331), Excursion.find(329), Excursion.find(333), Excursion.find(434), Excursion.find(679)]
+              rescue ActiveRecord::RecordNotFound => e
+                experts = Excursion.all.sample(5)
+              end %>
+              <%experts.each do |doc| %>
+                <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+              <% end %>
+            <div class="clear"></div>
+          </div>
+      </div>
+    </div>
+  </article>
+  <article>
+    <div class="resources">
+      <div class="article_cont">
+        <div class="article_txt">
+          <div class="article_img">
+            <i class="fa fa-th-large fa-4x" aria-hidden="true"></i>
+          </div>
+          <h3>Las principales entidades sobre ciberseguridad ponen a tu disposición recursos de calidad para ti y tus alumnos</h3>
+        </div>
+          <div class="items">
+            <% begin
+                quality = [Category.find(68), Category.find(97), Category.find(81), Category.find(87), Category.find(103), Category.find(111)]
+              rescue ActiveRecord::RecordNotFound => e
+                quality = Category.all.sample(6)
+              end %>
+              <%quality.each do |doc| %>
+                <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+              <% end %>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article>
+    <div class="resources teach">
+      <div class="article_cont">
+        <h4>BIBLIOTECA</h4>
+          <!--linea horizontal divisoria-->
+          <div class="horizontal_line"></div>
+          <!--/linea horizontal divisoria-->
+            <div class="article_txt">
+              <h3>Pásate por la biblioteca de recursos y consulta todos los materiales que te ofrecemos</h3>
+              <div class="article_img">
+                <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+              </div>
+            </div>
+      </div>
+    </div>
+  </article>
+
+  <%= render :partial => "shared/create_account" %>
+
+</section>

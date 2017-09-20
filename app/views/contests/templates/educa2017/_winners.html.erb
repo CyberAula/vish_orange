@@ -1,0 +1,22 @@
+<article class="contest_block">
+  <div class="intro">
+    <h1><%= t('contest_page.winners.intro') %></h1>
+    <div class="horizontal_line"></div>
+  </div>
+
+  <div class="content_block">
+    <div class="items">
+        <% begin
+          educaconsejos = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
+        rescue ActiveRecord::RecordNotFound => e
+          educaconsejos = Document.all.sample(4)
+        end %>
+        <% educaconsejos.each do |doc| %>
+          <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+        <% end %>
+      <div class="clear"></div>
+    </div>
+  </div>
+</article>
+
+<!-- falta añadir nombre de colegio, provincia, asignatura y clase en cada recurso cargado-->

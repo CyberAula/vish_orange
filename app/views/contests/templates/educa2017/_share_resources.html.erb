@@ -1,0 +1,25 @@
+<article class="contest_block">
+  <div class="intro">
+    <h1><%=t('contest_page.share_resources.intro')%></h1>
+    <div class="horizontal_line"></div>
+  </div>
+
+  <div class="content_block">
+    <p class="p_block"><%=t('contest_page.share_resources.text')%></p>
+    <div class="items">
+		  <%aos = @contest.activity_objects.authored_by(current_subject)%>
+
+      <div id="submitted_aos_user_<%=@contest.id.to_s%>" style="display:inline-block; width: 100%">
+      	<ul class="items">
+        	  <% aos.map{|ao| ao.object}.each do |resource| %>
+      	       <%= render partial: 'repositories/resource', locals: { :resource => resource, :with_share => true} %>
+      	   <% end %>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <button class="btn btn-primary" onclick="location.href='/contest/educa2017/page/submissions';"><%= t('contest_page.share_resources.bt_vote')%></button>
+  </div>
+</article>
+
+<!-- falta poner un bt para copiar el link en cada uno de los recursos que se carguen-->

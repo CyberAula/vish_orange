@@ -1,0 +1,13 @@
+<div id="change_enrollments" class="panel panel-default">
+  <header class="panel-heading">
+    <%= link_to t('settings.enrollments.header'), "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#change_enrollments_content" %>
+  </header>
+
+  <div class="panel-body collapse" id="change_enrollments_content">
+    <%=t('settings.enrollments.cancel_enrollment') %>
+    <%= link_to t('settings.enrollments.disenroll'), disenroll_contest_path(Contest.where(:template => "educa2017").first.id), :confirm => t('are_you_sure'), :method => :post %>
+    <!-- cambiar el registration path por la acción de disenroll-->
+
+  </div>
+
+</div>

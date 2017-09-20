@@ -4,23 +4,10 @@
 <% my_locale = params[:locale] ? ("?locale="+params[:locale]) : ""%>
 <%content_for :canonical do%><%= Vish::Application.config.full_domain + my_locale %><%end%>
 
-
 <%content_for :banner do%>
   <%= render :partial => "frontpage/explanation" %>
+
+  <%= render :partial => "shared/create_account" %>
 <%end%>
 
-
-<section id="frontpage">
-  <!--
-  <div class="entities">
-  	<%#= render partial: 'frontpage/entities_certified' %>
-  </div>
-  <div class="clear"></div>
-  <div class="entities">
-    <%#= render partial: 'frontpage/entities' %>
-  </div>
-  -->
-  <div class="entities">
-    <%= render partial: 'frontpage/menu_blocks'%>
-  </div>
-</section>
+<section id="frontpage"></section>

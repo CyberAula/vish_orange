@@ -1,0 +1,23 @@
+<article class="contest_block padding_bottom60">
+  <div class="intro_icon_block">
+    <i class="fa fa-lock fa-4x" aria-hidden="true"></i>
+  </div>
+  <div class="fix_gap"></div>
+  <div class="content_block">
+    <h2><%= t('contest_page.incibe_title_html') %></h2>
+  </div>
+
+  <div class="content_block">
+  <div class="items">
+    <% begin
+        incibecategories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+      rescue ActiveRecord::RecordNotFound => e
+        incibecategories = Category.all.sample(8)
+      end %>
+    <% incibecategories.each do |category| %>
+      <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
+    <% end %>
+    <div class="clear"></div>
+  </div>
+  </div>
+</article>

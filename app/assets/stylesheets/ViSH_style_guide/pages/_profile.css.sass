@@ -3,7 +3,6 @@
   @include make-sm-column(12, $gutter: $grid-gutter-width)
   @include make-md-column(12, $gutter: $grid-gutter-width)
   @include make-lg-column(12, $gutter: $grid-gutter-width)
-  padding: 0 !important
   margin-bottom: 20px
 
   #profile-info
@@ -137,11 +136,11 @@
                 form
                   width: 100%
               div
-                .following-button
+                .follow-button
                   padding: 6px 9px
                   width: 120px
 
-                .following-button,
+                .follow-button,
                 .unfollow-button
                   @include border-right-radius (0)
                   min-height: 34px

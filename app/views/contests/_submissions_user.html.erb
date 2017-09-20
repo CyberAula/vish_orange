@@ -1,4 +1,4 @@
-<% 
+<%
 	if user_signed_in?
 		aos = @contest.activity_objects.authored_by(current_subject)
 	else
@@ -6,13 +6,13 @@
 	end
 %>
 
-<div id="submitted_aos_user_<%=contest.id.to_s%>" style="display:inline-block; width: 100%">
-	<ul class="items">
+<!--<div id="submitted_aos_user_<%#=contest.id.to_s%>" style="display:inline-block; width: 100%">-->
+	<!--<ul class="items">-->
 		<% aos.map{|ao| ao.object}.each do |resource| %>
 			<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "contest_"+contest.id.to_s+"_user_submission" } %>
 		<% end %>
-	</ul>
-</div>
+	<!--</ul>
+</div>-->
 
 <%= content_for :javascript do %>
 	var submissionBox = $("#submitted_aos_user_<%=contest.id.to_s%>");

@@ -1,3 +1,110 @@
+@mixin btn
+  display: inline-block
+  margin-bottom: 0 // For input.btn
+  font-weight: $btn-font-weight
+  text-align: center
+  vertical-align: middle
+  touch-action: manipulation
+  cursor: pointer
+  background-image: none // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent
+  white-space: nowrap
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base)
+  @include user-select(none)
+  -moz-transition-property: background-color, color
+  -moz-transition-duration: .2s
+  -moz-transition-timing-function: ease-out
+  -webkit-transition-property: background-color, color
+  -webkit-transition-duration: .2s
+  -o-transition-property: background-color, color
+  -o-transition-duration: .2s
+  padding: 6px
+  box-shadow: none
+  &,
+  &:hover, &:focus, &.focus
+    color: $btn-default-color
+    text-decoration: none
+    outline: none
+  &:hover, a
+    text-decoration: none
+    -moz-transition-property: background-color, color
+    -moz-transition-duration: .2s
+    -moz-transition-timing-function: ease-out
+    -webkit-transition-property: background-color, color
+    -webkit-transition-duration: .2s
+    -o-transition-property: background-color, color
+    -o-transition-duration: .2s
+
+  &:active, &.active
+    outline: 0
+    background-image: none
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125))
+    &:focus,
+    &.focus
+      @include tab-focus
+  &.disabled, &[disabled], fieldset[disabled] &
+    pointer-events: none // Future-proof disabling of clicks
+    @include opacity(.65)
+    @include box-shadow(none)
+
+@mixin btn-primary-orange
+  background: $brand-primary
+  color: $white
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: darken($brand-primary, 20%)
+    color: white
+    @include scale1
+
+@mixin btn-secondary-orange
+  background: $gray-lighter
+  color: $gray-dark
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: darken($gray-lighter, 20%)
+    color: $gray-dark
+    @include scale1
+
+@mixin btn-default-orange
+  color: $gray
+  background: transparent
+  border: 1px solid $gray
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: $white
+    color: $brand-primary
+    border: 1px solid $brand-primary
+    @include scale1
+
+@mixin btn-contest-orange
+  color: $black
+  background-color: #ffdc11
+  border: 1px solid transparent
+  min-width: 100px
+  height: 35px
+  margin: 10px
+  @include box-shadow(0 -1px 5px rgba(50,51,51,0.5))
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    color: $black
+    @include scale1
+
 @mixin follow-profile
   text-align: center
   color: $brand-primary
@@ -29,7 +136,6 @@
     padding: 6px 9px
     @include border-top-radius ($border-radius-base)
     @include border-bottom-radius ($border-radius-base)
-
   .unfollow-button
     width: 120px
     margin: 0 auto
@@ -39,14 +145,12 @@
       input
         border: 0px none
         width: 100%
-        background-color: $brand-secundary
+        background: $brand-secundary
         color: $white
         margin-top: 0px
-        padding: 6px 9px
+        padding: 4px 8px
         @include border-top-radius ($border-radius-base)
         @include border-bottom-radius ($border-radius-base)
-
-
 
 @mixin follow-o
   text-align: center
@@ -64,7 +168,6 @@
       width: 100%
       margin-top: 0px
       padding: 5px 5px 5px 0
-
   .following-button
     background-color: transparent
     color: $gray
@@ -73,26 +176,13 @@
     margin-top: 0px
     padding: 5px 5px 5px 0
 
-  .unfollow-button
-    form
-      margin: 0px
-      input
-        background-color: transparent
-        text-align: left
-        border: 0px none
-        width: 100%
-        color: $brand-secundary
-        margin-top: 0px
-        padding: 5px 5px 5px 0
-
-
 @mixin see-more
   margin-top: 2% !important
   margin-bottom: 2% !important
   display: block
   width: 160px
   @include btn
-  @include btn-primary
+  @include btn-primary-orange
   @include border-top-radius (0)
   height: 33px
   margin: 0 auto
@@ -102,7 +192,6 @@
     color: $white
     &:hover
       text-decoration: none
-
   &.disabled,
   &[disabled]
     cursor: default
@@ -123,19 +212,12 @@
   padding: 0px
   height: 30px
   width: 30px
-  outline: none
-  float: left
-  margin-left: 5px
-  margin-top: 5px
-  img
-    border-radius: $border-radius-base
-    height: 30px
-    width: 30px
-    float: left
-    border: 1px solid #EEEEEE
-    &:hover
-      border: 1px solid $orange-primary
   a
     padding: 0
-.user_name
-  font-weight: 600
+  img
+    border-radius: $border-radius-base
+    height: 20px
+    width: 20px
+    float: left
+    &:hover
+      border: 1px solid $orange-primary

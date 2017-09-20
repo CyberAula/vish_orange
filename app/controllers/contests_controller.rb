@@ -16,6 +16,16 @@ class ContestsController < ApplicationController
     render "contests/registration/other_fields_enrollment"
   end
 
+  def full_enrollment_registration
+    if user_signed_in? && !@contest.contest_enrollments.where(:actor_id => current_subject.actor.id).blank?
+      redirect_to(@contest.getUrlWithName)
+    elsif user_signed_in?
+      render "contests/registration/other_fields_enrollment"
+    else
+      render 'contests/registration/full_enrollment_registration'
+    end
+  end
+
   def get_enrolled_users_to_contest
     if current_user.admin?
       @contest = Contest.find(params[:id])
@@ -173,6 +183,30 @@ class ContestsController < ApplicationController
     end
   end
 
+   def sign_enroll
+    #check user is fine with devise or call devise controller
+    @user = User.create(params[:user])
+    if @user.save
+      #create enrrollment
+      CourseNotificationMailer.user_welcome_email(@user, @contest)
+      if @contest.has_additional_fields?
+        additional_fields =  {}
+        @contest.additional_fields.map do |n|
+            additional_fields[n] = params[n]
+        end
+        result = @contest.enrollActorWithOtherData(@user.actor, additional_fields)
+        sign_in @user
+        redirect_to(@contest.getUrlWithName)
+      else
+        result = @contest.enrollActor(@user.actor)
+        sign_in @user
+        format.html{ redirect_to @contest}
+      end
+    else
+      redirect_to :back
+    end
+  end
+
   #Educa2016 custom feature
   def educa2016materials
     error = nil
@@ -219,7 +253,6 @@ class ContestsController < ApplicationController
     end
 
   end
-
 
   private
 

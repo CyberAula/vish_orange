@@ -1,38 +1,20 @@
-<!-- banner concurso
 
-<div id="banner" style="display:none">
-  <div id="close_banner">x</div>
-  <a href="/contest/educa2016/page/submissions">
-    <div class="banner_concurso">
-      <img src="<%= t('orange_front.banner_contest')%>">
-    </div>
-  </a>
-</div>
-
-fin banner -->
-
-<div class="social_ntwoks">
-  <a href="https://twitter.com/EducaInternet" target="_blank"><i class="fa fa-twitter fa-big"></i></a>
-  <a href="https://www.facebook.com/EducaInternet-1883580955201114/" target="_blank"><i class="fa fa-facebook fa-big"></i></a>
-</div>
-<div class="box-title-home">
-  <img src="assets/orange/2.jpg" alt="cover_image">
+<div class="main-box">
+  <img src="assets/orange/home.jpg" alt="cover_image">
   <!-- center sentence + buttons -->
-  <div class="row main-title">
-    <div class="col-xs-12 title"><h1><%= t('orange_front.message')%></h1></div>
-    <a href="/overview" class="btn-js btn-anim">
-      <svg>
-        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-      </svg>
-     <%= t('orange_front.how_it_works')%>
-    </a>
-    <a href="/search?type=User" class="btn-js btn-anim">
-      <svg>
-        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-      </svg>
-     <%=t("orange_front.community")%>
-    </a>
+  <div class="main-title">
+    <div class="title">
+      <h1><%= t('orange_front.main_message')%></h1>
+      <h2><%= t('orange_front.second_message')%></h2>
+    </div>
+    <button class="btn btn-secondary btn-main-title" onclick="location.href='/explore';">
+      <%= t('orange_front.carousel.title2')%>
+   </button>
   </div>
+</div>
+
+<div class="entities">
+  <%= render partial: 'frontpage/menu_blocks'%>
 </div>
 
 <% content_for :javascript do %>
@@ -40,5 +22,4 @@ fin banner -->
     $("#banner").remove();
   });
   $("#banner").show("slide", { direction: "right", easing: "easeOutQuart" }, 1000);
-
 <% end %>
