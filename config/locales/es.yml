@@ -101,21 +101,24 @@ es:
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
     title: 'Explora EducaInternet'
+    entities:
+      title: "Las principales entidades sobre ciberseguridad ponen a tu disposición recursos de calidad para ti y tus alumnos"
     experts:
-      title: 'Deja que sean los expertos en seguridad TIC los que te cuenten todo lo que necesitas saber.'
-      text: 'Lorem ipsum...'
+      title: 'Los expertos en seguridad TIC te cuentan todo lo que necesitas saber'
     favs:
-      title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
+      title: 'Aquí tienes los recursos favoritos de los usuarios de EducaInternet'
       text: 'Lorem ipsum...'
     library:
       intro: 'BIBLIOTECA'
-      title: 'Esto no es todo. Pásate por la biblioteca de recursos. Puedes consultar todo el material de forma gratuita.'
+      title: 'Pásate por la biblioteca de recursos y consulta todos los materiales que te ofrecemos'
     quality_resources:
       title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:
       intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
       title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
   home_page:
+    title: "Bienvenido a EducaInternet"
+    subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
     contest_block:
       img: "contest17_illustration_ES.png"
       title: "¡Bienvenido al 2º Concurso EducaInternet!"
@@ -124,7 +127,7 @@ es:
     block2_tit: "Te ofrecemos gratuitamente cursos acreditados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     block3_tit: "Desata tu creatividad creando tus propios recursos, o mejor, ¡hazlo con tus alumnos!"
     block4_tit: "Trabajamos junto a los mejores expertos para ofrecerte los contenidos más actuales"
-    block1_txt_html: "Aprende y enseña en el aula sobre el uso seguro y responsable de las tecnologías. En EducaInternet puedes encontrar recursos educativos para todas las edades. Además, hay muchos tipos de recursos, como <a href='/search?type=Picture'>imágenes</a>, <a href='/search?type=Audio'>audios</a>, <a href='/search?type=Link'>links</a>, <a href='/search?type=Webapp'>Aplicaciones Web</a> ...puedes encontrar incluso el formato <a href='/search?type=Scormfile'>SCORM</a>, un estándar en educación y un mundo de posibilidades para tus alumnos"
+    block1_txt_html: "Aprende y enseña en el aula sobre el uso seguro y responsable de las tecnologías. En EducaInternet puedes encontrar recursos educativos para todas las edades. Además, hay muchos tipos de recursos, como <a href='/search?type=Picture'>imágenes</a>, <a href='/search?type=Audio'>audios</a>, <a href='/search?type=Link'>enlaces</a>, <a href='/search?type=Webapp'>Aplicaciones Web</a> ...puedes encontrar incluso el formato <a href='/search?type=Scormfile'>SCORM</a>, un estándar en educación y un mundo de posibilidades para tus alumnos"
     block2_txt_html: "Aprovecha en nuestra <a href='/search'>biblioteca</a> todas las <a href='/search?type=Workshop'>lecciones</a> y <a href='/search?type=Excursion'>presentaciones</a> que puedes compartir en el aula. Seguro que ya has oído hablar de los <a href='https://moodle.educainternet.es' target='_blank'>MOOC</a> (Massive Open Online Course), los cursos online dirigidos a un amplio número de participantes según el principio de educación abierta y masiva. En esta plataforma podrás realizar diferentes cursos que se ajusten a tus necesidades."
     block3_txt_html: "Crea, junto a tus alumnos, vuestros propios recursos que podrás compartir en la plataforma. Prepara el contenido para tus clases, sube los recursos que más utilices, indica cuáles son tus presentaciones favoritas, compártelas… todo aquello que puedas imaginar puedes hacerlo en EducaInternet.
 <a href='/search?type=User'>Más de 1.500 profesores ya forman parte de esta comunidad</a>. Súmate a ellos y descubre una herramienta sencilla con grandes funcionalidades para la creación de contenido educativo sobre la seguridad en Internet."
@@ -195,19 +198,8 @@ es:
       tema_desc: "Aquí se muestra el catálogo de unidades didácticas para su uso libre en el aula y fuera de ella"
       bold: "teca"
     how_it_works: "¿Cómo funciona?"
-    main_message: "Bienvenido a EducaInternet"
-    message: "Aprender y enseñar sobre el uso seguro y responsable de las tecnologías"
-    menu_blocks:
-      our_courses_tit: "Fórmate"
-      our_courses: "Nuestras lecciones"
-      our_courses_txt: "Accede a todas las lecciones, módulos y guías didácticas de la plataforma"
-      teaching_units_tit: "Comparte tus ideas"
-      teaching_units: "Crea y comparte"
-      teaching_units_txt: "Te ofrecemos una biblioteca y herramientas para crear tus propios recursos y compartirlos"
-      take_part_tit: "Concurso EducaInternet"
-      take_part: "Conoce a los ganadores"
-      take_part_txt: "Ya sabemos quiénes son los recursos ganadores del primer concurso EducaInternet"
-    second_message: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
+
+
 
   about:
     blog: "Novedades"

@@ -20,12 +20,12 @@
   <article>
     <div class="teach">
       <div class="article_cont">
-        <h4>SI ERES PROFESOR, ESTE ES TU SITIO</h4>
+        <h4><%= t('explore_page.teacher.intro')%></h4>
         <!--linea horizontal divisoria-->
         <div class="horizontal_line"></div>
         <!--/linea horizontal divisoria-->
             <div class="article_txt">
-              <h3>Trabajamos junto a los mejores expertos para ofrecerte gratuitamente los mejores recursos en uso responsable y seguro de las TIC</h3>
+              <h3><%= t('explore_page.teacher.title')%></h3>
                 <div class="article_links">
                   <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=sexting'">Sexting</button>
                   <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=privacy'">Privacidad</button>
@@ -47,7 +47,7 @@
           <div class="article_img">
             <i class="fa fa-star fa-4x" aria-hidden="true"></i>
           </div>
-          <h3>Aquí tienes los recursos favoritos de los usuarios de EducaInternet</h3>
+          <h3><%= t('explore_page.favs.title')%></h3>
             <div class="items">
                  <% types = VishConfig.getAvailableResourceModels({:return_instances => true})
                     favorites = Search.search({:n => 10, :order => "ranking DESC", :ao_ids_to_avoid => [2538, 2513, 2559, 3510, 6392], :models=> types})%>
@@ -67,7 +67,7 @@
           <div class="article_img">
             <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
           </div>
-          <h3>Los expertos en seguridad TIC te cuentan todo lo que necesitas saber</h3>
+          <h3><%= t('explore_page.experts.title')%></h3>
         </div>
           <div class="items">
             <% begin
@@ -90,7 +90,7 @@
           <div class="article_img">
             <i class="fa fa-th-large fa-4x" aria-hidden="true"></i>
           </div>
-          <h3>Las principales entidades sobre ciberseguridad ponen a tu disposición recursos de calidad para ti y tus alumnos</h3>
+          <h3><%= t('explore_page.entities.title')%></h3>
         </div>
           <div class="items">
             <% begin
@@ -114,7 +114,7 @@
           <div class="horizontal_line"></div>
           <!--/linea horizontal divisoria-->
             <div class="article_txt">
-              <h3>Pásate por la biblioteca de recursos y consulta todos los materiales que te ofrecemos</h3>
+              <h3><%= t('explore_page.library.title')%></h3>
               <div class="article_img">
                 <i class="fa fa-book fa-4x" aria-hidden="true"></i>
               </div>
