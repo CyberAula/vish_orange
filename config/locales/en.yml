@@ -57,6 +57,10 @@ en:
       text: "If you have any doubts about how to create your resource or upload it, we invite you to watch our tutorials."
       winners:
         title_html: "Get inspired with the <b>winning entries of the previous edition</b> of the EducaInternet Competition"
+        win1_text_html: "<b>First judges’</b> prize"
+        win2_text_html: "<b>Second judges’</b> prize"
+        win3_text_html: "<b>First public’s choice</b> prize"
+        win4_text_html: <b>Second public’s choice</b> prize"
     incibe_title_html: "<b>INCIBE</b> materials about online safety"
     macmillan_title_html: "<b>Macmillan</b> teaching materials available in Spanish and English"
     main_title:

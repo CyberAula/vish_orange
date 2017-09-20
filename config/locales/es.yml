@@ -45,6 +45,10 @@ es:
       text: "Si tienes alguna duda sobre cómo crear tu recurso o subirlo te invitamos a visionar nuestros tutoriales."
       winners:
         title_html: "Inspírate con los trabajos <b>ganadores de la anterior edición</b> del Concurso EducaInternet"
+        win1_text_html: "Ganador <b>primer premio del jurado</b>"
+        win2_text_html: "Ganador <b>segundo premio del jurado</b>"
+        win3_text_html: "Ganador <b>primer premio del público</b>"
+        win4_text_html: "Ganador <b>segundo premio del público</b>"
     incibe_title_html: "Materiales <b>INCIBE</b> sobre la seguridad en la red"
     macmillan_title_html: "Materiales pedagógicos <b>Macmillan</b> disponibles en castellano e inglés"
     main_title:
@@ -505,7 +509,7 @@ es:
   contest:
     disenroll: "Desinscribirse"
     disenrollment_failure: "Ocurrió un error y la desinscripción no pudo llevarse a cabo."
-    disenrollment_success: "Te has sido desinscrito con éxito."
+    disenrollment_success: "Te has desinscrito con éxito."
     enroll: "Inscribirse"
     enrollment_failure: "Ocurrió un error y la inscripción no pudo llevarse a cabo."
     enrollment_success: "Te has inscrito satifactoriamente."

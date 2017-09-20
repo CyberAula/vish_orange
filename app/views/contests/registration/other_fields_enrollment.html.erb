@@ -3,6 +3,7 @@
 	<section id="registration" class="registration_page">
 	  <section class="registration">
 			<h1><%= t('enroll_contest') %></h1>
+			<div class="clear"></div>
 			<p><%= t('enroll_contest_txt') %></p>
 			<%= form_tag(enroll_contest_path(@contest), method: "post") do  %>
 			<div class="form-group reg-labels">
