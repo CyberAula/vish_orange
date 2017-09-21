@@ -46,6 +46,7 @@ $(document).ready(function(){
   }
 
   var controller = new YTV('YourPlayerID', {
+     apiKey: "<%= Vish::Application.config.APP_CONFIG['YouTubeAPIKEY'] %>",
 	   playlist: 'PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST',
      accent: '#fff',
      playerTheme: 'light',

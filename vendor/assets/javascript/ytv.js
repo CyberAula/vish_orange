@@ -4,6 +4,7 @@
  * Copyright 2013, Jacob Kelley - http://jakiestfu.com/
  * Released under the MIT Licence
  * http://opensource.org/licenses/MIT
+ * github repo: https://github.com/Giorgio003/Youtube-TV
  *
  * Github:
  * Version: 3.0.5
@@ -13,7 +14,7 @@
 
 (function(win, doc) {
 	'use strict';
-	var apiKey = 'AIzaSyAdGvEMv7SOsK6asCvBcvvKVp9C31f408I';
+	var apiKey = '';
 	var YTV = YTV || function(id, opts){
 
 		var noop = function(){},
