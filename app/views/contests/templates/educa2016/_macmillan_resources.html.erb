@@ -1,0 +1,23 @@
+<article class="contest_block_dark padding_bottom60">
+  <div class="intro_icon_block">
+    <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
+  </div>
+  <div class="fix_gap"></div>
+  <div class="content_block">
+    <h2><%= t('contest_page.macmillan_title_html') %></h2>
+  </div>
+
+  <div class="content_block">
+  <div class="items">
+    <% begin
+        categories = [Category.find(68), Category.find(97), Category.find(81), Category.find(87),Category.find(103), Category.find(111), Category.find(71), Category.find(100),Category.find(84),Category.find(90),Category.find(106), Category.find(114)]
+      rescue ActiveRecord::RecordNotFound => e
+        categories = Category.all.sample(12)
+      end %>
+      <% categories.each do |category| %>
+        <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
+      <% end %>
+    <div class="clear"></div>
+  </div>
+  </div>
+</article>
