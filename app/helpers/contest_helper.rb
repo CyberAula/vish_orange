@@ -21,6 +21,6 @@ module ContestHelper
 	end
 
 	def contest_fase
-		return 1
+		return Vish::Application.config.APP_CONFIG["contest_phase"]
 	end
 end
