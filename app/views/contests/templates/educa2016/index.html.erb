@@ -1,0 +1,29 @@
+
+<%content_for :banner do%>
+<!--illustration -->
+  <div class="main-box main-box-contest">
+    <img src="../assets/orange/<%= t('contest_page.img_2016')%>" alt="Imagen consurso EducaInternet" class="img_contest_16">
+    <!-- center sentence + buttons -->
+    <div class="main-title main-title-contest_16">
+
+    </div>
+  </div>
+<%end%>
+
+<!--contest blocks -->
+<section class="articles contest_blocks">
+  <!--presentation + video -->
+  <%= render partial: 'contests/templates/educa2016/presentation' %>
+
+  <!-- winners -->
+  <%= render partial: 'contests/templates/educa2016/winners' %>
+
+
+  <!-- McMillan resources -->
+  <%= render partial: 'contests/templates/educa2016/macmillan_resources' %>
+  <!-- INCIBE resources -->
+  <%= render partial: 'contests/templates/educa2016/incibe_resources' %>
+
+  <!-- create account -->
+  <%= render :partial => "shared/create_account" %>
+</section>

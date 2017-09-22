@@ -22,6 +22,11 @@ es:
       text: 'EducaInternet es una plataforma creada para que los docentes puedan formarse en el uso seguro y responsable de la tecnología, así como un lugar donde crear y compartir con el resto de la comunidad sus recursos y materiales didácticos. El objetivo final es que los educadores puedan compartir buenas prácticas sobre un uso correcto y seguro de las TIC con sus alumnos.'
 
   contest_page:
+    img_2016: "contest16_ES.jpg"
+    texts_2016:
+      summary:
+        title: "Resumen del primer concurso EducaInternet"
+        text: "Alumnos y profesores nos cuentan su experiencia en el concurso EducaInternet y cómo gestionaron el trabajo colaborativo con sus alumnos guiándose por los módulos ¡Averigua también cómo se desarrolló el taller con las aulas ganadoras y el cohete que crearon y lanzaron al espacio!"
     educatips:
       title_html: "EducaConsejos"
       text: "Descubre nuestros consejos sobre seguridad en internet presentados por David Calle. Un material muy práctico para trabajar con tus alumnos cómo usar internet de forma segura."
