@@ -9,7 +9,7 @@
         <!-- TODO: diferenciar las fases -->
         <%= t('contest_page.main_title.title1_html') %>
       </div>
-      <%if user_signed_in? && isUserEnrolled? %>
+      <%if isUserEnrolled? %>
         <div></div>
       <% elsif user_signed_in? %>
         <button class="btn btn-contest" onclick="location.href='/contest/educa2017/other_fields_enrollment';">
@@ -27,7 +27,7 @@
 
 <!--contest blocks -->
 <section class="articles contest_blocks">
-  <%if user_signed_in? &&  isUserEnrolled? && contest_fase == 2 %>
+  <%if isUserEnrolled? && contest_fase == 2 %>
     <!--user resources gallery -->
     <%= render partial: 'contests/templates/educa2017/user_resources' %>
   <%end%>
@@ -36,7 +36,7 @@
     <!--presentation + video -->
     <%= render partial: 'contests/templates/educa2017/presentation' %>
   <%end%>
-  <%if contest_fase == 3 %>
+  <%if contest_fase == 3 && user_signed_in?%>
     <!-- share resources -->
     <%= render partial: 'contests/templates/educa2017/share_resources' %>
   <%end%>
@@ -48,7 +48,7 @@
     <!-- explanation -->
     <%= render partial: 'contests/templates/educa2017/explanation' %>
   <%end%>
-  <%if user_signed_in? &&  isUserEnrolled? && contest_fase >= 2 %>
+  <%if isUserEnrolled? && contest_fase >= 2 %>
     <!--educainternet seal -->
     <%= render partial: 'contests/templates/educa2017/educainternet_seal' %>
   <%end%>
@@ -57,7 +57,7 @@
     <!--educaTips -->
     <%= render partial: 'contests/templates/educa2017/educatips' %>
   <%end%>
-  <%if contest_fase <= 3 %>
+  <%if contest_fase <= 2 || (contest_fase===3 &&  isUserEnrolled?) %>
     <!-- 3 steps -->
     <%= render partial: 'contests/templates/educa2017/steps' %>
   <%end%>

@@ -1,7 +1,7 @@
 module ContestHelper
 
 	def isUserEnrolled?
-		if !@contest.contest_enrollments.where(:actor_id => current_subject.actor.id).blank?
+		if user_signed_in? && !@contest.contest_enrollments.where(:actor_id => current_subject.actor.id).blank?
 			return true
 		end
 		return false
