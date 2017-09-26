@@ -158,8 +158,8 @@ es:
       text: "Acabamos de rediseñar toda la plataforma para que sea mucho más usable. Bienvenidos al nuevo diseño. Han sido varios meses de buscar, probar, descartar y dar con las claves que pudieran adaptarse a todo lo que buscábamos. Hemos enriquecido todo EducaInternet para que se transforme en la plataforma de referencia sobre el Uso Seguro de las TIC. Esperamos que os guste."
     article_6:
       title: 'Ya está aquí la Segunda Edición Concurso EducaInternet'
-      text: "Puedes participar creando con tu aula un recurso sobre el uso seguro de las TIC. Inscribete en <a href='/contest/educa2017'>la página del concurso</a> para acceder a toda la información. Podrás ganar fantásticos premios."
-
+      text1: "Abrimos una nueva edición del concurso EducaInternet. Este concurso es una iniciativa socialmente responsablede Orange y Macmillan con el apoyo institucional del Instituto Nacional de Ciberseguridad (INCIBE) que nace con la finalidad de implicar a los centros educativos en el uso seguro y responsable de la tecnología de la información y la comunicación."
+      text2: "Puedes participar creando con tu aula un recurso sobre el uso seguro de las TIC. Inscribete en <a href='/contest/educa2017'>la página del concurso</a> para acceder a toda la información. Podrás ganar fantásticos premios."
   orange_front:
     banner_contest: "assets/orange/banner_contest3.png"
     carousel:
