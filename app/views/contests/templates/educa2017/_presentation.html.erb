@@ -21,7 +21,18 @@
       <p class="p_block">
         <%= t('contest_page.presentation.text') %>
       </p>
-      <a class="btn btn-primary" href="/pdf/BasesConcurso2017.pdf" download="BasesConcurso2017"> <%= t('contest_page.presentation.action1') %></a>
+      <a class="btn btn-secondary" href="/pdf/BasesConcurso2017.pdf" download="BasesConcurso2017"> <%= t('contest_page.presentation.action1') %></a>
+      <%if isUserEnrolled? %>
+        <div></div>
+      <% elsif user_signed_in? %>
+        <button class="btn btn-contest" onclick="location.href='/contest/educa2017/other_fields_enrollment';">
+          <%= t('contest_page.main_title.action1') %>
+        </button>
+      <% else %>
+        <button class="btn btn-contest" onclick="location.href='/contest/educa2017/full_enrollment_registration';">
+          <%= t('contest_page.main_title.action1') %>
+        </button>
+      <% end %>
     </div>
   </div>
 </article>
