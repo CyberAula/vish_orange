@@ -28,8 +28,8 @@
       <ul class="nav navbar-nav float_R" id="main_menu">
 
         <!-- ADD -->
-        <li class="btn btn-primary btn-add toggler dropdown">
-          <div class="without-data-toggle " data-toggle="dropdown" href="#" >
+        <li class="pull-right">
+          <div class="btn btn-primary btn-add toggler dropdown without-data-toggle " data-toggle="dropdown" href="#" >
             <i class="fa fa-plus"></i>
           </div>
           <ul class="dropdown-menu dropdown-menu-right add-menu">
@@ -65,13 +65,15 @@
             <%= image_tag current_subject.logo.url(:small) %>
           <% end %>
         </li>
+        <li>
+          <a href="#" class="btn <%='btn-default' if front_or_home%> user_name dropdown dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 
-        <button class="btn <%='btn-default' if front_or_home%> user_name dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= truncate_name(current_subject.name, length: 15) %>
-            <span class="caret"></span>
+
+              <%= truncate_name(current_subject.name, length: 15) %>
+              <span class="caret"></span>
+
           </a>
-
-          <ul class="dropdown-menu user-menu pull-right" role="menu">
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
 
             <!-- profile -->
             <li class="settings-menu">
@@ -88,12 +90,12 @@
             <% end %>
 
             <!--settings-->
-            <li class="settings-menu">
+            <!--<li class="settings-menu">
               <%= link_to activities_path do %>
                 <i class='fa fa-globe'></i>
                 <%= t('activity.other') %>
               <% end %>
-            </li>
+            </li>-->
 
             <!-- if admin -->
             <%if isAdmin? %>
@@ -107,14 +109,14 @@
 
             <% if availableModels.include? "Excursion" and availableServices.include? "ARS" and !current_subject.role?("PrivateStudent") %>
               <!-- divider bar -->
-              <li class="divider"></li>
+              <!--<li class="divider"></li>-->
 
-              <li class="settings-menu">
+              <!--<li class="settings-menu">
                 <%= link_to quiz_sessions_path do %>
                   <i class="fa fa-check-square"></i>
                   <%= t('quiz.live') %>
                 <% end %>
-              </li>
+              </li>-->
             <%end%>
 
                   <%if (availableModels.include? "Course") && current_subject.courses.length>0 %>
@@ -140,14 +142,14 @@
                 </li>
             <%end%>
 
-            <li class="divider"></li>
+            <!--<li class="divider"></li>-->
             <!-- comunity -->
-            <li class="settings-menu">
+            <!--<li class="settings-menu">
               <a href="/search?type=User">
                 <i class="fa fa-comments-o"></i>
                 <%= t('community') %>
               </a>
-            </li>
+            </li>-->
 
               <li class="divider"></li>
 
@@ -172,7 +174,7 @@
           </ul>
         </li>
       </ul>
-
+    </li>
       <!--search-->
       <li class="search-ui ">
       <%= render partial: 'layouts/header/uisearch_header' %>

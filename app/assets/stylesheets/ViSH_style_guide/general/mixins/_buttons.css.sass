@@ -88,6 +88,21 @@
     border: 1px solid $brand-primary
     @include scale1
 
+@mixin btn-white-orange
+  color: $gray
+  background: white
+  border: 0
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    background: $white
+    color: $black
+    @include scale1
+
+
 @mixin btn-contest-orange
   color: $black
   background-color: #ffdc11

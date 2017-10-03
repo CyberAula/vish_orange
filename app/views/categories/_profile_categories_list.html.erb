@@ -11,18 +11,18 @@
 
 <div class="toolbar_nav-tab">
   <% if canEditProfile %>
-    <a href="#options-modal" type="button" class="btn btn-secundary" role="button" data-toggle="modal" >
+    <a href="#options-modal" type="button" class="btn btn-primary" role="button" data-toggle="modal" >
       <i class="fa fa-cogs"></i>
     </a>
 
-    <button type="button" class="btn btn-secundary btn-for-categorize" data-toggle="button"><i class="fa fa-arrows"></i><%= t('categories.dragandrop.place_uncategorize') %></button>
+    <button type="button" class="btn btn-default btn-for-categorize" data-toggle="button"><i class="fa fa-arrows"></i><%= t('categories.dragandrop.place_uncategorize') %></button>
   <% end %>
 
   <div class="btn-group view-categories-group" role="group" aria-label="viewButton" style="float:right;">
-    <button id="normal-view" type="button" class="btn btn-secundary">
+    <button id="normal-view" type="button" class="btn btn-default">
       <%= t('categories.dragandrop.gallery') %>
     </button>
-    <button id="list-view" type="button" class="btn btn-secundary">
+    <button id="list-view" type="button" class="btn btn-default">
       <%= t('categories.dragandrop.list') %>
     </button>
   </div>
