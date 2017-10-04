@@ -4,9 +4,10 @@
 <%content_for :alternate_urls do%><%=raw alternate_urls(polymorphic_url(@category), @category)%><%end%>
 <%content_for :canonical do%><%= polymorphic_url(@category, :locale => params[:locale]) %><%end%>
 
-<%= render :partial => 'application/breadcrumb_path', :locals  => { :path => @category.parents_path, :categorycrumb => true } %>
+  <%= render :partial => 'application/breadcrumb_path', :locals  => { :path => @category.parents_path, :categorycrumb => true } %>
+<section id="category" class="categories_page">
 
-<section id="category">
+
   <div class="category_info">
     <div class="left_info">
         <!-- corner -->
@@ -17,7 +18,7 @@
         </div>
         <div class="corner-background"></div>
       </div>
-    
+
       <div class="container-img">
          <%= render :partial => 'categories/thumbnail', :locals =>{:category => @category, :show_avatar => true} %>
       </div>
@@ -50,7 +51,7 @@
         </div>
       </div>
     </div>
-    
+
     <% if can?(:update, @category) %>
       <div class="update js_update_profile_info" style="display:none">
         <%= form_for(@category, :url => [@category]) do |f| %>
@@ -73,9 +74,9 @@
         <% end %>
       </div>
     <% end %>
-    
+
   </div>
-</section>
+
 
 <%  @items = @category.property_objects
     order = @category.categories_order
@@ -97,7 +98,7 @@
       <%= render partial: 'categories/items' %>
   </ul>
 </div>
-
+</section>
 <%= content_for :javascript do %>
     $(".edit_icon").on("click", function(){
       $(".update").show("slow");
@@ -153,16 +154,16 @@
 </script>
 
 <% content_for :javascript do %>
-    
+
     //Let the overlay appear
-      
+
     $(".btn-for-categorize").click(function(){
       $("#categories_edition").fadeIn();
       beginIndex = getidArray();
-      beginObjects = $(".edit_categories .box-item").clone();        
+      beginObjects = $(".edit_categories .box-item").clone();
     });
 
     //Apply authomatically the initial category to be created as the one you are at
-    $("#AddCategoryHeadercategory_parent_id").val(<%=@category.id%>); 
+    $("#AddCategoryHeadercategory_parent_id").val(<%=@category.id%>);
 
 <% end %>

@@ -1,9 +1,4 @@
 #category, #student_group
-  @include make-xs-column(12, $gutter: $grid-gutter-width)
-  @include make-sm-column(12, $gutter: $grid-gutter-width)
-  @include make-md-column(12, $gutter: $grid-gutter-width)
-  @include make-lg-column(12, $gutter: $grid-gutter-width)
-  padding: 0 !important
   margin-bottom: 20px
   .category_info
     margin-bottom: 20px
@@ -157,7 +152,7 @@
         background-size: 131px
         width: 100%
         height: 60px
-        
+
     .corner-item
       position: absolute
       bottom: 24px
@@ -173,9 +168,9 @@
         left: 0px
         top: 0px
         z-index: 4
-        -webkit-border-top-left-radius: 5px
-        -moz-border-radius-topleft: 5px
-        border-top-left-radius: 5px
+        -webkit-border-top-left-radius: $border-radius-base
+        -moz-border-radius-topleft: $border-radius-base
+        border-top-left-radius: $border-radius-base
         overflow: hidden
         .corner-color
           position: absolute
