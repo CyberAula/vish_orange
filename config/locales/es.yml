@@ -192,7 +192,7 @@ es:
       reference_center_html: "Tu centro de referencia en <br>ciberseguridad y uso de <br>las TIC.<br><span>© Orange 2015 Rights</span>"
       review: "Danos tu opinion"
       rights: "Todos los derechos reservados"
-      whatwedo: "¿Que hacemos?"
+      whatwedo: "Sala de prensa"
 
     header:
       index: "Inicio"
@@ -1410,6 +1410,9 @@ es:
       teach: "Enseña ciberseguridad"
       terms_of_use: "Términos de uso de EducaInternet"
     name: "EducaInternet"
+  social_buttons:
+    news:
+      button: "Visita nuestra sala de prensa"
   swf:
     confirm_delete: "¿Borrar SWF?"
     name: "objeto flash"

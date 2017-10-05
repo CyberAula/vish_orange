@@ -1,15 +1,15 @@
 <!-- Botones -->
 <div id="social_networks_buttons" class="social_networks_buttons">
-  <div id="facebook_btn" class="social_btn facebook_btn">
+  <div id="facebook_btn" class="social_btn facebook_btn tooltip-header" data-original-title="Facebook">
     <i class="fa fa-facebook fa-big"></i>
   </div>
-  <div id="twitter_btn" class="social_btn twitter_btn">
+  <div id="twitter_btn" class="social_btn twitter_btn tooltip-header" data-original-title="Twitter">
     <i class="fa fa-twitter fa-big"></i>
   </div>
-  <div id="youtube_btn" class="social_btn youtube_btn">
+  <div id="youtube_btn" class="social_btn youtube_btn tooltip-header" data-original-title="Youtube">
     <i class="fa fa-youtube fa-big"></i>
   </div>
-  <div id="news_btn" class="social_btn news_btn">
+  <div id="news_btn" class="social_btn news_btn tooltip-header" data-original-title="Sala de prensa">
     <i class="fa fa-newspaper-o fa-big"></i>
   </div>
 </div>
@@ -33,13 +33,19 @@
 
   <div id="drop_right_news" class="drop_right">
     <button type="button" class="close_social_btn btn btn-secondary"><b>×</b></button>
-    <img class="news_img" src="assets/orange/home.jpg">
-    <div class="news_content">
-      <h4>Titulo de prueba para lo del incibe</h4>
-      <p>Acabamos de rediseñar toda la plataforma para que sea mucho más usable. Bienvenidos al nuevo diseño. Han sido varios meses de buscar, probar, descartar y dar con las claves que pudieran adaptarse a todo lo que buscábamos</p>
-      <button class="btn btn-primary btn-main-title " onclick="location.href='/whatwedo';" target="_blank">
-        Para saber más..
-      </button>
-    </div>
+      <a href="https://www.is4k.es/ayuda" target="_blank"><img class="news_img" src="../assets/orange/is4kayuda.jpg"></a>
+      <div class="news_content">
+        <h4><%= raw t('whatwedo_page.article_7.title')%></h4>
+        <p><%= raw t('whatwedo_page.article_7.text1')%></p>
+        <button class="btn btn-primary btn-main-title " onclick="location.href='/whatwedo';" target="_blank">
+          <%= raw t('social_buttons.news.button')%>
+        </button>
+      </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+     $('.tooltip-header').tooltip({ placement: 'right', container: 'body'});
+ });
+</script>
