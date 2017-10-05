@@ -1,4 +1,5 @@
 @import "jquery.cleditor"
+
 #conversations,
 #conversation,
 #new_message
@@ -6,9 +7,24 @@
   @include make-sm-column(12, $gutter: $grid-gutter-width)
   @include make-md-column(12, $gutter: $grid-gutter-width)
   @include make-lg-column(12, $gutter: $grid-gutter-width)
-  padding: 0 !important
+
+
+#conversations,
+#new_message
+  padding: 80px 50px 30px !important
+  .messages_toolbar
+    background-color: white
+    .nav-tabs
+      margin: 0
+      li.active
+        a
+          color: $brand-primary
+
+  .conversations
+    min-height: 400px
+    background: rgba(255, 255, 255, 0.42)
+
 #conversations
-  margin: $zero
   .conversation
     @include make-xs-column(12, $gutter: $grid-gutter-width)
     @include make-sm-column(12, $gutter: $grid-gutter-width)
@@ -92,25 +108,21 @@
     @include transition (background-color 1sec)
     border: 1px solid transparent
 
-
-
 //New message
 #new_message
   #conversation
     padding-left: 0
     padding-right: 0
     form
-      @include border-top-radius ($border-radius-base)
-      @include border-bottom-radius ($border-radius-base)
+      padding: 20px
       margin: $zero !important
       float: none !important
-      padding: 15px 15px 52px
-      background: $white
+      background: rgba(255, 255, 255, 0.42)
       @extend .form-group
-    
       label
-        font-size: 15px
         display: block
+        font-weight: normal
+        margin-bottom: 5px
       input
         &[type="text"]
           width: 100%
@@ -131,8 +143,6 @@
     color: $gray
     .notification
       margin-bottom: 20px
-
-
 
 .cont_conversation
   margin-top: 18px

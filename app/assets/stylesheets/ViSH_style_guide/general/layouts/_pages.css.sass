@@ -100,7 +100,8 @@ div.icontitle
         min-height: 19px !important
       .follow-button
         padding: 1px 0
-
+.box-shadowed
+  @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
 .registration,
 .forgot,
 .confirmation,
@@ -121,28 +122,12 @@ div.icontitle
     color: $gray
     font-weight: 300
     margin: 0
-
   ul.tag-list
     margin-left: 0
   .conditions
     font-size: 0.9em
     label
       color: $gray !important
-
-
-
-//#sign_in
-  padding-bottom: 0px !important
-  @include log
-  a,label
-    color: inherit
-    margin-bottom: 5px !important
-  .checkbox
-    margin-top: 20px
-    span
-      color: $gray-dark
-
-
 
 .cke_skin_BootstrapCK-Skin
   .cke_contents
