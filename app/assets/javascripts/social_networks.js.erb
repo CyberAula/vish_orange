@@ -34,6 +34,21 @@ $(document).ready(function(){
       $("#drop_right_youtube").show();
     }
   });
+
+  //News
+  $("#news_btn").click(function(){
+    if($(this).hasClass("clicked")){
+      $(this).removeClass("clicked");
+      $(".drop_right").hide();
+    } else {
+      $(".social_btn").removeClass("clicked");
+      $(this).addClass("clicked");
+      $(".drop_right").hide();
+      $("#drop_right_news").show();
+    }
+  });
+
+
   //close button
   $(".close_social_btn").click(function(){
       close_drop_right();
