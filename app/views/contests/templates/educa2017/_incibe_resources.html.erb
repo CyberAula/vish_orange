@@ -10,12 +10,16 @@
   <div class="content_block">
   <div class="items">
     <% begin
-        incibecategories = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62)]
+        incibeitems = [Category.find(55), Category.find(56), Category.find(57), Category.find(58), Category.find(59), Category.find(60), Category.find(63), Category.find(62), Document.find(11687), Document.find(11688),Document.find(11689),Document.find(11690),Document.find(11691)]
       rescue ActiveRecord::RecordNotFound => e
-        incibecategories = Category.all.sample(8)
+        incibeitems = Category.all.sample(8).push(Document.last)
       end %>
-    <% incibecategories.each do |category| %>
-      <%= render partial: 'contests/templates/educa2017/category', locals: { category: category} %>
+    <% incibeitems.each do |item| %>
+      <%if item.instance_of? Category%>
+        <%= render partial: 'contests/templates/educa2017/category', locals: { category: item} %>
+      <%else%>
+        <%= render partial: 'repositories/resource', locals: { resource: item} %>
+      <%end%>
     <% end %>
     <div class="clear"></div>
   </div>
