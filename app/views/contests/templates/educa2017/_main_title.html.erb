@@ -1,0 +1,31 @@
+<%content_for :banner do%>
+<!--illustration -->
+  <div class="main-box main-box-contest">
+    <img src="/assets/orange/<%= t('contest_page.main_title.img')%>" alt="Imagen consurso EducaInternet" class="img_contest">
+    <!-- center sentence + buttons -->
+    <div class="main-title main-title-contest">
+      <div class="title">
+        <!-- TODO: diferenciar las fases -->
+        <%= t('contest_page.main_title.title1_html') %>
+      </div>
+      <%if contest_fase < 3 %>
+        <%if isUserEnrolled? %>
+          <div></div>
+        <% elsif user_signed_in? %>
+          <button class="btn btn-contest" onclick="location.href='/contest/<%= @contest.name %>/other_fields_enrollment';">
+            <%= t('contest_page.main_title.action1') %>
+          </button>
+        <% else %>
+          <button class="btn btn-contest" onclick="location.href='/contest/<%= @contest.name %>/full_enrollment_registration';">
+            <%= t('contest_page.main_title.action1') %>
+          </button>
+        <% end %>
+      <!-- fase 3 + path = submissions_all -->
+      <% else %>
+        <button class="btn btn-contest" onclick="location.href='<%=contest_page_path(@contest,"index",true)%>';">
+          Volver al concurso
+        </button>
+      <% end %>
+    </div>
+  </div>
+<%end%>

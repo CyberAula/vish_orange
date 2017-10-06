@@ -94,6 +94,7 @@ es:
         text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b>"
         text3_html: "Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b>"
       bt_upload: "Presentar recurso"
+    vote_resources: "VOTA TU RECURSO FAVORITO"
     winners:
       intro: "LOS GANADORES DEL CONCURSO"
 

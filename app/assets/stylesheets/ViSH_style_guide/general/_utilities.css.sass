@@ -5,6 +5,9 @@
   display: flex
 .flex_wrap
   flex-flow: wrap
+.flex_center
+  display: flex !important
+  @include flex_container
 
 //float
 .float_L
@@ -23,6 +26,9 @@
   color: $brand-primary
 .green
   color: green
+.bg_transparent
+  background-color: transparent !important
+
 
 //text
 .align_right
@@ -36,7 +42,7 @@
 .padding_bottom60
   padding-bottom: 60px !important
 .padding10
-  padding: 10px
+  padding: 10px !important
 
 //margin
 .space_top

@@ -2,7 +2,4 @@
   <%=render :partial => "search/main_title", :locals => { :main_title_body => "Participaciones I Concurso EducaInternet" }%>
 <%end%>
 
-  <a class="btn btn-primary pull-left"href="<%=contest_page_path(@contest,"index",true)%>">Volver al concurso</a>
-  <br/><br/><br/>
-
-  <%= render partial: 'contests/submissions_all', locals: { contest: @contest} %>
+<%= render partial: 'contests/submissions_all', locals: { contest: @contest} %>

@@ -1,76 +1,52 @@
-
-<%content_for :banner do%>
-<!--illustration -->
-  <div class="main-box main-box-contest">
-    <img src="../assets/orange/<%= t('contest_page.main_title.img')%>" alt="Imagen consurso EducaInternet" class="img_contest">
-    <!-- center sentence + buttons -->
-    <div class="main-title main-title-contest">
-      <div class="title">
-        <!-- TODO: diferenciar las fases -->
-        <%= t('contest_page.main_title.title1_html') %>
-      </div>
-      <%if isUserEnrolled? %>
-        <div></div>
-      <% elsif user_signed_in? %>
-        <button class="btn btn-contest" onclick="location.href='/contest/educa2017/other_fields_enrollment';">
-          <%= t('contest_page.main_title.action1') %>
-        </button>
-      <% else %>
-        <button class="btn btn-contest" onclick="location.href='/contest/educa2017/full_enrollment_registration';">
-          <%= t('contest_page.main_title.action1') %>
-        </button>
-      <% end %>
-    </div>
-  </div>
-<%end%>
-
+<!--contest image -->
+<%= render partial: 'contests/templates/'+@contest.name+'/main_title' %>
 
 <!--contest blocks -->
 <section class="articles contest_blocks">
   <%if isUserEnrolled? && contest_fase == 2 %>
     <!--user resources gallery -->
-    <%= render partial: 'contests/templates/educa2017/user_resources' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/user_resources' %>
   <%end%>
 
   <%if contest_fase <= 2 %>
     <!--presentation + video -->
-    <%= render partial: 'contests/templates/educa2017/presentation' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/presentation' %>
   <%end%>
   <%if contest_fase == 3 && user_signed_in?%>
     <!-- share resources -->
-    <%= render partial: 'contests/templates/educa2017/share_resources' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/share_resources' %>
   <%end%>
   <%if contest_fase == 4 %>
     <!-- winners -->
-    <%= render partial: 'contests/templates/educa2017/winners' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/winners' %>
   <%end%>
   <%if contest_fase <= 2 %>
     <!-- explanation -->
-    <%= render partial: 'contests/templates/educa2017/explanation' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'7/explanation' %>
   <%end%>
   <%if isUserEnrolled? %>
     <!--educainternet seal -->
-    <%= render partial: 'contests/templates/educa2017/educainternet_seal' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/educainternet_seal' %>
   <%end%>
 
   <%if contest_fase >= 2 %>
     <!--educaTips -->
-    <%= render partial: 'contests/templates/educa2017/educatips' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/educatips' %>
   <%end%>
   <%if contest_fase <= 2 || (contest_fase===3 &&  isUserEnrolled?) %>
     <!-- 3 steps -->
-    <%= render partial: 'contests/templates/educa2017/steps' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/steps' %>
   <%end%>
 
 
   <%if contest_fase <= 2 %>  <!-- **** este no tengo muy claro si debe estar tb en fase 3 -->
   <!-- help center -->
-  <%= render partial: 'contests/templates/educa2017/help_center' %>
+  <%= render partial: 'contests/templates/'+@contest.name+'/help_center' %>
   <%end%>
   <!-- McMillan resources -->
-  <%= render partial: 'contests/templates/educa2017/macmillan_resources' %>
+  <%= render partial: 'contests/templates/'+@contest.name+'/macmillan_resources' %>
   <!-- INCIBE resources -->
-  <%= render partial: 'contests/templates/educa2017/incibe_resources' %>
+  <%= render partial: 'contests/templates/'+@contest.name+'/incibe_resources' %>
 
   <!-- create account -->
   <%= render :partial => "shared/create_account" %>
