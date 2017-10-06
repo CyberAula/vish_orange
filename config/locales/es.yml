@@ -776,6 +776,7 @@ es:
     messages:
       fulltext_blank: "El código HTML del embed no puede estar en blanco."
       title_blank: "El título no puede estar en blanco."
+  empty_mail: "no tienes mensajes en este buzón"
   evaluation:
     contribute:
       student:

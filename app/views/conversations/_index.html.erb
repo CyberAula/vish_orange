@@ -12,8 +12,11 @@
     <% @conversations = @conversations.select { |conversation| conversation.originator == current_subject.actor } %>
   <% end %>
 
-  <%= render @conversations %>
-
+  <% if @conversations.length != 0 %>
+    <%= render @conversations %>
+  <% else %>
+    <div class="empty_mail"><%= t('empty_mail')%></div>
+  <% end %>
   <%= render partial: 'layouts/more',
              locals: {
                path: conversations_path,

@@ -792,6 +792,7 @@ en:
     messages:
       fulltext_blank: "The HTML code of the embed can't be blank"
       title_blank: "Title can't be blank"
+  empty_mail: "you have no messages in this mailbox"
   evaluation:
     contribute:
       student:
