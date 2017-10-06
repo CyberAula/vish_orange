@@ -1,9 +1,13 @@
-<ul class="items">
-	<%if @courses.length==0%>
-		<%=t("course.none")%>
-	<%else%>
-		<%@courses.each do |c|%>
-			<%= render partial: 'courses/course' , :locals => { :course => c } %>
+<section class="courses_page blocks">
+	<h1>Descubre nuestros cursos acreditados online</h1>
+	<br>
+	<ul class="items">
+		<%if @courses.length==0%>
+			<%=t("course.none")%>
+		<%else%>
+			<%@courses.each do |c|%>
+				<%= render partial: 'courses/course' , :locals => { :course => c } %>
+			<%end%>
 		<%end%>
-	<%end%>
-</ul>
+	</ul>
+</section>

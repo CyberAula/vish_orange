@@ -13,7 +13,7 @@
   <p><%= t('contest_page.modal_submission.text_html') %></p>
 </div>
 <div class="modal-body">
-  <ul class="items">
+  <ul class="items items_modal">
     <% with_format('html') do %>
       <% resources.each do |r| %>
         <%= render :partial => '/entities/entity', :formats => [:html], :locals => { :entity => r, :prefix_id => "submission" } %>
