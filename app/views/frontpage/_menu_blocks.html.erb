@@ -14,7 +14,18 @@
         <div class="p_block">
           <p><%= t('home_page.contest_block.text')%></p>
         </div>
-        <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">Apúntate</button>
+        <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
+          <%if contest_fase == 1 %>
+            <%= t('contest_page.steps.step1_action') %>
+          <% elsif contest_fase == 2 %>
+            <%= t('contest_page.steps.step2_action') %>
+          <% elsif contest_fase == 3 && user_signed_in? %>
+            <%= t('contest_page.steps.step3_action') %>
+          <% else%>
+            vota tu recurso favorito
+          <% end %>
+
+        </button>
 
       </div>
     </div>

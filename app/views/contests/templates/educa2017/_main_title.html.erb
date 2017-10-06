@@ -5,12 +5,19 @@
     <!-- center sentence + buttons -->
     <div class="main-title main-title-contest">
       <div class="title">
-        <!-- TODO: diferenciar las fases -->
-        <%= t('contest_page.main_title.title1_html') %>
+        <%if contest_fase >= 3 %>
+          <%= t('contest_page.main_title.title2_html') %>
+        <% else %>
+          <%= t('contest_page.main_title.title1_html') %>
+        <% end %>
       </div>
       <%if contest_fase < 3 %>
         <%if isUserEnrolled? %>
-          <div></div>
+            <%if contest_fase == 2 %>
+              <button id="btn_add_resource" class="btn btn-contest">
+              <%= t('contest_page.steps.step2_action') %>
+              </button>
+            <% end %>
         <% elsif user_signed_in? %>
           <button class="btn btn-contest" onclick="location.href='/contest/<%= @contest.name %>/other_fields_enrollment';">
             <%= t('contest_page.main_title.action1') %>
@@ -20,12 +27,28 @@
             <%= t('contest_page.main_title.action1') %>
           </button>
         <% end %>
-      <!-- fase 3 + path = submissions_all -->
+
       <% else %>
-        <button class="btn btn-contest" onclick="location.href='<%=contest_page_path(@contest,"index",true)%>';">
-          Volver al concurso
-        </button>
+        <!--  path = submissions_all -->
+        <% if contest_page_path(@contest) %>
+          <button class="btn btn-contest" onclick="location.href='/contest/educa2017/page/submissions';">
+            Ver recursos
+          </button>
+        <% else %>
+          <button class="btn btn-contest" onclick="location.href='<%=contest_page_path(@contest,"index",true)%>';">
+            Volver al concurso
+          </button>
+        <% end %>
       <% end %>
     </div>
   </div>
+<%end%>
+
+
+<%if user_signed_in? && isUserEnrolled? && contest_fase == 2%>
+  <%= content_for :javascript do %>
+      $("#btn_add_resource").click(function(){
+        $("#add_resource_contest_button").click();
+      });
+  <%end%>
 <%end%>

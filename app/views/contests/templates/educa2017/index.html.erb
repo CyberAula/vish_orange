@@ -12,9 +12,13 @@
     <!--presentation + video -->
     <%= render partial: 'contests/templates/'+@contest.name+'/presentation' %>
   <%end%>
-  <%if contest_fase == 3 && user_signed_in?%>
-    <!-- share resources -->
-    <%= render partial: 'contests/templates/'+@contest.name+'/share_resources' %>
+  <%if contest_fase == 3 %>
+    <%if user_signed_in? %>
+      <!-- share resources -->
+      <%= render partial: 'contests/templates/'+@contest.name+'/share_resources' %>
+    <%else%>
+      <%= render partial: 'contests/templates/'+@contest.name+'/contest_closed' %>
+    <%end%>
   <%end%>
   <%if contest_fase == 4 %>
     <!-- winners -->
