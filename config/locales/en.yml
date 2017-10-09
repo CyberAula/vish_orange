@@ -36,7 +36,9 @@ en:
   contest_page:
     delete_resource_confirm: You are going to take this resource off the contest. Are you sure?
     educatips:
-      title_html: "EducaTips"
+      launch_subtitle: "Compórtate igual de bien on que off"
+      launch_text: "En Internet, lo que mola es ir siempre de frente y dando la cara con educación. El primer EducaConsejo de David Calle te ayuda a enseñar a tus alumnos la importancia de no hacer en Internet lo que no harían en la vida real."
+      title_html: "EDUCATIPS"
       text: "Discover our tips on internet security, presented by David Calle. A very useful material on how to use the internet safely that you can work through with your pupils."
     explanation:
       intro: "TEACHERS LIKE YOU MAKE THIS CONTEST IMPORTANT"
