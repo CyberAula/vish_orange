@@ -34,6 +34,7 @@ en:
 
 
   contest_page:
+    delete_resource_confirm: You are going to take this resource off the contest. Are you sure?
     educatips:
       title_html: "EducaTips"
       text: "Discover our tips on internet security, presented by David Calle. A very useful material on how to use the internet safely that you can work through with your pupils."
