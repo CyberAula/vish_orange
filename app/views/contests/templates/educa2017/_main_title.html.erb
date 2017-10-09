@@ -5,11 +5,16 @@
     <!-- center sentence + buttons -->
     <div class="main-title main-title-contest">
       <div class="title">
-        <%if contest_fase >= 3 %>
-          <%= t('contest_page.main_title.title2_html') %>
-        <% else %>
+        <%if contest_fase <= 2 %>
           <%= t('contest_page.main_title.title1_html') %>
         <% end %>
+        <%if contest_fase == 3 %>
+          <%= t('contest_page.main_title.title2_html') %>
+        <% end %>
+        <%if contest_fase == 4 %>
+          <%= t('contest_page.main_title.title3_html') %>
+        <% end %>
+
       </div>
       <%if contest_fase < 3 %>
         <%if isUserEnrolled? %>
@@ -30,7 +35,7 @@
 
       <% else %>
         <!--  path = submissions_all -->
-        <% if contest_page_path(@contest) %>
+        <% if !submissions %>
           <button class="btn btn-contest" onclick="location.href='/contest/educa2017/page/submissions';">
             Ver recursos
           </button>

@@ -1,6 +1,5 @@
 <% aos = @contest.public_activity_objects.order(Vish::Application::config.agnostic_random) %>
 
-<%= render partial: 'contests/templates/'+@contest.name+'/main_title' %>
 
 <div id="submitted_aos_all_<%=contest.id.to_s%>" style="display:inline-block; width: 100%" class="articles contest_blocks ">
 	<article class="contest_block bg_transparent">

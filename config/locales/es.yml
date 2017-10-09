@@ -60,6 +60,7 @@ es:
       img: "contest17_ES.jpg"
       title1_html: "¡Participa creando con tu aula un recurso sobre el <b>uso seguro de internet</b>!"
       title2_html: "Descubre los recursos presentados por el resto de colegios y <b>vota tus favoritos</b>"
+      title3_html: "Enhorabuena a los <b>ganadores</b> de la Segunda Edición del concurso EducaInternet"
       action1: "Apúntate"
     modal_submission:
       title: "Selecciona uno de tus recursos y participa"

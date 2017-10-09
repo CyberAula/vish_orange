@@ -1,5 +1,5 @@
 <!--contest image -->
-<%= render partial: 'contests/templates/'+@contest.name+'/main_title' %>
+<%= render partial: 'contests/templates/'+@contest.name+'/main_title', :locals => { :submissions => false }%>
 
 <!--contest blocks -->
 <section class="articles contest_blocks">
