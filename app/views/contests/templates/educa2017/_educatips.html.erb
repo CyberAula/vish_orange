@@ -11,7 +11,7 @@
     <p class="p_block basic_block"><%= t('contest_page.educatips.text')%></p>
     <div class="items">
         <% begin
-          educaconsejos = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
+          educaconsejos = [Link.find(504), Document.find(9229), Document.find(9218), Document.find(9228)]
         rescue ActiveRecord::RecordNotFound => e
           educaconsejos = Document.all.sample(4)
         end %>
