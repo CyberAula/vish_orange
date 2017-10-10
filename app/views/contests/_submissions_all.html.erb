@@ -3,8 +3,16 @@
 
 <div id="submitted_aos_all_<%=contest.id.to_s%>" style="display:inline-block; width: 100%" class="articles contest_blocks ">
 	<article class="contest_block bg_transparent">
+		<%if contest_fase == 4 %>
+		  <!-- winners -->
+		  <%= render partial: 'contests/templates/'+@contest.name+'/winners', :locals => { :bgwhite => false } %>
+		<%end%>
 	  <div class="intro">
-	    <h1><%=t('contest_page.vote_resources')%></h1>
+			<% if contest_fase == 4 %>
+				<h1><%=t('contest_page.participants')%></h1>
+			<% else %>
+	    	<h1><%=t('contest_page.vote_resources')%></h1>
+			<% end %>
 	    <div class="horizontal_line"></div>
 	  </div>
 		<ul class="items padding10 flex_center">

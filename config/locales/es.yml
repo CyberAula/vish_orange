@@ -29,7 +29,7 @@ es:
         text: "Alumnos y profesores nos cuentan su experiencia en el concurso EducaInternet y cómo gestionaron el trabajo colaborativo con sus alumnos guiándose por los módulos ¡Averigua también cómo se desarrolló el taller con las aulas ganadoras y el cohete que crearon y lanzaron al espacio!"
     delete_resource_confirm: Vas a desinscribir este recurso del concurso. ¿Estás seguro?
     educatips:
-      launch_subtitle: "Compórtate igual de bien on que off"
+      launch_subtitle: "Compórtate igual de bien <i>'on'</i> que <i>'off'</i>"
       launch_text: "En Internet, lo que mola es ir siempre de frente y dando la cara con educación. El primer EducaConsejo de David Calle te ayuda a enseñar a tus alumnos la importancia de no hacer en Internet lo que no harían en la vida real."
       title_html: "EDUCACONSEJOS"
       text: "Descubre nuestros consejos sobre seguridad en internet presentados por David Calle. Un material muy práctico para trabajar con tus alumnos cómo usar internet de forma segura."
@@ -99,6 +99,7 @@ es:
         text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <b>videotutoriales</b>"
         text3_html: "Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b>"
       bt_upload: "Presentar recurso"
+    participants: "TODOS LOS PARTICIPANTES"
     vote_resources: "VOTA TU RECURSO FAVORITO"
     winners:
       intro: "LOS GANADORES DEL CONCURSO"

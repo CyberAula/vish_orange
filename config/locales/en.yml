@@ -108,6 +108,7 @@ en:
         text2_html: "Are you excited to start your first?<br>We invite you to watch our video <b>tutorials</b>"
         text3_html: "If you already know how it works,<br><b>you can proceed directly to your profile</b>"
       bt_upload: "Submit your resource"
+    participants: "ALL PARTICIPANTS"
     vote_resources: "VOTE YOUR FAVOURITE RESOURCE"
     winners:
       intro: "THE COMPETITION WINNERS"

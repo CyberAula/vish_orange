@@ -22,7 +22,7 @@
   <%end%>
   <%if contest_fase == 4 %>
     <!-- winners -->
-    <%= render partial: 'contests/templates/'+@contest.name+'/winners' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/winners', :locals => { :bgwhite => true } %>
   <%end%>
   <%if contest_fase <= 2 %>
     <!-- explanation -->
@@ -33,7 +33,7 @@
     <%= render partial: 'contests/templates/'+@contest.name+'/educainternet_seal' %>
   <%end%>
 
-  <%if contest_fase >= 2 %>
+  <%if contest_fase >= 1 %>
     <!--educaTips -->
     <%= render partial: 'contests/templates/'+@contest.name+'/educatips' %>
   <%end%>
