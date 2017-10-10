@@ -9,7 +9,6 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="<%=Vish::Application.config.name%>">
 <meta property="og:url" content="<%= request.original_url %>">
-<meta property="og:image" content="<%= yield(:og_image).empty? ? Vish::Application.config.full_domain+'/assets/frontpage/logo-04.png' : yield(:og_image) %>">
 <meta property="og:description" content="<%= yield(:description) %>">
 
 <meta property="og:locale" content="<%=get_facebook_locales(I18n.locale)%>">
