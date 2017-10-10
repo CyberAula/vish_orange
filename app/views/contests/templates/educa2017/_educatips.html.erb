@@ -14,7 +14,7 @@
   <div class="content_block">
     <div class="items item_tip">
       <% begin
-        educaconsejos = Link.find(504)
+        educaconsejos = [Link.find(504)]
       rescue ActiveRecord::RecordNotFound => e
         educaconsejos = Document.all.sample(1)
       end %>
