@@ -11,8 +11,7 @@
 
 
 <%= content_for :javascript do %>
-	var submissionBox = $("#submitted_aos_<%=contest.id.to_s%>");
-	var resourceBoxes = $(submissionBox).find("li.box-item:not('.add-item')");
+	var resourceBoxes = $("#submitted_aos_<%=contest.id.to_s%> > ul.items > li.box-item:not('.add-item')");
 	<% aos.each_with_index do |ao,index| %>
 		$(resourceBoxes['<%=index%>']).append('<%= link_to raw('<i class="fa fa-trash-o"></i>'), remove_submit_contest_path(contest, :activity_object_id => ao.id), :confirm => I18n.t("contest_page.delete_resource_confirm"), :method => :post, :class => 'btn btn_delete_item' %>');
 	<% end %>
