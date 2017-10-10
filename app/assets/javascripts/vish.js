@@ -3,6 +3,8 @@ var Vish = Vish || {};
 //tooltip function
 document.addEventListener("DOMContentLoaded", function(){
   $("[rel=tooltip]").tooltip({ placement: 'bottom', container:'body'});
+  //for the copy to clipboard funcionality of the contest resources
+  new Clipboard('#button_copy_clipboard');
 });
 
 $(document).ready(function(){

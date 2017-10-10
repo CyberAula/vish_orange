@@ -56,7 +56,7 @@
         <%end%>
       </div>
       <%if defined?(with_share) && with_share%>
-         <button data-clipboard-text="heheh" class="btn btn-secondary btn-copy"><i class="fa fa-copy"></i>Copiar Link</button>
+         <button data-clipboard-text="<%=Vish::Application.config.full_domain + url_for(resource)%>" id="button_copy_clipboard" class="btn btn-secondary btn-copy"><i class="fa fa-copy"></i>Copiar Link</button>
 
       <%end%>
       <div class="clear"></div>
