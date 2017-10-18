@@ -15,11 +15,11 @@
           <p><%= t('home_page.contest_block.text')%></p>
         </div>
         <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
-          <%if raw t(' == 1 %>
+          <%if contest_fase == 1 %>
             <%= t('contest_page.steps.step1_action') %>
-          <% elsif raw t(' == 2 %>
+          <% elsif contest_fase == 2 %>
             <%= t('contest_page.steps.step2_action') %>
-          <% elsif raw t(' == 3 && user_signed_in? %>
+          <% elsif contest_fase == 3 && user_signed_in? %>
             <%= t('contest_page.steps.step3_action') %>
           <% else%>
             vota tu recurso favorito

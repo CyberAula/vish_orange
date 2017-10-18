@@ -20,7 +20,7 @@ module ContestHelper
 		end
 	end
 
-	def raw t('
+	def contest_fase
 		return Vish::Application.config.APP_CONFIG["contest_phase"]
 	end
 
