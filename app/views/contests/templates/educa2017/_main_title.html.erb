@@ -5,20 +5,20 @@
     <!-- center sentence + buttons -->
     <div class="main-title main-title-contest">
       <div class="title">
-        <%if contest_fase <= 2 %>
+        <%if raw t(' <= 2 %>
           <%= t('contest_page.main_title.title1_html') %>
         <% end %>
-        <%if contest_fase == 3 %>
+        <%if raw t(' == 3 %>
           <%= t('contest_page.main_title.title2_html') %>
         <% end %>
-        <%if contest_fase == 4 %>
+        <%if raw t(' == 4 %>
           <%= t('contest_page.main_title.title3_html') %>
         <% end %>
 
       </div>
-      <%if contest_fase < 3 %>
+      <%if raw t(' < 3 %>
         <%if isUserEnrolled? %>
-            <%if contest_fase == 2 %>
+            <%if raw t(' == 2 %>
               <button id="btn_add_resource" class="btn btn-contest">
               <%= t('contest_page.steps.step2_action') %>
               </button>
@@ -50,7 +50,7 @@
 <%end%>
 
 
-<%if user_signed_in? && isUserEnrolled? && contest_fase == 2%>
+<%if user_signed_in? && isUserEnrolled? && raw t(' == 2%>
   <%= content_for :javascript do %>
       $("#btn_add_resource").click(function(){
         $("#add_resource_contest_button").click();

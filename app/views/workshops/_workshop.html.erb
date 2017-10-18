@@ -38,7 +38,7 @@
       </div>
       <!--views -->
       <div class="views">
-        <%if is_contest? && contest_fase!=3%>
+        <%if is_contest? && raw t('!=3%>
           <div class="fb-like" data-href="<%= url_for(excursion) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
         <%else%>
           <%if workshop.private_scope? %>
