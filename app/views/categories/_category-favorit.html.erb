@@ -1,6 +1,6 @@
 <li class="box-item category-favorit">
   <div class="category">
-    <%= link_to "<i class='fa fa-star'></i>".html_safe, category, :title => category.title %>
+    <%= link_to "<i class='fa fa-heart'></i>".html_safe, category, :title => category.title %>
   </div>
   <div class="caption">
     <h6>
@@ -9,7 +9,7 @@
     <div class="info-bottom">
       <hr class="soften">
       <!--like -->
-      <div class="like">    
+      <div class="like">
         <div class="count"> <%= category.post_activity.likes.count.to_s %> </div>
         <%= link_like(category.post_activity) %>
       </div>

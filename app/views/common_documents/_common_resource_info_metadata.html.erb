@@ -3,7 +3,19 @@
 
     <header>
       <table class="table table-hover">
-        
+        <%if contest_fase==3%>
+          <tr>
+            <td><span><%= t('contest_page.vote') %></span></td>
+            <td>
+              <div class="like">
+                <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
+                <%= link_like(resource.post_activity, :title =>t('contest_page.vote'))%>
+              </div>
+              <div class="fb-like" data-href="<%= url_for(resource) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+              <%= render partial: 'help/help_vote_contest' %>
+            </td>
+          </tr>
+        <%end%>
         <!--type-->
         <% unless resource.class.name.blank? %>
           <tr>

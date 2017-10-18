@@ -23,4 +23,10 @@ module ContestHelper
 	def contest_fase
 		return Vish::Application.config.APP_CONFIG["contest_phase"]
 	end
+
+	def is_contest?
+		if defined? @contest
+			return true
+		end
+	end
 end

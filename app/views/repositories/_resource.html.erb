@@ -38,30 +38,33 @@
     <hr>
 
     <div class="info-bottom">
-
-      <!--like -->
-      <div class="like like_contest">
-          <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
-          <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
-      </div>
-      <!--views -->
-      <div class="views">
-        <%if resource.private_scope? %>
-          <div class="private-resource-mark">
-            <i class="fa fa-lock"></i>
+          <!--like -->
+          <div class="like like_contest">
+              <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
+              <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
           </div>
-        <%else%>
-          <%=resource.visit_count.to_s%>
-          <i class="fa fa-eye"></i>
-        <%end%>
-      </div>
-      <%if defined?(with_share) && with_share%>
-         <button data-clipboard-text="<%=Vish::Application.config.full_domain + url_for(resource)%>" id="button_copy_clipboard" class="btn btn-secondary btn-copy" title="Copied!">
-           <i class="fa fa-copy"></i>Copiar Link
-         </button>
 
-      <%end%>
-      <div class="clear"></div>
+            <!--views -->
+            <div class="views">
+              <%if !is_contest? && contest_fase!=3%>
+                <div class="fb-like" data-href="<%= url_for(resource) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+              <%else%>
+                <%if resource.private_scope? %>
+                  <div class="private-resource-mark">
+                    <i class="fa fa-lock"></i>
+                  </div>
+                <%else%>
+                  <%=resource.visit_count.to_s%>
+                  <i class="fa fa-eye"></i>
+                <%end%>
+              <%end%>
+            </div>
+          <%if defined?(with_share) && with_share%>
+             <button data-clipboard-text="<%=Vish::Application.config.full_domain + url_for(resource)%>" id="button_copy_clipboard" class="btn btn-secondary btn-copy" title="Copied!">
+               <i class="fa fa-copy"></i>Copiar Link
+             </button>
+          <%end%>
+          <div class="clear"></div>
     </div>
   </div>
 </li>

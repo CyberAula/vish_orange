@@ -2,13 +2,13 @@
   <% default_sort_by = profile_subject_is_current? ? "updated_at" : "popularity"%>
   <% icon = profile_subject_is_current? ? "pencil" : "dashboard"%>
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown">
-    <i class="fa fa-<%=icon%>"></i> 
+    <i class="fa fa-<%=icon%>"></i>
     <%=t('order_by.' + default_sort_by)%>
     <i class="fa fa-angle-down"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dLabel">
     <li>
-      <a href="#" onclick="excursions_dropdown_select('popularity');" class="sort_by_selected" sort-by-key='popularity'> 
+      <a href="#" onclick="excursions_dropdown_select('popularity');" class="sort_by_selected" sort-by-key='popularity'>
         <i class="fa fa-dashboard"></i>
         <%=t('order_by.popularity')%>
       </a>
@@ -27,13 +27,13 @@
     </li>
     <li>
       <a href="#" onclick="excursions_dropdown_select('visits');" sort-by-key='visits'>
-        <i class="fa fa-eye"></i> 
+        <i class="fa fa-eye"></i>
         <%=t('order_by.visits')%>
       </a>
     </li>
     <li>
       <a href="#" onclick="excursions_dropdown_select('favorites');" sort-by-key='favorites'>
-        <i class="fa fa-star"></i> 
+        <i class="fa fa-heart"></i> 
         <%=t('order_by.favorites')%>
       </a>
     </li>
@@ -41,14 +41,14 @@
 </div>
 
 <%= content_for :javascript do %>
- 
+
   var param = "<%=params[:sort_by]%>";
 
   if(param && param!=""){
     var value = $("#order_by_selector_excursions .dropdown-menu [sort-by-key="+param+"]").html();
-    $("#dropdownMenuOrdByExcursions").html(value + '<i class="fa fa-angle-down"></i>'); 
+    $("#dropdownMenuOrdByExcursions").html(value + '<i class="fa fa-angle-down"></i>');
   }
-  
+
 <%end%>
 
 <script>
@@ -58,11 +58,11 @@ var excursions_dropdown_select = function(option) {
   $.ajax({
       type : "GET",
       url : "<%= user_url(profile_subject) %>/excursions?sort_by=" + option,
-      success : function(html) { 
+      success : function(html) {
         $("#order_by_selector_excursions").attr("li_selected", option);
         var value = $("#order_by_selector_excursions .dropdown-menu [sort-by-key="+option+"]").html();
         $("#dropdownMenuOrdByExcursions").html(value + '<i class="fa fa-angle-down"></i>');
-        $('.loader_pagination').hide();      
+        $('.loader_pagination').hide();
         $("#excursions_tab_ready").replaceWith(html);
         re_apply_pageless("excursions");
       },
