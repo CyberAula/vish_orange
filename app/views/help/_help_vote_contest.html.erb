@@ -1,0 +1,19 @@
+<span class="helpheader">
+  <a>
+    <i class="fa fa-question-circle" id="helpcontestid" data-toggle="popover" data-placement='left' aria-hidden="true" data-original-title="<%= t('contest_page.title')%>" href='#' value=""></i>
+  </a>
+  <div id="contenthelpexcursionid" style="display: none">
+    <div class="popover-body">
+      <p> <%= raw t('contest_page.vote_help')%> </p>
+    </div>
+  </div>
+</span>
+
+<%content_for :javascript do%>
+  $('#helpcontestid').popover({
+    html : true,
+    content: function() {
+      return $('#contenthelpexcursionid').html();
+    }
+  });
+<%end%>
