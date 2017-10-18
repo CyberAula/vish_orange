@@ -110,7 +110,21 @@ aside.recomended
             width: 145px
           td
             border: none
-            //border-color: #999
+            .vote-help
+              float: left
+              i
+                padding-top: 2px
+              .popover
+                .popover-content
+                  width: 410px
+                  padding: 15px
+            .vote-like
+              float: left
+              min-width: 35px
+              padding: 2px
+              .vote-count
+                float: left
+                margin-right: 5px
 
         .tagit-suggestions
           padding-left: 0
@@ -483,11 +497,16 @@ div.resource_common_fields_form
 .resource_is_embed_label
   margin-left: 5px
 
+
+
 .like_contest
   float: left
   margin: 0px 4px 0px 0
   .count
     margin-left: 0px
     font-size: small
-  .verb_like
-    margin-left: -2px
+
+.verb_like
+  color: $red_favorites !important
+  &:hover
+    color: darken($red_favorites, 20%) !important

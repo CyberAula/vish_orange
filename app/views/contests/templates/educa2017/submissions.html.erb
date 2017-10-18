@@ -1,3 +1,16 @@
 <%= render partial: 'contests/templates/'+@contest.name+'/main_title' , :locals => { :submissions => true }%>
 
 <%= render partial: 'contests/submissions_all', locals: { contest: @contest} %>
+
+<div id="fb-root"></div>
+<script>(function(){
+    if(document.getElementById('facebook-jssdk')){
+      return;
+    }
+    var facebook_js = document.createElement('script');
+    facebook_js.id = 'facebook-jssdk';
+    facebook_js.src = ("//connect.facebook.net/en_GB/all.js#xfbml=1&appId=" + "<%=Vish::Application.config.APP_CONFIG['facebook']['appID']%>");
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(facebook_js);
+  }());
+</script>

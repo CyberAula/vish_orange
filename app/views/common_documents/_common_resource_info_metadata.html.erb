@@ -3,7 +3,20 @@
 
     <header>
       <table class="table table-hover">
-        
+        <%if contest_phase==3%>
+          <tr>
+            <td><span><%= t('contest_page.vote') %></span></td>
+            <td>
+              <%= render partial: 'help/help_vote_contest' %>
+              <div class="like vote-like">
+                <div class="count vote-count"><%=resource.post_activity.likes.count.to_s%></div>
+                <div><%= link_like(resource.post_activity, :title =>t('contest_page.vote'))%></div>
+              </div>
+              <div class="fb-like" data-href="<%= url_for(resource) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+
+            </td>
+          </tr>
+        <%end%>
         <!--type-->
         <% unless resource.class.name.blank? %>
           <tr>
@@ -170,13 +183,13 @@
 
     <div class="panel-footer">
       <a class="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
-        <span id="showingMore" class="showMore accordion-toggle btn btn-secundary collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo" title="<%=t('excursion.actions.show_more')%>" status="collapsed"><%=t('excursion.actions.show_more')%></span>
+        <span id="showingMore" class="showMore accordion-toggle btn btn-secondary collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo" title="<%=t('excursion.actions.show_more')%>" status="collapsed"><%=t('excursion.actions.show_more')%></span>
       </a>
 
       <!--metadata-->
       <% displayMetadata = resource.respond_to?("metadata") %>
       <% if displayMetadata %>
-        <button href="#MetadataModal" id="showMeta" data-toggle="modal" class="btn btn-secundary">
+        <button href="#MetadataModal" id="showMeta" data-toggle="modal" class="btn btn-secondary">
           <%=t('excursion.actions.show_meta')%>
         </button>
       <%end%>

@@ -100,6 +100,10 @@ en:
       step1_action: "Sign up"
       step2_action: "Take part"
       step3_action: "Share"
+    title: "EducaInternet contest"
+    vote: "Vote"
+    vote_help: "We have organized a contest and we are in the voting phase. If you like this resource you can vote for it with the heart button or the Facebook like button. If you want to see more contest resources you can visit the contest page <a href='http://educainternet.es/contest/educa2017/page/submissions' target='_blank'>here</a>. Thanks for your cooperation."
+
 
     user_resources:
       intro: "GALLERY OF UPLOADED ENTRIES"

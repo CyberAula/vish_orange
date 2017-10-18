@@ -100,7 +100,10 @@ es:
         text3_html: "Si ta conoces el funcionamientopuedes<br><b>acceder directamente a tu perfil</b>"
       bt_upload: "Presentar recurso"
     participants: "TODOS LOS PARTICIPANTES"
+    title: "Concurso EducaInternet"
     vote_resources: "VOTA TU RECURSO FAVORITO"
+    vote: "Votar"
+    vote_help: "Hemos organizado un concurso de creación de recursos educativos sobre UsoSeguroTIC. Estamos en la fase de votación, si te gusta este recurso puedes votarlo tanto con el corazón como con el botón de like de Facebook. Si quieres ver otros recursos del concurso puedes visitar <a href='http://educainternet.es/contest/educa2017/page/submissions' target='_blank'>la página del concurso</a>. Muchas gracias por tu colaboración."
     winners:
       intro: "LOS GANADORES DEL CONCURSO"
 
