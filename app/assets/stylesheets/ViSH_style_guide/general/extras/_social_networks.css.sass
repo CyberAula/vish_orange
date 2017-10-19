@@ -81,6 +81,41 @@
   z-index: 999
 #YourPlayerID
   height: 100%
+  /*New code, make the playlist player view like in the responsive view but not depending on the device size, but allways*/
+  .ytv-video
+    position: relative
+    /* 16:9 of 70%*/
+    padding-bottom: 39.4%
+    height: 0
+    width: 70%
+  .ytv-video iframe
+    position: absolute
+    top: 0
+    left: 0
+  .ytv-list
+    width: 30%
+  .ytv-playlist-open .ytv-arrow
+    top: 0px
+  .ytv-list
+    position: relative
+    display: block
+    width: 0
+    padding-bottom: 40%
+    left: auto
+    right: auto
+    top: auto
+    width: 100%
+  .ytv-video
+    position: relative
+    /* 16:9 */
+    padding-bottom: 56.25%
+    height: 0
+    position: relative
+    display: block
+    left: auto
+    right: auto
+    top: auto
+    width: 100%
 
 .fb-like
   span

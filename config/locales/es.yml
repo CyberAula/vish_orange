@@ -67,7 +67,7 @@ es:
       action1: "Apúntate"
     modal_submission:
       title: "Selecciona uno de tus recursos y participa"
-      text_html: "Recuerda que para participar debes asegurarte de incluir <b>la dirección del Colegio y la Clase en la descripción del recurso</b>. <br>Si no sabes cómo hacerlo te ayudamos aquí"
+      text_html: "Recuerda que para participar debes asegurarte de incluir <b>la dirección del Colegio y la Clase en la descripción del recurso</b>. <br>Si no sabes cómo hacerlo te ayudamos <a target='_blank' href='https://www.youtube.com/watch?v=qZfql6wEl9U&t=9s'>aquí</a>"
       bt_upload: "Subir recurso"
       bt_cancel: "Cancelar"
     presentation:

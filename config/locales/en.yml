@@ -75,7 +75,7 @@ en:
       action1: "Sign up"
     modal_submission:
       title: "Select one of your resources and take part"
-      text_html: "Be sure to include your <b>school’s address and the class in the description of the resource</b>. <br>If you don´t know how to do it, we’ll help you here."
+      text_html: "Be sure to include your <b>school’s address and the class in the description of the resource</b>. <br>If you don´t know how to do it, we’ll help you <a target='_blank' href='https://www.youtube.com/watch?v=qZfql6wEl9U&t=9s'>here</a>."
       bt_upload: "Upload resource"
       bt_cancel: "Cancel"
     presentation:
