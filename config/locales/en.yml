@@ -128,14 +128,14 @@ en:
     subtitle: 'You will find all that is necessary to become an expert in Cybersecurity'
     title: 'Explore EducaInternet'
     entities:
-      title: "The principal organisations in Cybersecurity place at your disposal quality resources for you and your pupils"
+      title: "The principal <b>organisations in Cybersecurity</b> place at your disposal quality resources for you and your pupils"
     experts:
-      title: 'The ICT safety experts tell you everything you need to know'
+      title: 'The <b>ICT safety experts</b> tell you everything you need to know'
     favs:
-      title: 'Here are the EducaInternet users’ favourite resources'
+      title: 'Here are the EducaInternet users’ <b>favourite resources</b>'
     library:
       intro: 'LIBRARY'
-      title: 'Head over to the resources library and consult all the materials we have to offer'
+      title: 'Head over to the <a href="/search" class="primary">resources library</a> and consult all the materials we have to offer'
     quality_resources:
       title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:

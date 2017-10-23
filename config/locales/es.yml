@@ -117,16 +117,18 @@ es:
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
     title: 'Explora EducaInternet'
+    courses:
+      title: "Te ofrecemos gratuitamente <b>cursos acreditados online</b>, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     entities:
-      title: "Las principales entidades sobre ciberseguridad ponen a tu disposición recursos de calidad para ti y tus alumnos"
+      title: "Las principales <b>entidades sobre ciberseguridad</b> ponen a tu disposición recursos de calidad para ti y tus alumnos"
     experts:
-      title: 'Los expertos en seguridad TIC te cuentan todo lo que necesitas saber'
+      title: 'Los <b>expertos en seguridad TIC</b> te cuentan todo lo que necesitas saber'
     favs:
-      title: 'Aquí tienes los recursos favoritos de los usuarios de EducaInternet'
+      title: 'Aquí tienes los <b>recursos favoritos</b> de los usuarios de EducaInternet'
       text: 'Lorem ipsum...'
     library:
       intro: 'BIBLIOTECA'
-      title: 'Pásate por la biblioteca de recursos y consulta todos los materiales que te ofrecemos'
+      title: 'Pásate por la <a href="/search" class="primary">biblioteca de recursos</a> y consulta todos los materiales que te ofrecemos'
     quality_resources:
       title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:
