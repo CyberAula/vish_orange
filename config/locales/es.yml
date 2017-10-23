@@ -91,7 +91,8 @@ es:
       step3_text: "Difunde tu recurso para conseguir el mayor número de votos posibles."
       step1_action: "Apúntate"
       step2_action: "Participa"
-      step3_action: "Difunde"
+      step3_action: "Difunde tus recursos"
+      step3_action_nologed: "Vota tu recurso favorito"
     user_resources:
       intro: "GALERÍA DE RECURSOS PRESENTADOS"
       no_resources:
@@ -138,6 +139,7 @@ es:
       img: "contest17_illustration_ES.png"
       title: "¡Bienvenido al 2º Concurso EducaInternet!"
       text: "Participa creando con tu aula un recurso sobre el uso seguro de Internet. Inscríbete y accede a toda la información. Plazo de presentación del material digital: 31 de enero de 2018."
+    bt_aboutus: "conócenos"
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
     block2_tit: "Te ofrecemos gratuitamente cursos acreditados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     block3_tit: "Desata tu creatividad creando tus propios recursos, o mejor, ¡hazlo con tus alumnos!"
