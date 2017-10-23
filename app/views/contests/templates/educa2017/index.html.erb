@@ -89,7 +89,7 @@
 # <br/>
  %>
  <div id="fb-root"></div>
- <script>(function(){
+<%= content_for :javascript do%>
      if(document.getElementById('facebook-jssdk')){
        return;
      }
@@ -98,5 +98,15 @@
      facebook_js.src = ("//connect.facebook.net/en_GB/all.js#xfbml=1&appId=" + "<%=Vish::Application.config.APP_CONFIG['facebook']['appID']%>");
      var head = document.getElementsByTagName('head')[0];
      head.appendChild(facebook_js);
-   }());
- </script>
+
+     var controller = new YTV('playlist_contest', {
+        apiKey: "<%= Vish::Application.config.APP_CONFIG['YouTubeAPIKEY'] %>",
+   	    playlist: 'PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0',
+        accent: '#fff',
+        playerTheme: 'light',
+        listTheme: 'light',
+        playId:'4J5TJsINiTc',
+        responsive: false
+       });
+
+<%end%>
