@@ -118,7 +118,7 @@ es:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
     title: 'Explora EducaInternet'
     courses:
-      title: "Te ofrecemos gratuitamente <b>cursos acreditados online</b>, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
+      title: "Te ofrecemos gratuitamente <b>cursos certificados online</b>, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     entities:
       title: "Las principales <b>entidades sobre ciberseguridad</b> ponen a tu disposición recursos de calidad para ti y tus alumnos"
     experts:
@@ -143,7 +143,7 @@ es:
       text: "Participa creando con tu aula un recurso sobre el uso seguro de Internet. Inscríbete y accede a toda la información. Plazo de presentación del material digital: 31 de enero de 2018."
     bt_aboutus: "conócenos"
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
-    block2_tit: "Te ofrecemos gratuitamente cursos acreditados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
+    block2_tit: "Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     block3_tit: "Desata tu creatividad creando tus propios recursos, o mejor, ¡hazlo con tus alumnos!"
     block4_tit: "Trabajamos junto a los mejores expertos para ofrecerte los contenidos más actuales"
     block1_txt_html: "Aprende y enseña en el aula sobre el uso seguro y responsable de las tecnologías. En EducaInternet puedes encontrar recursos educativos para todas las edades. Además, hay muchos tipos de recursos, como <a href='/search?type=Picture'>imágenes</a>, <a href='/search?type=Audio'>audios</a>, <a href='/search?type=Link'>enlaces</a>, <a href='/search?type=Webapp'>Aplicaciones Web</a> ...puedes encontrar incluso el formato <a href='/search?type=Scormfile'>SCORM</a>, un estándar en educación y un mundo de posibilidades para tus alumnos"

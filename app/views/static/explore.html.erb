@@ -49,7 +49,17 @@
       <h2><%= raw t('explore_page.courses.title')%></h2>
     </div>
     <div class="content_block">
-
+      <div class="items">
+        <% begin
+            experts = [Excursion.find(331), Excursion.find(329), Excursion.find(333), Excursion.find(434), Excursion.find(679)]
+          rescue ActiveRecord::RecordNotFound => e
+            experts = Excursion.all.sample(5)
+          end %>
+          <%experts.each do |doc| %>
+            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+          <% end %>
+          <div class="clear"></div>
+      </div>
     </div>
   </article>
 
