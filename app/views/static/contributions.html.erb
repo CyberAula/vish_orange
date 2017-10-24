@@ -1,0 +1,112 @@
+<%content_for :banner do%>
+  <div class="main-box">
+    <img src="assets/orange/contributions.jpg" alt="cover_image">
+    <!-- center sentence + buttons -->
+    <div class="main-title">
+      <div class="title">
+        <h1>Contribuciones</h1>
+        <h2>¡Nos encanta el software libre!</h2>
+      </div>
+      <!--<button class="btn btn-white btn-main-title" onclick="location.href='/explore';">
+        <%= t('about_page.header_bt')%>
+     </button>-->
+    </div>
+  </div>
+<%end%>
+
+<section class="blocks">
+    <!-- BLOCK 1 -->
+  <div class="block_darker resources_box">
+    <div class="content_block">
+      <div class="p_block">
+        <h2>Además y como no podía ser de otra manera en una plataforma sobre el uso seguro de las TIC, somos responsables en el uso que hacemos de los materiales de <span class="bold">otros autores</span>:</h2>
+      </div>
+      
+      <div class="resources_box_gallery"><!--GALLERY-->
+
+        <div class="resource_item resource_item01">
+          <div class="resource_img resource_img_pixabay">
+            <a href="https://pixabay.com/" target="_blank">
+              <img src="assets/orange/tools/logo_pixabay.png" alt="Logo Pixabay">
+            </a>
+          </div>
+          <div class="resource_text">
+            <p>Más de 1.176.481 imágenes de alta calidad, ilustraciones y gráficos vectoriales. Gratis para uso comercial. Sin necesidad de mencionar autoría.</p>
+          </div>
+        </div>
+
+        <div class="resource_item resource_item02">
+          <div class="resource_img">
+            <a href="https://www.flaticon.es/" target="_blank">
+              <img src="assets/orange/tools/logo_flaticon.png" alt="Logo Flaticon">
+            </a>
+          </div>
+          <div class="resource_text">
+            <p>Hemos usado iconos de <a href="https://www.flaticon.es/packs/e-learning-5">Eucalyp</a>. Más de 573,000 iconos gratuitos, tanto para uso personal como comercial. Todos los iconos están disponibles en: SVG, EPS, PSD, Icon Font y PNG.</p>
+          </div>
+        </div>
+
+        <div class="resource_item resource_item03">
+          <div class="resource_img">
+            <a href="https://www.orange.es/" target="_blank">
+              <img src="assets/orange/logo_orange.png" alt="Logo Orange">
+            </a>
+          </div>
+          <div class="resource_text">
+            <p>Lorem fistrum qué dise usteer ese que llega apetecan jarl jarl quietooor. La caidita pecador te va a hasé pupitaa papaar papaar condemor.</p>
+          </div>
+        </div>
+
+      </div><!--GALLERY END-->
+
+    </div>
+  </div>
+
+  <!-- BLOCK 2 -->
+  <div class="block resources_box">
+    <div class="content_block">
+      <div class="p_block">
+        <h2>Utilizamos otros <span class="bold">recursos</span> de open source, que recomendamos:</h2>
+      </div>
+
+      <div class="resources_box_gallery"><!--GALLERY-->
+
+        <div class="resource_item resource_item01">
+          <div class="resource_img">
+            <a href="http://getbootstrap.com/" target="_blank">
+              <img src="assets/orange/tools/logo_bootstrap.png" alt="Logo Bootstrap">
+            </a>
+          </div>
+          <div class="resource_text">
+            <p>Cree proyectos responsive y mobile-first en la web con la biblioteca de componentes front-end más popular del mundo. Bootstrap es un framework de código abierto para desarrollar con HTML, CSS y JS.</p>
+          </div>
+        </div>
+
+        <div class="resource_item resource_item02">
+          <div class="resource_img resource_img_fontawesome">
+            <a href="http://fontawesome.io/" target="_blank">
+              <img src="assets/orange/tools/logo_font-awesome.png" alt="Logo Font Awesome">
+            </a>
+          </div>
+          <div class="resource_text">
+            <p>Font Awesome te ofrece iconos vectoriales escalables que se pueden personalizar al instante: tamaño, color, sombra y todo lo que se pueda hacer con el poder de CSS.</p>
+          </div>
+        </div>
+
+      </div><!--GALLERY END-->
+
+    </div>
+  </div>
+
+  <!-- BLOCK 3 -->
+  <div class="block_darker resources_contact">
+    <div class="content_block">
+      <div class="p_block">
+        <h2>Si tienes cualquier duda puedes ponerte en <a href="mailto:virtual.science.hub@gmail.com">contacto</a> con nosotros en cualquier momento.</h2>
+      </div>
+    </div>
+  </div>
+
+  
+  <%= render :partial => "shared/create_account" %>
+</section>

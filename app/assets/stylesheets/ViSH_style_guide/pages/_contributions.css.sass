@@ -1,0 +1,43 @@
+.blocks
+  @include blocks
+  
+  .resources_box
+    display: flex
+    justify-content: center
+    .content_block
+    .p_block
+      padding-top: 2em
+      text-align: center
+    .resources_box_gallery
+      padding: 3em 0
+      width: 80%
+      display: flex
+      margin: auto
+      .resource_item
+        display: flex
+        flex-flow: column nowrap
+        align-items: center
+        padding: 1em
+        .resource_img
+          max-width: 130px
+          &.resource_img_pixabay
+            max-width: 250px
+          &.resource_img_fontawesome
+            max-width: 175px
+          img
+            width: 100%
+            padding: 8px
+            opacity: .4em
+            filter: grayscale(100%)
+            &:hover
+              opacity: 1
+              filter: grayscale(0%)
+        .resource_text
+          text-align: center
+          font-weight: 200
+
+  .resources_contact
+    .content_block
+    .p_block
+      padding: 1em
+      text-align: center

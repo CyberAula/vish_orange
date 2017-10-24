@@ -49,6 +49,7 @@ Vish::Application.routes.draw do
   match 'about' => 'static#about_us'
   match 'whatwedo' => 'static#what_we_do'
   match 'explore' => 'static#explore'
+  match 'contributions' => 'static#contributions'
   match 'download_perm_request' => 'static#download_perm_request'
   match 'user_manual' => 'static#download_user_manual'
 
