@@ -25,16 +25,16 @@
       </div>
     </div>
     <div class="content_block">
-      <h2><%= t('explore_page.teacher.title')%></h2>
+      <h2><%= raw t('explore_page.teacher.title')%></h2>
       <div class="category_links">
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=sexting'">Sexting</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=privacy'">Privacidad</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=cyberbullying'">Ciberacoso</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=grooming'">Grooming</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=info_management'">Gestión información</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=netiquette'">Netiqueta</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=virus_protection'">Virus y fraudes</button>
-        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=tecnoaddictions'">Tecnoadicciones</button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=sexting'"><%= t('explore_page.teacher.category_links.sexting')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=privacy'"><%= t('explore_page.teacher.category_links.privacy')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=cyberbullying'"><%= t('explore_page.teacher.category_links.ciber_bulling')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=grooming'"><%= t('explore_page.teacher.category_links.grooming')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=info_management'"><%= t('explore_page.teacher.category_links.information_management')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=netiquette'"><%= t('explore_page.teacher.category_links.netiquette')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=virus_protection'"><%= t('explore_page.teacher.category_links.viruses_cheats')%></button>
+        <button class="btn btn-default" onclick="location.href='/search?type=Learning_object&category_ids=tecnoaddictions'"><%= t('explore_page.teacher.category_links.techno-addictions')%></button>
       </div>
     </div>
   </article>
@@ -51,12 +51,16 @@
     <div class="content_block">
       <div class="items">
         <% begin
-            experts = [Excursion.find(331), Excursion.find(329), Excursion.find(333), Excursion.find(434), Excursion.find(679)]
+            courses = [Course.find(1), Course.find(2), Course.find(3), Course.find(4), Course.find(5)]
           rescue ActiveRecord::RecordNotFound => e
-            experts = Excursion.all.sample(5)
+            courses = Course.all.sample(5)
           end %>
-          <%experts.each do |doc| %>
-            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+          <%courses.each do |doc| %>
+            <% if doc.end_date < Date.today %>
+              <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+            <% else %>
+              <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+            <% end %>
           <% end %>
           <div class="clear"></div>
       </div>

@@ -133,7 +133,16 @@ es:
       title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:
       intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
-      title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
+      title: 'Trabajamos junto a los grandes <b>expertos en seguridad TIC</b>, para que tengas disponibles los mejores recursos sobre'
+      category_links:
+        sexting: "Sexting"
+        privacy: "Privacidad"
+        ciber_bulling: "Ciberacoso"
+        grooming: "Grooming"
+        information_management: "Gestión información"
+        netiquette: "Netiqueta"
+        viruses_cheats: "Virus y fraudes"
+        techno-addictions: "Tecnoadicciones"
   home_page:
     title: "Bienvenido a EducaInternet"
     subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"

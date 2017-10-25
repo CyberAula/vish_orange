@@ -140,8 +140,16 @@ en:
       title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:
       intro: 'IF YOU ARE A TEACHER, THIS IS YOUR PLACE'
-      title: 'We work together with the finest experts to offer you, for free, the best resources regarding the responsible and safe use of ICT'
-
+      title: 'We work together with the <b>finest experts</b> to offer you, for free, the best resources regarding the responsible and safe use of ICT'
+      category_links:
+        sexting: "Sexting"
+        privacy: "Privacy"
+        ciber_bulling: "Ciber bulling"
+        grooming: "Grooming"
+        information_management: "Information management"
+        netiquette: "Netiquette"
+        viruses_cheats: "Viruses and cheats"
+        techno-addictions: "Techno-adicctions"
   home_page:
     title: "Welcome to EducaInternet"
     subtitle: "The reference centre for the education community about the safe and responsible use of ICT"
