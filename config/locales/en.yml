@@ -35,6 +35,7 @@ en:
 
   contest_page:
     delete_resource_confirm: You are going to take this resource off the contest. Are you sure?
+    do_login: "Sign in to participate in the contest and win great prizes"
     educatips:
       launch_subtitle: "Behave the same way online as you would offline"
       launch_text: "“Online, always be honest about your identity and be respectful.” The first of David Calle’s EducaTips helps you to teach your pupils the importance of not doing on the Internet what you would not do in real life."
@@ -103,8 +104,6 @@ en:
     title: "EducaInternet contest"
     vote: "Vote"
     vote_help: "We have organized a contest and we are in the voting phase. If you like this resource you can vote for it with the heart button or the Facebook like button. If you want to see more contest resources you can visit the contest page <a href='http://educainternet.es/contest/educa2017/page/submissions' target='_blank'>here</a>. Thanks for your cooperation."
-
-
     user_resources:
       intro: "GALLERY OF UPLOADED ENTRIES"
       no_resources:
@@ -116,6 +115,10 @@ en:
     vote_resources: "VOTE YOUR FAVOURITE RESOURCE"
     winners:
       intro: "THE COMPETITION WINNERS"
+
+  contributions_page:
+    text1: "hello"
+    text2: "hello2"
 
   create_account:
     title_html: "Create your account for free and become an expert <br>in the safe and responsible use of ICT"

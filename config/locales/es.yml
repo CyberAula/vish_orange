@@ -28,6 +28,7 @@ es:
         title: "Resumen del primer concurso EducaInternet"
         text: "Alumnos y profesores nos cuentan su experiencia en el concurso EducaInternet y cómo gestionaron el trabajo colaborativo con sus alumnos guiándose por los módulos ¡Averigua también cómo se desarrolló el taller con las aulas ganadoras y el cohete que crearon y lanzaron al espacio!"
     delete_resource_confirm: Vas a desinscribir este recurso del concurso. ¿Estás seguro?
+    do_login: "Haz login para participar en el Concurso y ganar los mejores premios"
     educatips:
       launch_subtitle: "Compórtate igual de bien <i>'on'</i> que <i>'off'</i>"
       launch_text: "En Internet, lo que mola es ir siempre de frente y dando la cara con educación. El primer EducaConsejo de David Calle te ayuda a enseñar a tus alumnos la importancia de no hacer en Internet lo que no harían en la vida real."
@@ -106,6 +107,10 @@ es:
     vote_help: "Hemos organizado un concurso de creación de recursos educativos sobre UsoSeguroTIC. Estamos en la fase de votación, si te gusta este recurso puedes votarlo tanto con el corazón como con el botón de like de Facebook. Si quieres ver otros recursos del concurso puedes visitar <a href='http://educainternet.es/contest/educa2017/page/submissions' target='_blank'>la página del concurso</a>. Muchas gracias por tu colaboración."
     winners:
       intro: "LOS GANADORES DEL CONCURSO"
+  
+  contributions_page:
+    text1: "hola"
+    text2: "HOLA2"
 
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"

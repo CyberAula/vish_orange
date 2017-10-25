@@ -1,6 +1,6 @@
+
 .blocks
   @include blocks
-  
   .resources_box
     display: flex
     justify-content: center
@@ -19,6 +19,7 @@
         align-items: center
         padding: 1em
         .resource_img
+          heigh: 50px
           max-width: 130px
           &.resource_img_pixabay
             max-width: 250px
@@ -41,3 +42,15 @@
     .p_block
       padding: 1em
       text-align: center
+
+@media (max-width: 1099px)
+  .title_contributions
+    padding-top: 1.5em
+
+@media (max-width: 768px)
+  .resources_box_gallery
+    flex-wrap: wrap
+
+
+
+

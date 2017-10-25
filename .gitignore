@@ -16,7 +16,7 @@
 config/database.yml
 config/initializers/exception_notification.rb
 config/initializers/social_stream-ostatus.rb
-config/development.sphinx.conf
+config/development.sphinx.conf*
 config/initializers/loep_token.rb
 config/application_config.yml
 config/deploy/*
