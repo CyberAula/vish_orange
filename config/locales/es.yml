@@ -91,7 +91,8 @@ es:
       step3_text: "Difunde tu recurso para conseguir el mayor número de votos posibles."
       step1_action: "Apúntate"
       step2_action: "Participa"
-      step3_action: "Difunde"
+      step3_action: "Difunde tus recursos"
+      step3_action_nologed: "Vota tu recurso favorito"
     user_resources:
       intro: "GALERÍA DE RECURSOS PRESENTADOS"
       no_resources:
@@ -116,21 +117,32 @@ es:
   explore_page:
     subtitle: 'Encontrarás todo lo necesario para convertirte en un experto en ciberseguridad'
     title: 'Explora EducaInternet'
+    courses:
+      title: "Te ofrecemos gratuitamente <b>cursos certificados online</b>, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     entities:
-      title: "Las principales entidades sobre ciberseguridad ponen a tu disposición recursos de calidad para ti y tus alumnos"
+      title: "Las principales <b>entidades sobre ciberseguridad</b> ponen a tu disposición recursos de calidad para ti y tus alumnos"
     experts:
-      title: 'Los expertos en seguridad TIC te cuentan todo lo que necesitas saber'
+      title: 'Los <b>expertos en seguridad TIC</b> te cuentan todo lo que necesitas saber'
     favs:
-      title: 'Aquí tienes los recursos favoritos de los usuarios de EducaInternet'
+      title: 'Aquí tienes los <b>recursos favoritos</b> de los usuarios de EducaInternet'
       text: 'Lorem ipsum...'
     library:
       intro: 'BIBLIOTECA'
-      title: 'Pásate por la biblioteca de recursos y consulta todos los materiales que te ofrecemos'
+      title: 'Pásate por la <a href="/search" class="primary">biblioteca de recursos</a> y consulta todos los materiales que te ofrecemos'
     quality_resources:
       title: 'Estos son los recursos educativos favoritos de los usuarios de EducaInternet'
     teacher:
       intro: 'SI ERES PROFESOR, ESTE ES TU SITIO'
-      title: 'Trabajamos junto a los grandes expertos en seguridad TIC, para que tengas disponibles los mejores recursos'
+      title: 'Trabajamos junto a los grandes <b>expertos en seguridad TIC</b>, para que tengas disponibles los mejores recursos sobre'
+      category_links:
+        sexting: "Sexting"
+        privacy: "Privacidad"
+        ciber_bulling: "Ciberacoso"
+        grooming: "Grooming"
+        information_management: "Gestión información"
+        netiquette: "Netiqueta"
+        viruses_cheats: "Virus y fraudes"
+        techno-addictions: "Tecnoadicciones"
   home_page:
     title: "Bienvenido a EducaInternet"
     subtitle: "El centro de referencia para la comunidad educativa sobre el uso seguro y responsable de las TIC"
@@ -138,8 +150,9 @@ es:
       img: "contest17_illustration_ES.png"
       title: "¡Bienvenido al 2º Concurso EducaInternet!"
       text: "Participa creando con tu aula un recurso sobre el uso seguro de Internet. Inscríbete y accede a toda la información. Plazo de presentación del material digital: 31 de enero de 2018."
+    bt_aboutus: "conócenos"
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
-    block2_tit: "Te ofrecemos gratuitamente cursos acreditados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
+    block2_tit: "Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
     block3_tit: "Desata tu creatividad creando tus propios recursos, o mejor, ¡hazlo con tus alumnos!"
     block4_tit: "Trabajamos junto a los mejores expertos para ofrecerte los contenidos más actuales"
     block1_txt_html: "Aprende y enseña en el aula sobre el uso seguro y responsable de las tecnologías. En EducaInternet puedes encontrar recursos educativos para todas las edades. Además, hay muchos tipos de recursos, como <a href='/search?type=Picture'>imágenes</a>, <a href='/search?type=Audio'>audios</a>, <a href='/search?type=Link'>enlaces</a>, <a href='/search?type=Webapp'>Aplicaciones Web</a> ...puedes encontrar incluso el formato <a href='/search?type=Scormfile'>SCORM</a>, un estándar en educación y un mundo de posibilidades para tus alumnos"

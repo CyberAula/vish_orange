@@ -1,6 +1,8 @@
-<div class="layout_form_WS">
-  <div class="modal-header">
-  <h1><%=t('course.new')%></h1>
+<section class="new_course_page">
+  <div class="layout_form_WS modal-content">
+    <div class="modal-header">
+      <h1><%=t('course.new')%></h1>
+    </div>
+    <%= render :partial => "common_resources/form" , :locals => {:resource => @course }%>
   </div>
-  <%= render :partial => "common_resources/form" , :locals => {:resource => @course }%>
-</div>
+</section>
