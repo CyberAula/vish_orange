@@ -51,13 +51,13 @@
     <div class="content_block">
       <div class="items">
         <% begin
-            courses = [Course.find(1), Course.find(2), Course.find(3), Course.find(4), Course.find(5)]
+            courses = [Course.find(6), Course.find(5), Course.find(4), Course.find(3), Course.find(2)]
           rescue ActiveRecord::RecordNotFound => e
             courses = Course.all.sample(5)
           end %>
           <%courses.each do |doc| %>
-            <% if doc.end_date < Date.today %>
-              <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+            <% if doc.end_date && doc.end_date < Date.today %>
+              <%= render partial: 'repositories/resource', locals: { resource: doc, extra_class: "closed"} %>
             <% else %>
               <%= render partial: 'repositories/resource', locals: { resource: doc} %>
             <% end %>
