@@ -57,9 +57,9 @@
           end %>
           <%courses.each do |doc| %>
             <% if doc.end_date && doc.end_date < Date.today %>
-              <%= render partial: 'repositories/resource', locals: { resource: doc, extra_class: "closed"} %>
+              <%= render partial: 'courses/course', locals: { course: doc, extra_class: "closed"} %>
             <% else %>
-              <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+              <%= render partial: 'courses/course', locals: { course: doc} %>
             <% end %>
           <% end %>
           <div class="clear"></div>
