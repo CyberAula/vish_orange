@@ -1,3 +1,6 @@
+<%content_for :title do%> Concurso EducaInternet 2017<%end%>
+<%content_for :description do%>Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos. Inscríbete con tu clase y descubre todos los materiales formativos que te ofrecemos para que puedas apoyar a tus alumnos en sus necesidades educativas.<%end%>
+
 <!--contest image -->
 <%= render partial: 'contests/templates/'+@contest.name+'/main_title', :locals => { :submissions => false }%>
 
@@ -36,7 +39,7 @@
   <%if contest_phase >= 1 %>
     <!--educaTips -->
     <%= render partial: 'contests/templates/'+@contest.name+'/educatips' %>
-    
+
   <%end%>
   <%if contest_phase <= 2 || (contest_phase===3 &&  isUserEnrolled?) %>
     <!-- 3 steps -->
