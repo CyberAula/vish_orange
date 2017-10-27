@@ -121,25 +121,31 @@
     overflow: hidden
     width: 100%
     height: 320px
-    
     img
       width: 100%
       position: absolute
       top: -200px
     .main-title
       min-height: 320px
+      width: 100%
       background: $opacity2
       position: relative
       text-align: center
-      padding: 128px 160px 60px
-      margin: 0 auto
+      display: flex
+      flex-flow: column wrap
+      justify-content: center
+      align-items: center
+
       &.main-title-contest
         min-height: auto
-      .btn-main-title
-        width: 128px
-        margin-top: 24px
+        justify-content: flex-end
+        flex-flow: row nowrap
+        .title
+          margin-top: 0
 
       .title
+        width: 100%
+        margin-top: 3em
         font-family: $font-family-sans-serif-titles
         color: #fff
         font-weight: 500
@@ -150,10 +156,18 @@
         h2
           font-size: 2em
           font-weight: 300
-          max-width: 70%
+          max-width: 60%
           margin: 4px auto
 
+      .main-buttons
+        display: flex
+        justify-content: center
+        margin-top: 1em
+        .btn-main-title
+          width: 8em
+
   .main-box-contest
+    height: auto
     .img_contest
       top: 0px
     .img_contest_16
@@ -162,8 +176,6 @@
       background: transparent
       padding: 26vw 3vw 1vw
       text-align: right
-      display: flex
-      justify-content: flex-end
       .btn-main-title-contest
         margin: 8px 15px
         height: 35px
@@ -239,12 +251,7 @@
       height: 320px
       img
         top: -200px
-      .main-title
-        padding: 90px 60px 40px
-        .title
-          h1
-            font-size: 3.6em
-
+    
     .main-box-contest
       height: auto
       .main-title-contest
@@ -268,20 +275,19 @@
       img
         top: -120px
       .main-title
-        padding: 80px 40px
-        .btn-main-title
-          margin-top: 10px
         .title
           h1
-            font-size: 3em
+            font-size: 2.5em
           h2
-            font-size: 2em
+            font-size: 1.5em
+            
     .main-box-contest
       height: auto
       .img_contest
         top: 10px
       .main-title-contest
         padding: 26vw 3vw 1vw
+
 @media (min-width: 481px) and (max-width: 767px)
   .entities
     .entities_front
@@ -304,14 +310,13 @@
       img
         top: -60px
       .main-title
-        padding: 70px 40px 120px
-        .btn-main-title
-          margin-top: 10px
+        margin-top: -1em
         .title
+          margin-top: 0
           h1
-            font-size: 2.4em
+            font-size: 2.5em
           h2
-            font-size: 1.6em
+            font-size: 1.5em
     .main-box-contest
       height: auto
       .img_contest
@@ -342,24 +347,26 @@
         top: 0px
       .main-title
         min-height: none
-        padding: 80px 40px
         .title
           h1
             font-size: 1.8em
+            margin-top: -1.5em
           h2
             display: none
-        .btn-main-title-home
-          height: 40px
-          width: 50%
-          position: absolute
-          top: 186px
-          border: 0
-          &.btn-right
-            right: 0
-            margin-left: 0
-            background-color: #ededed
-          &.btn-left
-            left: 0
+        .main-buttons
+          margin-top: 1em
+          .btn-main-title-home
+            margin-top: 1.7em
+            height: 40px
+            width: 50%
+            position: absolute
+            border: 0
+            &.btn-right
+              right: 0
+              margin-left: 0
+              background-color: #ededed
+            &.btn-left
+              left: 0
     .main-box-contest
       height: auto
       .img_contest

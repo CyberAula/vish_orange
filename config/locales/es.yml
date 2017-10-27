@@ -110,8 +110,8 @@ es:
       intro: "LOS GANADORES DEL CONCURSO"
   
   contributions_page:
-    text1: "hola"
-    text2: "HOLA2"
+    subtitle: '¡Nos encanta el software libre!'
+    title: 'Software libre'
 
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"

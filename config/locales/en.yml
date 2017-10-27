@@ -118,8 +118,8 @@ en:
       intro: "THE COMPETITION WINNERS"
 
   contributions_page:
-    text1: "hello"
-    text2: "hello2"
+    subtitle: '¡We love open software!'
+    title: 'Open Software'
 
   create_account:
     title_html: "Create your account for free and become an expert <br>in the safe and responsible use of ICT"

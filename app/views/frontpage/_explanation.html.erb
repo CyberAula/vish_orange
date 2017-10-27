@@ -7,13 +7,15 @@
       <h1><%= t('home_page.title')%></h1>
       <h2><%= t('home_page.subtitle')%></h2>
     </div>
-    <button class="btn btn-primary btn-left btn-main-title btn-main-title-home" onclick="location.href='/explore';">
-      <%= t('orange_front.carousel.title2')%>
-   </button>
-   <button class="btn btn-white btn-main-title btn-main-title-home btn-right margin_5_left" onclick="location.href='/about';">
+    <div class="main-buttons">
+      <button class="btn btn-primary btn-left btn-main-title btn-main-title-home" onclick="location.href='/explore';">
+        <%= t('orange_front.carousel.title2')%>
+     </button>
+     <button class="btn btn-white btn-main-title btn-main-title-home btn-right margin_5_left" onclick="location.href='/about';">
 
-     <%= t('home_page.bt_aboutus')%>
-  </button>
+       <%= t('home_page.bt_aboutus')%>
+      </button>
+    </div>
   </div>
 </div>
 
