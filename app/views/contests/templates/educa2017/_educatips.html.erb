@@ -12,36 +12,19 @@
   </div>
 
   <div class="content_block">
-    <div class="items item_tip">
-      <% begin
-        educaconsejos = [Link.find(504)]
-      rescue ActiveRecord::RecordNotFound => e
-        educaconsejos = Document.all.sample(1)
-      end %>
-      <% educaconsejos.each do |doc| %>
-        <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-      <% end %>
+
+    <div class="img_block">
+      <a href="/educatip1.html" target="_blank">
+      <i class="fa fa-play-circle-o fa-4x"></i>
+      <img src="/assets/orange/contest17_first_tip.jpg" alt="Imagen de David Calle" class="img_contest">
+      </a>
     </div>
-    <div class="text_block text_tip align_center">
-      <h2 class="align_center"><%=raw t('contest_page.educatips.launch_subtitle') %></h2>
-      <p class="p_block">
-        <%= t('contest_page.educatips.launch_text') %>
-      </p>
+    <div class="img_block">
+      <a href="/educatip2.html" target="_blank">
+      <i class="fa fa-play-circle-o fa-4x"></i>
+      <img src="/assets/orange/contest17_second_tip.jpg" alt="Imagen de David Calle" class="img_contest">
+      </a>
     </div>
 
-
-
-    <!--<p class="p_block basic_block"><%#= t('contest_page.educatips.text')%></p>-->
-    <!--<div class="items">
-        <%# begin
-          educaconsejos = [Link.find(504), Document.find(9229), Document.find(9218), Document.find(9228)]
-        rescue ActiveRecord::RecordNotFound => e
-          educaconsejos = Document.all.sample(4)
-        end %>
-        <%# educaconsejos.each do |doc| %>
-          <%#= render partial: 'repositories/resource', locals: { resource: doc} %>
-        <%# end %>
-      <div class="clear"></div>
-    </div>-->
   </div>
 </article>

@@ -6,29 +6,26 @@
     justify-content: center
     .content_block
     .p_block
+      margin: 0 auto
+      width: 70%
       padding-top: 2em
       text-align: center
     .resources_box_gallery
       padding: 3em 0
       width: 80%
       display: flex
+      justify-content: center
       margin: auto
       .resource_item
+        width: 33%
         display: flex
-        flex-flow: column nowrap
+        flex-direction: column
         align-items: center
         padding: 1em
         .resource_img
-          heigh: 50px
-          max-width: 130px
-          &.resource_img_pixabay
-            max-width: 250px
-          &.resource_img_fontawesome
-            max-width: 175px
           img
-            width: 100%
+            height: 80px
             padding: 8px
-            opacity: .4em
             filter: grayscale(100%)
             &:hover
               opacity: 1
@@ -43,14 +40,15 @@
       padding: 1em
       text-align: center
 
-@media (max-width: 1099px)
-  .title_contributions
-    padding-top: 1.5em
+
 
 @media (max-width: 768px)
-  .resources_box_gallery
-    flex-wrap: wrap
-
-
-
-
+  .blocks
+    .resources_box
+      .p_block
+        width: 100%
+      .resources_box_gallery
+        flex-wrap: wrap
+        justify-content: center
+        .resource_item
+          width: 100%

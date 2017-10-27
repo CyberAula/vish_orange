@@ -190,10 +190,12 @@ es:
       desc3: "Aprende de los contenidos y enseña a tus alumnos sobre temas tan importantes como ciberacoso, sexting, tecnoadicciones, etc. Recuerda que tus alumnos podrán también crear contenidos relacionados con los temas aquí presentes y así 'aprender haciendo'."
       title4: "Ir al blog"
     community: "Comunidad"
+    
     footer:
       about: "Sobre Nosotros"
       community: "Comunidad"
       contact: "Contacto"
+      contributions: "Contribuciones"
       cookies: "Cookies"
       conditions: "Condiciones de uso"
       contributors: "Comité asesor"
@@ -1278,6 +1280,7 @@ es:
       all_resources: "Todos los Recursos"
       audio: "Audios"
       category: "Categorías"
+      course: "Cursos"
       document: "Documentos"
       embed: "Embeds"
       event: "Eventos"

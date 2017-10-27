@@ -35,8 +35,8 @@
 
   <%if contest_phase >= 1 %>
     <!--educaTips -->
-    <%#= render partial: 'contests/templates/'+@contest.name+'/educatips' %>
-    <%= render partial: 'contests/templates/'+@contest.name+'/first_educatip' %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/educatips' %>
+    
   <%end%>
   <%if contest_phase <= 2 || (contest_phase===3 &&  isUserEnrolled?) %>
     <!-- 3 steps -->
