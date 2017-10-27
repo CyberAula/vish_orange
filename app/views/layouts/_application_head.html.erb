@@ -8,7 +8,7 @@
 <meta property="og:title" content="<%= yield(:title).empty? ? t('site.current.title') : yield(:title) %>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="<%=Vish::Application.config.name%>">
-<meta property="og:url" content="<%= request.original_url %>">
+<meta property="og:url" content="<%= yield(:url).empty? ? request.original_url : yield(:url)  %>">
 <meta property="og:description" content="<%= yield(:description) %>">
 
 <meta property="og:locale" content="<%=get_facebook_locales(I18n.locale)%>">

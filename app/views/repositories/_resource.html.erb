@@ -1,6 +1,6 @@
 <% return if resource.nil? or resource.author.nil? %>
 
-<li class="resource box-item" <%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
+<li class="resource box-item <%if defined?(extra_class)%><%=extra_class%><%end%>" <%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
 
   <!-- corner -->
   <%= link_to(resource) do %>
@@ -23,27 +23,22 @@
 
   <!-- INFO -->
   <div class="caption">
-
     <!-- Title -->
     <h6>
       <%= link_to resource.title, resource %>
     </h6>
-
     <!-- Author -->
     <span class="author">
       <span class="by"><%=t('by')%></span>
       <%= link_to truncate_name(resource.author.name, length: 25), resource.author.subject %>
     </span>
-
     <hr>
-
     <div class="info-bottom">
           <!--like -->
           <div class="like like_contest">
               <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
               <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
           </div>
-
             <!--views -->
             <div class="views">
               <%if is_contest? && contest_phase==3%>

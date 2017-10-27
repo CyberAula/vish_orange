@@ -22,7 +22,8 @@
           <% elsif contest_phase == 3 && user_signed_in? %>
             <%= t('contest_page.steps.step3_action') %>
           <% else%>
-            vota tu recurso favorito
+            <%= t('contest_page.steps.step3_action_nologed') %>
+
           <% end %>
 
         </button>

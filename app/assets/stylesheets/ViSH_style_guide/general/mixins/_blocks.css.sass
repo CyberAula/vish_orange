@@ -1,5 +1,5 @@
 
-@mixin contest_block
+@mixin block
   background: $white
   width: 100%
   padding: 2em
@@ -28,6 +28,12 @@
       b
         color: $gray-dark
   .content_block
+    @include flex_container
+    margin: 0 auto
+    padding: 10px
+    max-width: 70%
+    @media (max-width: 900px)
+      max-width: 90%
     h2
       color: $gray-dark
       font-weight: 300
@@ -39,12 +45,6 @@
       line-height: 1.6em
       font-weight: 300
       padding: 10px
-    @include flex_container
-    margin: 0 auto
-    padding: 10px
-    max-width: 70%
-    @media (max-width: 900px)
-      max-width: 90%
     .text_block,.video_block,.basic_block,.img_block
       width: 100%
       @media (min-width: 800px)
@@ -163,7 +163,7 @@
       margin: 10px
 
 
-@mixin blocks
+@mixin home_blocks
   .block, .block_darker
     width: 100%
     padding: 25px

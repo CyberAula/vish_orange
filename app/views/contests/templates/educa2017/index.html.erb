@@ -1,3 +1,6 @@
+<%content_for :title do%> Concurso EducaInternet 2017<%end%>
+<%content_for :description do%>Una oportunidad de convertirte en un referente en nuevas tecnologías para tus alumnos. Inscríbete con tu clase y descubre todos los materiales formativos que te ofrecemos para que puedas apoyar a tus alumnos en sus necesidades educativas.<%end%>
+
 <!--contest image -->
 <%= render partial: 'contests/templates/'+@contest.name+'/main_title', :locals => { :submissions => false }%>
 
@@ -36,13 +39,12 @@
   <%if contest_phase >= 1 %>
     <!--educaTips -->
     <%= render partial: 'contests/templates/'+@contest.name+'/educatips' %>
-    
+
   <%end%>
   <%if contest_phase <= 2 || (contest_phase===3 &&  isUserEnrolled?) %>
     <!-- 3 steps -->
     <%= render partial: 'contests/templates/'+@contest.name+'/steps' %>
   <%end%>
-
 
   <%if contest_phase <= 2 %>  <!-- **** este no tengo muy claro si debe estar tb en fase 3 -->
   <!-- help center -->
@@ -57,38 +59,7 @@
   <%= render :partial => "shared/create_account" %>
 </section>
 
-<%
-# <h3> This page is a template used for testing Contests. </h3>
-# <h4> Feel free to copy it to create your own contest. </h4>
-# <br/>
-#
-# <h4> Additional pages. </h4>
-# <p>Go to <a href="<%=contest_page_path(@contest,"page2",true)">page 2</a> of the contest.</p>
-# <br/>
-#
-# <h4> Enroll/Disenroll form </h4>
-# <%= render partial: 'contests/enroll', locals: { contest: @contest}
-# <br/>
-#
-# <h4> Mail List </h4>
-# <%= render partial: 'contests/mail_list', locals: { contest: @contest}
-# <br/>
-#
-# <h4> Submissions </h4>
-# <%= render partial: 'contests/submissions', locals: { contest: @contest}
-# <br/>
-# <p><a href="<%=contest_page_path(@contest,"submissions",true)">View all</a></p>
-# <br/>
-#
-# <h4> Submit your resource: </h4>
-# <%= render partial: 'contests/submission', locals: { contest: @contest}
-# <br/>
-#
-# <h4> Your submissions: </h4>
-# <%= render partial: 'contests/submissions_user', locals: { contest: @contest}
-# <br/>
- %>
- <div id="fb-root"></div>
+<div id="fb-root"></div>
 <%= content_for :javascript do%>
      if(document.getElementById('facebook-jssdk')){
        return;
