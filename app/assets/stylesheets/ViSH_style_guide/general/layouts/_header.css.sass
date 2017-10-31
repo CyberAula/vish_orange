@@ -28,8 +28,14 @@
         color: #333
         font-weight: 200
         outline: none
+        @media (max-width: 768px)
+          display: none
         .logo_bold
           font-weight: 600
+      .logo_img
+        display: none
+        @media (max-width: 768px)
+          display: block
 
     .hidden-phone
       @media (max-width: 768px)

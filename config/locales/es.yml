@@ -112,6 +112,13 @@ es:
   contributions_page:
     subtitle: '¡Nos encanta el software libre!'
     title: 'Software libre'
+    authors: 'Además y como no podía ser de otra manera en una plataforma sobre el uso seguro de las TIC, somos responsables en el uso que hacemos de los materiales de <b>otros autores</b>:'
+    pixabay: 'Hemos usado imágenes de <a class="primary" href="https://pixabay.com/es/users/markusspiske-670330/">Markusspiske</a>. Más de 1.176.481 imágenes de alta calidad, ilustraciones y gráficos vectoriales. Gratis para uso comercial. Sin necesidad de mencionar autoría.'
+    flaticon: 'Hemos usado iconos de <a class="primary" href="https://www.flaticon.es/packs/e-learning-5">Eucalyp</a>. Más de 573,000 iconos gratuitos, tanto para uso personal como comercial. Todos los iconos están disponibles en: SVG, EPS, PSD, Icon Font y PNG.'
+    resources: 'Utilizamos otros <b>recursos</b> de open source, que recomendamos:'
+    bootstrap: 'Utilizamos el framework de <a class="primary" href="http://getbootstrap.com/">Bootstrap</a>, que ayuda a crear proyectos responsive y mobile-first en la web con la biblioteca de componentes front-end más popular del mundo. Bootstrap es un framework de código abierto para desarrollar con HTML, CSS y JS.'
+    fontawesome: 'Utilizamos la librearía de <a class="primary" href="http://fontawesome.io/">Font Awesome</a>, que ofrece iconos vectoriales escalables que se pueden personalizar al instante: tamaño, color, sombra y todo lo que se pueda hacer con el poder de CSS.'
+    contact: 'Si tienes cualquier duda puedes ponerte en <a class="primary" href="mailto:virtual.science.hub@gmail.com">contacto</a> con nosotros en cualquier momento.'
 
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
