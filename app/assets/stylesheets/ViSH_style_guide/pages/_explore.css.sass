@@ -11,3 +11,20 @@
     justify-content: center
     button
       margin: 3px
+  .entities_imgs
+    width: 100%
+    overflow: hidden
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    .entity_img
+      text-align: center
+      max-width: 250px
+      img
+        width: 100%
+        padding: 8px
+        opacity: .4em
+        filter: grayscale(100%)
+        &:hover
+          opacity: 1
+          filter: grayscale(0%)
