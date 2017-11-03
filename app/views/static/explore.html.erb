@@ -125,17 +125,40 @@
       <h2><%= raw t('explore_page.entities.title')%></h2>
     </div>
     <div class="content_block">
-      <div class="items">
-        <% begin
-            quality = [Category.find(68), Category.find(97), Category.find(81), Category.find(87), Category.find(103), Category.find(111)]
-          rescue ActiveRecord::RecordNotFound => e
-            quality = Category.all.sample(6)
-          end %>
-          <%quality.each do |doc| %>
-            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-        <% end %>
-        <div class="clear"></div>
+
+      <div class="entities_imgs">
+        <div class="entity_img">
+          <a href="http://www.macmillan.es" target="_blank">
+            <img src="assets/orange/macmillan_edu_logo-02.png" alt="Logo Macmillan">
+          </a>
+        </div>
+        <div class="entity_img">
+          <a href="http://www.red.es/redes/" target="_blank">
+            <img src="assets/orange/red.es_logo-06.png" alt="Logo Red.es">
+          </a>
+        </div>
+        <div class="entity_img">
+          <a href="https://www.osi.es" target="_blank">
+            <img src="assets/orange/osi_logo-04.png" alt="Logo Osi">
+          </a>
+        </div>
+        <div class="entity_img">
+          <a href="https://www.mecd.gob.es/portada-mecd/" target="_blank">
+            <img src="assets/orange/mecd_logo-03.png" alt="Logo Ministerio educación">
+          </a>
+        </div>
+        <div class="entity_img">
+          <a href="https://www.incibe.es" target="_blank">
+            <img src="assets/orange/incibe_logo-01.png" alt="Logo Incibe">
+          </a>
+        </div>
+        <div class="entity_img">
+          <a href="https://www.is4k.es" target="_blank">
+            <img src="assets/orange/is4k_logo-07.jpg" alt="Logo is4k">
+          </a>
+        </div>
       </div>
+
     </div>
   </article>
   <!-- library block-->
@@ -157,9 +180,5 @@
     </div>
 
   </article>
-
-
-
   <%= render :partial => "shared/create_account" %>
-
 </section>
