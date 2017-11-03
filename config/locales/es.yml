@@ -108,14 +108,14 @@ es:
     vote_help: "Hemos organizado un concurso de creación de recursos educativos sobre UsoSeguroTIC. Estamos en la fase de votación, si te gusta este recurso puedes votarlo tanto con el corazón como con el botón de like de Facebook. Si quieres ver otros recursos del concurso puedes visitar <a href='http://educainternet.es/contest/educa2017/page/submissions' target='_blank'>la página del concurso</a>. Muchas gracias por tu colaboración."
     winners:
       intro: "LOS GANADORES DEL CONCURSO"
-  
+
   contributions_page:
     subtitle: '¡Nos encanta el software libre!'
     title: 'Software libre'
-    authors: 'Además y como no podía ser de otra manera en una plataforma sobre el uso seguro de las TIC, somos responsables en el uso que hacemos de los materiales de <b>otros autores</b>:'
-    pixabay: 'Hemos usado imágenes de <a class="primary" href="https://pixabay.com/es/users/markusspiske-670330/">Markusspiske</a>. Más de 1.176.481 imágenes de alta calidad, ilustraciones y gráficos vectoriales. Gratis para uso comercial. Sin necesidad de mencionar autoría.'
-    flaticon: 'Hemos usado iconos de <a class="primary" href="https://www.flaticon.es/packs/e-learning-5">Eucalyp</a>. Más de 573,000 iconos gratuitos, tanto para uso personal como comercial. Todos los iconos están disponibles en: SVG, EPS, PSD, Icon Font y PNG.'
-    resources: 'Utilizamos otros <b>recursos</b> de open source, que recomendamos:'
+    authors: 'Además, y como no podía ser de otra manera en una plataforma sobre el uso seguro de las TIC, somos responsables en el uso que hacemos de los materiales de <b>otros autores</b> y respetamos las <a class="primary" href="https://search.creativecommons.org">licencias</a> de uso.'
+    pixabay: 'Hemos usado imágenes de <a class="primary" href="https://pixabay.com/es/users/markusspiske-670330/">Markusspiske</a>, disponible en <a class="primary" href="https://pixabay.com/es/">pixabay</a> juanto a más de 1.000.000 de imágenes de alta calidad, ilustraciones y gráficos vectoriales.'
+    flaticon: 'Hemos usado iconos de <a class="primary" href="https://www.flaticon.es/packs/e-learning-5">Eucalyp</a>, disponible en <a class="primary" href="https://www.flaticon.es">Flaticon</a> junto a más de 500,000 iconos gratuitos (SVG, EPS, PSD, Icon Font, PNG).'
+    resources: 'Utilizamos también otros <b>recursos abiertos</b> que recomendamos'
     bootstrap: 'Utilizamos el framework de <a class="primary" href="http://getbootstrap.com/">Bootstrap</a>, que ayuda a crear proyectos responsive y mobile-first en la web con la biblioteca de componentes front-end más popular del mundo. Bootstrap es un framework de código abierto para desarrollar con HTML, CSS y JS.'
     fontawesome: 'Utilizamos la librearía de <a class="primary" href="http://fontawesome.io/">Font Awesome</a>, que ofrece iconos vectoriales escalables que se pueden personalizar al instante: tamaño, color, sombra y todo lo que se pueda hacer con el poder de CSS.'
     contact: 'Si tienes cualquier duda puedes ponerte en <a class="primary" href="mailto:virtual.science.hub@gmail.com">contacto</a> con nosotros en cualquier momento.'
@@ -210,7 +210,7 @@ es:
       desc3: "Aprende de los contenidos y enseña a tus alumnos sobre temas tan importantes como ciberacoso, sexting, tecnoadicciones, etc. Recuerda que tus alumnos podrán también crear contenidos relacionados con los temas aquí presentes y así 'aprender haciendo'."
       title4: "Ir al blog"
     community: "Comunidad"
-    
+
     footer:
       about: "Sobre Nosotros"
       community: "Comunidad"
