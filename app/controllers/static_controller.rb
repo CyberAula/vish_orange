@@ -28,4 +28,16 @@ class StaticController < ApplicationController
   def about_us
   end
 
+  def educatip1
+    render :layout => 'only_header'
+  end
+
+  def educatip2
+    render :layout => 'only_header'
+  end
+
+  def educatip3
+    render :layout => 'only_header'
+  end
+
 end

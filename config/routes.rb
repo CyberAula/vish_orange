@@ -52,6 +52,9 @@ Vish::Application.routes.draw do
   match 'contributions' => 'static#contributions'
   match 'download_perm_request' => 'static#download_perm_request'
   match 'user_manual' => 'static#download_user_manual'
+  match 'educatip1' => 'static#educatip1'
+  match 'educatip2' => 'static#educatip2'
+  match 'educatip3' => 'static#educatip3'
 
   #APIs
   match '/apis/search' => 'federated_search#search'
