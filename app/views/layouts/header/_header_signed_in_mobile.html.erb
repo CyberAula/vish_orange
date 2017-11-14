@@ -11,19 +11,20 @@
   <li class="search-ui">
     <%= render partial: 'layouts/search_mobile' %>
   </li>
+
   <!--user-->
   <li class="user">
     <%= link_to current_subject do %>
       <%= image_tag current_subject.logo.url(:small) %>
-      <%= truncate_name(current_subject.name, length: 20) %>
+      <span class="user_name"><%= truncate_name(current_subject.name, length: 20) %></span>
     <% end %>
   </li>
 
   <!-- dropdown menu links -->
-  <li>
+  <li class="add">
     <a href="<%=new_document_path%>">
       <i class="fa fa-plus"></i>
-      <%=t('resource.actions.add')%>
+      <%= t('header-mobile.add') %>
     </a>
   </li>
 
@@ -31,7 +32,7 @@
   <li class="">
     <%= link_to messages_path do %>
       <i class="fa fa-envelope"></i>
-      <%= t('message.messages') %>
+      <%= t('header-mobile.messages') %>
     <% end %>
   </li>
 
@@ -39,7 +40,7 @@
   <li class="">
     <%= link_to activities_path do %>
       <i class='fa fa-globe'></i>
-      <%= t('activity.other') %>
+      <%= t('header-mobile.activities') %>
     <% end %>
   </li>
 
@@ -47,7 +48,7 @@
   <li class="">
     <a href="/search?type=User">
       <i class="fa fa-comments-o"></i>
-      <%= t('community') %>
+      <%= t('header-mobile.community') %>
     </a>
   </li>
 
@@ -55,7 +56,7 @@
   <li class="">
     <%= link_to quiz_sessions_path do %>
     <i class="fa fa-check-square-o"></i>
-    <%= t('quiz.live') %>
+    <%= t('header-mobile.quiz') %>
     <% end %>
   </li>
 
@@ -63,7 +64,7 @@
   <li class="settings-menu">
     <%= link_to settings_path do %>
     <i class="fa fa-cog"></i>
-    <%= t('dropdown.settings') %>
+    <%= t('header-mobile.settings') %>
     <% end %>
   </li>
 
@@ -71,7 +72,7 @@
   <li class="dropdown language">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       <i class="fa fa-flag-checkered"></i>
-      <%= t('lang.title') %>
+      <%= t('header-mobile.language') %>
       <i class="fa fa-angle-down"></i>
     </a>
     <ul class="dropdown-menu">
@@ -87,14 +88,14 @@
   <li>
     <a href="/legal_notice">
       <i class="fa fa-legal"></i>
-      <%= t('conditions.other') %>
+      <%= t('header-mobile.terms') %>
     </a>
   </li>
 
   <!--manual-->
   <li>
     <%= link_to faq_path do %>
-      <i class="fa fa-question-circle"> </i> <%=t('faq.title')%>
+      <i class="fa fa-question-circle"> </i> <%=t('header-mobile.help')%>
     <% end %>
   </li>
 
@@ -103,7 +104,7 @@
   <li class="sign-out">
     <%= link_to destroy_user_session_path, :method => :delete do %>
     <i class="fa fa-sign-out"></i>
-    <%= t('sign_out') %>
+    <%= t('header-mobile.sign-out') %>
     <% end %>
   </li>
 </ul>

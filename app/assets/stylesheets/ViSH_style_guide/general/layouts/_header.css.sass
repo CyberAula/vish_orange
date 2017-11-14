@@ -97,6 +97,7 @@
       //input de quick search
       //************************
       .search-ui
+        height: 40px
         float: right
         .search-query
           margin-bottom: .4em
@@ -210,19 +211,18 @@
       position: absolute
       right: 15px
       top: 40px
-      .navbar-nav
+      .navbar-nav 
         width: 256px
         background: $gray-darker
         padding: 12px
         li
           width: 100%
-          display: block
+          display: inline-block
           font-size: 1.1em
-          &:hover
-            background: $gray
           a
             color: $white
             padding: 8px
+
         li.sign_in_mobile
           .dropdown-toggle
             width: 100%
@@ -253,28 +253,33 @@
                 margin-right: 4px
         .user
           margin: 0
+          padding-left: 0
+          &:hover
+            background-color: transparent
           a
+            display: flex
+            align-items: center
             line-height: 2.5
             font-weight: 600
+            &:hover
+              background-color: transparent
             img
               border-radius: $border-radius-base
               border: 1px solid $orange-gray-45
               height: 30px
-              margin-right: 3px
+              margin-right: 10px
         hr
           margin: 0
         .navbar-search
           width: 100%
-          margin-bottom: 20px
-          padding: 10px 0
           input, button
             float: left
             border: none
           input
-            width: 84%
+            width: 83%
           button
-            width: 16%
-            padding: 8px
+            min-width: 17% !important
+            padding: 9px
             i
               margin: 0
 

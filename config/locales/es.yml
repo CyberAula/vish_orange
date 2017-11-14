@@ -231,6 +231,7 @@ es:
       rights: "Todos los derechos reservados"
       whatwedo: "Sala de prensa"
 
+
     header:
       index: "Inicio"
       comunity: "Comunidad"
@@ -245,7 +246,17 @@ es:
       bold: "teca"
     how_it_works: "¿Cómo funciona?"
 
-
+  header-mobile:
+    add: 'Añadir'
+    messages: 'Mensajes'
+    activities: 'Actividades'
+    community: 'Comunidad'
+    quiz: 'Cuestionarios'
+    settings: 'Ajustes'
+    language: 'Lenguaje'
+    terms: 'Términos y condiciones'
+    help: 'Ayuda'
+    sign-out: 'Salir'
 
   about:
     blog: "Novedades"
@@ -527,7 +538,7 @@ es:
     check_message: "Acepto la "
     check_message_1: "Política de protección de Datos"
     check_message_2: " de EducaInternet."
-    other: "términos y condiciones"
+    other: "Términos y condiciones"
     terms_use: "Condiciones de uso"
   contact:
     follow: "Seguir"
@@ -975,7 +986,7 @@ es:
   lang:
     changed: "Se cambió el idioma a %{lang}"
     error: "El idioma \"%{lang}\" no está disponible"
-    title: "idioma"
+    title: "Idioma"
     languages:
       independent: "Independiente del idioma"
       other: "Otros"

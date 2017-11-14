@@ -145,45 +145,49 @@
 
 //+++++++++++++++ WORKSHOP EDIT
 
-.workshop-edit
-  padding-left: 30px
-  padding-right: 30px
-  .cover-icon
-    background-color: white
-    padding: 5px
-  section.information
-    float: left
-    h1
-      margin: 10px 0 0 0
-      font-weight: 500
-      font-size: 2em
-      color: $orange-gray-50
-      @media (max-width: $screen-xs-max)
-        margin-top: 1px
-  .wa_activity_wrapper,
-  .wa_add_activity_wrapper
-    border: 2px dashed #999
-    .title_WS
-      margin-bottom: 15px
-  .wa_activity_wrapper
-    background-color: white
-    float: none
-  .wa_add_activity_wrapper
-    height: auto
-    color: $gray
-    a
+
+.container-content
+  .workshop-edit
+    padding-left: 30px
+    padding-right: 30px
+    @media (max-width: 768px)
+      padding-top: 310px !important 
+    .cover-icon
+      background-color: white
+      padding: 5px
+    section.information
+      float: left
+      h1
+        margin: 10px 0 0 0
+        font-weight: 500
+        font-size: 2em
+        color: $orange-gray-50
+        @media (max-width: $screen-xs-max)
+          margin-top: 1px
+    .wa_activity_wrapper,
+    .wa_add_activity_wrapper
+      border: 2px dashed #999
+      .title_WS
+        margin-bottom: 15px
+    .wa_activity_wrapper
+      background-color: white
+      float: none
+    .wa_add_activity_wrapper
+      height: auto
       color: $gray
-      font-size: 1.3em
-      font-family: $font-family-sans-serif-titles
-    p
-      margin: 0
-      vertical-align: baseline
-      line-height: 37px
-      text-align: center
-      i
-        padding: 7px
-  .btn_show_upload
-    @extend .disabled
+      a
+        color: $gray
+        font-size: 1.3em
+        font-family: $font-family-sans-serif-titles
+      p
+        margin: 0
+        vertical-align: baseline
+        line-height: 37px
+        text-align: center
+        i
+          padding: 7px
+    .btn_show_upload
+      @extend .disabled
 
 
 .wa_activity_actions

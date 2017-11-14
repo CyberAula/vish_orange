@@ -229,6 +229,18 @@ en:
     explore: "Explore EducaInternet"
     explore_msg: "You will find everything you need to become an expert in cybersecurity"
 
+  header-mobile:
+    add: 'Add'
+    messages: 'Messages'
+    activities: 'Activities'
+    community: 'Community'
+    quiz: 'Live Quizzes'
+    settings: 'Settings'
+    language: 'Language'
+    terms: 'Terms and conditions'
+    help: 'Help'
+    sign-out: 'Sign out'
+
     footer:
       about: "About us"
       community: "Comunidad"
@@ -535,7 +547,7 @@ en:
     check_message: "I Accept EducaInternet "
     check_message_1: "Privacy policy"
     check_message_2: ""
-    other: "terms and conditions"
+    other: "Terms and conditions"
     terms_use: "Terms of use"
   contact:
     follow: "Follow"
@@ -978,7 +990,7 @@ en:
   lang:
     changed: "Language changed to %{lang}"
     error: "Language \"%{lang}\" not available"
-    title: "language"
+    title: "Language"
     languages:
       independent: "Language independent"
       other: "Others"
