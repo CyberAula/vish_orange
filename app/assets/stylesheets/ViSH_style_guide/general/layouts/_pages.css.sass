@@ -24,16 +24,16 @@
       float: right
       color: gray
       &:hover
-        color: $brand-primary
+        color: $brand-primary !important
   .categories_page
     padding: 10px 30px 20px !important
   .workshop_show,
   .workshop-edit
-    padding-top: 130px
+    padding-top: 120px !important
 
 .general_toolbar
   position: absolute
-  top: 65px
+  top: 55px
   width: 100%
   z-index: 1000
   @media (max-width: $screen-xs)
@@ -95,6 +95,8 @@ div.icontitle
         padding: 1px 0
 .box-shadowed
   @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+.forgot
+  margin-top: 80px
 .registration,
 .forgot,
 .confirmation,
