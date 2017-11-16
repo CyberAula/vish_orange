@@ -559,6 +559,15 @@ en:
     enroll: "Enroll"
     enrollment_failure: "An error occurred and enrollment couldn't take place."
     enrollment_success: "You have been successfully enrolled."
+    first_mail:
+      body1: "Welcome"
+      body2: "Thank you for enrolling in the contest"
+      body3: "With the email and password that you have chosen you will be able to access the platform to start preparing your educational resources and be able to participate in the contest."
+      body4: "Remember that the contest URL is %{url}."
+
+      body9: "Sincerely,"
+      body10: "EducaInternet team"
+      subject: "Welcome to the EducaInternet 2017 contest"
     names: "Name of the contests"
     participants_excel: "Participants excel"
     submissions:

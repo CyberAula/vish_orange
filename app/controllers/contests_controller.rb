@@ -188,8 +188,7 @@ class ContestsController < ApplicationController
     @user = User.create(params[:user])
     if @user.save
       #create enrrollment
-      #TODO prepare email for registered users in the contest
-      #CourseNotificationMailer.user_welcome_email(@user, @contest)
+      ContestNotificationMailer.contest_welcome_email(@user, @contest)
       if @contest.has_additional_fields?
         additional_fields =  {}
         @contest.additional_fields.map do |n|

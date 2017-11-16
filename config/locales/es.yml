@@ -551,6 +551,16 @@ es:
     enroll: "Inscribirse"
     enrollment_failure: "Ocurrió un error y la inscripción no pudo llevarse a cabo."
     enrollment_success: "Te has inscrito satifactoriamente."
+    first_mail:
+      body1: "Bienvenido"
+      body2: "Se ha registrado correctamente en la platforma EducaInternet y en el segundo concurso EducaInternet. Estos son sus datos:"
+      body3: "Con el email y la contraseña que ha elegido podrá acceder siempre que quiera a la plataforma para ir preparando sus recursos y poder participar en el concurso."
+      body4: "Recuerde que la dirección del concurso es %{url}"
+      body4b: "Una vez logueado en dicha plataforma podrá acceder a un curso titulado '%{name}'"
+      body5: "Muchas gracias por inscribirse en el curso"
+      body9: "Un saludo,"
+      body10: "Equipo EducaInternet"
+      subject: "Bienvenido al concurso de EducaInternet 2017"
     names: "Nombres de los concursos"
     participants_excel: "Excel de los participantes"
     submissions:
@@ -560,8 +570,6 @@ es:
       one_per_user: "Solo se permite un envío por usuario."
       one_per_user_category: "Solo se permite un envío por usuario y categoría."
     educa2017:
-      mailers:
-        first_subject_email: "Bienvenido al concurso de EducaInternet 2017"
       postal_code: "Código postal"
       province: Provincia
       school_name: Nombre de la escuela

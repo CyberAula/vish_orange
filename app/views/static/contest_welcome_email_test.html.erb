@@ -3,7 +3,7 @@
 <head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></head>
 <body>
   <%@user = User.first%>
-  <%@course = Course.first%>
+  <%@contest = Contest.first%>
   <table style="background-color: #eeeeee; height: 300px; padding-bottom: 40px; border:0; font-family: Helvetica,Arial,sans-serif;" cellpadding="0" cellspacing="0" width="100%">
     <tbody>
       <tr>
@@ -13,7 +13,7 @@
             <thead style="background-color: #FFF; height: 70px; display: block;position:relative;">
              <tr>
               <td style="padding-left:25px;padding-top:20px;">
-                <a style="color: black;font-size: 27px;text-decoration: none;" href="<%= Vish::Application.config.full_domain%>"><span style="font-weight: 100;color: #666666;"><%=t('course.first_mail.body7')%></span></a>
+                <a style="color: black;font-size: 27px;text-decoration: none;" href="<%= Vish::Application.config.full_domain%>"><span style="font-weight: 100;color: #666666;"><%=t('contest.first_mail.body7')%></span></a>
               </td>
             </thead>
             <!-- LINEA GRIS-->
@@ -28,10 +28,10 @@
                     <p style="font-size: 20px;margin-bottom: 15px;">
 
                     <%if @user %>
-                      <span><%=t('course.first_mail.body1') + " " + @user.name %>:</span>
+                      <span><%=t('contest.first_mail.body1') + " " + @user.name %>:</span>
                     <%end%>
                     </p>
-                    <p><%=t('course.first_mail.body2')%></p>
+                    <p><%=t('contest.first_mail.body2')%></p>
                     <%if @user %>
                       <div style="padding-left: 20px;padding-bottom: 15px;">
                         <span style="margin-bottom: 5px;font-weight: bold;"><%=@user.name%></span>
@@ -39,27 +39,19 @@
                         <span><%= @user.email %></span>
                       </div>
                     <%end%>
-                    <p><%=t('course.first_mail.body3', :url=>Vish::Application.config.APP_CONFIG["moodle_url"])%></p>
+                    <p><%=t('contest.first_mail.body3')%></p>
 
                     <div style="margin-bottom:10px;padding-left: 20px;padding-bottom:10px;">
-                      <p><%=t('course.first_mail.body6')%> </p>
-                      <a href="<%=Vish::Application.config.full_domain%>" style="text-decoration: none; color: black;font-weight: bold;">> <%=t('course.first_mail.body7')%></a>
+                      <p><%=t('contest.first_mail.body4', :url=>Vish::Application.config.full_domain + url_for(@contest))%> </p>
                     </div>
-                    <div style="margin-bottom:10px;padding-left: 20px;padding-bottom:10px;">
-                      <p><%=t('course.first_mail.body6')%></p>
-                      <a href="<%=@course.moodle_url%>" style="text-decoration: none; color: black;font-weight: bold;">> <%=t('course.first_mail.body8')%></a>
-                    </div>
-                    <p>
-                      <div>
-                        <% if @course.has_password? %>
-                          <%= raw t('course.first_mail.body4', :name => @course.title, :password => @course.course_password) %>
-                        <% else %>
-                          <%= raw t('course.first_mail.body4b', :name => @course.title) %>
-                        <% end %>
-                      </div>
-                    </p>
+
+
                     <br/>
-
+                    <h2><%= t('contest_page.help_center.title') %></h2>
+                    <p>
+                      <%= t('contest_page.help_center.text') %>
+                    </p>
+                    <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0" frameborder="0" allowfullscreen></iframe>
 
                   </div>
                 </td>
@@ -68,7 +60,10 @@
             <tfoot style="background-color: white; height: 70px; display: block; position:relative;">
               <tr>
                 <td style="padding-left:525px;">
-                    <p style="color: #484848;"><%=t('course.first_mail.body10')%></p>
+                    <p style="color: #484848;">
+                      <%=t('contest.first_mail.body9')%><br/>
+                      <%=t('contest.first_mail.body10')%>
+                    </p>
                 </td>
               </tr>
             </tfoot>
