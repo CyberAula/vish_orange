@@ -599,6 +599,7 @@ en:
       school_name: School Name
       teaching_subject: Subject
       phone_number: Phone number
+      twitter: Twitter
     templates:
       vish2013:
           title: "#ViSHCompetition2013"
