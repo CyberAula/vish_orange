@@ -55,7 +55,8 @@ Vish::Application.routes.draw do
   match 'educatip1' => 'static#educatip1'
   match 'educatip2' => 'static#educatip2'
   match 'educatip3' => 'static#educatip3'
-  match 'email_test' => 'static#email_test'
+  match 'email1' => 'static#contest_welcome_email_test'
+  match 'email2' => 'static#platform_welcome_email_test'
 
   #APIs
   match '/apis/search' => 'federated_search#search'
