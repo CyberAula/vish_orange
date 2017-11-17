@@ -13,7 +13,7 @@
             <thead style="background-color: #FFF; height: 70px; display: block;position:relative;">
              <tr>
               <td style="padding-left:25px;padding-top:20px;">
-                <a style="color: black;font-size: 27px;text-decoration: none;" href="<%= Vish::Application.config.full_domain%>"><span style="font-weight: 100;color: #666666;"><%=t('contest.second_mail.body7')%></span></a>
+                
               </td>
             </thead>
             <!-- LINEA GRIS-->
@@ -25,36 +25,42 @@
                 <td>
                   <div style="line-height: 1.3em;height: auto;font-weight: 100;padding: 20px 50px 10px; color: #484848; background-color: #FFF; font-size: 15px;">
 
-                    <p style="font-size: 20px;margin-bottom: 15px;">
+                    <p style="font-size: 30px;margin-bottom: 15px; text-align: center; color: #ff7900;">
 
                     <%if @user %>
-                      <span style="font-weight: bold;"><%=t('contest.second_mail.body1') + " " + @user.name %>:</span>
+                      <span style="font-weight: bold; line-height: 35px;"><%=raw t('contest.second_mail.body1') + " " + @user.name + t('contest.second_mail.body2') %></span>
                     <%end%>
                     </p>
-                    <p><%=t('contest.second_mail.body2')%></p>
                     <%if @user %>
-                      <div style="margin-top:10px;margin-bottom:10px;padding: 15px; border-radius: 5px; background-color: whitesmoke;">
+                      <div style="margin-top:10px;margin-bottom:10px;padding: 15px; border-radius: 5px; border: 2px dotted #eee; text-align: center; font-size: 20px; line-height: 25px;">
                         <span style="margin-bottom: 5px;"><%=@user.name%></span>
                         <br>
                         <span><%= @user.email %></span>
                       </div>
                     <%end%>
-                    <p><%=t('contest.second_mail.body3')%></p>
+                    <p style="margin-bottom: 20px; font-size: 11px; text-align: center;"><%=t('contest.second_mail.body3')%></p>
+                  </div>
+                </td>
+              </tr>
 
-                    <div style="margin-top:10px; font-weight:400;text-align: center; border-radius: 5px; margin-bottom:10px; border: 1px solid silver; padding:10px;">
-                      <p><%=t('contest.second_mail.body4', :url=>Vish::Application.config.full_domain + url_for(@contest))%> </p>
+              <tr style="background-color: whitesmoke;">
+                <td>
+                    <div style="margin: 20px 0; font-weight:400;text-align: center; padding:20px; padding-bottom: 0;">
+                      <p style="font-size: 20px; font-weight: 500;"><%=t('contest.second_mail.body4') %> </p>
+                      <a href="https://educainternet.es/courses"><img style="padding-top: 10px; text-align: center; mix-blend-mode: multiply; width: 300px;" src="assets/orange/educamoocs.jpg"></a>
                     </div>
 
-                  
-                    <br/>
+                </td>
+              </tr>
 
-                
-                    <h2 style="text-align: center;margin-bottom: 5px; font-weight: bold; color: #ff7900;"><%= t('contest_page.help_center.title') %></h2>
+              <tr>
+                <td>
+                  <div class="" style="background-color: white; padding-top: 20px;">
+                    <h2 style="text-align: center;margin-bottom: 5px; font-weight: bold; color: #ff7900;"><%= t('contest.second_mail.body7') %></h2>
                     <p style="text-align: center;margin-bottom: 20px;">
-                      <%= t('contest_page.help_center.text') %>
+                      <%= t('contest.second_mail.body8') %>
                     </p>
                     <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0" frameborder="0" allowfullscreen></iframe>
-
                   </div>
                 </td>
               </tr>
@@ -62,9 +68,9 @@
               <tr>
                 <td style="background-color: white;">
                   <div class="redes" style="background-color: whitesmoke;"> 
-                    <h4 style="padding-top: 30px;text-align: center; margin-bottom: 10px; margin-top: 20px; font-weight: bold;"><%= t('contest.second_mail.body5') %></h4>
+                    <h4 style="padding-top: 30px;text-align: center; margin-bottom: 10px; font-weight: bold;"><%= t('contest.second_mail.body5') %></h4>
                     <div class="redes_icons" style="display:flex; justify-content: center; align-items: center; font-size: 40px;">
-                      <a href="https://es-es.facebook.com/EducaInternet/" class="fa fa-facebook" style="color: #3b579d; margin-right: 40px;"></a><a href="https://twitter.com/EducaInternet" class="fa fa-twitter" style="margin-right: 40px; color: #1da1f3;"></a><a href="https://es-es.facebook.com/EducaInternet/" class="fa fa-youtube-play" style="color: #d40c1d; margin-right: 40px;"></a><a href="https://blog.educainternet.es/"><img style="width: 100px; padding-top: 10px;" src="assets/orange/logo-blog_educa.png"></a>
+                      <a href="https://es-es.facebook.com/EducaInternet/" class="fa fa-facebook" style="color: #3b579d; margin-right: 40px;"></a><a href="https://twitter.com/EducaInternet" class="fa fa-twitter" style="margin-right: 40px; color: #1da1f3;"></a><a href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg" class="fa fa-youtube-play" style="color: #d40c1d; margin-right: 40px;"></a><a href="https://blog.educainternet.es/"><img style="width: 100px; padding-top: 10px;" src="assets/orange/logo-blog_educa.png"></a>
                     </div>
                     <p style="text-align: center; margin-bottom: 20px; padding-bottom: 30px;"><%= t('contest.second_mail.body6') %></p>
                   </div>
@@ -77,9 +83,9 @@
               <tr>
                 <td style="text-align: right; padding: 20px 50px 10px">
                     <div style="color: #484848;">
-                      <p style="font-size:20px;margin-bottom: 30px; margin-top: 10px;"><%=t('contest.second_mail.body8')%></p>
-                      <p style="margin-bottom: 10px; font-weight: 100;"><%=t('contest.second_mail.body9')%></p>
-                      <p style="margin-bottom: 20px; font-weight: 100;"><%=t('contest.second_mail.body10')%></p>
+                      <p style="font-size:20px;margin-bottom: 30px; margin-top: 10px;"><%=t('contest.second_mail.body9')%></p>
+                      <p style="margin-bottom: 10px; font-weight: 100;"><%=t('contest.second_mail.body10')%></p>
+                      <p style="margin-bottom: 20px; font-weight: 100;"><%=t('contest.second_mail.body11')%></p>
                     </div>
                 </td>
               </tr>
