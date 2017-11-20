@@ -118,8 +118,8 @@ en:
       intro: "THE COMPETITION WINNERS"
 
   contributions_page:
-    subtitle: '¡We love open software!'
     title: 'Open Software'
+    subtitle: '¡We love open software!'
     authors: 'Furthermore and as could not be otherwise in a platform about the safe use of IFT, we are responsible for the use we make of the materials of <b>other authors</b>:'
     pixabay: 'We have used images from <a class="primary" href="https://pixabay.com/es/users/markusspiske-670330/">Markusspiske</a>. More than 1.176.481 high resolution images, illustrations and vector images. Free to commercial use. Without any reference to the authors.'
     flaticon: 'We have used icons from <a class="primary" href="https://www.flaticon.es/packs/e-learning-5">Eucalyp</a>. More than 573,000 free icons, both uses: personal and commercial. All the icons are available in: SVG, EPS, PSD, Icon Font and PNG.'
@@ -127,6 +127,11 @@ en:
     bootstrap: 'We use the <a class="primary" href="http://getbootstrap.com/">Bootstrap</a> framework, that helps to create responsive and mobile-first projects in the web with the front-end components library most popular in the world. Bootstrap is an open source framework to develope with HTML, CSS and JS.'
     fontawesome: 'We use the <a class="primary" href="http://fontawesome.io/">Font Awesome</a> icon library, that offers escalable icon vectors that can be customize at the moment: size, color, shadow and everything that could be done with the CSS power.'
     contact: 'If you have any questions, you can <a class="primary" href="mailto:virtual.science.hub@gmail.com">contact</a> us antime.'
+
+  courses_page:
+    title: 'Our courses'
+    subtitle: 'Discover our online certified courses'
+    introduction: 'We offer free certified online courses, so you can learn at your pace and intensity best suited to you and become an expert in cybersecurity'
 
   create_account:
     title_html: "Create your account for free and become an expert <br>in the safe and responsible use of ICT"

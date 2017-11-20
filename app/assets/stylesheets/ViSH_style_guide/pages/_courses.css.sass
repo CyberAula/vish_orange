@@ -56,9 +56,11 @@
         .tagit-choice
           display: inline-block !important
           float: none !important
-.courses_page
-  h1
-    font-weight: 300
+
+.illustration
+  .main-box
+    .courses_img
+      top: -34em
 
 
 .checkbox_course_field
@@ -81,6 +83,20 @@
     display: inline
 
 
+@media (max-width: 1224px)
+
+  .illustration
+    .main-box
+      .courses_img
+        top: -28em
+
+@media (max-width: 1070px)
+
+  .illustration
+    .main-box
+      .courses_img
+        top: -20em
+
 
 @media (max-width: 991px)
   .container_mooc
@@ -95,8 +111,30 @@
         top: -150px
     .mooc_welcome_text
       height: auto
+
+
+  .illustration
+    .main-box
+      .courses_img
+        top: -15em
+
+
 @media (max-width: 768px)
   .container_mooc
     .mooc_image_main
       img
         top: 0px
+
+  .illustration
+    .main-box
+      .courses_img
+        top: -5em
+
+
+
+@media (max-width: 480px)
+
+  .illustration
+    .main-box
+      .courses_img
+        top: 0

@@ -110,8 +110,8 @@ es:
       intro: "LOS GANADORES DEL CONCURSO"
 
   contributions_page:
-    subtitle: '¡Nos encanta el software libre!'
     title: 'Software libre'
+    subtitle: '¡Nos encanta el software libre!'
     authors: 'Además, y como no podía ser de otra manera en una plataforma sobre el uso seguro de las TIC, somos responsables en el uso que hacemos de los materiales de <b>otros autores</b> y respetamos las <a class="primary" href="https://search.creativecommons.org">licencias</a> de uso.'
     pixabay: 'Hemos usado imágenes de <a class="primary" href="https://pixabay.com/es/users/markusspiske-670330/">Markusspiske</a>, disponible en <a class="primary" href="https://pixabay.com/es/">pixabay</a> juanto a más de 1.000.000 de imágenes de alta calidad, ilustraciones y gráficos vectoriales.'
     flaticon: 'Hemos usado iconos de <a class="primary" href="https://www.flaticon.es/packs/e-learning-5">Eucalyp</a>, disponible en <a class="primary" href="https://www.flaticon.es">Flaticon</a> junto a más de 500,000 iconos gratuitos (SVG, EPS, PSD, Icon Font, PNG).'
@@ -119,6 +119,11 @@ es:
     bootstrap: 'Utilizamos el framework de <a class="primary" href="http://getbootstrap.com/">Bootstrap</a>, que ayuda a crear proyectos responsive y mobile-first en la web con la biblioteca de componentes front-end más popular del mundo. Bootstrap es un framework de código abierto para desarrollar con HTML, CSS y JS.'
     fontawesome: 'Utilizamos la librearía de <a class="primary" href="http://fontawesome.io/">Font Awesome</a>, que ofrece iconos vectoriales escalables que se pueden personalizar al instante: tamaño, color, sombra y todo lo que se pueda hacer con el poder de CSS.'
     contact: 'Si tienes cualquier duda puedes ponerte en <a class="primary" href="mailto:virtual.science.hub@gmail.com">contacto</a> con nosotros en cualquier momento.'
+
+  courses_page:
+    title: 'Nuestros cursos'
+    subtitle: 'Descubre nuestros cursos certificados online'
+    introduction: 'Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad'
 
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"

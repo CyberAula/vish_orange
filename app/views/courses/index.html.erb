@@ -1,13 +1,63 @@
-<section class="courses_page blocks">
-	<h1>Descubre nuestros cursos acreditados online</h1>
-	<br>
-	<ul class="items">
-		<%if @courses.length==0%>
-			<%=t("course.none")%>
-		<%else%>
-			<%@courses.each do |c|%>
-				<%= render partial: 'courses/course' , :locals => { :course => c } %>
-			<%end%>
-		<%end%>
-	</ul>
+<div class="illustration">
+	<div class="main-box">
+		
+		<img class="courses_img" src="assets/orange/courses.jpg" alt="cover_image">
+
+		<div class="main-title">
+		  
+		  <div class="title">
+		    <h1><%= t('courses_page.title')%></h1>
+		    <h2><%= t('courses_page.subtitle')%></h2>
+		  </div>
+
+		</div>
+
+	</div>
+</div>
+
+<section class="courses_page explore_blocks">
+
+
+	<div class="block_dark">
+
+		<div class="content_block">
+			<h2 class=""><%= t('courses_page.introduction')%></h2>
+		</div>
+
+		<div class="content_block">
+
+			<div class="items">
+			
+				<%if @courses.length==0%>
+					<%=t("course.none")%>
+				<%else%>
+					<%@courses.each do |c|%>
+						<%= render partial: 'courses/course' , :locals => { :course => c } %>
+					<%end%>
+				<%end%>
+			
+		</div>
+		</div>	
+	</div>
+	
+	
+	<!--
+	
+	<div class="content_block">
+		<div class="items">
+			<ul>
+				<%#if @courses.length==0%>
+					<%#=t("course.none")%>
+				<%#else%>
+					<%#@courses.each do |c|%>
+						<%#= render partial: 'courses/course' , :locals => { :course => c } %>
+					<%#end%>
+				<%#end%>
+			</ul>
+		</div>
+	</div>
+-->
+
 </section>
+
+	<%= render :partial => "shared/create_account" %>
