@@ -20,7 +20,7 @@ class Contest < ActiveRecord::Base
       raise "invalid settings" if pSettings["submission_require_enroll"] and !["true","false"].include? pSettings["submission_require_enroll"]
       true
     rescue
-      errors.add(:contest, "not valid settings")
+      errors.add(:contest, "not valid settings2")
     end
   end
 

@@ -5,10 +5,10 @@ class ContestNotificationMailer < ActionMailer::Base
 	def contest_welcome_email(user, contest)
 		@user = user
 		@contest = contest
-		subject = t('contest.educa2017.mailers.first_subject_email')
+		subject = t('contest.first_mail.subject')
 
-		mail(:to => user.email, 
-			 :subject => subject, 
+		mail(:to => user.email,
+			 :subject => subject,
 			 :content_type => "text/html").deliver
 	end
 end

@@ -362,6 +362,16 @@ class Excursion < ActiveRecord::Base
       zip_folder(t.path,"#{Rails.root}/lib/plugins/vish_editor/app/assets",themesPath + theme) if File.exists?(themesPath + theme)
     end
 
+    #Add EducaInternet locales
+    Zip::File.open(t.path, Zip::File::CREATE) { |zipfile|
+      #Copy EducaInternet VE theme
+      zipfile.add("stylesheets/all/ve_theme.css","#{Rails.root}/vendor/assets/stylesheets/ve_theme_packaged.css")
+      #Copy EducaInternet watermark
+      zipfile.add("images/vicons/watermark_educainternet.png","#{Rails.root}/vendor/assets/images/vetheme/watermark_educainternet.png")
+      #Copy EducaInternet JS locales
+      zipfile.add("javascripts/ve_educainternet_locales.js","#{Rails.root}/vendor/assets/javascript/ve_educainternet_locales.js")
+    }
+
     t.close
   end
 

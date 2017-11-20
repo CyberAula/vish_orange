@@ -562,6 +562,31 @@ es:
     enroll: "Inscribirse"
     enrollment_failure: "Ocurrió un error y la inscripción no pudo llevarse a cabo."
     enrollment_success: "Te has inscrito satifactoriamente."
+    first_mail:
+      body1: "Bienvenido"
+      body2: "Te has registrado correctamente en el segundo concurso EducaInternet. Estos son tus datos:"
+      body3: "Con tu email y contraseña podrás acceder siempre que quieras a la plataforma para participar en el concurso."
+      body4: "Recuerda que la dirección del concurso es %{url}"
+      body4b: "Una vez logueado en dicha plataforma podrá acceder a un curso titulado '%{name}'"
+      body5: "Te animamos a que eches un vistazo a nuestras redes sociales."
+      body6: "En nuestro blog podrás estar actualizado de todas las novedades sobre #UsoSeguroTIC."
+      body8: "¡Muchas gracias por inscribirte en el concurso!"
+      body9: "Un saludo,"
+      body10: "Equipo EducaInternet"
+      subject: "Bienvenido al concurso de EducaInternet 2017"
+    second_mail:
+      body1: "Bienvenido"
+      body2: ", te has registrado correctamente en EducaInternet. <br/>Estos son tus datos:"
+      body3: "Con tu email y contraseña podrás acceder siempre que quieras a la plataforma y participar en las diferentes actividades."
+      body4: "Descubre nuestros cursos certificados online aquí:"
+      body5: "Te animamos a que eches un vistazo a nuestras redes sociales."
+      body6: "En nuestro blog podrás estar actualizado de todas las novedades sobre #UsoSeguroTIC."
+      body7: "Queríamos darte personalmente la bienvenida"
+      body8: "Esperamos que saques provecho de nuestros recursos, herramientas y tutoriales."
+      body9: "¡Muchas gracias por registrarte en nuestra plataforma!"
+      body10: "Un saludo,"
+      body11: "Equipo EducaInternet"
+      subject: "Bienvenido a EducaInternet"
     names: "Nombres de los concursos"
     participants_excel: "Excel de los participantes"
     submissions:
@@ -571,13 +596,12 @@ es:
       one_per_user: "Solo se permite un envío por usuario."
       one_per_user_category: "Solo se permite un envío por usuario y categoría."
     educa2017:
-      mailers:
-        first_subject_email: "Bienvenido al concurso de EducaInternet 2017"
       postal_code: "Código postal"
       province: Provincia
       school_name: Nombre de la escuela
       teaching_subject: Asignatura
       phone_number: Número de teléfono
+      twitter: Twitter
   thevish: "EducaInternet"
   youtube: "Canal EducaInternet en Youtube"
   copy_to_clip: "Copiar al portapapeles"
