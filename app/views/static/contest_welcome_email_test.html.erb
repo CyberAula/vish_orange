@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></head>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
 <body>
   <%@user = User.first%>
   <%@contest = Contest.first%>
@@ -53,8 +56,9 @@
                     <p style="text-align: center;margin-bottom: 20px;">
                       <%= t('contest_page.help_center.text') %>
                     </p>
-                    <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0" frameborder="0" allowfullscreen></iframe>
-
+                    <!--<iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0" frameborder="0" allowfullscreen></iframe>-->
+                    <a href="https://www.youtube.com/watch?list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0&v=BVL2bDBRPLs"><img style="width="720" height="405"; padding-top: 10px; src="<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png"
+                    onmouseover="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest_hover.png';" onmouseout="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png';"/></a>
                   </div>
                 </td>
               </tr>

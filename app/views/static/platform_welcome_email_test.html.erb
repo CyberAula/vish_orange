@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></head>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
 <body>
   <%@user = User.first%>
   <%@contest = Contest.first%>
@@ -47,7 +50,7 @@
                 <td>
                     <div style="margin: 20px 0; font-weight:400;text-align: center; padding:20px; padding-bottom: 0;">
                       <p style="font-size: 20px; font-weight: 500;"><%=t('contest.second_mail.body4') %> </p>
-                      <a href="https://educainternet.es/courses"><img style="padding-top: 10px; text-align: center; mix-blend-mode: multiply; width: 300px;" src="assets/orange/educamoocs.jpg"></a>
+                      <a href="https://educainternet.es/courses"><img style="padding-top: 10px; text-align: center; mix-blend-mode: multiply; width: 300px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/educamoocs.jpg"></a>
                     </div>
 
                 </td>
@@ -55,12 +58,13 @@
 
               <tr>
                 <td>
-                  <div class="" style="background-color: white; padding-top: 20px;">
+                  <div class="" style="background-color: white; padding-top: 20px; margin-bottom: -.4em;">
                     <h2 style="text-align: center;margin-bottom: 5px; font-weight: bold; color: #ff7900;"><%= t('contest.second_mail.body7') %></h2>
                     <p style="text-align: center;margin-bottom: 20px;">
                       <%= t('contest.second_mail.body8') %>
                     </p>
-                    <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0" frameborder="0" allowfullscreen></iframe>
+                    <a href="https://www.youtube.com/watch?list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0&v=BVL2bDBRPLs"><img style="width="720" height="405"; padding-top: 10px; src="<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png"
+                    onmouseover="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest_hover.png';" onmouseout="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png';"/></a>
                   </div>
                 </td>
               </tr>
