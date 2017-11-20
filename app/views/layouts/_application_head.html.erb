@@ -11,11 +11,11 @@
 <%end%>
 <meta name="twitter:title" content="<%= yield(:title).empty? ? t('site.current.title') : yield(:title) %>" />
 <meta name="twitter:description" content="<%= yield(:description) %>" />
-<meta name="twitter:image" content="<%= yield(:image) %>" />
+<meta name="twitter:image" content="<%= yield(:og_image) %>" />
 
 <meta property="og:title" content="<%= yield(:title).empty? ? t('site.current.title') : yield(:title) %>">
 <meta property="og:type" content="website">
-<meta property="og:image" content="<%= yield(:image)%>">
+<meta property="og:image" content="<%= yield(:og_image)%>">
 <meta property="og:site_name" content="<%=Vish::Application.config.name%>">
 <meta property="og:url" content="<%= request.original_url %>">
 <meta property="og:description" content="<%= yield(:description) %>">
@@ -48,9 +48,6 @@
 <% end %>
 
 <%= yield :headers %>
-<<<<<<< HEAD
 
 <script src="//tags.tiqcdn.com/utag/orange-es/orange/prod/utag.sync.js"></script>
 <script src="//tags.tiqcdn.com/utag/orange-es/orange-mobile/prod/utag.sync.js"></script>
-=======
->>>>>>> ab574bf6618c3124ee01bb0bdeb00c3152dada4e
