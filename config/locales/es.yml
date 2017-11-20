@@ -98,7 +98,7 @@ es:
       intro: "GALERÍA DE RECURSOS PRESENTADOS"
       no_resources:
         text1_html: "Ahora mismo cuentas con <b>0 recursos</b> creados"
-        text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <a target="_blank" href='https://www.youtube.com/watch?v=A0gX7kobg_A&index=3&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0'><b>videotutoriales</b></a>"
+        text2_html: "¿Te animas con el primero?<br>Te animamos a ver nuestros <a target='_blank' href='https://www.youtube.com/watch?v=A0gX7kobg_A&index=3&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0'><b>videotutoriales</b></a>"
         text3_html: "Si ya conoces el funcionamiento puedes<br><a href='%{url}'><b>acceder directamente a tu perfil</b></a>"
       bt_upload: "Presentar recurso"
     participants: "TODOS LOS PARTICIPANTES"
