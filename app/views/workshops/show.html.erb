@@ -3,8 +3,9 @@
 <%content_for :description do%><%=  t("site.meta_desc.workshop")+@workshop.title + ". " + (@workshop.description ? @workshop.description : "") %><%end%>
 <%content_for :alternate_urls do%><%=raw alternate_urls(polymorphic_url(@workshop), @workshop)%><%end%>
 <%content_for :canonical do%><%= polymorphic_url(@workshop, :locale => params[:locale]) %><%end%>
-<% shortURL = @workshop.getUrl %>
+<%content_for :og_image do %><%= Embed.checkUrlProtocol(@workshop.thumbnail_url,request.protocol) || request.protocol + request.env['HTTP_HOST'] + "/assets/logos/original/defaul_workshop.png" %><% end %>
 
+<% shortURL = @workshop.getUrl %>
 
 <!--++++++++++++++++toolbar+++++++++++++++++++++++-->
 <% content_for :gtools do %>
