@@ -80,7 +80,7 @@ class RegistrationsController < Devise::RegistrationsController
     return unless user_signed_in?
     if @course
         @course.users << current_user
-        CourseNotificationMailer.user_welcome_email(current_user, @course)
+        NotificationMailer.course_welcome_email(current_user, @course)
     end
   end
 
