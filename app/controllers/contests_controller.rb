@@ -203,7 +203,11 @@ class ContestsController < ApplicationController
         format.html{ redirect_to @contest}
       end
     else
-      redirect_to :back
+      if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+        redirect_to :back
+      else
+        redirect_to @contest.getUrlWithNamey
+      end
     end
   end
 
