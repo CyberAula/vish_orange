@@ -237,7 +237,19 @@
 // mixin for centered text
 @mixin text_block_center
   width: 100%
+  @media (min-width: 800px)
+    width: 60%
+  margin: 1em auto
   text-align: center
+  .p_block
+    padding: 12px 0
+    color: $gray
+    font-size: 1.1em
+    font-weight: 300
+    line-height: 1.4em
+    a
+      color: $orange_primary
+      font-weight: bold
 
 
 
