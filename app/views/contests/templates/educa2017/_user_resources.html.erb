@@ -22,7 +22,7 @@
     <div class="no_resources">
       <p><%= t('contest_page.user_resources.no_resources.text1_html')%></p>
       <p><%= t('contest_page.user_resources.no_resources.text2_html')%></p>
-      <p><%= t('contest_page.user_resources.no_resources.text3_html')%></p>
+      <p><%= t('contest_page.user_resources.no_resources.text3_html', :url=>Vish::Application.config.full_domain + url_for(current_user))%></p>
     </div>
   <%end%>
 </article>

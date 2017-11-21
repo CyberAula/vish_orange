@@ -109,8 +109,8 @@ en:
       intro: "GALLERY OF UPLOADED ENTRIES"
       no_resources:
         text1_html: "You have created <b>0 resources</b>"
-        text2_html: "Are you excited to start your first?<br>We invite you to watch our video <b>tutorials</b>"
-        text3_html: "If you already know how it works,<br><b>you can proceed directly to your profile</b>"
+        text2_html: "Are you excited to start your first?<br>We invite you to watch our <a target='_blank' href='https://www.youtube.com/watch?v=A0gX7kobg_A&index=3&list=PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0'><b>videotutorials</b></a>"
+        text3_html: "If you already know how it works,<br><a href='%{url}'><b>you can proceed directly to your profile</b></a>"
       bt_upload: "Submit your resource"
     participants: "ALL PARTICIPANTS"
     vote_resources: "VOTE YOUR FAVOURITE RESOURCE"
