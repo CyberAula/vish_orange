@@ -21,7 +21,7 @@ class SpamReportsController < ApplicationController
 
         if @report.save
           flash[:success] = t('report.success')
-          SpamReportMailer.send_report(current_subject, @report.issueType, issue, params[:activity_object_id]).deliver
+          NotificationMailer.send_spam_report(current_subject, @report.issueType, issue, params[:activity_object_id]).deliver
         else
           flash[:failure] = t('report.failure')
         end

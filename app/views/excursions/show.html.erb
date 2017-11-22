@@ -4,6 +4,7 @@
 <% shortURL = @excursion.getUrl %>
 <%content_for :canonical do%><%=polymorphic_url(@excursion, :locale => params[:locale])%><%end%>
 <%content_for :alternate_urls do%><%=raw alternate_urls(polymorphic_url(@excursion), @excursion)%><%end%>
+<%content_for :og_image do %><%= Embed.checkUrlProtocol(@excursion.thumbnail_url,request.protocol)%><% end %>
 
 <% @contribution = Contribution.find_by_id(params["contribution"]) %>
 

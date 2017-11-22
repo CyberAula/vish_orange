@@ -1,4 +1,4 @@
-
+// general blocks
 @mixin block
   background: $white
   width: 100%
@@ -77,29 +77,9 @@
         width: 100%
         top: 0px
         left: 0px
-    .img_block
-      height: auto
-      position: relative
-      cursor: pointer
-      width: 33.3%
-      padding: 5px
-      &:hover
-        .fa
-          opacity: 1
-      .fa
-        color: white
-        position: absolute
-        left: 50%
-        top: 50%
-        opacity: 0.4
-        height: 55px
-        width: 55px
-        margin: -30px 0 0 -30px
-        //@media (max-width: 800px)
-          top: 40%
-      img
-        width: 100%
-        height: auto
+    .img_block_center
+      @include img_block_center    
+      
     .steps_block
       width: 100%
       @media (min-width: 800px)
@@ -164,7 +144,7 @@
     .item_tip
       margin: 10px
 
-
+// specific  blocks for home
 @mixin home_blocks
   .block, .block_darker
     width: 100%
@@ -194,6 +174,8 @@
       @media (max-width: 768px)
         text-align: center !important
         margin: 10px auto
+    .text_block_center
+      @include text_block_center
     .img_block
       width: 100%
       @media (min-width: 800px)
@@ -203,6 +185,10 @@
       img
         width: auto
         height: 100%
+    .img_block_center
+      @include img_block_center
+
+
     .text_block
       width: 100%
       @media (min-width: 800px)
@@ -224,3 +210,46 @@
         a
           color: $orange_primary
           font-weight: bold
+
+// mixins for centered blocks 
+@mixin img_block_center
+  height: auto
+  position: relative
+  cursor: pointer
+  width: 33.3%
+  padding: 5px
+  &:hover
+    .fa
+      opacity: 1
+  .fa
+    color: white
+    position: absolute
+    left: 50%
+    top: 50%
+    opacity: 0.4
+    height: 55px
+    width: 55px
+    margin: -30px 0 0 -30px
+  img
+    width: 100%
+    height: auto
+
+// mixin for centered text
+@mixin text_block_center
+  width: 100%
+  @media (min-width: 800px)
+    width: 60%
+  margin: 1em auto
+  text-align: center
+  .p_block
+    padding: 12px 0
+    color: $gray
+    font-size: 1.1em
+    font-weight: 300
+    line-height: 1.4em
+    a
+      color: $orange_primary
+      font-weight: bold
+
+
+
