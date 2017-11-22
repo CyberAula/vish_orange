@@ -6,7 +6,7 @@
 
 <% user_enrolled = (user_signed_in? and @course.users.include?(current_user)) %>
 
-<section id="course" class="layout_show mooc_page">
+<section id="course" class="mooc_page">
 
   <div class="row container_mooc">
     <div class="mooc_image_main">
@@ -15,6 +15,9 @@
 
     <div class="col-md-12 mooc_welcome_text box_description">
       <h1><%=@course.title%></h1>
+      <% if @course.closed %>
+          <div class="closed_course"><%=t('course.msgs.course_closed')%></div>
+          <% end %>
       <h2><%=t('course.description')%></h2>
       <p><%=@course.description%></p>
       <br/>
@@ -56,10 +59,9 @@
       <% end %>
 
       <div id="course_button_bar">
-          <h2><%=t('course.course_access')%></h2>
-          <% if @course.closed %>
-            <div class=""><%=t('course.msgs.course_closed')%></div>
-          <% else %>
+          
+          <% if !@course.closed %>
+        
               <%if user_enrolled %>
                   <a class="btn btn-default" href="<%=@course.moodle_url%>" target="_blank"><%=t('course.actions.go')%></a>
                   <%= form_for @course, :url => { :action => :leave }, method: "post"  do |f| %>
