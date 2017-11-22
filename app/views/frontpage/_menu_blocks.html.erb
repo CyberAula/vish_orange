@@ -1,51 +1,6 @@
 
-<!-- TIPS BLOCK -->
 <div class="front_blocks">
-  <div class="block_darker">
-    </br>
-    <div class="content_block">
-      <div class="flex">
-      <div class="img_block_center">
-        <a href="/educatip1" target="_blank">
-        <i class="fa fa-play-circle-o fa-4x"></i>
-        <img src="/assets/orange/contest17_first_tip.jpg" alt="Imagen de David Calle" class="img_contest">
-        </a>
-      </div>
-      <div class="img_block_center">
-        <a href="/educatip2" target="_blank">
-        <i class="fa fa-play-circle-o fa-4x"></i>
-        <img src="/assets/orange/contest17_second_tip.jpg" alt="Imagen de David Calle" class="img_contest">
-        </a>
-      </div>
-      <div class="img_block_center">
-        <a href="/educatip3" target="_blank">
-        <i class="fa fa-play-circle-o fa-4x"></i>
-        <img src="/assets/orange/contest17_third_tip.jpg" alt="Imagen de David Calle" class="img_contest">
-        </a>
-      </div>
-     </div>  
-      <div class="text_block_center">
-        <div class="title_block">
-          <h3><%= t('home_page.tips_block.title')%></h3>
-        </div>
-        <div class="p_block">
-          <p><%= raw t('home_page.tips_block.text')%></p>
-        </div>
-        <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
-          <%if contest_phase == 1 %>
-            <%= t('contest_page.steps.step1_action') %>
-          <% elsif contest_phase == 2 %>
-            <%= t('contest_page.steps.step2_action') %>
-          <% elsif contest_phase == 3 && user_signed_in? %>
-            <%= t('contest_page.steps.step3_action') %>
-          <% else%>
-            <%= t('contest_page.steps.step3_action_nologed') %>
-          <% end %>
-        </button>
-      </div>
 
-    </div>
-  </div>
   <!-- CONTEST17 BLOCK -->
   <div class="block">
     <div class="content_block">
@@ -78,8 +33,56 @@
       </div>
     </div>
   </div>
-  <!-- BLOCK 1 -->
+
+  <!-- TIPS BLOCK -->
   <div class="block_darker">
+    </br>
+    <div class="content_block">
+      <div class="flex">
+      <div class="img_block_center">
+        <a href="/educatip1" target="_blank">
+        <i class="fa fa-play-circle-o fa-4x"></i>
+        <img src="/assets/orange/contest17_first_tip.jpg" alt="Imagen de David Calle" class="img_contest">
+        </a>
+      </div>
+      <div class="img_block_center">
+        <a href="/educatip2" target="_blank">
+        <i class="fa fa-play-circle-o fa-4x"></i>
+        <img src="/assets/orange/contest17_second_tip.jpg" alt="Imagen de David Calle" class="img_contest">
+        </a>
+      </div>
+      <div class="img_block_center">
+        <a href="/educatip3" target="_blank">
+        <i class="fa fa-play-circle-o fa-4x"></i>
+        <img src="/assets/orange/contest17_third_tip.jpg" alt="Imagen de David Calle" class="img_contest">
+        </a>
+      </div>
+     </div>  
+      <div class="text_block_center">
+        <div class="title_block">
+          <h3><%= t('home_page.tips_block.title')%></h3>
+        </div>
+        <div class="p_block">
+          <p><%= raw t('home_page.tips_block.text')%></p>
+        </div>
+        <!--<button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
+          <%#if contest_phase == 1 %>
+            <%= t('contest_page.steps.step1_action') %>
+          <% #elsif contest_phase == 2 %>
+            <%= t('contest_page.steps.step2_action') %>
+          <% #elsif contest_phase == 3 && user_signed_in? %>
+            <%= t('contest_page.steps.step3_action') %>
+          <% #else%>
+            <%= t('contest_page.steps.step3_action_nologed') %>
+          <% #end %>
+        </button>-->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCK 1 -->
+  <div class="block">
     <div class="content_block">
       <div class="img_block float_L">
         <img src="assets/orange/ilustracion-1.png">
@@ -116,7 +119,7 @@
     </div>
   </div>
   <!-- BLOCK 3 -->
-  <div class="block_darker">
+  <div class="block">
     <div class="content_block">
       <div class="img_block float_L">
         <img src="assets/orange/ilustracion-3.png">
