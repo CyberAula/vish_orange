@@ -40,4 +40,8 @@ class StaticController < ApplicationController
     render :layout => 'only_header'
   end
 
+  def educatip4
+    render :layout => 'only_header'
+  end
+
 end
