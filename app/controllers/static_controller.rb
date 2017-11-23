@@ -44,4 +44,20 @@ class StaticController < ApplicationController
     render :layout => 'only_header'
   end
 
+  def educatip1m
+    render "educatip1", :layout => false
+  end
+
+  def educatip2m
+    render "educatip2", :layout => false
+  end
+
+  def educatip3m
+    render "educatip3", :layout => false
+  end
+
+  def educatip4m
+    render "educatip4", :layout => false
+  end
+
 end
