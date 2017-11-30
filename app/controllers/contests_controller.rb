@@ -50,12 +50,13 @@ class ContestsController < ApplicationController
         additional_fields[n] = params[n]
       end
      result = @contest.enrollActorWithOtherData(current_subject.actor, additional_fields)
-     unless result.nil?
+    unless result.nil?
       flash[:success] = t('contest.enrollment_success')
       else
         flash[:errors] = t('contest.enrollment_failure')
       end
-        redirect_to(@contest.getUrlWithName)
+      NotificationMailer.contest_welcome_email(current_subject, @contest)
+      redirect_to(@contest.getUrlWithName)
     else
       result = @contest.enrollActor(current_subject.actor)
       unless result.nil?
@@ -63,6 +64,7 @@ class ContestsController < ApplicationController
       else
         flash[:errors] = t('contest.enrollment_failure')
       end
+      NotificationMailer.contest_welcome_email(current_subject, @contest)
       redirect_to(@contest.getUrlWithName)
     end
   end
