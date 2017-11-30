@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+</head>
+<body>
+  <table style="background-color: #eeeeee; height: 300px; padding-bottom: 40px; border:0; font-family: Helvetica,Arial,sans-serif;" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr>
+        <td align="center" valign="top">
+          <table style="padding: 15px 0px; border:0;" cellpadding="0" cellspacing="0" width="700">
+            <!-- CABECERA MAIL-->
+            <thead style="background-color: #FFF; height: 70px; display: block;position:relative;">
+             <tr>
+              <td style="padding-top:20px;">
+              </td>
+             </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <div style="line-height: 1.3em;height: auto;font-weight: 100;padding: 20px 50px 10px; color: #484848; background-color: #FFF; font-size: 15px;">
+
+                    <p style="font-size: 30px;margin-bottom: 15px; text-align: center; color: #ff7900;">
+
+                    <%if @user %>
+                      <span style="font-weight: bold; line-height: 35px;"><%=raw t('contest.second_mail.body1') + " " + @user.name + t('contest.second_mail.body2') %></span>
+                    <%end%>
+                    </p>
+                    <%if @user %>
+                      <div style="margin-top:10px;margin-bottom:10px;padding: 15px; border-radius: 5px; border: 2px dotted #eee; text-align: center; font-size: 20px; line-height: 25px;">
+                        <span style="margin-bottom: 5px;"><%=@user.name%></span>
+                        <br>
+                        <span><%= @user.email %></span>
+                      </div>
+                    <%end%>
+                    <p style="margin-bottom: 20px; font-size: 11px; text-align: center;"><%=t('contest.second_mail.body3')%></p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr style="background-color: whitesmoke;">
+                <td>
+                    <div style="margin: 20px 0; font-weight:400;text-align: center; padding:20px; padding-bottom: 0;">
+                      <p style="font-size: 20px; font-weight: 500;"><%=t('contest.second_mail.body4') %> </p>
+                      <a href="https://educainternet.es/courses"><img style="padding-top: 10px; text-align: center; mix-blend-mode: multiply; width: 300px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/educamoocs.jpg"></a>
+                    </div>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="" style="background-color: white; padding-top: 20px; margin-bottom: -.4em;">
+                    <h2 style="text-align: center;margin-bottom: 5px; font-weight: bold; color: #ff7900;"><%= t('contest.second_mail.body7') %></h2>
+                    <p style="text-align: center;margin-bottom: 20px;">
+                      <%= t('contest.second_mail.body8') %>
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=4NwJf_q4oZs&list=PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST"><img style="width="720" height="405"; padding-top: 10px; src="<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png"
+                    onmouseover="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest_hover.png';" onmouseout="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png';"/></a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="background-color: white;">
+                  <div class="redes" style="background-color: whitesmoke;">
+                    <h4 style="padding-top: 30px;text-align: center; margin-bottom: 10px; margin-top: 20px; font-weight: bold;"><%= t('contest.first_mail.body5') %></h4>
+                    <div class="redes_icons" style="display:flex; justify-content: center; align-items: center; font-size: 40px;">
+                      <a href="https://es-es.facebook.com/EducaInternet/"><img style="width: 45px; margin-right: 40px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/facebook.png"></a>
+                      <a href="https://twitter.com/EducaInternet"><img style="width: 45px; margin-right: 40px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/twitter.png"></a>
+                      <a href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg"><img style="width: 50px; margin-right: 40px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/youtube.png"></a>
+                      <a href="https://blog.educainternet.es/"><img style="width: 100px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/logo-blog_educa.png"></a>
+                    </div>
+                    <p style="text-align: center; margin-bottom: 20px; padding-bottom: 30px;"><%= t('contest.first_mail.body6') %></p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+
+            <tfoot style="background-color: white;">
+              <tr>
+                <td style="text-align: right; padding: 20px 50px 10px">
+                    <div style="color: #484848;">
+                      <p style="font-size:20px;margin-bottom: 30px; margin-top: 10px;"><%=t('contest.second_mail.body9')%></p>
+                      <p style="margin-bottom: 10px; font-weight: 100;"><%=t('contest.second_mail.body10')%></p>
+                      <p style="margin-bottom: 20px; font-weight: 100;"><%=t('contest.second_mail.body11')%></p>
+                    </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
