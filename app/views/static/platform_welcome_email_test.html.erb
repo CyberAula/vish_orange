@@ -11,13 +11,7 @@
       <tr>
         <td align="center" valign="top">
           <table style="padding: 15px 0px; border:0;" cellpadding="0" cellspacing="0" width="700">
-            <!-- CABECERA MAIL-->
-            <thead style="background-color: #FFF; height: 70px; display: block;position:relative;">
-             <tr>
-              <td style="padding-top:20px;">
-              </td>
-             </tr>
-            </thead>
+          
 
             <tbody>
               <tr>
@@ -44,7 +38,7 @@
 
               <tr style="background-color: whitesmoke;">
                 <td>
-                    <div style="margin: 20px 0; font-weight:400;text-align: center; padding:20px; padding-bottom: 0;">
+                    <div style="margin: 20px 0; font-weight:400;text-align: center; padding:10px; padding-bottom: 0;">
                       <p style="font-size: 20px; font-weight: 500;"><%=t('contest.second_mail.body4') %> </p>
                       <a href="https://educainternet.es/courses"><img style="padding-top: 10px; text-align: center; mix-blend-mode: multiply; width: 300px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/educamoocs.jpg"></a>
                     </div>
@@ -59,8 +53,7 @@
                     <p style="text-align: center;margin-bottom: 20px;">
                       <%= t('contest.second_mail.body8') %>
                     </p>
-                    <a href="https://www.youtube.com/watch?v=4NwJf_q4oZs&list=PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST"><img style="width="720" height="405"; padding-top: 10px; src="<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png"
-                    onmouseover="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest_hover.png';" onmouseout="this.src='<%=Vish::Application.config.full_domain%>/assets/orange/video_contest.png';"/></a>
+                    <a href="https://www.youtube.com/watch?v=4NwJf_q4oZs&list=PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST"><img style="width="720" height="405"; padding-top: 10px; src="<%=Vish::Application.config.full_domain%>/assets/orange/videobienvenida_mail.png"></a>
                   </div>
                 </td>
               </tr>
@@ -68,8 +61,8 @@
               <tr>
                 <td style="background-color: white;">
                   <div class="redes" style="background-color: whitesmoke;">
-                    <h4 style="padding-top: 30px;text-align: center; margin-bottom: 10px; margin-top: 20px; font-weight: bold;"><%= t('contest.first_mail.body5') %></h4>
-                    <div class="redes_icons" style="display:flex; justify-content: center; align-items: center; font-size: 40px;">
+                    <h4 style="padding-top: 30px;text-align: center; margin-bottom: 10px; margin-top: 0; font-weight: bold;"><%= t('contest.first_mail.body5') %></h4>
+                    <div class="redes_icons" style="text-align: center; font-size: 40px;">
                       <a href="https://es-es.facebook.com/EducaInternet/"><img style="width: 45px; margin-right: 40px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/facebook.png"></a>
                       <a href="https://twitter.com/EducaInternet"><img style="width: 45px; margin-right: 40px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/twitter.png"></a>
                       <a href="https://www.youtube.com/channel/UCH_RLT0J0CPBbOnibBO_mzg"><img style="width: 50px; margin-right: 40px; padding-top: 10px;" src="<%=Vish::Application.config.full_domain%>/assets/orange/youtube.png"></a>
