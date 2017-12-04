@@ -60,4 +60,17 @@ class StaticController < ApplicationController
     render "educatip4", :layout => false
   end
 
+  def contest_welcome_email_test
+    render "contest_welcome_email_test", :layout => false
+  end
+
+  def platform_welcome_email_test
+    render "platform_welcome_email_test", :layout => false
+  end
+
+  def campaign_email
+    render "campaign_email", :layout => false
+  end
+
+
 end
