@@ -44,6 +44,10 @@ class StaticController < ApplicationController
     render :layout => 'only_header'
   end
 
+  def educatip5
+    render :layout => 'only_header'
+  end
+
   def educatip1m
     render "educatip1", :layout => false
   end
@@ -58,6 +62,10 @@ class StaticController < ApplicationController
 
   def educatip4m
     render "educatip4", :layout => false
+  end
+
+  def educatip5m
+    render "educatip5", :layout => false
   end
 
   def contest_welcome_email_test
