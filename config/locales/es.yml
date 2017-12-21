@@ -174,6 +174,14 @@ es:
     block2_txt_html: "Seguro que ya has oído hablar de los <a href='/courses'>MOOC</a>, los cursos online dirigidos a un amplio número de participantes según el principio de educación abierta y masiva. En esta plataforma podrás realizar diferentes <a href='/courses'>cursos certificados</a> que se ajusten a tus necesidades.Aprovecha también en nuestra <a href='/search'>biblioteca</a> todas las <a href='/search?type=Workshop'>lecciones</a> y <a href='/search?type=Excursion'>presentaciones</a> con las que puedes aprender y compartir en el aula."
     block3_txt_html: "<a href='https://www.youtube.com/watch?v=VxPVm_qFPfk&list=PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST&index=2' target='_blank'>Crea</a>, junto a tus alumnos, vuestros propios recursos que podrás compartir en la plataforma. Prepara el contenido para tus clases, sube los recursos que más utilices, indica cuáles son tus presentaciones favoritas, compártelas… todo aquello que puedas imaginar puedes hacerlo en EducaInternet.<a href='/search?type=User'>Más de 1.500 profesores ya forman parte de esta comunidad</a>. Súmate a ellos y descubre una herramienta sencilla con grandes funcionalidades para la creación de contenido educativo sobre la seguridad en Internet."
     block4_txt_html: "La seguridad en Internet es un aspecto que como educadores debemos tener presente en todo momento. Ciertos conceptos relacionados, como <a href='/search?type=Learning_object&category_ids=tecnoaddictions'>Tecnoadicciones</a>, <a href='/search?type=Learning_object&category_ids=privacy'>Identidad digital</a>, <a href='/search?type=Learning_object&category_ids=grooming'>Grooming</a>, <a href='/search?type=Learning_object&category_ids=netiquette'>Netiqueta</a> o <a href='/search?type=Learning_object&category_ids=licenses'>Licencias</a> son fundamentales en este ámbito. En EducaInternet contamos con la colaboración de <a href='/about'>los principales organismos y entidades sobre Ciberseguridad</a> que nos avalan como centro de referencia y núcleo de la comunidad preocupada por la seguridad en Internet."
+  
+  videos:
+    videotip01: "No hagas en internet lo que no harías en la vida real"  
+    videotip02: "Contraseñas seguras"
+    videotip03: "Aceptación de cookies, legales y cláusulas"
+    videotip04: "Propiedad intelectual en internet"
+    videotip05: "Las redes sociales tienen memoria"
+    videotip06: "Saber diferenciar lo que es real de lo que no en internet"
 
   whatwedo_page:
     subtitle: 'talleres, concursos, cursos y muchas más actividades para formarte y dominar el mundo de las TIC'
