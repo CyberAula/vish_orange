@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   skip_before_filter :store_location
+  after_filter :send_email_welcome, :only =>[:create]
   after_filter :process_course_enrolment, :only =>[:create]
   before_filter :check_captcha, only: [:create]
 
@@ -72,6 +73,10 @@ class RegistrationsController < Devise::RegistrationsController
         build_resource
         render :new
       end
+    end
+
+    def send_email_welcome
+        NotificationMailer.platform_welcome_email(@user)
     end
 
   #this method is only called when user has provided the right credentials for the course

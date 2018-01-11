@@ -61,6 +61,7 @@
 
 <div id="fb-root"></div>
 <%= content_for :javascript do%>
+  <%if Vish::Application.config.APP_CONFIG['facebook']%>
      if(document.getElementById('facebook-jssdk')){
        return;
      }
@@ -69,7 +70,7 @@
      facebook_js.src = ("//connect.facebook.net/en_GB/all.js#xfbml=1&appId=" + "<%=Vish::Application.config.APP_CONFIG['facebook']['appID']%>");
      var head = document.getElementsByTagName('head')[0];
      head.appendChild(facebook_js);
-
+  <%end%>
      var controller = new YTV('playlist_contest', {
         apiKey: "<%= Vish::Application.config.APP_CONFIG['YouTubeAPIKEY'] %>",
    	    playlist: 'PL-qNzC6Q_XM5tMM04Abi8Oy-qHVovu_-0',

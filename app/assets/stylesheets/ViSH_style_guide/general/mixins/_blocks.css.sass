@@ -78,7 +78,8 @@
         top: 0px
         left: 0px
     .img_block_center
-      @include img_block_center    
+      @include img_block_center
+  
       
     .steps_block
       width: 100%
@@ -176,6 +177,8 @@
         margin: 10px auto
     .text_block_center
       @include text_block_center
+      &.tips_block  
+        width: 65%
     .img_block
       width: 100%
       @media (min-width: 800px)
@@ -216,7 +219,11 @@
   height: auto
   position: relative
   cursor: pointer
-  width: 33.3%
+  width: 30%
+  @media (max-width: 1280px)
+    width: 33%
+  @media (max-width: 1024px)
+    width: 50%
   padding: 5px
   &:hover
     .fa
@@ -227,12 +234,16 @@
     left: 50%
     top: 50%
     opacity: 0.4
-    height: 55px
-    width: 55px
     margin: -30px 0 0 -30px
   img
     width: 100%
     height: auto
+  p
+    color: $gray
+    font-weight: bold
+    font-size: .8em
+    text-align: center
+    padding-bottom: 1em
 
 // mixin for centered text
 @mixin text_block_center

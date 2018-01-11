@@ -100,3 +100,4 @@ chromedriver.log
 unicorn.conf
 
 nbproject/
+.ruby-version

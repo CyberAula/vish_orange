@@ -11,10 +11,10 @@
       </a>
       <div class="text_block float_L align_right space_top">
         <div class="title_block">
-          <h3><%= t('home_page.contest_block.title')%></h3>
+          <h3><%= raw t('home_page.contest_block.title')%></h3>
         </div>
         <div class="p_block">
-          <p><%= t('home_page.contest_block.text')%></p>
+          <p><%= raw t('home_page.contest_block.text')%></p>
         </div>
         <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
           <%if contest_phase == 1 %>
@@ -38,27 +38,95 @@
   <div class="block_darker">
     </br>
     <div class="content_block">
-      <div class="flex">
-      <div class="img_block_center">
-        <a href="/educatip1" target="_blank">
-        <i class="fa fa-play-circle-o fa-4x"></i>
-        <img src="/assets/orange/contest17_first_tip.jpg" alt="Imagen de David Calle" class="img_contest">
-        </a>
-      </div>
-      <div class="img_block_center">
-        <a href="/educatip2" target="_blank">
-        <i class="fa fa-play-circle-o fa-4x"></i>
-        <img src="/assets/orange/contest17_second_tip.jpg" alt="Imagen de David Calle" class="img_contest">
-        </a>
-      </div>
-      <div class="img_block_center">
-        <a href="/educatip3" target="_blank">
-        <i class="fa fa-play-circle-o fa-4x"></i>
-        <img src="/assets/orange/contest17_third_tip.jpg" alt="Imagen de David Calle" class="img_contest">
-        </a>
-      </div>
-     </div>  
-      <div class="text_block_center">
+      <div class="flex_wrap_center_start hidden-sm hidden-xs">
+        <div class="img_block_center">
+          <a href="/educatip1" target="_blank">
+            <i class="fa fa-play-circle-o fa-4x"></i>
+            <img src="/assets/orange/video01.png" alt="Imagen de David Calle" class="img_contest">
+          </a>
+          <p><%= t('videos.videotip01')%></p>
+        </div>
+        <div class="img_block_center">
+          <a href="/educatip2" target="_blank">
+            <i class="fa fa-play-circle-o fa-4x"></i>
+            <img src="/assets/orange/video02.png" alt="Imagen de David Calle" class="img_contest">
+          </a>
+          <p><%= t('videos.videotip02')%></p>
+        </div>
+        <div class="img_block_center">
+          <a href="/educatip3" target="_blank">
+            <i class="fa fa-play-circle-o fa-4x"></i>
+            <img src="/assets/orange/video03.png" alt="Imagen de David Calle" class="img_contest">
+          </a>
+          <p><%= t('videos.videotip03')%></p>
+        </div>
+        <div class="img_block_center">
+          <a href="/educatip4" target="_blank">
+            <i class="fa fa-play-circle-o fa-4x"></i>
+            <img src="/assets/orange/video04.png" alt="Imagen de David Calle" class="img_contest">
+          </a>
+          <p><%= t('videos.videotip04')%></p>
+        </div>
+        <div class="img_block_center">
+          <a href="/educatip5" target="_blank">
+            <i class="fa fa-play-circle-o fa-4x"></i>
+            <img src="/assets/orange/video05.png" alt="Imagen de David Calle" class="img_contest">
+          </a>
+          <p><%= t('videos.videotip05')%></p>
+        </div>
+        <div class="img_block_center">
+          <a href="/educatip6" target="_blank">
+            <i class="fa fa-play-circle-o fa-4x"></i>
+            <img src="/assets/orange/video06.png" alt="Imagen de David Calle" class="img_contest">
+          </a>
+          <p><%= t('videos.videotip06')%></p>
+        </div>
+     </div>
+     <div class="flex_wrap_center_start hidden-md hidden-lg">
+       <div class="img_block_center">
+         <a href="/educatip1m" target="_blank">
+           <i class="fa fa-play-circle-o fa-4x"></i>
+           <img src="/assets/orange/video01.png" alt="Imagen de David Calle" class="img_contest">
+         </a>
+         <p><%= t('videos.videotip01')%></p>
+       </div>
+       <div class="img_block_center">
+         <a href="/educatip2m" target="_blank">
+           <i class="fa fa-play-circle-o fa-4x"></i>
+           <img src="/assets/orange/video02.png" alt="Imagen de David Calle" class="img_contest">
+         </a>
+         <p><%= t('videos.videotip02')%></p>
+       </div>
+       <div class="img_block_center">
+         <a href="/educatip3m" target="_blank">
+           <i class="fa fa-play-circle-o fa-4x"></i>
+           <img src="/assets/orange/video03.png" alt="Imagen de David Calle" class="img_contest">
+         </a>
+         <p><%= t('videos.videotip03')%></p>
+       </div>
+       <div class="img_block_center">
+         <a href="/educatip4m" target="_blank">
+           <i class="fa fa-play-circle-o fa-4x"></i>
+           <img src="/assets/orange/video04.png" alt="Imagen de David Calle" class="img_contest">
+         </a>
+         <p><%= t('videos.videotip04')%></p>
+       </div>
+       <div class="img_block_center">
+         <a href="/educatip5m" target="_blank">
+           <i class="fa fa-play-circle-o fa-4x"></i>
+           <img src="/assets/orange/video05.png" alt="Imagen de David Calle" class="img_contest">
+         </a>
+         <p><%= t('videos.videotip05')%></p>
+       </div>
+       <div class="img_block_center">
+         <a href="/educatip6m" target="_blank">
+           <i class="fa fa-play-circle-o fa-4x"></i>
+           <img src="/assets/orange/video06.png" alt="Imagen de David Calle" class="img_contest">
+         </a>
+         <p><%= t('videos.videotip06')%></p>
+       </div>
+    </div>
+      <div class="text_block_center tips_block">
         <div class="title_block">
           <h3><%= t('home_page.tips_block.title')%></h3>
         </div>

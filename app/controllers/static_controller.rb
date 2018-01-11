@@ -40,4 +40,53 @@ class StaticController < ApplicationController
     render :layout => 'only_header'
   end
 
+  def educatip4
+    render :layout => 'only_header'
+  end
+
+  def educatip5
+    render :layout => 'only_header'
+  end
+
+  def educatip6
+    render :layout => 'only_header'
+  end
+
+  def educatip1m
+    render "educatip1", :layout => false
+  end
+
+  def educatip2m
+    render "educatip2", :layout => false
+  end
+
+  def educatip3m
+    render "educatip3", :layout => false
+  end
+
+  def educatip4m
+    render "educatip4", :layout => false
+  end
+
+  def educatip5m
+    render "educatip5", :layout => false
+  end
+
+  def educatip6m
+    render "educatip5", :layout => false
+  end
+
+  def contest_welcome_email_test
+    render "contest_welcome_email_test", :layout => false
+  end
+
+  def platform_welcome_email_test
+    render "platform_welcome_email_test", :layout => false
+  end
+
+  def campaign_email
+    render "campaign_email", :layout => false
+  end
+
+
 end

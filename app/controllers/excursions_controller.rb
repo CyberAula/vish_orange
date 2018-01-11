@@ -26,10 +26,10 @@ class ExcursionsController < ApplicationController
     redirect_to home_path
   end
 
-  def show 
+  def show
     show! do |format|
       format.html {
-        if @excursion.draft 
+        if @excursion.draft
           if (can? :edit, @excursion)
             redirect_to edit_excursion_path(@excursion)
           else
@@ -53,7 +53,7 @@ class ExcursionsController < ApplicationController
         render "show.full", :layout => 'veditor'
       }
       format.json {
-        render :json => resource 
+        render :json => resource
       }
       format.gateway {
         @gateway = params[:gateway]
@@ -145,7 +145,7 @@ class ExcursionsController < ApplicationController
     ensure
       Excursion.record_timestamps=true if isAdmin
     end
-   
+
     published = (wasDraft===true and @excursion.draft===false)
     if published
       @excursion.afterPublish
@@ -240,7 +240,7 @@ class ExcursionsController < ApplicationController
     thumbnails = Hash.new
     thumbnails["pictures"] = []
 
-    67.times do |index|
+    80.times do |index|
       index = index+1
       thumbnail = Hash.new
       thumbnail["title"] = "Thumbnail " + index.to_s
@@ -249,7 +249,7 @@ class ExcursionsController < ApplicationController
       thumbnail["src"] = Vish::Application.config.full_domain + "/assets/logos/original/excursion-"+tnumber+".png"
       thumbnails["pictures"].push(thumbnail)
     end
-
+    thumbnails["pictures"] = thumbnails["pictures"].shuffle
     render :json => thumbnails
   end
 
@@ -288,11 +288,11 @@ class ExcursionsController < ApplicationController
   ##################
   # Evaluation Methods
   ##################
-  
+
   def evaluate
     @excursion = Excursion.find(params["id"])
     @evmethod = params["evmethod"] || "wblts"
-    
+
     respond_to do |format|
       format.html {
         render "learning_evaluation"
@@ -304,7 +304,7 @@ class ExcursionsController < ApplicationController
   ##################
   # Recomendation on the last slide
   ##################
-  
+
   def last_slide
     #Prepare parameters to call the RecommenderSystem
     current_excursion =  Excursion.find_by_id(params[:excursion_id]) if params[:excursion_id]
@@ -327,7 +327,7 @@ class ExcursionsController < ApplicationController
   ####################
 
   def uploadTmpJSON
-    respond_to do |format|  
+    respond_to do |format|
       format.json {
         results = Hash.new
 
@@ -412,7 +412,7 @@ class ExcursionsController < ApplicationController
         filePath = "#{Rails.root}/public/tmp/json/#{fileId}.json"
         if File.exist? filePath
           send_file "#{filePath}", :type => 'application/json', :disposition => 'attachment', :filename => "#{filename}.json"
-        else 
+        else
           render :json => results
         end
       }
