@@ -258,6 +258,7 @@ es:
 
 
   about:
+    agreement: "Acuerdo ViSH-UPM"
     blog: "Novedades"
     contact: "Contacto"
     code: "Código fuente"
@@ -624,6 +625,9 @@ es:
     date_range: "desde %{date_from} hasta %{date_to}"
     extra_info: "Información adicional (solo visible para el propietario)"
     fields:
+      accredited: "Acreditado"
+      accredited_text: "Texto acreditación (por ej: 'Acreditado por la Comunidad de Madrid')"
+      accredited_logo: "URL del logo de la acreditación (se pondrá sobre el thumbnail del curso)"
       closed: "Cerrar curso (Precaución, esto inhabilita a los usuarios a ir al curso)"
       course_password: "Contraseña del curso en Moodle"
       end_date: "Fecha fin"
@@ -957,6 +961,8 @@ es:
     unload_warning: "¡La presentación no está salvada!"
     top: "paraMí"
   external: "externo"
+  faq:
+    title: "Preguntas frecuentes"
   filter: "filtrar"
   follow:
     add_favorite: "Añadir favorito"
