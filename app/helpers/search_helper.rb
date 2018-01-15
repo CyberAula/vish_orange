@@ -35,7 +35,7 @@ module SearchHelper
   end
 
   def extract_tags(search_results)
-    search_results.map{|r| r.tags.map{|t| t.name}}.flatten.uniq.join(",")
+    search_results.compact.map{|r| r.tags.map{|t| t.name}}.flatten.uniq.join(",")
   end
 
   def extract_types(search_results)

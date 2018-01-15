@@ -21,18 +21,62 @@
 	<div class="block_dark">
 
 		<div class="content_block">
-			<h2 class=""><%= t('courses_page.introduction')%></h2>
+			<h2 class=""><%= t('courses_page.firstband')%></h2>
 		</div>
 
 		<div class="content_block">
 
 			<div class="items">
-			
-				<%if @courses.length==0%>
+			<%@firstband = [Course.find(3), Course.find(2)]%>
+				<%if @firstband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
-					<%@courses.each do |c|%>
-						<%= render partial: 'courses/course' , :locals => { :course => c } %>
+					<%@firstband.each do |c|%>
+						<%= render partial: 'courses/course_large' , :locals => { :course => c } %>
+					<%end%>
+				<%end%>
+			
+		</div>
+		</div>	
+	</div>
+
+	<div class="block">
+
+		<div class="content_block">
+			<h2 class=""><%= raw t('courses_page.secondband')%></h2>
+		</div>
+
+		<div class="content_block">
+
+			<div class="items">
+			<%@secondband = [Course.find(5), Course.find(4)]%>
+				<%if @secondband.length==0%>
+					<%=t("course.none")%>
+				<%else%>
+					<%@secondband.each do |c|%>
+						<%= render partial: 'courses/course_large' , :locals => { :course => c } %>
+					<%end%>
+				<%end%>
+			
+		</div>
+		</div>	
+	</div>
+
+		<div class="block_dark">
+
+		<div class="content_block">
+			<h2 class=""><%= t('courses_page.thirdband')%></h2>
+		</div>
+
+		<div class="content_block">
+
+			<div class="items">
+			<%@thirdband = [Course.find(3), Course.find(2)]%>
+				<%if @thirdband.length==0%>
+					<%=t("course.none")%>
+				<%else%>
+					<%@thirdband.each do |c|%>
+						<%= render partial: 'courses/course_small' , :locals => { :course => c } %>
 					<%end%>
 				<%end%>
 			

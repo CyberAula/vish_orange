@@ -1,0 +1,193 @@
+
+.course_large
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: flex-start
+  margin-right: 1em
+  //box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.115)
+  .course_large_image
+    position: relative
+    width: 170px
+    height: 170px
+    overflow: hidden
+    .course_large_icon
+      position: absolute
+      left: 0
+      top: 0
+      .courses_corner
+        width: 72px
+    .course_large_accreditation
+      position: absolute
+      right: 6px
+      bottom: 0
+      .courses_accreditation
+        width: 60px
+    .course_large_img
+      height: 100%
+      border-right: 1px solid #999999
+      .img-box-large
+        width: 100%
+        height: 100%
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+  .course_large_info
+    width: 300px
+    background-color: white
+    height: 170px
+    color: black
+    font-family: opensans
+    font-size: 12px
+    cursor: pointer
+    .course_large_title
+      padding: .5em 1em
+      font-size: 15px
+      font-family: opensans-semibold
+      border-bottom: 1px solid #999999
+    .course_large_title_mob
+      display: none
+      padding: .5em 1em
+      font-size: 15px
+      font-family: opensans-semibold
+      border-bottom: 1px solid #999999
+    .course_large_duration
+      padding: 1em 1em 0
+      span
+        font-family: opensans-semibold
+    .course_large_coursetype
+      padding: 0 1em
+      font-family: opensans-semibold
+    .course_large_description
+      padding: .5em 1em
+      /* a
+        display: block
+        //white-space: nowrap
+        //text-overflow: ellipsis
+        //overflow: hidden
+        overflow: hidden
+        position: relative
+        line-height: 1.2em
+        max-height: 3.6em
+        text-align: justify
+        margin-right: -1em
+        padding-right: 1em
+        &:before
+          content: '...'
+          position: absolute
+          right: 0
+          bottom: 0 */
+        // &:after
+        //   content: ''
+        //   position: absolute
+        //   right: 0
+        //   width: 1em
+        //   height: 1em
+        //   margin-top: 0.2em
+        //   background: white
+    a
+      color: black
+  &:hover
+    @include transition (all .2s ease)
+    transform: scale(1.05)
+    -ms-transform: scale(1.05)
+    -webkit-transform: scale(1.05)
+
+
+@media (max-width: 1403px)
+  
+  .course_large
+    margin-bottom: 1em
+
+
+@media (max-width: 680px)
+
+  .course_large
+    .course_large_image
+      width: 150px
+      height: 150px
+    .course_large_info
+      width: 250px
+      height: 150px
+      .course_large_duration
+        padding: .7em 1em 0
+      .course_large_description
+        display: none
+
+@media (max-width: 480px)
+
+  .course_large
+    .course_large_image
+      width: 130px
+      height: 130px
+    .course_large_info
+      width: 200px
+      height: 130px
+      .course_large_title
+        display: none
+      .course_large_title_mob
+        display: block
+
+
+
+
+
+.course_small
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: flex-start
+  margin-right: 1em
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.115)
+  .course_small_image
+    position: relative
+    width: 170px
+    height: 170px
+    overflow: hidden
+    .course_small_icon
+      position: absolute
+      left: 0
+      top: 0
+      .courses_corner
+        width: 72px
+    .course_small_accreditation
+      position: absolute
+      right: 6px
+      bottom: 0
+      .courses_accreditation
+        width: 60px
+    .course_small_img
+      height: 100%
+      border-bottom: 1px solid #999999
+      .img-box-small
+        width: 100%
+        height: 100%
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+  .course_small_info
+    width: 170px
+    height: 65px
+    background-color: white
+    font-family: opensans
+    cursor: pointer
+    .course_small_title
+      padding: .5em 1em
+      font-size: 12px
+      font-family: opensans-semibold
+    a
+      color: black
+  &:hover
+    @include transition (all .2s ease)
+    transform: scale(1.05)
+    -ms-transform: scale(1.05)
+    -webkit-transform: scale(1.05)
+
+
+@media (max-width: 480px)
+
+  .course_small
+    margin-bottom: 1em
+  
+

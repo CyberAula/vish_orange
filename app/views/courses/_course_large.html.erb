@@ -1,0 +1,55 @@
+
+
+<li class="">
+
+  <div class="course_large">
+    
+    <%= link_to(course) do %>
+    <div class="course_large_image">
+      <div class="course_large_icon">
+        <img class="courses_corner" src="assets/orange/corner_course_icon.png" alt="corner_icon"/>
+      </div>
+      <div class="course_large_accreditation">
+        <img class="courses_accreditation" src="assets/orange/castillaleon.png" alt="accreditation"/>
+      </div>
+      <div class="course_large_img">
+        <div class="img-box-large" style="background-image: url('<%=course_raw_thumbail(course)%>')">
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+
+    <div class="course_large_info">
+      <!--Title -->
+        <p class="course_large_title">
+          <%= link_to truncate(course.title, :length => 73), course %>
+        </p>
+        <p class="course_large_title_mob">
+          <%= link_to truncate(course.title, :length => 65), course %>
+        </p>
+      <p class="course_large_duration">
+        <span>Duración:</span> 2 semanas
+      </p>
+      <p class="course_large_coursetype">
+        Abierto permanentemente
+      </p>
+
+      <!--Duration -->
+        <!-- <p class="course_large_duration"> -->
+          <!-- <span><#%= t('courses_page.duration')%></span> <#%= link_to course.duration, course %> -->
+        <!-- </p> -->
+      <!--Course type -->
+        <!-- <p class="course_large_coursetype"> -->
+          <!-- <#%= link_to course.coursetype, course %> -->
+        <!-- </p> -->
+
+      <!--Description -->
+        <p class="course_large_description">
+          <%= link_to truncate(course.description, :length => 140), course%>
+        </p>
+    </div>
+
+  </div>
+
+</li>

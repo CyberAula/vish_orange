@@ -123,7 +123,10 @@ es:
   courses_page:
     title: 'Nuestros cursos'
     subtitle: 'Descubre nuestros cursos certificados online'
-    introduction: 'Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad'
+    firstband: 'Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad'
+    secondband: 'Próximas ediciones de nuestros cursos <span class="primary">acreditados</span>. No las dejes pasar. ¡Matrículate ya!'
+    thirdband: '¿Te lo has perdido? Échale un vistazo a otras ediciones y pregúntanos lo que quieras'
+    courses_page: 'Duración:'
 
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"

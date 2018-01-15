@@ -1,4 +1,4 @@
-en:
+ﬁFen:
   i18n:
     transliterate:
       rule:
@@ -131,7 +131,10 @@ en:
   courses_page:
     title: 'Our courses'
     subtitle: 'Discover our online certified courses'
-    introduction: 'We offer free certified online courses, so you can learn at your pace and intensity best suited to you and become an expert in cybersecurity'
+    firstband: 'We offer free certified online courses, so you can learn at your pace and intensity best suited to you and become an expert in cybersecurity'
+    secondband: 'Upcoming editions of our <span class="primary">accredited</span> courses. Do not miss them. Register now!'
+    thirdband: 'Have you missed it? Check out other editions and ask us whatever you want'
+    courses_page: 'Duration:'
 
   create_account:
     title_html: "Create your account for free and become an expert <br>in the safe and responsible use of ICT"
