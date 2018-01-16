@@ -1,10 +1,10 @@
 <div class="illustration">
 	<div class="main-box">
-		
+
 		<img class="courses_img" src="assets/orange/courses.jpg" alt="cover_image">
 
 		<div class="main-title">
-		  
+
 		  <div class="title">
 		    <h1><%= t('courses_page.title')%></h1>
 		    <h2><%= t('courses_page.subtitle')%></h2>
@@ -27,7 +27,7 @@
 		<div class="content_block">
 
 			<div class="items">
-			<%@firstband = [Course.find(3), Course.find(2)]%>
+			<%@firstband = [Course.find(5), Course.find(6)]%>
 				<%if @firstband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
@@ -35,9 +35,9 @@
 						<%= render partial: 'courses/course_large' , :locals => { :course => c } %>
 					<%end%>
 				<%end%>
-			
+
 		</div>
-		</div>	
+		</div>
 	</div>
 
 	<div class="block">
@@ -49,7 +49,7 @@
 		<div class="content_block">
 
 			<div class="items">
-			<%@secondband = [Course.find(5), Course.find(4)]%>
+			<%@secondband = [Course.find(7), Course.find(8)]%>
 				<%if @secondband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
@@ -57,9 +57,9 @@
 						<%= render partial: 'courses/course_large' , :locals => { :course => c } %>
 					<%end%>
 				<%end%>
-			
+
 		</div>
-		</div>	
+		</div>
 	</div>
 
 		<div class="block_dark">
@@ -71,7 +71,7 @@
 		<div class="content_block">
 
 			<div class="items">
-			<%@thirdband = [Course.find(3), Course.find(2)]%>
+			<%@thirdband = [Course.find(2), Course.find(3), Course.find(4)]%>
 				<%if @thirdband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
@@ -79,14 +79,14 @@
 						<%= render partial: 'courses/course_small' , :locals => { :course => c } %>
 					<%end%>
 				<%end%>
-			
+
 		</div>
-		</div>	
+		</div>
 	</div>
-	
-	
+
+
 	<!--
-	
+
 	<div class="content_block">
 		<div class="items">
 			<ul>

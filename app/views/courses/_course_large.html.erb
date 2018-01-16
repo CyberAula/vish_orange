@@ -3,15 +3,17 @@
 <li class="">
 
   <div class="course_large">
-    
+
     <%= link_to(course) do %>
     <div class="course_large_image">
       <div class="course_large_icon">
         <img class="courses_corner" src="assets/orange/corner_course_icon.png" alt="corner_icon"/>
       </div>
+      <%if course.accredited%>
       <div class="course_large_accreditation">
-        <img class="courses_accreditation" src="assets/orange/castillaleon.png" alt="accreditation"/>
+        <img class="courses_accreditation" src="<%=course.accredited_logo%>" alt="<%=course.accredited_text%>"/>
       </div>
+      <%end%>
       <div class="course_large_img">
         <div class="img-box-large" style="background-image: url('<%=course_raw_thumbail(course)%>')">
         </div>
@@ -29,10 +31,16 @@
           <%= link_to truncate(course.title, :length => 65), course %>
         </p>
       <p class="course_large_duration">
-        <span>Duración:</span> 2 semanas
+        <span>Duración:</span> <%=course.duration_text%>
       </p>
       <p class="course_large_coursetype">
-        Abierto permanentemente
+        <%if course.self_learning_format%>
+          Abierto permanentemente
+        <%elsif course.start_date%>
+          Comienzo: <%=course.start_date%>
+        <%else%>
+          Comienzo próximamente
+        <%end%>
       </p>
 
       <!--Duration -->

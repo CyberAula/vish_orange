@@ -18,7 +18,6 @@ class Course < ActiveRecord::Base
     restriction_password.present?
   end
 
-
   private
 
   def update_course_count
