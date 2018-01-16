@@ -126,7 +126,10 @@ es:
     firstband: 'Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad'
     secondband: 'Próximas ediciones de nuestros cursos <span class="primary">acreditados</span>. No las dejes pasar. ¡Matrículate ya!'
     thirdband: '¿Te lo has perdido? Échale un vistazo a otras ediciones y pregúntanos lo que quieras'
-    courses_page: 'Duración:'
+    duration: 'Duración:'
+    open: 'Abierto permanentemente'
+    start: 'Comienzo:'
+    start_soon: 'Comienzo próximamente'
 
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
@@ -635,6 +638,7 @@ es:
       leave: "Desinscribirme"
       register_and_enrol: "Registrarme e inscribirme"
       register: "Registrarme"
+      back: "Volver a la página de cursos"
     age: "Edad recomendada"
     age_range: "de %{age_min} a %{age_max} años"
     confirm_delete: "Está seguro que quiere borrar este curso?"

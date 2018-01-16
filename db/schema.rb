@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180115105425) do
+ActiveRecord::Schema.define(:version => 20180115172400) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -271,6 +271,11 @@ ActiveRecord::Schema.define(:version => 20180115105425) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.boolean  "accredited",              :default => false
+    t.text     "accredited_text"
+    t.text     "accredited_logo"
+    t.boolean  "self_learning_format",    :default => false
+    t.text     "duration_text"
   end
 
   create_table "courses_users", :id => false, :force => true do |t|
@@ -334,7 +339,7 @@ ActiveRecord::Schema.define(:version => 20180115105425) do
     t.integer  "slide_count",             :default => 1
     t.text     "thumbnail_url"
     t.boolean  "draft",                   :default => false
-    t.text     "offline_manifest",        :default => ""
+    t.text     "offline_manifest"
     t.datetime "scorm2004_timestamp"
     t.datetime "pdf_timestamp"
     t.string   "attachment_file_name"
@@ -753,9 +758,9 @@ ActiveRecord::Schema.define(:version => 20180115105425) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "private_student_group_id"
-    t.string   "school"
     t.string   "surname"
     t.string   "madridorgid"
+    t.string   "school"
   end
 
   add_index "users", ["actor_id"], :name => "index_users_on_actor_id"

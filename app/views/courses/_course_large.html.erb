@@ -24,37 +24,29 @@
 
     <div class="course_large_info">
       <!--Title -->
-        <p class="course_large_title">
-          <%= link_to truncate(course.title, :length => 73), course %>
-        </p>
-        <p class="course_large_title_mob">
-          <%= link_to truncate(course.title, :length => 65), course %>
-        </p>
-      <p class="course_large_duration">
-        <span>Duración:</span> <%=course.duration_text%>
+      <p class="course_large_title">
+        <%= link_to truncate(course.title, :length => 73), course %>
       </p>
-      <p class="course_large_coursetype">
+      <p class="course_large_title_mob">
+        <%= link_to truncate(course.title, :length => 65), course %>
+      </p>
+      <!--Duration -->
+      <p class="course_large_duration">
+        <span><%= t('courses_page.duration')%></span> <%=course.duration_text%>
+      </p>
+      <!--Course type -->
+      <p class="course_learning_format">
         <%if course.self_learning_format%>
-          Abierto permanentemente
+          <%= t('courses_page.open')%>
         <%elsif course.start_date%>
-          Comienzo: <%=course.start_date.strftime('%d-%m-%Y')%>
+          <span><%= t('courses_page.start')%></span> <%=course.start_date.strftime('%d-%m-%Y')%>
         <%else%>
-          Comienzo próximamente
+          <span><%= t('courses_page.start_soon')%></span>
         <%end%>
       </p>
-
-      <!--Duration -->
-        <!-- <p class="course_large_duration"> -->
-          <!-- <span><#%= t('courses_page.duration')%></span> <#%= link_to course.duration, course %> -->
-        <!-- </p> -->
-      <!--Course type -->
-        <!-- <p class="course_large_coursetype"> -->
-          <!-- <#%= link_to course.coursetype, course %> -->
-        <!-- </p> -->
-
       <!--Description -->
         <p class="course_large_description">
-          <%= link_to truncate(course.description, :length => 140), course%>
+          <%= link_to truncate(course.description, :length => 139), course%>
         </p>
     </div>
 
