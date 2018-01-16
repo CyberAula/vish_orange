@@ -37,7 +37,7 @@
         <%if course.self_learning_format%>
           Abierto permanentemente
         <%elsif course.start_date%>
-          Comienzo: <%=course.start_date%>
+          Comienzo: <%=course.start_date.strftime('%d-%m-%Y')%>
         <%else%>
           Comienzo próximamente
         <%end%>
