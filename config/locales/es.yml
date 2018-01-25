@@ -131,6 +131,13 @@ es:
     start: 'Comienzo:'
     start_soon: 'Comienzo próximamente'
 
+  mycourses_page:
+    title: 'Mis cursos'
+    subtitle: 'Aquí es donde puedes organizar tus cursos'
+    courses_band: 'Estás matriculado en los siguientes cursos'
+    nocourses_band: 'Parece que todavía no estás matriculado en ninguno de nuestros cursos. Pulsa en el botón para echar un vistazo en nuestro catálogo'
+    button: 'Catálogo'
+
   create_account:
     title_html: "Crea tu cuenta gratuita y <br> conviértete en un experto en ciberseguridad"
     btn_reg: "Registrarme"

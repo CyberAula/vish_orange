@@ -81,7 +81,15 @@ $timeline-panel-border:  lighten($border-color, 16%) !default;
 
 
 //== Typography
-//
+
+//Orange Helvetica Neue
+$OrangeBolder: 'OHN75';
+$OrangeBold: 'OHN65';
+$OrangeRegular: 'OHN55';
+$OrangeLight: 'OHN45';
+$OrangeLighter: 'OHN35';
+
+
 //## Font, line-height, and color for body text, headings, and more.
 $corporate-font-family-sans-serif-Light:          "opensans-light", Arial, sans-serif;
 $corporate-font-family-sans-serif-Regular:        "opensans-regular", Arial, sans-serif;

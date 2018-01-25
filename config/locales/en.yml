@@ -139,6 +139,13 @@ en:
     start: 'Start:'
     start_soon: 'Start soon'
 
+  mycourses_page:
+    title: 'My courses'
+    subtitle: 'Here is where you can organise your courses'
+    courses_band: 'You are enrolled in the following courses'
+    nocourses_band: 'It seems that you are not yet enrolled in any of our courses. Click on the button to take a look in our catalog'
+    button: 'Catalog'
+
   create_account:
     title_html: "Create your account for free and become an expert <br>in the safe and responsible use of ICT"
     btn_reg: "Create an account"

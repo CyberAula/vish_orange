@@ -95,7 +95,7 @@
     -webkit-transform: scale(1.05)
 
 
-@media (max-width: 1403px)
+@media (max-width: 1472px)
   
   .course_large
     margin-bottom: 1em
@@ -149,7 +149,8 @@
       position: absolute
       left: 0
       top: 0
-      .courses_corner
+      z-index: 10
+      .courses_corner, .courses_corner_closed
         width: 72px
     .course_small_accreditation
       position: absolute
@@ -160,6 +161,16 @@
     .course_small_img
       height: 100%
       border-bottom: 1px solid #999999
+      .course_small_opacity
+        width: 110%
+        height: 100%
+        position: absolute
+        top: 0
+        right: -.5px
+        background-color: white
+        opacity: .7
+        .closed
+          display: block
       .img-box-small
         width: 100%
         height: 100%

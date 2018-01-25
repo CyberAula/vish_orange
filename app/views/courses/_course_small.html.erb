@@ -7,12 +7,19 @@
     <%= link_to(course) do %>
     <div class="course_small_image">
       <div class="course_small_icon">
-        <img class="courses_corner" src="assets/orange/corner_course_icon.png" alt="corner_icon"/>
+        <%#if closed%>
+        <!-- <img class="courses_corner_closed" src="/assets/orange/corner_closed_course_icon.png" alt="corner_icon"/> -->
+        <%#else%>
+        <img class="courses_corner" src="/assets/orange/corner_course_icon.png" alt="corner_icon"/>
+        <%#end%>
       </div>
       <div class="course_small_accreditation">
         <img class="courses_accreditation" src="<%=course.accredited_logo%>" alt="<%=course.accredited_text%>"/>
       </div>
       <div class="course_small_img">
+        <%#if closed%>
+        <!-- <div class="course_small_opacity closed"></div> -->
+        <%#end%>
         <div class="img-box-small" style="background-image: url('<%=course_raw_thumbail(course)%>')">
         </div>
       </div>

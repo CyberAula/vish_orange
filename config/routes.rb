@@ -33,6 +33,7 @@ Vish::Application.routes.draw do
   match 'users/:id/update_role' => 'users#update_role'
   match 'users/:id/profile' => 'users#show'
 
+
   resource :session_locale
 
   #redirect excursions index to home
@@ -40,6 +41,8 @@ Vish::Application.routes.draw do
   #Allow login for applications (i.e. ViSH Mobile) that uses the home.json.
   match '/home.json' => 'home#index', :format => :json
 
+
+  match 'mycourses' => 'static#user_courses'
   match 'overview' => 'static#overview'
   match 'faq' => 'static#overview'
   match 'help' => 'static#overview'
@@ -127,6 +130,7 @@ Vish::Application.routes.draw do
     post 'join', :on => :member
     post 'leave', :on => :member
   end
+
 
   #Quiz Sessions
   resources :quiz_sessions do

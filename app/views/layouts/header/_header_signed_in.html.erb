@@ -121,7 +121,8 @@
 
                   <%if (availableModels.include? "Course") && current_subject.courses.length>0 %>
                     <li class="settings-menu">
-                      <%= link_to "/users/"+current_subject.slug+"/courses" do %>
+                      <%#= link_to "/users/"+current_subject.slug+"/mycourses" do %>
+                      <%= link_to "/mycourses" do %>
                           <i class="fa fa-graduation-cap"></i>
                           <span><%= t('course.my') %></span>
                       <% end %>
