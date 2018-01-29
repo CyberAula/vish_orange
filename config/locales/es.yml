@@ -850,6 +850,8 @@ es:
     main_title_doc: "Sube videos, imágenes, pdfs, ..."
     main_title_link: "Añade enlaces copiando URLs"
     main_title_embed: "Añade código HTML"
+    no_preview: "Este documento no se puede visualizar en un navegador."
+    no_preview2: "Puedes descargartelo haciendo click en el botón"
     options:
       documents: "Documentos / Videos / Audios"
       embed: "Embed (Código HTML)"
