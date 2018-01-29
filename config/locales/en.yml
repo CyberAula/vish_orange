@@ -141,7 +141,7 @@ en:
 
   mycourses_page:
     title: 'My courses'
-    subtitle: 'Here is where you can organise your courses'
+    subtitle: 'Here is where you can view your courses'
     courses_band: 'You are enrolled in the following courses'
     nocourses_band: 'It seems that you are not yet enrolled in any of our courses. Click on the button to take a look in our catalog'
     button: 'Catalog'
@@ -197,9 +197,9 @@ en:
     block2_txt_html: "Surely you have heard of <a href='/courses'>MOOC</a> (Massive Open Online Course), the online courses aimed at a vast number of participants, according to the principle of open and mass education. On this platform you will be able to undertake different <a href='/courses'>certified courses</a> that are adapted to your needs. Enjoy in our <a href='/search'>library</a> all the <a href='/search?type=Workshop'>modules</a> and <a href='/search?type=Excursion'>presentations</a> that you can share in the classroom."
     block3_txt_html: "<a href='https://www.youtube.com/watch?v=VxPVm_qFPfk&list=PL-qNzC6Q_XM7ydZR4sA5lntkihNVOCuST&index=2' target='_blank'>Create</a>, with your pupils, your own resources that you will be able to share on the platform. Prepare the content for your classes, upload the most useful resources, choose your favourite submissions and share them… everything you could imagine, you can do it with EducaInternet. <a href='/search?type=User'>More than 1500 teachers are already part of our community</a>. Join them and discover a simple tool with great features for creating educational content about Internet safety."
     block4_txt_html: "Internet safety is an aspect that, as educators, we must keep in mind at all times. Concepts like <a href='/search?type=Learning_object&category_ids=tecnoaddictions'>Techno-addiction</a>, <a href='/search?type=Learning_object&category_ids=privacy'>Digital identity</a>, <a href='/search?type=Learning_object&category_ids=grooming'>Grooming</a>, <a href='/search?type=Learning_object&category_ids=netiquette'>Netiquette</a> and <a href='/search?type=Learning_object&category_ids=licenses'>Licenses</a> are fundamentals in this field. At EducaInternet we have the collaboration of the <a href='/about'>leading companies and organisations on Cybersecurity</a>, who have endorsed us as a reference centre and the heart of the community concerned with Internet safety."
-  
+
   videos:
-    videotip01: "Don't do on the internet what you wouldn't do in real life"  
+    videotip01: "Don't do on the internet what you wouldn't do in real life"
     videotip02: "Secure passwords"
     videotip03: "Acceptance of cookies, legal and clauses"
     videotip04: "Intellectual property on the internet"

@@ -36,29 +36,15 @@
     <% end %>
   </li>
 
-  <!--settings-->
-  <li class="">
-    <%= link_to activities_path do %>
-      <i class='fa fa-globe'></i>
-      <%= t('header-mobile.activities') %>
-    <% end %>
-  </li>
-
-  <!--comunity -->
-  <li class="">
-    <a href="/search?type=User">
-      <i class="fa fa-comments-o"></i>
-      <%= t('header-mobile.community') %>
-    </a>
-  </li>
-
-  <!--quiz-->
-  <li class="">
-    <%= link_to quiz_sessions_path do %>
-    <i class="fa fa-check-square-o"></i>
-    <%= t('header-mobile.quiz') %>
-    <% end %>
-  </li>
+  <!--courses-->
+  <%if (availableModels.include? "Course") %>
+    <li class="">
+      <%= link_to "/users/"+current_subject.slug+"/courses" do %>
+          <i class="fa fa-graduation-cap"></i>
+          <span><%= t('course.my') %></span>
+      <% end %>
+    </li>
+  <%end%>
 
   <!--profile-->
   <li class="settings-menu">

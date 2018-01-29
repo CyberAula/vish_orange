@@ -8,8 +8,7 @@ class CoursesController < ApplicationController
   def index
     if current_user && params[:user_id].present?
       @courses = current_user.courses
-    else
-      @courses = Course.all
+      render :user_courses    
     end
   end
 

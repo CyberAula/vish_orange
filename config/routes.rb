@@ -41,8 +41,6 @@ Vish::Application.routes.draw do
   #Allow login for applications (i.e. ViSH Mobile) that uses the home.json.
   match '/home.json' => 'home#index', :format => :json
 
-
-  match 'mycourses' => 'static#user_courses'
   match 'overview' => 'static#overview'
   match 'faq' => 'static#overview'
   match 'help' => 'static#overview'
