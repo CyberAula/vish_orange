@@ -1,10 +1,10 @@
 <%= div_for zipfile, :class => 'content_size' do %>
   <div class="zipfile_show">
-    <i class='fa fa-file-archive-o default-icon'></i>
-    <%=t("document.no_preview")%><br/>
-    <%=t("document.no_preview2")%>
+    <span class='fa fa-file-archive-o default-icon'></span>
+    <p><%=t("document.no_preview")%></p>
+    <p><%=t("document.no_preview2")%></p>
     <div class="">
-      <a class="btn btn-primary" href='<%=download_document_path(@zipfile)%>'><i class="fa fa-download"></i> <%=t('document.actions.download')%></a>
+      <a class="btn btn-primary btn-zip" href='<%=download_document_path(@zipfile)%>'><span class="fa fa-download"></span> <%=t('document.actions.download')%></a>
     </div>
   </div>
 <% end %>
