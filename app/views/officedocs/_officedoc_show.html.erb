@@ -1,29 +1,37 @@
-<%= div_for officedoc, :class => 'content_size' do %>
-  <div class="officedoc_show">
-    <iframe id="iframe_officedoc_<%=officedoc.id%>" width="100%" height="500" style="border: none;" webkitAllowFullScreen="true" allowfullscreen="true" mozallowfullscreen="true"></iframe>
-  </div>
-<% end %>
+<%if officedoc.file_content_type.include?("opendocument")%>
+    <%= div_for officedoc do %>
+      <%= raw(icon(officedoc,false)) %>
+      hola hola
+    <% end %>
+<%else%>
+    <%= div_for officedoc, :class => 'content_size' do %>
+      <div class="officedoc_show">
+        <iframe id="iframe_officedoc_<%=officedoc.id%>" width="100%" height="500" style="border: none;" webkitAllowFullScreen="true" allowfullscreen="true" mozallowfullscreen="true"></iframe>
+      </div>
+    <% end %>
 
-<script type="text/javascript">
-	var isPDFSupported = function(){
-		var pdfReaderSupport = false;
-		if((typeof navigator.mimeTypes == "object")&&("application/pdf" in navigator.mimeTypes)){
-			pdfReaderSupport = true;
-		}
-		return pdfReaderSupport;
-	};
+    <script type="text/javascript">
+    	var isPDFSupported = function(){
+    		var pdfReaderSupport = false;
+    		if((typeof navigator.mimeTypes == "object")&&("application/pdf" in navigator.mimeTypes)){
+    			pdfReaderSupport = true;
+    		}
+    		return pdfReaderSupport;
+    	};
 
-	document.addEventListener("DOMContentLoaded", function(){
-		var iframeDOM = $("#iframe_officedoc_<%=officedoc.id%>");
-		var iframeSrc = '<%=raw officedoc.google_doc_url(request.protocol)%>';
+    	document.addEventListener("DOMContentLoaded", function(){
+    		var iframeDOM = $("#iframe_officedoc_<%=officedoc.id%>");
+    		var iframeSrc = '<%=raw officedoc.google_doc_url(request.protocol)%>';
 
-		if('<%=officedoc.file_content_type%>'=="application/pdf"){
-			//Check PDF native reader support
-			if(isPDFSupported()){
-				iframeSrc = '<%=raw officedoc.source_full_url(request.protocol)%>';
-			}
-		}
+    		if('<%=officedoc.file_content_type%>'=="application/pdf"){
+    			//Check PDF native reader support
+    			if(isPDFSupported()){
+    				iframeSrc = '<%=raw officedoc.source_full_url(request.protocol)%>';
+    			}
+    		}
 
-		$(iframeDOM).attr("src",iframeSrc);
-	});
-</script>
+    		$(iframeDOM).attr("src",iframeSrc);
+    	});
+    </script>
+
+<%end%>
