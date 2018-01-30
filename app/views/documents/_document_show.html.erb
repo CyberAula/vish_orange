@@ -1,4 +1,8 @@
 <%= div_for document do %>
   <%= raw(icon(document,false)) %>
-  hola hola
+  <p class="zipfile_text"><%=t("document.no_preview")%></p>
+  <p class="zipfile_text"><%=t("document.no_preview2")%></p>
+  <div class="">
+    <a class="btn btn-primary btn-zip" href='<%=download_document_path(document)%>'><span class="fa fa-download"></span> <%=t('document.actions.download')%></a>
+  </div>
 <% end %>
