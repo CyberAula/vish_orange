@@ -16,7 +16,7 @@
     <%= render partial: 'contests/templates/'+@contest.name+'/presentation' %>
   <%end%>
   <%if contest_phase == 3 %>
-    <%if user_signed_in? %>
+    <%if user_signed_in? && isUserEnrolled?%>
       <!-- share resources -->
       <%= render partial: 'contests/templates/'+@contest.name+'/share_resources' %>
     <%else%>
