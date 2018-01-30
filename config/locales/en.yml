@@ -186,8 +186,10 @@ en:
       text: "Discover <a href='https://twitter.com/unicoos?lang=es'>David Calle's</a> EducaTips to find inspiration and get down to work with your class. <br/> There’s still time to participate in the <a href='/contest/educa2017'>2nd EducaInternet Competition</a>!"
     contest_block:
       img: "contest17_illustration_EN.png"
-      title: "Be a part of the 2nd EducaInternet Competition!"
-      text: "Partake with your class until the 31st of January by creating a resource about the safe use of the internet."
+      title2: "Be a part of the 2nd EducaInternet Competition!"
+      text2: "Partake with your class until the 31st of January by creating a resource about the safe use of the internet."
+      title3: "Share your resource and win the public’s choice prize"
+      text3: "I hope that you and your class have enjoyed yourselves and learnt a lot while creating your resource! Now there is just one more step: share it on Facebook to get the most votes possible and aim for the public’s choice prize. Good luck!"
     bt_aboutus: "About us"
     block1_tit: "EducaInternet, an infinite source of resources about safe ICT"
     block2_tit: "We offer you free accredited online courses so you can learn at your own pace and become a Cybersecurity expert"

@@ -6,6 +6,7 @@
 <%= render partial: 'contests/submissions_all', locals: { contest: @contest} %>
 
 <div id="fb-root"></div>
+<%if Vish::Application.config.APP_CONFIG['facebook']%>
 <script>(function(){
     if(document.getElementById('facebook-jssdk')){
       return;
@@ -17,3 +18,4 @@
     head.appendChild(facebook_js);
   }());
 </script>
+<%end%>

@@ -181,8 +181,10 @@ es:
       text: "Descubre los EducaConsejos de <a href='https://twitter.com/unicoos?lang=es'>David Calle</a> para inspirarte y ponte manos a la obra junto a tu clase. </br> ¡Todavía estás a tiempo de <a href='/contest/educa2017'>participar en el 2º Concurso EducaInternet</a>!"
     contest_block:
       img: "contest17_illustration_ES.png"
-      title: "¡Inscríbete en el 2º Concurso EducaInternet!"
-      text: "Participa con tu aula hasta el 31 de enero creando un recurso sobre el uso seguro de Internet."
+      title2: "¡Inscríbete en el 2º Concurso EducaInternet!"
+      text2: "Participa con tu aula hasta el 31 de enero creando un recurso sobre el uso seguro de Internet."
+      title3: "Difunde tu recurso y gana el premio del público"
+      text3: "¡Espero que tú y tu aula hayáis disfrutado y aprendido creando vuestro recurso! Ahora solo queda dar un paso más: compartirlo en Facebook para lograr el mayor número de votaciones posibles y optar al premio del público. ¡Suerte!"
     bt_aboutus: "conócenos"
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
     block2_tit: "Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"
