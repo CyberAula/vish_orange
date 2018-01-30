@@ -865,7 +865,7 @@ en:
     main_title_link: "Add links by copying URLs"
     main_title_embed: "Add embed by inserting HTML code"
     no_preview: "This document cannot be viewed in a browser."
-    no_preview2: "You can download it clicking in the button"
+    no_preview2: "You can download it clicking in the button."
     options:
       documents: "Documents / Videos / Audios"
       embed: "Embed (HTML code)"

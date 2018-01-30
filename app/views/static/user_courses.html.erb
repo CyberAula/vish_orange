@@ -1,0 +1,64 @@
+<div class="illustration">
+	<div class="main-box">
+
+		<img class="courses_img" src="/assets/orange/mycourses.jpg" alt="cover_image">
+
+		<div class="main-title">
+
+		  <div class="title">
+		    <h1><%= t('mycourses_page.title')%></h1>
+		    <h2><%= t('mycourses_page.subtitle')%></h2>
+		  </div>
+
+		</div>
+
+	</div>
+</div>
+
+<section class="courses_page explore_blocks">
+
+
+<%#if anycourses%>
+	<div class="block_dark">
+
+		<div class="content_block">
+			<h2 class=""><%= t('mycourses_page.courses_band')%></h2>
+		</div>
+
+		<div class="content_block">
+
+			<div class="items">
+			<%@firstband = [Course.find(5), Course.find(6)]%>
+				<%if @firstband.length==0%>
+					<%=t("course.none")%>
+				<%else%>
+					<%@firstband.each do |c|%>
+						<%= render partial: 'courses/course_small' , :locals => { :course => c } %>
+					<%end%>
+				<%end%>
+
+		</div>
+		</div>
+	</div>
+
+<%#else%>
+	<div class="block_dark">
+			</br>
+			</br>
+
+			<div class="content_block">
+				<h2 class=""><%= t('mycourses_page.nocourses_band')%></h2>
+			</div>
+
+			<div class="content_block">
+				<button class="btn btn-center btn-primary" onclick="location.href='/courses';">
+					<%= t('mycourses_page.button')%>
+	     </button>
+   </div>
+
+	</div>
+<%#end%>
+
+</section>
+
+	<%= render :partial => "shared/create_account" %>
