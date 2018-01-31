@@ -113,7 +113,11 @@ en:
         text3_html: "If you already know how it works,<br><a href='%{url}'><b>you can proceed directly to your profile</b></a>"
       bt_upload: "Submit your resource"
     participants: "ALL PARTICIPANTS"
+    text_participants: "See the participants"
     vote_resources: "VOTE YOUR FAVOURITE RESOURCE"
+    text_vote: "Here is where you can see all the resources upload from our participants and vote for the best. Good luck to everyone!"
+    video_vote: 'We leave you here a video tutorial on how you can vote, take a look'
+    button_back: 'Go back to contest'
     winners:
       intro: "THE COMPETITION WINNERS"
 

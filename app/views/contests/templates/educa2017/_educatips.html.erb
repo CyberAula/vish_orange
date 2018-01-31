@@ -1,4 +1,4 @@
-<%if user_signed_in? && isUserEnrolled?%>
+<%if user_signed_in? && isUserEnrolled? || contest_phase == 2%>
 <%myclass="contest_block"%>
 <%else%>
 <%myclass="contest_block_dark"%>

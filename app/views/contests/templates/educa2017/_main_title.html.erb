@@ -41,7 +41,7 @@
           </button>
         <% else %>
           <button class="btn btn-contest" onclick="location.href='<%=contest_page_path(@contest,"index",true)%>';">
-            Volver al concurso
+            <%=t('contest_page.button_back')%>
           </button>
         <% end %>
       <% end %>

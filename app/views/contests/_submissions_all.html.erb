@@ -7,20 +7,49 @@
 		  <!-- winners -->
 		  <%= render partial: 'contests/templates/'+@contest.name+'/winners', :locals => { :bgwhite => false } %>
 		<%end%>
-	  <div class="intro">
+
+
+		  <div class="intro">
 			<% if contest_phase == 4 %>
 				<h1><%=t('contest_page.participants')%></h1>
 			<% else %>
-	    	<h1><%=t('contest_page.vote_resources')%></h1>
+	    	<h1><%=t('contest_page.vote_resources')%></h1>		    	
+	   	<% end %>
+	   	<div class="horizontal_line"></div>
+			</div>
+
+		
+					
+		<div class="content_block">
+
+			<% if contest_phase == 4 %>
+					<h2><%=t('contest_page.text_participants')%></h2>
+				</div>
+			<% else %>
+					<h2><%=t('contest_page.text_vote')%></h2>
+					</br>
+		    	<p class="p_block align_center"><%=t('contest_page.video_vote')%></p>
+		    </div>
+		    <div class="content_block">
+		    	  <div class="video_block">
+				      <iframe class="video_presentation" width="680" height="250" src="https://www.youtube.com/embed/4J5TJsINiTc" frameborder="0" allowfullscreen></iframe>
+				    </div>
+				</div>
+				</br>
 			<% end %>
-	    <div class="horizontal_line"></div>
-	  </div>
+
 		<ul class="items padding10 flex_center">
 			<% aos.map{|ao| ao.object}.each do |resource| %>
 				<%= render :partial => 'entities/entity', :locals => { :entity => resource, :prefix_id => "contest_"+contest.id.to_s+"_submitted_aos_all" } %>
 			<% end %>
 			<div class="clear"></div>
 		</ul>
+
+		</br>
+
+		<button class="btn btn-contest disp_block margin_auto" onclick="location.href='/contest/educa2017/';">
+        <%=t('contest_page.button_back')%>
+      </button>
 	</article>
 
 </div>
