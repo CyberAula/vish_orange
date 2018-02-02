@@ -1,8 +1,10 @@
-<%= div_for document do %>
-  <%= raw(icon(document,false)) %>
-  <p class="zipfile_text"><%=t("document.no_preview")%></p>
-  <p class="zipfile_text"><%=t("document.no_preview2")%></p>
-  <div class="">
-    <a class="btn btn-primary btn-zip" href='<%=download_document_path(document)%>'><span class="fa fa-download"></span> <%=t('document.actions.download')%></a>
-  </div>
+<%= div_for document, :class => 'content_size' do %>
+  <div class="downloadfile_show">
+    <span class="fa fa-file-o icon_downloadfile"></span>
+	  <p class="downloadfile_text"><%=t("document.no_preview")%></p>
+	  <p class="downloadfile_text"><%=t("document.no_preview2")%></p>
+	  <div class="">
+	    <a class="btn btn-primary btn-downloadfile" href='<%=download_document_path(document)%>'><span class="fa fa-download"></span> <%=t('document.actions.download')%></a>
+	  </div>
+	</div>
 <% end %>
