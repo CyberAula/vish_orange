@@ -40,14 +40,30 @@
                                          overview          /overview(.:format)                                                  static#overview
                                               faq          /faq(.:format)                                                       static#overview
                                              help          /help(.:format)                                                      static#overview
-                                     legal_notice          /legal_notice(.:format)                                              static#terms_of_use
-                                   privacy_policy          /privacy_policy(.:format)                                            static#privacy_policy
+                                     legal_notice          /legal_notice(.:format)                                              static#conditions_of_use
                                 conditions_of_use          /conditions_of_use(.:format)                                         static#conditions_of_use
-                                     contributors          /contributors(.:format)                                              static#contributors
-                                            teach          /teach(.:format)                                                     static#teach
-                                            learn          /learn(.:format)                                                     static#learn
-                                      user_manual          /user_manual(.:format)                                               static#download_user_manual
+                                   privacy_policy          /privacy_policy(.:format)                                            static#privacy_policy
+                                            about          /about(.:format)                                                     static#about_us
+                                         whatwedo          /whatwedo(.:format)                                                  static#what_we_do
+                                          explore          /explore(.:format)                                                   static#explore
+                                    contributions          /contributions(.:format)                                             static#contributions
                             download_perm_request          /download_perm_request(.:format)                                     static#download_perm_request
+                                      user_manual          /user_manual(.:format)                                               static#download_user_manual
+                                        educatip1          /educatip1(.:format)                                                 static#educatip1
+                                        educatip2          /educatip2(.:format)                                                 static#educatip2
+                                        educatip3          /educatip3(.:format)                                                 static#educatip3
+                                        educatip4          /educatip4(.:format)                                                 static#educatip4
+                                        educatip5          /educatip5(.:format)                                                 static#educatip5
+                                        educatip6          /educatip6(.:format)                                                 static#educatip6
+                                       educatip1m          /educatip1m(.:format)                                                static#educatip1m
+                                       educatip2m          /educatip2m(.:format)                                                static#educatip2m
+                                       educatip3m          /educatip3m(.:format)                                                static#educatip3m
+                                       educatip4m          /educatip4m(.:format)                                                static#educatip4m
+                                       educatip5m          /educatip5m(.:format)                                                static#educatip5m
+                                       educatip6m          /educatip6m(.:format)                                                static#educatip6m
+                                           email1          /email1(.:format)                                                    static#contest_welcome_email_test
+                                           email2          /email2(.:format)                                                    static#platform_welcome_email_test
+                                           email3          /email3(.:format)                                                    static#campaign_email
                                       apis_search          /apis/search(.:format)                                               federated_search#search
                                   apis_iframe_api          /apis/iframe_api(.:format)                                           excursions#iframe_api
                                  apis_recommender          /apis/recommender(.:format)                                          recommender#api_resource_suggestions
@@ -56,15 +72,15 @@
                                   search_advanced          /search/advanced(.:format)                                           search#advanced
                                        lre_search          /lre/search(.:format)                                                lre#search_lre
                                                            /activity_objects/avatar/:id(.:format)                               activity_object#show_avatar
+                                                           /activity_objects/:id/metadata(.:format)                             activity_object#metadata
                                        thumbnails          /thumbnails(.:format)                                                excursions#excursion_thumbnails
                             excursions_last_slide          /excursions/last_slide(.:format)                                     excursions#last_slide
                                excursions_preview          /excursions/preview(.:format)                                        excursions#preview
-                          excursions_interactions          /excursions/interactions(.:format)                                   excursions#interactions
                                                            /excursions/:id/metadata(.:format)                                   excursions#metadata
                                                            /excursions/:id/scormMetadata(.:format)                              excursions#scormMetadata
                                                            /excursions/:id/clone(.:format)                                      excursions#clone
                                                            /excursions/:id/evaluate(.:format)                                   excursions#evaluate
-                                                           /excursions/:id/upload_attachment(.:format)                          excursions#upload_attachment
+                           excursions_attachments          /excursions/attachments(.:format)                                    excursions#upload_attachment
                                                            /excursions/:id/attachment(.:format)                                 excursions#show_attachment
                                                            /excursions/:id/allow_publishing(.:format)                           excursions#allow_publishing
                                                            /excursions/:id.mashme(.:format)                                     excursions#show {:format=>"gateway", :gateway=>"mashme"}
@@ -87,21 +103,18 @@
                                          workshop GET      /workshops/:id(.:format)                                             workshops#show
                                                   PUT      /workshops/:id(.:format)                                             workshops#update
                                                   DELETE   /workshops/:id(.:format)                                             workshops#destroy
-                                   wa_assignments GET      /wa_assignments(.:format)                                            wa_assignments#index
-                                                  POST     /wa_assignments(.:format)                                            wa_assignments#create
+                                   wa_assignments POST     /wa_assignments(.:format)                                            wa_assignments#create
                                 new_wa_assignment GET      /wa_assignments/new(.:format)                                        wa_assignments#new
                                edit_wa_assignment GET      /wa_assignments/:id/edit(.:format)                                   wa_assignments#edit
                                     wa_assignment GET      /wa_assignments/:id(.:format)                                        wa_assignments#show
                                                   PUT      /wa_assignments/:id(.:format)                                        wa_assignments#update
                                                   DELETE   /wa_assignments/:id(.:format)                                        wa_assignments#destroy
-                                     wa_resources GET      /wa_resources(.:format)                                              wa_resources#index
-                                                  POST     /wa_resources(.:format)                                              wa_resources#create
+                                     wa_resources POST     /wa_resources(.:format)                                              wa_resources#create
                                   new_wa_resource GET      /wa_resources/new(.:format)                                          wa_resources#new
                                  edit_wa_resource GET      /wa_resources/:id/edit(.:format)                                     wa_resources#edit
                                       wa_resource GET      /wa_resources/:id(.:format)                                          wa_resources#show
                                                   PUT      /wa_resources/:id(.:format)                                          wa_resources#update
                                                   DELETE   /wa_resources/:id(.:format)                                          wa_resources#destroy
-                                    contributions GET      /contributions(.:format)                                             contributions#index
                                                   POST     /contributions(.:format)                                             contributions#create
                                  new_contribution GET      /contributions/new(.:format)                                         contributions#new
                                 edit_contribution GET      /contributions/:id/edit(.:format)                                    contributions#edit
@@ -109,30 +122,34 @@
                                                   PUT      /contributions/:id(.:format)                                         contributions#update
                                                   DELETE   /contributions/:id(.:format)                                         contributions#destroy
                                                            /wa_resources_galleries/:id/add_resource(.:format)                   wa_resources_galleries#add_resource
-                           wa_resources_galleries GET      /wa_resources_galleries(.:format)                                    wa_resources_galleries#index
-                                                  POST     /wa_resources_galleries(.:format)                                    wa_resources_galleries#create
+                           wa_resources_galleries POST     /wa_resources_galleries(.:format)                                    wa_resources_galleries#create
                          new_wa_resources_gallery GET      /wa_resources_galleries/new(.:format)                                wa_resources_galleries#new
                         edit_wa_resources_gallery GET      /wa_resources_galleries/:id/edit(.:format)                           wa_resources_galleries#edit
                              wa_resources_gallery GET      /wa_resources_galleries/:id(.:format)                                wa_resources_galleries#show
                                                   PUT      /wa_resources_galleries/:id(.:format)                                wa_resources_galleries#update
                                                   DELETE   /wa_resources_galleries/:id(.:format)                                wa_resources_galleries#destroy
-                       wa_contributions_galleries GET      /wa_contributions_galleries(.:format)                                wa_contributions_galleries#index
-                                                  POST     /wa_contributions_galleries(.:format)                                wa_contributions_galleries#create
+                       wa_contributions_galleries POST     /wa_contributions_galleries(.:format)                                wa_contributions_galleries#create
                      new_wa_contributions_gallery GET      /wa_contributions_galleries/new(.:format)                            wa_contributions_galleries#new
                     edit_wa_contributions_gallery GET      /wa_contributions_galleries/:id/edit(.:format)                       wa_contributions_galleries#edit
                          wa_contributions_gallery GET      /wa_contributions_galleries/:id(.:format)                            wa_contributions_galleries#show
                                                   PUT      /wa_contributions_galleries/:id(.:format)                            wa_contributions_galleries#update
                                                   DELETE   /wa_contributions_galleries/:id(.:format)                            wa_contributions_galleries#destroy
-                                         wa_texts GET      /wa_texts(.:format)                                                  wa_texts#index
-                                                  POST     /wa_texts(.:format)                                                  wa_texts#create
+                                         wa_texts POST     /wa_texts(.:format)                                                  wa_texts#create
                                       new_wa_text GET      /wa_texts/new(.:format)                                              wa_texts#new
                                      edit_wa_text GET      /wa_texts/:id/edit(.:format)                                         wa_texts#edit
                                           wa_text GET      /wa_texts/:id(.:format)                                              wa_texts#show
                                                   PUT      /wa_texts/:id(.:format)                                              wa_texts#update
                                                   DELETE   /wa_texts/:id(.:format)                                              wa_texts#destroy
-                                      competition          /competition(.:format)                                               competition#index
-                     competition_join_competition          /competition/join_competition(.:format)                              competition#join_competition
-                                  competition_all          /competition/all(.:format)                                           competition#all_items
+                                attachment_course GET      /courses/:id/attachment(.:format)                                    courses#attachment
+                                      join_course POST     /courses/:id/join(.:format)                                          courses#join
+                                     leave_course POST     /courses/:id/leave(.:format)                                         courses#leave
+                                          courses GET      /courses(.:format)                                                   courses#index
+                                                  POST     /courses(.:format)                                                   courses#create
+                                       new_course GET      /courses/new(.:format)                                               courses#new
+                                      edit_course GET      /courses/:id/edit(.:format)                                          courses#edit
+                                           course GET      /courses/:id(.:format)                                               courses#show
+                                                  PUT      /courses/:id(.:format)                                               courses#update
+                                                  DELETE   /courses/:id(.:format)                                               courses#destroy
                              results_quiz_session GET      /quiz_sessions/:id/results(.:format)                                 quiz_sessions#results
                                     quiz_sessions GET      /quiz_sessions(.:format)                                             quiz_sessions#index
                                                   POST     /quiz_sessions(.:format)                                             quiz_sessions#create
@@ -145,13 +162,9 @@
                                                            /quiz_sessions/:id/delete(.:format)                                  quiz_sessions#delete
                                                            /quiz_sessions/:id/answer(.:format)                                  quiz_sessions#updateAnswers
                                                            /qs/:id(.:format)                                                    quiz_sessions#show
-                                          pdfexes GET      /pdfexes(.:format)                                                   pdfexes#index
-                                                  POST     /pdfexes(.:format)                                                   pdfexes#create
+                                          pdfexes POST     /pdfexes(.:format)                                                   pdfexes#create
                                         new_pdfex GET      /pdfexes/new(.:format)                                               pdfexes#new
-                                       edit_pdfex GET      /pdfexes/:id/edit(.:format)                                          pdfexes#edit
                                             pdfex GET      /pdfexes/:id(.:format)                                               pdfexes#show
-                                                  PUT      /pdfexes/:id(.:format)                                               pdfexes#update
-                                                  DELETE   /pdfexes/:id(.:format)                                               pdfexes#destroy
                             categories_categorize POST     /categories/categorize(.:format)                                     categories#categorize
                        categories_edit_categories POST     /categories/edit_categories(.:format)                                categories#edit_categories
                               categories_settings POST     /categories/settings(.:format)                                       categories#settings
@@ -185,12 +198,37 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                                   POST     /private_student_groups/:id/change_teacher_notifications(.:format)   private_student_groups#change_teacher_notifications
             private_student_groups_notify_teacher POST     /private_student_groups/notify_teacher(.:format)                     private_student_groups#notify_teacher
            service_permissions_update_permissions POST     /service_permissions/update_permissions(.:format)                    service_permissions#update_permissions
-                                          contest          /contest(.:format)                                                   static#contest
-                                      contest_all          /contest_all(.:format)                                               static#contest_all
+                              subscribe_mail_list GET      /mail_lists/:id/subscribe(.:format)                                  mail_lists#subscribe
+                             subscribed_mail_list POST     /mail_lists/:id/subscribed(.:format)                                 mail_lists#subscribed
+                            unsubscribe_mail_list GET      /mail_lists/:id/unsubscribe(.:format)                                mail_lists#unsubscribe
+                           unsubscribed_mail_list POST     /mail_lists/:id/unsubscribed(.:format)                               mail_lists#unsubscribed
+                                        mail_list GET      /mail_lists/:id(.:format)                                            mail_lists#show
+                                   contest_educa2          /contest/educa2(.:format)                                            :controller#:action
+                                   enroll_contest POST     /contests/:id/enroll(.:format)                                       contests#enroll
+                                disenroll_contest POST     /contests/:id/disenroll(.:format)                                    contests#disenroll
+                  new_resource_submission_contest GET      /contests/:id/new_resource_submission(.:format)                      contests#new_resource_submission
+                                   submit_contest POST     /contests/:id/submit(.:format)                                       contests#submit
+                            remove_submit_contest POST     /contests/:id/remove_submit(.:format)                                contests#remove_submit
+                                         contests GET      /contests(.:format)                                                  contests#index
+                                                  POST     /contests(.:format)                                                  contests#create
+                                      new_contest GET      /contests/new(.:format)                                              contests#new
+                                     edit_contest GET      /contests/:id/edit(.:format)                                         contests#edit
+                                          contest GET      /contests/:id(.:format)                                              contests#show
+                                                  PUT      /contests/:id(.:format)                                              contests#update
+                                                  DELETE   /contests/:id(.:format)                                              contests#destroy
+                                                           /contest/:name(.:format)                                             contests#show
+                                                           /contest/:name/page/:page(.:format)                                  contests#show
+                                                           /contests/:id/page/:page(.:format)                                   contests#show
+                                                  POST     /contest/:name/educa2016materials(.:format)                          contests#educa2016materials
+                                                           /contest/:name/other_fields_enrollment(.:format)                     contests#other_fields_enrollment
+                                                           /contest/:id/get_enrolled_users_to_contest(.:format)                 contests#get_enrolled_users_to_contest
+                                                           /contest/:name/full_enrollment_registration(.:format)                contests#full_enrollment_registration
+                                                  POST     /contests/:id/sign_up(.:format)                                      contests#sign_enroll
                                             admin          /admin(.:format)                                                     admin#index
                              admin_closed_reports          /admin/closed_reports(.:format)                                      admin#closed_reports
                                       admin_users          /admin/users(.:format)                                               admin#users
                                    admin_requests          /admin/requests(.:format)                                            admin#requests
+                                   admin_contests          /admin/contests(.:format)                                            admin#contests
                                      spam_reports GET      /spam_reports(.:format)                                              spam_reports#index
                                                   POST     /spam_reports(.:format)                                              spam_reports#create
                                   new_spam_report GET      /spam_reports/new(.:format)                                          spam_reports#new
@@ -225,7 +263,7 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                              room GET      /rooms/:id(.:format)                                                 rooms#show
                                                   PUT      /rooms/:id(.:format)                                                 rooms#update
                                                   DELETE   /rooms/:id(.:format)                                                 rooms#destroy
-                                                           /.well-known/host-meta(.:format)                                     #<Proc:0x007f9d0d2c8470@/home/ebarra/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/bundler/gems/rails-b344986bc3d9/actionpack/lib/action_controller/metal.rb:245>
+                                                           /.well-known/host-meta(.:format)                                     #<Proc:0x007fbc545633e0@/home/ebarra/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/bundler/gems/rails-54ebd0aea2e6/actionpack/lib/action_controller/metal.rb:245>
                                         webfinger          /webfinger(.:format)                                                 webfinger#index
                                              pshb          /pshb(.:format)                                                      pshb#index
                                            salmon          /salmon/:slug(.:format)                                              salmon#index
@@ -544,6 +582,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                    user_scormfile GET      /users/:user_id/scormfiles/:id(.:format)                             scormfiles#show
                                                   PUT      /users/:user_id/scormfiles/:id(.:format)                             scormfiles#update
                                                   DELETE   /users/:user_id/scormfiles/:id(.:format)                             scormfiles#destroy
+                           search_user_imscpfiles GET      /users/:user_id/imscpfiles/search(.:format)                          imscpfiles#search
+                                  user_imscpfiles GET      /users/:user_id/imscpfiles(.:format)                                 imscpfiles#index
+                                                  POST     /users/:user_id/imscpfiles(.:format)                                 imscpfiles#create
+                               new_user_imscpfile GET      /users/:user_id/imscpfiles/new(.:format)                             imscpfiles#new
+                              edit_user_imscpfile GET      /users/:user_id/imscpfiles/:id/edit(.:format)                        imscpfiles#edit
+                                   user_imscpfile GET      /users/:user_id/imscpfiles/:id(.:format)                             imscpfiles#show
+                                                  PUT      /users/:user_id/imscpfiles/:id(.:format)                             imscpfiles#update
+                                                  DELETE   /users/:user_id/imscpfiles/:id(.:format)                             imscpfiles#destroy
                               search_user_webapps GET      /users/:user_id/webapps/search(.:format)                             webapps#search
                                      user_webapps GET      /users/:user_id/webapps(.:format)                                    webapps#index
                                                   POST     /users/:user_id/webapps(.:format)                                    webapps#create
@@ -560,6 +606,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                     user_workshop GET      /users/:user_id/workshops/:id(.:format)                              workshops#show
                                                   PUT      /users/:user_id/workshops/:id(.:format)                              workshops#update
                                                   DELETE   /users/:user_id/workshops/:id(.:format)                              workshops#destroy
+                              search_user_courses GET      /users/:user_id/courses/search(.:format)                             courses#search
+                                     user_courses GET      /users/:user_id/courses(.:format)                                    courses#index
+                                                  POST     /users/:user_id/courses(.:format)                                    courses#create
+                                  new_user_course GET      /users/:user_id/courses/new(.:format)                                courses#new
+                                 edit_user_course GET      /users/:user_id/courses/:id/edit(.:format)                           courses#edit
+                                      user_course GET      /users/:user_id/courses/:id(.:format)                                courses#show
+                                                  PUT      /users/:user_id/courses/:id(.:format)                                courses#update
+                                                  DELETE   /users/:user_id/courses/:id(.:format)                                courses#destroy
                            search_user_repository GET      /users/:user_id/repository/search(.:format)                          repositories#search
                                   user_repository POST     /users/:user_id/repository(.:format)                                 repositories#create
                               new_user_repository GET      /users/:user_id/repository/new(.:format)                             repositories#new
@@ -704,6 +758,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                   group_scormfile GET      /groups/:group_id/scormfiles/:id(.:format)                           scormfiles#show
                                                   PUT      /groups/:group_id/scormfiles/:id(.:format)                           scormfiles#update
                                                   DELETE   /groups/:group_id/scormfiles/:id(.:format)                           scormfiles#destroy
+                          search_group_imscpfiles GET      /groups/:group_id/imscpfiles/search(.:format)                        imscpfiles#search
+                                 group_imscpfiles GET      /groups/:group_id/imscpfiles(.:format)                               imscpfiles#index
+                                                  POST     /groups/:group_id/imscpfiles(.:format)                               imscpfiles#create
+                              new_group_imscpfile GET      /groups/:group_id/imscpfiles/new(.:format)                           imscpfiles#new
+                             edit_group_imscpfile GET      /groups/:group_id/imscpfiles/:id/edit(.:format)                      imscpfiles#edit
+                                  group_imscpfile GET      /groups/:group_id/imscpfiles/:id(.:format)                           imscpfiles#show
+                                                  PUT      /groups/:group_id/imscpfiles/:id(.:format)                           imscpfiles#update
+                                                  DELETE   /groups/:group_id/imscpfiles/:id(.:format)                           imscpfiles#destroy
                              search_group_webapps GET      /groups/:group_id/webapps/search(.:format)                           webapps#search
                                     group_webapps GET      /groups/:group_id/webapps(.:format)                                  webapps#index
                                                   POST     /groups/:group_id/webapps(.:format)                                  webapps#create
@@ -720,6 +782,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                    group_workshop GET      /groups/:group_id/workshops/:id(.:format)                            workshops#show
                                                   PUT      /groups/:group_id/workshops/:id(.:format)                            workshops#update
                                                   DELETE   /groups/:group_id/workshops/:id(.:format)                            workshops#destroy
+                             search_group_courses GET      /groups/:group_id/courses/search(.:format)                           courses#search
+                                    group_courses GET      /groups/:group_id/courses(.:format)                                  courses#index
+                                                  POST     /groups/:group_id/courses(.:format)                                  courses#create
+                                 new_group_course GET      /groups/:group_id/courses/new(.:format)                              courses#new
+                                edit_group_course GET      /groups/:group_id/courses/:id/edit(.:format)                         courses#edit
+                                     group_course GET      /groups/:group_id/courses/:id(.:format)                              courses#show
+                                                  PUT      /groups/:group_id/courses/:id(.:format)                              courses#update
+                                                  DELETE   /groups/:group_id/courses/:id(.:format)                              courses#destroy
                           search_group_repository GET      /groups/:group_id/repository/search(.:format)                        repositories#search
                                  group_repository POST     /groups/:group_id/repository(.:format)                               repositories#create
                              new_group_repository GET      /groups/:group_id/repository/new(.:format)                           repositories#new
@@ -864,6 +934,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                            site_current_scormfile GET      /site/currents/:current_id/scormfiles/:id(.:format)                  site/scormfiles#show
                                                   PUT      /site/currents/:current_id/scormfiles/:id(.:format)                  site/scormfiles#update
                                                   DELETE   /site/currents/:current_id/scormfiles/:id(.:format)                  site/scormfiles#destroy
+                   search_site_current_imscpfiles GET      /site/currents/:current_id/imscpfiles/search(.:format)               site/imscpfiles#search
+                          site_current_imscpfiles GET      /site/currents/:current_id/imscpfiles(.:format)                      site/imscpfiles#index
+                                                  POST     /site/currents/:current_id/imscpfiles(.:format)                      site/imscpfiles#create
+                       new_site_current_imscpfile GET      /site/currents/:current_id/imscpfiles/new(.:format)                  site/imscpfiles#new
+                      edit_site_current_imscpfile GET      /site/currents/:current_id/imscpfiles/:id/edit(.:format)             site/imscpfiles#edit
+                           site_current_imscpfile GET      /site/currents/:current_id/imscpfiles/:id(.:format)                  site/imscpfiles#show
+                                                  PUT      /site/currents/:current_id/imscpfiles/:id(.:format)                  site/imscpfiles#update
+                                                  DELETE   /site/currents/:current_id/imscpfiles/:id(.:format)                  site/imscpfiles#destroy
                       search_site_current_webapps GET      /site/currents/:current_id/webapps/search(.:format)                  site/webapps#search
                              site_current_webapps GET      /site/currents/:current_id/webapps(.:format)                         site/webapps#index
                                                   POST     /site/currents/:current_id/webapps(.:format)                         site/webapps#create
@@ -880,6 +958,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                             site_current_workshop GET      /site/currents/:current_id/workshops/:id(.:format)                   site/workshops#show
                                                   PUT      /site/currents/:current_id/workshops/:id(.:format)                   site/workshops#update
                                                   DELETE   /site/currents/:current_id/workshops/:id(.:format)                   site/workshops#destroy
+                      search_site_current_courses GET      /site/currents/:current_id/courses/search(.:format)                  site/courses#search
+                             site_current_courses GET      /site/currents/:current_id/courses(.:format)                         site/courses#index
+                                                  POST     /site/currents/:current_id/courses(.:format)                         site/courses#create
+                          new_site_current_course GET      /site/currents/:current_id/courses/new(.:format)                     site/courses#new
+                         edit_site_current_course GET      /site/currents/:current_id/courses/:id/edit(.:format)                site/courses#edit
+                              site_current_course GET      /site/currents/:current_id/courses/:id(.:format)                     site/courses#show
+                                                  PUT      /site/currents/:current_id/courses/:id(.:format)                     site/courses#update
+                                                  DELETE   /site/currents/:current_id/courses/:id(.:format)                     site/courses#destroy
                    search_site_current_repository GET      /site/currents/:current_id/repository/search(.:format)               site/repositories#search
                           site_current_repository POST     /site/currents/:current_id/repository(.:format)                      site/repositories#create
                       new_site_current_repository GET      /site/currents/:current_id/repository/new(.:format)                  site/repositories#new
@@ -1024,6 +1110,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                          remote_subject_scormfile GET      /remote_subjects/:remote_subject_id/scormfiles/:id(.:format)         scormfiles#show
                                                   PUT      /remote_subjects/:remote_subject_id/scormfiles/:id(.:format)         scormfiles#update
                                                   DELETE   /remote_subjects/:remote_subject_id/scormfiles/:id(.:format)         scormfiles#destroy
+                 search_remote_subject_imscpfiles GET      /remote_subjects/:remote_subject_id/imscpfiles/search(.:format)      imscpfiles#search
+                        remote_subject_imscpfiles GET      /remote_subjects/:remote_subject_id/imscpfiles(.:format)             imscpfiles#index
+                                                  POST     /remote_subjects/:remote_subject_id/imscpfiles(.:format)             imscpfiles#create
+                     new_remote_subject_imscpfile GET      /remote_subjects/:remote_subject_id/imscpfiles/new(.:format)         imscpfiles#new
+                    edit_remote_subject_imscpfile GET      /remote_subjects/:remote_subject_id/imscpfiles/:id/edit(.:format)    imscpfiles#edit
+                         remote_subject_imscpfile GET      /remote_subjects/:remote_subject_id/imscpfiles/:id(.:format)         imscpfiles#show
+                                                  PUT      /remote_subjects/:remote_subject_id/imscpfiles/:id(.:format)         imscpfiles#update
+                                                  DELETE   /remote_subjects/:remote_subject_id/imscpfiles/:id(.:format)         imscpfiles#destroy
                     search_remote_subject_webapps GET      /remote_subjects/:remote_subject_id/webapps/search(.:format)         webapps#search
                            remote_subject_webapps GET      /remote_subjects/:remote_subject_id/webapps(.:format)                webapps#index
                                                   POST     /remote_subjects/:remote_subject_id/webapps(.:format)                webapps#create
@@ -1040,6 +1134,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                           remote_subject_workshop GET      /remote_subjects/:remote_subject_id/workshops/:id(.:format)          workshops#show
                                                   PUT      /remote_subjects/:remote_subject_id/workshops/:id(.:format)          workshops#update
                                                   DELETE   /remote_subjects/:remote_subject_id/workshops/:id(.:format)          workshops#destroy
+                    search_remote_subject_courses GET      /remote_subjects/:remote_subject_id/courses/search(.:format)         courses#search
+                           remote_subject_courses GET      /remote_subjects/:remote_subject_id/courses(.:format)                courses#index
+                                                  POST     /remote_subjects/:remote_subject_id/courses(.:format)                courses#create
+                        new_remote_subject_course GET      /remote_subjects/:remote_subject_id/courses/new(.:format)            courses#new
+                       edit_remote_subject_course GET      /remote_subjects/:remote_subject_id/courses/:id/edit(.:format)       courses#edit
+                            remote_subject_course GET      /remote_subjects/:remote_subject_id/courses/:id(.:format)            courses#show
+                                                  PUT      /remote_subjects/:remote_subject_id/courses/:id(.:format)            courses#update
+                                                  DELETE   /remote_subjects/:remote_subject_id/courses/:id(.:format)            courses#destroy
                  search_remote_subject_repository GET      /remote_subjects/:remote_subject_id/repository/search(.:format)      repositories#search
                         remote_subject_repository POST     /remote_subjects/:remote_subject_id/repository(.:format)             repositories#create
                     new_remote_subject_repository GET      /remote_subjects/:remote_subject_id/repository/new(.:format)         repositories#new
@@ -1161,6 +1263,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                         scormfile GET      /scormfiles/:id(.:format)                                            scormfiles#show
                                                   PUT      /scormfiles/:id(.:format)                                            scormfiles#update
                                                   DELETE   /scormfiles/:id(.:format)                                            scormfiles#destroy
+                                search_imscpfiles GET      /imscpfiles/search(.:format)                                         imscpfiles#search
+                                       imscpfiles GET      /imscpfiles(.:format)                                                imscpfiles#index
+                                                  POST     /imscpfiles(.:format)                                                imscpfiles#create
+                                    new_imscpfile GET      /imscpfiles/new(.:format)                                            imscpfiles#new
+                                   edit_imscpfile GET      /imscpfiles/:id/edit(.:format)                                       imscpfiles#edit
+                                        imscpfile GET      /imscpfiles/:id(.:format)                                            imscpfiles#show
+                                                  PUT      /imscpfiles/:id(.:format)                                            imscpfiles#update
+                                                  DELETE   /imscpfiles/:id(.:format)                                            imscpfiles#destroy
                                    search_webapps GET      /webapps/search(.:format)                                            webapps#search
                                           webapps GET      /webapps(.:format)                                                   webapps#index
                                                   POST     /webapps(.:format)                                                   webapps#create
@@ -1177,6 +1287,14 @@ duplicated_service_request_private_student_groups GET      /service_request/priv
                                                   GET      /workshops/:id(.:format)                                             workshops#show
                                                   PUT      /workshops/:id(.:format)                                             workshops#update
                                                   DELETE   /workshops/:id(.:format)                                             workshops#destroy
+                                   search_courses GET      /courses/search(.:format)                                            courses#search
+                                                  GET      /courses(.:format)                                                   courses#index
+                                                  POST     /courses(.:format)                                                   courses#create
+                                                  GET      /courses/new(.:format)                                               courses#new
+                                                  GET      /courses/:id/edit(.:format)                                          courses#edit
+                                                  GET      /courses/:id(.:format)                                               courses#show
+                                                  PUT      /courses/:id(.:format)                                               courses#update
+                                                  DELETE   /courses/:id(.:format)                                               courses#destroy
                                                   GET      /comments(.:format)                                                  comments#index
                                                   POST     /comments(.:format)                                                  comments#create
                                                   GET      /comments/new(.:format)                                              comments#new

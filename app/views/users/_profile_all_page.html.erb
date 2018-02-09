@@ -1,0 +1,16 @@
+<% all = subject_all(profile_or_current_subject, {:scope => scope, :limit => 0, :page=> page, :sort_by=> params[:sort_by]||sort_by||"popularity"}) %>
+
+<% all.each do |r| %>
+  <%= render :partial => '/entities/entity', :formats => [:html], :locals => { :entity => r, :prefix_id => "profile" } %>
+<% end %>
+
+<script>
+  <%if request.xhr?%>
+    update_pageless_state("all", <%=all.num_pages%>, <%=all.current_page%>);
+  <%else%>
+    document.addEventListener("DOMContentLoaded", function(){
+      update_pageless_state("all", <%=all.num_pages%>, <%=all.current_page%>);
+    });
+  <%end%>
+
+</script>

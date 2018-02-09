@@ -1,4 +1,11 @@
 module HomeHelper
+  def current_subject_all(options = {})
+    subject_all current_subject, options
+  end
+
+  def subject_all(subject, options = {})
+    subject_content subject, (VishConfig.getAvailableResourceModels({:return_instances => true}) + VishConfig.getAvailableMainModels({:return_instances => true}).reject{|m| m.name=="Category"}), options
+  end
 
   def current_subject_excursions(options = {})
     subject_excursions current_subject, options
@@ -61,7 +68,7 @@ module HomeHelper
   end
 
   def subject_events(subject, options = {})
-    subject_content subject, Event, options 
+    subject_content subject, Event, options
   end
 
   def home_content (subject, options = {})
@@ -82,7 +89,7 @@ module HomeHelper
         options[:order_by] = 'activity_objects.updated_at DESC'
       when  "created_at"
         options[:order_by] = 'activity_objects.created_at DESC'
-      when "visits"  
+      when "visits"
         options[:order_by] = 'activity_objects.visit_count DESC'
       when "favorites"
         options[:order_by] = 'activity_objects.like_count DESC'
@@ -124,7 +131,7 @@ module HomeHelper
     end
 
     query = query.order(options[:order_by]) unless options[:order_by].blank?
-  
+
     query = query.offset(options[:offset]) if options[:offset] > 0
 
     # pagination, 0 means without pagination
@@ -143,7 +150,7 @@ module HomeHelper
             else
               query.includes([:activity_object, :received_actions, { :received_actions => [:actor]}])
             end
-            
+
     query
   end
 
@@ -156,7 +163,7 @@ module HomeHelper
     end
 
     query = query.order(options[:order_by]) unless options[:order_by].blank?
-    
+
     query = query.offset(options[:offset]) if options[:offset] > 0
 
     # pagination, 0 means without pagination

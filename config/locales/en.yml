@@ -867,6 +867,7 @@ en:
       scope: "Scope"
       tags: "Tags"
       title: "Title"
+    main_title: "Upload resource"
     main_title_doc: "Upload pictures, videos, pdfs, ..."
     main_title_link: "Add links by copying URLs"
     main_title_embed: "Add embed by inserting HTML code"
@@ -1247,6 +1248,7 @@ en:
       pupils_tab: "Pupils"
       excursions_tab: "Teaching units"
   profile:
+    all_tab: "Everything"
     centercode: "Center code"
     change_role: "Change role"
     edit: "Edit profile"

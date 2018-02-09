@@ -41,11 +41,11 @@
         <div class="toolbar-profile">
           <div class="btn-group js_update_profile_info">
           <% if can?(:update, @category) %>
-            <%= link_to(raw("<i class='fa fa-edit '></i>")+ t('excursion.actions.edit'), '#', :id => "edit_icon_link", :class =>"btn btn-default edit_icon") %>
-            <a class="btn btn-default btn-for-categorize"><i class="fa fa-arrows"></i><%=t('categories.dragandrop.place')%></a>
+            <%= link_to(raw("<i class='fa fa-edit '></i>")+ t('excursion.actions.edit'), '#', :id => "edit_icon_link", :class =>"btn btn-secundary edit_icon") %>
+            <a class="btn btn-secundary btn-for-categorize"><i class="fa fa-arrows"></i><%=t('categories.dragandrop.place')%></a>
           <% end %>
           <% if can?(:destroy, @category) %>
-            <%= link_to(raw("<i class='fa fa-trash'></i>") + t('excursion.actions.delete') , @category, :method => :delete, :remote => false, :confirm => "Are you sure?", :class =>"action btn btn-default" )%>
+            <%= link_to(raw("<i class='fa fa-trash'></i>") + t('excursion.actions.delete') , @category, :method => :delete, :remote => false, :confirm => "Are you sure?", :class =>"action btn btn-secundary" )%>
           <% end %>
           </div>
         </div>

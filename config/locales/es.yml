@@ -853,6 +853,7 @@ es:
       scope: "Ámbito"
       tags: "Etiquetas"
       title: "Título"
+    main_title: "Sube recursos"
     main_title_doc: "Sube videos, imágenes, pdfs, ..."
     main_title_link: "Añade enlaces copiando URLs"
     main_title_embed: "Añade código HTML"
@@ -1242,6 +1243,7 @@ es:
       pupils_tab: "Alumnos"
       excursions_tab: "Presentaciones"
   profile:
+    all_tab: "Todo"
     centercode: "Código de centro"
     change_role: "Cambiar rol"
     edit: "Editar perfil"

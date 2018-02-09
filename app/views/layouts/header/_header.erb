@@ -10,6 +10,7 @@
       <%= render partial: 'repositories/form', :locals => { :div_id => "ModalDocument"} %>
       <%= render partial: 'repositories/form', :locals => { :div_id => "ModalLink"} %>
       <%= render partial: 'repositories/form', :locals => { :div_id => "ModalEmbed"} %>
+      <%= render partial: 'repositories/form2' %>
     <% end %>
     <% if availableModels.include? "Category" %>
       <%= render partial: 'categories/form', :locals => { :div_id => "AddCategoryHeader", :remote => true} %>

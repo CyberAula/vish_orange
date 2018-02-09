@@ -3,6 +3,11 @@
 
 <script>
   var pageless_state = {
+    "all": {
+      "url": "<%=user_url(profile_subject)%>/all",
+      "num_pages":0,
+      "current_page":0
+    },
     "excursions":{
       "url": "<%=user_url(profile_subject)%>/excursions",
       "num_pages":0,
@@ -70,6 +75,7 @@
 
 <%content_for :javascript do%>
 
+  var all_tab_loaded = false;
   var excursions_tab_loaded = false;
   var workshops_tab_loaded = false;
   var resources_tab_loaded = false;
@@ -77,6 +83,27 @@
   var categories_tab_loaded = false;
   var followers_tab_loaded = false;
   var followings_tab_loaded = false;
+
+  $("#all_tab").click(function(){
+    updateWindowTopUrl($(this).attr("id"));
+    if(all_tab_loaded === false){
+      $('.loader_pagination').show();
+      all_tab_loaded = true;
+      $.ajax({
+        type : "GET",
+        url : "<%=user_url(profile_subject)%>/all",
+        success : function(html) {
+          $('.loader_pagination').hide();
+          $("#all_tab_ready").append(html);
+          re_apply_pageless("all");
+        },
+        error: function(){
+        }
+      });
+    } else{
+      re_apply_pageless("all");
+    }
+  });
 
     $("#excursions_tab").click(function(){
       updateWindowTopUrl($(this).attr("id"));
@@ -241,10 +268,13 @@
 
     <ul class="nav nav-tabs">
 
-      <% hasParamsTab = params[:tab].nil? %>
-      <% params[:tab] ||= availableModels.first.downcase.pluralize %>
-
-<!-- dropdown menu links -->
+      <!-- dropdown menu links -->
+      <li class="<%= (params[:tab].nil? || params[:tab]=='all') ? 'active':''%>">
+        <a id="all_tab" href="#tabAll" data-toggle="tab">
+          <i class="fa fa-th"></i>
+          <span class=" hidden-xs"><%=t('profile.all_tab')%></span>
+        </a>
+      </li>
       <% availableModels.each do |modelName| %>
         <% if modelName == "Excursion" %>
           <!--excursions-->
@@ -272,7 +302,7 @@
         <% elsif modelName == "Category" %>
           <li class="<%= params[:tab]=='categories' ? 'active':''%>">
             <a id="categories_tab" href="#tabCategories" data-toggle="tab">
-              <i class="fa fa-th-large"></i>
+              <i class="fa fa-folder-open-o"></i>
               <span class=" hidden-xs"><%=t('categories.other')%></span>
             </a>
           </li>
@@ -313,7 +343,27 @@
   <!-- **************** -->
 
     <div class="tab-content">
+      <!-- ALL -->
 
+        <div class="tab-pane <%=(params[:tab].nil? || params[:tab]=='all') ? 'active':''%>" id="tabAll">
+          <%= render partial: 'users/order_by_dropdown_all' %>
+          <div id="all_tab_ready"  class="entities all">
+            <% if params[:tab]== 'all' || params[:tab].nil? %>
+              <% default_sort_by = profile_subject_is_current? ? "updated_at" : "popularity"%>
+              <%= render partial: 'users/profile_all_list', :locals => {:scope => :me, :limit => 0, :page=> params[:page] || 1, :sort_by=> params[:sort_by]||default_sort_by}%>
+            <%end%>
+          </div>
+
+          <div class="loader_pagination" style="display:none">
+            <div class="pageless-loader" style="text-align:center;width:100%;">
+              <div class="msg" style="font-size:2em">
+                <%=t('search.loading')%>
+              </div>
+              <%= render :partial => "layouts/loading" %>
+            </div>
+          </div>
+
+        </div>
       <!-- EXCURSIONS -->
 
       <% if availableModels.include? "Excursion" %>
@@ -476,7 +526,10 @@
 </section>
 
 <%content_for :javascript do%>
-    <% if params[:tab]=="excursions" %>
+    <% if params[:tab].nil? || params[:tab]=="all" %>
+        all_tab_loaded = true;
+        re_apply_pageless("all");
+    <% elsif params[:tab]=="excursions" %>
         excursions_tab_loaded = true;
         re_apply_pageless("excursions");
     <% elsif params[:tab]=="workshops" %>
