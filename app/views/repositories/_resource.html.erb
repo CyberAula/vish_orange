@@ -42,7 +42,7 @@
             <!--views -->
             <div class="views">
               <%if is_contest? && contest_phase==3%>
-                <div class="fb-like" data-href="<%= url_for(resource) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <div class="fb-like" data-href="<%= url_for(resource) %>" data-layout="button_count" data-action="like" data-width="450" data-show-faces="false" data-share="false"></div>
               <%else%>
                 <%if resource.private_scope? %>
                   <div class="private-resource-mark">

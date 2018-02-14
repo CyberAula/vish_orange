@@ -13,7 +13,7 @@
     }
     var facebook_js = document.createElement('script');
     facebook_js.id = 'facebook-jssdk';
-    facebook_js.src = ("//connect.facebook.net/en_GB/all.js#xfbml=1&appId=" + "<%=Vish::Application.config.APP_CONFIG['facebook']['appID']%>");
+    facebook_js.src = ("https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.12&appId=" + "<%=Vish::Application.config.APP_CONFIG['facebook']['appID']%>");
     var head = document.getElementsByTagName('head')[0];
     head.appendChild(facebook_js);
   }());
