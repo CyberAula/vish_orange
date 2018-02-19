@@ -1141,8 +1141,8 @@ es:
     room_name: "Nombre de la sala"
   mooc:
     button:
-      new_mooc: "MOOC de Menores y TIC"
-      go_to_mooc: "MOOC de Menores y TIC"
+      new_mooc: "MOOC #UsoSeguroTIC"
+      go_to_mooc: "Ir al MOOC #UsoSeguroTIC"
     download_sheet: "Descargar ficha del curso"
   navigation:
     catalogue: "Catálogo"

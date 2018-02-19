@@ -5,7 +5,7 @@
 <%
   @show_mooc = false
   if user_signed_in? and availableModels.include? "Course"
-    @course = Course.find_by_id(4)
+    @course = Course.find_by_id(7)
     @show_mooc = (!@course.nil? and @course.users.include? current_subject)
   end
 %>
@@ -180,8 +180,8 @@
       <%= render partial: 'layouts/header/uisearch_header' %>
       </li>
         <ul class="nav navbar-nav float_R">
-        <%if false%>
-          <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="<%=@course.url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
+        <%if @show_mooc%>
+          <li class="btn btn-default btn-header btn-mooc"><a class="linker" href="<%=@course.moodle_url%>"><%=t('mooc.button.go_to_mooc')%></a></li>
         <%end%>
         </ul>
     </div>
