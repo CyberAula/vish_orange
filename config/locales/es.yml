@@ -94,6 +94,8 @@ es:
       step2_action: "Participa"
       step3_action: "Difunde tus recursos"
       step3_action_nologed: "Vota tu recurso favorito"
+      step4_action: "Ver recursos presentados"
+      step5_action: "Ver recursos premiados"
     user_resources:
       intro: "GALERÍA DE RECURSOS PRESENTADOS"
       no_resources:
@@ -103,7 +105,7 @@ es:
       bt_upload: "Presentar recurso"
     participants: "TODOS LOS PARTICIPANTES"
     title: "Concurso EducaInternet"
-    text_participants: "Mira quiénes son los participantes"
+    text_participants: "Mira quiénes son todos los que han participado en esta edición del concurso EducaInternet"
     vote_resources: "VOTA TU RECURSO FAVORITO"
     text_vote: "Aquí es donde puedes ver todos los recursos subidos de nuestros participantes y votar por los mejores. ¡Buena suerte a todos!"
     video_vote: 'Te dejamos un video tutorial sobre cómo puedes votar, échale un vistazo.'
@@ -189,6 +191,10 @@ es:
       text2: "Participa con tu aula hasta el 7 de febrero creando un recurso sobre el uso seguro de Internet."
       title3: "Difunde tu recurso hasta el 22 de febrero y gana el premio del público"
       text3: "¡Espero que tú y tu aula hayáis disfrutado y aprendido creando vuestro recurso! Ahora solo queda dar un paso más: compartirlo en Facebook para lograr el mayor número de votaciones posibles y optar al premio del público. ¡Suerte!"
+      title4: "¡Conoce a los ganadores del 2º Concurso EducaInternet el próximo 28 de febrero!"
+      text4: "¿Quieres saber si tu aula ha sido la ganadora del apasionante taller tecnológico y si tu centro va a disfrutar de una formación sobre salud digital? Descubre quiénes han sido los premiados del 2º Concurso EducaInternet el próximo 28 de febrero!"
+      title5: "¡Conoce a los ganadores del 2º Concurso EducaInternet!"
+      text5: "¿Quieres saber si tu aula ha sido la ganadora del apasionante taller tecnológico y si tu centro va a disfrutar de una formación sobre salud digital? Descubre quiénes han sido los premiados del 2º Concurso EducaInternet."
     bt_aboutus: "conócenos"
     block1_tit: "EducaInternet, una fuente inagotable de recursos educativos sobre seguridad TIC"
     block2_tit: "Te ofrecemos gratuitamente cursos certificados online, para que aprendas a tu ritmo y te conviertas en un experto en ciberseguridad"

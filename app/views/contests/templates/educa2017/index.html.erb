@@ -24,6 +24,9 @@
     <%end%>
   <%end%>
   <%if contest_phase == 4 %>
+    <%= render partial: 'contests/templates/'+@contest.name+'/wait' %>
+  <%end%>
+  <%if contest_phase == 5 %>
     <!-- winners -->
     <%= render partial: 'contests/templates/'+@contest.name+'/winners', :locals => { :bgwhite => true } %>
   <%end%>

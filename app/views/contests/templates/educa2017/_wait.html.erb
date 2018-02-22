@@ -1,0 +1,20 @@
+
+<article class="contest_block">
+  <div class="intro">
+    <h1><%= t('contest_page.presentation.intro') %></h1>
+    <div class="horizontal_line"></div>
+  </div>
+
+  <div class="content_block">
+    <div class="video_block">
+        <iframe class="video_presentation" width="480" height="250" src="https://www.youtube.com/embed/BVL2bDBRPLs?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="text_block">
+      <h2><%= t('home_page.contest_block.title4')%></h2>
+      <p class="p_block">
+        <%= raw t('home_page.contest_block.text4')%>
+      </p>
+      <button class="btn btn-contest" onclick="location.href='/contest/educa2017/page/submissions';"> <%= t('contest_page.steps.step4_action') %></button>
+    </div>
+  </div>
+</article>

@@ -17,6 +17,10 @@
               <%= t('home_page.contest_block.title2') %>
             <% elsif contest_phase == 3 %>
               <%= raw t('home_page.contest_block.title3')%>
+            <% elsif contest_phase == 4 %>
+              <%= raw t('home_page.contest_block.title4')%>
+            <% elsif contest_phase == 5 %>
+              <%= raw t('home_page.contest_block.title5')%>
             <% end %>
           </h3>
         </div>
@@ -26,6 +30,10 @@
               <%= raw t('home_page.contest_block.text2')%>
             <% elsif contest_phase == 3 %>
               <%= raw t('home_page.contest_block.text3')%>
+            <% elsif contest_phase == 4 %>
+              <%= raw t('home_page.contest_block.text4')%>
+            <% elsif contest_phase == 5 %>
+              <%= raw t('home_page.contest_block.text5')%>
             <% end %>
           </p>
         </div>
@@ -36,9 +44,12 @@
             <%= t('contest_page.steps.step2_action') %>
           <% elsif contest_phase == 3 && user_signed_in? %>
             <%= t('contest_page.steps.step3_action') %>
+          <% elsif contest_phase == 4 %>
+            <%= t('contest_page.steps.step4_action') %>
+          <% elsif contest_phase == 5 %>
+            <%= t('contest_page.steps.step5_action') %>
           <% else%>
             <%= t('contest_page.steps.step3_action_nologed') %>
-
           <% end %>
 
         </button>
