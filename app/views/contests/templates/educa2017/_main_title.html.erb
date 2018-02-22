@@ -11,8 +11,11 @@
         <%if contest_phase == 3 %>
           <%= t('contest_page.main_title.title2_html') %>
         <% end %>
-        <%if contest_phase > 3 %>
+        <%if contest_phase === 4 %>
           <%= t('contest_page.main_title.title3_html') %>
+        <% end %>
+        <%if contest_phase === 5 %>
+          <%= t('contest_page.main_title.title4_html') %>
         <% end %>
 
       </div>
