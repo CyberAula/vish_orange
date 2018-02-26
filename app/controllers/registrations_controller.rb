@@ -20,7 +20,7 @@ class RegistrationsController < Devise::RegistrationsController
       if params[:course].present?
         @course = Course.find_by_id(params[:course])
 
-        if @course and @course.restricted && ((@course.has_password? && params[:course_password]!=@course.restriction_password) || (@course.restriction_email.present? && !(params[:user][:email].ends_with? @course.restriction_email)) )
+        if @course and @course.restricted && ((@course.has_password? && params[:course_password]!=@course.restriction_password) || (@course.restriction_email.present? && !(params[:user][:email].ends_with? @course.restriction_email) || (@course.restriction_email_list.present? && !(@course.can_enrol_user_with_mail(params[:user][:email])) )) )
           flash.now[:alert] = t("course.flash.bad_credentials")
           build_resource
           render :new and return
