@@ -4,6 +4,17 @@
 .contest_blocks
   .contest_block
     @include block
+    .content_block
+      .items
+        margin: 10px auto 0px auto
+      .see_all
+        margin: 20px auto
+        vertical-align: middle
+        text-align: center
+        h2
+          width: 60%
+          text-align: center
+          display: inline-block
   .contest_block_dark
     @include block
     background: $gray-lighter-extra
@@ -13,6 +24,8 @@
   padding: 0px 10px
   color: $gray
   text-align: center
+  .colored
+    color: #ff7900
   @media (max-width: 768px)
     display: none
 

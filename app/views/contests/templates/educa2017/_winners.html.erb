@@ -5,17 +5,49 @@
   </div>
 
   <div class="content_block">
-    <div class="items">
-        <% begin
-          educaconsejos = [Link.find(293), Document.find(9229), Document.find(9218), Document.find(9228)]
-        rescue ActiveRecord::RecordNotFound => e
-          educaconsejos = Document.all.sample(4)
-        end %>
-        <% educaconsejos.each do |doc| %>
-          <%= render partial: 'repositories/resource', locals: { resource: doc} %>
-        <% end %>
-      <div class="clear"></div>
-    </div>
+
+        <div class="flex">
+          <div class="item_extra_text">
+            <b><span class="colored">Primer premio</span> del jurado</b>
+          </div>
+          <div class="item_extra_text">
+            <b><span class="colored">Segundo premio</span> del jurado</b>
+          </div>
+          <div class="item_extra_text">
+            <b><span class="colored">Primer premio</span> del público</b>
+          </div>
+          <div class="item_extra_text">
+            <b><span class="colored">Segundo premio</span> del público</b>
+          </div>
+        </div>
+        <br>
+        <div class="items">
+          <% begin
+            educaconsejos = [Link.find(558), OfficeDoc.find(11798), Video.find(11791), Video.find(11815)]
+          rescue ActiveRecord::RecordNotFound => e
+            educaconsejos = Document.all.sample(4)
+          end %>
+          <% educaconsejos.each do |doc| %>
+            <%= render partial: 'repositories/resource', locals: { resource: doc} %>
+          <% end %>
+          <div class="clear"></div>
+        </div>
+        <div class="flex">
+          <div class="item_extra_text">
+            <b>4º EP Colegio Internacional Ánfora (Zaragoza)</b>
+          </div>
+          <div class="item_extra_text">
+            <b>4ºC ESO Parque Colegio Santa Ana (Valencia)</b>
+          </div>
+          <div class="item_extra_text">
+            <b>4ºB ESO Parque Colegio Santa Ana (Valencia)</b>
+          </div>
+          <div class="item_extra_text">
+            <b>4ºC ESO INS Olorda (Barcelona)</b>
+          </div>
+        </div>
+        <div class="see_all"><h2><%=t('contest_page.text_participants')%></h2><button class="btn btn-contest" onclick="location.href='/contest/educa2017/page/submissions';"> <%= t('contest_page.steps.step4_action') %></button>
+
   </div>
 </article>
 
