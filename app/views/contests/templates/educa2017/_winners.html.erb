@@ -23,7 +23,7 @@
         <br>
         <div class="items">
           <% begin
-            educaconsejos = [Link.find(558), OfficeDoc.find(11798), Video.find(11791), Video.find(11815)]
+            educaconsejos = [Link.find(558), Officedoc.find(11798), Video.find(11791), Video.find(11815)]
           rescue ActiveRecord::RecordNotFound => e
             educaconsejos = Document.all.sample(4)
           end %>
