@@ -107,6 +107,9 @@ Vish::Application.routes.draw do
   match '/excursions/tmpJson' => 'excursions#uploadTmpJSON', :via => :post
   match '/excursions/tmpJson' => 'excursions#downloadTmpJSON', :via => :get
 
+  #elab
+  match '/elab' => 'elab#index'
+
   resources :excursions
 
   #Workshops

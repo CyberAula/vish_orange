@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale.to_s %>" class="tr-coretext tr-aa-subpixel">
+<head>
+  <%= render :partial => "layouts/application_head" %>
+  <%= javascript_include_tag "application" %>
+
+  <%= javascript_include_tag "elab" %>
+
+</head>
+
+<body>
+  <div id="elabwrap">
+      <%= yield %>
+  </div>
+</body>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    <%= yield :javascript %>
+  });
+</script>
+</html>
