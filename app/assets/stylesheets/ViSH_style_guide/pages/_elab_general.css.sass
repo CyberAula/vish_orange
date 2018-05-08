@@ -1,0 +1,201 @@
+
+//----------- MAIN COLORS ------------
+
+$background: #2F2F2F
+$maincolor: #191919
+$secondarycolor: #565656
+
+$fd_bg: #013E71
+$fd_txt: #FBFC65
+$fd_phi: #FFA700
+$fd_hea: #38C9FF
+$fd_new: #1BB18C
+
+$pc_bg: #000000
+$pc_txt: #E0D22B
+
+$qg_bg: #009186
+$qg_txt: #FBFC65
+
+$wd_bg: #931956
+$wd_txt: #000000
+
+
+//----------- MEDIA QUERIES VARIABLES ------------
+
+$media1: 1366px
+$media2: 1280px
+$media3: 1200px
+$media4: 1024px
+$media5: 980px
+$media6: 823px
+$media7: 812px
+$media8: 768px
+$media9: 736px
+$media10: 640px
+$media11: 600px
+$media12: 480px
+$media13: 412px
+$media14: 360px
+$media15: 320px
+
+
+//----------- CURSORS ------------
+
+@mixin cursor
+	cursor: url('../../assets/cursors/cursor_black.png'), default
+
+@mixin hand_cursor
+	cursor: url('../../assets/cursors/hand_cursor_black.png') 8 0, pointer
+
+
+//----------- FLEX CONFIGURATION ------------
+
+@mixin flex
+	display: flex
+	flex-flow: row nowrap
+	align-items: center
+
+@mixin column-flex
+	display: flex
+	flex-flow: column nowrap
+	align-items: center
+
+
+
+//----------- HOVER ANIMATION ------------
+
+@mixin hover_font-size
+	opacity: .7
+	font-size: 1.5em
+	@include transition_default
+
+@mixin hover_scale
+	opacity: .7
+	@include transform(scale(1.2,1.2))
+	@include transition_default
+
+@mixin hover_opacity
+	opacity: .5
+	@include transition_default
+
+@mixin hover_scale_rotation
+	@include transform(scale(1.3,1.3) rotate(180deg))
+	@include transition_default
+
+
+
+//----------- GENERAL MIXINS ------------
+
+@mixin box-sizing ($box)
+	-webkit-box-sizing: $box
+	-moz-box-sizing: $box
+	-ms-box-sizing: $box
+	-o-box-sizing: $box
+	box-sizing: $box
+
+@mixin transition ($value)
+	transition: $value
+	-webkit-transition: $value
+	-moz-transition: $value
+	-ms-transition: $value
+	-o-transition: $value
+
+@mixin transitionn ($value1, $value2)
+	transition: $value1, $value2
+	-webkit-transition: $value1, $value2
+	-moz-transition: $value1, $value2
+	-ms-transition: $value1, $value2
+	-o-transition: $value1, $value2
+
+@mixin transition_default
+	transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+	-webkit-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+	-moz-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+	-ms-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+	-o-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
+
+@mixin transform ($value)
+	-webkit-transform: $value
+	-moz-transform: $value
+	-ms-transform: $value
+	-o-transform: $value
+	transform: $value
+
+@mixin transform-origin ($value)
+	-webkit-transform-origin: $value
+	-moz-transform-origin: $value
+	-ms-transform-origin: $value
+	-o-transform-origin: $value
+	transform-origin: $value
+
+@mixin text-stroke ($box)
+	-webkit-text-stroke: $box
+	-moz-text-stroke: $box
+	-ms-text-stroke: $box
+	-o-text-stroke: $box
+	text-stroke: $box
+
+@mixin box-shadow ($box)
+	-webkit-box-shadow: $box
+	-moz-box-shadow: $box
+	-ms-box-shadow: $box
+	-o-box-shadow: $box
+	box-shadow: $box
+
+@mixin backface-visibility ($value)
+	-webkit-backface-visibility: $value
+	-moz-backface-visibility: $value
+	-ms-backface-visibility: $value
+	-o-backface-visibility: $value
+	backface-visibility: $value
+
+@mixin no_select_text
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+@mixin select_text ($value)
+	-webkit-user-select: $value
+	-moz-user-select: $value
+	-ms-user-select: $value
+	user-select: $value
+
+
+//----------- TIPOGRAPHY ------------
+
+//Orange Helvetica Neue
+$OrangeBolder: 'OHN75'
+$OrangeBold: 'OHN65'
+$OrangeRegular: 'OHN55'
+$OrangeLight: 'OHN45'
+$OrangeLighter: 'OHN35'
+
+
+//----------- GENERAL ------------
+
+a
+	color: rgba(255,255,255,1)
+	@include transition_default
+	&:hover
+		color: rgba(255,255,255,.5)
+		@include transition_default
+
+
+//----------SCROLLBAR ADJUSTMENTS------------
+
+::-webkit-scrollbar
+	width: .5em
+	height: .5em
+
+
+::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+	
+::-webkit-scrollbar-thumb
+	background-color: $secondarycolor
+	outline: 1px solid slategrey
+	border-radius: 5em
+
+
