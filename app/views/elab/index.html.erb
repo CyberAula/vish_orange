@@ -32,13 +32,13 @@
 				<div class="icon-menu icon-hotspot"></div>
 			</div>
 			
-			<div class="languaje_menu">
-				<div class="current_languaje" href="">
+			<div class="language_menu">
+				<div class="current_language" href="">
 					<% the_locale = I18n.locale.to_s %>
 		      <%= the_locale %>
-		      <span class="icon-arrow_up" id="dlanguage"></span>
+		      <span class="icon-arrow_up" id="lang_arrow"></span>
 		    </div>
-		    <ul class="other_languajes">
+		    <ul class="other_languages closed">
 		      <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
 		       <li class="lang">
 		          <%= link_to locale, session_locale_path(:new_locale => locale), :method => :post, :remote => false %>

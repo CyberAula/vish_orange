@@ -73,28 +73,49 @@
 			&:hover
 				@include hover_scale
 		
-		.languaje_menu
+		.language_menu
 			position: relative
 			font-size: .8em
-			.current_languaje
+			.current_language
 				margin-bottom: .8em
-				span.icon-arrow_up
-					@include hand_cursor
-					font-size: .45em
-					line-height: 2em
-					opacity: 1
-					@include transition_default
-					&:hover
-						opacity: .5
+				span
+					&.icon-arrow_up
+						@include hand_cursor
+						font-size: .45em
+						line-height: 2em
+						opacity: 1
 						@include transition_default
-						@include transform(rotate(90deg))
-			.other_languajes
+						&:before
+							@include transition_default
+							@include transform(rotate(0deg))
+						&:hover
+							&:before
+								opacity: .5
+								//@include transition_default
+								//@include transform(rotate(180deg))
+						&.closed
+							&:before
+								@include transform(rotate(180deg))
+							//&:hover
+								//&:before
+									//@include transition_default
+									//@include transform(rotate(0deg))
+
+			.other_languages
 				position: absolute
 				bottom: 2.2em
 				left: 1em
+				max-height: 0
+				overflow: hidden
+				opacity: 1
+				@include transition_default
+				&.closed
+					opacity: 0
+					@include transition_default
 				.lang
-					opacity: .7
-					@include hand_cursor
+					opacity: .5
+					a
+						@include hand_cursor
 					@include transition_default
 					&:hover
 						opacity: 1

@@ -1,8 +1,7 @@
 $(document).ready(function() {
+console.log('click')
 
-	console.log("CARGA");
-	//console.log($('#elab').html().trim());
-
+//-------- INITIAL SCROLL -----------
 
 	var scroll_arrow = $('.scroll_arrow');
 	var scroll_part = $('.main-elab-content');
@@ -15,6 +14,34 @@ $(document).ready(function() {
 
 	scroll_arrow.on('click', scroll);
 
+
+//-------- LANGUAJE MENU -----------
+
+	var accordion = function (className) {
+	  var item = $(className);
+	  item.toggleClass("closed");
+	  if (item.css('max-height') == '0px'){
+	  	item.css('max-height', item.prop("scrollHeight") + 20 + "px");
+	  } else {
+	  	item.css('max-height', '0');
+	  } 
+	};
+
+
+	//////////OPEN LANGUAJE //////////
+
+	var language_arrow = $("#lang_arrow");
+
+	language_arrow.on("click", function() {
+		console.log('click')
+    $(this).toggleClass("closed");
+    accordion(".other_languages");
+	});
+
+
+
+
+//-------- APPS JSON -----------
 
 	var SAMPLE = [
   {
