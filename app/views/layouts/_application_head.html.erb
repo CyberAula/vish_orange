@@ -39,7 +39,7 @@
 <%end%>
 
 
-<%= favicon_link_tag "icons/favicon.ico" %>
+<%= favicon_link_tag  yield(:favicon).empty? ? "icons/favicon.ico" : yield(:favicon) %>
 <%= stylesheet_link_tag "application" %>
 
 <% if protect_against_forgery? %>

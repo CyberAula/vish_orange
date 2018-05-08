@@ -11,11 +11,14 @@ Link.class_eval do
     uri = URI(urlWithProtocol) rescue nil
     return urlWithProtocol if uri.nil? or uri.host.blank? or uri.path.blank? or uri.scheme.blank?
     myparams = uri.query.nil? ? [] : (CGI::parse(uri.query) rescue [])
-    
+
     final_url = ""
     case
     when uri.host[/youtu.be|youtube.com/] && uri.path.start_with?("/watch")
       final_url = uri.scheme + "://" + uri.host + "/embed/" + myparams["v"][0]
+    when uri.host[/prezi.com/] && (uri.path.start_with?("/view/") || uri.path.start_with?("/p/")) && !uri.path.end_with?("/embed/")
+      presentation = uri.path[0..uri.path.index("/",7)-1]
+      final_url = uri.scheme + "://" + uri.host + presentation + "/embed/"
     when uri.host[/prezi.com/] && !uri.path.start_with?("/embed/")
       presentation = uri.path[1..uri.path.index("/",1)-1]
       final_url = uri.scheme + "://" + uri.host + "/embed/" + presentation
@@ -26,7 +29,6 @@ Link.class_eval do
     else
       final_url = urlWithProtocol
     end
-
     final_url
   end
 
