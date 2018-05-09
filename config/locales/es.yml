@@ -1,4 +1,11 @@
 es:
+  elab:
+    login: "iniciar sesión"
+    main_text: '<span class="e-light">e</span>lab, el laboratorio tecnológico virtual de creación de educapps, que te ayudará a identificar todos los fraudes en internet. ¡que no te den gato por liebre!'
+    search: "buscar"
+    sign_up: "regístrate"
+    title: '<span class="e-light">e</span>lab'
+
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
   about_page:
     header_bt: "Explora"

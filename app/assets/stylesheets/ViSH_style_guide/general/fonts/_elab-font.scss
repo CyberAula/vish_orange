@@ -1,0 +1,56 @@
+
+//----------- ELAB-ICONS ------------
+
+@font-face {
+	font-family: 'elab-font';
+	src: url('ViSH_style_guide/general/fonts/elab-font/elab-font.eot');
+	src: url('ViSH_style_guide/general/fonts/elab-font/elab-font.eot?#iefix') format('embedded-opentype'), url('ViSH_style_guide/general/fonts/elab-font/elab-font.woff') format('woff'), url('ViSH_style_guide/general/fonts/elab-font/elab-font.ttf') format('truetype'), url('ViSH_style_guide/general/fonts/elab-font/elab-font.svg#Glyphter') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*='icon-']:before {
+	display: inline-block;
+	font-family: 'elab-font';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-all:before {
+	content: '\0041';
+}
+.icon-alert:before{
+	content: '\0042';
+	font-size: 1.1em;
+}
+.icon-security:before {
+	content: '\0043';
+	font-size: 1.25em;
+}
+.icon-quiz:before {
+	content: '\0044';
+	font-size: 1.15em;
+}
+.icon-definitions:before {
+	content: '\0045';
+}
+.icon-hotspot:before {
+	content: '\0046';
+	font-size: 1.35em;
+}
+.icon-search:before {
+	content: '\0047';
+}
+.icon-arrow_down:before {
+	content: '\0048';
+}
+.icon-arrow_up:before {
+	content: '\0049';
+}
+
+
+
+

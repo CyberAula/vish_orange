@@ -1,3 +1,161 @@
-<section id="elab">
-  hola elab
-</section>
+
+<%content_for :title do %>elab<% end %>
+<%content_for :favicon do%>"icons/favicon_elab.ico"<%end%>
+
+
+<div class="elab_main">
+
+	<div class="main_header">
+
+		<div class="elab_logo"><a href="" class="logo"><%= raw t('elab.title')%></a></div>
+		
+		<div class="header_options">
+			<div class="search"><span class="icon-search"></span><input class="field_search" type="search" id="appSearch" name="q" placeholder="<%=t('elab.search')%>"></div>
+			<div class="main_actions">
+				<a class="option sign_up" href=""><%=t('elab.sign_up')%></a>
+				<a class="option login" href=""><%=t('elab.login')%></a>
+				<!-- <a class="option languaje" href="">es<span class="icon-arrow_down"></span></a> -->
+			</div>
+		</div>
+
+	</div>
+
+	<div class="elab-container">
+		
+		<div class="lateral-menu">
+			<div class="filters">
+				<div class="icon-menu icon-all"></div>
+				<div class="icon-menu icon-alert"></div>
+				<div class="icon-menu icon-security"></div>
+				<div class="icon-menu icon-quiz"></div>
+				<div class="icon-menu icon-definitions"></div>
+				<div class="icon-menu icon-hotspot"></div>
+			</div>
+			
+			<div class="language_menu">
+				<div class="current_language" href="">
+					<% the_locale = I18n.locale.to_s %>
+		      <%= the_locale %>
+		      <span class="icon-arrow_up" id="lang_arrow"></span>
+		    </div>
+		    <ul class="other_languages closed">
+		      <% for locale in (I18n.available_locales.map{|i| i.to_s}) -%>
+		       <li class="lang">
+		          <%= link_to locale, session_locale_path(:new_locale => locale), :method => :post, :remote => false %>
+		        </li>
+		      <% end %>
+		    </ul>
+		  </div>
+		</div>
+
+		<div class="main-elab-content">
+			<div class="elab-text">
+				<%= raw t('elab.main_text')%>
+				<div class="text-arrow"><span class="icon-arrow_down scroll_arrow"></span></div>
+			</div>
+			<div class="elab-apps">
+				<div class="app app01 fake fakedetector phishing">
+					<div class="app_text">
+						<p class="type">phishing</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">fake</p> 
+								<p class="name2">detector</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="app app02 fake fakedetector news">
+					<div class="app_text">
+						<p class="type">news</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">fake</p> 
+								<p class="name2">detector</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="app app03 security passcheck">
+					<div class="app_text">
+						<p class="type">1</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">pass</p> 
+								<p class="name2">check</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="app app04 quiz quizgenerator">
+					<div class="app_text">
+						<p class="type">1</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">quiz</p> 
+								<p class="name2">generator</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="app app05 quiz quizgenerator">
+					<div class="app_text">
+						<p class="type">2</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">quiz</p> 
+								<p class="name2">generator</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="app app06 fake fakedetector health">
+					<div class="app_text">
+						<p class="type">health</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">fake</p> 
+								<p class="name2">detector</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="app app07 definitions wordition">
+					<div class="app_text">
+						<p class="type">1</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1"></p> 
+								<p class="name2"><span class="name_pre">word</span>ition</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="app app08 security passcheck">
+					<div class="app_text">
+						<p class="type">2</p>
+						<div class="name">
+							<a class="app_go" href="#">
+								<p class="name1">pass</p> 
+								<p class="name2">check</p>
+							</a>
+							<div class="def_arrow"><span class="icon-arrow_down"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+

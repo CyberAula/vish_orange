@@ -1,4 +1,11 @@
 en:
+  elab:
+    login: "login"
+    main_text: '<span class="e-light">e</span>lab, the virtual technological laboratory for the creation of educapps, which will help you identify all the frauds on the internet. do not let yourself get taken for a ride!'
+    search: "search"
+    sign_up: "sing up"
+    title: '<span class="e-light">e</span>lab'
+
   i18n:
     transliterate:
       rule:

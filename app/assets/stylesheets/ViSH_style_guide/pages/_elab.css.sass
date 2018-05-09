@@ -1,2 +1,248 @@
-#elabwrap
-  background: red
+
+@import elab_general 
+
+//----------- HEADER ------------
+
+.elab_main
+	@include box-sizing(border-box)
+	height: 100vh
+	background: $background
+	color: white
+	font-family: $OrangeBolder
+	@include cursor
+	@include select_text(none)
+
+	.main_header
+		//padding: 1em
+		display: flex
+		flex-flow: row nowrap
+		height: 3.5em
+		background: $maincolor
+		font-size: 1.5em
+		.elab_logo
+			@include flex
+			justify-content: center
+			height: 3.5em
+			width: 3.5em
+			background: $background
+			@include hand_cursor
+			.logo
+				.e-light
+					font-family: $OrangeLighter
+					line-height: 2em
+				@include transition_default
+				&:hover
+					@include hover_scale
+					@include hand_cursor
+		.header_options
+			@include flex
+			justify-content: space-between
+			width: calc(95% - 3.5em)
+			margin: 0 auto
+			.search
+				span.icon-search:before
+					vertical-align: text-bottom
+				.field_search
+					border: none
+					background: transparent
+			.main_actions
+				.option
+					margin-left: 1em
+					&.languaje
+						span.icon-arrow_down:before
+							font-size: .5em
+							margin-left: .5em
+
+	.elab-container
+		display: flex
+		flex-flow: row nowrap
+		height: calc(100vh - 5.3em)
+		.lateral-menu
+			display: flex
+			flex-flow: column wrap
+			justify-content: space-between
+			height: calc(100vh - 2.62em)
+			min-width: 2.62em
+			font-size: 2em
+			text-align: center
+			background-color: $secondarycolor 
+		.icon-menu
+			padding-top: .8em
+			@include transition_default
+			@include hand_cursor
+			&:hover
+				@include hover_scale
+		
+		.language_menu
+			position: relative
+			font-size: .8em
+			.current_language
+				margin-bottom: .8em
+				span
+					&.icon-arrow_up
+						@include hand_cursor
+						font-size: .45em
+						line-height: 2em
+						opacity: 1
+						@include transition_default
+						&:before
+							@include transition_default
+							@include transform(rotate(0deg))
+						&:hover
+							&:before
+								opacity: .5
+								//@include transition_default
+								//@include transform(rotate(180deg))
+						&.closed
+							&:before
+								@include transform(rotate(180deg))
+							//&:hover
+								//&:before
+									//@include transition_default
+									//@include transform(rotate(0deg))
+
+			.other_languages
+				position: absolute
+				bottom: 2.2em
+				left: 1em
+				max-height: 0
+				overflow: hidden
+				opacity: 1
+				@include transition_default
+				&.closed
+					opacity: 0
+					@include transition_default
+				.lang
+					opacity: .5
+					a
+						@include hand_cursor
+					@include transition_default
+					&:hover
+						opacity: 1
+						@include transition_default
+
+
+		.main-elab-content
+			width: calc(99% - 2.62em)
+			overflow-y: auto
+			overflow-x: hidden
+
+			.elab-text
+				padding: .5em 1em 0 1em
+				font-size: calc(3vh + 2.5vw + 2em)
+				line-height: calc(.5vh + .5vw + 1em)
+				//height: calc(100vh - .62em)
+				.e-light
+					font-family: $OrangeLighter
+				.text-arrow
+					text-align: center
+					line-height: 0
+					margin-top: .4em
+					span.scroll_arrow
+						opacity: 1
+						font-size: calc(.3vh + .3vw + .3em)
+						@include transition_default
+						@include hand_cursor
+						&:hover
+							opacity: .7
+							//@include transform (scale(1.2, 1.2))
+							@include transition_default
+
+			.elab-apps
+				display: grid
+				grid-template-columns: repeat(4, 20.5vw)
+				grid-template-rows: repeat(2, 20.5vw)
+				grid-gap: 2.3vw
+				margin: 3em 0
+				justify-content: center
+				p
+					font-family: $OrangeBolder
+				.app
+					padding: 1em
+					font-size: 2em
+					border: 4px solid transparent
+					@include transition_default
+					&:hover
+						@include transform(scale(1.1))
+						border: 4px solid white
+						@include transition_default
+						.app_text
+							@include transform(scale(.93))
+							@include transition_default
+							.name
+								.def_arrow
+									opacity: 1
+									@include transition_default
+					.app_text
+						height: 18vw
+						display: flex
+						flex-flow: column nowrap
+						justify-content: space-between
+						@include transition_default
+						.type
+							text-align: right
+						.name
+							.app_go
+								@include hand_cursor
+								.name1, .name2
+									font-size: 1.6em
+									line-height: .9em
+							.def_arrow
+								//display: block
+								text-align: center
+								margin: 0 auto
+								line-height: 0
+								font-size: .8em
+								opacity: 0
+								span
+									@include hand_cursor
+									@include transition_default
+									&:hover
+										opacity: .5
+										@include transition_default
+					&.fakedetector
+						background-color: $fd_bg
+						.name
+							p
+								&.name1
+									color: white
+								&.name2 
+									color: $fd_txt
+						&.news
+							.type
+								color: $fd_new
+						&.phishing
+							.type
+								color: $fd_phi
+						&.health
+							.type
+								color: $fd_hea
+					&.passcheck
+						background-color: $pc_bg
+						.name
+							p
+								&.name1
+									color: white
+								&.name2 
+									color: $pc_txt
+					&.quizgenerator
+						background-color: $qg_bg
+						.name
+							p
+								&.name1
+									color: white
+								&.name2 
+									color: $qg_txt
+					&.wordition
+						background-color: $wd_bg
+						.name
+							p
+								&.name1
+									color: white
+								&.name2 
+									color: $wd_txt
+									.name_pre
+										color: white
+
+
+
