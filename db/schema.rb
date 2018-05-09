@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180222172400) do
+ActiveRecord::Schema.define(:version => 20180509072400) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -393,10 +393,10 @@ ActiveRecord::Schema.define(:version => 20180222172400) do
     t.datetime "updated_at"
     t.text     "url"
     t.string   "callback_url"
-    t.string   "image"
-    t.integer  "width",              :default => 470
-    t.integer  "height",             :default => 353
-    t.boolean  "is_embed",           :default => false
+    t.string   "image",              :limit => 800
+    t.integer  "width",                             :default => 470
+    t.integer  "height",                            :default => 353
+    t.boolean  "is_embed",                          :default => false
   end
 
   add_index "links", ["activity_object_id"], :name => "index_links_on_activity_object_id"
