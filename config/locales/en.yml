@@ -1,5 +1,7 @@
 en:
   elab:
+    alt_text: "there are no applications available in this category at the moment, try another one!"
+    educafooter: "the lab of"
     login: "login"
     main_text: '<span class="e-light">e</span>lab, the virtual technological laboratory for the creation of educapps, which will help you identify all the frauds on the internet. do not let yourself get taken for a ride!'
     search: "search"

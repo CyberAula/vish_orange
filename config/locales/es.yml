@@ -1,5 +1,7 @@
 es:
   elab:
+    alt_text: "no hay aplicaciones disponibles de esta categoría en este momento, ¡prueba con otra!"
+    educafooter: "el lab de"
     login: "iniciar sesión"
     main_text: '<span class="e-light">e</span>lab, el laboratorio tecnológico virtual de creación de educapps, que te ayudará a identificar todos los fraudes en internet. ¡que no te den gato por liebre!'
     search: "buscar"

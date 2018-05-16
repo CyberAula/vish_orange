@@ -1,9 +1,10 @@
 
+
 //----------- MAIN COLORS ------------
 
-$background: #2F2F2F
-$maincolor: #191919
-$secondarycolor: #565656
+$el_background: #2F2F2F
+$el_maincolor: #191919
+$el_secondarycolor: #565656
 
 $fd_bg: #013E71
 $fd_txt: #FBFC65
@@ -20,43 +21,51 @@ $qg_txt: #FBFC65
 $wd_bg: #931956
 $wd_txt: #000000
 
-
 //----------- MEDIA QUERIES VARIABLES ------------
 
-$media1: 1366px
-$media2: 1280px
-$media3: 1200px
-$media4: 1024px
-$media5: 980px
-$media6: 823px
-$media7: 812px
-$media8: 768px
-$media9: 736px
-$media10: 640px
-$media11: 600px
-$media12: 480px
-$media13: 412px
-$media14: 360px
-$media15: 320px
+$el_media1: 1366px
+$el_media2: 1280px
+$el_media3: 1200px
+$el_media4: 1024px
+$el_media5: 980px
+$el_media6: 823px
+$el_media7: 812px
+$el_media8: 768px
+$el_media9: 736px
+$el_media10: 640px
+$el_media11: 600px
+$el_media12: 480px
+$el_media13: 412px
+$el_media14: 360px
+$el_media15: 320px
+
+//----------- TIPOGRAPHY ------------
+
+//Orange Helvetica Neue
+$el_OrangeBolder: 'OHN75'
+$el_OrangeBold: 'OHN65'
+$el_OrangeRegular: 'OHN55'
+$el_OrangeLight: 'OHN45'
+$el_OrangeLighter: 'OHN35'
 
 
 //----------- CURSORS ------------
 
-@mixin cursor
+=el_cursor
 	cursor: url('../../assets/cursors/cursor_black.png'), default
 
-@mixin hand_cursor
+=el_hand_cursor
 	cursor: url('../../assets/cursors/hand_cursor_black.png') 8 0, pointer
 
 
 //----------- FLEX CONFIGURATION ------------
 
-@mixin flex
+=el_flex
 	display: flex
 	flex-flow: row nowrap
 	align-items: center
 
-@mixin column-flex
+=el_column-flex
 	display: flex
 	flex-flow: column nowrap
 	align-items: center
@@ -65,137 +74,138 @@ $media15: 320px
 
 //----------- HOVER ANIMATION ------------
 
-@mixin hover_font-size
+=el_hover_font-size
 	opacity: .7
 	font-size: 1.5em
-	@include transition_default
+	+el_transition_default
 
-@mixin hover_scale
+=el_hover_scale
 	opacity: .7
-	@include transform(scale(1.2,1.2))
-	@include transition_default
+	+el_transform(scale(1.2,1.2))
+	+el_transition_default
 
-@mixin hover_opacity
+=el_hover_opacity
 	opacity: .5
-	@include transition_default
+	+el_transition_default
 
-@mixin hover_scale_rotation
-	@include transform(scale(1.3,1.3) rotate(180deg))
-	@include transition_default
+=el_hover_scale_rotation
+	+el_transform(scale(1.3,1.3) rotate(180deg))
+	+el_transition_default
 
 
 
 //----------- GENERAL MIXINS ------------
 
-@mixin box-sizing ($box)
+=el_box-sizing ($box)
 	-webkit-box-sizing: $box
 	-moz-box-sizing: $box
 	-ms-box-sizing: $box
 	-o-box-sizing: $box
 	box-sizing: $box
 
-@mixin transition ($value)
+=el_transition ($value)
 	transition: $value
 	-webkit-transition: $value
 	-moz-transition: $value
 	-ms-transition: $value
 	-o-transition: $value
 
-@mixin transitionn ($value1, $value2)
+=el_transitionn ($value1, $value2)
 	transition: $value1, $value2
 	-webkit-transition: $value1, $value2
 	-moz-transition: $value1, $value2
 	-ms-transition: $value1, $value2
 	-o-transition: $value1, $value2
 
-@mixin transition_default
+=el_transitionnn ($value1, $value2, $value3, $value4, $value5, $value6)
+	transition: $value1, $value2, $value3, $value4, $value5, $value6
+	-webkit-transition: $value1, $value2, $value3, $value4, $value5, $value6
+	-moz-transition: $value1, $value2, $value3, $value4, $value5, $value6
+	-ms-transition: $value1, $value2, $value3, $value4, $value5, $value6
+	-o-transition: $value1, $value2, $value3, $value4, $value5, $value6
+
+=el_transition_default
 	transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
 	-webkit-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
 	-moz-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
 	-ms-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
 	-o-transition: (all 300ms cubic-bezier(0.4, 0, 0.2, 1))
 
-@mixin transform ($value)
+=el_transform ($value)
 	-webkit-transform: $value
 	-moz-transform: $value
 	-ms-transform: $value
 	-o-transform: $value
 	transform: $value
 
-@mixin transform-origin ($value)
+=el_transform-origin ($value)
 	-webkit-transform-origin: $value
 	-moz-transform-origin: $value
 	-ms-transform-origin: $value
 	-o-transform-origin: $value
 	transform-origin: $value
 
-@mixin text-stroke ($box)
+=el_text-stroke ($box)
 	-webkit-text-stroke: $box
 	-moz-text-stroke: $box
 	-ms-text-stroke: $box
 	-o-text-stroke: $box
 	text-stroke: $box
 
-@mixin box-shadow ($box)
+=el_box-shadow ($box)
 	-webkit-box-shadow: $box
 	-moz-box-shadow: $box
 	-ms-box-shadow: $box
 	-o-box-shadow: $box
 	box-shadow: $box
 
-@mixin backface-visibility ($value)
+=el_backface-visibility ($value)
 	-webkit-backface-visibility: $value
 	-moz-backface-visibility: $value
 	-ms-backface-visibility: $value
 	-o-backface-visibility: $value
 	backface-visibility: $value
 
-@mixin no_select_text
+=el_no_select_text
 	-webkit-user-select: none
 	-moz-user-select: none
 	-ms-user-select: none
 	user-select: none
 
-@mixin select_text ($value)
+=el_select_text ($value)
 	-webkit-user-select: $value
 	-moz-user-select: $value
 	-ms-user-select: $value
 	user-select: $value
 
 
-//----------- TIPOGRAPHY ------------
 
-//Orange Helvetica Neue
-$OrangeBolder: 'OHN75'
-$OrangeBold: 'OHN65'
-$OrangeRegular: 'OHN55'
-$OrangeLight: 'OHN45'
-$OrangeLighter: 'OHN35'
 
 
 //----------- GENERAL ------------
 
-a
-	color: rgba(255,255,255,1)
-	@include transition_default
-	&:hover
-		color: rgba(255,255,255,.5)
-		@include transition_default
+
+.elab_main
+	a
+		color: rgba(255,255,255,1)
+		+el_transition_default
+		&:hover
+			color: rgba(255,255,255,.5)
+			+el_transition_default
 
 
-//----------SCROLLBAR ADJUSTMENTS------------
+	//----------SCROLLBAR ADJUSTMENTS------------
 
-::-webkit-scrollbar
-	width: .5em
-	height: .5em
+	::-webkit-scrollbar
+		width: .5em
+		height: .5em
 
-
-::-webkit-scrollbar-track
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
-	
-::-webkit-scrollbar-thumb
-	background-color: $secondarycolor
-	outline: 1px solid slategrey
-	border-radius: 5em
+	::-webkit-scrollbar-track
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+		
+	::-webkit-scrollbar-thumb
+		background-color: $el_secondarycolor
+		outline: 1px solid slategrey
+		border-radius: 5em
 
 

@@ -3,39 +3,40 @@
 
 //----------- HEADER ------------
 
+
+
 .elab_main
-	@include box-sizing(border-box)
+	+el_box-sizing(border-box)
 	height: 100vh
-	background: $background
+	background: $el_background
 	color: white
-	font-family: $OrangeBolder
-	@include cursor
-	@include select_text(none)
+	font-family: $el_OrangeBolder
+	+el_cursor
+	+el_select_text(none)
 
 	.main_header
-		//padding: 1em
 		display: flex
 		flex-flow: row nowrap
 		height: 3.5em
-		background: $maincolor
+		background: $el_maincolor
 		font-size: 1.5em
 		.elab_logo
-			@include flex
+			+el_flex
 			justify-content: center
 			height: 3.5em
 			width: 3.5em
-			background: $background
-			@include hand_cursor
+			background: $el_background
+			+el_hand_cursor
 			.logo
 				.e-light
-					font-family: $OrangeLighter
+					font-family: $el_OrangeLighter
 					line-height: 2em
-				@include transition_default
+				+el_transition_default
 				&:hover
-					@include hover_scale
-					@include hand_cursor
+					+el_hover_scale
+					+el_hand_cursor
 		.header_options
-			@include flex
+			+el_flex
 			justify-content: space-between
 			width: calc(95% - 3.5em)
 			margin: 0 auto
@@ -65,14 +66,16 @@
 			min-width: 2.62em
 			font-size: 2em
 			text-align: center
-			background-color: $secondarycolor 
+			background-color: $el_secondarycolor 
 		.icon-menu
 			padding-top: .8em
-			@include transition_default
-			@include hand_cursor
+			+el_transition_default
+			+el_hand_cursor
 			&:hover
-				@include hover_scale
-		
+				+el_hover_scale
+			&.is-checked
+				color: $el_maincolor
+
 		.language_menu
 			position: relative
 			font-size: .8em
@@ -80,26 +83,26 @@
 				margin-bottom: .8em
 				span
 					&.icon-arrow_up
-						@include hand_cursor
+						+el_hand_cursor
 						font-size: .45em
 						line-height: 2em
 						opacity: 1
-						@include transition_default
+						+el_transition_default
 						&:before
-							@include transition_default
-							@include transform(rotate(0deg))
+							+el_transition_default
+							+el_transform(rotate(0deg))
 						&:hover
 							&:before
 								opacity: .5
-								//@include transition_default
-								//@include transform(rotate(180deg))
+								//+el_transition_default
+								//+el_transform(rotate(180deg))
 						&.closed
 							&:before
-								@include transform(rotate(180deg))
+								+el_transform(rotate(180deg))
 							//&:hover
 								//&:before
-									//@include transition_default
-									//@include transform(rotate(0deg))
+									//+el_transition_default
+									//+el_transform(rotate(0deg))
 
 			.other_languages
 				position: absolute
@@ -108,32 +111,47 @@
 				max-height: 0
 				overflow: hidden
 				opacity: 1
-				@include transition_default
+				+el_transition_default
 				&.closed
 					opacity: 0
-					@include transition_default
+					+el_transition_default
 				.lang
 					opacity: .5
 					a
-						@include hand_cursor
-					@include transition_default
+						+el_hand_cursor
+					+el_transition_default
 					&:hover
 						opacity: 1
-						@include transition_default
+						+el_transition_default
 
 
 		.main-elab-content
 			width: calc(99% - 2.62em)
 			overflow-y: auto
 			overflow-x: hidden
-
+			.educainternet-footer
+				z-index: 1
+				position: absolute
+				bottom: 1em
+				right: 1.2em
+				.educa-text
+					font-family: $el_OrangeLighter
+					vertical-align: middle
+					margin-right: .3em
+				.educainternet-logo
+					+el_hand_cursor
+					vertical-align: middle
+					font-size: 1.5em
+					.educa
+						font-family: $el_OrangeLighter
 			.elab-text
 				padding: .5em 1em 0 1em
 				font-size: calc(3vh + 2.5vw + 2em)
 				line-height: calc(.5vh + .5vw + 1em)
 				//height: calc(100vh - .62em)
+				+el_transition_default
 				.e-light
-					font-family: $OrangeLighter
+					font-family: $el_OrangeLighter
 				.text-arrow
 					text-align: center
 					line-height: 0
@@ -141,108 +159,165 @@
 					span.scroll_arrow
 						opacity: 1
 						font-size: calc(.3vh + .3vw + .3em)
-						@include transition_default
-						@include hand_cursor
+						+el_transition_default
+						+el_hand_cursor
 						&:hover
 							opacity: .7
-							//@include transform (scale(1.2, 1.2))
-							@include transition_default
+							//+el_transform (scale(1.2, 1.2))
+							+el_transition_default
 
 			.elab-apps
-				display: grid
-				grid-template-columns: repeat(4, 20.5vw)
-				grid-template-rows: repeat(2, 20.5vw)
-				grid-gap: 2.3vw
-				margin: 3em 0
-				justify-content: center
-				p
-					font-family: $OrangeBolder
-				.app
+				+el_transition_default
+				//position: absolute
+				//top: 100vh
+				//display: flex
+				//flex-flow: row wrap
+				//justify-content: space-between
+				//align-items: center
+				//margin: auto 2em
+				//display: grid
+				//grid-template-columns: repeat(4, 20.5vw)
+				//grid-template-rows: repeat(1, 20.5vw)
+				//grid-gap: 2.3vw
+				//justify-content: center
+				padding-top: 2em
+				margin: auto 3em
+				margin-bottom: 3em
+				min-height: calc(100vh - 125px)
+				&, * 
+					//border: 1px solid tomato
+				&:after 
+					content: ''
+					display: block
+					clear: both
+				.alt_text
+					+el_flex
+					justify-content: center
+					height: calc(100vh - 125px)
+					//height: -webkit-fill-available
+					margin: 0 1em
+					font-size: calc(2vh + 1.5vw + 1em)
+					line-height: calc(.5vh + .5vw + 1em)
+				.des_text
+					display: none
+					position: absolute
+					width: calc(2em + 2*20.5vw)
+					height: 20.5vw
+					top: 27em
+					left: 0
+					background-color: white
 					padding: 1em
-					font-size: 2em
-					border: 4px solid transparent
-					@include transition_default
-					&:hover
-						@include transform(scale(1.1))
-						border: 4px solid white
-						@include transition_default
+					z-index: 1
+					color: black
+					
+				p
+					font-family: $el_OrangeBolder
+				
+				.app-item
+					float: left
+					margin-right: 16px
+					margin-bottom: 16px
+					$el_cols: 4
+					width: calc(100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 16px - #{$el_cols}px)
+					&:nth-child4n
+						margin-right: 0px
+					&.big
+						width: calc((100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 16px - #{$el_cols}px) * 2 + 16px - 4px)
+
+					.app
+						//width: 20.6vw
+						//height: 20.5vw
+						//width: calc(1000px / 4.3px)
+						//width: calc(100%/4 - 3*30px)
+						padding: 1em
+						font-size: 2em
+						border: 4px solid transparent
+						+el_transition_default
+						&:not(.no-hover):hover
+							+el_transform(scale(1.1))
+							border: 4px solid white
+							+el_transition_default
+							.app_text
+								+el_transform(scale(.93))
+								+el_transition_default
+								.name
+									.def_arrow
+										opacity: 1
+										+el_transition_default
+						& >
+							position: absolute
+						&:last-child
+							margin-right: 0
 						.app_text
-							@include transform(scale(.93))
-							@include transition_default
+							height: 18vw
+							display: flex
+							flex-flow: column nowrap
+							justify-content: space-between
+							+el_transition_default
+							.type
+								text-align: right
 							.name
+								.app_go
+									+el_hand_cursor
+									.name1, .name2
+										font-size: 1.6em
+										line-height: .9em
 								.def_arrow
-									opacity: 1
-									@include transition_default
-					.app_text
-						height: 18vw
-						display: flex
-						flex-flow: column nowrap
-						justify-content: space-between
-						@include transition_default
-						.type
-							text-align: right
-						.name
-							.app_go
-								@include hand_cursor
-								.name1, .name2
-									font-size: 1.6em
-									line-height: .9em
-							.def_arrow
-								//display: block
-								text-align: center
-								margin: 0 auto
-								line-height: 0
-								font-size: .8em
-								opacity: 0
-								span
-									@include hand_cursor
-									@include transition_default
-									&:hover
-										opacity: .5
-										@include transition_default
-					&.fakedetector
-						background-color: $fd_bg
-						.name
-							p
-								&.name1
-									color: white
-								&.name2 
-									color: $fd_txt
-						&.news
-							.type
-								color: $fd_new
-						&.phishing
-							.type
-								color: $fd_phi
-						&.health
-							.type
-								color: $fd_hea
-					&.passcheck
-						background-color: $pc_bg
-						.name
-							p
-								&.name1
-									color: white
-								&.name2 
-									color: $pc_txt
-					&.quizgenerator
-						background-color: $qg_bg
-						.name
-							p
-								&.name1
-									color: white
-								&.name2 
-									color: $qg_txt
-					&.wordition
-						background-color: $wd_bg
-						.name
-							p
-								&.name1
-									color: white
-								&.name2 
-									color: $wd_txt
-									.name_pre
+									//display: block
+									text-align: center
+									margin: 0 auto
+									line-height: 0
+									font-size: .8em
+									opacity: 0
+									span
+										+el_hand_cursor
+										+el_transition_default
+										&:hover
+											opacity: .5
+											+el_transition_default
+						&.fakedetector
+							background-color: $fd_bg
+							.name
+								p
+									&.name1
 										color: white
+									&.name2 
+										color: $fd_txt
+							&.news
+								.type
+									color: $fd_new
+							&.phishing
+								.type
+									color: $fd_phi
+							&.health
+								.type
+									color: $fd_hea
+						&.passcheck
+							background-color: $pc_bg
+							.name
+								p
+									&.name1
+										color: white
+									&.name2 
+										color: $pc_txt
+						&.quizgenerator
+							background-color: $qg_bg
+							.name
+								p
+									&.name1
+										color: white
+									&.name2 
+										color: $qg_txt
+						&.wordition
+							background-color: $wd_bg
+							.name
+								p
+									&.name1
+										color: white
+									&.name2 
+										color: $wd_txt
+										.name_pre
+											color: white
 
 
 
