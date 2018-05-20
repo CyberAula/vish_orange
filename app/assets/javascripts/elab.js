@@ -1,3 +1,5 @@
+
+var $grid;
 $(document).ready(function() {
 console.log('click')
 
@@ -62,353 +64,6 @@ console.log('click')
 	});
 
 
-
-
-
-//-------- APPS JSON -----------
-
-	var SAMPLE = [
-  {
-  	name:"fake detector news", 
-  	app: "fake detector",
-  	class: "fakedetector",
-  	type: "news", 
-  	category: "fake",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-   {
-  	name:"wordition internet", 
-  	app: "wordition",
-  	class: "wordition",
-  	type: "internet", 
-  	category: "definitions", 
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"pass check 1", 
-  	app: "pass check",
-  	class: "passcheck",
-  	type: "1", 
-  	category: "security", 
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"fake detector health", 
-  	app: "fake detector",
-  	class: "fakedetector",
-  	type: "health", 
-  	category: "fake", 
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"pass check 2", 
-  	app: "pass check",
-  	class: "passcheck",
-  	type: "2", 
-  	category: "security",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"quiz generator internet", 
-  	app: "quiz generator",
-  	class: "quizgenerator",
-  	type: "internet", 
-  	category: "quiz",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"fake detector phishing", 
-  	app: "fake detector",
-  	class: "fakedetector",
-  	type: "phishing", 
-  	category: "fake",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-   {
-  	name:"pass check 3", 
-  	app: "pass check",
-  	class: "passcheck",
-  	type: "3", 
-  	category: "security", 
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"quiz generator tic", 
-  	app: "quiz generator",
-  	class: "quizgenerator",
-  	type: "tic", 
-  	category: "quiz", 
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"wordition tic", 
-  	app: "wordition",
-  	class: "wordition",
-  	type: "tic", 
-  	category: "definitions",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  }
-	];
-
-    var SAMPLE_LARGE = [
-  {
-    name:"fake detector news", 
-    app: "fake detector",
-    class: "fakedetector",
-    type: "news", 
-    category: "fake",
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-   {
-    name:"wordition internet", 
-    app: "wordition",
-    class: "wordition",
-    type: "internet", 
-    category: "definitions", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"pass check 1", 
-    app: "pass check",
-    class: "passcheck",
-    type: "1", 
-    category: "security", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"fake detector health", 
-    app: "fake detector",
-    class: "fakedetector",
-    type: "health", 
-    category: "fake", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"pass check 2", 
-    app: "pass check",
-    class: "passcheck",
-    type: "2", 
-    category: "security",
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"quiz generator internet", 
-    app: "quiz generator",
-    class: "quizgenerator",
-    type: "internet", 
-    category: "quiz",
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"fake detector phishing", 
-    app: "fake detector",
-    class: "fakedetector",
-    type: "phishing", 
-    category: "fake",
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-    dificulty: "easy",
-    url: "#"
-  },
-   {
-    name:"pass check 3", 
-    app: "pass check",
-    class: "passcheck",
-    type: "3", 
-    category: "security", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"quiz generator tic", 
-    app: "quiz generator",
-    class: "quizgenerator",
-    type: "tic", 
-    category: "quiz", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"wordition tic", 
-    app: "wordition",
-    class: "wordition",
-    type: "tic", 
-    category: "definitions",
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"pass check 3", 
-    app: "pass check",
-    class: "passcheck",
-    type: "3", 
-    category: "security", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"quiz generator tic", 
-    app: "quiz generator",
-    class: "quizgenerator",
-    type: "tic", 
-    category: "quiz", 
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-    dificulty: "easy",
-    url: "#"
-  },
-  {
-    name:"wordition tic", 
-    app: "wordition",
-    class: "wordition",
-    type: "tic", 
-    category: "definitions",
-    definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-    dificulty: "easy",
-    url: "#"
-  }
-
-  ];
-
-	var SAMPLE_ALL = [
-  {
-  	name:"fake detector news", 
-  	app: "fake detector",
-  	class: "fakedetector",
-  	type: "news", 
-  	category: "fake",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"fake detector phishing", 
-  	app: "fake detector",
-  	class: "fakedetector",
-  	type: "phishing", 
-  	category: "fake",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"fake detector health", 
-  	app: "fake detector",
-  	class: "fakedetector",
-  	type: "health", 
-  	category: "fake",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"pass check 1", 
-  	app: "pass check",
-  	class: "passcheck",
-  	type: "1", 
-  	category: "security",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"pass check 2", 
-  	app: "pass check",
-  	class: "passcheck",
-  	type: "2", 
-  	category: "security",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"pass check 3", 
-  	app: "pass check",
-  	class: "passcheck",
-  	type: "3", 
-  	category: "security",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"quiz generator internet", 
-  	app: "quiz generator",
-  	class: "quizgenerator",
-  	type: "internet", 
-  	category: "quiz", 
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"quiz generator tic", 
-  	app: "quiz generator",
-  	class: "quizgenerator",
-  	type: "tic", 
-  	category: "quiz",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"wordition internet", 
-  	app: "wordition",
-  	class: "wordition",
-  	type: "internet", 
-  	category: "definitions",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  },
-  {
-  	name:"wordition tic", 
-  	app: "wordition",
-  	class: "wordition",
-  	type: "tic", 
-  	category: "definitions",
-  	definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
-  	dificulty: "easy",
-  	url: "#"
-  }
-
-	];
-
-
   //------------ CREATE APP DIVS -------------
 
   $('.alt_text').hide();
@@ -435,6 +90,7 @@ console.log('click')
       
       app += "<div class='app-item all " + apps[i].category + " " + apps[i].class + " " + apps[i].type + "'>";
       app += "<div class='app app" + i + " " + apps[i].category + " " + apps[i].class + " " + apps[i].type + "'>";
+      app += "<span class='icon-cross app_cross'></span>";
       app += "<div class='app_text'>";
       app += "<p class='type'>" + apps[i].type + "</p>";
       app += "<div class='name'>";
@@ -444,7 +100,7 @@ console.log('click')
       app += "<p class='name1'>" + name1 + "</p>";
       app += "<p class='name2'>" + name2 + "</p>";
       app += "</a>";
-      app += "<div class='def_arrow'><span class='icon-arrow_down'></span></div>";
+      app += "<div class='def_arrow'><span class='icon-arrow_down info_arrow'></span></div>";
       app += "</div>";
       app += "</div>";
       app += "</div>";
@@ -462,17 +118,23 @@ console.log('click')
   var blocksFn = () => {
     var blocks = $('.app');
     blocks.each((i, e) => {
-      console.log($(e).innerWidth())
-
-      $(e).css({
-        height: $(e).outerWidth() + 'px'
+      var blocksparent = $(e).parents('.app-item');
+      let newHeight = $(e).outerWidth();
+      if (blocksparent.hasClass('big')) {
+        newHeight = $(e).outerWidth() / 2 - parseFloat(blocksparent.css('margin-right')) / 2;
+      } 
+       $(e).css({
+        height: newHeight + 'px'
         });
-      });
-    //$('.elab-apps').isotope('layout')
+    });
   };
 
   $(window).on('load resize' , () => {
-     setTimeout(blocksFn,301);
+    setTimeout(()=>{
+      blocksFn();
+      $grid.isotope();
+    },500);
+    
   });
 
 
@@ -486,7 +148,7 @@ var buttonFilter;
 var timevalue;
 
 // init Isotope
-var $grid = $('.elab-apps').isotope({
+$grid = $('.elab-apps').isotope({
   itemSelector: '.app-item',
   //layoutMode: 'layout',
 /*  layoutMode: 'fitRows',
@@ -502,6 +164,8 @@ var $grid = $('.elab-apps').isotope({
 });
 
 $('#filters').on( 'click', '.icon-menu', function() {
+  $('.app-item').removeClass('big');
+  $('.app').removeClass('no-hover');
   buttonFilter = $( this ).attr('data-filter');
   if ($(buttonFilter).length == 0) {
     $grid.isotope();
@@ -556,33 +220,45 @@ function debounce( fn, threshold ) {
 //----------- APP DIV BIG --------------
 
  var growBlock = () => {
-    var blocks = $('.icon-arrow_down');
+    var arrow_app = $('.info_arrow');
+    var cross_app = $('.app_cross');
     var whosBig = null;
 
-    blocks.each((i, e) => {
+    arrow_app.each((i, e) => {
       $(e).on('click', (ev) => {
         var parent = $(ev.target).parents(".app-item");
+        var parentmin = $(ev.target).parents(".app");
+        console.log(parentmin);
         if (parent.is(whosBig)) {
-          $(".app").removeClass('.no-hover');
           parent.removeClass('big');
+          $('.app').removeClass('no-hover');
+          $('.info_arrow').css('pointer-events', 'auto');
           whosBig = null;
         } else {
           if (whosBig) {
-            $(".app").removeClass('.no-hover');
             whosBig.removeClass('big');
+            $('.app').removeClass('no-hover');
+            $('.info_arrow').css('pointer-events', 'auto');
           }
-          $(".app").addClass('.no-hover');
           parent.addClass('big');
+          parentmin.addClass('no-hover');
+          $(e).css('pointer-events', 'none');
           whosBig = parent;
         }
-        setTimeout(blocksFn,301);
-        setTimeout(()=>{$grid.isotope()},501);
-
-        
-      });
-      
+        //setTimeout(blocksFn,500);
+        setTimeout(()=>{$grid.isotope()},200);
+      }); 
     });
-    
+
+    cross_app.each((i, e) => {
+      $(e).on('click', (ev) => {
+        $('.app-item').removeClass('big');
+        $('.app').removeClass('no-hover');
+        $('.info_arrow').css('pointer-events', 'auto');
+        whosBig = null;
+        setTimeout(()=>{$grid.isotope()},100);
+      }); 
+    });
   };
 
   $(window).on('load' , () => {
