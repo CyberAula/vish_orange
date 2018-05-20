@@ -1,42 +1,14 @@
 
 var $grid;
 $(document).ready(function() {
-console.log('click')
 
 //-------- INITIAL SCROLL -----------
 
 	var scroll_arrow = $('.scroll_arrow');
-	var scroll_part = $('.main-elab-content');
-	var scroll_view = $('.elab-apps');
-  var elab_text = $('.elab-text');
-  var scroll_text = $('.scroll_text');
-
 
 	var scroll = function() {
-  	//scroll_part.scrollTo(scroll_view);
-
-  	//scroll_part.animate({scrollTop: scroll_view.first().position().top - 78}, 500);
-
-    //scroll_part.animate({scrollTop: scroll_view.offset().top - 78}, 500);
-
-    /*scroll_part.animate(scrollTo(scroll_view), 2000);
-    elab_text.css({
-      position: "absolute",
-      top: -110 + "vh"
-    });
-    scroll_view.css({
-      top: 0
-    });*/
-
-    /*elab_text.css({
-      height: 0 + "px",
-      marginTop: 0 + "px",
-      paddingTop: 0 + "px",
-      opacity: 0
-    });*/
 
     document.getElementById('elab-apps').scrollIntoView({block: 'start', behavior: 'smooth'});
-
 	};
 
 	scroll_arrow.on('click', scroll);
@@ -68,30 +40,24 @@ console.log('click')
 
   $('.alt_text').hide();
 
-	var apps = SAMPLE;
-
+	var apps = $(SAMPLE);
   var main_apps = $('.elab-apps');
-  var app_rows = Math.ceil(apps.length/4);
 
-  //main_apps.css("grid-template-rows", "repeat(" + app_rows + ", 20.5vw)");
 
   var create_apps = function () {
 
     var app = "";
 
-    for(var i = 0; i < apps.length; i++){
+    apps.each((i, e) => {
 
       var name1 = (apps[i].app.split(" ").length != 1) ? (apps[i].app.split(" ")[0]) : "";
       var name2 = (apps[i].app.split(" ").length != 1) ? (apps[i].app.split(" ")[1]) :  apps[i].app;
-
-      //console.log(name1);
-      //console.log(name2);
-      //console.log(apps[i].app.split(" ")[0]);
 
       app += "<div class='app-item all " + apps[i].category + " " + apps[i].class + " " + apps[i].type + "'>";
       app += "<div class='app app" + i + " " + apps[i].category + " " + apps[i].class + " " + apps[i].type + "'>";
       app += "<span class='icon-cross app_cross'></span>";
       app += "<div class='app_text'>";
+      app += "<div class='name_text'>";
       app += "<p class='type'>" + apps[i].type + "</p>";
       app += "<div class='name'>";
       app += "<a class='app_go' href='" + apps[i].url + "'>";
@@ -100,12 +66,25 @@ console.log('click')
       app += "<p class='name1'>" + name1 + "</p>";
       app += "<p class='name2'>" + name2 + "</p>";
       app += "</a>";
-      app += "<div class='def_arrow'><span class='icon-arrow_down info_arrow'></span></div>";
       app += "</div>";
       app += "</div>";
+      app += "<div class='def_arrow'><span class='icon-arrow_right info_arrow'></span></div>";
+      app += "</div>"; //app_text
+      app += "<div class='def_app'>";
+      app += "<div class='def_title'>" + apps[i].name + "</div>";
+      app += "<div class='def_author'>autor: " + apps[i].author + "</div>";
+      app += "<div class='def_details'><span class='def_det def_language'>" + apps[i].language + "</span>";
+      app += "<span class='def_det def_rate'>" + apps[i].rate + "</span>";
+      app += "<span class='def_det def_difficulty'>" + apps[i].difficulty + "</span>"; 
+      app += "<span class='def_det def_duration'>" + apps[i].duration + "</span>"; 
       app += "</div>";
-      app += "</div>";
-    };
+      app += "<div class='def_definition'>" + apps[i].definition + "</div>"; 
+      app += "<a class='def_play' href='" + apps[i].url + "'><span class='play_text'>ir a la aplicación</span> <img src='assets/elab/start.svg'></a>"; 
+      //app += "<a class='def_play' href='" + apps[i].url + "'><img src='assets/elab/start.svg'></a>";      
+      app += "</div>"; //def_app
+      app += "</div>"; //app
+      app += "</div>"; //app-item
+    });
 
     main_apps.append(app);
   };
@@ -138,8 +117,60 @@ console.log('click')
   });
 
 
+//----------- APP DIV BIG --------------
 
-//-----------------------------
+ var growBlock = () => {
+    var arrow_app = $('.info_arrow');
+    var cross_app = $('.app_cross');
+    var whosBig = null;
+
+    arrow_app.each((i, e) => {
+      $(e).on('click', (ev) => {
+        var parent = $(ev.target).parents(".app-item");
+        var parentmin = $(ev.target).parents(".app");
+        console.log(parentmin);
+        if (parent.is(whosBig)) {
+          parent.removeClass('big');
+          $('.app').removeClass('no-hover');
+          $('.info_arrow').css('pointer-events', 'auto');
+          whosBig = null;
+        } else {
+          if (whosBig) {
+            whosBig.removeClass('big');
+            $('.app').removeClass('no-hover');
+            $('.info_arrow').css('pointer-events', 'auto');
+          }
+          parent.addClass('big');
+          parentmin.addClass('no-hover');
+          $(e).css('pointer-events', 'none');
+          whosBig = parent;
+        }
+        //setTimeout(blocksFn,500);
+        setTimeout(()=>{$grid.isotope()},200);
+      }); 
+    });
+
+    cross_app.each((i, e) => {
+      $(e).on('click', (ev) => {
+        $('.app-item').removeClass('big');
+        $('.app').removeClass('no-hover');
+        $('.info_arrow').css('pointer-events', 'auto');
+        whosBig = null;
+        setTimeout(()=>{$grid.isotope()},100);
+      }); 
+    });
+
+  };
+
+
+  $(window).on('load' , () => {
+    $grid.isotope();
+    growBlock();
+  });
+
+
+
+//------------ FILTERS + SEARCH -----------------
 
 
 // quick search regex
@@ -215,64 +246,6 @@ function debounce( fn, threshold ) {
     timeout = setTimeout( delayed, threshold );
   };
 }
-
-
-//----------- APP DIV BIG --------------
-
- var growBlock = () => {
-    var arrow_app = $('.info_arrow');
-    var cross_app = $('.app_cross');
-    var whosBig = null;
-
-    arrow_app.each((i, e) => {
-      $(e).on('click', (ev) => {
-        var parent = $(ev.target).parents(".app-item");
-        var parentmin = $(ev.target).parents(".app");
-        console.log(parentmin);
-        if (parent.is(whosBig)) {
-          parent.removeClass('big');
-          $('.app').removeClass('no-hover');
-          $('.info_arrow').css('pointer-events', 'auto');
-          whosBig = null;
-        } else {
-          if (whosBig) {
-            whosBig.removeClass('big');
-            $('.app').removeClass('no-hover');
-            $('.info_arrow').css('pointer-events', 'auto');
-          }
-          parent.addClass('big');
-          parentmin.addClass('no-hover');
-          $(e).css('pointer-events', 'none');
-          whosBig = parent;
-        }
-        //setTimeout(blocksFn,500);
-        setTimeout(()=>{$grid.isotope()},200);
-      }); 
-    });
-
-<<<<<<< HEAD
-    cross_app.each((i, e) => {
-      $(e).on('click', (ev) => {
-        $('.app-item').removeClass('big');
-        $('.app').removeClass('no-hover');
-        $('.info_arrow').css('pointer-events', 'auto');
-        whosBig = null;
-        setTimeout(()=>{$grid.isotope()},100);
-      }); 
-    });
-=======
-
-      });
-
-    });
-
->>>>>>> 0576c2527995c5bde7ab0d74edcbc8702037dd98
-  };
-
-  $(window).on('load' , () => {
-    $grid.isotope();
-    growBlock();
-  });
 
 
 
