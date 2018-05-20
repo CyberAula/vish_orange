@@ -16,7 +16,7 @@ console.log('click')
   	//scroll_part.scrollTo(scroll_view);
 
   	//scroll_part.animate({scrollTop: scroll_view.first().position().top - 78}, 500);
-    
+
     //scroll_part.animate({scrollTop: scroll_view.offset().top - 78}, 500);
 
     /*scroll_part.animate(scrollTo(scroll_view), 2000);
@@ -36,7 +36,7 @@ console.log('click')
     });*/
 
     document.getElementById('elab-apps').scrollIntoView({block: 'start', behavior: 'smooth'});
-    
+
 	};
 
 	scroll_arrow.on('click', scroll);
@@ -51,7 +51,7 @@ console.log('click')
 	  	item.css('max-height', item.prop("scrollHeight") + 20 + "px");
 	  } else {
 	  	item.css('max-height', '0');
-	  } 
+	  }
 	};
 
 	//////////OPEN LANGUAJE //////////
@@ -72,13 +72,13 @@ console.log('click')
 
   var main_apps = $('.elab-apps');
   var app_rows = Math.ceil(apps.length/4);
-  
+
   //main_apps.css("grid-template-rows", "repeat(" + app_rows + ", 20.5vw)");
 
   var create_apps = function () {
-    
+
     var app = "";
-    
+
     for(var i = 0; i < apps.length; i++){
 
       var name1 = (apps[i].app.split(" ").length != 1) ? (apps[i].app.split(" ")[0]) : "";
@@ -87,7 +87,7 @@ console.log('click')
       //console.log(name1);
       //console.log(name2);
       //console.log(apps[i].app.split(" ")[0]);
-      
+
       app += "<div class='app-item all " + apps[i].category + " " + apps[i].class + " " + apps[i].type + "'>";
       app += "<div class='app app" + i + " " + apps[i].category + " " + apps[i].class + " " + apps[i].type + "'>";
       app += "<span class='icon-cross app_cross'></span>";
@@ -104,7 +104,7 @@ console.log('click')
       app += "</div>";
       app += "</div>";
       app += "</div>";
-      app += "</div>";      
+      app += "</div>";
     };
 
     main_apps.append(app);
@@ -114,7 +114,7 @@ console.log('click')
 
 
   //------------ APP DIVS HEIGHT -------------
-  
+
   var blocksFn = () => {
     var blocks = $('.app');
     blocks.each((i, e) => {
@@ -199,7 +199,7 @@ $('.filters').each( function( i, buttonGroup ) {
     $( this ).addClass('is-checked');
   });
 });
-  
+
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -250,6 +250,7 @@ function debounce( fn, threshold ) {
       }); 
     });
 
+<<<<<<< HEAD
     cross_app.each((i, e) => {
       $(e).on('click', (ev) => {
         $('.app-item').removeClass('big');
@@ -259,6 +260,13 @@ function debounce( fn, threshold ) {
         setTimeout(()=>{$grid.isotope()},100);
       }); 
     });
+=======
+
+      });
+
+    });
+
+>>>>>>> 0576c2527995c5bde7ab0d74edcbc8702037dd98
   };
 
   $(window).on('load' , () => {
