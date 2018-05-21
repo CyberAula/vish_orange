@@ -113,7 +113,7 @@ $(document).ready(function() {
       blocksFn();
       $grid.isotope();
     },500);
-    
+    $('.app-item').removeClass('big');
   });
 
 
@@ -122,10 +122,12 @@ $(document).ready(function() {
  var growBlock = () => {
     var arrow_app = $('.info_arrow');
     var cross_app = $('.app_cross');
+    var apps = $('.app');
     var whosBig = null;
 
     arrow_app.each((i, e) => {
       $(e).on('click', (ev) => {
+        ev.stopPropagation();
         var parent = $(ev.target).parents(".app-item");
         var parentmin = $(ev.target).parents(".app");
         console.log(parentmin);
@@ -145,13 +147,39 @@ $(document).ready(function() {
           $(e).css('pointer-events', 'none');
           whosBig = parent;
         }
-        //setTimeout(blocksFn,500);
+        setTimeout(()=>{$grid.isotope()},200);
+      }); 
+    });
+
+     apps.each((i, e) => {
+      $(e).on('click', (ev) => {
+        var parent = $(ev.currentTarget).parents(".app-item");
+        console.log(parent)
+        var parentmin = $(ev.currentTarget);
+        console.log(parentmin);
+        if (parent.is(whosBig)) {
+          parent.removeClass('big');
+          $('.app').removeClass('no-hover');
+          $('.info_arrow').css('pointer-events', 'auto');
+          whosBig = null;
+        } else {
+          if (whosBig) {
+            whosBig.removeClass('big');
+            $('.app').removeClass('no-hover');
+            $('.info_arrow').css('pointer-events', 'auto');
+          }
+          parent.addClass('big');
+          parentmin.addClass('no-hover');
+          $(ev.currentTarget).find('.info_arrow').css('pointer-events', 'none');
+          whosBig = parent;
+        }
         setTimeout(()=>{$grid.isotope()},200);
       }); 
     });
 
     cross_app.each((i, e) => {
       $(e).on('click', (ev) => {
+        ev.stopPropagation();
         $('.app-item').removeClass('big');
         $('.app').removeClass('no-hover');
         $('.info_arrow').css('pointer-events', 'auto');
@@ -159,7 +187,9 @@ $(document).ready(function() {
         setTimeout(()=>{$grid.isotope()},100);
       }); 
     });
-
+    $('a').on('click', (ev) => {
+        ev.stopPropagation();
+      });
   };
 
 
@@ -246,6 +276,35 @@ function debounce( fn, threshold ) {
     timeout = setTimeout( delayed, threshold );
   };
 }
+
+
+
+// -------- REMOVE HOVER ONTOUCH -----------
+ 
+
+function hasTouch() {
+    return 'ontouchstart' in document.documentElement
+           || navigator.maxTouchPoints > 0
+           || navigator.msMaxTouchPoints > 0;
+}
+
+if (hasTouch()) { // remove all :hover stylesheets
+    try { // prevent exception on browsers not supporting DOM styleSheets properly
+        for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            if (!styleSheet.rules) continue;
+
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                if (!styleSheet.rules[ri].selectorText) continue;
+
+                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                    styleSheet.deleteRule(ri);
+                }
+            }
+        }
+    } catch (ex) {}
+}
+
 
 
 

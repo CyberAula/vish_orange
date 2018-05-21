@@ -3,8 +3,6 @@
 
 //----------- HEADER ------------
 
-
-
 .elab_main
 	+el_box-sizing(border-box)
 	height: 100vh
@@ -203,8 +201,8 @@
 					margin-bottom: 30px
 					$el_cols: 4
 					width: calc(100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 30px - 8px)
-					&:nth-child(4n)
-						margin-right: 0px
+					&:nth-child(#{$el_cols}n)
+						//margin-right: 0px
 					&.big
 						width: calc((100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 30px - 8px) * 2 + 30px)
 						+el_transition_default
@@ -364,4 +362,375 @@
 											color: white
 
 
+@media (max-width: $el_media1)
+	
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					.text-arrow
+						margin-top: .2em
+				.elab-apps
+					.alt_text
+						margin: -1em 1em
+					.app-item
+						.app
+							padding: .8em
+							.app_text
+								.name_text
+									height: 16vw
+								.def_arrow
+									right: -1.7em
+						&.big
+							.app
+								.def_app
+									.def_title
+										font-size: calc(1vw + 1vh + .3em)
+										line-height: calc(1vw + 1vh + .5em)
+									.def_author
+										font-size: calc(.7vw + .7vh + .3em)
+									.def_details
+										font-size: calc(.7vw + .7vh + .1em)
 
+
+@media (max-width: $el_media2)
+	
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					padding: 0.3em 0.6em 0.6em 0.6em
+					font-size: calc(2.5vh + 2.3vw + 2.3em)
+					.text-arrow
+						margin-top: .1em
+
+
+@media (max-width: $el_media4)
+
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					margin-top: .7em
+					min-height: 92vh
+					padding: 0.7em .8em 0 .8em
+					font-size: calc(2.5vh + 2.1vw + 2.3em)
+					.text-arrow
+						margin-top: 1em
+				.elab-apps
+					.alt_text
+						margin: -1em 1em
+					.app-item
+						margin-right: 30px
+						margin-bottom: 30px
+						$el_cols: 3
+						width: calc(100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 30px - 12px)
+						&:nth-child(#{$el_cols}n)
+							//margin-right: 0px
+						&.big
+							width: calc((100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 30px - 12px) * 2 + 30px)
+						.app
+							padding: .8em
+							font-size: calc(1vw + 1vh + .3em)
+							.app_text
+								.name_text
+									height: 20vw
+
+
+@media (max-width: $el_media4) and (orientation: landscape)
+
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					margin-top: 0
+					min-height: 92vh
+					padding: 0.7em .8em 0 .8em
+					font-size: calc(2.5vh + 2.1vw + 2em)
+					.text-arrow
+						margin-top: 1em
+				.elab-apps
+					.alt_text
+						margin: -1em 1em
+					.app-item
+						.app
+							padding: 1em
+							font-size: calc(1vw + 1vh + .5em)
+						&.big
+							.app
+								.def_app
+									.def_title
+										font-size: calc(1vw + 1vh + .8em)
+									.def_author
+										font-size: calc(1vw + 1vh + .3em)
+										line-height: calc(.8vw + .8vh + .7em)
+									.def_details
+										font-size: calc(.9vw + .9vh + .15em)
+									.def_definition
+										margin-top: .4em
+										font-size: calc(.8vw + .8vh + 0.2em)
+										line-height: calc(.8vw + .8vh + 0.2em)
+
+
+@media (max-width: $el_media5)
+	
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					margin-top: 0
+					padding: 1em 0.8em 0 0.8em
+					font-size: calc(2.5vh + 2vw + 1.6em)
+					.text-arrow
+						margin-top: .5em
+
+
+@media (max-width: $el_media6) and (orientation: landscape)
+	
+	.elab_main
+		.main_header
+			height: 2.6em
+			.elab_logo
+				height: 3.4em
+				width: 3.3em
+				font-size: .8em
+			.header_options
+				font-size: .8em
+		.elab-container
+			.lateral-menu
+				font-size: 1.5em
+			.main-elab-content
+				height: calc(100vh - 50px)
+				.elab-text
+					margin-top: 0
+					padding: 1em 0.8em
+					font-size: calc(2.5vh + 2vw + 1.35em)
+					.text-arrow
+						margin-top: .5em
+				.elab-apps
+					.app-item
+						.app
+						&.big
+							.app
+								.def_app
+									.def_title
+										font-size: calc(1vw + 1vh + .9em)
+									.def_author
+										font-size: calc(1vw + 1vh + .45em)
+										line-height: calc(.8vw + .8vh + .7em)
+									.def_details
+										font-size: calc(.9vw + .9vh + .3em)
+									.def_definition
+										margin-top: .4em
+										font-size: calc(.8vw + .8vh + 0.35em)
+										line-height: calc(.8vw + .8vh + 0.35em)
+									.def_play
+										font-size: calc(.8vw + .8vh + 0.2em)
+				.educainternet-footer
+					font-size: .8em
+
+
+
+@media (max-width: $el_media7)
+
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					margin-top: 1em
+					padding: 0.7em
+					font-size: calc(2vh + 2vw + 2.2em)
+					.text-arrow
+						margin-top: 1em
+				.elab-apps
+					.alt_text
+						margin: -1.5em 0.5em
+						font-size: calc(1.5vh + 1.5vw + 1em)
+					.app-item
+						.app
+							font-size: calc(1vw + .9vh + .2em)
+							.app_text
+								.name_text
+									height: 18vw
+						&.big
+							.app
+								padding: .8em
+								.def_app
+									.def_title
+										font-size: calc(.8vw + .8vh + .5em)
+									.def_author
+										font-size: calc(.8vw + .8vh + .2em)
+										line-height: calc(.8vw + .8vh + .5em)
+									.def_details
+										margin: 0
+										font-size: calc(.8vw + .8vh + .1em)
+									.def_definition
+										margin-top: .2em
+										font-size: calc(.7vw + .7vh + .1em)
+										line-height: calc(.7vw + .7vh + .1em)
+									.def_play
+										font-size: calc(.65vw + .65vh + .1em)
+
+
+@media (max-width: $el_media10)
+
+	.elab_main
+		.elab-container
+			.main-elab-content
+				.elab-text
+					margin-top: 0
+					font-size: calc(2vh + 2vw + 1.8em)
+					.text-arrow
+						margin-top: .3em
+				.elab-apps
+					.alt_text
+					.app-item
+						margin-right: 30px
+						margin-bottom: 30px
+						$el_cols: 2
+						width: calc(100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 30px - 16px)
+						&:nth-child(#{$el_cols}n)
+							//margin-right: 0px
+						&.big
+							width: calc((100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 30px - 16px) * 2 + 30px)
+							.app
+								padding: .8em
+								.def_app
+									.def_title
+										font-size: calc(1vw + 1vh + .5em)
+										line-height: calc(1vw + 1vh + .8em)
+									.def_author
+										font-size: calc(.7vw + .7vh + .5em)
+									.def_details
+										margin-top: .2em
+										font-size: calc(.7vw + .7vh + .3em)
+									.def_definition
+										margin-top: .2em
+										font-size: calc(.7vw + .7vh + .2em)
+										line-height: calc(.7vw + .7vh + .3em)
+									.def_play
+										font-size: calc(.65vw + .65vh + .3em)
+						.app
+							padding: .8em
+							font-size: calc(1vw + 1vh + .5em)
+							.app_text
+								.name_text
+									height: 29vw
+
+
+
+@media (max-width: $el_media10) 
+	@media (max-height: $el_media14) 
+
+		.elab_main
+			.main_header
+				height: 2.2em
+				.elab_logo
+					height: 2.75em
+					width: 3em
+			.elab-container
+				.lateral-menu 
+					font-size: 1.3em
+					.filters
+						padding: .74em
+				.main-elab-content
+					.elab-text
+						margin-top: 0
+						font-size: calc(2vh + 2vw + 1.3em)
+					.elab-apps
+						.app-item
+							.app
+								padding: 1em
+								font-size: calc(1vw + 1vh + 1em)
+							&.big
+								.app
+									.def_app
+										.def_title
+											font-size: calc(1.5vw + 1.5vh + .7em)
+										.def_author
+											margin-top: .2em
+											font-size: calc(1.2vw + 1.2vh + .4em)
+										.def_details
+											font-size: calc(1.1vw + 1.1vh + .3em)
+											margin: .5em 0 .3em 0
+										.def_definition
+											margin-top: .4em
+											font-size: calc(1vw + 1vh + .3em)
+											line-height: calc(1vw + 1vh + .35em)
+										.def_play
+											font-size: calc(1vw + 1vh + .2em)
+
+
+@media (max-width: $el_media13) 
+
+	.elab_main
+		.main_header
+			height: 3.2em
+			font-size: 1em
+			.elab_logo
+				height: 3.4em
+				width: 3.6em
+			.header_options
+				padding: 0 1em
+				.search
+					width: 30% 
+					+el_flex
+					.field_search
+						width: 100% 
+		.elab-container
+			.lateral-menu 
+				font-size: 1.3em
+				height: calc(100vh - 2.45em)
+				.filters
+					padding: .74em
+			.main-elab-content
+				height: calc(100vh - 41.5px)
+				.elab-text
+					margin-top: .3em
+					font-size: calc(1.5vh + 1.5vw + 1.5em)
+				.elab-apps
+					margin: 1em 0 1.5em 1.7em
+					.alt_text
+						margin: -1em 0.5em
+					.app-item
+						margin-right: 20px
+						margin-bottom: 20px
+						$el_cols: 2
+						width: calc(100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 20px - 10px)
+						&:nth-child(#{$el_cols}n)
+							//margin-right: 0px
+						&.big
+							width: calc((100% / #{$el_cols} - #{$el_cols - 1}/#{$el_cols} * 20px - 10px) * 2 + 20px)
+							.app
+								padding: .8em
+								.def_app
+									.def_title
+										font-size: calc(1vw + 1vh + .4em)
+										line-height: calc(1vw + 1vh + .7em)
+									.def_author
+										font-size: calc(.7vw + .7vh + .4em)
+									.def_details
+										margin-top: .2em
+										font-size: calc(.7vw + .7vh + .2em)
+									.def_definition
+										margin-top: .2em
+										font-size: calc(.7vw + .7vh + .1em)
+										line-height: calc(.7vw + .7vh + .2em)
+									.def_play
+										font-size: calc(.65vw + .65vh + .2em)
+						.app
+							padding: .8em
+							font-size: calc(.7vw + .7vh + .5em)
+							.app_text
+								.name_text
+									height: 25vw
+				.educainternet-footer
+					font-size: .6em
+
+
+@media (max-width: $el_media15) 
+
+	.elab_main
+		.main_header
+			.header_options
+				padding: 0 .2em
