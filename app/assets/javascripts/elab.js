@@ -92,10 +92,12 @@ $(document).ready(function() {
   create_apps();
 
 
+
   //------------ APP DIVS HEIGHT -------------
 
-  var blocksFn = () => {
+  var blocksFn = (cb) => {
     var blocks = $('.app');
+    
     blocks.each((i, e) => {
       var blocksparent = $(e).parents('.app-item');
       let newHeight = $(e).outerWidth();
@@ -106,96 +108,83 @@ $(document).ready(function() {
         height: newHeight + 'px'
         });
     });
+
+    if (cb) {
+      cb();
+    }
   };
 
   $(window).on('load resize' , () => {
-    setTimeout(()=>{
-      blocksFn();
-      $grid.isotope();
-    },500);
     $('.app-item').removeClass('big');
+    blocksFn(() => {
+      setTimeout(()=>{
+        $grid.isotope();
+      }, 300);
+    });
+
   });
 
 
 //----------- APP DIV BIG --------------
 
- var growBlock = () => {
-    var arrow_app = $('.info_arrow');
-    var cross_app = $('.app_cross');
-    var apps = $('.app');
-    var whosBig = null;
 
-    arrow_app.each((i, e) => {
-      $(e).on('click', (ev) => {
-        ev.stopPropagation();
-        var parent = $(ev.target).parents(".app-item");
-        var parentmin = $(ev.target).parents(".app");
-        console.log(parentmin);
-        if (parent.is(whosBig)) {
-          parent.removeClass('big');
-          $('.app').removeClass('no-hover');
-          $('.info_arrow').css('pointer-events', 'auto');
-          whosBig = null;
-        } else {
-          if (whosBig) {
-            whosBig.removeClass('big');
-            $('.app').removeClass('no-hover');
-            $('.info_arrow').css('pointer-events', 'auto');
-          }
-          parent.addClass('big');
-          parentmin.addClass('no-hover');
-          $(e).css('pointer-events', 'none');
-          whosBig = parent;
-        }
-        setTimeout(()=>{$grid.isotope()},200);
-      }); 
-    });
+const growBlock = (cb) => {
 
-     apps.each((i, e) => {
-      $(e).on('click', (ev) => {
-        var parent = $(ev.currentTarget).parents(".app-item");
-        console.log(parent)
-        var parentmin = $(ev.currentTarget);
-        console.log(parentmin);
-        if (parent.is(whosBig)) {
-          parent.removeClass('big');
-          $('.app').removeClass('no-hover');
-          $('.info_arrow').css('pointer-events', 'auto');
-          whosBig = null;
-        } else {
-          if (whosBig) {
-            whosBig.removeClass('big');
-            $('.app').removeClass('no-hover');
-            $('.info_arrow').css('pointer-events', 'auto');
-          }
-          parent.addClass('big');
-          parentmin.addClass('no-hover');
-          $(ev.currentTarget).find('.info_arrow').css('pointer-events', 'none');
-          whosBig = parent;
-        }
-        setTimeout(()=>{$grid.isotope()},200);
-      }); 
-    });
+  const apps = $('.app');
+  const arrowApp = apps.find('.def_arrow');
+  const crossApp = apps.find('.app_cross');
+  let whosBig = null;
 
-    cross_app.each((i, e) => {
-      $(e).on('click', (ev) => {
-        ev.stopPropagation();
-        $('.app-item').removeClass('big');
-        $('.app').removeClass('no-hover');
-        $('.info_arrow').css('pointer-events', 'auto');
-        whosBig = null;
-        setTimeout(()=>{$grid.isotope()},100);
-      }); 
-    });
-    $('a').on('click', (ev) => {
-        ev.stopPropagation();
-      });
-  };
+  const getAppItem = (target) => {
+    return $(target).parents('.app-item');
+  }
 
+  const open = (appItem) => {
+    if (whosBig) {
+      close(whosBig);
+    }
+    appItem.addClass('big');
+    appItem.find('.app').addClass('no-hover');
+    setTimeout(() => { $grid.isotope(); }, 300);
+    whosBig = appItem;
+  }
+  const close = (appItem) => {
+    appItem.removeClass('big');
+    appItem.find('.app').removeClass('no-hover');
+    setTimeout(() => { $grid.isotope(); }, 300);
+    whosBig = null;
+  }
+
+  arrowApp.on('click', (ev) => {
+    ev.stopPropagation();
+    const appItem = getAppItem(ev.target);
+    open(appItem);
+  });
+
+  crossApp.on('click', (ev) => {
+    ev.stopPropagation();
+    const appItem = getAppItem(ev.target);
+    close(appItem);
+  });
+
+  apps.on('click', (ev) => {
+    ev.stopPropagation();
+    const appItem = getAppItem(ev.currentTarget);
+    if (whosBig && whosBig[0]=== appItem[0]) {
+      close(appItem);
+    } else {
+      $('.app-item').removeClass('big');
+      open(appItem);
+    }
+  });
+
+  cb();
+}
 
   $(window).on('load' , () => {
-    $grid.isotope();
-    growBlock();
+    growBlock(() => {
+      setTimeout(() => { $grid.isotope(); }, 300);
+    });
   });
 
 
