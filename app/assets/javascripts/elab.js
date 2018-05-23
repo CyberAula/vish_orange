@@ -114,16 +114,15 @@ $(document).ready(function() {
     }
   };
 
-  $(window).on('load resize' , () => {
+
+ $(window).on('load resize' , () => {
+    var tolo;
+    clearTimeout(tolo);
     $('.app-item').removeClass('big');
-    blocksFn(() => {
-      setTimeout(()=>{
-        $grid.isotope();
+      tolo = setTimeout(() => {
+        blocksFn(() => {$grid.isotope()});
       }, 300);
-    });
-
   });
-
 
 //----------- APP DIV BIG --------------
 
