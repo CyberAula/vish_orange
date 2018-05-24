@@ -204,6 +204,9 @@ $grid = $('.elab-apps').isotope({
   fitRows: {
     gutter: 40
   },*/
+  masonry: {
+    columnWidth: 1
+  },
   filter: function() {
     var $this = $(this);
     var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
