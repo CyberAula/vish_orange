@@ -17,9 +17,9 @@
     url: "#"
   },
    {
-    name:"wordition internet", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall internet", 
+    app: "word wall",
+    class: "wordwall",
     type: "internet", 
     category: "definitions", 
     author: "elab",
@@ -137,9 +137,9 @@
     url: "#"
   },
   {
-    name:"wordition tic", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall tic", 
+    app: "word wall",
+    class: "wordwall",
     type: "tic", 
     category: "definitions",
     author: "elab",
@@ -165,9 +165,9 @@
     url: "#"
   },
    {
-    name:"wordition internet", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall internet", 
+    app: "word wall",
+    class: "wordwall",
     type: "internet", 
     category: "definitions", 
     definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.",
@@ -245,9 +245,9 @@
     url: "#"
   },
   {
-    name:"wordition tic", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall tic", 
+    app: "word wall",
+    class: "wordwall",
     type: "tic", 
     category: "definitions",
     definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
@@ -275,9 +275,9 @@
     url: "#"
   },
   {
-    name:"wordition tic", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall tic", 
+    app: "word wall",
+    class: "wordwall",
     type: "tic", 
     category: "definitions",
     definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
@@ -369,9 +369,9 @@
     url: "#"
   },
   {
-    name:"wordition internet", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall internet", 
+    app: "word wall",
+    class: "wordwall",
     type: "internet", 
     category: "definitions",
     definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
@@ -379,9 +379,9 @@
     url: "#"
   },
   {
-    name:"wordition tic", 
-    app: "wordition",
-    class: "wordition",
+    name:"wordwall tic", 
+    app: "word wall",
+    class: "wordwall",
     type: "tic", 
     category: "definitions",
     definition: "lorem fistrum diodeno pecador me cago en tus muelas se calle ustée papaar papaar ese que llega papaar papaar te voy a borrar el cerito. ahorarr a gramenawer sexuarl a peich pupita.", 
