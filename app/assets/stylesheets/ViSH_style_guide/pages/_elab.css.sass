@@ -69,14 +69,25 @@
 			font-size: 2em
 			text-align: center
 			background-color: $el_secondarycolor 
-		.icon-menu
-			padding-top: .8em
-			+el_transition_default
-			+el_hand_cursor
-			&:hover
-				+el_hover_scale
-			&.is-checked
-				color: $el_maincolor
+			.filters
+				margin-top: .5em
+				.icon-menu
+					padding-top: .6em
+					+el_transition_default
+					+el_hand_cursor
+					.icon-exp
+						opacity: 0
+						font-size: .3em
+						letter-spacing: 0.05em
+						font-family: $el_OrangeLighter
+						+el_transition_default
+					&:hover
+						+el_hover_scale
+						.icon-exp
+							opacity: 1
+							+el_transition_default
+					&.is-checked
+						color: $el_maincolor
 
 		.language_menu
 			position: relative
@@ -546,6 +557,36 @@
 					font-size: .8em
 
 
+@media (max-width: 818px)
+	@media (max-height: 613px)
+
+		.elab_main
+			.elab-container
+				.main-elab-content
+					.elab-text
+						font-size: calc(2.7vh + 2.5vw + 1.35em)
+					.elab-apps
+						.app-item
+							.app
+							&.big
+								.app
+									.def_app
+										.def_title
+											font-size: calc(1vw + 1vh + .8em)
+										.def_author
+											font-size: calc(1vw + 1vh + .3em)
+											line-height: calc(.8vw + .8vh + .7em)
+										.def_details
+											margin-top: .3em
+											font-size: calc(.8vw + .8vh + .3em)
+										.def_definition
+											margin-top: .4em
+											font-size: calc(.8vw + .8vh + 0.2em)
+											line-height: calc(.8vw + .8vh + 0.25em)
+										.def_play
+											font-size: calc(.8vw + .8vh + 0.2em)
+
+
 @media (max-width: $el_media7) and (orientation: portrait)
 
 	.elab_main
@@ -770,9 +811,11 @@
 					width: 3em
 			.elab-container
 				.lateral-menu 
-					font-size: 1.3em
+					font-size: 1.2em
 					.filters
-						padding: .74em
+						padding: .45em
+						.icon-menu
+							padding-top: .2em
 				.main-elab-content
 					.elab-text
 						margin-top: 0
@@ -813,7 +856,9 @@
 					height: calc(100vh - 2.75em)
 					font-size: 1.2em
 					.filters
-						padding: 0.85em
+						padding: 0.45em
+						.icon-menu
+							padding-top: .2em
 
 
 
@@ -879,7 +924,7 @@
 				font-size: 1.3em
 				height: calc(100vh - 2.45em)
 				.filters
-					padding: .74em
+					padding: .45em
 			.main-elab-content
 				height: calc(100vh - 41.5px)
 				.elab-text
