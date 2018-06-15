@@ -1,15 +1,33 @@
 es:
   elab:
     alt_text: "no hay aplicaciones disponibles de esta categoría en este momento, ¡prueba con otra!"
+    app_def:
+      fakedetector_health: "aprende a detectar noticias falsas en la red con nuestro fakedetector. no te dejes engañar, no todo lo que aparece en internet es cierto. ¡que no te den gato por liebre!"
+      fakedetector_phishing: "aprende a detectar phishing en la red con nuestro fakedetector. no te dejes engañar, no todo lo que aparece en internet es cierto. ¡que no te den gato por liebre!"
+      passcheck_1: "aprende a crear contraseñas seguras con passcheck. para superar este reto tendrás que comprobar 3 contraseñas: 1 fácil, 1 media y 1 segura, con ayuda de nuestra aplicación."
+      passcheck_2: "aprende a crear contraseñas seguras con passcheck. para superar este reto tendrás que comprobar 3 contraseñas seguras, con ayuda de nuestra aplicación."
+      quizgenerator_tech: "¡estamos trabajando en ello! próximamente podrás entrenarte en diferentes materias con breves quizes de preguntas de respuesta múltiple, para ser el empo de la clase."
+      wordwall_internet: "completa el muro de 25 letras con definiciones sobre las TIC e internet. te damos como pista si empieza o contiene dicha letra, tienes comodines para ayudarte, ¡úsalos bien!"
+    author: "autor"
+    difficulty_e: "fácil"
+    difficulty_m: "media"
+    difficulty_h: "difícil"
     educafooter: "el lab de"
+    goto: "ir a la aplicación"
+    timeh: "hora"
+    timehs: "horas"
+    timem: "minutos"
     icon-all: "todas"
     icon-fake: "fake"
     icon-security: "seguridad"
     icon-quiz: "preguntas"
     icon-definitions: "definiciones"
     icon-hotspot: "hotspot"
+    lang_en: "inglés"
+    lang_es: "español"
     login: "iniciar sesión"
     main_text: '<span class="e-light">e</span>lab, el laboratorio tecnológico virtual de creación de educapps, que te ayudará a identificar todos los fraudes en internet. ¡que no te den gato por liebre!'
+    publics: "TP"
     search: "buscar"
     sign_up: "regístrate"
     title: '<span class="e-light">e</span>lab'

@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   $('.alt_text').hide();
 
-	var apps = $(SAMPLE);
+	var apps = $(OFICIAL);
   var main_apps = $('.elab-apps');
 
 
