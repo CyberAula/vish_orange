@@ -28,7 +28,7 @@
     date: "20|03|18",
     rate: "TP",
     duration: "1hora",
-    difficulty: "fácil",
+    difficulty: "media",
     definition: "completa el muro de 25 letras con definiciones sobre las TIC e internet. te damos como pista si empieza o contiene dicha letra, tienes comodines para ayudarte, ¡úsalos bien!",
     url: "#"
   },
