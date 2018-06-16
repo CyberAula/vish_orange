@@ -18,10 +18,10 @@
     url: "#"
     },
    {
-    name:"wordwall internet", 
+    name:"wordwall internet1", 
     app: "word wall",
     class: "wordwall",
-    type: "internet", 
+    type: "internet1", 
     category: "definitions", 
     author: "elab",
     language: "español",
@@ -60,6 +60,21 @@
     duration: "30min",
     difficulty: "fácil",
     definition: "aprende a detectar phishing en la red con nuestro fakedetector. no te dejes engañar, no todo lo que aparece en internet es cierto. ¡que no te den gato por liebre!",
+    url: "#"
+  },
+  {
+    name:"wordwall internet2", 
+    app: "word wall",
+    class: "wordwall",
+    type: "internet2", 
+    category: "definitions", 
+    author: "elab",
+    language: "español",
+    date: "20|03|18",
+    rate: "TP",
+    duration: "1hora",
+    difficulty: "difícil",
+    definition: "completa el muro de 25 letras con definiciones sobre las TIC e internet. te damos como pista si empieza o contiene dicha letra, tienes comodines para ayudarte, ¡úsalos bien!",
     url: "#"
   },
   {
