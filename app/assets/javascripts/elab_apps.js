@@ -15,7 +15,7 @@
     duration: "30min",
     difficulty: "fácil",
     definition: "aprende a detectar noticias falsas en la red con nuestro fakedetector. no te dejes engañar, no todo lo que aparece en internet es cierto. ¡que no te den gato por liebre!",
-    url: "#"
+    url: "http://educainternet.es/scormfiles/79.full"
     },
    {
     name:"wordwall internet1",
@@ -30,7 +30,7 @@
     duration: "1hora",
     difficulty: "media",
     definition: "completa el muro de 25 letras con definiciones sobre las TIC e internet. te damos como pista si empieza o contiene dicha letra, tienes comodines para ayudarte, ¡úsalos bien!",
-    url: "#"
+    url: "http://educainternet.es/webapps/13.full"
   },
   {
     name:"passcheck 1",
@@ -45,7 +45,7 @@
     duration: "10min",
     difficulty: "fácil",
     definition: "aprende a crear contraseñas seguras con passcheck. para superar este reto tendrás que comprobar 3 contraseñas: 1 fácil, 1 media y 1 segura, con ayuda de nuestra aplicación.",
-    url: "#"
+    url: "http://educainternet.es/scormfiles/81.full"
   },
   {
     name:"fakedetector phishing",
@@ -60,7 +60,7 @@
     duration: "30min",
     difficulty: "fácil",
     definition: "aprende a detectar phishing en la red con nuestro fakedetector. no te dejes engañar, no todo lo que aparece en internet es cierto. ¡que no te den gato por liebre!",
-    url: "#"
+    url: "http://educainternet.es/scormfiles/78.full"
   },
   {
     name:"wordwall internet2",
@@ -75,7 +75,7 @@
     duration: "1hora",
     difficulty: "difícil",
     definition: "completa el muro de 25 letras con definiciones sobre las TIC e internet. te damos como pista si empieza o contiene dicha letra, tienes comodines para ayudarte, ¡úsalos bien!",
-    url: "#"
+    url: "http://educainternet.es/webapps/14.full"
   },
   {
     name:"passcheck 2",
@@ -90,7 +90,7 @@
     duration: "10min",
     difficulty: "fácil",
     definition: "aprende a crear contraseñas seguras con passcheck. para superar este reto tendrás que comprobar 3 contraseñas seguras, con ayuda de nuestra aplicación.",
-    url: "#"
+    url: "http://educainternet.es/scormfiles/80.full"
   },
   {
     name:"quizgenerator internet",

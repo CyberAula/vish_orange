@@ -79,7 +79,7 @@ $(document).ready(function() {
       app += "<span class='def_det def_duration'>" + apps[i].duration + "</span>";
       app += "</div>";
       app += "<div class='def_definition'>" + apps[i].definition + "</div>";
-      app += "<a class='def_play' href='" + apps[i].url + "'><span class='play_text'>ir a la aplicación</span> <img src='assets/elab/start.svg'></a>";
+      app += "<a class='def_play' target='_blank' href='" + apps[i].url + "'><span class='play_text'>ir a la aplicación</span> <img src='assets/elab/start.svg'></a>";
       //app += "<a class='def_play' href='" + apps[i].url + "'><img src='assets/elab/start.svg'></a>";
       app += "</div>"; //def_app
       app += "</div>"; //app
@@ -119,6 +119,7 @@ $(document).ready(function() {
     var tolo;
     clearTimeout(tolo);
     $('.app-item').removeClass('big');
+
       tolo = setTimeout(function(){
         blocksFn(function(){$grid.isotope()});
       }, 300);
