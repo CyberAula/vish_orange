@@ -48,7 +48,7 @@ $(document).ready(function() {
 
     var app = "";
 
-    apps.each((i, e) => {
+    apps.each(function(i, e){
 
       var name1 = (apps[i].app.split(" ").length != 1) ? (apps[i].app.split(" ")[0]) : "";
       var name2 = (apps[i].app.split(" ").length != 1) ? (apps[i].app.split(" ")[1]) :  apps[i].app;
@@ -95,12 +95,12 @@ $(document).ready(function() {
 
   //------------ APP DIVS HEIGHT -------------
 
-  var blocksFn = (cb) => {
+  var blocksFn = function(cb){
     var blocks = $('.app');
 
-    blocks.each((i, e) => {
+    blocks.each(function(i, e){
       var blocksparent = $(e).parents('.app-item');
-      let newHeight = $(e).outerWidth();
+      var newHeight = $(e).outerWidth();
       if (blocksparent.hasClass('big')) {
         newHeight = $(e).outerWidth() / 2 - parseFloat(blocksparent.css('margin-right')) / 2;
       }
@@ -115,60 +115,60 @@ $(document).ready(function() {
   };
 
 
- $(window).on('load resize' , () => {
+ $(window).on('load resize' , function(){
     var tolo;
     clearTimeout(tolo);
     $('.app-item').removeClass('big');
-      tolo = setTimeout(() => {
-        blocksFn(() => {$grid.isotope()});
+      tolo = setTimeout(function(){
+        blocksFn(function(){$grid.isotope()});
       }, 300);
   });
 
 //----------- APP DIV BIG --------------
 
 
-const growBlock = (cb) => {
+var growBlock = function(cb){
 
-  const apps = $('.app');
-  const arrowApp = apps.find('.def_arrow');
-  const crossApp = apps.find('.app_cross');
-  let whosBig = null;
+  var apps = $('.app');
+  var arrowApp = apps.find('.def_arrow');
+  var crossApp = apps.find('.app_cross');
+  var whosBig = null;
 
-  const getAppItem = (target) => {
+  var getAppItem = function(target) {
     return $(target).parents('.app-item');
   }
 
-  const open = (appItem) => {
+  var open = function(appItem) {
     if (whosBig) {
       close(whosBig);
     }
     appItem.addClass('big');
     appItem.find('.app').addClass('no-hover');
-    setTimeout(() => { $grid.isotope(); }, 300);
+    setTimeout(function() { $grid.isotope(); }, 300);
     whosBig = appItem;
   }
-  const close = (appItem) => {
+  var close = function(appItem) {
     appItem.removeClass('big');
     appItem.find('.app').removeClass('no-hover');
-    setTimeout(() => { $grid.isotope(); }, 300);
+    setTimeout(function() { $grid.isotope(); }, 300);
     whosBig = null;
   }
 
-  arrowApp.on('click', (ev) => {
+  arrowApp.on('click', function(ev) {
     ev.stopPropagation();
-    const appItem = getAppItem(ev.target);
+    var appItem = getAppItem(ev.target);
     open(appItem);
   });
 
-  crossApp.on('click', (ev) => {
+  crossApp.on('click', function(ev) {
     ev.stopPropagation();
-    const appItem = getAppItem(ev.target);
+    var appItem = getAppItem(ev.target);
     close(appItem);
   });
 
-  apps.on('click', (ev) => {
+  apps.on('click', function(ev) {
     ev.stopPropagation();
-    const appItem = getAppItem(ev.currentTarget);
+    var appItem = getAppItem(ev.currentTarget);
     if (whosBig && whosBig[0]=== appItem[0]) {
       close(appItem);
     } else {
@@ -180,9 +180,9 @@ const growBlock = (cb) => {
   cb();
 }
 
-  $(window).on('load' , () => {
-    growBlock(() => {
-      setTimeout(() => { $grid.isotope(); }, 300);
+  $(window).on('load' , function() {
+    growBlock(function() {
+      setTimeout(function() { $grid.isotope(); }, 300);
     });
   });
 
