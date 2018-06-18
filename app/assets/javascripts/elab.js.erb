@@ -72,15 +72,15 @@ $(document).ready(function() {
       app += "</div>"; //app_text
       app += "<div class='def_app'>";
       app += "<div class='def_title'>" + apps[i].name + "</div>";
-      app += "<div class='def_author'>autor: " + apps[i].author + "</div>";
+      app += "<div class='def_author'><%=I18n.t('elab.author')%>: " + apps[i].author + "</div>";
       app += "<div class='def_details'><span class='def_det def_language'>" + apps[i].language + "</span>";
       app += "<span class='def_det def_rate'>" + apps[i].rate + "</span>";
-      app += "<span class='def_det def_difficulty'>" + apps[i].difficulty + "</span>"; 
-      app += "<span class='def_det def_duration'>" + apps[i].duration + "</span>"; 
+      app += "<span class='def_det def_difficulty'>" + apps[i].difficulty + "</span>";
+      app += "<span class='def_det def_duration'>" + apps[i].duration + "</span>";
       app += "</div>";
-      app += "<div class='def_definition'>" + apps[i].definition + "</div>"; 
-      app += "<a class='def_play' href='" + apps[i].url + "'><span class='play_text'>ir a la aplicación</span> <img src='assets/elab/start.svg'></a>"; 
-      //app += "<a class='def_play' href='" + apps[i].url + "'><img src='assets/elab/start.svg'></a>";      
+      app += "<div class='def_definition'>" + apps[i].definition + "</div>";
+      app += "<a class='def_play' href='" + apps[i].url + "'><span class='play_text'>ir a la aplicación</span> <img src='assets/elab/start.svg'></a>";
+      //app += "<a class='def_play' href='" + apps[i].url + "'><img src='assets/elab/start.svg'></a>";
       app += "</div>"; //def_app
       app += "</div>"; //app
       app += "</div>"; //app-item
@@ -97,13 +97,13 @@ $(document).ready(function() {
 
   var blocksFn = (cb) => {
     var blocks = $('.app');
-    
+
     blocks.each((i, e) => {
       var blocksparent = $(e).parents('.app-item');
       let newHeight = $(e).outerWidth();
       if (blocksparent.hasClass('big')) {
         newHeight = $(e).outerWidth() / 2 - parseFloat(blocksparent.css('margin-right')) / 2;
-      } 
+      }
        $(e).css({
         height: newHeight + 'px'
         });
@@ -271,7 +271,7 @@ function debounce( fn, threshold ) {
 
 
 // -------- REMOVE HOVER ONTOUCH -----------
- 
+
 
   function hasTouch() {
     return 'ontouchstart' in document.documentElement
