@@ -138,9 +138,11 @@
 								if (handle.readyState === 4 && handle.status === 200){
 									cache.set(url, handle.responseText);
 									fn.call(this, JSON.parse(handle.responseText));
-								} else if (handle.readyState === 4){
+								} else if (handle.readyState === 4 && handle.responseText!== "" ){
 									var e = JSON.parse(handle.responseText);
 									console.log('Youtube-TV Error: Youtube API Response: '+e.error.errors[0].reason+'\n'+ 'Details: '+e.error.errors[0].message);
+								} else if (handle.responseText===""){
+									console.log('Youtube-TV Error: Youtube API Response: empty');
 								}
 							};
 							handle.open("GET",url,true);

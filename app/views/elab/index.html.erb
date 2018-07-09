@@ -1,4 +1,4 @@
-
+<%= javascript_include_tag "elab" %>
 <%content_for :title do %>elab<% end %>
 <%content_for :favicon do%>elab/favicon_elab.ico<%end%>
 
@@ -8,7 +8,7 @@
 	<div class="main_header">
 
 		<div class="elab_logo"><a href="" class="logo"><%= raw t('elab.title')%></a></div>
-		
+
 		<div class="header_options">
 			<div class="search"><span class="icon-search"></span><input class="field_search" type="search" id="appSearch" name="q" placeholder="<%=t('elab.search')%>"></div>
 			<div class="main_actions">
@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="elab-container">
-		
+
 		<div class="lateral-menu">
 			<div class="filters" id="filters">
 				<div class="icon-menu icon-all" data-filter=".all"><div class="icon-exp"><%=t('elab.icon-all')%></div></div>
@@ -31,7 +31,7 @@
 				<div class="icon-menu icon-definitions" data-filter=".definitions"><div class="icon-exp"><%=t('elab.icon-definitions')%></div></div>
 				<div class="icon-menu icon-hotspot" data-filter=".hotspot"><div class="icon-exp"><%=t('elab.icon-hotspot')%></div></div>
 			</div>
-			
+
 			<div class="language_menu">
 				<div class="current_language" href="">
 					<% the_locale = I18n.locale.to_s %>
@@ -68,4 +68,3 @@
 	</div>
 
 </div>
-
