@@ -234,4 +234,7 @@ Vish::Application.routes.draw do
   #Tracking System
   resources :tracking_system_entries
 
+  # Elab URL files
+  match 'elab_url_file' => 'elab_url_file#create', via: [:post]
+
 end
