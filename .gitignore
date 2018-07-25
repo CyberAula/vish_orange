@@ -98,6 +98,9 @@ chromedriver.log
 # Mac files
 .DS_Store
 
+#private files ediphy
+lib/plugins/ediphy/vendor/private/*
+
 unicorn.conf
 
 nbproject/

@@ -27,7 +27,6 @@ class VishLoep
 
     #Compose the object to be sent to LOEP
     lo = VishLoep.getLoepHashForActivityObject(ao)
-    
     Loep.createOrUpdateLO(lo){ |response,code|
       # Get quality metrics from automatic evaluation methods. 
       # Not necessary because Loep::LosController:update will be called after publishing by LOEP.
@@ -67,6 +66,8 @@ class VishLoep
     lo["name"] = ao.title unless ao.title.blank?
     lo["description"] = ao.description unless ao.description.blank?
     lo["url"] = ao.getUrl
+    loMetadataUrl = ao.getMetadataUrl rescue nil
+    lo["metadata_url"] = loMetadataUrl unless loMetadataUrl.blank?
     lo["tag_list"] = ao.tag_list.join(",") if !ao.tag_list.nil? and ao.tag_list.is_a? Array and !ao.tag_list.blank?
 
     unless ao.language.blank?
@@ -82,7 +83,6 @@ class VishLoep
     when "Excursion"
       lo["lotype"] = "veslideshow"
       lo["technology"] = "html"
-      lo["metadata_url"] = ao.getMetadataUrl
       exJSON = JSON(ao.object.json)
       elemTypes = VishEditorUtils.getElementTypes(exJSON)
       lo["hasText"] = elemTypes.include?("text") ? "1" : "0"
@@ -97,6 +97,12 @@ class VishLoep
       lo["hasFlashcards"] = elemTypes.include?("flashcard") ? "1" : "0"
       lo["hasVirtualTours"] = elemTypes.include?("VirtualTour") ? "1" : "0"
       lo["hasEnrichedVideos"] = elemTypes.include?("enrichedvideo") ? "1" : "0"
+    when "EdiphyDocument"
+      lo["lotype"] = "oilo"
+      lo["technology"] = "html"
+    when "Workshop"
+      lo["lotype"] = "oilo"
+      lo["technology"] = "html"
     when "Document"
       lo["technology"] = "file"
       case ao.object.class.name

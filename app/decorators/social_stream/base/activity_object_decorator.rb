@@ -122,7 +122,7 @@ ActivityObject.class_eval do
   end
 
   def should_have_license?
-    return ((self.object_type.is_a? String) and (["Document", "Excursion", "Scormfile", "Imscpfile", "Webapp", "Workshop", "Writing"].include? self.object_type))
+    return ((self.object_type.is_a? String) and (["Document", "Excursion", "EdiphyDocument", "Scormfile", "Imscpfile", "Webapp", "Workshop", "Writing"].include? self.object_type))
   end
 
   def should_have_authorship?
@@ -130,8 +130,8 @@ ActivityObject.class_eval do
   end
 
   def resource?
-    #"Actor", "Post", "Category", "Document", "Excursion", "Scormfile", "Imscpfile", "Link", "Webapp", "Comment", "Event", "Embed", "Workshop", "Writing"
-    return ((self.object_type.is_a? String) and (["Category", "Document", "Excursion", "Scormfile", "Imscpfile", "Link", "Webapp", "Event", "Embed", "Workshop", "Writing"].include? self.object_type))
+    #"Actor", "Post", "Category", "Document", "Excursion", "EdiphyDocument", Scormfile", "Imscpfile", "Link", "Webapp", "Comment", "Event", "Embed", "Workshop", "Writing"
+    return ((self.object_type.is_a? String) and (["Category", "Document", "Excursion", "EdiphyDocument", "Scormfile", "Imscpfile", "Link", "Webapp", "Event", "Embed", "Workshop", "Writing"].include? self.object_type))
   end
 
   def document?
@@ -179,7 +179,7 @@ ActivityObject.class_eval do
   end
 
   def evaluable?
-    self.resource? and !Vish::Application.config.APP_CONFIG['loep'].nil?
+    VishConfig.getAvailableEvaluableModels.include?(self.object_type)
   end
 
   def has_analytics?
@@ -378,19 +378,17 @@ ActivityObject.class_eval do
 
   def getUrl
     begin
-      if self.object.nil?
-        return nil
-      end
+      return nil if self.object.nil?
 
       if self.object_type == "Document" and !self.object.type.nil?
-        helper_name = self.object.type.downcase
+        helper_name = self.object.type.underscore
       elsif self.object_type == "Actor" 
         if self.object.subject_type.nil? or ["Site","RemoteSubject"].include? self.object.subject_type
           return nil
         end
-        helper_name = self.object.subject_type.downcase
+        helper_name = self.object.subject_type.underscore
       else
-        helper_name = self.object_type.downcase
+        helper_name = self.object_type.underscore
       end
 
       relativePath = Rails.application.routes.url_helpers.send(helper_name + "_path",self.object)
@@ -583,6 +581,35 @@ ActivityObject.class_eval do
       end
     end
 
+    if self.object_type == "EdiphyDocument"
+      #Excursions have some extra metadata fields in the json
+      parsed_json = JSON(self.object.json)["present"]["globalConfig"]
+
+      if parsed_json["context"] and parsed_json["context"]!="Unspecified"
+        metadata[I18n.t("activity_object.context")] = self.readable_context(parsed_json["context"])
+      end
+
+      if parsed_json["difficulty"]
+        metadata[I18n.t("activity_object.difficulty")] = self.readable_difficulty(parsed_json["difficulty"])
+      end
+
+      if parsed_json["typicalLearningTime"] and (parsed_json["typicalLearningTime"]["h"] != 0 and parsed_json["typicalLearningTime"]["m"] != 0)
+        metadata[I18n.t("activity_object.tlt")] = parsed_json["typicalLearningTime"]["h"].to_s + "H" + parsed_json["typicalLearningTime"]["m"].to_s + "M" #remove the PT at the beginning
+      end
+
+      if parsed_json["subject"] and parsed_json["subject"].class.name=="Array"
+        parsed_json["subject"].delete("Unspecified")
+        unless parsed_json["subject"].blank?
+          subjects = parsed_json["subject"].map{|subject| self.readable_subject(subject) }
+          metadata[I18n.t("activity_object.subjects")] = subjects.join(",")
+        end
+      end
+
+      if parsed_json["educational_objectives"]
+        metadata[I18n.t("activity_object.educational_objectives")] = parsed_json["educational_objectives"]
+      end
+    end
+
     return metadata
   end
 
@@ -727,12 +754,12 @@ ActivityObject.class_eval do
   def self.getObjectFromUrl(url)
     return nil if url.blank?
 
-    urlregexp = /([ ]|^)(http[s]?:\/\/[^\/]+\/([a-zA-Z0-9]+)\/([0-9]+))([ ]|$)/
+    urlregexp = /([ ]|^)(http[s]?:\/\/[^\/]+\/([a-zA-Z0-9_]+)\/([0-9]+))([ ]|$)/
     regexpResult = (url =~ urlregexp)
 
     return nil if regexpResult.nil? or $3.nil? or $4.nil?
 
-    modelName = $3.singularize.capitalize
+    modelName = $3.camelize.singularize
     instanceId = $4
 
     begin

@@ -3,7 +3,7 @@
 class VishConfig
 
   def self.getMainModels
-    ["Excursion","Event","Category","Resource","Workshop","Course"]
+    ["Excursion","EdiphyDocument","Event","Category","Resource","Workshop","Course"]
   end
 
   def self.getFixedMainModels
@@ -15,7 +15,11 @@ class VishConfig
   end
 
   def self.getMainModelsWhichActAsResources
-    ["Excursion","Workshop"]
+    ["Excursion","EdiphyDocument","Workshop"]
+  end
+
+  def self.getEvaluableModels
+    ["Excursion","EdiphyDocument","Workshop"]
   end
 
   def self.getAllLanguages
@@ -84,6 +88,22 @@ class VishConfig
       getInstances(processAlias(aMainModelsWhichActAsResources,options))
     else
       aMainModelsWhichActAsResources
+    end
+  end
+
+  def self.getAvailableEvaluableModels(options={})
+    return [] if Vish::Application.config.APP_CONFIG['loep'].nil?
+    
+    if Vish::Application.config.APP_CONFIG["models"].nil? or Vish::Application.config.APP_CONFIG["models"]["evaluable"].nil?
+      evaluableModels = getEvaluableModels
+    else
+      evaluableModels = (Vish::Application.config.APP_CONFIG["models"]["evaluable"] & getEvaluableModels)
+    end
+
+    if options[:return_instances]
+      getInstances(processAlias(evaluableModels,options))
+    else
+      evaluableModels
     end
   end
 
