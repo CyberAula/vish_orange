@@ -1,37 +1,4 @@
 en:
-  elab:
-    alt_text: "there are no applications available in this category at the moment, try another one!"
-    app_def:
-      fakedetector_health: "learn to detect fake news on the net with our fakedetector. do not be fooled, not everything on the internet is true. don't let to pull the wool over your eyes."
-      fakedetector_phishing: "learn to detect phishing on the net with our fakedetector. do not be fooled, not everything on the internet is true. don't let to pull the wool over your eyes."
-      passcheck_1: "learn to create strong passwords with passcheck. to overcome this challenge you have to check 3 passwords: 1 easy, 1 medium and 1 secure, helping yourself out with our application."
-      passcheck_2: "learn how to create strong passwords with passcheck. to overcome this challenge you will have to check 3 secure passwords, helping yourself out with our application."
-      quizgenerator_tech: "we are working on it! soon you will be able to train different subjects with short multiple answer questions, to be the nerd of the class."
-      wordwall_internet: "complete the 25-letter wall with ICT and Internet definitions. we tell you if the word starts or contains that letter, you have wildcards to help you, use them well!"
-    author: "author"
-    difficulty_e: "easy"
-    difficulty_m: "medium"
-    difficulty_h: "hard"
-    educafooter: "the lab of"
-    goto: "go to application"
-    timeh: "hour"
-    timehs: "hours"
-    timem: "minutes"
-    icon-all: "all"
-    icon-fake: "fake"
-    icon-security: "security"
-    icon-quiz: "quiz"
-    icon-definitions: "definitions"
-    icon-hotspot: "hotspot"
-    lang_en: "english"
-    lang_es: "spanish"
-    login: "login"
-    main_text: '<span class="e-light">e</span>lab, the virtual technological laboratory for the creation of educapps, which will help you identify all the frauds on the internet. do not let yourself get taken for a ride!'
-    publics: "ALL"
-    search: "search"
-    sign_up: "sing up"
-    title: '<span class="e-light">e</span>lab'
-
   i18n:
     transliterate:
       rule:
@@ -43,7 +10,6 @@ en:
         ¡: "¡"
         ́ : ""
   lorem_ipsum: "Lorem consectetur adipisicing elit sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
-
   about_page:
     header_bt: "Explora"
     subtitle: "The reference centre for the education community about the safe and responsible use of ICT"
@@ -64,8 +30,6 @@ en:
       intro: 'WHY'
       title: 'EducaInternet is necessary'
       text: 'EducaInternet is a platform created so that teachers can train themselves in the safe and responsible use of technology. It is a place to create and share with the rest of the community your resources and teaching materials. The end goal is that the educators can share good practices regarding the correct and safe use of ICT with their pupils.'
-
-
   contest_page:
     delete_resource_confirm: You are going to take this resource off the contest. Are you sure?
     do_login: "Sign in to participate in the contest and win great prizes"
@@ -156,7 +120,6 @@ en:
     button_back: 'Go back to contest'
     winners:
       intro: "THE COMPETITION WINNERS"
-
   contributions_page:
     title: 'Open Software'
     subtitle: '¡We love open software!'
@@ -167,7 +130,6 @@ en:
     bootstrap: 'We use the <a class="primary" href="http://getbootstrap.com/">Bootstrap</a> framework, that helps to create responsive and mobile-first projects in the web with the front-end components library most popular in the world. Bootstrap is an open source framework to develope with HTML, CSS and JS.'
     fontawesome: 'We use the <a class="primary" href="http://fontawesome.io/">Font Awesome</a> icon library, that offers escalable icon vectors that can be customize at the moment: size, color, shadow and everything that could be done with the CSS power.'
     contact: 'If you have any questions, you can <a class="primary" href="mailto:virtual.science.hub@gmail.com">contact</a> us antime.'
-
   courses_page:
     title: 'Our courses'
     subtitle: 'Discover our online certified courses'
@@ -178,20 +140,49 @@ en:
     open: 'Permanently open'
     start: 'Start:'
     start_soon: 'Start soon'
-
   mycourses_page:
     title: 'My courses'
     subtitle: 'Here is where you can view your courses'
     courses_band: 'You are enrolled in the following courses'
     nocourses_band: 'It seems that you are not yet enrolled in any of our courses. Click on the button to take a look in our catalog'
     button: 'Catalog'
-
   create_account:
     title_html: "Create your account for free and become an expert <br>in the safe and responsible use of ICT"
     btn_reg: "Create an account"
     btn_ent: "Enter"
     btn_exp: "Explore"
-
+  elab:
+    alt_text: "there are no applications available in this category at the moment, try another one!"
+    app_def:
+      fakedetector_health: "learn to detect fake news on the net with our fakedetector. do not be fooled, not everything on the internet is true. don't let to pull the wool over your eyes."
+      fakedetector_phishing: "learn to detect phishing on the net with our fakedetector. do not be fooled, not everything on the internet is true. don't let to pull the wool over your eyes."
+      passcheck_1: "learn to create strong passwords with passcheck. to overcome this challenge you have to check 3 passwords: 1 easy, 1 medium and 1 secure, helping yourself out with our application."
+      passcheck_2: "learn how to create strong passwords with passcheck. to overcome this challenge you will have to check 3 secure passwords, helping yourself out with our application."
+      quizgenerator_tech: "we are working on it! soon you will be able to train different subjects with short multiple answer questions, to be the nerd of the class."
+      wordwall_internet: "complete the 25-letter wall with ICT and Internet definitions. we tell you if the word starts or contains that letter, you have wildcards to help you, use them well!"
+    author: "author"
+    difficulty_e: "easy"
+    difficulty_m: "medium"
+    difficulty_h: "hard"
+    educafooter: "the lab of"
+    goto: "go to application"
+    timeh: "hour"
+    timehs: "hours"
+    timem: "minutes"
+    icon-all: "all"
+    icon-fake: "fake"
+    icon-security: "security"
+    icon-quiz: "quiz"
+    icon-definitions: "definitions"
+    icon-hotspot: "hotspot"
+    lang_en: "english"
+    lang_es: "spanish"
+    login: "login"
+    main_text: '<span class="e-light">e</span>lab, the virtual technological laboratory for the creation of educapps, which will help you identify all the frauds on the internet. do not let yourself get taken for a ride!'
+    publics: "ALL"
+    search: "search"
+    sign_up: "sing up"
+    title: '<span class="e-light">e</span>lab'
   explore_page:
     subtitle: 'You will find all that is necessary to become an expert in Cybersecurity'
     title: 'Explore EducaInternet'
@@ -359,6 +350,7 @@ en:
         document: "Document added"
         embed: "Embed added"
         event: "Event added"
+        ediphy_document: "Ediphy Document added"
         excursion: "Teaching unit added"
         file: "File added"
         link: "Link added"
@@ -790,6 +782,7 @@ en:
       scorm12: "SCORM 1.2"
       scorm2004: "SCORM 2004"
       html: "HTML"
+    confirm_delete: "Confirm Delete"
     other: "Ediphy Documents"
   date_name: "date"
   description: "description"
