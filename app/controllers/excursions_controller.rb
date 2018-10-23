@@ -4,7 +4,7 @@ class ExcursionsController < ApplicationController
 
   before_filter :authenticate_user!, :only => [ :new, :create, :edit, :update, :clone, :uploadTmpJSON, :upload_attachment ]
   before_filter :profile_subject!, :only => :index
-  before_filter :fill_create_params, :only => [ :new, :create]
+  before_filter :fill_create_params, :only => [ :new, :create ]
   skip_load_and_authorize_resource :only => [ :excursion_thumbnails, :metadata, :scormMetadata, :iframe_api, :preview, :clone, :manifest, :evaluate, :last_slide, :downloadTmpJSON, :uploadTmpJSON, :interactions, :upload_attachment, :show_attachment]
   skip_before_filter :store_location, :only => [ :show_attachment ]
   skip_before_filter :store_location, :if => :format_full?
@@ -107,10 +107,7 @@ class ExcursionsController < ApplicationController
 
     @excursion.save!
 
-    published = (@excursion.draft===false)
-    if published
-      @excursion.afterPublish
-    end
+    @excursion.afterPublish if (@excursion.draft===false)
 
     render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
                       :uploadPath => excursion_path(@excursion, :format=> "json"),
@@ -120,18 +117,16 @@ class ExcursionsController < ApplicationController
   end
 
   def update
-    if params[:excursion]
-      params[:excursion].permit!
-    end
+    params[:excursion].permit! if params[:excursion]
 
     @excursion = Excursion.find(params[:id])
     wasDraft = @excursion.draft
 
-    if(params[:draft])
-      if(params[:draft] == "true")
+    if params[:draft]
+      if params[:draft] == "true"
         @excursion.draft = true
         @excursion.scope = 1
-      elsif (params[:draft] == "false")
+      elsif params[:draft] == "false"
         @excursion.draft = false
         @excursion.scope = 0
       end
@@ -146,10 +141,7 @@ class ExcursionsController < ApplicationController
       Excursion.record_timestamps=true if isAdmin
     end
 
-    published = (wasDraft===true and @excursion.draft===false)
-    if published
-      @excursion.afterPublish
-    end
+    @excursion.afterPublish if (wasDraft===true and @excursion.draft===false)
 
     render :json => { :url => (@excursion.draft ? user_path(current_subject) : excursion_path(resource)),
                       :uploadPath => excursion_path(@excursion, :format=> "json"),

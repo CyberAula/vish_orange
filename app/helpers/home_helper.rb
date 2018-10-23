@@ -19,6 +19,10 @@ module HomeHelper
     subject_content subject, Excursion, options
   end
 
+  def subject_ediphy_documents(subject, options = {})
+    subject_content subject, EdiphyDocument, options
+  end
+
   def subject_workshops(subject, options = {})
     subject_content subject, Workshop, options
   end
@@ -124,6 +128,7 @@ module HomeHelper
       query = query.not_authored_by(following_ids)
     end
 
+
     #Filtering private entities
     unless ((defined?(current_subject)&&((options[:scope] == :me && subject == current_subject)||(!current_subject.nil? && current_subject.admin?)))&&(options[:force_filter_private]==false))
       query = query.includes("activity_object_audiences")
@@ -142,15 +147,13 @@ module HomeHelper
       items = options[:limit] if options[:limit] > 0
       query = query.page(options[:page]).per(items)
     end
-
     #Optimization code
     #(Old version) return query.map{|ao| ao.object} if klass.is_a?(Array)
     query = if klass.is_a?(Array)
-              query.includes(klass.map{ |e| e.to_s.downcase.to_sym} + [:received_actions, { :received_actions => [:actor]}])
+              query.includes(klass.map{ |e| e.to_s.underscore.to_sym} + [:received_actions, { :received_actions => [:actor]}])
             else
               query.includes([:activity_object, :received_actions, { :received_actions => [:actor]}])
             end
-
     query
   end
 

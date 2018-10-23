@@ -36,11 +36,13 @@
           <ul class="dropdown-menu dropdown-menu-right add-menu">
             <!-- dropdown menu links -->
             <% availableModels.each do |modelName| %>
-              <% if modelName == "Excursion" %>
-                <li><%= link_to new_excursion_path do %><i class="fa fa-list-alt"></i> <%= t('excursion.actions.add') %><% end %></li>
-              <% elsif modelName == "Workshop" %>
-                <li><%= link_to new_workshop_path do %><i class="fa fa-book"></i> <%= t('workshop.actions.add') %><% end %></li>
-              <% elsif modelName == "Resource" %>
+                <% if modelName == "EdiphyDocument" %>
+                   <li><%= link_to new_ediphy_document_path do %><img src="/assets/icons/icoEdiphy_white_24px.svg" style="height:22px;width:22px;"></img> <%= t('ediphy_document.actions.add') %><% end %></li>
+                <% elsif modelName == "Excursion" %>
+                  <li><%= link_to new_excursion_path do %><i class="fa fa-list-alt"></i> <%= t('excursion.actions.add') %><% end %></li>
+                <% elsif modelName == "Workshop" %>
+                  <li><%= link_to new_workshop_path do %><i class="fa fa-book"></i> <%= t('workshop.actions.add') %><% end %></li>
+                <% elsif modelName == "Resource" %>
                   <li><a href="#ModalDocument" data-toggle="modal"><i class="fa fa-upload"></i> <%=t('resource.actions.upload_document')%></a></li>
                   <li><a href="#ModalLink" data-toggle="modal"><i class="fa fa-link"></i> <%=t('resource.actions.add_link')%></a></li>
                   <li><a href="#ModalEmbed" data-toggle="modal"><i class="fa fa-code"></i> <%=t('resource.actions.add_html')%></a></li>

@@ -78,6 +78,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def ediphy_documents
+    respond_to do |format|
+      format.html{
+        if !params[:page] || params[:tab] == "ediphy_documents" || (params[:page] && (params[:page] == 1))
+          render :partial => 'ediphy_documents/profile_ediphy_documents_list', :locals => {:scope => :me, :limit => 0, :page=> params[:page] || 1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        else
+          render :partial => 'ediphy_documents/profile_ediphy_documents_page', :locals => {:scope => :me, :limit => 0, :page=> params[:page] || 1, :sort_by=> params[:sort_by]||"updated_at"}, :layout => false
+        end
+      }
+    end
+  end
+
   def workshops
     respond_to do |format|
       format.html{

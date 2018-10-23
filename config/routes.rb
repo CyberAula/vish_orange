@@ -24,6 +24,7 @@ Vish::Application.routes.draw do
 
   match 'users/:id/all' => 'users#all'
   match 'users/:id/excursions' => 'users#excursions'
+  match 'users/:id/ediphy_documents' => 'users#ediphy_documents'
   match 'users/:id/workshops' => 'users#workshops'
   match 'users/:id/resources' => 'users#resources'
   match 'users/:id/events' => 'users#events'
@@ -89,6 +90,7 @@ Vish::Application.routes.draw do
   #Thumbnails
   match '/thumbnails' => 'excursions#excursion_thumbnails'
 
+  #Excursions
   match 'excursions/last_slide' => 'excursions#last_slide'
   match 'excursions/preview' => 'excursions#preview'
 
@@ -111,6 +113,12 @@ Vish::Application.routes.draw do
   match '/elab' => 'elab#index'
 
   resources :excursions
+
+  #Ediphy documents
+  match '/ediphy_documents/:id' => 'ediphy_documents#update', :via => :post
+  match '/ediphy_documents/:id/delete' => 'ediphy_documents#destroy', :via => :post
+
+  resources :ediphy_documents
 
   #Workshops
   match '/workshops/:id/edit_details' => 'workshops#edit_details'

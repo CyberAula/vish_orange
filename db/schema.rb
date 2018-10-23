@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180509072400) do
+ActiveRecord::Schema.define(:version => 20180720111442) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -296,6 +296,14 @@ ActiveRecord::Schema.define(:version => 20180509072400) do
   end
 
   add_index "documents", ["activity_object_id"], :name => "index_documents_on_activity_object_id"
+
+  create_table "ediphy_documents", :force => true do |t|
+    t.integer  "activity_object_id"
+    t.text     "json"
+    t.boolean  "draft",              :default => true
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+  end
 
   create_table "embeds", :force => true do |t|
     t.integer  "activity_object_id"

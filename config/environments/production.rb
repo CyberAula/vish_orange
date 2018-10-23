@@ -15,7 +15,8 @@ Vish::Application.configure do
   if Vish::Application.config.APP_CONFIG["test_domain"]
     config.assets.compress = false
   else
-    config.assets.compress = true
+    config.assets.js_compressor = SelectiveAssetsCompressor.new
+    config.assets.compress = true 
   end
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
@@ -47,7 +48,7 @@ Vish::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( vish_editor.css )
+  config.assets.precompile += %w( vish_editor.css editor/app-bundle.js editor/visor-bundle.js )
 
   # Enable threaded mode
   # config.threadsafe!

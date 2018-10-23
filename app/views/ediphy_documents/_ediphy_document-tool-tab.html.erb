@@ -1,0 +1,232 @@
+<% availableModels ||= available_models %>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    var embedEvents = false;
+    var shareEvents = false;
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e){
+      // e.target // activated tab
+      // e.relatedTarget // previous tab
+      var loadedTab = $(e.target).attr("tabTitle");
+      switch (loadedTab){
+        case "embed":
+          if(!embedEvents){
+            embedEvents = true;
+            $('button#btn_copy_embed').zclip({
+              path:'/assets/ZeroClipboard.swf',
+              copy:function(){
+                return $('#textarea_for_iframe').text();
+              }
+            });
+            $("#textarea_for_iframe").mouseup(function(e){
+              // fixes safari/chrome problem
+              e.preventDefault();
+            }).focus(function(e){
+              mytxt = $(this).text();
+              $(this).select();
+            }).click(function(e){
+              mytxt = $(this).text();
+              $(this).select();
+            });
+          }
+          break;
+        case "share":
+          if(!shareEvents){
+            shareEvents = true;
+            $('button#btn_copy_share').zclip({
+              path:'/assets/ZeroClipboard.swf',
+              copy:function(){
+                return $('#input_with_shorturl').val();
+              },
+              afterCopy: function(){}
+            });
+            $("#input_with_shorturl").mouseup(function(e){
+              // fixes safari/chrome problem
+              e.preventDefault();
+            }).focus(function(e){
+              mytxt = $(this).text();
+              $(this).select();
+            }).click(function(e){
+              mytxt = $(this).text();
+              $(this).select();
+            });
+          }
+          break;
+        default:
+          break;
+      }
+    });
+
+    $('.delete').popover({
+      html : true,
+      content: function() {
+        return $('.contentdelete').html();
+      },
+      container: ".actions_layout_show"
+    });
+  });
+
+</script>
+
+<!--BTN ACTIONS-->
+<div class="btn-group actions_layout_show">
+<% editingToolbar = false %>
+
+  <!-- Edit -->
+  <% if user_signed_in? and !editingToolbar and (can? :update, @ediphy_document) %>
+    <button class="btn btn-default" data-toggle="tooltip" title="<%=t('ediphy_document.actions.edit')%>" onclick="location.href='<%=edit_ediphy_document_path(@ediphy_document)%>'">
+      <i class="fa fa-edit"></i>
+    </button>
+  <%end%>
+
+  <!--Remove-->
+  <% if user_signed_in? and can?(:destroy, @ediphy_document) %>
+    <button class="with_tooltip delete btn btn-default" data-toggle="popover" data-container="body" title="<%=t('ediphy_document.actions.delete')%>" data-placement="left" aria-hidden="true">
+      <i class="fa fa-trash-o"></i>
+    </button>
+  <%end%>
+
+  <div class="contentdelete" style="display: none">
+    <p class="delete_p"><i class="fa fa-trash-o"></i>  <%=t('ediphy_document.confirm_delete')%></p>
+    <div class="actions">
+      <a class="btn btn-default btn_cancel closepopover"><%=t('cancel')%></a>
+      <%= link_to t('ediphy_document.actions.delete'),  @ediphy_document, :method => :delete, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <!--favorite-->
+  <% unless editingToolbar %>
+    <% unless @ediphy_document.post_activity.nil? %>
+      <%= link_like(@ediphy_document.post_activity, {:size => :big, :class=>'btn', :title =>t('ediphy_document.actions.favorite')})%>
+    <%end%>
+
+    <!--Evaluate-->
+    <%if showEvaluation%>
+      <button onclick="triggerEvaluation()" class="btn" data-toggle="tooltip" title="<%=t('evaluation.verb')%>">
+        <i class="fa fa-check-square"></i>
+      </button>
+    <%end%>
+
+    <!--Categorize-->
+    <%if user_signed_in? and availableModels.include? "Category" %>
+      <%= render partial: 'categories/category_modal_viewer', :locals => {:remote=> true, :item => @ediphy_document} %>
+      <button id="AddCategory" role="button" class="categorize_select btn with_tooltip" data-toggle="modal" data-target="#categories_viewer_modal" title="<%=t('category.modalLabel')%>" aria-hidden="true" >
+        <i class="fa fa-th-large"></i>
+      </button>
+    <%end%>
+  <%end%>
+</div>
+
+<% unless editingToolbar %>
+  <!--TABS-->
+  <ul class="nav nav-tabs tooltab">
+    <li class="active">
+      <a href="#tab0" tabTitle='description' data-toggle="tab">
+        <i class="fa fa-align-left"></i>
+        <span class="  hidden-xs">
+          <%=t('ediphy_document.description')%>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#tab2" tabTitle='embed' data-toggle="tab">
+        <i class="fa fa-code"></i>
+        <span class="  hidden-xs">
+          <%=t('ediphy_document.actions.embed') %>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#tab3" tabTitle='share' data-toggle="tab">
+        <i class="fa fa-share"></i>
+        <span class=" hidden-xs">
+          <%=t('ediphy_document.actions.share')%>
+        </span>
+      </a>
+    </li>
+      <li>
+        <a href="#tab4" tabTitle='download' data-toggle="tab">
+          <i class="fa fa-download"></i>
+          <span class="hidden-xs">
+            <%=t('document.actions.download')%>
+          </span>
+        </a>
+      </li>
+    <li>
+      <a href="#tab5" tabTitle='flag' data-toggle="tab">
+        <i class="fa fa-flag"></i>
+        <span class=" hidden-xs spam-name ">
+          <%=t('excursion.actions.spam')%>
+        </span>
+      </a>
+    </li>
+    <%= render partial: 'help/help_show_ediphy_document' %>
+  </ul>
+
+
+  <h1><%= @ediphy_document.title %></h1>
+
+  <div class="tab-content ediphy_document-social">
+
+    <!-- tab1 / description -->
+    <div class="tab-pane active" id="tab0">
+        <%= render :partial => 'ediphy_documents/ediphy_document_info' %>
+    </div>
+
+    <!-- tab2 / embed -->
+    <div class="tab-pane contentembed" id="tab2">
+      <div class="form-group">
+        <div class="input-group">
+        <textarea class="form-control" readonly="true" id="textarea_for_iframe" type="text">
+           &lt;iframe id="presentation_ediphy_iframe" src="//<%= request.env["HTTP_HOST"] + ediphy_document_path(:format => :full)%>" scrolling="no" width="100%" height="100%" style="border:0; height:90vh;" iframeborder="0" frameborder="0" iframeElement.frameBorder=0; webkitAllowFullScreen="true" allowfullscreen="true" mozallowfullscreen="true" &gt;&lt;iframe&gt
+          </textarea>
+                  <div class="input-group-addon"  >
+            <div data-toggle="tooltip" data-placement="right" title="<%=t('copy_to_clip')%>">
+              <button class="btn" id="btn_copy_embed"  >
+               <i class="fa fa-copy "></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- tab3 / share -->
+    <div class="tab-pane contentShare" id="tab3">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" readonly="true" id="input_with_shorturl" type="text" value="<%= request.env["HTTP_HOST"] + ediphy_document_path(@ediphy_document)%>"/>
+          <div class="input-group-addon">
+            <div data-toggle="tooltip" data-placement="right" title="<%=t('copy_to_clip')%>">
+              <button class="btn" id="btn_copy_share" href="#" >
+                <i class="fa fa-copy "></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= render :partial=>'shareon/share', :locals=>{:url=> request.env["HTTP_HOST"] + ediphy_document_path(@ediphy_document), :title => @ediphy_document.title, :name => (user_signed_in? ? current_subject.name : '')} %>
+    </div>
+    <%#TODO: GetUrl/Short Make sure helper work instead of request.env + ediphy_document_path%>
+      <!-- tab4 / scorm -->
+      <div class="tab-pane contentscorm" id="tab4">
+        <div class="contentscormc1">
+          <a class="btn btn-secundary" href='#' onclick="document.getElementById('presentation_ediphy_iframe').contentWindow.export('SCORM12');return false;"><i class="fa fa-download"></i> <%=t('ediphy_document.actions.scorm12')%></a>
+          <a class="btn btn-secundary" href='#' onclick="document.getElementById('presentation_ediphy_iframe').contentWindow.export('SCORM2004');return false;"><i class="fa fa-download"></i> <%=t('ediphy_document.actions.scorm2004')%></a>
+          <a class="btn btn-secundary" href='#' onclick="document.getElementById('presentation_ediphy_iframe').contentWindow.export('HTML');return false;"><i class="fa fa-download"></i> <%=t('ediphy_document.actions.html')%></a>
+        </div>
+        <div class="contentscormc2">
+          <p><%=t("ediphy_document.actions.download_scorm")%></p>
+        </div>
+      </div>
+
+    <!-- tab5 / spam -->
+    <div class="tab-pane" id="tab5">
+      <% @activity_object = @ediphy_document.activity_object %>
+      <%= render '/spam_report/form' %>
+    </div>
+  </div>
+
+<%end%>

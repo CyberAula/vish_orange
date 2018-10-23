@@ -2,9 +2,10 @@ class Ability
   include SocialStream::Ability
 
   def initialize(subject)
-    
+
     can :show_favorites, Category
     can :excursions, User
+    can :ediphy_documents, User
     can :resources, User
     can :events, User
     can :categories, User
@@ -47,7 +48,7 @@ class Ability
       ao.downloadable? or can?(:update, ao.object)
     end
 
-    can :download_source, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, Workshop, Category] do |o|
+    can :download_source, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, EdiphyDocument, Workshop, Category] do |o|
       can?(:download_source,o.activity_object)
     end
 
@@ -67,12 +68,12 @@ class Ability
         ao.commentable?
       end
 
-      can :comment, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, Workshop] do |o|
+      can :comment, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, EdiphyDocument, Workshop] do |o|
         can?(:comment,o.activity_object)
       end
 
       #Analytics
-      can :show_analytics, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, Workshop] do |o|
+      can :show_analytics, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, EdiphyDocument, Workshop] do |o|
         can?(:update,o)
       end
 
@@ -150,7 +151,7 @@ class Ability
         ao.public_scope? or (!ao.owner.nil? and ao.owner.object_type=="Actor" and ao.owner.subject_type=="User" and ao.owner.role?("PrivateStudent") and !ao.owner.user.private_teacher.nil? and ao.owner.user.private_teacher.id==subject.actor_id)
       end
 
-      can :show, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, Workshop, Course] do |o|
+      can :show, [Document, Webapp, Scormfile, Imscpfile, Link, Embed, Writing, Excursion, EdiphyDocument, Workshop, Course] do |o|
         can?(:show,o.activity_object)
       end
 
