@@ -1,64 +1,6 @@
 
 <div class="front_blocks">
 
-  <!-- CONTEST17 BLOCK -->
-  <div class="block">
-    <div class="content_block">
-      <a href="/contest/educa2017">
-      <div class="img_block float_R">
-        <img src="assets/orange/<%= t('home_page.contest_block.img')%>">
-      </div>
-      </a>
-      <div class="text_block float_L align_right space_top">
-
-        <div class="title_block">
-          <h3>
-            <%if contest_phase == 2 %>
-              <%= t('home_page.contest_block.title2') %>
-            <% elsif contest_phase == 3 %>
-              <%= raw t('home_page.contest_block.title3')%>
-            <% elsif contest_phase == 4 %>
-              <%= raw t('home_page.contest_block.title4')%>
-            <% elsif contest_phase == 5 %>
-              <%= raw t('home_page.contest_block.title5')%>
-            <% end %>
-          </h3>
-        </div>
-        <div class="p_block">
-          <p>
-            <%if contest_phase == 2 %>
-              <%= raw t('home_page.contest_block.text2')%>
-            <% elsif contest_phase == 3 %>
-              <%= raw t('home_page.contest_block.text3')%>
-            <% elsif contest_phase == 4 %>
-              <%= raw t('home_page.contest_block.text4')%>
-            <% elsif contest_phase == 5 %>
-              <%= raw t('home_page.contest_block.text5')%>
-            <% end %>
-          </p>
-        </div>
-        <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
-          <%if contest_phase == 1 %>
-            <%= t('contest_page.steps.step1_action') %>
-          <% elsif contest_phase == 2 %>
-            <%= t('contest_page.steps.step2_action') %>
-          <% elsif contest_phase == 3 && user_signed_in? %>
-            <%= t('contest_page.steps.step3_action') %>
-          <% elsif contest_phase == 4 %>
-            <%= t('contest_page.steps.step4_action') %>
-          <% elsif contest_phase == 5 %>
-            <%= t('contest_page.steps.step5_action') %>
-          <% else%>
-            <%= t('contest_page.steps.step3_action_nologed') %>
-          <% end %>
-
-        </button>
-
-      </div>
-    </div>
-  </div>
-
-
   <!-- BLOCK 1 -->
   <div class="block">
     <div class="content_block">
@@ -125,6 +67,63 @@
         <div class="p_block">
           <p><%= t('home_page.block4_txt_html')%></p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEST17 BLOCK -->
+  <div class="block">
+    <div class="content_block">
+      <a href="/contest/educa2017">
+      <div class="img_block float_L">
+        <img src="assets/orange/<%= t('home_page.contest_block.img')%>">
+      </div>
+      </a>
+      <div class="text_block float_R align_right space_top">
+
+        <div class="title_block">
+          <h3>
+            <%if contest_phase == 2 %>
+              <%= t('home_page.contest_block.title2') %>
+            <% elsif contest_phase == 3 %>
+              <%= raw t('home_page.contest_block.title3')%>
+            <% elsif contest_phase == 4 %>
+              <%= raw t('home_page.contest_block.title4')%>
+            <% elsif contest_phase == 5 %>
+              <%= raw t('home_page.contest_block.title5')%>
+            <% end %>
+          </h3>
+        </div>
+        <div class="p_block">
+          <p>
+            <%if contest_phase == 2 %>
+              <%= raw t('home_page.contest_block.text2')%>
+            <% elsif contest_phase == 3 %>
+              <%= raw t('home_page.contest_block.text3')%>
+            <% elsif contest_phase == 4 %>
+              <%= raw t('home_page.contest_block.text4')%>
+            <% elsif contest_phase == 5 %>
+              <%= raw t('home_page.contest_block.text5')%>
+            <% end %>
+          </p>
+        </div>
+        <button class="btn btn-contest min_width_btn" onclick="location.href='/contest/educa2017';">
+          <%if contest_phase == 1 %>
+            <%= t('contest_page.steps.step1_action') %>
+          <% elsif contest_phase == 2 %>
+            <%= t('contest_page.steps.step2_action') %>
+          <% elsif contest_phase == 3 && user_signed_in? %>
+            <%= t('contest_page.steps.step3_action') %>
+          <% elsif contest_phase == 4 %>
+            <%= t('contest_page.steps.step4_action') %>
+          <% elsif contest_phase == 5 %>
+            <%= t('contest_page.steps.step5_action') %>
+          <% else%>
+            <%= t('contest_page.steps.step3_action_nologed') %>
+          <% end %>
+
+        </button>
+
       </div>
     </div>
   </div>
