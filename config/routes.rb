@@ -102,9 +102,10 @@ Vish::Application.routes.draw do
   match '/excursions/attachments' => 'excursions#upload_attachment'
   match '/excursions/:id/attachment' => 'excursions#show_attachment'
   match '/excursions/:id/allow_publishing' => 'excursions#allow_publishing'
-
   match '/excursions/:id.mashme' => 'excursions#show', :defaults => { :format => "gateway", :gateway => 'mashme' }
   match '/excursions/:id.embed' => 'excursions#show', :defaults => { :format => "full" }
+  match '/excursions/:id/translate' => 'ediphy_documents#translate', :via => :get
+  match '/excursions/translate' => 'ediphy_documents#translate', :via => :post
 
   #Download JSON
   match '/excursions/tmpJson' => 'excursions#uploadTmpJSON', :via => :post
@@ -118,6 +119,7 @@ Vish::Application.routes.draw do
   #Ediphy documents
   match '/ediphy_documents/:id' => 'ediphy_documents#update', :via => :post
   match '/ediphy_documents/:id/delete' => 'ediphy_documents#destroy', :via => :post
+  match 'ediphy_documents/:id/clone' => 'ediphy_documents#clone'
 
   resources :ediphy_documents
 

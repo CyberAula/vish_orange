@@ -764,6 +764,7 @@ es:
     actions:
       add: "Crear EDiphy"
       delete: "Eliminar"
+      clone: "Clonar"
       delete_alert: "¿Estás seguro? Si eliminas este documento los cambios NO podrán recuperarse."
       edit: "Editar"
       favorite: "Favoritas"
@@ -771,6 +772,11 @@ es:
       scorm12: "SCORM 1.2"
       scorm2004: "SCORM 2004"
       html: "HTML"
+    clone:
+      confirm: "Esto clonará el documento Ediphy en tu propio repositorio y la abrirá para editarla"
+      not_found: "Documento Ediphy no encontradO"
+      ok: "Clonado con éxito"
+      owner: "Este documento Ediphy ya es tuyo"
     confirm_delete: "Confirmar borrado"
     other: "Documentos Ediphy"
   date_name: "fecha"
@@ -889,7 +895,7 @@ es:
         document: "Documento"
         ediphydocument: "Documento Ediphy"
         embed: "Objeto Embebido"
-        excursion: "Unidad Didáctica"
+        excursion: "Presentación"
         imscpfile: "Paquete de contenido IMS"
         link: "Enlace"
         officedoc: "Documento"
@@ -992,6 +998,7 @@ es:
       bookmark: "marcardor"
       change_cover: "cambiar foto portada"
       clone: "clonar"
+      translate: "transformar en un documento Ediphy"
       delete: "Borrar"
       download: "Descargar"
       edit: "Editar"
@@ -1044,20 +1051,17 @@ es:
     other: "presentaciones"
     others: "otras presentaciones "
     pending: "Pendiente"
-
-    #new: "Crear Nueva Excursión"
-    #newmy_html: "Aún no has creado ninguna excursión. Puedes crear una nueva haciendo click en el botón añadir o en este "
-    #newnet_html: "Aquí podrás ver las excursiones creadas por la gente a quien sigues. Encuentra otros usuarios a seguir en <a href='/search?type=user'>este enlace</a>."
-    #3newfav_html: "Aún no tienes ninguna excursión favorita. Para marcar una excursión como favorita, haz click en la estrella <img src='/assets/icons/star-off.png'>"
-    #one: "excursión"
-    #other: "excursiones"
-    #others: "otras excursiones "
-
     suggestion:
       other: "Presentaciones"
     session_start: "inicia sesión"
     title:
       other: "presentaciones"
+    translate:
+      confirm: "Esto transformará tu presentación en un documento Ediphy conservando el original."
+      confirm_button: "Transformar"
+      not_found: "Presentación no encontrada"
+      ok: "Transformada con éxito"
+      owner: "Esta presentación ya es tuya"
     upcomming: "próxima"
     unload_warning: "¡La presentación no está salvada!"
     top: "paraMí"
