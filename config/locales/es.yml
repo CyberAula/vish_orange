@@ -1511,6 +1511,7 @@ es:
       header: "Cambia tus suscripciones (cursos, concursos...)"
       cancel_enrollment: "Ya no quiero participar en el concurso"
       disenroll: "Desapuntarme"
+    no_change_email: "No puedes cambiar tu email, has logueado con EIDAS"
     notifications:
       briefing: "Cambia tus notificaciones y alertas de correo"
       by_email:

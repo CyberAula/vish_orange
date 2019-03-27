@@ -1518,6 +1518,7 @@ en:
       header: "change your enrollments (curses, contests...)"
       cancel_enrollment: "I want to cancel my suscription"
       disenroll: "Disenroll"
+    no_change_email: "You can't change your email, you are logged in with EIDAS"
     notifications:
       briefing: "Change your notifications behaviour and mail alerts"
       by_email:

@@ -55,10 +55,14 @@ class VishEditorUtils
     end
   end
 
-  def self.getResources(loJSON)
-    require "uri"
-    resources = []
+  def self.getAllResourceTypes
+    return ["text","image","object","snapshot","video","audio","quiz","VirtualTour"]
+  end
 
+  def self.getResources(loJSON,types=nil)
+    require "uri"
+    types = getAllResourceTypes if types.blank?
+    resources = []
     begin
       slides = loJSON["slides"]
       standardSlides = []
@@ -66,15 +70,15 @@ class VishEditorUtils
       slides.each do |slide|
         case slide["type"]
         when "flashcard"
-          resources = resources + URI.extract(slide["background"],/http(s)?/) unless slide["background"].blank?
+          resources = resources + URI.extract(slide["background"],/http(s)?/) unless slide["background"].blank? or !types.include?("image")
           standardSlides = standardSlides + (slide["slides"] || [])
         when "VirtualTour"
-          unless slide["map_service"] != "Google Maps" or slide["center"].blank? or slide["center"]["lat"].blank? or slide["center"]["lng"].blank?
+          unless slide["map_service"] != "Google Maps" or slide["center"].blank? or slide["center"]["lat"].blank? or slide["center"]["lng"].blank? or !types.include?("VirtualTour")
             resources.push("VirtualTourWithCenterCoordinates" + slide["center"]["lat"] + "&" + slide["center"]["lng"])
           end
           standardSlides = standardSlides + (slide["slides"] || [])
         when "enrichedvideo"
-          resources = resources + URI.extract(slide["video"]["source"],/http(s)?/) unless slide["video"].blank? or slide["video"]["source"].blank?
+          resources = resources + URI.extract(slide["video"]["source"],/http(s)?/) unless slide["video"].blank? or slide["video"]["source"].blank? or !types.include?("video")
           standardSlides = standardSlides + (slide["slides"] || [])
         when "standard",nil
           #Standard or default
@@ -96,22 +100,23 @@ class VishEditorUtils
         when nil
           #Do nothing
         when "text"
-          if !el["body"].blank?
-            rawText = Nokogiri::HTML(el["body"]).text rescue ""
-            if rawText.length > 150
-              #Do not consider small texts for reusing...
-              resources.push(rawText.first(300))
-            end
+          if !el["body"].blank? and types.include?("text")
+            resources.push(el["body"])
           end
         when "image"
-          resources.push(el["body"]) unless el["body"].blank?
+          resources.push(el["body"]) unless el["body"].blank? or !types.include?("image")
+        when "object"
+          resources = resources + URI.extract(el["body"],/http(s)?/) unless el["body"].blank? or !types.include?("object")
         when "object","snapshot"
-          resources = resources + URI.extract(el["body"],/http(s)?/) unless el["body"].blank?
-        when "video","audio"
-          resources = resources + URI.extract(el["sources"],/http(s)?/) unless el["sources"].blank?
+          resources = resources + URI.extract(el["body"],/http(s)?/) unless el["body"].blank? or !types.include?("snapshot")
+        when "video"
+          resources.push(el["poster"]) unless el["poster"].blank? or !types.include?("image")
+          resources = resources + URI.extract(el["sources"],/http(s)?/) unless el["sources"].blank? or !types.include?("video")
+        when "audio"
+          resources = resources + URI.extract(el["sources"],/http(s)?/) unless el["sources"].blank? or !types.include?("audio")
         when "quiz"
-          unless el["quiztype"].blank? or el["question"]["value"].blank? or el["choices"].blank?
-            quizResource = el["quiztype"] + el["question"]["value"] + el["choices"].map{|c| c["value"]}.sum
+          unless el["quiztype"].blank? or el["question"]["value"].blank? or el["choices"].blank? or !types.include?("quiz")
+            quizResource = el["quiztype"] + " - " + el["question"]["wysiwygValue"] + " " + el["choices"].map{|c| c["wysiwygValue"]}.sum
             resources.push(quizResource)
           end
         else

@@ -121,26 +121,25 @@
               </li>-->
             <%end%>
 
-                  <%if (availableModels.include? "Course") %>
-                    <li class="settings-menu">
-                      <%= link_to "/users/"+current_subject.slug+"/courses" do %>
-                          <i class="fa fa-graduation-cap"></i>
-                          <span><%= t('course.my') %></span>
-                      <% end %>
-                    </li>
-                  <%end%>
+            <%if (availableModels.include? "Course") %>
+              <li class="settings-menu">
+                <%= link_to "/users/"+current_subject.slug+"/courses" do %>
+                    <i class="fa fa-graduation-cap"></i>
+                    <span><%= t('course.my') %></span>
+                <% end %>
+              </li>
+            <%end%>
 
             <% if availableServices.include? "PrivateStudentGroups" and !current_subject.role?("PrivateStudent") %>
-                      <li class="settings-menu">
-
-                        <% if can?(:create, PrivateStudentGroup.new) %>
-                          <%= link_to private_student_groups_path do %>
-                            <i class="fa fa-university"></i>
-                            <%= t("private_student.request") %>
-                          <% end %>
-                        <% else %>
-                          <%= link_to(raw("<i class='fa fa-group'></i> " + t("private_student.request")), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
-                        <% end %>
+                <li class="settings-menu">
+                  <% if can?(:create, PrivateStudentGroup.new) %>
+                    <%= link_to private_student_groups_path do %>
+                      <i class="fa fa-university"></i>
+                      <%= t("private_student.request") %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to(raw("<i class='fa fa-group'></i> " + t("private_student.request")), new_service_request_private_student_group_path, :title => t("private_student.request_help"), :remote=>true, :data => {:toggle=>"modal", :target=>"#RequestPermModal"}) %>
+                  <% end %>
                 </li>
             <%end%>
 
@@ -153,26 +152,40 @@
               </a>
             </li>-->
 
-              <li class="divider"></li>
+            <li class="divider"></li>
 
-              <!-- settings -->
-              <% unless current_subject.role?("PrivateStudent") %>
-                <li class="settings-menu">
-                  <%= link_to settings_path do %>
-                    <i class="fa fa-cog"></i>
-                    <%= t('dropdown.settings') %>
-                  <% end %>
-                </li>
-              <%end%>
-
-              <!-- signout -->
-              <li>
-                <%= link_to destroy_user_session_path, :method => :delete do %>
-                <i class="fa fa-sign-out"></i>
-                <%= t('sign_out') %>
+            <!-- settings -->
+            <% unless current_subject.role?("PrivateStudent") %>
+              <li class="settings-menu">
+                <%= link_to settings_path do %>
+                  <i class="fa fa-cog"></i>
+                  <%= t('dropdown.settings') %>
                 <% end %>
               </li>
+            <%end%>
 
+            <!-- signout -->
+            <li>
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+              <i class="fa fa-sign-out"></i>
+              <%= t('sign_out') %>
+              <% end %>
+            </li>
+
+            <li>
+              <%if Vish::Application.config.oauth2%>
+                <%= link_to Vish::Application.config.APP_CONFIG["OAUTH2"]["site"] + "/auth/external_logout?_method=delete&client_id=" + Vish::Application.config.APP_CONFIG["OAUTH2"]["app_id"], :method => :delete do %>
+                  <i class="fa fa-sign-out"></i>
+                  <%= t('sign_out') %>
+                <% end %>
+              <%else%>
+                <%= link_to destroy_user_session_path, :method => :delete do %>
+                  <i class="fa fa-sign-out"></i>
+                  <%= t('sign_out') %>
+                <% end %>
+              <%end%>
+            </li>
+          
           </ul>
         </li>
       </ul>
