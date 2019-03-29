@@ -51,6 +51,7 @@ Link.class_eval do
      :description => description,
      :author => author.name,
      :url => url,
+     :is_embed => is_embed,
      :type => "Link"
     }
   end
