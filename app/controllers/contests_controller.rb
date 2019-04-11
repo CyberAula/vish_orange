@@ -55,7 +55,7 @@ class ContestsController < ApplicationController
       else
         flash[:errors] = t('contest.enrollment_failure')
       end
-      NotificationMailer.contest_welcome_email(current_subject, @contest)
+      EducainternetNotificationMailer.contest_welcome_email(current_subject, @contest)
       redirect_to(@contest.getUrlWithName)
     else
       result = @contest.enrollActor(current_subject.actor)
@@ -64,7 +64,7 @@ class ContestsController < ApplicationController
       else
         flash[:errors] = t('contest.enrollment_failure')
       end
-      NotificationMailer.contest_welcome_email(current_subject, @contest)
+      EducainternetNotificationMailer.contest_welcome_email(current_subject, @contest)
       redirect_to(@contest.getUrlWithName)
     end
   end
@@ -190,7 +190,7 @@ class ContestsController < ApplicationController
     @user = User.create(params[:user])
     if @user.save
       #create enrrollment
-      NotificationMailer.contest_welcome_email(@user, @contest)
+      EducainternetNotificationMailer.contest_welcome_email(@user, @contest)
       if @contest.has_additional_fields?
         additional_fields =  {}
         @contest.additional_fields.map do |n|

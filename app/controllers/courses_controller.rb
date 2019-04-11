@@ -47,7 +47,7 @@ class CoursesController < ApplicationController
         flash[:success] = t('course.flash.join_success')
         @course.users << current_user
         #we send the user the welcome email
-        NotificationMailer.course_welcome_email(current_user, @course)
+        EducainternetNotificationMailer.course_welcome_email(current_user, @course)
     end
     redirect_to course_path(@course)
   end

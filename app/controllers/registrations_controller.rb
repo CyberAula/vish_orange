@@ -76,7 +76,7 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     def send_email_welcome
-        NotificationMailer.platform_welcome_email(@user)
+        EducainternetNotificationMailer.platform_welcome_email(@user)
     end
 
   #this method is only called when user has provided the right credentials for the course
@@ -85,7 +85,7 @@ class RegistrationsController < Devise::RegistrationsController
     return unless user_signed_in?
     if @course
         @course.users << current_user
-        NotificationMailer.course_welcome_email(current_user, @course)
+        EducainternetNotificationMailer.course_welcome_email(current_user, @course)
     end
   end
 
