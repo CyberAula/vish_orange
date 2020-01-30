@@ -52,7 +52,17 @@
             </button>
             </a>
           <%end%>
-          <% if !Vish::Application.config.cas %>
+          <% if Vish::Application.config.only_cas %>
+          <a type="button" id="drop3" href="<%=user_session_path%>">
+              <button class="btn btn-secondary margin_5_left">
+                  <span class="menu_bold">
+                    <%=t("sign_in")%>
+                  </span>
+              </button>
+              </a>
+          <% elsif Vish::Application.config.oauth2%>
+            <%= link_to t("sign_in"), user_omniauth_authorize_path(:idm), :class=>"btn btn-primary" %>
+          <% else %>
 
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle margin_5_left" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -81,14 +91,7 @@
                   <% end %>
                 </ul>
               </div>
-          <%else%>
-          <a type="button" id="drop3" href="<%=user_session_path%>">
-              <button class="btn btn-secondary margin_5_left">
-                  <span class="menu_bold">
-                    <%=t("sign_in")%>
-                  </span>
-              </button>
-              </a>
+
           <%end%>
         </ul>
 
