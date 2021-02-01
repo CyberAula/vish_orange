@@ -37,7 +37,7 @@ gem 'axlsx_rails', '= 0.1.5'
 gem 'acts_as_xlsx', :git => 'git://github.com/randym/acts_as_xlsx.git', :ref => '919817e590b1cf8e27632e630469603c78a50402'
 gem "paperclip", '= 3.5.1'
 gem "delayed_paperclip", "= 2.7.0"
-gem 'sanitize', '= 2.1.0'
+gem 'sanitize', '4.6.6'
 gem 'mailboxer', '= 0.10.3'
 gem 'hashie', '= 2.1.2'
 gem 'detect_language', '=1.0.5'

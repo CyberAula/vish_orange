@@ -187,6 +187,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
+    crass (1.0.6)
     deep_merge (1.2.1)
     deface (0.9.1)
       nokogiri (~> 1.5.0)
@@ -291,6 +292,8 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.11)
+    nokogumbo (1.5.0)
+      nokogiri
     oai (0.3.1)
       builder (>= 2.0.0)
       faraday
@@ -418,8 +421,10 @@ GEM
     rubycas-client (2.3.9)
       activesupport
     rubyzip (1.0.0)
-    sanitize (2.1.0)
+    sanitize (4.6.6)
+      crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -538,7 +543,7 @@ DEPENDENCIES
   rmagick (= 2.13.2)
   rspec-rails (= 2.9)
   rubyzip (= 1.0.0)
-  sanitize (= 2.1.0)
+  sanitize (= 4.6.6)
   sass-rails (= 3.2.6)
   scorm!
   selenium-webdriver (= 2.44.0)
