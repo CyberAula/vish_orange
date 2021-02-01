@@ -1,7 +1,7 @@
 #ruby '2.2.0'
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => "3-2-stable"
+gem 'rails', '=3.2.22.2'
 
 #Database Adapters
 gem 'sqlite3', '= 1.3.9'
@@ -15,7 +15,7 @@ gem 'coffee-rails', '= 3.2.2'
 gem 'uglifier', '= 1.2.3'
 gem 'jquery-rails', '= 3.1.0'
 gem 'jquery-ui-rails', '= 4.1.2'
-gem 'json', '= 1.8.5'
+gem 'json', '= 1.8.3'
 gem 'sinatra', '= 1.3.2'
 gem 'selenium-webdriver', '= 2.44.0'
 gem 'god', :git => 'git://github.com/mojombo/god.git', :ref => '92c06aa5f6293cf26498a306e9bb7ac856d7dca0'
@@ -50,6 +50,10 @@ gem 'jwt', '= 1.4.1'
 gem 'rake', '10.5.0'
 gem 'ejs', '=1.1.1'
 gem 'browser', '=2.5.3'
+gem 'rack-cache', '=1.6.1'
+gem 'ffi', '=1.9.10'
+gem 'ttfunk', '=1.4.0'
+gem 'redis-namespace', '=1.5.3'
 
 #Gems from Git repositories
 gem 'delegates_attributes_to', :git => 'git://github.com/pahanix/delegates_attributes_to.git', :ref => '69704cb'
@@ -86,7 +90,7 @@ gem 'devise_cas_authenticatable', '= 1.7.1'
 gem 'omniauth-oauth2', '= 1.1.2'
 
 #recaptcha
-gem "recaptcha", require: "recaptcha/rails"
+gem "recaptcha", '= 4.3.1', require: "recaptcha/rails"
 
 # $ export FORCE_LOCAL_SCORM=scormGemPath
 if ENV['FORCE_LOCAL_SCORM']
