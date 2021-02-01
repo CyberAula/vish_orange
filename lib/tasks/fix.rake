@@ -545,6 +545,38 @@ namespace :fix do
     printTitle("Task finished. Test contest created with id " + c.id.to_s)
   end
 
+  #Usage
+  #Development:   bundle exec rake fix:populateusers
+  task :populateusers => :environment do |t,args|
+    printTitle("Populate users")
+    require 'csv'
+    csv_text = File.read('tmp/users.csv',:quote_char => "|")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      email = row["email"]
+
+      #Create user with email and password
+      user = User.find_by_email(email)
+      user = User.new if user.blank?
+
+      user.name = row["username"]
+      user.email = email
+      user.password = "changeme"
+      user.password_confirmation = "changeme"
+      user.language = "es"
+
+      begin 
+        user.save!
+        user.update_column :encrypted_password, row["password"]
+        puts "OK"
+      rescue 
+        puts row.to_s
+      end
+    end
+
+    printTitle("Task finished")
+  end
+
   ####################
   #Task Utils
   ####################
