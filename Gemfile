@@ -51,7 +51,7 @@ gem 'rake', '10.5.0'
 gem 'ejs', '=1.1.1'
 gem 'browser', '=2.5.3'
 gem 'rack-cache', '=1.6.1'
-gem 'ffi', '=1.9.10'
+gem 'ffi', '1.14.2'
 gem 'ttfunk', '=1.4.0'
 gem 'redis-namespace', '=1.5.3'
 
