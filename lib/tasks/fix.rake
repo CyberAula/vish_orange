@@ -550,8 +550,8 @@ namespace :fix do
   task :populateusers => :environment do |t,args|
     printTitle("Populate users")
     require 'csv'
-    csv_text = File.read('tmp/users.csv',:quote_char => "|")
-    csv = CSV.parse(csv_text, :headers => true)
+    csv_text = File.read('tmp/users.csv')
+    csv = CSV.parse(csv_text, :headers => true, :encoding => 'utf-8', :col_sep => ";")
     csv.each do |row|
       email = row["email"]
 
@@ -568,7 +568,6 @@ namespace :fix do
       begin 
         user.save!
         user.update_column :encrypted_password, row["password"]
-        puts "OK"
       rescue 
         puts row.to_s
       end
