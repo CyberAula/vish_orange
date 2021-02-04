@@ -15,6 +15,9 @@ Vish::Application.routes.draw do
   deviseControllers[:omniauth_callbacks] = 'omniauth_callbacks' if Vish::Application.config.oauth2
 
   devise_for :users, :controllers => deviseControllers, :skip => deviseSkipControllers
+  devise_scope :user do
+    get 'registro', to: 'devise/registrations#new'
+  end
 
   if Vish::Application.config.register_policy == "INVITATION_ONLY"
     as :user do

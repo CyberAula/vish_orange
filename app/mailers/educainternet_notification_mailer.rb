@@ -36,6 +36,6 @@ class EducainternetNotificationMailer < ActionMailer::Base
     	@issueType = issueType
     	@issue = issue
     	@activity_object_id = activity_object_id
-    	mail(:to => Vish::Application.config.spam_report_recipient, :subject => "ViSH spam/error report")
+    	mail(:to => Vish::Application.config.spam_report_recipient, :subject => "EducaInternet spam/error report")
   end
 end

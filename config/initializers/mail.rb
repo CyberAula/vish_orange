@@ -17,9 +17,8 @@ ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 
 unless vish_mail_settings.nil?
 	#Set delivery method (SMTP, Sendmail, ...)
-	unless vish_mail_settings["type"].nil?
-		ActionMailer::Base.delivery_method = Vish::Application.config.APP_CONFIG["mail"]["type"].downcase.to_sym
-	end
+	
+	ActionMailer::Base.delivery_method = Vish::Application.config.APP_CONFIG["mail"]["type"].downcase.to_sym unless vish_mail_settings["type"].nil?
 
 	if ActionMailer::Base.delivery_method == :smtp
 		#Fill ActionMailer::Base.smtp_settings
@@ -35,7 +34,7 @@ unless vish_mail_settings.nil?
 		if vish_mail_settings["enable_starttls_auto"].blank?
 			vish_smtp_settings[:enable_starttls_auto] = false
 		else
-			vish_smtp_settings[:enable_starttls_auto] = vish_mail_settings["enable_starttls_auto"] unless vish_mail_settings["enable_starttls_auto"].blank?
+			vish_smtp_settings[:enable_starttls_auto] = vish_mail_settings["enable_starttls_auto"]
 		end
 
 		ActionMailer::Base.smtp_settings = vish_smtp_settings
