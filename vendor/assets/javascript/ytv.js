@@ -498,7 +498,8 @@
 			initialize = function(id, opts){
 				utils.deepExtend(settings, opts);
 				if(settings.apiKey.length===0){
-					alert("Missing APIkey in settings or as global vaiable.");
+					console.error("YouTube TV: Missing APIkey in settings or as global vaiable.");
+					return;
 				}
 				apiKey = settings.apiKey;
 				settings.element = (typeof id==='string') ? doc.getElementById(id) : id;

@@ -17,6 +17,7 @@ Vish::Application.routes.draw do
   devise_for :users, :controllers => deviseControllers, :skip => deviseSkipControllers
   devise_scope :user do
     get 'registro', to: 'devise/registrations#new'
+    get 'forgot-password', to: 'devise/passwords#new'
   end
 
   if Vish::Application.config.register_policy == "INVITATION_ONLY"
