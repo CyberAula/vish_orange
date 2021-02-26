@@ -1,0 +1,150 @@
+@import "colors"
+.navbar
+	background-color: black
+	.navbar-nav
+		.dropdown-item
+			padding: .5rem .2rem
+	.navbar-brand
+		&:hover
+			color: #fff !important
+		.navbar-brand-title
+			&:hover
+				color: #fff !important
+	.navbar-collapse
+		align-self: flex-end
+		align-content: flex-end
+	&.search
+		box-shadow: none
+	.navbar-toggler
+		.navbar-toggler-icon
+			background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+	.user-img
+		border-radius: 50%
+		width: 40px
+		height: 40px
+		background-color: $gris
+	.nav-item
+		.nav-link
+			&.dropdown-toggle
+				background-color: transparent
+				padding: .625rem .3125rem !important
+	.navbar-nav 
+		.nav-link
+			&.active
+				color: $orange !important
+			.navbar-icon
+				font-size: 25px
+				margin-right: 5px
+				margin-left: 5px
+
+	.user-name-container
+		white-space: nowrap
+		display: flex
+		text-overflow: ellipsis
+		.user-profile
+			border:  none !important
+			outline: none !important
+			margin-bottom: 0px
+			&:hover, &:focus
+				outline:  none !important
+				border:  none !important
+			.user-name
+				padding-left: 5px
+				text-overflow: ellipsis
+				white-space: nowrap
+				vertical-align: bottom
+				display: inline-block
+				padding-right: 8px
+				overflow: hidden
+				max-width: 95px
+				min-width: 7vw
+	.change_locale
+		.nav-link
+			text-transform: uppercase
+	.icon-my-account
+		font-size: 1.6rem		
+	.search-bar
+		margin-right: 15px
+		margin-right: 2vw
+		.input-search
+			margin: 0px
+			-webkit-box-shadow: 0 0 0 1000px black inset !important
+			border-color: transparent
+			font-size: 16px
+			border: none
+			color: white
+			background: black
+			border-bottom: 2px solid white
+			border-radius: 0px
+			border-width: 2px
+			padding-right: 0px !important
+			padding-bottom: 0.1rem
+			&::placeholder
+				color: $gris
+			&:focus, &:active
+				border-bottom-color: $orange_light
+				color: $orange_light
+		.search-icon
+			margin-left: -10px
+			width: 25px
+	a
+		color: white
+		text-decoration: none
+		cursor: pointer
+		&:hover, &:focus
+			color: $orange_light
+			text-decoration: none
+	.btn-group
+		position: initial
+	.dropdown-item
+		color: black
+		&.active, &:active, &:hover, &:focus
+			background-color: transparent
+	.dropdown-menu
+		border-radius: 0
+		border: none
+
+@media (min-width: 768px) and (max-width: 1223px)
+	.navbar
+		.user-name
+			display: none !important
+@media (min-width: 992px) and (max-width: 1100px)
+	.search-bar
+		display: none !important
+
+@media (max-width: 992px)
+	.user-name-container
+		flex-direction: column
+		justify-content: center
+		a
+			margin-bottom: 15px
+		form
+			margin: auto
+//@media (min-width: 992px)
+
+@media (min-width: 991.98px)
+	.dropdown-menu
+		border-radius: 0
+		border: none
+		text-align: center
+		border: 1px solid grey
+	.user-name-container
+		max-width: 23%
+@media (max-width: 767.9px)
+	.navbar-expand-md .navbar-nav.lang
+		flex-direction: column-reverse
+	.navbar .user-name-container .user-profile .user-name
+		max-width: 90vw
+@media (min-width: 768px)
+	.navbar-expand-md .navbar-nav .dropdown-menu
+		box-shadow: 0px 0px 10px grey
+@media (max-width: 768px)
+	.navbar 
+		.navbar-brand
+			.navbar-brand-title
+				font-size: 24px
+@media (max-width: 576px)
+	.navbar 
+		.navbar-brand
+			.navbar-brand-title
+				font-size: 16px

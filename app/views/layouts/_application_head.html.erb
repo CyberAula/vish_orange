@@ -37,7 +37,11 @@
 <% unless yield(:canonical).blank? %>
 	<link rel="canonical" href="<%=yield(:canonical)%>">
 <%end%>
-
+<!-- Copyright © 2014 Monotype Imaging Inc. All rights reserved -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boosted@4.6.0/dist/css/orangeHelvetica.min.css" integrity="sha384-ZWV5rANfkZIt/7HDFToWXT+5LfpEbtDN22vw9WhARiDc+o6zJ4qxwdTwskCbe8NK" crossorigin="anonymous">
+<!-- Copyright © 2016 Orange SA. All rights reserved -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boosted@4.6.0/dist/css/orangeIcons.min.css" integrity="sha384-7/+XhgsfiKJOYwQYLCI6P8bz89YJEKD2GLErv3KrHbxQ4wPcJ9JcqVZVKAglgBJP" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boosted@4.6.0/dist/css/boosted.min.css" integrity="sha384-gqlCljYk+czxYG/OEUHPObOqdFdx4RFpXrAy+z6dbWdeD1ybOujFGA+lKVLnXtxx" crossorigin="anonymous">
 
 <%= favicon_link_tag  yield(:favicon).empty? ? "icons/favicon.ico" : yield(:favicon) %>
 <%= stylesheet_link_tag "application" %>

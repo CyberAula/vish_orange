@@ -1,28 +1,39 @@
 <%front_or_home = (params[:controller] == 'home' || params[:controller] == 'frontpage') ? true:false%>
 <%protocol = Rails.env==="production" ? "https":"http"%>
-
-<nav id="navbar-home" class="navbar navbar-main <%='navbar-transparent' if front_or_home%>" role="navigation">
+<nav class=" navbar navbar-expand-md navbar-dark bg-dark2" id="top" role="navigation">
   <div class="container-fluid">
-    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar btn-default <%='b' if front_or_home%>" data-toggle="collapse" data-target=".nav-collapse">
+  <a class="navbar-brand" href="/">
+    <img class="navbar-logo" src="https://boosted.orange.com/docs/4.6/dist/img/orange_logo.svg" alt=""/> <span class="navbar-brand-title h1 mb-0">  EducaInternet </span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+    <ul class="navbar-nav d-none d-md-flex">
+      <li class="nav-item search-ui ">
+          <%= render partial: 'layouts/header/uisearch_header' %>
+        </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link nav-icon svg-avatar">
+          <span class="sr-only">My account</span>
+        </a>
+      </li>
+    </ul>
+
+  <!--     <a class="btn btn-navbar btn-default <%='b' if front_or_home%>" data-toggle="collapse" data-target=".nav-collapse">
         <i class="fa fa-bars"></i>
       </a>
-      <!-- BRAND -->
-      <div id="brand" class="brand">
-        <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
-        <a href="/" class="logo_img"><img src="/assets/orange/educa-logo-mobile.png" alt="Logo Educa"></a>
-      </div>
-
-      <!--______________________________desktop-->
+       
+      _________________________ 
       <div class=" hidden-phone hidden-tablet">
-        <!-- MENU -->
+        
         <ul class="nav navbar-nav float_R">
-          <!-- Help button
-          <li class=" dropdown toggler ">
+           <li class=" dropdown toggler ">
             <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">
               <i class="fa fa-question-circle"></i>
             </div>
-          -->
+          
             <ul class="dropdown-menu add-menu" role="menu" >
               <li>
                 <a href="/overview">
@@ -95,26 +106,25 @@
           <%end%>
         </ul>
 
-        <!--search-->
+        
 
         <li class="search-ui ">
           <%= render partial: 'layouts/header/uisearch_header' %>
         </li>
-        <!--
-          <ul class="nav navbar-nav float_R">
+           <ul class="nav navbar-nav float_R">
             teach and learn buttons
             <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/learn"><%=t('orange_front.header.formate')%></a></li>
             <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/teach"><%=t('orange_front.header.share')%></a></li>
             <li class="btn btn-default btn-header <%='btn-home' if front_or_home%>"><a class="linker" href="/contest/educa2016"><%=t('orange_front.header.contest')%></a></li>
           </ul>
-        -->
-      </div>
+       
+      </div>  -->
 
 
-      <!--________________________mobile/tablet-->
-      <div class="nav-collapse navbar-responsive-collapse collapse hidden-desktop  MOBILE ">
+       <div class="nav-collapse navbar-responsive-collapse collapse hidden-desktop  MOBILE ">
         <%= render partial: 'layouts/header/header_signed_out_mobile' %>
       </div>
+  </div>
   </div>
 </nav>
 

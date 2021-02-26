@@ -1,0 +1,127 @@
+#social_networks_buttons
+  position: fixed
+  top: 40%
+  width: 50px
+  z-index: 1000
+  .social_btn
+    cursor: pointer
+    width: 40px
+    height: 40px
+    padding: 10px
+    text-align: center
+    margin: 0
+    font-size: 22px
+    color: #fff
+    position: relative
+    left: 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    -webkit-transition: all 250ms
+    -moz-transition: all 250ms
+    transition: all 250ms
+  .social_btn.clicked,
+  .social_btn:hover
+    width: 50px
+    color: #fff
+  .facebook_btn
+    background: #3B579D
+  .twitter_btn
+    background: #1DA1F3
+  .youtube_btn
+    background: #D40C1D
+  .news_btn
+    background: #ccc
+  i
+    color: #fff
+    font-size: 0.9em
+    display: block
+
+#social_networks_drop_right
+  div.drop_right
+    @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+    position: fixed
+    background: #fff
+    width: 340px
+    height: 500px
+    top: 35%
+    left: 40px
+    z-index: 999
+    display: none
+    .close_social_btn
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 9999
+      width: 35px
+      height: 35px
+      min-width: unset
+    .news_img
+      width: 100%
+    .news_content
+      padding: 20px
+      h4
+        font-weight: 200
+      p
+        color: #9B9B9B
+        font-weight: 300
+        line-height: 1.4em
+        a
+          color: #ff6600
+          font-weight: bold
+      button
+        width: 100%
+        margin: 10px auto 0
+
+
+
+#drop_right_youtube
+  width: 445px
+  height: 500px
+  z-index: 999
+#YourPlayerID
+  height: 100%
+  /*New code, make the playlist player view like in the responsive view but not depending on the device size, but allways*/
+  .ytv-video
+    position: relative
+    /* 16:9 of 70%*/
+    padding-bottom: 39.4%
+    height: 0
+    width: 70%
+  .ytv-video iframe
+    position: absolute
+    top: 0
+    left: 0
+  .ytv-list
+    width: 30%
+  .ytv-playlist-open .ytv-arrow
+    top: 0px
+  .ytv-list
+    position: relative
+    display: block
+    width: 0
+    padding-bottom: 40%
+    left: auto
+    right: auto
+    top: auto
+    width: 100%
+  .ytv-video
+    position: relative
+    /* 16:9 */
+    padding-bottom: 56.25%
+    height: 0
+    position: relative
+    display: block
+    left: auto
+    right: auto
+    top: auto
+    width: 100%
+
+.fb-like
+  span
+    height: 20px !important
+
+@media (max-width: 480px)
+  .social_networks
+    .social_networks_buttons, .drop_right_facebook, .drop_right_twitter, .drop_right_youtube
+      top: 28vh

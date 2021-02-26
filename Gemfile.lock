@@ -548,6 +548,3 @@ DEPENDENCIES
   thinking-sphinx (= 2.0.14)
   uglifier (= 1.2.3)
   unicorn (= 4.8.3)
-
-BUNDLED WITH
-   1.16.6

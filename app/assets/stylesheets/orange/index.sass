@@ -1,0 +1,47 @@
+@import "colors"
+@import "mixins"
+@import "navbar"
+@import "general"
+@import "frontpage"
+@import "footer"
+@import "social"
+@import "../ViSH_style_guide/general/fonts/ViSH_font-face"
+@import "../ViSH_style_guide/general/fonts/font-awesome_font-face"
+@import "../ViSH_style_guide/general/fonts/glyphicons_font-face"
+
+.main-box.home_page
+	position: relative
+	.main-title
+		position: absolute
+		bottom: 0
+#design
+	font-size: 2.125rem
+	line-height: .625
+	letter-spacing: -.05rem
+.front_blocks
+	.block
+		padding-top: 40px
+		padding-bottom: 40px
+
+		.content_block
+			.img_block
+				text-align: center
+				img
+					max-width: 60vw
+					max-height: 300px
+
+			.text_block
+				text-align: left
+				&.order-md-1
+					text-align: right
+
+@media (max-width: 768px)
+	.front_blocks
+		.block
+			.content_block
+				.img_block
+					img
+						max-height: 80vh
+				.text_block
+					padding-top: 20px
+					text-align: center !important

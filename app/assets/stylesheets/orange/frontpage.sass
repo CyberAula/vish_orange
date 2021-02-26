@@ -1,0 +1,296 @@
+@import "mixins"
+
+
+#user_email.small_field_email
+  width: 48%
+  float: left
+
+.small_field_email2
+  width: 48%
+  float: left
+  padding: 7px
+
+#new_session
+  .checkbox
+    display: block
+    clear: both
+    float: none
+    label
+      color: $gray !important
+  .remember_password
+    font-size: 12px
+    a
+      color: $gray !important
+      &:hover
+        color: $gray-dark !important
+  hr
+    margin-top: 20px !important
+    margin-bottom: 15px !important
+  input
+    &[type="submit"]
+      margin-top: -23px
+
+#nav-collapse-out
+  .dropdown a
+    color: $white
+
+.simple_captcha
+  width: 100%
+  float: left
+  margin-top: 8px
+  margin-bottom: 20px
+  .simple_captcha_image
+    width: 40%
+    display: block
+    float: left
+  .simple_captcha_field
+    width: 50%
+    display: block
+    float: left
+    margin-left: 16px
+
+.dropdown-log
+  width: 242px
+  form#new_user
+    // @include dropdown-log
+
+/*FRONTPAGE _ image */
+
+.illustration
+  .entities
+    h3
+      //font-weight: 200
+      //font-size: 1.6em
+      //margin-bottom: 12px
+    .entities_front
+      margin-bottom: 10px
+      float: left
+      width: 100%
+    .front_blocks
+      padding: 0
+      //@include home_blocks
+
+      .tipblocks_text
+        letter-spacing: 0.03em
+
+  .box-title-general.contest_img
+    height: auto
+    img
+      bottom: 0
+      position: inherit
+    .btn-signup-contest
+      position: absolute
+      right: 3.5vw
+      bottom: 3vw
+      width: 25vw
+      font-size: 1.2em
+
+  .box-title-general
+    display: none
+    height: 100px
+    width: 100%
+    position: relative
+    overflow: hidden
+    margin: 0
+    img
+      width: 100%
+      position: absolute
+      bottom: -250px
+    hr
+      border: 1px solid #999
+      margin: 5px 0
+      border-bottom: none
+    h1
+      margin-top: 0px
+      text-align: center
+      //font-family: $corporate-font-family-sans-serif-Light
+      font-size: 20px
+      line-height: 24px
+    .main-title
+      @include gradientcolor
+      position: relative
+      text-align: center
+      height: 100px
+      padding: 20px
+      .title
+        font-size: 3em
+        //font-family: $font-family-sans-serif-titles
+        text-shadow: 1px 1px 3px rgba(51, 51, 51, 0.25)
+        color: white
+        font-weight: 500
+        line-height: 1.2em
+
+  .main-box
+    position: relative
+    overflow: hidden
+    width: 100%
+    height: calc(100vh - 220px)
+    img
+      width: 100%
+      position: absolute
+      top: -200px
+    .main-title
+      min-height: calc(100vh - 220px)
+      width: 100%
+      background: $opacity2
+      position: relative
+      text-align: center
+      display: flex
+      flex-flow: column wrap
+      justify-content: center
+      align-items: center
+
+      &.main-title-contest
+        min-height: auto
+        justify-content: flex-end
+        flex-flow: row nowrap
+        .title
+          margin-top: 0
+
+      .title
+        width: 100%
+        margin-top: 3em
+        //font-family: $font-family-sans-serif-titles
+        color: #fff
+        font-weight: 500
+        line-height: 1.2em
+        text-shadow: 2px 2px 4px rgba(52, 52, 52, 0.24)
+        h1
+          font-size: 4em
+        h2
+          font-size: 2em
+          font-weight: 300
+          max-width: 60%
+          margin: 4px auto
+
+      .main-buttons
+        display: flex
+        justify-content: center
+        margin-top: 1em
+        .btn-main-title
+          color: white
+
+  .main-box-contest
+    height: auto
+    .img_contest
+      top: 0px
+    .img_contest_16
+      top: 55px
+    .main-title-contest
+      background: transparent
+      padding: 26vw 3vw 1vw
+      text-align: right
+      .btn-main-title-contest
+        margin: 8px 15px
+        height: 35px
+      .title
+        width: 500px
+        font-weight: 300
+        font-size: 1.5em
+    .main-title-contest_16
+      padding: 22vw 3vw 1vw !important
+      background-color: transparent
+
+#banner_head
+  background: white
+  padding: 15px
+  .banner_align_right
+    position: relative
+    text-align: right
+    padding: 0 10px
+    .banner_orange_color
+      color: $orange
+      font-weight: bold
+  .banner_course_title
+    margin: 0
+    padding: 5px 20px
+  .banner_logos
+    text-align: center
+    padding: 10px
+    .banner_enrol_button
+      position: relative
+      padding: 0 25px
+    .banner_one_logo
+      padding: 0 10px
+      img
+        max-height: 42px
+ 
+@media (min-width: 992px) and (max-width: 1199px)
+ 
+  .illustration
+    .main-box
+      height: calc(100vh - 220px)
+      img
+        top: -200px
+
+    .main-box-contest
+      height: auto
+      .main-title-contest
+        padding: 26vw 3vw 1vw
+
+@media (min-width: 768px) and (max-width: 991px)
+ 
+  .illustration
+    .main-box
+      height: calc(100vh - 220px)
+      img
+        top: -120px
+      .main-title
+        .title
+          h1
+            font-size: 2.5em
+          h2
+            font-size: 1.5em
+ 
+
+@media (min-width: 481px) and (max-width: 767px)
+ 
+
+  .illustration
+    .main-box
+      height: 248px
+      img
+        top: -60px
+      .main-title
+        margin-top: -1em
+        .title
+          margin-top: 0
+          h1
+            font-size: 2.5em
+          h2
+            font-size: 1.5em
+   
+
+@media (max-width: 480px)
+ 
+
+  .illustration
+    .social_networks
+      display: none
+    .main-box
+      height: 250px
+      img
+        top: 0px
+      .main-title
+        min-height: none
+        .title
+          width: 84%
+          h1
+            font-size: 2.5em
+            margin-top: -1.5em
+          h2
+            display: none
+        .main-buttons
+          .btn-main-title-home
+            margin-top: 1em
+            height: 40px
+            width: 50%
+            position: absolute
+            border: 0
+            &.btn-right
+              right: 0
+              margin-left: 0
+              background-color: #ededed
+            &.btn-left
+              left: 0
+ 

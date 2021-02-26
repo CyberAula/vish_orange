@@ -498,7 +498,7 @@
 			initialize = function(id, opts){
 				utils.deepExtend(settings, opts);
 				if(settings.apiKey.length===0){
-					alert("Missing APIkey in settings or as global vaiable.");
+					console.warn("Missing APIkey in settings or as global vaiable.");
 				}
 				apiKey = settings.apiKey;
 				settings.element = (typeof id==='string') ? doc.getElementById(id) : id;
