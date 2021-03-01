@@ -25,9 +25,9 @@
 
 <% searchTerms = !params[:q].blank? and searchMode %>
 
-<section id="search" class="library_page">
+<section id="search" class="library_pag container">
   <div class="row">
-    <div id="search-sidebar" class="search-filterbar">
+    <div id="search-sidebar" class="search-filterbar col-12 col-md-4">
       <div class="srch-panel">
         <% if params[:browse] %>
           <li><h2><i class="fa fa-folder-open-o"></i><%= t("browse.title")%></h2></li>
@@ -131,7 +131,7 @@
       </div>
     </div>
 
-    <div class="filter-results">
+    <div class="filter-results col-12 col-md-8">
       <div class="search_filters filters-applied">
         <%= render partial: 'help/help_search' %>
         <% if searchTerms %>
@@ -214,15 +214,15 @@
 
         <div class="clear"></div>
       </div>
-      <div id="search-all" class="searched-items">
-        <ul class="items">
+      <div id="search-all" class="searched-items container">
+        <div class="row">
           <% @search_result.each do |r| %>
               <% unless r.nil? %>
                 <%= render partial: "#{ r.class.to_s.tableize }/search_result",
                            locals:  { r.class.to_s.underscore.to_sym => r, :prefix_id => "search" }  %>
               <% end %>
           <% end %>
-        </ul>
+        </div>
       </div>
       <div class="loader_pagination">
         <div class="pageless-loader" style="text-align:center;width:100%;">
