@@ -1,6 +1,6 @@
 <% return if ediphy_document.nil? or ediphy_document.author.nil? %>
 
-<li class="resource box-item ediphy-item" ediphy_id="<%=ediphy_document.id%>"<%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
+<li class="resource box-item ediphy-item col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" ediphy_id="<%=ediphy_document.id%>"<%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
 <% if defined?(prefix_id) && (prefix_id == "join" || prefix_id == "tw") %>
 <div class="selecting-item" style="display:none;"><i class="fa fa-check"></i><%= t('competition.modal.selected') %></div>
 <% end %>
@@ -10,10 +10,11 @@
     generated_id = prefix_id + "-" + generated_id if defined?(prefix_id)
     generated_id = "cat-" + obj_id.to_s + "-" + generated_id if defined?(obj_id)
   %>
+  <div class="card">
 
   <!-- corner -->
     <%= link_to ediphy_document_path(ediphy_document) do %>
-      <div class="corner-item">
+      <div class="corner-item d-none" >
         <div class="corner-item2">
           <div class="corner-color"></div>
           <%= raw(icon(ediphy_document,false)) %>
@@ -22,7 +23,9 @@
       </div>
       <!-- image/icon -->
       <div class="container-img">
-        <div class="img-box resource-center" id="<%=generated_id%>" style="background-image: url('<%= ediphy_document.thumbnail %>');">
+        <!-- <div class="img-box resource-center" id="<%=generated_id%>" style="background-image: url('<%= ediphy_document.thumbnail %>');"> -->
+              <img src="<%=ediphy_document.thumbnail%>" class="card-img-top" alt="..."/>
+
            <% if ediphy_document.draft %>
             <div class="excursion-draft">
                 <h2 class="draftstyle">
@@ -31,16 +34,16 @@
                 </h2>
             </div>
           <% end %>
-        </div>
+       <!--  </div> -->
       </div>
     <%end%>
-
+    
     <script>
       document.getElementById("<%=generated_id%>").style.backgroundImage = "url('<%= ediphy_document.thumbnail %>')";
     </script>
 
   <!-- INFO -->
-  <div class="caption">
+  <div class="caption card-body">
 
     <!-- Title -->
     <h6>
@@ -53,13 +56,13 @@
       <%= link_to truncate_name(ediphy_document.author.name, length: 25), ediphy_document.author.subject %>
     </span>
 
-    <hr>
+   </div>
 
-    <div class="info-bottom">
+   <div class="card-footer d-flex flex-row justify-content-between">
 
       <!--like -->
       <div class="like">
-        <div class="count"><%=ediphy_document.post_activity.likes.count.to_s%></div>
+        <div class="count d-inline"><%=ediphy_document.post_activity.likes.count.to_s%></div>
         <%= link_like(ediphy_document.post_activity, {:title =>t('excursion.actions.favorite')})%>
       </div>
 

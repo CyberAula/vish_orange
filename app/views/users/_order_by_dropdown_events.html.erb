@@ -2,9 +2,9 @@
 <% icon = profile_subject_is_current? ? "pencil" : "dashboard"%>
 
 <div class="toolbar_nav-tab">
-  <div class="dropdown order_by_selector" li_selected="<%=default_sort_by%>" id="order_by_selector_events">
+  <div class="dropdown order_by_selector container" li_selected="<%=default_sort_by%>" id="order_by_selector_events">
     <span class="order_by_txt"><%= t('order_by.title')%></span>
-    <button class="btn btn-secundary dropdown-toggle" type="button" id="dropdownMenuOrdByevents" data-toggle="dropdown"><i class="fa fa-<%=icon%>"></i> <span> <%=t('order_by.' + default_sort_by)%></span>
+    <button class="btn btn-secundary dropdown-toggle btn-sm" type="button" id="dropdownMenuOrdByevents" data-toggle="dropdown"><i class="fa fa-<%=icon%>"></i> <span> <%=t('order_by.' + default_sort_by)%></span>
       <i class="fa fa-angle-down"></i>
     </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">

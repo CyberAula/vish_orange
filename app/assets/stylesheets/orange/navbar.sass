@@ -7,6 +7,8 @@
 	.navbar-brand
 		&:hover
 			color: #fff !important
+		&:focus
+			outline: none
 		.navbar-brand-title
 			&:hover
 				color: #fff !important
@@ -25,11 +27,14 @@
 		background-color: $gris
 	.nav-item
 		.nav-link
+
 			&.dropdown-toggle
 				background-color: transparent
 				padding: .625rem .3125rem !important
 	.navbar-nav 
 		.nav-link
+			&:focus
+				outline: none !important
 			&.active
 				color: $orange !important
 			.navbar-icon

@@ -95,7 +95,7 @@
                 self._splitAt = /,/g;
 
             //add the html input
-            this.element.html('<li class="tagit-new"><input class="tagit-input" type="text" /></li>');
+            this.element.html('<li class="tagit-new"><input class="form-control tagit-input" type="text" /></li>');
 
             this.input = this.element.find(".tagit-input");
 						

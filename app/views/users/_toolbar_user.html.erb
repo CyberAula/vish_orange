@@ -12,8 +12,8 @@
   <!-- Edit your profile -->
   <% @profile = profile_or_current_subject.profile %>
   <% if can?(:update, @profile) %>
-    <div class="edit_icon btn btn-secundary">
-      <%= link_to(raw("<i class='fa fa-edit '></i>")+ t('profile.edit'), '#', :id => "edit_icon_link") %>
+    <div class="edit_icon ">
+      <%= link_to(raw("<i class='fa fa-edit '></i>")+ t('profile.edit'), '#', :id => "edit_icon_link", :class => "btn btn-primary") %>
     </div>
   <% end %>
 

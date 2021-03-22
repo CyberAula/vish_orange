@@ -5,8 +5,7 @@
 <%content_for :canonical do%><%=polymorphic_url(profile_subject, :tab=>params[:tab], :locale => params[:locale])%><%end%>
 
 <%= render :partial => 'modal_message' %>
-
-<section class="user_page user">
+<div class="container user_page user">
   <!--box info-->
   <div id="profile-info">
 
@@ -149,4 +148,4 @@
 
   <% end %>
 
-</section>
+</div>

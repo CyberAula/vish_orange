@@ -3,10 +3,13 @@
 <%content_for :description do%><%= t("site.meta_desc.sign_up")%><%end%>
 <%content_for :alternate_urls do%><%=raw alternate_urls(request.original_url, nil)%><%end%>
 <% course = (params[:course].blank? ? nil : Course.find_by_id(params[:course])) %>
-
+<div class="container">
+<div class="row">
+<div class="col-12">
 <section id="registration" class="registration_page">
   <section class="registration">
-    <h1><%= t('sign_up').capitalize %></h1>
+  <br>
+    <h2><%= t('sign_up').capitalize %></h2>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "new_user_devise_form"}) do |f| %>
       <%= devise_error_messages! %>
@@ -20,9 +23,11 @@
 
         <%= f.label :name %>
         <%= f.text_field :name, :class => "form-control", :autocomplete => "off" %>
-
+        <br>
         <%= f.label :surname, t("profile.surname") %>
         <%= f.text_field :surname, :class => "form-control", :required => true, :autocomplete => "off" %>
+
+        <br>
 
         <%= f.label :email %>
         <%unless params[:email].blank?%>
@@ -30,12 +35,15 @@
         <%else%>
           <%= f.text_field :email, :class => "form-control"%>
         <%end%>
+        <br>
 
         <%= f.label :password %>
         <%= f.password_field :password, :class => "form-control", :id => "devise_password", :autocomplete => "off" %>
+        <br>
 
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, :class => "form-control", :autocomplete => "off" %>
+        <br>
 
         <%= f.label t('activerecord.attributes.user.tag') %>
         <div class="tagBoxNew">
@@ -88,7 +96,9 @@
 
   </section>
 </section>
-
+</div>
+</div>
+</div>
 
 <%= content_for :javascript do %>
     var registrationTags = [];

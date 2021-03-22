@@ -1,5 +1,6 @@
 <section id="sign_in">
-  <h1><%= t('sign_in') %></h1>
+<br>
+  <h2><%= t('sign_in') %></h2>
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <%= devise_error_messages! if controller.controller_name == 'sessions' %>
@@ -26,7 +27,7 @@
       <% end %>
 
       <%= link_to t('devise.links.forgot_password'), new_password_path(resource_name),  :class=> "forgot-link remember_password" %>
-
+      <br>
       <%= f.submit t('sign_in'), :class =>"btn btn-primary pull-right" %>
     </article>
   <% end %>

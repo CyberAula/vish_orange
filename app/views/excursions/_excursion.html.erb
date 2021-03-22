@@ -1,4 +1,4 @@
-<div class=" excursion-item col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" <%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
+<div class="excursion-item col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" <%if defined?(obj_id)%>edit-id="<%=obj_id%>"<%end%>>
   <%
     generated_id = "excursion-" + excursion.id.to_s
     generated_id = prefix_id + "-" + generated_id if defined?(prefix_id)
@@ -8,7 +8,7 @@
   <%= link_to(excursion_url(excursion)) do %>
     <!-- image/icon -->
     <div class="container-img">
-    <img src="<%=excursion_raw_thumbail(excursion)%>" class="card-img-top" alt="..."/>
+      <img src="<%=excursion_raw_thumbail(excursion)%>" class="card-img-top" alt="..."/>
       <%if excursion.draft && excursion.notified_teacher %>
         <div class="excursion-draft">
           <h2 class="draftstyle">

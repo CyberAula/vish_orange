@@ -1,1 +1,40 @@
- 
+.navbar
+	.navbar-collapse
+		justify-content: flex-end
+	.search-nav
+		position: relative
+		.navbar-search
+			position: relative
+			margin-bottom: 0px
+			.search-query
+				border-color: white
+				background-clip: initial
+			.search_button_class 
+				color: orange
+				position: absolute
+				right: 0
+				top: 0
+				padding: 8px
+		.mat
+			background-color: white
+			position: absolute
+			z-index: 999
+			width: 100%
+			.no_results, .query_too_short, .spinner
+				display: none
+			.results
+				.excursion-item
+					width: 100%
+					max-width: 100%
+					.card
+						flex-direction: row
+						.text-muted
+							background-color: transparent
+							a
+								color: #999
+						height: 50px
+						.container-img
+							position: initial
+							.card-img-top
+								height: 100%
+								width: auto
