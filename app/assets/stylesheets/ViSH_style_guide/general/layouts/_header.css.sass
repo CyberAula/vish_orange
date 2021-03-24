@@ -1,19 +1,19 @@
-
 .navbar-main
-  @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
-  background-color: white
-  position: fixed
+  // @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
+  // position: fixed
+  background-color: black !important
+  color: white
   height: 55px
   font-size: 0.8em
   padding: 10px
   border: 0
   z-index: $zindex-navbar-fixed
   width: 100%
-
   @media (max-width: 768px)
     padding: 12px 0
     height: 55px
-  .container-fluid
+
+  .container-fluid,  .container
     height: 100%
     .btn-navbar
       padding: 4px 8px
@@ -25,18 +25,19 @@
       font-size: 2em
       float: left
       .logo
-        color: #333
+        color: $white
         font-weight: 200
         outline: none
         @media (max-width: 768px)
           display: none
         .logo_bold
-          font-family: $OrangeBolder
+          font-family: $font-family-sans-serif-titles
       .logo_img
-        display: none
+        //display: none
         @media (max-width: 768px)
           display: block
-
+    #main_menu
+      margin-top: 1.5625rem
     .hidden-phone
       @media (max-width: 768px)
         display: none
@@ -44,11 +45,12 @@
         .btn-primary a
           color: white
         .btn-secondary a
-          color: $gray-dark
+          color: black
         .user_name
-          background-color: white
-          border: 1px solid $gray-light
+          background-color: transparent
+          border: 1px solid $black
           padding: 6px
+          color: white
         .dropdown
           float: right
           margin: 0 0 0 5px
@@ -81,7 +83,7 @@
             input[type=checkbox]
               opacity: 1
             a
-              color: gray
+              color: black
               font-size: 0.9em
               float: left
               &:hover
@@ -99,8 +101,10 @@
       .search-ui
         height: 40px
         float: right
+        margin-top: 1.5625rem
         .search-query
           margin-bottom: .4em
+          border-color: white
         .quick-search, .mat
           width: 300px
           margin-right: 10px
@@ -115,7 +119,7 @@
               padding: 6px 15px
               bottom: 40px
             .mat
-              background: $gray-dark
+              background: $black
               display: none
               position: relative
               z-index: 10
@@ -189,14 +193,14 @@
                   .more
                     margin: 4px
                     width: 96%
-                    background: $gray-darker-extra
+                    background: $brand-primary
                     padding: 8px 0
                     display: inline-block
                     cursor: pointer
                     &:hover
-                      background: $gray-darker
+                      background: $black
                     a
-                      color: $gray
+                      color: $black
                       padding: 8px 52px
                       &:hover
                         color: $white
@@ -213,14 +217,16 @@
       top: 40px
       .navbar-nav 
         width: 256px
-        background: $gray-darker
+        background: $white
         padding: 12px
+        // @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
+        color: $black
         li
           width: 100%
           display: inline-block
           font-size: 1.1em
           a
-            color: $white
+            color: $black
             padding: 8px
 
         li.sign_in_mobile
@@ -286,7 +292,7 @@
 .navbar-transparent
   background-color: transparent
   box-shadow: none
-  .container-fluid
+  .container-fluid,  .container
     .brand
       .logo
         color: white
@@ -361,8 +367,8 @@ li.sign_in_mobile.dropdown
     left: 115px
     background-color: white
     padding: 10px
-    border-radius: 0 0 10px 10px
-    width: 35px
+    //border-radius: 0 0 10px 10px
+    width: 40px
     img
       width: 100%
     &:hover
@@ -371,7 +377,7 @@ li.sign_in_mobile.dropdown
     transition: all 0.5s ease 0s
     position: absolute
     z-index: 2
-    top: -50px
+    top: -100px
     width: 100%
     .navbar-fixed-top
       position: static
@@ -383,7 +389,8 @@ li.sign_in_mobile.dropdown
       width: 30px
       height: 30px
       padding: 8px
-      background: white
+      color: white
+      background: black
       border-radius: 0 0 5px 0
       &:hover
         cursor: pointer

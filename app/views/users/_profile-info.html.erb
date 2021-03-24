@@ -291,7 +291,7 @@
 <%end%>
 
 
-<section class="info-profile">
+<section class="info-profile container-fluid">
 
     <ul class="nav nav-tabs">
 
@@ -299,7 +299,7 @@
       <li class="<%= (params[:tab].nil? || params[:tab]=='all') ? 'active':''%>">
         <a id="all_tab" href="#tabAll" data-toggle="tab">
           <i class="fa fa-th"></i>
-          <span class=" hidden-xs"><%=t('profile.all_tab')%></span>
+          <span class="hidden-xs hidden-sm"><%=t('profile.all_tab')%></span>
         </a>
       </li>
       <% availableModels.each do |modelName| %>
@@ -308,21 +308,21 @@
           <li class="<%= params[:tab]=='excursions' ? 'active':''%>">
             <a id="excursions_tab" href="#tabExcursions" data-toggle="tab">
               <i class="fa fa-list-alt"></i>
-              <span class=" hidden-xs"><%=t('excursion.other')%></span>
+              <span class="hidden-xs hidden-sm"><%=t('excursion.other')%></span>
             </a>
           </li>
         <% elsif modelName == "EdiphyDocument" %>
           <li class="<%= params[:tab]=='ediphy_documents' ? 'active':''%>">
             <a id="ediphy_documents_tab" href="#tabEdiphyDocuments" data-toggle="tab">
-              <img src="/assets/icons/icoEdiphy_black_24px.svg" class="ediphy_icon"></img>
-              <span class=" hidden-xs"><%=t('ediphy_document.other')%></span>
+              <i class="fa fa-th-large"></i></img>
+              <span class="hidden-xs hidden-sm"><%=t('ediphy_document.other')%></span>
             </a>
           </li>
         <% elsif modelName == "Workshop" %>
           <li class="<%= params[:tab]=='workshops' ? 'active':''%>">
             <a id="workshops_tab" href="#tabWorkshops" data-toggle="tab">
               <i class="fa fa-book"></i>
-              <span class=" hidden-xs"><%=t('workshop.other')%></span>
+              <span class="hidden-xs hidden-sm"><%=t('workshop.other')%></span>
             </a>
           </li>
         <% elsif modelName == "Resource" %>
@@ -330,22 +330,22 @@
           <li class="<%= params[:tab]=='resources' ? 'active':''%>">
             <a id="resources_tab" href="#tabResources" data-toggle="tab">
               <i class="fa fa-file"></i>
-              <span class=" hidden-xs"><%=t('resource.other')%></span>
+              <span class="hidden-xs hidden-sm"><%=t('resource.other')%></span>
             </a>
           </li>
         <% elsif modelName == "Category" %>
           <li class="<%= params[:tab]=='categories' ? 'active':''%>">
             <a id="categories_tab" href="#tabCategories" data-toggle="tab">
               <i class="fa fa-folder-open-o"></i>
-              <span class=" hidden-xs"><%=t('categories.other')%></span>
+              <span class="hidden-xs hidden-sm"><%=t('categories.other')%></span>
             </a>
           </li>
-        <% elsif modelName == "Event" %>
+        <% elsif modelName == "Event2" %>
           <!--events-->
           <li class="<%= params[:tab]=='events' ? 'active':''%>">
             <a id="events_tab" href="#tabEvents" data-toggle="tab">
               <i class="fa fa-video-camera"></i>
-              <span class=" hidden-xs"><%=t('event.other')%></span>
+              <span class="hidden-xs hidden-sm"><%=t('event.other')%></span>
             </a>
           </li>
         <%end%>
@@ -357,7 +357,7 @@
         <a id="followers_tab" href="#tab5" data-toggle="tab">
           <span><strong><%= profile_subject.followers.count.to_s %></strong></span>
           <!--<i class="fa fa-group fa-fw"></i>-->
-          <span class="hidden-xs"><%= t('follow.followers') %></span>
+          <span class="hidden-xs hidden-md"><%= t('follow.followers') %></span>
         </a>
       </li>
 
@@ -366,7 +366,7 @@
         <a id="followings_tab" href="#tab6" data-toggle="tab">
           <span><strong><%= profile_subject.following_actor_objects.includes(:actor).count.to_s %></strong></span>
           <!--<i class="fa fa-group fa-fw"></i>-->
-          <span class="hidden-xs"><%= t('follow.followings') %></span>
+          <span class="hidden-xs hidden-md"><%= t('follow.followings') %></span>
         </a>
       </li>
     </ul>

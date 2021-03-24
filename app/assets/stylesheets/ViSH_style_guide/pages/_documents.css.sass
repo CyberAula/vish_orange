@@ -108,6 +108,7 @@ aside.recomended
         tr
           td:first-child
             width: 145px
+            font-weight: bold
           td
             border: none
             .vote-help
@@ -146,8 +147,8 @@ aside.recomended
     @include comments
 
 .btn-group
-  a
-    color: $gray
+  .btn
+    margin-right: 4px
 .excursion_tool
   .helpheader i
     padding-top: 9px
@@ -185,7 +186,7 @@ aside.recomended
   background-color: rgba(216, 216, 216, 0.9)
   padding: 0
   @include border-top-radius ($border-radius-base)
-  @include box-shadow (0 1px 4px 1px rgba(0, 0, 0, 0.1))
+  // @include box-shadow (0 1px 4px 1px rgba(0, 0, 0, 0.1))
   text-align: center
   .viewerContainer
     width: 100%
@@ -497,7 +498,7 @@ div.resource_common_fields_form
   margin: 0px 4px 0px 0
   .count
     margin-left: 0px
-    font-size: small
+    //font-size: small
 
 .verb_like
   color: $red_favorites !important

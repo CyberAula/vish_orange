@@ -15,14 +15,15 @@
     <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
     <a class="btn btn-navbar btn-default <%='b' if front_or_home%>" data-toggle="collapse" data-target=".nav-collapse">
       <i class="fa fa-bars"></i>
+      
     </a>
 
     <!-- BRAND -->
-    <div id="brand" class="brand">
-      <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
-      <a href="/" class="logo_img"><img src="/assets/orange/educa-logo-mobile.png" alt="Logo Educa"></a>
-    </div>
+    <div id="brand" class="brand d-none">
+      <a href="/" class="logo_img"><img src="https://boosted.orange.com/docs/4.6/dist/img/orange_logo.svg" alt="Logo Educa" width="50" height="50" ></a>
 
+      <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
+    </div>
     <div class="hidden-phone hidden-tablet">
 
       <!-- MENU -->
@@ -37,7 +38,7 @@
             <!-- dropdown menu links -->
             <% availableModels.each do |modelName| %>
                 <% if modelName == "EdiphyDocument" %>
-                   <li><%= link_to new_ediphy_document_path do %><img src="/assets/icons/icoEdiphy_white_24px.svg" style="height:22px;width:22px;"></img> <%= t('ediphy_document.actions.add') %><% end %></li>
+                   <li><%= link_to new_ediphy_document_path do %><i class="fa fa-th-large"></i> <%= t('ediphy_document.actions.add') %><% end %></li>
                 <% elsif modelName == "Excursion" %>
                   <li><%= link_to new_excursion_path do %><i class="fa fa-list-alt"></i> <%= t('excursion.actions.add') %><% end %></li>
                 <% elsif modelName == "Workshop" %>

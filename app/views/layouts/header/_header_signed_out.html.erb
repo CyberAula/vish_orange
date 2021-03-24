@@ -9,8 +9,8 @@
       </a>
       <!-- BRAND -->
       <div id="brand" class="brand">
-        <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
         <a href="/" class="logo_img"><img src="/assets/orange/educa-logo-mobile.png" alt="Logo Educa"></a>
+        <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
       </div>
 
       <!--______________________________desktop-->
@@ -47,7 +47,7 @@
 
           <% if Vish::Application.config.registrations %>
             <a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>">
-            <button class="btn btn-secondary">
+            <button class="btn btn-primary">
               <%=t("sign_up")%>
             </button>
             </a>

@@ -18,13 +18,12 @@
       <%= link_to t('categories.favorites.title'), "/categories/favorites" %>
     </h6>
     <!--Author -->
-    <span class="author">
+    <div class="author">
       <span class="by"><%= t('by') %></span>
       <%= link_to current_subject.name, current_subject.subject %>
-    </span>
+    </div>
 
     <div class="info-bottom">
-      <hr class="soften">
       <!--like -->
       <div class="like"></div>
       <!--views -->

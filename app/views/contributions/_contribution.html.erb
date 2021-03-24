@@ -22,12 +22,11 @@
     <!-- Title -->
     <h6><%= link_to resource.title, contribution %></h6>
     <!-- Author -->
-    <span class="author"> 
+    <div class="author"> 
       <span class="by"><%=t('by')%></span>
       <%= link_to truncate_name(resource.author.name, length: 25), resource.author.subject %>
-    </span>
+    </div>
     <div class="info-bottom">
-      <hr class="soften">
       <!--like -->
       <div class="like">    
         <div class="count"><%=resource.post_activity.likes.count.to_s%></div>

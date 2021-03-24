@@ -28,14 +28,13 @@
       <%= link_to resource.title, resource %>
     </h6>
     <!-- Author -->
-    <span class="author">
+    <div class="author">
       <span class="by"><%=t('by')%></span>
       <%= link_to truncate_name(resource.author.name, length: 25), resource.author.subject %>
-    </span>
-    <hr>
+    </div>
     <div class="info-bottom">
           <!--like -->
-          <div class="like like_contest">
+          <div class="like">
               <div class="count"><%=resource.post_activity.likes.count.to_s%></div>
               <%= link_like(resource.post_activity, {:title =>t('excursion.actions.favorite')})%>
           </div>

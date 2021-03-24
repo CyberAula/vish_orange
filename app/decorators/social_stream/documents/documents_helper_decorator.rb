@@ -32,6 +32,7 @@ DocumentsHelper.module_eval do
         when "Webapp" then "webapp"
         when "Workshop" then "book"
         when "Excursion" then "webapp"
+        when "EdiphyDocument" then "th-large"
         else "file" # SocialStream::Documents.icon_mime_types[:default]
       end
     end

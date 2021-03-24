@@ -7,7 +7,7 @@
   margin-bottom: $line-height-computed
   line-height: $line-height-base
   background-color: $thumbnail-bg
-  @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
+  //@include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
   border-radius: $thumbnail-border-radius
   @include transition(border .2s ease-in-out)
   @media (max-width: 480px)
@@ -20,8 +20,8 @@
 
   .avatar
     img
-      @include border-top-radius ($border-radius-base)
-      @include border-bottom-radius ($border-radius-base)
+      //@include border-top-radius ($border-radius-base)
+      //@include border-bottom-radius ($border-radius-base)
       width: 100%
   a
     &:hover, &:focus
@@ -61,7 +61,7 @@
 
       i
         font-size: 4em
-        color: $brand-secundary
+        color: $black
         padding-top: 39px
 
         &:hover
@@ -72,7 +72,7 @@
           color: #008FD1
           padding-top: 14px
       i.fa-plus, i.fa-upload
-        color: $gray
+        color: $black
       i.fa-webapp-o,
       i.fa-scorm-o,
       i.fa-swf-new
@@ -105,7 +105,7 @@
     .action
       display: block
       text-align: center
-      color: $gray-dark
+      color: $black
       &:hover
         color: $brand-primary
     .action
@@ -135,7 +135,7 @@
       margin: 70px auto
       text-align: center
       a
-        color: $gray-dark
+        color: $black
         font-weight: bold
 
 // Add a hover state for linked versions only

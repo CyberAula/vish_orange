@@ -2,6 +2,8 @@
   display: inline-block
   margin-bottom: 0 // For input.btn
   font-weight: $btn-font-weight
+  font-weight: bold
+  font-family: $font-family-sans-serif-titles
   text-align: center
   vertical-align: middle
   touch-action: manipulation
@@ -49,34 +51,35 @@
 
 @mixin btn-primary-orange
   background: $brand-primary
-  color: $white
+  color: $black
   &:hover,
   &:focus,
   &:active,
   &.active,
   &.disabled,
   &[disabled]
-    background: darken($brand-primary, 20%)
+    background: black
     color: white
     @include scale1
 
 
 @mixin btn-secondary-orange
-  background: $gray-lighter
-  color: $gray-dark
+  background: $white
+  color: $black
+  border: 0.125rem solid $black !important
   &:hover,
   &:focus,
   &:active,
   &.active,
   &.disabled,
   &[disabled]
-    background: darken($gray-lighter, 20%)
-    color: $gray-dark
+    background: black
+    color: $white
     @include scale1
 
 @mixin btn-default-orange
   color: white 
-  background: $gray
+  background: $black
   &:hover,
   &:focus,
   &:active,
@@ -89,7 +92,7 @@
     @include scale1
 
 @mixin btn-white-orange
-  color: $gray
+  color: $black
   background: white
   border: 0
   &:hover,

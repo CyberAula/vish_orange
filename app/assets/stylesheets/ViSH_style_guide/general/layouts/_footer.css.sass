@@ -1,15 +1,18 @@
 footer
   width: 100%
-  background: #fff
-  color: $gray-darker-extra
+  background: $panel-footer-bg
+  color: $white
   padding: 32px
-  overflow: hidden
+  overflow: visible
   //position: absolute
   //bottom: 0
   border-top: 1px solid #ccc
   .footer_container
     max-width: 1128px
     margin: 0 auto
+    .hide_footer
+      h4
+        margin-bottom: 10px
     section
       width: 24%
       display: inline-block
@@ -19,7 +22,7 @@ footer
       .description_footer
         font-size: 0.9em
         margin: 5px 0
-        color: $gray
+        color: $white
       .btn-footer
         padding: 4px
         width: 104px
@@ -34,7 +37,7 @@ footer
       .footer_link
         padding: 10px 0 0
         a
-          color: $gray
+          color: white
           &:hover
             color: $orange-primary
 

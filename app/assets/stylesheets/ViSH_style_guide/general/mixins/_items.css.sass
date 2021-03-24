@@ -3,7 +3,7 @@
   .corner-item
     @include item-corner
   .info-bottom
-    padding-top: 4px
+    padding-top: 8px
   //1
   @media (max-width: 480px)
     width: 100%
@@ -51,9 +51,9 @@
     padding: 0
   li.box-item, li.item-view-more
     @include item
-    border: 1px solid $gray-lighter
+    border: 2px solid $gray-lighter
     &:hover
-      @include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
+      //@include box-shadow (0 2px 8px 0px rgba(0, 0, 0, 0.03))
       @include transition (all 0.2s ease 0s)
       transform: scale(1.05)
       -ms-transform: scale(1.05)
@@ -117,7 +117,7 @@
       left: 6px
 
     i.fa-user
-      color: $gray
+      color: $gray-lighter-extra
 
   .fa-webapp
     top: 8px !important
@@ -129,7 +129,7 @@
     height: 0
     border-style: solid
     border-width: 73px 73px 0 0
-    border-color: $border-color transparent transparent transparent
+    border-color: transparent transparent transparent transparent
     z-index: 3
     top: 0px
     left: 0px

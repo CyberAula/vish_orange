@@ -167,10 +167,10 @@
 
 .separator
   margin: 8px 0
-  border-color: gray -moz-use-text-color #FFF
+  border-color: black -moz-use-text-color #FFF
 
 .search-sidebar-selected
-  font-family: $corporate-font-family-sans-serif-Bold !important
+  font-family: $corporate-font-family-sans-serif-Extrabold !important
   color: $black
 
 #search-sidebar li
@@ -186,6 +186,8 @@
     border-radius: $border-radius-base
     padding-bottom: 20px !important
     margin-bottom: 20px
+    .separator
+      border-top-color: black
 .filter-results
   @include make-xs-column(12, $gutter: $grid-gutter-width)
   @include make-sm-column(9, $gutter: $grid-gutter-width)
@@ -199,12 +201,11 @@
     border-radius: $border-radius-base
     padding: 0 15px
     h2
-      color: $white
+      color: $black
       margin: 0px 0px 20px !important
-      background-color: $gray
-      border-radius: $border-radius-base
       padding: 10px 20px
-      font-size: 1.4rem
+      font-size: 1.5rem
+      font-weight: 500
       i
         margin: 0 10px 0 0
     .indented
@@ -215,8 +216,8 @@
       .btn-openclose
         border-radius: $border-radius-base
         padding: 0px 5px
-        border: 1px solid #ccc
-        background: #eee
+        border: .125rem solid #000
+        background: #fff
         width: 20px
         outline: none
         margin-right: 5px
@@ -227,7 +228,7 @@
           a
             color: $brand-primary
         a
-          color: gray
+          color: black
           text-decoration: none
       .filter_title
         font-size: 0.95em
