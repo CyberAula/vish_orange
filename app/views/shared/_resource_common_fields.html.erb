@@ -30,7 +30,7 @@
   <section class="language">
     <label><%= t('document.leyend.language')%></label>
     <br/>
-    <%= select_tag(:language, resource_language_options_for_select(d.language), :class => "language") %>
+    <%= select_tag(:language, resource_language_options_for_select(d.language), :class => "form-control language") %>
   </section>
 
   <!--Age slider-->
@@ -48,7 +48,7 @@
   <section class="license">
     <label><%= t('document.info.license')%></label>
     <br/>
-    <%= select_tag(:license_id, resource_license_options_for_select(d.license_id,d.document?), :class => "resource_license") %>
+    <%= select_tag(:license_id, resource_license_options_for_select(d.license_id,d.document?), :class => "form-control resource_license") %>
   </section>
 
 </div>

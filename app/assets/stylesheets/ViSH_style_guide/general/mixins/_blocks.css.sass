@@ -184,11 +184,16 @@
       @media (min-width: 800px)
         width: 50%
         text-align: center !important
-      height: 270px
+        max-height: 270px
+        img
+          max-height: 270px
       text-align: center
       img
         width: auto
-        height: 100%
+        height: auto
+        width: auto
+        max-width: 100%
+        max-height: 100%
     .img_block_center
       @include img_block_center
 

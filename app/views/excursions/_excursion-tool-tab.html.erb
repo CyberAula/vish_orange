@@ -281,11 +281,11 @@
     <% if can?(:download_source, @excursion) %>
       <!-- tab4 / scorm -->
       <div class="tab-pane contentscorm" id="exc_scorm">
-        <div class="contentscormc1">
-          <a class="btn btn-secundary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "12")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm12')%></a>
-          <a class="btn btn-secundary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "2004")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm2004')%></a>
-        </div>
         <div class="contentscormc2">
+          <div class="contentscormc1">
+            <a class="btn btn-secondary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "12")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm12')%></a>
+            <a class="btn btn-secondary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "2004")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm2004')%></a>
+          </div>
           <p><%=t("excursion.download_scorm")%></p>
         </div>
       </div>

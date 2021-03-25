@@ -8,15 +8,18 @@
         <i class="fa fa-bars"></i>
       </a>
       <!-- BRAND -->
-      <div id="brand" class="brand">
-        <a href="/" class="logo_img"><img src="/assets/orange/educa-logo-mobile.png" alt="Logo Educa"></a>
-        <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
-      </div>
+
+    <!-- BRAND -->
+    <div id="brand" class="brand d-none">
+      <a href="/" class="logo_img"><img src="https://boosted.orange.com/docs/4.6/dist/img/orange_logo.svg" alt="Logo Educa" width="50" height="50" ></a>
+
+      <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
+    </div>
 
       <!--______________________________desktop-->
       <div class=" hidden-phone hidden-tablet">
         <!-- MENU -->
-        <ul class="nav navbar-nav float_R">
+        <ul class="nav navbar-nav float_R" id="main_menu">
           <!-- Help button
           <li class=" dropdown toggler ">
             <div data-toggle="dropdown" class="btn btn-icon <%='btn-home-icon' if front_or_home%> without-dropdown-toggle">

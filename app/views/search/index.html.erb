@@ -67,7 +67,7 @@
           </ul>
         </div>
 
-        <div filter_type="resouce_type" id="resource_type" directory_filter="true" opens_with="Resource" style="display:none" class="filter_set indented">
+        <div filter_type="resouce_type" id="resource_type" directory_filter="true" opens_with="Resource" style="display:none" class="filter_set indented_no">
           <button href="#" status="showMore" class="showMoreButton btn-openclose opened_button">
             <a>-</a>
           </button>
@@ -137,7 +137,7 @@
         <% if searchTerms %>
           <div><%= t("search.terms")%>: <span class="n_results"><%=params[:q]%></span></div>
         <% end %>
-        <div>
+        <div class="search_results">
           <span class="n_results" id="n_results"><%=@search_result.total_entries%></span>
           <%= t("search.results")%>
         </div>
@@ -146,7 +146,7 @@
         <div class="clear"></div>
 
         <div class="dropdown dropdown_order_by" id="order_by_selector_search">
-          <button class="btn btn-secundary dropdown-toggle" type="button" data-toggle="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
             <span>
               <%if params[:browse] %>
                 <i class="fa fa-tachometer"></i>
@@ -226,7 +226,7 @@
       </div>
       <div class="loader_pagination">
         <div class="pageless-loader" style="text-align:center;width:100%;">
-          <div class="msg" style="font-size:2em">
+          <div class="msg" >
             <%=t('search.loading')%>
           </div>
           <%= render :partial => 'layouts/loading'%>

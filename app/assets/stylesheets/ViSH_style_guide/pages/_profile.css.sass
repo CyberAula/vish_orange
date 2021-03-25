@@ -58,7 +58,7 @@
           h1
             margin-top: 0
             color: $brand-primary
-            font-family: $corporate-font-family-sans-serif-Medium
+            font-family: $corporate-font-family-sans-serif-Extrabold
             word-wrap: break-word
         .description
           color: $black
@@ -92,6 +92,7 @@
             td
               &:first-child
                 padding-left: 0
+
               @media (max-width: $screen-xs-max)
                 &:first-child
                   display: block
@@ -104,7 +105,6 @@
                 @media (max-width: $screen-xs-max)
                   display: block
                   text-align: center
-                  font-size: 1.2em
             .panel-body
               padding: $zero
               div.ocupation
@@ -137,10 +137,13 @@
               @media (max-width: $screen-xs-max)
                 form
                   width: 100%
+                  .btn, input
+                    width: 100%
+
               div
                 .follow-button
                   padding: 6px 9px
-                  width: 120px
+                  width: 72px
 
                 .follow-button,
                 .unfollow-button
@@ -149,7 +152,7 @@
                   max-height: 34px
                   @media (max-width: $screen-xs-max)
                     @include border-right-radius ($border-radius-base)
-                    //width: 100%
+                    width: 100%
                 input
                   &[type="submit"]
                     padding: 6px 9px
@@ -164,7 +167,9 @@
               min-height: 34px
               max-height: 34px
               a
-                color: $black
+                color: inherit
+                &:hover, &:focus, &:active
+                  color: inherit
               @media (max-width: $screen-xs-max)
                 width: 100% !important
                 clear: both
@@ -212,12 +217,13 @@
       @media (max-width: $screen-xs-max)
         padding: 0
       label
-        font-size: 0.9em
-        font-family: $corporate-font-family-sans-serif-Light
-        color: $brand-primary
+        font-size: 1.1em
+        font-family: $corporate-font-family-sans-serif-Extrabold
+        color: $black
         display: block
         clear: both
-        margin-top: 12px
+        margin-top: 10px
+        margin-top: 8px
 
       input,
       textarea
@@ -285,4 +291,6 @@
   .order_by_txt
     color: $black
     margin-right: 5px
-    font-size: 0.9em
+    font-weight: 900
+    font-family: $corporate-font-family-sans-serif-Extrabold
+    //font-size: 0.9em
