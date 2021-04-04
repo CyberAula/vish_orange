@@ -1013,6 +1013,8 @@ es:
       show_resource: "Ver recurso"
       scorm: "scorm"
       spam: "Notificar"
+      scorm12: "SCORM 1.2"
+      scorm2004: "SCORM 2004"
     all: "todos"
     description: "descripción"
     detail: "Detalles"
