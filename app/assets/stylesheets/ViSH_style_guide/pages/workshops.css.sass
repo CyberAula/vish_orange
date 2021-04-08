@@ -69,7 +69,7 @@
         margin: 0
         font-weight: 500
         font-size: 2em
-        color: $gray-darker
+        color: $black
       .briefing
         .left-info
           .author_name
@@ -99,13 +99,15 @@
     &:last-child
       @include border-top-radius ($border-radius-base)
     &:first-child
-      border-bottom: 1px solid $gray-dark
+      border-bottom: 1px solid $black
     .box_description
       padding: 20px 30px
       min-height: 0
       margin-bottom: 0
       .nav-tabs
         margin-bottom: 20px
+        li.active a
+          padding-left: 5px
       .tab-content
         width: 100%
     table
@@ -141,7 +143,7 @@
       .description
         white-space: pre-wrap
         margin: 10px 0
-        color: $orange-gray-75
+        color: $black
 
 //+++++++++++++++ WORKSHOP EDIT
 
@@ -161,12 +163,12 @@
         margin: 10px 0 0 0
         font-weight: 500
         font-size: 2em
-        color: $orange-gray-50
+        color: $black
         @media (max-width: $screen-xs-max)
           margin-top: 1px
     .wa_activity_wrapper,
     .wa_add_activity_wrapper
-      border: 2px dashed #999
+      border: 2px dashed #000
       .title_WS
         margin-bottom: 15px
     .wa_activity_wrapper
@@ -174,9 +176,9 @@
       float: none
     .wa_add_activity_wrapper
       height: auto
-      color: $gray
+      color: $black
       a
-        color: $gray
+        color: $black
         font-size: 1.3em
         font-family: $font-family-sans-serif-titles
       p
@@ -283,6 +285,8 @@
     padding-bottom: 0
     background-color: $white
     margin: 0 -1%
+    button
+      color: black
     button.btn-default
       margin-top: 0 !important
       margin-right: 10px
@@ -385,7 +389,7 @@ ul.workshop_activities_list_edit
         margin-top: 0
       i
         font-size: 18px
-        color: $gray
+        color: $black
         cursor: pointer
         text-align: center
         padding-top: 5px
@@ -457,6 +461,7 @@ ul.workshop_activities_list_edit
     margin-right: 10px
     opacity: 1 !important
     position: relative !important
+    vertical-align: bottom
   .assignment_dates
     width: 70%
     margin: 0px 20px

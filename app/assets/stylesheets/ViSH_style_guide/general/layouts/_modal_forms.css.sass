@@ -104,10 +104,8 @@
       overflow: hidden
       margin-bottom: 10px
     li.tagit-choice
-      background: gray
-      @include border-top-radius (3px)
-      @include border-bottom-radius (3px)
-      color: #FFFFFF
+      background: $gray-light
+      color: black
       cursor: pointer
       display: block
       float: left
@@ -150,7 +148,7 @@
         padding-left: 10px
   .modal-footer
     button
-      color: white
+      color: black
       background-color: $brand-primary
 
 //--------------------------
@@ -361,3 +359,29 @@
         margin-top: 0
         .btn
           float: right
+
+/// Popover
+.popover
+  background-color: white
+  color: black
+  border: none
+  p, .popover-content
+    color: black
+  .popover-title
+    background-color: white
+    font-weight: bolder
+    font-family: $corporate-font-family-sans-serif-Extrabold
+    color: black
+  .btn-primary
+    color: black !important
+  .btn_cancel
+    color: white !important
+    background-color: black
+  &.right > .arrow:after 
+    border-right-color: white
+  &.bottom > .arrow :after
+    border-bottom-color: white
+  &.top > .arrow:after
+    border-top-color: white
+  &.left > .arrow:after
+    border-left-color: white

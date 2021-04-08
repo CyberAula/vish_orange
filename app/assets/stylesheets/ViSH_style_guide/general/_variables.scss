@@ -37,7 +37,7 @@ $red_favorites: #ff4d4d;
 $orange-primary:        rgb(255, 121, 0) ;
 $orange-gray-50:        #808080 ;
 
-$orange-gray-25:        #CCCCCC ;
+$orange-gray-25:        #bababa ;
 $orange-gray-45:        #999999 ;
 $orange-gray-75:        #666666 ;
 
@@ -259,7 +259,7 @@ $input-border-radius:            $border-radius-base !default;
 $input-border-focus:             #66afe9 !default;
 
 //** Placeholder text color
-$input-color-placeholder:        $gray-light !default;
+$input-color-placeholder:        $orange-gray-25 !default;
 
 //** Default `.form-control` height
 $input-height-base:              ($line-height-computed + ($padding-base-vertical * 1) + 1) !default;
