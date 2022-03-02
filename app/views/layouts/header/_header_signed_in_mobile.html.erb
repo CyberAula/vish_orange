@@ -28,19 +28,11 @@
     </a>
   </li>
 
-  <!--message-->
-  <li class="">
-    <%= link_to messages_path do %>
-      <i class="fa fa-envelope"></i>
-      <%= t('header-mobile.messages') %>
-    <% end %>
-  </li>
-
   <!--courses-->
   <%if (availableModels.include? "Course") %>
     <li class="">
       <%= link_to "/users/"+current_subject.slug+"/courses" do %>
-          <i class="fa fa-graduation-cap"></i>
+          <i class=""></i>
           <span><%= t('course.my') %></span>
       <% end %>
     </li>
@@ -49,31 +41,52 @@
   <!--profile-->
   <li class="settings-menu">
     <%= link_to settings_path do %>
-    <i class="fa fa-cog"></i>
+    <i class=""></i>
     <%= t('header-mobile.settings') %>
     <% end %>
   </li>
 
-  <!--lang-->
-  <li class="dropdown language">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="fa fa-flag-checkered"></i>
-      <%= t('header-mobile.language') %>
-      <i class="fa fa-angle-down"></i>
+  <li>
+    <a href="/">
+      <i class=""></i>
+      <%= t('orange_front.header.index') %>
     </a>
-    <ul class="dropdown-menu">
-      <% for locale in (I18n.available_locales) -%>
-       <li class="">
-          <%= link_to image_tag("flags/" + locale.to_s + ".png", :title=>locale.to_s, :class=> "") + " " + t(:language_name, :locale => locale.to_s), session_locale_path(:new_locale => locale.to_s), :method => :post, :remote => false %>
-        </li>
-      <% end %>
-    </ul>
+  </li>
+
+  <li>
+    <a href="/explore">
+      <i class=""></i>
+      <%= t('orange_front.header.explore') %>
+    </a>
+  </li>
+
+  <li>
+    <a href="/search">
+      <i class=""></i>
+      <%= t('orange_front.header.repo') %>
+    </a>
+  </li>
+
+
+  <li>
+    <a href="/courses">
+      <i class=""></i>
+      <%= t('orange_front.header.courses') %>
+    </a>
+  </li>
+
+
+  <li>
+    <a href="/about">
+      <i class=""></i>
+      <%= t('orange_front.header.about') %>
+    </a>
   </li>
 
   <!--legal_notice-->
   <li>
     <a href="/legal_notice">
-      <i class="fa fa-legal"></i>
+      <i class=""></i>
       <%= t('header-mobile.terms') %>
     </a>
   </li>
@@ -81,7 +94,7 @@
   <!--manual-->
   <li>
     <%= link_to faq_path do %>
-      <i class="fa fa-question-circle"> </i> <%=t('header-mobile.help')%>
+      <i class=""> </i> <%=t('header-mobile.help')%>
     <% end %>
   </li>
 

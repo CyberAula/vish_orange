@@ -19,6 +19,13 @@
       <!--______________________________desktop-->
       <div class=" hidden-phone hidden-tablet">
         <!-- MENU -->
+        <ul class="nav navbar-nav float_L" id="new-menu">
+          <li class="olink"><a href="/" class="<%=current_page?("/") ? "active" : ""%>"><%= t('orange_front.header.index')%></a></li>
+          <li class="olink"><a href="/explore" class="<%=current_page?("/explore") ? "active" : ""%>"><%= t('orange_front.header.explore')%></a></li>
+          <li class="olink"><a href="/search" class="<%=current_page?("/search") ? "active" : ""%>"><%= t('orange_front.header.repo')%></a></li>
+          <li class="olink"><a href="/courses" class="<%=current_page?("/courses") ? "active" : ""%>"><%= t('orange_front.header.courses')%></a></li>
+          <li class="olink"><a href="/about" class="<%=current_page?("/about") ? "active" : ""%>"><%= t('orange_front.header.about')%></a></li>
+        </ul>
         <ul class="nav navbar-nav float_R" id="main_menu">
           <!-- Help button
           <li class=" dropdown toggler ">
@@ -48,13 +55,7 @@
             </ul>
           </li>
 
-          <% if Vish::Application.config.registrations %>
-            <a class="linker" href="<%=new_user_registration_url(:protocol => protocol)%>">
-            <button class="btn btn-primary">
-              <%=t("sign_up")%>
-            </button>
-            </a>
-          <%end%>
+          
           <% if Vish::Application.config.only_cas %>
           <a type="button" id="drop3" href="<%=user_session_path%>">
               <button class="btn btn-secondary margin_5_left">

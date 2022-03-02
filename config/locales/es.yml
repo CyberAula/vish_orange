@@ -308,6 +308,10 @@ es:
 
     header:
       index: "Inicio"
+      explore: "Explorar"
+      about: "Acerca de"
+      repo: "Repositorio"
+      courses: "Cursos"
       comunity: "Comunidad"
       contest: "Concurso"
       ensena: "Enseña"

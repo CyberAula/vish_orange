@@ -12,6 +12,34 @@
   @media (max-width: 768px)
     padding: 12px 0
     height: 55px
+  #new-menu
+    height: 40px
+    margin-top: 2rem
+    margin-left: 1rem
+    .olink
+      font-size: 1.65em
+      border: 0
+      color: #fff
+      font-weight: 700
+      a
+        color: #fff
+        &:hover, &:focus, &:active
+          background-color: #000
+          color: #ff7900 !important
+      a.active
+        background-color: #000
+        color: #ff7900 !important
+        &:before
+          bottom: -1.15rem
+          position: absolute
+          right: 0.625rem
+          left: 0.625rem
+          height: 0.25rem
+          content: ""
+          background-color: #ff7900
+          transition: bottom .2s ease-in-out
+
+
 
   .container-fluid,  .container
     height: 100%
@@ -34,15 +62,10 @@
       .logo
         color: $white
         font-weight: 200
-        outline: none
-        @media (max-width: 768px)
-          display: none
+        outline: none        
         .logo_bold
           font-family: $font-family-sans-serif-titles
-      .logo_img
-        //display: none
-        @media (max-width: 768px)
-          display: block
+      
     #main_menu
       margin-top: 1.5625rem
     .hidden-phone

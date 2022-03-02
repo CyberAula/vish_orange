@@ -25,6 +25,13 @@
       <a href="/" class="logo <%='logo-home' if front_or_home%>">Educa<span class="logo_bold">Internet</span></a>
     </div>
     <div class="hidden-phone hidden-tablet">
+      <ul class="nav navbar-nav float_L" id="new-menu">
+          <li class="olink"><a href="/" class="<%=current_page?("/") || current_page?("/home") ? "active" : ""%>"><%= t('orange_front.header.index')%></a></li>
+          <li class="olink"><a href="/explore" class="<%=current_page?("/explore") ? "active" : ""%>"><%= t('orange_front.header.explore')%></a></li>
+          <li class="olink"><a href="/search" class="<%=current_page?("/search") ? "active" : ""%>"><%= t('orange_front.header.repo')%></a></li>
+          <li class="olink"><a href="/courses" class="<%=current_page?("/courses") ? "active" : ""%>"><%= t('orange_front.header.courses')%></a></li>
+          <li class="olink"><a href="/about" class="<%=current_page?("/about") ? "active" : ""%>"><%= t('orange_front.header.about')%></a></li>
+        </ul>
 
       <!-- MENU -->
       <ul class="nav navbar-nav float_R" id="main_menu">

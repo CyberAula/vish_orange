@@ -24,20 +24,28 @@
             </label>
           </div>
           <%= f.submit t(:sign_in), :class => 'btn btn-primary btn_ok'%>
-          <div class="remember_password">
-            <%=link_to t('devise.links.forgot_password'), new_password_path(:user)%>
-          </div>
-  <% end %>
+            <div class="remember_password">
+              <%=link_to t('devise.links.forgot_password'), new_password_path(:user)%>
+            </div>
+          <% end %>          
 
-        <%content_for :javascript do%>
-              if ("placeholder" in document.createElement("input")) {
-                $("#username_mobile").attr('placeholder', I18n.t('activerecord.attributes.user.email'));
-                $("#password_mobile").attr('placeholder', I18n.t('activerecord.attributes.user.password'));
-              } else {
-                $("#username_mobile").watermark(I18n.t('activerecord.attributes.user.email'),"#666");
-                $("#password_mobile").watermark(I18n.t('activerecord.attributes.user.password'),"#666");
-              }
-        <% end %>
+            <%content_for :javascript do%>
+                  if ("placeholder" in document.createElement("input")) {
+                    $("#username_mobile").attr('placeholder', I18n.t('activerecord.attributes.user.email'));
+                    $("#password_mobile").attr('placeholder', I18n.t('activerecord.attributes.user.password'));
+                  } else {
+                    $("#username_mobile").watermark(I18n.t('activerecord.attributes.user.email'),"#666");
+                    $("#password_mobile").watermark(I18n.t('activerecord.attributes.user.password'),"#666");
+                  }
+            <% end %>
+          <% if Vish::Application.config.registrations %>
+            <!--sign_up-->
+            <div class="remember_password">
+              <a href="<%=new_user_registration_url(:protocol=>protocol)%>"class="signin">
+                <%=t("sign_up")%>
+              </a>
+            </div>
+          <% end %>
       </ul>
     </li>
   <% else %>
@@ -52,35 +60,47 @@
     <%= render partial: 'layouts/search_mobile' %>
   </li>
 
-  <% if Vish::Application.config.registrations %>
-    <!--sign_up-->
-    <li class="sign_up_mobile">
-      <a href="<%=new_user_registration_url(:protocol=>protocol)%>"class="signin">
-        <%=t("sign_up")%>
-      </a>
-    </li>
-  <% end %>
-
-<!--lang-->
-  <li class="dropdown language">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="fa fa-flag-checkered"></i>
-      <%= t('lang.title') %>
-      <i class="fa fa-angle-down"></i>
+  <li>
+    <a href="/">
+      <i class=""></i>
+      <%= t('orange_front.header.index') %>
     </a>
-    <ul class="dropdown-menu">
-      <% for locale in (I18n.available_locales) -%>
-       <li class="">
-          <%= link_to image_tag("flags/" + locale.to_s + ".png", :title=>locale.to_s, :class=> "") + " " + t(:language_name, :locale => locale.to_s), session_locale_path(:new_locale => locale.to_s), :method => :post, :remote => false %>
-        </li>
-      <% end %>
-    </ul>
+  </li>
+
+  <li>
+    <a href="/explore">
+      <i class=""></i>
+      <%= t('orange_front.header.explore') %>
+    </a>
+  </li>
+
+  <li>
+    <a href="/search">
+      <i class=""></i>
+      <%= t('orange_front.header.repo') %>
+    </a>
+  </li>
+
+
+  <li>
+    <a href="/courses">
+      <i class=""></i>
+      <%= t('orange_front.header.courses') %>
+    </a>
+  </li>
+
+
+  <li>
+    <a href="/about">
+      <i class=""></i>
+      <%= t('orange_front.header.about') %>
+    </a>
   </li>
 
   <!--legal_notice-->
   <li>
     <a href="/legal_notice">
-      <i class="fa fa-legal"></i>
+      <i class=""></i>
       <%= t('conditions.other') %>
     </a>
   </li>
@@ -88,7 +108,7 @@
   <!--manual-->
   <li>
     <%= link_to help_path do %>
-      <i class="fa fa-question-circle"> </i> <%=t('help').capitalize%>
+      <i class=""> </i> <%=t('help').capitalize%>
     <% end %>
   </li>
 </ul>
