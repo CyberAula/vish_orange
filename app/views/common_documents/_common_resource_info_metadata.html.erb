@@ -148,17 +148,20 @@
         <table class="table table-hover">
             <!--language-->
             <% unless resource.readable_language.blank? %>
+            <tr>
               <td><span><%= t('lang.title').capitalize %></span></td>
               <td><%= resource.readable_language %></td>
+            </tr>
             <% end %>
-          </tr>
+          
 
           <% if resource.respond_to?("attachment") and !resource.attachment.blank? %>
            <tr>
             <td><span><%= t('excursion.actions.attachment') %></span></td>
-          <td>
+            <td>
             <a href="/excursions/<%= resource.id %>/attachment"><%= resource.get_attachment_name %></a>
-           <tr>
+           </td>
+           </tr>
           <% end %>
           <tr>
             <!--date-created-->
@@ -189,7 +192,7 @@
       <!--metadata-->
       <% displayMetadata = resource.respond_to?("metadata") %>
       <% if displayMetadata %>
-        <button href="#MetadataModal" id="showMeta" data-toggle="modal" class="btn btn-secondary">
+        <button href="#MetadataModal" id="showMeta" data-toggle="modal" class="btn btn-default" style="border: 2px solid black;">
           <%=t('excursion.actions.show_meta')%>
         </button>
       <%end%>

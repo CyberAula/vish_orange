@@ -61,6 +61,7 @@
         @extend .btn
         @extend .btn-default
         width: 30px
+        font-family: 'FontAwesome'
     .message
       padding: 10px
       border-bottom: 1px solid $border-color
@@ -96,7 +97,7 @@
     min-height: 65px
     margin-bottom: 2px
     padding: 14px 15px 10px
-    border-bottom: 1px solid $gray-light
+    border-bottom: 1px solid $black
     background: rgba(255, 255, 255, 0.42)
     .content_left
       @include make-xs-column(12, $gutter: $grid-gutter-width)
@@ -123,7 +124,7 @@
           @media (max-width: $screen-xs-min)
             width: auto
         .date
-          color: $gray
+          color: $black
           font-size: 11px
     .content_right
       display: inline-block
@@ -131,7 +132,7 @@
       @include make-sm-column(9, $gutter: $grid-gutter-width)
       @include make-md-column(9, $gutter: $grid-gutter-width)
       @include make-lg-column(9, $gutter: $grid-gutter-width)
-      color: $gray
+      color: $black
       @media (max-width: $screen-sm-min)
         margin: 10px 0 0
         padding-left: $zero
@@ -145,10 +146,10 @@
             text-decoration: none
       .briefing
         @include text-overflow
-        color: $gray
+        color: $black
         font-family: $corporate-font-family-sans-serif-Light
       .date
-        color: $gray
+        color: $black
     .action
       position: absolute
       right: 5px
@@ -158,6 +159,7 @@
         @extend .btn
         @extend .btn-default
         width: 30px
+        font-family: 'FontAwesome'
       @media (max-width: $screen-sm-min)
         top: -30px
 
@@ -177,7 +179,7 @@
     margin-top: -20px
   .notifications
     margin-top: 35px
-    color: $gray
+    color: $black
     .notification
       margin-bottom: 20px
 
@@ -186,7 +188,7 @@
   margin-top: 18px
   padding: 0px 15px 49px
   .answer
-    color: $gray
+    color: $black
   textarea
     width: 100%
   .cleditorMain

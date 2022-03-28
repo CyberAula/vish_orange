@@ -10,11 +10,11 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 //
 //## Gray and brand colors for use across Bootstrap.
 $black:                  #000000;
-$gray-darker-extra:      #333333;
-$gray-darker:            #353535;
-$gray-dark:              #5E5E5E;
+$gray-darker-extra:      #000000;
+$gray-darker:            #000000;
+$gray-dark:              #000000;
 $gray:                   #9B9B9B;
-$gray-light:             #C7C7C7;
+$gray-light:             #E7E7E7;
 $gray-lighter:           #E7E7E7;
 $gray-lighter-extra:     #EDEDED;
 $white:                  #FFFFFF;
@@ -37,7 +37,7 @@ $red_favorites: #ff4d4d;
 $orange-primary:        rgb(255, 121, 0) ;
 $orange-gray-50:        #808080 ;
 
-$orange-gray-25:        #CCCCCC ;
+$orange-gray-25:        #bababa ;
 $orange-gray-45:        #999999 ;
 $orange-gray-75:        #666666 ;
 
@@ -48,10 +48,10 @@ $orange-gray-75:        #666666 ;
 
 $brand-primary:          $orange-primary;
 //$brand-primary:          #E90055 !default;
-$brand-primary-2:        #007cc8;
+$brand-primary-2:        #F16E00;
 
 //$brand-secundary:        #008FD1 !default;
-$brand-secundary:        #008FD1 !default;
+$brand-secundary:        #ffffff !default;
 
 $brand-success:          #5cb85c !default;
 $brand-info:             #5bc0de !default;
@@ -68,12 +68,12 @@ $auxiliarColor:          $white;
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #E7E7E7 !default;
+$body-bg:               #ffffff !default;
 //** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-secundary !default;
+$link-color:            $brand-primary-2 !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 10%) !default;
 //** General color for borders.
@@ -85,28 +85,28 @@ $timeline-panel-border:  lighten($border-color, 16%) !default;
 //== Typography
 
 //Orange Helvetica Neue
-$OrangeBolder: 'OHN75';
-$OrangeBold: 'OHN65';
-$OrangeRegular: 'OHN55';
-$OrangeLight: 'OHN45';
-$OrangeLighter: 'OHN35';
+$OrangeBolder: 'HelvNeueOrange75';
+$OrangeBold: 'HelvNeueOrange55';
+$OrangeRegular: 'HelvNeueOrange';
+$OrangeLight: 'HelvNeueOrange';
+$OrangeLighter: 'HelvNeueOrange';
 
 
 //## Font, line-height, and color for body text, headings, and more.
-$corporate-font-family-sans-serif-Light:          "opensans-light", Arial, sans-serif;
-$corporate-font-family-sans-serif-Regular:        "opensans-regular", Arial, sans-serif;
-$corporate-font-family-sans-serif-Medium:         "opensans-semibold", Arial, sans-serif;
-$corporate-font-family-sans-serif-Bold:           "opensans-bold", Arial, sans-serif;
-$corporate-font-family-sans-serif-Extrabold:      "opensans-extrabold", Arial, sans-serif;
+$corporate-font-family-sans-serif-Light:          "HelvNeueOrange","opensans-light", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-Regular:        "HelvNeueOrange","opensans-regular", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-Medium:         "HelvNeueOrange55","opensans-semibold", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-Bold:           "HelvNeueOrange55","opensans-bold", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-Extrabold:      "HelvNeueOrange75","opensans-extrabold", Helvetica Neue, Helvetica, Arial, sans-serif;
 
-$corporate-font-family-sans-serif-LightItalic:          "opensans-lightItalic", Arial, sans-serif;
-$corporate-font-family-sans-serif-RegularItalic:        "opensans-regularItalic", Arial, sans-serif;
-$corporate-font-family-sans-serif-MediumItalic:         "opensans-semiboldItalic", Arial, sans-serif;
-$corporate-font-family-sans-serif-BoldItalic:           "opensans-boldItalic", Arial, sans-serif;
-$corporate-font-family-sans-serif-ExtraboldItalic:      "opensans-extraboldItalic", Arial, sans-serif;
+$corporate-font-family-sans-serif-LightItalic:          "HelvNeueOrange","opensans-lightItalic", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-RegularItalic:        "HelvNeueOrange","opensans-regularItalic", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-MediumItalic:         "HelvNeueOrange55","opensans-semiboldItalic", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-BoldItalic:           "HelvNeueOrange55","opensans-boldItalic", Helvetica Neue, Helvetica, Arial, sans-serif;
+$corporate-font-family-sans-serif-ExtraboldItalic:      "HelvNeueOrange75","opensans-extraboldItalic", Helvetica Neue, Helvetica, Arial, sans-serif;
 
 $font-family-sans-serif:               $corporate-font-family-sans-serif-Regular;
-$font-family-sans-serif-titles:        "Helvetica Neue",Helvetica,sans-serif;
+$font-family-sans-serif-titles:        "HelvNeueOrange75","Helvetica Neue",Helvetica, Arial, sans-serif;
 
 //## Font for FI-WARE style guide docs .
 $handwrite-font:         "Desyrel", sans-serif;
@@ -168,7 +168,7 @@ $line-height-small:         1.5 !default;
 
 $border-radius-zero:        0px !default;
 $border-radius-base:        0px !default;
-$border-radius-large:       6px !default;
+$border-radius-large:       0px !default;
 $border-radius-small:       0px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -259,7 +259,7 @@ $input-border-radius:            $border-radius-base !default;
 $input-border-focus:             #66afe9 !default;
 
 //** Placeholder text color
-$input-color-placeholder:        $gray-light !default;
+$input-color-placeholder:        $orange-gray-25 !default;
 
 //** Default `.form-control` height
 $input-height-base:              ($line-height-computed + ($padding-base-vertical * 1) + 1) !default;
@@ -455,15 +455,15 @@ $nav-disabled-link-hover-color:             $gray-light !default;
 $nav-open-link-hover-color:                 $white !default;
 
 //== Tabs
-$nav-tabs-border-color:                     $border-color !default;
+$nav-tabs-border-color:                     $black !default;
 
-$nav-tabs-link-hover-border-color:          $border-color !default;
+$nav-tabs-link-hover-border-color:          $brand-primary !default;
 
 $nav-tabs-active-link-hover-bg:             darken($brand-primary, 5%) !default;
 $nav-tabs-active-link-hover-color:          $white !default;
-$nav-tabs-active-link-hover-border-color:   $gray-light !default;
+$nav-tabs-active-link-hover-border-color:   $brand-primary !default;
 
-$nav-tabs-justified-link-border-color:            $gray-light !default;
+$nav-tabs-justified-link-border-color:            $brand-primary !default;
 $nav-tabs-justified-active-link-border-color:     $body-bg !default;
 
 //== Pills
@@ -499,7 +499,7 @@ $pagination-disabled-border:           $gray-light !default;
 
 $pager-bg:                             $pagination-bg !default;
 $pager-border:                         $pagination-border !default;
-$pager-border-radius:                  15px !default;
+$pager-border-radius:                  0px !default;
 
 $pager-hover-bg:                       $pagination-hover-bg !default;
 
@@ -725,7 +725,7 @@ $panel-border-radius:         $border-radius-base !default;
 
 //** Border color for elements within panels
 $panel-inner-border:          $border-color !default;
-$panel-footer-bg:             $gray-lighter !default;
+$panel-footer-bg:             $black !default;
 
 $panel-default-text:          $gray-darker !default;
 $panel-default-border:        #e2e2e2 !default;
@@ -897,7 +897,7 @@ $break-3: (992 / 14) * 1em;          // 979px  -  Desktop up
 $break-4: (1200 / 14) * 1em;          // 1200px  -  Large desktop up
 
 // Root font-sizes. Set to half desired line-height of body text.
-$rootsize-0: 9;                      // 24px line-height body text
+$rootsize-0: 10;                      // 24px line-height body text
 $rootsize-1: 11;                      // 28px line-height body text
 $rootsize-2: 12;                      // 30px line-height body text
 $rootsize-3: 14;                      // 34px line-height body text

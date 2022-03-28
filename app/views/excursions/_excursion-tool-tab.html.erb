@@ -142,7 +142,7 @@
     </button>
 
     <div class="contenttranslate" style="display: none">
-      <p class=""><img src="/assets/icons/icoEdiphy_white_24px.svg" style="height:22px;width:22px;">  <%=t('excursion.translate.confirm')%></p>
+      <p class=""><i class="fa fa-th-large"></i>  <%=t('excursion.translate.confirm')%></p>
       <div class="actions">
         <a class="btn btn_cancel closepopover"><%=t('cancel')%></a>
         <a class="btn btn-primary" onclick="location.href='<%=excursion_path(@excursion) + '/translate'%>'"><%=t('excursion.translate.confirm_button')%></a>
@@ -281,11 +281,11 @@
     <% if can?(:download_source, @excursion) %>
       <!-- tab4 / scorm -->
       <div class="tab-pane contentscorm" id="exc_scorm">
-        <div class="contentscormc1">
-          <a class="btn btn-secundary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "12")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm12')%></a>
-          <a class="btn btn-secundary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "2004")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm2004')%></a>
-        </div>
         <div class="contentscormc2">
+          <div class="contentscormc1">
+            <a class="btn btn-secondary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "12")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm12')%></a>
+            <a class="btn btn-secondary" href='<%=excursion_path(@excursion, :format => "scorm", :version => "2004")%>'><i class="fa fa-download"></i> <%=t('excursion.actions.scorm2004')%></a>
+          </div>
           <p><%=t("excursion.download_scorm")%></p>
         </div>
       </div>

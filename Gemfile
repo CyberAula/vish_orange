@@ -54,6 +54,8 @@ gem 'rack-cache', '=1.6.1'
 gem 'ffi', '=1.9.10'
 gem 'ttfunk', '=1.4.0'
 gem 'redis-namespace', '=1.5.3'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
 
 #Gems from Git repositories
 gem 'delegates_attributes_to', :git => 'git://github.com/pahanix/delegates_attributes_to.git', :ref => '69704cb'

@@ -1,0 +1,93 @@
+<% default_sort_by = profile_subject_is_current? ? "updated_at" : "popularity"%>
+<% icon = profile_subject_is_current? ? "pencil" : "dashboard"%>
+
+<div class="toolbar_nav-tab">
+  <div class="dropdown order_by_selector" id="order_by_selector_ediphy_documents" li_selected="<%=default_sort_by%>">
+    <span class="order_by_txt"><%= t('order_by.title')%></span>
+    <button class="btn btn-secondary dropdown-toggle"  type="button" id="dropdownMenuOrdByEdiphydocuments" data-toggle="dropdown">
+
+      <i class="fa fa-<%=icon%>"></i> <span><%=t('order_by.'+ default_sort_by)%></span>
+      <i class="fa fa-angle-down"></i>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li>
+          <a href="#" onclick="ediphy_documents_dropdown_select('popularity');" sort-by-key='popularity'>
+            <i class="fa fa-dashboard"></i>
+            <span><%=t('order_by.popularity')%> </span>
+          </a>
+      </li>
+      <li>
+        <a href="#" onclick="ediphy_documents_dropdown_select('updated_at');" sort-by-key='updated_at'>
+          <i class="fa fa-pencil"></i>
+          <span><%=t('order_by.updated_at')%> </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="ediphy_documents_dropdown_select('created_at');" sort-by-key='created_at'>
+          <i class="fa fa-bolt"></i>
+          <span><%=t('order_by.created_at')%> </span>
+        </a>
+      </li>
+      <li>
+          <a href="#" onclick="ediphy_documents_dropdown_select('quality');" sort-by-key='quality'>
+            <i class="fa fa-check-square"></i>
+            <span><%=t('order_by.quality')%> </span>
+          </a>
+      </li>
+      <li>
+          <a href="#" onclick="ediphy_documents_dropdown_select('visits');" sort-by-key='visits'>
+            <i class="fa fa-eye"></i>
+            <span><%=t('order_by.visits')%> </span>
+          </a>
+      </li>
+      <li>
+          <a href="#" onclick="ediphy_documents_dropdown_select('favorites');" sort-by-key='favorites'>
+            <i class="fa fa-heart"></i>
+            <span><%=t('order_by.favorites')%> </span>
+          </a>
+      </li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<%= content_for :javascript do %>
+
+  var param = "<%=params[:sort_by]%>";
+
+  if(param && param!=""){
+    if(param=="ranking"){
+      param = "popularity";
+    }
+    var value = $("#order_by_selector_ediphy_documents .dropdown-menu [sort-by-key="+param+"]").html();
+    $("#dropdownMenuOrdByediphy_documents").html(value + '<i class="fa fa-angle-down"></i>');
+  }
+
+<%end%>
+
+<script>
+var ediphy_documents_dropdown_select = function(option) {
+  $("#ediphy_documents_tab_ready").html("");
+  $('.loader_pagination').show();
+  $.ajax({
+      type : "GET",
+      url : "<%= user_url(profile_subject) %>/ediphy_documents?sort_by=" + option,
+      success : function(html) {
+        console.log(html)
+        $("#order_by_selector_ediphy_documents").attr("li_selected", option);
+        var value = $("#order_by_selector_ediphy_documents .dropdown-menu [sort-by-key="+option+"]").html();
+        $("#dropdownMenuOrdByEdiphydocuments").html(value + '<i class="fa fa-angle-down"></i>');
+        $('.loader_pagination').hide();
+        $("#ediphy_documents_tab_ready").append(html);
+        re_apply_pageless("ediphy_documents");
+        console.log("correct loading ediphy_documents");
+      },
+      error: function(){
+        console.log("error loading ediphy_documents");
+     }
+    });
+  console.log("jkjkjk")
+  return false;
+}
+
+</script>

@@ -7,7 +7,7 @@
 
   #profile-info
     @include well
-    @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+    // @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
     position: relative
     margin-bottom: 15px
     float: left
@@ -57,11 +57,11 @@
           float: left
           h1
             margin-top: 0
-            color: $gray-dark
-            font-family: $corporate-font-family-sans-serif-Medium
+            color: $brand-primary
+            font-family: $corporate-font-family-sans-serif-Extrabold
             word-wrap: break-word
         .description
-          color: $gray
+          color: $black
           font-size: 1.2rem
           word-wrap: break-word
           clear: both
@@ -76,7 +76,9 @@
           display: none
           margin-top: 3px
         .panel
-          @include box-shadow (0 0 0 transparent)
+          // @include box-shadow (0 0 0 transparent)
+          box-shadow: none
+          -webkit-box-shadow: none
           .ocupation
             margin-bottom: -4px
           @media (max-width: $screen-xs-max)
@@ -90,6 +92,7 @@
             td
               &:first-child
                 padding-left: 0
+
               @media (max-width: $screen-xs-max)
                 &:first-child
                   display: block
@@ -102,7 +105,6 @@
                 @media (max-width: $screen-xs-max)
                   display: block
                   text-align: center
-                  font-size: 1.2em
             .panel-body
               padding: $zero
               div.ocupation
@@ -135,10 +137,13 @@
               @media (max-width: $screen-xs-max)
                 form
                   width: 100%
+                  .btn, input
+                    width: 100%
+
               div
                 .follow-button
                   padding: 6px 9px
-                  width: 120px
+                  width: 72px
 
                 .follow-button,
                 .unfollow-button
@@ -147,7 +152,7 @@
                   max-height: 34px
                   @media (max-width: $screen-xs-max)
                     @include border-right-radius ($border-radius-base)
-                    //width: 100%
+                    width: 100%
                 input
                   &[type="submit"]
                     padding: 6px 9px
@@ -162,7 +167,9 @@
               min-height: 34px
               max-height: 34px
               a
-                color: $gray
+                color: inherit
+                &:hover, &:focus, &:active
+                  color: inherit
               @media (max-width: $screen-xs-max)
                 width: 100% !important
                 clear: both
@@ -185,7 +192,7 @@
       background: $white
       border-radius: 5px 5px 0 0
       margin-bottom: 0 !important
-      @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+      // @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
       .ediphy_icon
         height: 14px
         width: 14px
@@ -210,12 +217,13 @@
       @media (max-width: $screen-xs-max)
         padding: 0
       label
-        font-size: 0.9em
-        font-family: $corporate-font-family-sans-serif-Light
-        color: $brand-primary
+        font-size: 1.1em
+        font-family: $corporate-font-family-sans-serif-Extrabold
+        color: $black
         display: block
         clear: both
-        margin-top: 12px
+        margin-top: 10px
+        margin-top: 8px
 
       input,
       textarea
@@ -276,11 +284,13 @@
     label
       display: inline
       span
-        color: $gray-dark
+        color: $black
 
 .order_by_selector
   float: right !important
   .order_by_txt
-    color: gray
+    color: $black
     margin-right: 5px
-    font-size: 0.9em
+    font-weight: 900
+    font-family: $corporate-font-family-sans-serif-Extrabold
+    //font-size: 0.9em

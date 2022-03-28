@@ -2,3 +2,24 @@
   margin-bottom: 10px
   min-height: 34px
 
+.dropdown-menu
+  background: white
+  border: none
+  color: black
+  > li
+    > a
+      background-color: white
+      color: black
+      i
+        color: black
+      &:hover
+        color: white 
+        background-color: black !important
+        i
+          color: white
+    &.disabled
+      display: none
+      > a
+        color: $orange-gray-25
+        i, &:hover, &:hover i
+          color: $orange-gray-25

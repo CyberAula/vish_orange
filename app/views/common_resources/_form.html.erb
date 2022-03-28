@@ -140,7 +140,7 @@
         <section class="license">
           <%= f.label :license_id, t('document.info.license') %>
           <% if resource.license.nil? or resource.license.private? or isNewInstance %>
-            <%= f.select(:license_id, resource_license_options_for_select(resource.license_id, resource.document?), {}, {:class => "resource_license"}) %>
+            <%= f.select(:license_id, resource_license_options_for_select(resource.license_id, resource.document?), {}, {:class => "form-control resource_license"}) %>
           <% else %>
             <span><%= resource.license_name %></span>
           <% end %>

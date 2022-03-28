@@ -2,7 +2,7 @@
 
 <div class="contact-button-single-<%= contact.id %>">
   <% if contact.sent? %>
-    <div class="follow-button">
+    <div class="follow-button btn-xs">
       <%= t('contact.following') %>
     </div>
     <div class="unfollow-button" style="display:none">
@@ -13,7 +13,7 @@
   <% else %>
     <%= form_for contact, remote: true do |f| %>
       <%= f.hidden_field :relation_ids, value: contact.options_for_select.first.last, id: "contact_relation_ids" + contact.id.to_s %>
-      <%= f.submit t('contact.follow') %>
+      <%= f.submit t('contact.follow'), :class=> "btn btn-xs btn-primary" %>
     <% end %>
   <% end %>
 </div>

@@ -346,6 +346,10 @@ Vish.Search = (function(V,undefined){
 
         filter_obj.addClass("search-sidebar-selected");
         var extra_class = "filter_box_" + filter_obj.closest("div.filter_set").attr("filter_type");
+        console.log(filter_obj, extra_class)
+        if (filter_obj && filter_obj.length && filter_obj.attr("filter") === "EdiphyDocument") {
+          extra_class += " filter_box_lo_type_edi"
+        }
         $("#applied_filters").append("<div class='filter_box'><span class='filter_ball "+extra_class+"'>"+filter_content+"</span><div class='filter_box_x' filter_key='"+filter_key+"' filter='"+filter_name+"'>x</div></div>");
 
         //show the related filters

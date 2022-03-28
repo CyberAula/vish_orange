@@ -39,7 +39,7 @@ aside.recomended
         @include conversations
 
 .description-activity
-  @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.1))
+  // @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.1))
   @include well
   @include border-top-radius (0)
   background-color: $white
@@ -63,8 +63,11 @@ aside.recomended
         color: $gray
       .add
         @include follow-profile
-        width: 100%
+        // width: 100%
         height: 20px
+        text-align: left !important
+        form
+          text-align: left !important
 
     .left-info
       @include make-sm-column(4, $gutter: $grid-gutter-width)
@@ -81,7 +84,7 @@ aside.recomended
         margin-top: 3px
       .add
         @include follow-o
-        text-align: left
+        input
         .unfollow-button
           margin: 0
     .panel-group
@@ -103,11 +106,13 @@ aside.recomended
       .table
         border-collapse: none
         span
-          font-family: $corporate-font-family-sans-serif-Medium
+          font-family: $corporate-font-family-sans-serif-Extrabold
           float: right
         tr
           td:first-child
             width: 145px
+            font-weight: bold
+            text-align: right
           td
             border: none
             .vote-help
@@ -138,16 +143,16 @@ aside.recomended
 
 .no_comments
   padding: 10px
-  background-color: $gray-lighter-extra
-  color: $gray-light
+  background-color: #eee
+  color: $black
 
 #comments-show
   .panel-group
     @include comments
 
 .btn-group
-  a
-    color: $gray
+  .btn
+    margin-right: 4px
 .excursion_tool
   .helpheader i
     padding-top: 9px
@@ -169,6 +174,7 @@ aside.recomended
     button
       border: none
       background: transparent
+      min-width: initial
       &:hover
         border: none
 
@@ -185,7 +191,7 @@ aside.recomended
   background-color: rgba(216, 216, 216, 0.9)
   padding: 0
   @include border-top-radius ($border-radius-base)
-  @include box-shadow (0 1px 4px 1px rgba(0, 0, 0, 0.1))
+  // @include box-shadow (0 1px 4px 1px rgba(0, 0, 0, 0.1))
   text-align: center
   .viewerContainer
     width: 100%
@@ -243,6 +249,9 @@ aside.recomended,
     text-align: center
     width: auto
     display: block
+  .picture_show
+    img
+      display: inline-block
   i
     margin: 20px auto
     font-size: 44px
@@ -365,16 +374,15 @@ aside.recomended,
 
 .slider
   .slider-selection
-    background: $brand-secundary
-  .slider-handle
-    background-color: $brand-secundary
+    background: $brand-primary
+   
 
 input.age-slider
   border: none !important
   color: $white
 
 .slider-track
-  background-color: lighten($brand-primary, 30%)
+  background-color: lighten($brand-primary, 50%)
 
 #repository
   a.btn
@@ -497,7 +505,7 @@ div.resource_common_fields_form
   margin: 0px 4px 0px 0
   .count
     margin-left: 0px
-    font-size: small
+    //font-size: small
 
 .verb_like
   color: $red_favorites !important

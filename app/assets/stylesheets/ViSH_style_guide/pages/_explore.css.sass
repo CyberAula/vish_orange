@@ -15,6 +15,21 @@
     justify-content: center
     button
       margin: 3px
+  .hidden-phone
+      @media (max-width: 768px)
+        display: none
+  .miniaturas_videos
+    overflow: hidden
+    .miniatura_video
+      width: 30%
+      float: left
+      .caja_video
+        position: relative
+        padding-bottom: 56.25%        
+        height: 0
+        overflow: hidden
+    .miniatura2
+        margin: 0 4%
   .entities_imgs
     width: 100%
     overflow: hidden

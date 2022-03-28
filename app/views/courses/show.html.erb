@@ -59,44 +59,10 @@
       <% end %>
 
       <div id="course_button_bar">
-          
+          <h2><%=t('course.message')%><a href="https://orangedigitalcenter.es">https://orangedigitalcenter.es</a></h2>
           <% if !@course.closed %>
-        
-              <%if user_enrolled %>
-                  <a class="btn btn-default" href="<%=@course.moodle_url%>" target="_blank"><%=t('course.actions.go')%></a>
-                  <%= form_for @course, :url => { :action => :leave }, method: "post"  do |f| %>
-                    <%= f.submit t('course.actions.leave'), class: "btn btn-primary" %>
-                  <% end %>
-              <%else%>
-                  <% if @course.end_date.present? && @course.end_date < Date.today %>
-                    <div class=""><%=t('course.msgs.course_ended')%></div>
-                  <% else %>
-                    <% if user_signed_in? %>
-                      <%if !@course.restricted || (@course.restricted && @course.restriction_email.present? && (current_user.email.ends_with? @course.restriction_email) || (@course.restriction_email_list.present? && @course.can_enrol_user_with_mail(current_user.email)))%>
-                        <%= form_for @course, :url => { :action => :join }, method: "post"  do |f| %>
-                          <%= f.submit t('course.actions.enrol'), class: "btn btn-primary" %>
-                        <% end %>
-                      <% elsif @course.restricted && @course.restriction_password.present? %>
-                        <%= form_for @course, :url => { :action => :join }, method: "post"  do |f| %>
-                          <%#= label_tag :password, t('course.fields.enrol_password') + ":" %>
-                          <%= text_field_tag :password, nil, :class => "form-control", :placeholder => t('course.fields.enrol_password') %>
-                          <%= f.submit t('course.actions.enrol'), class: "btn btn-primary" %>
-                        <% end %>
-                      <% elsif @course.restricted && @course.restriction_email.present? && !(current_user.email.ends_with? @course.restriction_email) %>
-                        <div class=""><%=t('course.msgs.only_email')%></div>
-                      <% else %>
-                        <div class=""><%=t('course.msgs.unknown')%></div>
-                      <% end %>
-                    <% else %>
-                      <% if @course.restricted %>
-                        <a href="/users/sign_up"><div class="btn btn-primary"><i class="fa fa-hand-o-up"></i><%=t('course.actions.register')%></div></a>
-                      <% else %>
-                        <a href="/users/sign_up?course=<%=@course.id%>"><div class="btn btn-primary"><i class="fa fa-hand-o-up"></i><%=t('course.actions.register_and_enrol')%></div></a>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-              <%end%>
-          <%end%>
+              <a class="btn btn-default" href="<%=@course.moodle_url%>" target="_blank"><%=t('course.actions.go')%></a>
+          <% end %>
           <% if @course.attachment.exists? %>
             <a href="<%=@course.attachment.url%>" target="_blank" class="btn btn-default pull-right"><i class="fa fa-download"></i><%= t('course.actions.download_sheet') %></a>
           <% end %>

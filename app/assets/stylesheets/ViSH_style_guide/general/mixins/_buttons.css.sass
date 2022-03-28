@@ -2,6 +2,8 @@
   display: inline-block
   margin-bottom: 0 // For input.btn
   font-weight: $btn-font-weight
+  font-weight: bold
+  font-family: $font-family-sans-serif-titles
   text-align: center
   vertical-align: middle
   touch-action: manipulation
@@ -25,6 +27,8 @@
     color: $btn-default-color
     text-decoration: none
     outline: none
+    a 
+      color: $btn-default-color
   &:hover, a
     text-decoration: none
     -moz-transition-property: background-color, color
@@ -38,7 +42,8 @@
   &:active, &.active
     outline: 0
     background-image: none
-    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125))
+    //@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125))
+    @include box-shadow(none)
     &:focus,
     &.focus
       @include tab-focus
@@ -49,34 +54,40 @@
 
 @mixin btn-primary-orange
   background: $brand-primary
-  color: $white
+  color: $black
+  a
+    color: $black
   &:hover,
   &:focus,
   &:active,
   &.active,
   &.disabled,
   &[disabled]
-    background: darken($brand-primary, 20%)
-    color: white
-    @include scale1
+    background: black
+    color: white !important
+    border-color: black
+    // @include scale1
 
 
 @mixin btn-secondary-orange
-  background: $gray-lighter
-  color: $gray-dark
+  background: $white
+  color: $black
+  border: 0.125rem solid $black !important
+  a
+    color: $black
   &:hover,
   &:focus,
   &:active,
   &.active,
   &.disabled,
   &[disabled]
-    background: darken($gray-lighter, 20%)
-    color: $gray-dark
-    @include scale1
+    background: black
+    color: $white
+    // @include scale1
 
 @mixin btn-default-orange
   color: white 
-  background: $gray
+  background: $black
   &:hover,
   &:focus,
   &:active,
@@ -86,10 +97,10 @@
     background: $white
     color: $brand-primary
     border: 1px solid $brand-primary
-    @include scale1
+    // @include scale1
 
 @mixin btn-white-orange
-  color: $gray
+  color: $black
   background: white
   border: 0
   &:hover,
@@ -100,7 +111,7 @@
   &[disabled]
     background: $white
     color: $black
-    @include scale1
+    // @include scale1
 
 
 @mixin btn-contest-orange
@@ -110,7 +121,7 @@
   min-width: 100px
   height: 35px
   margin: 10px
-  @include box-shadow(0 -1px 5px rgba(50,51,51,0.5))
+  // @include box-shadow(0 -1px 5px rgba(50,51,51,0.5))
   &:hover,
   &:focus,
   &:active,
@@ -118,20 +129,21 @@
   &.disabled,
   &[disabled]
     color: $black
-    @include scale1
+    // @include scale1
 
 @mixin follow-profile
-  text-align: center
+  text-align: left
   color: $brand-primary
   font-family: $corporate-font-family-sans-serif-Regular
   form
     @include center-block
-    width: 120px
+    text-align: left
+    // width: 120px
     input
       border: none
       background-color: $brand-primary
       color: $white
-      width: 100%
+      // width: 100%
       margin-top: 0px
       padding: 6px 9px
       max-height: 34px
@@ -145,21 +157,20 @@
         @include border-bottom-radius ($border-radius-base)
   .following-button
     background-color: $gray
-    width: 120px
+    // width: 120px
     margin: 0 auto
     color: $white
     padding: 6px 9px
     @include border-top-radius ($border-radius-base)
     @include border-bottom-radius ($border-radius-base)
   .unfollow-button
-    width: 120px
+    // width: 120px
     margin: 0 auto
     form
       margin: 0px
-      width: 120px
+      // width: 120px
       input
         border: 0px none
-        width: 100%
         background: $brand-secundary
         color: $white
         margin-top: 0px
@@ -177,17 +188,12 @@
     width: 100%
     input
       border: none
-      background-color: transparent
-      color: $brand-primary
-      text-align: left
-      width: 100%
       margin-top: 0px
       padding: 5px 5px 5px 0
+      width: auto
   .following-button
     background-color: transparent
     color: $gray
-    text-align: left
-    width: 100%
     margin-top: 0px
     padding: 5px 5px 5px 0
 
@@ -230,7 +236,7 @@
   a
     padding: 0
   img
-    border-radius: $border-radius-base
+    // border-radius: $border-radius-base
     height: 20px
     width: 20px
     float: left

@@ -7,7 +7,7 @@
   margin-bottom: $line-height-computed
   line-height: $line-height-base
   background-color: $thumbnail-bg
-  @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
+  // @include box-shadow (0 -2px 7px rgba(0, 0, 0, 0.1))
   border-radius: $thumbnail-border-radius
   @include transition(border .2s ease-in-out)
   @media (max-width: 480px)
@@ -79,10 +79,10 @@
 
         @media (max-width: 480px)
           font-size: 44px
-          color: #008FD1
+          color: $brand-primary
           padding-top: 14px
       i.fa-plus, i.fa-upload
-        color: $gray
+        color: $gray-light
       i.fa-webapp-o,
       i.fa-scorm-o,
       i.fa-swf-new
@@ -99,13 +99,14 @@
       a
         display: block
         height: 100%
+        font-weight: 700
     .author
       @include text-overflow
       font-size: 12px
       margin-top: 1px
       a
         text-decoration: none
-        color: $brand-primary-2
+        color: $brand-primary
         cursor: pointer
         //display: block
     .name,
@@ -206,7 +207,7 @@ a.thumbnail.active
   background: transparent !important
   cursor: pointer
   .add_border
-    border: 2px dashed $gray
+    border: 2px dashed $gray-light
     @include border-top-radius ($border-radius-base)
     @include border-bottom-radius ($border-radius-base)
     .container-img
@@ -227,7 +228,6 @@ a.thumbnail.active
     font-size: 18px
     line-height: 22px
     overflow: visible
-    color: $gray
     font-family: $corporate-font-family-sans-serif-Bold
     cursor: pointer
     margin: 0
@@ -235,9 +235,9 @@ a.thumbnail.active
     width: 100%
     word-wrap: break-word
     text-align: center
-    color: $gray !important
+    color: $orange-gray-25 !important
     &:hover
-      color: $gray !important
+      color: $orange-gray-25 !important
   hr
     display: none
 
@@ -269,18 +269,21 @@ a.thumbnail.active
 
 .resource
   .corner-color
-    border-color: $brand-secundary rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)
+    border-color: $black rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)
+  .container-img
+    i
+      color: $black !important
 
 .add-resource
   .add_border
-    border: 2px dashed $brand-secundary !important
+    border: 2px dashed $orange-gray-25 !important
   .container-img
     i
-      color: $brand-secundary !important
+      color: $orange-gray-25 !important
   .name
-    color: $brand-secundary !important
+    color: $orange-gray-25 !important
     &:hover
-      color: $brand-secundary !important
+      color: $orange-gray-25 !important
 
 .ediphy-item
   .corner-color
@@ -295,14 +298,14 @@ a.thumbnail.active
 
 .add-ediphydoc
   .add_border
-    border: 2px dashed $ediphy-color-dark !important
+    border: 2px dashed $orange-gray-25 !important
   .container-img
     i
-      color: $ediphy-color-dark !important
+      color: $orange-gray-25 !important
   .name
-    color: $ediphy-color-dark !important
+    color: $orange-gray-25 !important
     &:hover
-      color: $ediphy-color-dark !important
+      color: $orange-gray-25 !important
 
 
 .categorie-item
@@ -317,47 +320,47 @@ a.thumbnail.active
 .add-categorie
   cursor: pointer
   .add_border
-    border: 2px dashed $brand-primary !important
+    border: 2px dashed $orange-gray-25 !important
   .container-img
     i
-      color: $brand-primary !important
+      color: $orange-gray-25 !important
   .name
-    color: $brand-primary !important
+    color: $orange-gray-25  !important
     &:hover
-      color: $brand-primary !important
+      color: $orange-gray-25 !important
 
 .event
   .corner-color
-    border-color: $gray-dark rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)
+    border-color: $black rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)
   .container-img
     i
-      color: $gray-dark !important
+      color: $black !important
 
 .add-event
   .add_border
-    border: 2px dashed $gray-dark !important
+    border: 2px dashed $orange-gray-25 !important
   .container-img
     i
-      color: $gray-dark !important
+      color: $orange-gray-25 !important
   .name
-    color: $gray-dark !important
+    color: $orange-gray-25 !important
     &:hover
-      color: $gray-dark !important
+      color: $orange-gray-25 !important
 
 .workshop
   .corner-color
     border-color: $gray-darker-extra rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)
   .container-img
     i
-      color: $gray-darker-extra !important
+      color: $gray-light !important
 
 .add-workshop
   .add_border
-    border: 2px dashed $gray-darker-extra !important
+    border: 2px dashed $orange-gray-25 !important
   .container-img
     i
-      color: $gray-darker-extra !important
+      color: $orange-gray-25 !important
   .name
-    color: $gray-darker-extra !important
+    color: $orange-gray-25 !important
     &:hover
-      color: $gray-darker-extra !important
+      color: $orange-gray-25 !important

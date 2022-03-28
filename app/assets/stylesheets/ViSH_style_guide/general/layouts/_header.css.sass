@@ -1,54 +1,86 @@
-
 .navbar-main
-  @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
-  background-color: white
-  position: fixed
+  // @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
+  // position: fixed
+  background-color: black !important
+  color: white
   height: 55px
   font-size: 0.8em
   padding: 10px
   border: 0
   z-index: $zindex-navbar-fixed
   width: 100%
-
-  @media (max-width: 768px)
+  @media (max-width: 925px)
     padding: 12px 0
     height: 55px
-  .container-fluid
+  #new-menu
+    height: 40px
+    margin-top: 2rem
+    margin-left: 1rem
+    .olink
+      font-size: 1.65em
+      border: 0
+      color: #fff
+      font-weight: 700
+      a
+        color: #fff
+        &:hover, &:focus, &:active
+          background-color: #000
+          color: #ff7900 !important
+      a.active
+        background-color: #000
+        color: #ff7900 !important
+        &:before
+          bottom: -1.15rem
+          position: absolute
+          right: 0.625rem
+          left: 0.625rem
+          height: 0.25rem
+          content: ""
+          background-color: #ff7900
+          transition: bottom .2s ease-in-out
+
+
+
+  .container-fluid,  .container
     height: 100%
     .btn-navbar
       padding: 4px 8px
       display: none
       float: right
-      @media (max-width: 768px)
+      @media (max-width: 925px)
         display: block
+        font-size: 30px !important
+        line-height: 40px !important
+        min-width: 60px !important
+        &:hover, &:focus, &:active
+          background: $white
+          color: $black
+          border-color: $white
     .brand
       font-size: 2em
       float: left
       .logo
-        color: #333
+        color: $white
         font-weight: 200
-        outline: none
-        @media (max-width: 768px)
-          display: none
+        outline: none        
         .logo_bold
-          font-family: $OrangeBolder
-      .logo_img
-        display: none
-        @media (max-width: 768px)
-          display: block
-
+          font-family: $font-family-sans-serif-titles
+      
+    #main_menu
+      margin-top: 1.5625rem
     .hidden-phone
-      @media (max-width: 768px)
+      @media (max-width: 925px)
         display: none
       .navbar-nav
         .btn-primary a
           color: white
         .btn-secondary a
-          color: $gray-dark
+          color: black
         .user_name
-          background-color: white
-          border: 1px solid $gray-light
+          background-color: transparent
+          border: 1px solid $black
           padding: 6px
+          color: white
         .dropdown
           float: right
           margin: 0 0 0 5px
@@ -61,9 +93,7 @@
               padding: 0
               a
                 padding: 8px
-                &:hover, &:active,&:focus
-                  //background-color: $gray-darker !important
-                  color: white
+                
               .notification
                 color: $brand-primary
 
@@ -75,17 +105,16 @@
             .checkbox
               display: block
               width: 0
-              color: white
             input[type="email"]
               margin-bottom: 5px
             input[type=checkbox]
               opacity: 1
             a
-              color: gray
+              color: black
               font-size: 0.9em
               float: left
               &:hover
-                color: white
+                color: $brand-primary
             .btn
               margin-top: 15px
         //.dropdown.open > .dropdown-toggle,
@@ -99,10 +128,12 @@
       .search-ui
         height: 40px
         float: right
+        margin-top: 1.5625rem
         .search-query
           margin-bottom: .4em
+          border-color: white
         .quick-search, .mat
-          width: 300px
+          width: 200px
           margin-right: 10px
           .search-nav
             input[type="text"]
@@ -114,13 +145,14 @@
               position: relative
               padding: 6px 15px
               bottom: 40px
+              min-width: initial
             .mat
-              background: $gray-dark
+              background: $black
               display: none
               position: relative
               z-index: 10
               @include border-bottom-radius ($border-radius-base)
-              @media (max-width: 768px)
+              @media (max-width: 925px)
                 width: 80.5%
                 left: 15px
                 top: 87px
@@ -189,14 +221,14 @@
                   .more
                     margin: 4px
                     width: 96%
-                    background: $gray-darker-extra
+                    background: $brand-primary
                     padding: 8px 0
                     display: inline-block
                     cursor: pointer
                     &:hover
-                      background: $gray-darker
+                      background: $black
                     a
-                      color: $gray
+                      color: $black
                       padding: 8px 52px
                       &:hover
                         color: $white
@@ -213,14 +245,16 @@
       top: 40px
       .navbar-nav 
         width: 256px
-        background: $gray-darker
+        background: $white
         padding: 12px
+        // @include box-shadow(0 0 8px 0 rgba(0,0,0,0.2))
+        color: $black
         li
           width: 100%
           display: inline-block
           font-size: 1.1em
           a
-            color: $white
+            color: $black
             padding: 8px
 
         li.sign_in_mobile
@@ -286,12 +320,12 @@
 .navbar-transparent
   background-color: transparent
   box-shadow: none
-  .container-fluid
+  .container-fluid,  .container
     .brand
       .logo
         color: white
 
-@media (min-width: 768px)
+@media (min-width: 925px)
   #navbar_mobile.collapse.in
     display: none
 
@@ -361,8 +395,8 @@ li.sign_in_mobile.dropdown
     left: 115px
     background-color: white
     padding: 10px
-    border-radius: 0 0 10px 10px
-    width: 35px
+    //border-radius: 0 0 10px 10px
+    width: 40px
     img
       width: 100%
     &:hover
@@ -371,7 +405,7 @@ li.sign_in_mobile.dropdown
     transition: all 0.5s ease 0s
     position: absolute
     z-index: 2
-    top: -50px
+    top: -100px
     width: 100%
     .navbar-fixed-top
       position: static
@@ -383,7 +417,8 @@ li.sign_in_mobile.dropdown
       width: 30px
       height: 30px
       padding: 8px
-      background: white
+      color: white
+      background: black
       border-radius: 0 0 5px 0
       &:hover
         cursor: pointer

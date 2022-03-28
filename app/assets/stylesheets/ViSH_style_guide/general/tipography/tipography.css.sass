@@ -22,9 +22,9 @@ body,
 .popover-body
   font-family: $font-family-sans-serif
   font-style: normal
-  @include fontsize-0(13)
+  @include fontsize-0(16)
   @include breakpoint(break-1)
-    @include fontsize-1(13)
+    @include fontsize-1(16)
 
   @include breakpoint(break-2)
     @include fontsize-2(14)
@@ -36,18 +36,18 @@ body,
     @include fontsize-4(15)
 
 footer#footer
-  @include fontsize-0(13)
+  @include fontsize-0(16)
   @include breakpoint(break-1)
-    @include fontsize-1(13)
+    @include fontsize-1(16)
 
   @include breakpoint(break-2)
-    @include fontsize-2(13)
+    @include fontsize-2(16)
 
   @include breakpoint(break-3)
-    @include fontsize-3(13)
+    @include fontsize-3(16)
 
   @include breakpoint(break-4)
-    @include fontsize-4(13)
+    @include fontsize-4(16)
 
 
 /* Links. */
@@ -59,7 +59,8 @@ a
 
 /* Heading level 1.*/
 h1, .alpha
-  @include fontsize-0(26)
+  font-weight: bold
+  @include fontsize-0(36)
   @include breakpoint(break-1)
     @include fontsize-1(26)
 
@@ -74,7 +75,7 @@ h1, .alpha
 
 /* Heading level 2.*/
 h2, .beta
-  @include fontsize-0(20)
+  @include fontsize-0(30)
   @include breakpoint(break-1)
     @include fontsize-1(20)
 
@@ -89,7 +90,7 @@ h2, .beta
 
 /* Heading level 3.*/
 h3, .gamma
-  @include fontsize-0(18)
+  @include fontsize-0(28)
   @include breakpoint(break-1)
     @include fontsize-1(18)
 
@@ -104,7 +105,7 @@ h3, .gamma
 
 /* Heading level 4.*/
 h4, .delta
-  @include fontsize-0(16)
+  @include fontsize-0(24)
   @include breakpoint(break-1)
     @include fontsize-1(16)
 
@@ -120,7 +121,7 @@ h4, .delta
 
 /* Heading level 5.*/
 h5, .epsilon
-  @include fontsize-0(14)
+  @include fontsize-0(20)
   @include breakpoint(break-1)
     @include fontsize-1(14)
 
@@ -134,7 +135,7 @@ h5, .epsilon
     @include fontsize-4(20)
 
 h1, h2, h3, h4, h5, h6
-  font-family: $OrangeLighter
+  font-family: $font-family-sans-serif-titles
   //font-family: $font-family-sans-serif-titles
   //font-family: $corporate-font-family-sans-serif-Bold
 
@@ -145,7 +146,8 @@ section > .container > :first-child
 
 /* Bold.*/
 b, strong, .bold
-  font-family: $corporate-font-family-sans-serif-Bold
+  font-family: $corporate-font-family-sans-serif-Extrabold
+  font-weight: bolder
 
 
 /* Caption or inline small text.*/
@@ -159,10 +161,10 @@ small, .caption
     @include fontsize-2(12)
 
   @include breakpoint(break-3)
-    @include fontsize-3(13)
+    @include fontsize-3(16)
 
   @include breakpoint(break-4)
-    @include fontsize-4(13)
+    @include fontsize-4(16)
 
 /* Nice spacing for captions.*/
 h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption, .gamma + .caption, img + .caption
@@ -184,9 +186,9 @@ em
 
 /************* dropdown-menu *************/
 .dropdown-menu
-  @include fontsize-0(13)
+  @include fontsize-0(16)
   @include breakpoint(break-1)
-    @include fontsize-1(13)
+    @include fontsize-1(16)
 
   @include breakpoint(break-2)
     @include fontsize-2(14)
@@ -199,9 +201,9 @@ em
 
 /************* dropdown-menu *************/
 .btn
-  @include fontsize-0(13)
+  @include fontsize-0(16)
   @include breakpoint(break-1)
-    @include fontsize-1(13)
+    @include fontsize-1(16)
 
   @include breakpoint(break-2)
     @include fontsize-2(14)
@@ -230,9 +232,9 @@ em
 
 /************* form-control *************/
 .form-control
-  @include fontsize-0(13)
+  @include fontsize-0(16)
   @include breakpoint(break-1)
-    @include fontsize-1(13)
+    @include fontsize-1(16)
 
   @include breakpoint(break-2)
     @include fontsize-2(14)
@@ -270,10 +272,10 @@ em
     @include fontsize-2(12)
 
   @include breakpoint(break-3)
-    @include fontsize-3(13)
+    @include fontsize-3(16)
 
   @include breakpoint(break-4)
-    @include fontsize-4(13)
+    @include fontsize-4(16)
 
 footer#footer
   @include fontsize-0(12)
@@ -292,12 +294,12 @@ footer#footer
 
 
 .info-bottom
-  @include fontsize-0(13)
+  @include fontsize-0(16)
   @include breakpoint(break-1)
-    @include fontsize-1(13)
+    @include fontsize-1(16)
 
   @include breakpoint(break-2)
-    @include fontsize-2(13)
+    @include fontsize-2(16)
 
   @include breakpoint(break-3)
     @include fontsize-3(14)

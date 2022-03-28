@@ -28,7 +28,7 @@
 /****************************** loader */
 
 .add-item
-  border: 2px dashed $gray
+  border: 2px dashed $gray-lighter-extra
   .caption
     border-top: none !important
     height: 84px !important
@@ -39,18 +39,18 @@
   .container-img
     .img-box
       i
-        color: $gray !important
+        color: $gray-lighter-extra !important
         font-size: 6em !important
   .caption
     border: none !important
     text-align: center
-    color: $gray !important
+    color: $black !important
     h6
       font-family: $font-family-sans-serif-titles !important
       font-size: 1.5em !important
       line-height: 1.2em !important
       height: auto !important
-      font-weight: 300
+      font-weight: 900
 
 li.contact
   background-color: white
@@ -62,11 +62,14 @@ li.contact
       width: 91%
       height: 31px
       @include follow-profile
-      form input
-        min-height: 30px !important
-        -webkit-border-radius: $border-radius-base !important
-        -moz-border-radius: $border-radius-base !important
-        border-radius: $border-radius-base !important
+      text-align: center
+      form
+        text-align: center
+        input
+          min-height: 30px !important
+          -webkit-border-radius: $border-radius-base !important
+          -moz-border-radius: $border-radius-base !important
+          border-radius: $border-radius-base !important
 
 li.box-item.ediphy-item
   div.corner-item2

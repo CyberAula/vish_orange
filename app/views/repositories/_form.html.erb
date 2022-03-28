@@ -150,7 +150,7 @@
                 <section class="license">
                   <br/>
                   <label><%= t('document.info.license')%></label>
-                  <%= select_tag(:license_id, resource_license_options_for_select(d.license_id), :class => "resource_license") %>
+                  <%= select_tag(:license_id, resource_license_options_for_select(d.license_id), :class => "form-control resource_license") %>
                   <div class="license_custom_wrapper" style="display:none">
                     <label><%=t("document.info.license_custom_form")%>:</label>
                     <input type="text" class="form-control title"/>

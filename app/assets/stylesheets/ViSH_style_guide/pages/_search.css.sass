@@ -167,10 +167,10 @@
 
 .separator
   margin: 8px 0
-  border-color: gray -moz-use-text-color #FFF
+  border-color: black -moz-use-text-color #FFF
 
 .search-sidebar-selected
-  font-family: $corporate-font-family-sans-serif-Bold !important
+  font-family: $corporate-font-family-sans-serif-Extrabold !important
   color: $black
 
 #search-sidebar li
@@ -186,6 +186,8 @@
     border-radius: $border-radius-base
     padding-bottom: 20px !important
     margin-bottom: 20px
+    .separator
+      border-top-color: black
 .filter-results
   @include make-xs-column(12, $gutter: $grid-gutter-width)
   @include make-sm-column(9, $gutter: $grid-gutter-width)
@@ -199,12 +201,11 @@
     border-radius: $border-radius-base
     padding: 0 15px
     h2
-      color: $white
+      color: $black
       margin: 0px 0px 20px !important
-      background-color: $gray
-      border-radius: $border-radius-base
       padding: 10px 20px
-      font-size: 1.4rem
+      font-size: 1.5rem
+      font-weight: 500
       i
         margin: 0 10px 0 0
     .indented
@@ -215,8 +216,8 @@
       .btn-openclose
         border-radius: $border-radius-base
         padding: 0px 5px
-        border: 1px solid #ccc
-        background: #eee
+        border: .125rem solid #000
+        background: #fff
         width: 20px
         outline: none
         margin-right: 5px
@@ -227,12 +228,12 @@
           a
             color: $brand-primary
         a
-          color: gray
+          color: black
           text-decoration: none
       .filter_title
-        font-size: 0.95em
+        font-family: $corporate-font-family-sans-serif-Extrabold
         .filter_title_bold
-          font-family: $corporate-font-family-sans-serif-Bold
+          font-family: $corporate-font-family-sans-serif-Extrabold
           color: $brand-primary
       ul
         margin: 10px
@@ -262,20 +263,24 @@
       padding-left: 0
 
     .filters-applied
-      @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+      // @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
       background-color: $white
       min-height: 70px
       border-radius: $border-radius-base
-      padding: 15px
+      padding: 10px
       float: left
       width: 100%
       margin-bottom: 20px
+      font-size: 110%
       .helpheader
         margin: 0
         i
           font-size: 1.2em
-      .n_results
-        color: $brand-primary
+      .search_results
+        font-size: 110%
+        font-family: $corporate-font-family-sans-serif-Extrabold
+        .n_results
+          color: $brand-primary
 
       .dropdown_order_by
         float: right
@@ -300,8 +305,10 @@
             background: $brand-primary
           .filter_box_lo_type
             background: #ae0040
+          .filter_box_lo_type_edi
+            background: $ediphy-color-dark
           .filter_box_resouce_type
-            background: $brand-secundary
+            background: #555
           .filter_box_language
             background: gray
           .filter_box_tags
@@ -314,16 +321,16 @@
         .filter_box_x
           cursor: pointer
           float: right
-          border-radius: 15px
+          border-radius: 50%
           margin: -6px 0px 0px -10px
-          padding: 0px 5px 1px
+          padding: 0px 6px 0px
           font-size: 0.7em
           font-family: "OpenSansBold", sans-serif
           color: white
-          background: $gray-dark
-          line-height: 1.5em
+          background: $black
           float: left
-          opacity: 0.7
+          width: 17px
+          height: 17px
           &:hover
             color: $gray-lighter
             opacity: 1

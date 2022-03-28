@@ -50,7 +50,7 @@
 
 
 @mixin devise-box
-  @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
+  // @include box-shadow(0 -1px 5px rgba(50,51,51,0.10))
   @include border-top-radius ($border-radius-base)
   @include border-bottom-radius ($border-radius-base)
   @include make-sm-column(6, $gutter: $grid-gutter-width)
@@ -85,7 +85,7 @@
   #remember
     display: inline
     padding-left: 0
-    color: $gray
+    color: $black
     input
       float: none
       margin: 0
@@ -129,7 +129,7 @@
     width: 40% !important
     float: left
     display: inline-block
-    border-right: 1px solid $border-color
+    // border-right: 1px solid $border-color
     height: 89px
     @include border-right-radius (0)
     @include border-left-radius ($border-radius-small)
@@ -141,6 +141,7 @@
       @include border-right-radius (0)
       @include border-left-radius ($border-radius-small)
       @include border-top-right-radius (0)
+      //background-color: #eee
       i
         font-size: 44px
         padding-top: 23px
@@ -154,6 +155,8 @@
     height: 89px
     .info-bottom
       padding-top: 2px
+      font-size: 0.8em
+      margin-top: 8px
 
 @mixin comments
   width: 100%
@@ -173,13 +176,13 @@
       text-align: right
       a
         font-size: 0.8rem
-        color: $gray !important
+        color: $black !important
         display: inline
       .x
         display: inline-block
         float: right
         a
-          color: $gray-dark
+          color: $black
           &:hover
             color: $brand-primary
   .panel-collapse
