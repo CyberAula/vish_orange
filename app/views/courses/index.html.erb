@@ -49,7 +49,7 @@
 		<div class="content_block">
 
 			<div class="items">
-			<%@secondband = [Course.find(10)]%>
+			<%@secondband = [Course.find(14)]%>
 				<%if @secondband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
@@ -71,7 +71,7 @@
 		<div class="content_block">
 
 			<div class="items">
-			<%@thirdband = [Course.find(2), Course.find(3), Course.find(4), Course.find(9)]%>
+			<%@thirdband = [Course.find(2), Course.find(3), Course.find(4), Course.find(9), Course.find(10)]%>
 				<%if @thirdband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
