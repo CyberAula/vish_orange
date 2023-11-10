@@ -13,7 +13,7 @@ gem 'bootstrap-sass', '= 3.1.1.0'
 
 gem 'coffee-rails', '= 3.2.2'
 gem 'uglifier', '= 1.2.3'
-gem 'jquery-rails', '= 3.1.0'
+gem 'jquery-rails', '3.1.5'
 gem 'jquery-ui-rails', '= 4.1.2'
 gem 'json', '= 1.8.3'
 gem 'sinatra', '= 1.3.2'
