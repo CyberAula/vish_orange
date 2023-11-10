@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => "3-2-stable"
 
 #Database Adapters
-gem 'sqlite3', '= 1.3.11'
+gem 'sqlite3', '= 1.3.9'
 gem 'pg', '= 0.17.1'
 #gem 'mysql2', '= 0.3.16'
 
@@ -18,12 +18,13 @@ gem 'jquery-ui-rails', '= 4.1.2'
 gem 'json', '= 1.8.3'
 gem 'sinatra', '= 1.3.2'
 gem 'selenium-webdriver', '= 2.44.0'
-gem 'god', :git => 'https://github.com/mojombo/god.git', :ref => '92c06aa5f6293cf26498a306e9bb7ac856d7dca0'
+#gem 'god', '= 0.13.7'
 gem 'redis', '= 3.3.3'
 gem 'resque', '= 1.27.0'
 gem 'rmagick', '=2.13.2'
 gem 'thinking-sphinx', '= 2.0.14'
 gem 'exception_notification', '= 4.1.1'
+gem 'rspec', '= 2.9'
 gem 'rspec-rails', '= 2.9'
 gem 'net-ssh', '= 2.4.0'
 gem 'shortener', '= 0.3.0'
@@ -48,6 +49,7 @@ gem 'sitemap_generator'
 gem 'descriptive_statistics', '~> 2.4.0', :require => 'descriptive_statistics/safe'
 gem 'jwt', '= 1.4.1'
 gem 'rake', '10.5.0'
+gem 'concurrent-ruby', '1.1.8'
 gem 'ejs', '=1.1.1'
 gem 'browser', '=2.5.3'
 gem 'rack-cors', '=1.0.3'
@@ -55,8 +57,10 @@ gem 'rack-cache', '=1.6.1'
 gem 'ffi', '=1.9.10'
 gem 'ttfunk', '=1.4.0'
 gem 'redis-namespace', '=1.5.3'
+gem 'highline', '=2.0.3'
+gem 'execjs', '=2.9.0'
+gem 'multipart-post', '=2.1.1'
 gem 'mimemagic', :git => 'https://github.com/mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
-
 
 #Gems from Git repositories
 gem 'delegates_attributes_to', :git => 'https://github.com/pahanix/delegates_attributes_to.git', :ref => '69704cb'
@@ -74,7 +78,7 @@ if ENV['FORCE_LOCAL_SS']
     gem 'social_stream-events'
   end
 else
-  git 'git://github.com/ging/social_stream.git', branch: "vish", ref: "6e4341c64ae3a470acd0ab29c48d2d72fd6fdd08"  do
+  git 'https://github.com/ging/social_stream.git', branch: "vish", ref: "6e4341c64ae3a470acd0ab29c48d2d72fd6fdd08"  do
     gem 'social_stream-base'
     gem 'social_stream-documents'
     gem 'social_stream-linkser'
@@ -91,15 +95,18 @@ gem 'devise_cas_authenticatable', '= 1.7.1'
 
 #oauth2
 gem 'omniauth-oauth2', '= 1.1.2'
+gem 'oauth', '0.5.14'
+
+
 
 #recaptcha
-gem "recaptcha", require: "recaptcha/rails"
+gem "recaptcha", '= 4.3.1', require: "recaptcha/rails"
 
 # $ export FORCE_LOCAL_SCORM=scormGemPath
 if ENV['FORCE_LOCAL_SCORM']
   gem "scorm", :path => ENV['FORCE_LOCAL_SCORM'], :branch => "master"
 else
-  gem "scorm", :git => 'git://github.com/agordillo/scorm.git', :branch => "master"
+  gem "scorm", :git => 'https://github.com/agordillo/scorm.git', :branch => "master"
 end
 
 
@@ -110,7 +117,7 @@ group :development do
   #Usage bundle exec unicorn -p 3000 -c config/unicorn.rb
   gem 'unicorn', '= 4.8.3'
   gem 'capistrano', '= 2.14.2'
-  gem 'capistrano-rails'
+  gem 'capistrano-rails', '= 0.0.7'
   gem 'capistrano-rbenv', '= 1.0.5'
   gem 'forgery', '= 0.6.0'
 end
