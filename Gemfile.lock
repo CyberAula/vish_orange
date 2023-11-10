@@ -304,7 +304,7 @@ GEM
       builder (>= 2.0.0)
       faraday
       faraday_middleware
-    oauth (0.4.7)
+    oauth (0.5.5)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -534,7 +534,7 @@ DEPENDENCIES
   multipart-post (= 2.1.1)
   net-ssh (= 2.4.0)
   oai_repository!
-  oauth (= 0.4.7)
+  oauth (= 0.5.5)
   omniauth-oauth2 (= 1.1.2)
   paperclip (= 3.5.1)
   paperclip-ffmpeg!
