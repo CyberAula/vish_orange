@@ -70,45 +70,43 @@ ActiveRecord::Schema.define(:version => 20190329091126) do
   create_table "activity_objects", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "object_type",                 :limit => 45
-    t.integer  "like_count",                                                               :default => 0
-    t.string   "title",                                                                    :default => ""
+    t.string   "object_type",          :limit => 45
+    t.integer  "like_count",                                                        :default => 0
+    t.string   "title",                                                             :default => ""
     t.text     "description"
-    t.integer  "follower_count",                                                           :default => 0
-    t.integer  "visit_count",                                                              :default => 0
+    t.integer  "follower_count",                                                    :default => 0
+    t.integer  "visit_count",                                                       :default => 0
     t.string   "language"
-    t.integer  "age_min",                                                                  :default => 0
-    t.integer  "age_max",                                                                  :default => 0
-    t.boolean  "notified_after_draft",                                                     :default => false
-    t.integer  "comment_count",                                                            :default => 0
-    t.integer  "popularity",                                                               :default => 0
-    t.integer  "download_count",                                                           :default => 0
-    t.integer  "qscore",                                                                   :default => 500000
-    t.decimal  "reviewers_qscore",                          :precision => 12, :scale => 6
-    t.decimal  "users_qscore",                              :precision => 12, :scale => 6
-    t.integer  "ranking",                                                                  :default => 0
-    t.integer  "title_length",                                                             :default => 1
-    t.integer  "desc_length",                                                              :default => 1
-    t.integer  "tags_length",                                                              :default => 1
-    t.integer  "scope",                                                                    :default => 0
+    t.integer  "age_min",                                                           :default => 0
+    t.integer  "age_max",                                                           :default => 0
+    t.boolean  "notified_after_draft",                                              :default => false
+    t.integer  "comment_count",                                                     :default => 0
+    t.integer  "popularity",                                                        :default => 0
+    t.integer  "download_count",                                                    :default => 0
+    t.integer  "qscore",                                                            :default => 500000
+    t.decimal  "reviewers_qscore",                   :precision => 12, :scale => 6
+    t.decimal  "users_qscore",                       :precision => 12, :scale => 6
+    t.integer  "ranking",                                                           :default => 0
+    t.integer  "title_length",                                                      :default => 1
+    t.integer  "desc_length",                                                       :default => 1
+    t.integer  "tags_length",                                                       :default => 1
+    t.integer  "scope",                                                             :default => 0
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.decimal  "teachers_qscore",                           :precision => 12, :scale => 6
+    t.decimal  "teachers_qscore",                    :precision => 12, :scale => 6
     t.integer  "license_id"
     t.text     "original_author"
     t.text     "license_attribution"
     t.text     "license_custom"
-    t.decimal  "metadata_qscore",                           :precision => 12, :scale => 6
-    t.boolean  "allow_download",                                                           :default => true
-    t.boolean  "allow_comment",                                                            :default => true
-    t.boolean  "allow_clone",                                                              :default => true
-    t.text     "tag_array_text",                                                           :default => ""
-    t.decimal  "interaction_qscore",                        :precision => 12, :scale => 6
-    t.decimal  "reviewers_qscore_loriam",                   :precision => 12, :scale => 6
-    t.integer  "reviewers_qscore_loriam_int"
-    t.boolean  "harvested",                                                                :default => false
+    t.decimal  "metadata_qscore",                    :precision => 12, :scale => 6
+    t.boolean  "allow_download",                                                    :default => true
+    t.boolean  "allow_comment",                                                     :default => true
+    t.boolean  "allow_clone",                                                       :default => true
+    t.text     "tag_array_text",                                                    :default => ""
+    t.decimal  "interaction_qscore",                 :precision => 12, :scale => 6
+    t.boolean  "harvested",                                                         :default => false
   end
 
   create_table "activity_objects_wa_resources_galleries", :id => false, :force => true do |t|

@@ -197,7 +197,7 @@
         <%uri = URI.parse(downloadPath)%>
         <%uri.scheme = "https"%>
         <%downloadPath = uri.to_s%>
-        <a class="btn btn-primary" href='<%=downloadPath%>'><i class="fa fa-download"></i> <%=t('document.actions.download')%></a>
+        <a class="btn btn-primary" href='<%=Embed.checkUrlProtocol(downloadPath, request.protocol)%>'><i class="fa fa-download"></i> <%=t('document.actions.download')%></a>
       </div>
     </div>
   <% end %>
