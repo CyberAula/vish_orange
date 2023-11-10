@@ -232,7 +232,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.14.0)
       faraday (>= 0.7.4, < 1.0)
-    ffi (1.9.10)
+    ffi (1.14.2)
     flashy (0.0.1)
       railties (>= 3.1.0)
     foreigner (1.1.6)
@@ -520,7 +520,7 @@ DEPENDENCIES
   execjs (= 2.7.0)
   factory_girl (= 2.6)
   faker (= 1.4.3)
-  ffi (= 1.9.10)
+  ffi (= 1.14.2)
   forgery (= 0.6.0)
   god!
   hashie (= 2.1.2)
