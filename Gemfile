@@ -96,7 +96,7 @@ gem 'devise_cas_authenticatable', '= 1.7.1'
 
 #oauth2
 gem 'omniauth-oauth2', '= 1.1.2'
-gem 'oauth', '0.4.7'
+gem 'oauth', '0.5.5'
 
 
 
