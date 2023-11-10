@@ -1,7 +1,7 @@
 #ruby '2.2.0'
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => "3-2-stable"
+gem 'rails', '=3.2.22.2'
 
 #Database Adapters
 gem 'sqlite3', '= 1.3.9'
@@ -18,7 +18,7 @@ gem 'jquery-ui-rails', '= 4.1.2'
 gem 'json', '= 1.8.3'
 gem 'sinatra', '= 1.3.2'
 gem 'selenium-webdriver', '= 2.44.0'
-#gem 'god', '= 0.13.7'
+gem 'god', :git => 'https://github.com/mojombo/god.git', :ref => '92c06aa5f6293cf26498a306e9bb7ac856d7dca0'
 gem 'redis', '= 3.3.3'
 gem 'resque', '= 1.27.0'
 gem 'rmagick', '=2.13.2'
@@ -58,7 +58,7 @@ gem 'ffi', '=1.9.10'
 gem 'ttfunk', '=1.4.0'
 gem 'redis-namespace', '=1.5.3'
 gem 'highline', '=2.0.3'
-gem 'execjs', '=2.9.0'
+gem 'execjs', '=2.7.0'
 gem 'multipart-post', '=2.1.1'
 gem 'mimemagic', :git => 'https://github.com/mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
@@ -95,7 +95,7 @@ gem 'devise_cas_authenticatable', '= 1.7.1'
 
 #oauth2
 gem 'omniauth-oauth2', '= 1.1.2'
-gem 'oauth', '0.5.14'
+gem 'oauth', '0.4.7'
 
 
 
