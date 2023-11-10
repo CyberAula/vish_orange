@@ -61,6 +61,7 @@ gem 'highline', '=2.0.3'
 gem 'execjs', '=2.7.0'
 gem 'multipart-post', '=2.1.1'
 gem 'mimemagic', :git => 'https://github.com/mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+gem 'rb-inotify', '= 0.9.10'
 
 #Gems from Git repositories
 gem 'delegates_attributes_to', :git => 'https://github.com/pahanix/delegates_attributes_to.git', :ref => '69704cb'
