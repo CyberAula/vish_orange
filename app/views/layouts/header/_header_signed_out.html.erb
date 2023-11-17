@@ -53,8 +53,13 @@
                 <% end %>
               </li>
             </ul>
-          </li>
+          
 
+          <% if Vish::Application.config.registrations %>
+            <a type="button" class="btn btn-secondary" href="<%=new_user_registration_path%>">
+              <span class="menu_bold"><%=t("sign_up")%></span>
+            </a>
+        <% end %>
           
           <% if Vish::Application.config.only_cas %>
           <a type="button" id="drop3" href="<%=user_session_path%>">
