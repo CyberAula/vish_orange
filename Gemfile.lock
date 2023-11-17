@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/agordillo/scorm.git
+  remote: https://github.com/agordillo/scorm.git
   revision: b3d47f9c90ea2f314859b0e92fd30113775f2613
   branch: master
   specs:
@@ -7,7 +7,7 @@ GIT
       rubyzip (>= 1.0.0)
 
 GIT
-  remote: git://github.com/ebarra/oai_repository.git
+  remote: https://github.com/ebarra/oai_repository.git
   revision: 26e791e05f76295b144568fef8033446c2ad01e9
   specs:
     oai_repository (0.9.5)
@@ -15,14 +15,14 @@ GIT
       rails (~> 3.1)
 
 GIT
-  remote: git://github.com/ebarra/paperclip-ffmpeg.git
+  remote: https://github.com/ebarra/paperclip-ffmpeg.git
   revision: 338fd7a74a03aa87c9278f20e7fa49f77cfc3dcd
   specs:
     paperclip-ffmpeg (1.0.1)
       paperclip (>= 2.5.2)
 
 GIT
-  remote: git://github.com/ging/social_stream.git
+  remote: https://github.com/ging/social_stream.git
   revision: 6e4341c64ae3a470acd0ab29c48d2d72fd6fdd08
   ref: 6e4341c64ae3a470acd0ab29c48d2d72fd6fdd08
   branch: vish
@@ -68,34 +68,30 @@ GIT
     social_stream-linkser (2.2.1)
       linkser (~> 0.0.12)
       social_stream-base (~> 2.2.2)
-    social_stream-ostatus (2.2.1)
-      nokogiri (> 1.4.4)
-      proudhon (>= 0.3.6)
-      social_stream-base (~> 2.2.2)
 
 GIT
-  remote: git://github.com/mimemagicrb/mimemagic.git
+  remote: https://github.com/mimemagicrb/mimemagic
   revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
   ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
   specs:
     mimemagic (0.3.5)
 
 GIT
-  remote: git://github.com/mojombo/god.git
+  remote: https://github.com/mojombo/god.git
   revision: 92c06aa5f6293cf26498a306e9bb7ac856d7dca0
   ref: 92c06aa5f6293cf26498a306e9bb7ac856d7dca0
   specs:
     god (0.13.7)
 
 GIT
-  remote: git://github.com/pahanix/delegates_attributes_to.git
+  remote: https://github.com/pahanix/delegates_attributes_to.git
   revision: 69704cb6268c521e0e48ccb8d8b78930d1e7da67
   ref: 69704cb
   specs:
     delegates_attributes_to (0.0.1)
 
 GIT
-  remote: git://github.com/randym/acts_as_xlsx.git
+  remote: https://github.com/randym/acts_as_xlsx.git
   revision: 919817e590b1cf8e27632e630469603c78a50402
   ref: 919817e590b1cf8e27632e630469603c78a50402
   specs:
@@ -154,7 +150,7 @@ GEM
     axlsx_rails (0.1.5)
       axlsx
       rails (>= 3.1)
-    bcrypt (3.1.16)
+    bcrypt (3.1.19)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     bootstrap-sass (3.1.1.0)
@@ -168,6 +164,13 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capistrano-platform-resources (0.1.3)
+      capistrano (< 3)
+    capistrano-rails (0.0.7)
+      capistrano
+    capistrano-rbenv (1.0.5)
+      capistrano (< 3)
+      capistrano-platform-resources (>= 0.1.3)
     capybara (2.3.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -194,7 +197,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
-    deep_merge (1.2.1)
+    deep_merge (1.2.2)
     deface (0.9.1)
       nokogiri (~> 1.5.0)
       rails (~> 3.1)
@@ -267,7 +270,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
-    kgio (2.11.3)
+    kgio (2.11.4)
     linkser (0.0.15)
       ging-opengraph (~> 0.0.4)
       nokogiri (>= 1.4.0)
@@ -284,7 +287,7 @@ GEM
     method_source (0.9.2)
     mime-types (1.25.1)
     modernizr-rails (2.7.1)
-    mono_logger (1.1.0)
+    mono_logger (1.1.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
@@ -301,7 +304,7 @@ GEM
       builder (>= 2.0.0)
       faraday
       faraday_middleware
-    oauth (0.5.5)
+    oauth (0.4.7)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -339,11 +342,7 @@ GEM
       ttfunk
     pg (0.17.1)
     polyglot (0.3.5)
-    power_assert (2.0.0)
-    proudhon (0.3.7)
-      json
-      nokogiri
-      rest-client
+    power_assert (2.0.3)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -351,6 +350,7 @@ GEM
     rack (1.4.7)
     rack-cache (1.6.1)
       rack (>= 0.4)
+    rack-cors (1.0.3)
     rack-protection (1.5.5)
       rack
     rack-ssl (1.3.4)
@@ -379,11 +379,11 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    raindrops (0.19.1)
+    raindrops (0.20.1)
     rake (10.5.0)
-    rb-fsevent (0.10.4)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (4.3.1)
@@ -404,7 +404,7 @@ GEM
       vegas (~> 0.1.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    riddle (2.4.2)
+    riddle (2.4.3)
     rmagick (2.13.2)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
@@ -435,8 +435,8 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    select2-rails (3.3.0)
-      sass-rails (~> 3.2)
+    select2-rails (3.3.2)
+      sass-rails (>= 3.2)
       thor (~> 0.14)
     selenium-webdriver (2.44.0)
       childprocess (~> 0.5)
@@ -449,7 +449,7 @@ GEM
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
-    sitemap_generator (6.1.2)
+    sitemap_generator (6.3.0)
       builder (~> 3.0)
     slop (3.6.0)
     sprockets (2.2.3)
@@ -476,7 +476,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     ttfunk (1.4.0)
-    tzinfo (0.3.59)
+    tzinfo (0.3.62)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
@@ -488,7 +488,7 @@ GEM
       rack (>= 1.0.0)
     warden (1.2.7)
       rack (>= 1.0)
-    websocket (1.2.9)
+    websocket (1.2.10)
     xpath (2.1.0)
       nokogiri (~> 1.3)
 
@@ -504,8 +504,11 @@ DEPENDENCIES
   bootstrap-sass (= 3.1.1.0)
   browser (= 2.5.3)
   capistrano (= 2.14.2)
+  capistrano-rails (= 0.0.7)
+  capistrano-rbenv (= 1.0.5)
   capybara (= 2.3.0)
   coffee-rails (= 3.2.2)
+  concurrent-ruby (= 1.1.8)
   delayed_paperclip (= 2.7.0)
   delegates_attributes_to!
   descriptive_statistics (~> 2.4.0)
@@ -514,20 +517,24 @@ DEPENDENCIES
   devise_invitable (= 1.1.8)
   ejs (= 1.1.1)
   exception_notification (= 4.1.1)
+  execjs (= 2.7.0)
   factory_girl (= 2.6)
   faker (= 1.4.3)
   ffi (= 1.9.10)
   forgery (= 0.6.0)
   god!
   hashie (= 2.1.2)
+  highline (= 2.0.3)
   jquery-rails (= 3.1.0)
   jquery-ui-rails (= 4.1.2)
   json (= 1.8.3)
   jwt (= 1.4.1)
   mailboxer (= 0.10.3)
   mimemagic!
+  multipart-post (= 2.1.1)
   net-ssh (= 2.4.0)
   oai_repository!
+  oauth (= 0.4.7)
   omniauth-oauth2 (= 1.1.2)
   paperclip (= 3.5.1)
   paperclip-ffmpeg!
@@ -535,14 +542,17 @@ DEPENDENCIES
   pg (= 0.17.1)
   pry (= 0.9.12.6)
   rack-cache (= 1.6.1)
+  rack-cors (= 1.0.3)
   rails (= 3.2.22.2)
   rake (= 10.5.0)
+  rb-inotify (= 0.9.10)
   recaptcha (= 4.3.1)
   redis (= 3.3.3)
   redis-namespace (= 1.5.3)
   resque (= 1.27.0)
   rest-client (= 1.6.7)
   rmagick (= 2.13.2)
+  rspec (= 2.9)
   rspec-rails (= 2.9)
   rubyzip (= 1.0.0)
   sanitize (= 2.1.0)
@@ -556,7 +566,6 @@ DEPENDENCIES
   social_stream-documents!
   social_stream-events!
   social_stream-linkser!
-  social_stream-ostatus!
   sqlite3 (= 1.3.9)
   test-unit (= 3.0.9)
   thinking-sphinx (= 2.0.14)
