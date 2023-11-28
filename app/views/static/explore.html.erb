@@ -71,7 +71,7 @@
     <div class="content_block">
       <div class="items">
         <% begin
-            courses = [Course.find(6), Course.find(5), Course.find(4), Course.find(3), Course.find(2)]
+            courses = [Course.find(5), Course.find(6), Course.find(7), Course.find(8), Course.find(9), Course.find(10), Course.find(11)]
           rescue ActiveRecord::RecordNotFound => e
             courses = Course.all.sample(5)
           end %>
@@ -120,11 +120,7 @@
     </div>
     <div class="content_block">
       <div class="items">
-        <% begin
-            experts = [Excursion.find(331), Excursion.find(329), Excursion.find(333), Excursion.find(434), Excursion.find(679)]
-          rescue ActiveRecord::RecordNotFound => e
-            experts = Excursion.all.sample(5)
-          end %>
+        <% experts = Excursion.all.sample(5)%>
           <%experts.each do |doc| %>
             <%= render partial: 'repositories/resource', locals: { resource: doc} %>
           <% end %>
@@ -146,23 +142,23 @@
 
       <div class="entities_imgs">
         <div class="entity_img">
-          <a href="http://educainternet.es/users/educainternet2?tab=categories" target="_blank">
+          <a href="https://www.macmillaneducation.es/en/" target="_blank">
             <img src="assets/orange/macmillan_edu_logo-02.png" alt="Logo Macmillan">
           </a>
         </div>
         <div class="entity_img">
-          <a href="http://educainternet.es/categories/121" target="_blank">
+          <a href="https://www.red.es/es" target="_blank">
             <img src="assets/orange/red.es_logo-06.png" alt="Logo Red.es">
           </a>
         </div>
         <div class="entity_img">
-          <a href="http://educainternet.es/users/osi?tab=resources" target="_blank">
+          <a href="https://usuariosteleco.mineco.gob.es/te-interesa/actualidad/Paginas/seguridad-internauta.aspx" target="_blank">
             <img src="assets/orange/osi_logo-04.png" alt="Logo Osi">
           </a>
         </div>
 
         <div class="entity_img">
-          <a href="http://educainternet.es/users/orange?tab=resources" target="_blank">
+          <a href="https://online.orangedigitalcenter.es/" target="_blank">
             <img src="assets/orange/logo_orange.png" alt="Logo Orange">
           </a>
         </div>
@@ -173,12 +169,12 @@
           </a>
         </div>
         <div class="entity_img">
-          <a href="http://educainternet.es/categories/125" target="_blank">
+          <a href="https://www.incibe.es/" target="_blank">
             <img src="assets/orange/incibe_logo-01.png" alt="Logo Incibe">
           </a>
         </div>
         <div class="entity_img">
-          <a href="http://educainternet.es/categories/125" target="_blank">
+          <a href="https://www.incibe.es/menores/" target="_blank">
             <img src="assets/orange/is4k_logo-07.jpg" alt="Logo is4k">
           </a>
         </div>
