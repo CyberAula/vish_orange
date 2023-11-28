@@ -27,7 +27,7 @@
 		<div class="content_block">
 
 			<div class="items">
-			<%@firstband = [Course.find(5), Course.find(6), Course.find(11), Course.find(12), Course.find(13)]%>
+			<%@firstband = [Course.find(5), Course.find(6), Course.find(7), Course.find(8), Course.find(9), Course.find(10), Course.find(11)]%>
 				<%if @firstband.length==0%>
 					<%=t("course.none")%>
 				<%else%>
@@ -43,64 +43,13 @@
 	<div class="block">
 
 		<div class="content_block">
-			<h2 class=""><%= raw t('courses_page.secondband')%></h2>
+			<h2 class="">Toda la formación de EducaInternet se desarrolla ahora en la plataforma Orange Digital Center</h2>
+			<h2>Visítala en <a href="https://online.orangedigitalcenter.es">https://online.orangedigitalcenter.es</a></h2>
 		</div>
 
-		<div class="content_block">
-
-			<div class="items">
-			<%@secondband = [Course.find(14)]%>
-				<%if @secondband.length==0%>
-					<%=t("course.none")%>
-				<%else%>
-					<%@secondband.each do |c|%>
-						<%= render partial: 'courses/course_large' , :locals => { :course => c } %>
-					<%end%>
-				<%end%>
-
-		</div>
-		</div>
+		
 	</div>
-
-		<div class="block_dark">
-
-		<div class="content_block">
-			<h2 class=""><%= t('courses_page.thirdband')%></h2>
-		</div>
-
-		<div class="content_block">
-
-			<div class="items">
-			<%@thirdband = [Course.find(2), Course.find(3), Course.find(4), Course.find(9), Course.find(10)]%>
-				<%if @thirdband.length==0%>
-					<%=t("course.none")%>
-				<%else%>
-					<%@thirdband.each do |c|%>
-						<%= render partial: 'courses/course_small' , :locals => { :course => c } %>
-					<%end%>
-				<%end%>
-
-		</div>
-		</div>
-	</div>
-
-
-	<!--
-
-	<div class="content_block">
-		<div class="items">
-			<ul>
-				<%#if @courses.length==0%>
-					<%#=t("course.none")%>
-				<%#else%>
-					<%#@courses.each do |c|%>
-						<%#= render partial: 'courses/course' , :locals => { :course => c } %>
-					<%#end%>
-				<%#end%>
-			</ul>
-		</div>
-	</div>
--->
+		
 
 </section>
 
